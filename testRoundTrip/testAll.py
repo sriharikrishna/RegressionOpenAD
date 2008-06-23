@@ -127,8 +127,7 @@ def populateExamplesList(args):
 		if (re.search(regex,ex,re.IGNORECASE)):
 		    examples.append(ex)
 	if (len(examples) == 0):
-	    print "No examples match the given regular expressions: ", exampleRegexs
-	    return -1
+	    raise RuntimeError, "No examples match the given regular expressions"
 	exampleSet = set(examples)
 	examples = list(exampleSet)
 	examples.sort(key=str.lower)
@@ -290,7 +289,6 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 
 
 def main():
-
     try:
 	if not (os.environ.has_key('OPENADROOT')):
 	    raise ConfigError, "environment variable OPENADROOT not defined"
@@ -324,8 +322,6 @@ def main():
 		print "NUMERICAL ERROR in test %i of %i (%s)." % (j+1,len(examples),examples[j])
 		if not (os.environ.has_key('BATCHMODE')):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
-			return -1
-		else:
 			return -1
 	    except RuntimeError, errtxt:
 		print "ERROR in test %i of %i (%s): %s." % (j+1,len(examples),examples[j],errtxt)
