@@ -117,15 +117,19 @@ def link_xaifBooster(majorMode):
 		    if ((majorMode=="tlm" and alg=="BasicBlockPreaccumulation") or (majorMode=="adm" and alg=="BasicBlockPreaccumulationReverse") or (majorMode=="trace" and alg=="TraceDiff")):
 			defaultAlgNum = i
 		    i = i + 1
-	    try:
-		algChoice = int(raw_input("pick a number (%s): " % defaultAlgNum))
-		if (algChoice < 0 or algChoice >= i):
-		    print "Error: %i is not a valid selection.  Try, try, try again..." % algChoice
-		else:
-		    foundValidAlg = True
-	    except ValueError:
-		algChoice = defaultAlgNum
-		foundValidAlg = True
+            if not (os.environ.has_key('BATCHMODE')):
+                try:
+                    algChoice = int(raw_input("pick a number (%s): " % defaultAlgNum))
+                    if (algChoice < 0 or algChoice >= i):
+                        print "Error: %i is not a valid selection.  Try, try, try again..." % algChoice
+                    else:
+                        foundValidAlg = True
+                except ValueError:
+                    algChoice = defaultAlgNum
+                    foundValidAlg = True
+            else:
+                algChoice= defaultAlgNum 
+                foundValidAlg = True
 	xaifBoosterAlgPath = xaifBoosterAlgPaths[algChoice]
 	os.system("ln -sf %s ./xaifBooster" % xaifBoosterAlgPath)
 	print "xaifBoosterAlgPath is %s" % xaifBoosterAlgPath
