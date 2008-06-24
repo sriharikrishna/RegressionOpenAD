@@ -56,6 +56,7 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
 		sys.stdout.write("skipping change\n")
 	    else:
 		shutil.copy(fcfileName,fcexampleDir + "/refOutput/" + referenceFile)
+    sys.stdout.flush()
 
 
 def printSep(sepChar,msg,sepLength):
@@ -65,6 +66,7 @@ def printSep(sepChar,msg,sepLength):
 	sys.stdout.write(sepChar)
 	i = i + 1
     sys.stdout.write("\n")
+    sys.stdout.flush()
 
 
 def populateExamplesList(args):
@@ -96,12 +98,14 @@ def populateExamplesList(args):
 			if (len(examplesInput) >= 3):
 			    rangeEnd = int(examplesInput[2])
 		    except ValueError:
-			print "\"all\" must be followed by zero, one, or two integers which specify the start and end range, e.g. 'all [%i | %i %i]'"
+			sys.stdout.write("\"all\" must be followed by zero, one, or two integers which specify the start and end range, e.g. 'all [%i | %i %i]'\n")
+			sys.stdout.flush()
 			done = False
 			rangeStart = 1
 			rangeEnd = len(allExamples)
 		    if (rangeStart < 1 or rangeEnd > len(allExamples)):
-			print "invalid range (%i-%i)" % (rangeStart,rangeEnd)
+			sys.stdout.write("invalid range (%i-%i)\n" % (rangeStart,rangeEnd))
+			sys.stdout.flush()
 			done = False
 			rangeStart = 1
 			rangeEnd = len(allExamples)
@@ -136,7 +140,7 @@ def populateExamplesList(args):
 
 	rangeEnd = len(examples)
 	printSep("=","",sepLength)
-	print "The following examples match the given regular expression(s):"
+	sys.stdout.write("The following examples match the given regular expression(s):\n")
 	i = 0
 	for ex in examples:
 	    i = i + 1
@@ -145,7 +149,7 @@ def populateExamplesList(args):
 	printSep("=","",sepLength)
     else:
 	printSep("=","",sepLength)
-	print "Running all examples with a range of (%i-%i):" % (rangeStart,rangeEnd)
+	sys.stdout.write("Running all examples with a range of (%i-%i):\n" % (rangeStart,rangeEnd))
 	i = 0
         for ex in examples:
             i = i + 1
@@ -166,6 +170,7 @@ def determineModes():
 	# decide whether to use these settings from the last run
 	if not (os.environ.has_key('BATCHMODE')):
 	    if (raw_input("reuse last settings (%s %s %s)? (y)/n: " % (scalarOrVectorMode,majorMode,ctrMode)) == "n"):
+		sys.stdout.flush()
 		os.system("gmake clean")
 	    else:
 		askAll = False
@@ -198,7 +203,7 @@ def link_xaifBooster(majorMode):
     if not (os.path.exists("xaifBooster")):
 	foundValidAlg = False
 	while not (foundValidAlg):
-	    print "pick one of the following xaifBooster algorithms:"
+	    sys.stdout.write("pick one of the following xaifBooster algorithms:\n")
 	    xaifBoosterAlgs = os.listdir("%s/algorithms" % os.environ['XAIFBOOSTER_BASE'])
 	    xaifBoosterAlgs.sort()
 	    xaifBoosterAlgPaths = []
@@ -207,7 +212,8 @@ def link_xaifBooster(majorMode):
 	    for alg in xaifBoosterAlgs:
 		algPath = "%s/algorithms/%s/test/t" % (os.environ['XAIFBOOSTER_BASE'],alg)
 		if (os.path.exists(algPath)): # filter out those that have no t executable
-		    print "%i: %s" % (i,alg)
+		    sys.stdout.write("%i: %s\n" % (i,alg))
+		    sys.stdout.flush()
 		    xaifBoosterAlgPaths.append(algPath)
 		    if ((majorMode=="tlm" and alg=="BasicBlockPreaccumulation") or (majorMode=="adm" and alg=="BasicBlockPreaccumulationReverse") or (majorMode=="trace" and alg=="TraceDiff")):
 			defaultAlgNum = i
@@ -227,7 +233,8 @@ def link_xaifBooster(majorMode):
                 foundValidAlg = True
 	xaifBoosterAlgPath = xaifBoosterAlgPaths[algChoice]
 	os.system("ln -sf %s ./xaifBooster" % xaifBoosterAlgPath)
-	print "xaifBoosterAlgPath is %s" % xaifBoosterAlgPath
+	sys.stdout.write("xaifBoosterAlgPath is %s\n" % xaifBoosterAlgPath)
+	sys.stdout.flush()
 
 
 def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
@@ -245,6 +252,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	    if (raw_input("run it anyway? y/(n): ") != "y"):
 		return 0
     # clean up
+    sys.stdout.flush()
     os.environ["TARGET"] = "head"
     if (os.system("gmake testAllclean")):
 	raise MakeError, "Error while executing \"gmake testAllclean\""
@@ -278,6 +286,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     for tfile in ["head_sf.xb.x2w.w2f.f","head_sf.xb.x2w.w2f.pp.f","head.xb.x2w.w2f.pp.f","head_sf.xb.xaif"]:
 	fileCompare(exDir,tfile,majorMode + ctrMode,"file translated from")
     # execute the driver
+    sys.stdout.flush()
     if(os.system("gmake run")):
 	raise MakeError, "gmake run"
     # do numerical comparison
