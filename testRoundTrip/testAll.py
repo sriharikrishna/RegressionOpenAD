@@ -160,6 +160,7 @@ def determineModes():
     if(os.path.exists(".lastRun")):
 	lastRunFile = open(".lastRun","r")
 	(scalarOrVectorMode,majorMode,ctrMode) = str(lastRunFile.readline()).split(" ")
+	ctrMode=ctrMode.strip()
 	lastRunFile.close()
 	# decide whether to use these settings from the last run
 	if not (os.environ.has_key('BATCHMODE')):
