@@ -1,0 +1,2 @@
+We try to restore a formal parameter called with a constant. The canonicalizer which was not applied here yet would replace this 
+constant with a temporary variable.

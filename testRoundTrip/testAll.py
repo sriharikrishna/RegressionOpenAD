@@ -5,6 +5,8 @@ import sys
 import shutil
 import re
 
+sepLength=80
+
 class NumericalError(Exception):
     """Exception thrown when the numerical comparison discovers error that is beyond the given threshold"""
 
@@ -66,7 +68,6 @@ def printSep(sepChar,msg,sepLength):
 
 
 def populateExamplesList(args):
-    sepLength = 200
     allExamples = os.listdir("examples")
     allExamples.sort(key=str.lower) # default sort is case insensitive, this one isn't
     if ("CVS" in allExamples):
@@ -230,7 +231,6 @@ def link_xaifBooster(majorMode):
 
 
 def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
-    sepLength = 200
     exDir = "examples/" + exName
     if not (os.path.exists(exDir)):
 	raise ConfigError, "examples/%s does not exist" % exName

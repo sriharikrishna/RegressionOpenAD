@@ -148,34 +148,31 @@ head.xb.x2w.w2f.pp.f: head_sf.xb.x2w.w2f.pp.f
 
 # setup some links
 %.xsd:
-	$(LN) ${XAIFSCHEMAROOT}/schema/$@ .
+	@$(LN) ${XAIFSCHEMAROOT}/schema/$@ .
 
 mfef90: 
-	$(LN) ${OPEN64ROOT}/crayf90/sgi/mfef90 .
+	@$(LN) ${OPEN64ROOT}/crayf90/sgi/mfef90 .
 
 whirl2xaif xaif2whirl whirl2sexp sexp2whirl: 
-	$(LN) ${OPENADFORTTKROOT}/bin/$@ .
+	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
 
 %.pl: 
-	$(LN) ${OPENADFORTTKROOT}/bin/$@ .
+	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
 
 whirl2f whirl2f_be:
-	$(LN) ${OPEN64ROOT}/whirl2f/$@ .
+	@$(LN) ${OPEN64ROOT}/whirl2f/$@ .
 
 ir_b2a: 
-	$(LN) ${OPEN64ROOT}/ir_tools/ir_b2a
-
-#xaifBooster:
-#	./pickAlgorithm.bash $(MAJOR_MODE) $(MINOR_MODE)
+	@$(LN) ${OPEN64ROOT}/ir_tools/ir_b2a
 
 w2f__types.f90 iaddr.c:
-	$(LN) ${OPENADROOT}/runTimeSupport/all/$@ .
+	@$(LN) ${OPENADROOT}/runTimeSupport/all/$@ .
 
 ad_inline.f OAD_cp.f90 OAD_dct.f90 OAD_graph.f90 OAD_rev.f90 OAD_tape.f90:
-	$(LN) ${OPENADROOT}/runTimeSupport/simple/$@ .
+	@$(LN) ${OPENADROOT}/runTimeSupport/simple/$@ .
 
 OAD_active.f90:
-	$(LN) ${OPENADROOT}/runTimeSupport/${SCALAR_OR_VECTOR}/$@ .
+	@$(LN) ${OPENADROOT}/runTimeSupport/${SCALAR_OR_VECTOR}/$@ .
 
 ######################################################
 # compilation
