@@ -6,6 +6,7 @@ import shutil
 import re
 
 sepLength=80
+makeCmd="make"
 
 class NumericalError(Exception):
     """Exception thrown when the numerical comparison discovers error that is beyond the given threshold"""
@@ -171,7 +172,7 @@ def determineModes():
 	if not (os.environ.has_key('BATCHMODE')):
 	    if (raw_input("reuse last settings (%s %s %s)? (y)/n: " % (scalarOrVectorMode,majorMode,ctrMode)) == "n"):
 		sys.stdout.flush()
-		os.system("gmake clean")
+		os.system(makeCmd + " clean")
 	    else:
 		askAll = False
     if (askAll and not (os.environ.has_key('BATCHMODE'))):
@@ -254,8 +255,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     # clean up
     sys.stdout.flush()
     os.environ["TARGET"] = "head"
-    if (os.system("gmake testAllclean")):
-	raise MakeError, "Error while executing \"gmake testAllclean\""
+    if (os.system(makeCmd + " testAllclean")):
+	raise MakeError, "Error while executing \"" + makeCmd + " testAllclean\""
     printSep("*","** running %i of %i (%s) -- %s %s %s " % (exNum,totalNum,exName,scalarOrVector,majorMode,ctrMode),sepLength)
     # get head.f, params.conf, modules, templates, etc.
     if (os.system("ln -s %s/head.f ." % exDir) or not os.path.exists("head.f")):
@@ -272,23 +273,23 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
     os.environ["MAJOR_MODE"] = majorMode
     os.environ["MINOR_MODE"] = ctrMode
-    if (os.system("gmake")):
-	raise MakeError, "gmake"
+    if (os.system(makeCmd)):
+	raise MakeError, makeCmd
     # compile all the transformed bits
     driverMode = majorMode
     if (majorMode == "adm"):
 	driverMode = driverMode + "_" + ctrMode
     overridableLink(exDir + "/driver_" + scalarOrVector + "_" + driverMode + ".f90",os.environ["OPENADROOT"] + "/runTimeSupport/" + scalarOrVector + "/driver_" + driverMode + ".f90","driver.f90")
-    if (os.system("gmake driver")):
-	raise MakeError, "gmake driver"
+    if (os.system(makeCmd + " driver")):
+	raise MakeError, makeCmd + " driver"
     # compare all the transformation results
     fileCompare(exDir,"head_sf.xaif","","file translated from")
     for tfile in ["head_sf.xb.x2w.w2f.f","head_sf.xb.x2w.w2f.pp.f","head.xb.x2w.w2f.pp.f","head_sf.xb.xaif"]:
 	fileCompare(exDir,tfile,majorMode + ctrMode,"file translated from")
     # execute the driver
     sys.stdout.flush()
-    if(os.system("gmake run")):
-	raise MakeError, "gmake run"
+    if(os.system(makeCmd + " run")):
+	raise MakeError, makeCmd + " run"
     # do numerical comparison
     if (majorMode == "adm" or majorMode == "tlm"):
 	numFiles="tmpOutput/dd.out " + exDir + "/refOutput/dd.out tmpOutput/ad.out " + exDir + "/refOutput/ad.out"
