@@ -263,8 +263,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	raise ConfigError, "\"ln -s %s/head.f .\" not successful" % exDir
     if (os.system("ln -s %s/params.conf ." % exDir) or not os.path.exists("params.conf")):
 	raise ConfigError, "\"ln -s %s/params.conf .\" not successful" % exDir
-    overridableLink(exDir + "/all_globals_mod.f",os.environ["OPENADROOT"] + "/runTimeSupport/default/all_globals_mod.f","all_globals_mod.f")
-    overridableLink(exDir + "/all_globals_cp_mod.f90",os.environ["OPENADROOT"] + "/runTimeSupport/default/all_globals_cp_mod.f90","all_globals_cp_mod.f90")
+    overridableLink(exDir + "/all_globals_mod.f","genericFiles/default/all_globals_mod.f","all_globals_mod.f")
+    overridableLink(exDir + "/all_globals_cp_mod.f90","genericFiles/default/all_globals_cp_mod.f90","all_globals_cp_mod.f90")
     if (majorMode == "adm"):
 	overridableLink(exDir + "/ad_template." + ctrMode + ".f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template." + ctrMode + ".f","ad_template.f")
     elif (majorMode == "trace"):
@@ -279,7 +279,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     driverMode = majorMode
     if (majorMode == "adm"):
 	driverMode = driverMode + "_" + ctrMode
-    overridableLink(exDir + "/driver_" + scalarOrVector + "_" + driverMode + ".f90",os.environ["OPENADROOT"] + "/runTimeSupport/" + scalarOrVector + "/driver_" + driverMode + ".f90","driver.f90")
+    overridableLink(exDir + "/driver_" + scalarOrVector + "_" + driverMode + ".f90","genericFiles/" + scalarOrVector + "/driver_" + driverMode + ".f90","driver.f90")
     if (os.system(makeCmd + " driver")):
 	raise MakeError, makeCmd + " driver"
     # compare all the transformation results
