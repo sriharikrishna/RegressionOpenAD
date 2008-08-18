@@ -460,9 +460,9 @@
             </xaif:VariableReference>
           </xaif:Argument>
         </xaif:SubroutineCall>
-        <xaif:Assignment statement_id="index_expression_assignment_for_saving_across_subroutine_call">
+        <xaif:Assignment statement_id="index_expression_assignment_for_taping">
           <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterSaveAcrossSubroutineCall::SaveAcross::saveValue" scope_id="5"/>
+            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="5"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
             <xaif:VariableReference vertex_id="1" active="false" alias="4" du_ud="3" deriv="0" constant="0">
@@ -522,7 +522,7 @@
                 <xaif:IndexTriplet>
                   <xaif:Index>
                     <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                      <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterSaveAcrossSubroutineCall::SaveAcross::saveValue" scope_id="5"/>
+                      <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="5"/>
                     </xaif:VariableReference>
                   </xaif:Index>
                 </xaif:IndexTriplet>
