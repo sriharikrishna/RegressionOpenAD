@@ -7,6 +7,7 @@ def showGraphs(errDict,errLimDict,name,n,m):
     import tempfile
     plotFileName=tempfile.mktemp()
     plotFile=open(plotFileName,"w")
+    plotFile.write('set terminal x11\n')
     plotFile.write('set multiplot layout 2, 3 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
     plotFile.write('set noxlabel\n')
     plotFile.write('set noxtics\n')
