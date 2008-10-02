@@ -26,7 +26,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (-X(2)%v)
-      OpenAD_Symbol_3 = SIGN(X(1)%v,OpenAD_Symbol_0)
+      OpenAD_Symbol_3 = DSIGN(X(1)%v,OpenAD_Symbol_0)
       OpenAD_Symbol_1 = (SIGN(1.0D00,X(1)%v)*SIGN(1.0D00,OpenAD_Symbol_0
      +))
       Y(1)%v = OpenAD_Symbol_3

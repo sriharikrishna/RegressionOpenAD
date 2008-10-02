@@ -175,7 +175,7 @@ C            print*, " plain      ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-      Y(1)%v = SIGN(X(1)%v,-X(2)%v)
+      Y(1)%v = DSIGN(X(1)%v,-X(2)%v)
             our_rev_mode=our_orig_mode
           end if 
           if (our_rev_mode%tape) then
@@ -190,7 +190,7 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (-X(2)%v)
-      OpenAD_Symbol_3 = SIGN(X(1)%v,OpenAD_Symbol_0)
+      OpenAD_Symbol_3 = DSIGN(X(1)%v,OpenAD_Symbol_0)
       OpenAD_Symbol_1 = (SIGN(1.0D00,X(1)%v)*SIGN(1.0D00,OpenAD_Symbol_0
      +))
       Y(1)%v = OpenAD_Symbol_3

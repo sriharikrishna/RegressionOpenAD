@@ -1,7 +1,3 @@
-C ***********************************************************
-C Fortran file translated from WHIRL Tue Nov 28 15:44:06 2006
-C ***********************************************************
-C ***********************************************************
 
       MODULE all_globals_mod
       use w2f__types
@@ -15,10 +11,6 @@ C
       SUBROUTINE head(X, Y)
       use w2f__types
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
 C
 C     **** Parameters and Result ****
 C
@@ -44,7 +36,5 @@ C     open(3,file='data.tmp')
 C     close(3)
       CLOSE(UNIT = 3)
       __value__(Y(1)) = __value__(X(1))
-      CALL setderiv(__deriv__(OpenAD_Symbol_0), __deriv__(X(1)))
-      CALL setderiv(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_0))
-      RETURN
+      CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
       END SUBROUTINE

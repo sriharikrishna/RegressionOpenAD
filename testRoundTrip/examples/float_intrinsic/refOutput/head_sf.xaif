@@ -128,7 +128,7 @@
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
           <xaif:Intrinsic vertex_id="1" name="mul_scal_scal" type="***"/>
-          <xaif:Intrinsic vertex_id="2" name="real_int_scal" type="***"/>
+          <xaif:Intrinsic vertex_id="2" name="real_int_scal" type="***" annotation="{IntrinsicKey#1_REAL}"/>
           <xaif:Constant vertex_id="3" type="integer" feType="I4" value="6"/>
           <xaif:ExpressionEdge edge_id="1" source="3" target="2" position="1"/>
           <xaif:VariableReference vertex_id="4" du_ud="2" alias="3">
