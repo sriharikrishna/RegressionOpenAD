@@ -7,6 +7,8 @@ import re
 
 sepLength=80
 makeCmd="make"
+globalBatchMode=False
+globalIgnoreFailingCases=False
 
 class NumericalError(Exception):
     """Exception thrown when the numerical comparison discovers error that is beyond the given threshold"""
@@ -37,7 +39,7 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
     referenceFile = fcmode + fcfileName
     if not (os.path.exists("%s/refOutput/%s" % (fcexampleDir,referenceFile))):
 	sys.stdout.write("%s/refOutput/%s not available" % (fcexampleDir,referenceFile))
-	if not (os.environ.has_key('BATCHMODE')):
+	if not (globalBatchMode):
 	    if (raw_input(", copy and hg add it? (y)/n: ") == "n"):
 		sys.stdout.write("cannot verify %s\n" % fcfileName)
 		return 0
@@ -52,7 +54,7 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
 	raise RuntimeError, "command \"diff -I \"%s\" %s %s/refOutput/%s\" not successful" % (ignoreString,fcfileName,fcexampleDir,referenceFile)
     elif (hasDiff == 256):
 	sys.stdout.write("Transformation -- diff %s %s/refOutput/%s\n" % (fcfileName,fcexampleDir,referenceFile))
-	if not (os.environ.has_key('BATCHMODE')):
+	if not (globalBatchMode):
 	    if (raw_input("accept/copy new %s to %s/refOutput/%s? (y)/n: " % (fcfileName,fcexampleDir,referenceFile)) == "n"):
 		sys.stdout.write("skipping change\n")
 	    else:
@@ -80,7 +82,7 @@ def populateExamplesList(args):
     examples = []
     exampleRegexs = []
     if (len(args) == 0): # no arguments
-	if (os.environ.has_key('BATCHMODE')):
+	if (globalBatchMode):
 	    examples = allExamples
 	else:
 	    done = False
@@ -169,13 +171,13 @@ def determineModes():
 	ctrMode=ctrMode.strip()
 	lastRunFile.close()
 	# decide whether to use these settings from the last run
-	if not (os.environ.has_key('BATCHMODE')):
+	if not (globalBatchMode):
 	    if (raw_input("reuse last settings (%s %s %s)? (y)/n: " % (scalarOrVectorMode,majorMode,ctrMode)) == "n"):
 		sys.stdout.flush()
 		os.system(makeCmd + " clean")
 	    else:
 		askAll = False
-    if (askAll and not (os.environ.has_key('BATCHMODE'))):
+    if (askAll and not (globalBatchMode)):
 	scalarOrVectorMode = "scalar"
 	majorMode = "tlm"
 	ctrMode = "none"
@@ -219,7 +221,7 @@ def link_xaifBooster(majorMode):
 		    if ((majorMode=="tlm" and alg=="BasicBlockPreaccumulation") or (majorMode=="adm" and alg=="BasicBlockPreaccumulationReverse") or (majorMode=="trace" and alg=="TraceDiff")):
 			defaultAlgNum = i
 		    i = i + 1
-            if not (os.environ.has_key('BATCHMODE')):
+            if not (globalBatchMode):
                 try:
                     algChoice = int(raw_input("pick a number (%s): " % defaultAlgNum))
                     if (algChoice < 0 or algChoice >= i):
@@ -244,7 +246,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	raise ConfigError, "examples/%s does not exist" % exName
     failReasonFile = exDir + "/FAILREASON_" + majorMode + "_" + ctrMode
     if (os.path.exists(failReasonFile)):
-	if (os.environ.has_key('BATCHMODE')):
+	if (globalBatchMode or globalIgnoreFailingCases):
+            printSep("*","** skipping %i of %i (%s) -- fails for %s %s %s " % (exNum,totalNum,exName,scalarOrVector,majorMode,ctrMode),sepLength)
 	    return 0
 	else:
 	    printSep("*","** example %i of %i (%s) -- %s %s %s " % (exNum,totalNum,exName,scalarOrVector,majorMode,ctrMode),sepLength)
@@ -293,7 +296,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     # do numerical comparison
     if (majorMode == "adm" or majorMode == "tlm"):
 	numFiles="tmpOutput/dd.out " + exDir + "/refOutput/dd.out tmpOutput/ad.out " + exDir + "/refOutput/ad.out"
-    if not (os.environ.has_key('BATCHMODE')):
+    if not (globalBatchMode):
 	testFlags = '-g -v'
     else:
 	testFlags = '-b'
@@ -304,13 +307,30 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 
 
 def main():
+    from optparse import OptionParser
+    usage = '%prog [options] '
+    opt = OptionParser(usage=usage)
+    opt.add_option('-i','--ignoreFailingCases',dest='ignoreFailingCases',
+                   help="don't if we should try to run  the cases known to fail",
+                   action='store_true',default=False)
+    opt.add_option('-b','--batchMode',dest='batchMode',
+                   help="run in batchMode suppressing output",
+                   action='store_true',default=False)
+    (options, args) = opt.parse_args()
     try:
+        if os.environ.has_key('BATCH_MODE') or options.batchMode :
+            global globalBatchMode
+            globalBatchMode=True
+        if options.ignoreFailingCases :
+            global globalIgnoreFailingCases
+            globalIgnoreFailingCases=True
 	if not (os.environ.has_key('OPENADROOT')):
 	    raise ConfigError, "environment variable OPENADROOT not defined"
 	if not (os.environ.has_key('XAIFBOOSTER_BASE')):
-	    raise ConfigError, "environment variable XAIFBOOSTER_BASE not defined"
-
-	(examples,rangeStart,rangeEnd) = populateExamplesList(sys.argv[1:])
+            sys.stderr.write("environment variable XAIFBOOSTER_BASE not defined, setting it relative to OPENADROOT\n")
+	    os.environ['XAIFBOOSTER_BASE']=os.path.join(os.environ['OPENADROOT'],'..')
+        print globalIgnoreFailingCases
+	(examples,rangeStart,rangeEnd) = populateExamplesList(args[0:])
 	(scalarOrVectorMode,majorMode,ctrMode) = determineModes()
 	link_xaifBooster(majorMode)
 
@@ -321,26 +341,26 @@ def main():
 		runTest(scalarOrVectorMode,majorMode,ctrMode,examples[j],j+1,len(examples))
 	    except ConfigError, errtxt:
 		print "ERROR (environment configuration) in test %i of %i (%s): %s" % (j+1,len(examples),examples[j],errtxt)
-		if not (os.environ.has_key('BATCHMODE')):
+		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
 			return -1
 		else:
 		    return -1
 	    except MakeError, errtxt:
 		print "ERROR in test %i of %i (%s) while executing \"%s\"." % (j+1,len(examples),examples[j],errtxt)
-		if not (os.environ.has_key('BATCHMODE')):
+		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
 			return -1
 		else:
 		    return -1
 	    except NumericalError:
 		print "NUMERICAL ERROR in test %i of %i (%s)." % (j+1,len(examples),examples[j])
-		if not (os.environ.has_key('BATCHMODE')):
+		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
 			return -1
 	    except RuntimeError, errtxt:
 		print "ERROR in test %i of %i (%s): %s." % (j+1,len(examples),examples[j],errtxt)
-		if not (os.environ.has_key('BATCHMODE')):
+		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
 			return -1
 		else:
