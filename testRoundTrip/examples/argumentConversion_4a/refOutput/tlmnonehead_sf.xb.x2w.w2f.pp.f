@@ -51,8 +51,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) APX(1 : 1, 1 : 2)
-      type(active) :: AX(1 : 1, 1 : 2)
+      REAL(w2f__8) APX(1 : 2, 1 : 3)
+      type(active) :: AX(1 : 2, 1 : 3)
       EXTERNAL foo
       INTEGER(w2f__i4) I
       REAL(w2f__8) PY
@@ -66,17 +66,17 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
-        AX(1,INT(I))%v = X(I)%v
-        CALL setderiv(AX(1,I),X(I))
+        AX(INT(I),2)%v = X(I)%v
+        CALL setderiv(AX(I,2),X(I))
       END DO
-      CALL foo(AX(1,1),Y)
+      CALL foo(AX(1,2),Y)
 C     $OpenAD$ INLINE convert_p2a_vector(subst,subst)
-      CALL convert_p2a_vector(OpenAD_Symbol_0,APX(1:2,1))
+      CALL convert_p2a_vector(OpenAD_Symbol_0,APX(1:2,2))
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
 C     $OpenAD$ INLINE convert_a2p_vector(subst,subst)
-      CALL convert_a2p_vector(APX(1:2,1),OpenAD_Symbol_0)
+      CALL convert_a2p_vector(APX(1:2,2),OpenAD_Symbol_0)
 C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
       END SUBROUTINE

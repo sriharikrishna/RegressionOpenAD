@@ -8,14 +8,14 @@ c$openad XXX Template ad_template.f
 c$openad XXX Template ad_template.f
 	subroutine head(x,y) 
 	  double precision, dimension(2) :: x
-	  double precision, dimension(1,2) :: ax,apx
+	  double precision, dimension(2,3) :: ax,apx
 	  double precision y,py
 c$openad INDEPENDENT(x)
 	  do i=1,2
-	    ax(1,i)=x(i)
+	    ax(i,2)=x(i)
           end do
-	  call foo(ax(1,1),y)
-	  call foo(apx(1,1),py)
+	  call foo(ax(1,2),y)
+	  call foo(apx(1,2),py)
 c$openad DEPENDENT(y)
 	end subroutine
 

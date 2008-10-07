@@ -48,8 +48,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) APX(1 : 1, 1 : 2)
-      TYPE (OpenADTy_active) AX(1 : 1, 1 : 2)
+      REAL(w2f__8) APX(1 : 2, 1 : 3)
+      TYPE (OpenADTy_active) AX(1 : 2, 1 : 3)
       EXTERNAL foo
       INTEGER(w2f__i4) I
       REAL(w2f__8) PY
@@ -63,18 +63,18 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
-        __value__(AX(1, INT(I))) = __value__(X(I))
-        CALL setderiv(__deriv__(AX(1, I)), __deriv__(X(I)))
+        __value__(AX(INT(I), 2)) = __value__(X(I))
+        CALL setderiv(__deriv__(AX(I, 2)), __deriv__(X(I)))
       END DO
-      CALL foo(__deriv__(AX(1, 1)), __deriv__(Y))
+      CALL foo(__deriv__(AX(1, 2)), __deriv__(Y))
 C     $OpenAD$ INLINE convert_p2a_vector(subst,subst)
-      CALL convert_p2a_vector(__deriv__(OpenAD_Symbol_0), APX(1 : 2, 1)
+      CALL convert_p2a_vector(__deriv__(OpenAD_Symbol_0), APX(1 : 2, 2)
      > )
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_1), PY)
       CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(OpenAD_Symbol_1))
 C     $OpenAD$ INLINE convert_a2p_vector(subst,subst)
-      CALL convert_a2p_vector(APX(1 : 2, 1), __deriv__(OpenAD_Symbol_0)
+      CALL convert_a2p_vector(APX(1 : 2, 2), __deriv__(OpenAD_Symbol_0)
      > )
 C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(PY, __deriv__(OpenAD_Symbol_1))
