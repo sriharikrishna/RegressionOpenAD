@@ -271,7 +271,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     if (majorMode == "adm"):
 	overridableLink(exDir + "/ad_template." + ctrMode + ".f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template." + ctrMode + ".f","ad_template.f")
     elif (majorMode == "trace"):
-	overridableLink(exDir + "/ad_template_trace.f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template_trace.f","ad_template.f")
+	overridableLink(exDir + "/ad_template.trace.f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template.trace.f","ad_template.f")
     # transform head_sf
     os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
     os.environ["MAJOR_MODE"] = majorMode
@@ -296,13 +296,13 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     # do numerical comparison
     if (majorMode == "adm" or majorMode == "tlm"):
 	numFiles="tmpOutput/dd.out " + exDir + "/refOutput/dd.out tmpOutput/ad.out " + exDir + "/refOutput/ad.out"
-    if not (globalBatchMode):
-	testFlags = '-g -v'
-    else:
-	testFlags = '-b'
-    sys.stdout.write("./numericalComparison.py %s -n %s %s\n" % (testFlags,exName,numFiles))
-    if (os.system("./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles))):
-	raise NumericalError
+        if not (globalBatchMode):
+	   testFlags = '-g -v'
+        else:
+	   testFlags = '-b'
+        sys.stdout.write("./numericalComparison.py %s -n %s %s\n" % (testFlags,exName,numFiles))
+        if (os.system("./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles))):
+	   raise NumericalError
     printSep("*","",sepLength)
 
 
