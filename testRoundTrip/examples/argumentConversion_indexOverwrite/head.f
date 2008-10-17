@@ -20,11 +20,12 @@ c$openad XXX Template ad_template.f
 	  double precision, dimension(2) :: v
 c$openad INDEPENDENT(x)
 	  i = 1
+	  y(1)=1.0D0
 	  v(1) = 0.00908583
 	  v(2) = -0.0002984642
-	  call foo(y(1),x(1))
+	  call foo(x(1),y(1))
 	  call foo(x(i),v(i))
-	  y(1) = y(1)*x(2)
+	  y(1) = y(1)*v(2)
 c$openad DEPENDENT(y)
 	end subroutine head
 

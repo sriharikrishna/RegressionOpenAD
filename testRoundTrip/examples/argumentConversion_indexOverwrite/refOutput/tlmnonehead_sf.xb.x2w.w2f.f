@@ -28,11 +28,10 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      TYPE (OpenADTy_active) OpenAD_Symbol_8
-      TYPE (OpenADTy_active) OpenAD_Symbol_9
+      TYPE (OpenADTy_active) OpenAD_Symbol_6
 C
 C     **** Parameters and Result ****
 C
@@ -42,15 +41,13 @@ C
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_4 = (__value__(P) * __value__(Q))
-      OpenAD_Symbol_2 = __value__(Q)
-      OpenAD_Symbol_3 = __value__(P)
-      __value__(Q) = OpenAD_Symbol_4
-      CALL setderiv(__deriv__(OpenAD_Symbol_8), __deriv__(P))
-      CALL setderiv(__deriv__(OpenAD_Symbol_9), __deriv__(Q))
-      CALL sax(OpenAD_Symbol_2, __deriv__(OpenAD_Symbol_8), __deriv__(Q
-     > ))
-      CALL saxpy(OpenAD_Symbol_3, __deriv__(OpenAD_Symbol_9), __deriv__
+      OpenAD_Symbol_2 = (__value__(P) * __value__(Q))
+      OpenAD_Symbol_0 = __value__(Q)
+      OpenAD_Symbol_1 = __value__(P)
+      __value__(Q) = OpenAD_Symbol_2
+      CALL setderiv(__deriv__(OpenAD_Symbol_6), __deriv__(Q))
+      CALL sax(OpenAD_Symbol_0, __deriv__(P), __deriv__(Q))
+      CALL saxpy(OpenAD_Symbol_1, __deriv__(OpenAD_Symbol_6), __deriv__
      > (Q))
       I = I + 1
       END SUBROUTINE
@@ -62,12 +59,11 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_Symbol_10
-      TYPE (OpenADTy_active) OpenAD_Symbol_11
+      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
+      TYPE (OpenADTy_active) OpenAD_Symbol_7
+      TYPE (OpenADTy_active) OpenAD_Symbol_8
 C
 C     **** Parameters and Result ****
 C
@@ -79,8 +75,7 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
-      REAL(w2f__8) V(1 : 2)
-      INTEGER(w2f__i8) OpenAD_Symbol_1
+      TYPE (OpenADTy_active) V(1 : 2)
 C
 C     **** Top Level Pragmas ****
 C
@@ -91,24 +86,22 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       I = 1
-      V(1) = 9.085830301E-03
-      V(2) = (-2.9846420512E-04)
-      CALL foo(__deriv__(Y(1)), __deriv__(X(1)))
-      OpenAD_Symbol_1 = I
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), V(I))
-      CALL foo(__deriv__(X(I)), __deriv__(OpenAD_Symbol_0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(V(INT(OpenAD_Symbol_1)), __deriv__(
-     > OpenAD_Symbol_0))
-      OpenAD_Symbol_7 = (__value__(X(2)) * __value__(Y(1)))
-      OpenAD_Symbol_5 = __value__(Y(1))
-      OpenAD_Symbol_6 = __value__(X(2))
-      __value__(Y(1)) = OpenAD_Symbol_7
-      CALL setderiv(__deriv__(OpenAD_Symbol_10), __deriv__(X(2)))
-      CALL setderiv(__deriv__(OpenAD_Symbol_11), __deriv__(Y(1)))
-      CALL sax(OpenAD_Symbol_5, __deriv__(OpenAD_Symbol_10), __deriv__(
-     > Y(1)))
-      CALL saxpy(OpenAD_Symbol_6, __deriv__(OpenAD_Symbol_11),
-     >  __deriv__(Y(1)))
+      __value__(Y(1)) = 1.0D00
+      __value__(V(1)) = 9.085830301E-03
+      __value__(V(2)) = (-2.9846420512E-04)
+      CALL zero_deriv(__deriv__(Y(1)))
+      CALL zero_deriv(__deriv__(V(1)))
+      CALL zero_deriv(__deriv__(V(2)))
+      CALL foo(__deriv__(X(1)), __deriv__(Y(1)))
+      CALL foo(__deriv__(X(I)), __deriv__(V(I)))
+      OpenAD_Symbol_5 = (__value__(Y(1)) * __value__(V(2)))
+      OpenAD_Symbol_3 = __value__(V(2))
+      OpenAD_Symbol_4 = __value__(Y(1))
+      __value__(Y(1)) = OpenAD_Symbol_5
+      CALL setderiv(__deriv__(OpenAD_Symbol_7), __deriv__(Y(1)))
+      CALL setderiv(__deriv__(OpenAD_Symbol_8), __deriv__(V(2)))
+      CALL sax(OpenAD_Symbol_3, __deriv__(OpenAD_Symbol_7), __deriv__(Y
+     > (1)))
+      CALL saxpy(OpenAD_Symbol_4, __deriv__(OpenAD_Symbol_8), __deriv__
+     > (Y(1)))
       END SUBROUTINE
