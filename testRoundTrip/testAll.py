@@ -9,6 +9,7 @@ sepLength=80
 makeCmd="make"
 globalBatchMode=False
 globalIgnoreFailingCases=False
+globalOfferAcceptAsDefault=False
 
 class NumericalError(Exception):
     """Exception thrown when the numerical comparison discovers error that is beyond the given threshold"""
@@ -40,22 +41,43 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
     if not (os.path.exists("%s/refOutput/%s" % (fcexampleDir,referenceFile))):
 	sys.stdout.write("%s/refOutput/%s not available" % (fcexampleDir,referenceFile))
 	if not (globalBatchMode):
-	    if (raw_input(", copy and hg add it? (y)/n: ") == "n"):
+            answer=""
+            if (globalOfferAcceptAsDefault) :
+                answer=raw_input(", copy and hg add it? (y)/n: ")
+                if (answer != "n"):
+                    answer="y"
+            else:
+                answer=raw_input(", copy and hg add it? y/(n): ")
+                if (answer != "y"):
+                    answer="n"
+            if (answer == "n"):
 		sys.stdout.write("cannot verify %s\n" % fcfileName)
-		return 0
+                sys.stdout.flush()
+                return 0
 	    else:
 		shutil.copy(fcfileName,"%s/refOutput/%s" % (fcexampleDir,referenceFile))
 		if (os.system("hg add %s/refOutput/%s" % (fcexampleDir,referenceFile))):
 		    raise RuntimeError, "\"hg add %s/refOutput/%s\" not successful" % (fcexampleDir,referenceFile)
 	else: # BATCHMODE
 	    sys.stdout.write("\n")
+            sys.stdout.flush()
+            return 0
     hasDiff = os.system("diff -I '%s' %s %s/refOutput/%s" % (ignoreString,fcfileName,fcexampleDir,referenceFile))
     if (hasDiff == 512):
 	raise RuntimeError, "command \"diff -I \"%s\" %s %s/refOutput/%s\" not successful" % (ignoreString,fcfileName,fcexampleDir,referenceFile)
     elif (hasDiff == 256):
 	sys.stdout.write("Transformation -- diff %s %s/refOutput/%s\n" % (fcfileName,fcexampleDir,referenceFile))
 	if not (globalBatchMode):
-	    if (raw_input("accept/copy new %s to %s/refOutput/%s? (y)/n: " % (fcfileName,fcexampleDir,referenceFile)) == "n"):
+            answer=""
+            if (globalOfferAcceptAsDefault) :
+                answer=raw_input("accept/copy new %s to %s/refOutput/%s? (y)/n: " % (fcfileName,fcexampleDir,referenceFile))
+                if (answer != "n"):
+                    answer="y"
+            else:
+                answer=raw_input("accept/copy new %s to %s/refOutput/%s? y/(n): " % (fcfileName,fcexampleDir,referenceFile))
+                if (answer != "y"):
+                    answer="n"
+            if (answer == "n"):
 		sys.stdout.write("skipping change\n")
 	    else:
 		shutil.copy(fcfileName,fcexampleDir + "/refOutput/" + referenceFile)
@@ -313,6 +335,9 @@ def main():
     opt.add_option('-i','--ignoreFailingCases',dest='ignoreFailingCases',
                    help="don't if we should try to run  the cases known to fail",
                    action='store_true',default=False)
+    opt.add_option('-a','--offerAcceptAsDefault',dest='offerAcceptAsDefault',
+                   help="offer accept as default for updating reference files",
+                   action='store_true',default=False)
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
                    action='store_true',default=False)
@@ -324,6 +349,9 @@ def main():
         if options.ignoreFailingCases :
             global globalIgnoreFailingCases
             globalIgnoreFailingCases=True
+        if options.offerAcceptAsDefault :
+            global globalOfferAcceptAsDefault
+            globalOfferAcceptAsDefault=True
 	if not (os.environ.has_key('OPENADROOT')):
 	    raise ConfigError, "environment variable OPENADROOT not defined"
 	if not (os.environ.has_key('XAIFBOOSTER_BASE')):
