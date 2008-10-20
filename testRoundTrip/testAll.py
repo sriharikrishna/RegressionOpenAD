@@ -331,6 +331,13 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 def main():
     from optparse import OptionParser
     usage = '%prog [options] '
+    compilers=['ifort','gfortran','g95','f95','openf95']
+    compilerOpts='[ '
+    for i in compilers :
+        compilerOpts+=i
+        if  i != compilers[-1]:
+            compilerOpts+=" | "
+    compilerOpts+=" ]"        
     opt = OptionParser(usage=usage)
     opt.add_option('-i','--ignoreFailingCases',dest='ignoreFailingCases',
                    help="don't if we should try to run  the cases known to fail",
@@ -341,6 +348,10 @@ def main():
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
                    action='store_true',default=False)
+    opt.add_option('-c','--compiler',dest='compiler',
+                   type='choice', choices=compilers,
+                   help="pick a compiler (defaults to ifort) from the following list: " +compilerOpts+" - the compiler should be in PATH",
+                   default='ifort')
     (options, args) = opt.parse_args()
     try:
         if os.environ.has_key('BATCH_MODE') or options.batchMode :
@@ -352,12 +363,13 @@ def main():
         if options.offerAcceptAsDefault :
             global globalOfferAcceptAsDefault
             globalOfferAcceptAsDefault=True
+        if options.compiler :
+            os.environ['F90C']=options.compiler
 	if not (os.environ.has_key('OPENADROOT')):
 	    raise ConfigError, "environment variable OPENADROOT not defined"
 	if not (os.environ.has_key('XAIFBOOSTER_BASE')):
             sys.stderr.write("environment variable XAIFBOOSTER_BASE not defined, setting it relative to OPENADROOT\n")
 	    os.environ['XAIFBOOSTER_BASE']=os.path.join(os.environ['OPENADROOT'],'..')
-        print globalIgnoreFailingCases
 	(examples,rangeStart,rangeEnd) = populateExamplesList(args[0:])
 	(scalarOrVectorMode,majorMode,ctrMode) = determineModes()
 	link_xaifBooster(majorMode)
