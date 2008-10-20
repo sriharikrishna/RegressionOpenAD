@@ -14,5 +14,7 @@ c$openad xxx simple loop
 	 do i=1,2
 	    call foo(x(j),y(j)) 
 	 end do
+	 j=2
+	 call foo(x(j),y(j))
 c$openad DEPENDENT(y)
 	end subroutine

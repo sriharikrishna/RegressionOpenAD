@@ -248,11 +248,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -455,6 +455,8 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(X(J),Y(J))
       END DO
+      J = 2
+      CALL foo(X(J),Y(J))
             our_rev_mode=our_orig_mode
           end if 
           if (our_rev_mode%tape) then
@@ -478,6 +480,10 @@ C$OPENAD XXX Simple loop
         OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2) + INT(1_w2f__i8))
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
+          integer_tape_pointer = integer_tape_pointer+1
+      J = 2
+      CALL foo(X(J),Y(J))
+          integer_tape(integer_tape_pointer) = J
           integer_tape_pointer = integer_tape_pointer+1
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -525,6 +531,9 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
           integer_tape_pointer = integer_tape_pointer-1
+          J = integer_tape(integer_tape_pointer)
+      CALL foo(X(J),Y(J))
+          integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_1 = 1
       DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
@@ -566,11 +575,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)

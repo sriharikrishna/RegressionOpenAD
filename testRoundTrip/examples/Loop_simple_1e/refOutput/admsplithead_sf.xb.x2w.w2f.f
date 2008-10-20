@@ -104,6 +104,8 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(__deriv__(X(J)), __deriv__(Y(J)))
       END DO
+      J = 2
+      CALL foo(__deriv__(X(J)), __deriv__(Y(J)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
@@ -118,8 +120,15 @@ C       $OpenAD$ INLINE push_i(subst)
       END DO
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_2)
+      J = 2
+      CALL foo(__deriv__(X(J)), __deriv__(Y(J)))
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(J)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
+C     $OpenAD$ INLINE pop_i(subst)
+      CALL pop_i(J)
+      CALL foo(__deriv__(X(J)), __deriv__(Y(J)))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = 1
@@ -155,8 +164,15 @@ C       $OpenAD$ INLINE push_i(subst)
       END DO
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_5)
+      J = 2
+      CALL foo(__deriv__(X(J)), __deriv__(Y(J)))
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(J)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
+C     $OpenAD$ INLINE pop_i(subst)
+      CALL pop_i(J)
+      CALL foo(__deriv__(X(J)), __deriv__(Y(J)))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_3)
       OpenAD_Symbol_4 = 1

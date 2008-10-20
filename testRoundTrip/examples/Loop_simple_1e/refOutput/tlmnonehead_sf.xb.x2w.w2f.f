@@ -53,4 +53,6 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(__deriv__(X(J)), __deriv__(Y(J)))
       END DO
+      J = 2
+      CALL foo(__deriv__(X(J)), __deriv__(Y(J)))
       END SUBROUTINE

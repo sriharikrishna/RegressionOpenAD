@@ -98,11 +98,17 @@
       <xaif:StatementId idRef="12"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="5">
-      <xaif:StatementId idRef="26"/>
+      <xaif:StatementId idRef="37"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="6">
+      <xaif:StatementId idRef="26"/>
+    </xaif:StmtIdSet>
+    <xaif:StmtIdSet key="7">
       <xaif:StatementId idRef="14"/>
       <xaif:StatementId idRef="21"/>
+    </xaif:StmtIdSet>
+    <xaif:StmtIdSet key="8">
+      <xaif:StatementId idRef="39"/>
     </xaif:StmtIdSet>
   </xaif:DUUDSetMap>
 
@@ -113,10 +119,14 @@
       <xaif:StatementId idRef=""/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="3">
-      <xaif:StatementId idRef="21"/>
+      <xaif:StatementId idRef="37"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="4">
+      <xaif:StatementId idRef="21"/>
+    </xaif:StmtIdSet>
+    <xaif:StmtIdSet key="5">
       <xaif:StatementId idRef="26"/>
+      <xaif:StatementId idRef="39"/>
     </xaif:StmtIdSet>
   </xaif:DOSetMap>
 
@@ -203,7 +213,7 @@
 
     <xaif:ForLoop vertex_id="9" reversal="anonymous" lineNumber="70">
       <xaif:Initialization statement_id="16">
-        <xaif:AssignmentLHS du_ud="6" alias="5">
+        <xaif:AssignmentLHS du_ud="7" alias="5">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_4"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
@@ -220,7 +230,7 @@
         <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
       </xaif:Condition>
       <xaif:Update statement_id="21">
-        <xaif:AssignmentLHS du_ud="6" alias="5">
+        <xaif:AssignmentLHS du_ud="7" alias="5">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_4"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
@@ -270,9 +280,43 @@
       </xaif:SubroutineCall>
     </xaif:BasicBlock>
 
-    <xaif:EndLoop vertex_id="40"/>
+    <xaif:EndLoop vertex_id="47"/>
 
-    <xaif:BasicBlock vertex_id="12" scope_id="4"/>
+    <xaif:BasicBlock vertex_id="12" scope_id="4">
+      <xaif:Marker statement_id="37" annotation="{WHIRL_Id#37} [passive: OPR_STID]"/>
+      <xaif:SubroutineCall statement_id="39" scope_id="1" lineNumber="74" symbol_id="foo__21">
+        <xaif:Argument position="1">
+          <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
+            <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="X_1"/>
+            <xaif:ArrayElementReference vertex_id="2">
+              <xaif:IndexTriplet>
+                <xaif:Index>
+                  <xaif:VariableReference vertex_id="1" du_ud="5" alias="4">
+                    <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="J_5"/>
+                  </xaif:VariableReference>
+                </xaif:Index>
+              </xaif:IndexTriplet>
+            </xaif:ArrayElementReference>
+            <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+          </xaif:VariableReference>
+        </xaif:Argument>
+        <xaif:Argument position="2">
+          <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
+            <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="Y_2"/>
+            <xaif:ArrayElementReference vertex_id="2">
+              <xaif:IndexTriplet>
+                <xaif:Index>
+                  <xaif:VariableReference vertex_id="1" du_ud="5" alias="4">
+                    <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="J_5"/>
+                  </xaif:VariableReference>
+                </xaif:Index>
+              </xaif:IndexTriplet>
+            </xaif:ArrayElementReference>
+            <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+          </xaif:VariableReference>
+        </xaif:Argument>
+      </xaif:SubroutineCall>
+    </xaif:BasicBlock>
 
     <xaif:Exit vertex_id="13"/>
 
@@ -280,10 +324,11 @@
     <xaif:ControlFlowEdge edge_id="2" source="8" target="9"/>
     <xaif:ControlFlowEdge edge_id="3" source="9" target="10" has_condition_value="true" condition_value="1"/>
     <xaif:ControlFlowEdge edge_id="4" source="9" target="12"/>
-    <xaif:ControlFlowEdge edge_id="5" source="10" target="40"/>
+    <xaif:ControlFlowEdge edge_id="5" source="10" target="47"/>
     <xaif:ControlFlowEdge edge_id="6" source="12" target="13"/>
-    <xaif:ControlFlowEdge edge_id="7" source="40" target="9"/>
+    <xaif:ControlFlowEdge edge_id="7" source="47" target="9"/>
   </xaif:ControlFlowGraph>
 
   <xaif:CallGraphEdge edge_id="1" source="16" target="15"/>
+  <xaif:CallGraphEdge edge_id="2" source="16" target="15"/>
 </xaif:CallGraph>

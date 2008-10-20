@@ -47,4 +47,6 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(X(J),Y(J))
       END DO
+      J = 2
+      CALL foo(X(J),Y(J))
       END SUBROUTINE
