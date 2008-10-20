@@ -75,7 +75,7 @@ program driver
   close(2)
 
   do i=1,n
-     x0(i)=sqrt(1.*(i+1))
+     x0(i)=sqrt(1.0D0*(i+1))
   end do
 
   open(2,file='tmpOutput/dd.out')
