@@ -565,11 +565,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -913,11 +913,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -1542,11 +1542,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -2243,11 +2243,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -2870,11 +2870,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -3255,11 +3255,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -3613,11 +3613,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -4054,11 +4054,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -4462,11 +4462,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -4835,11 +4835,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -5588,11 +5588,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
