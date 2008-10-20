@@ -38,6 +38,10 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
+      __value__(Y(1)) = __value__(X(3))
+      CALL setderiv(__deriv__(Y(1)), __deriv__(X(3)))
+      __value__(Y(2)) = __value__(X(4))
+      CALL setderiv(__deriv__(Y(2)), __deriv__(X(4)))
       CALL foo(__deriv__(X(1)), __deriv__(X(2)), __deriv__(C),
      >  __deriv__(D))
       __value__(Y(3)) = (__value__(C) * __value__(D))

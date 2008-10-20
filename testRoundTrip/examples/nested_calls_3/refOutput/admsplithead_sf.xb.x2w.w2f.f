@@ -41,6 +41,8 @@ C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
+      __value__(Y(1)) = __value__(X(3))
+      __value__(Y(2)) = __value__(X(4))
       CALL foo(__deriv__(X(1)), __deriv__(X(2)), __deriv__(C),
      >  __deriv__(D))
       __value__(Y(3)) = (__value__(C) * __value__(D))
@@ -48,6 +50,8 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
+      __value__(Y(1)) = __value__(X(3))
+      __value__(Y(2)) = __value__(X(4))
       CALL foo(__deriv__(X(1)), __deriv__(X(2)), __deriv__(C),
      >  __deriv__(D))
       __value__(Y(3)) = (__value__(C) * __value__(D))
@@ -80,6 +84,14 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(3)))
       CALL foo(__deriv__(X(1)), __deriv__(X(2)), __deriv__(C),
      >  __deriv__(D))
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(Y(2)), __deriv__(X(4)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(2)))
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(3)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ END REPLACEMENT
@@ -95,6 +107,8 @@ C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
+      __value__(Y(1)) = __value__(X(3))
+      __value__(Y(2)) = __value__(X(4))
       CALL foo(__deriv__(X(1)), __deriv__(X(2)), __deriv__(C),
      >  __deriv__(D))
       __value__(Y(3)) = (__value__(C) * __value__(D))
@@ -127,6 +141,14 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(3)))
       CALL foo(__deriv__(X(1)), __deriv__(X(2)), __deriv__(C),
      >  __deriv__(D))
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(Y(2)), __deriv__(X(4)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(2)))
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(3)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 

@@ -31,6 +31,10 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
+      Y(1)%v = X(3)%v
+      CALL setderiv(Y(1),X(3))
+      Y(2)%v = X(4)%v
+      CALL setderiv(Y(2),X(4))
       CALL foo(X(1),X(2),C,D)
       Y(3)%v = (C%v*D%v)
       OpenAD_Symbol_0 = D%v

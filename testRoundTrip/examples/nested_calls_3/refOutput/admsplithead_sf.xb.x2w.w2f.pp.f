@@ -106,6 +106,8 @@ C
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
+      Y(1)%v = X(3)%v
+      Y(2)%v = X(4)%v
       CALL foo(X(1),X(2),C,D)
       Y(3)%v = (C%v*D%v)
       Y(4)%v = (C%v+D%v)
@@ -113,6 +115,8 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
+      Y(1)%v = X(3)%v
+      Y(2)%v = X(4)%v
       CALL foo(X(1),X(2),C,D)
       Y(3)%v = (C%v*D%v)
       OpenAD_Symbol_0 = D%v
@@ -138,6 +142,10 @@ C$OPENAD XXX Template ad_template.f
           C%d = C%d+Y(3)%d*OpenAD_Symbol_15
           Y(3)%d = 0.0d0
       CALL foo(X(1),X(2),C,D)
+          X(4)%d = X(4)%d+Y(2)%d
+          Y(2)%d = 0.0d0
+          X(3)%d = X(3)%d+Y(1)%d
+          Y(1)%d = 0.0d0
           end if 
         end subroutine head
 C ========== begin copyright notice ==============
