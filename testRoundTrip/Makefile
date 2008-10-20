@@ -50,6 +50,21 @@ endif
 ######################################################
 
 MODULES= w2f__types.o OAD_active.o
+COMPLAIN=
+ifndef MAJOR_MODE
+COMPLAIN=$(error "Error:  environment variable MAJOR_MODE not defined (set in testAll.py, run with -v)!")
+endif
+ifndef MINOR_MODE
+COMPLAIN=$(error "Error:  environment variable MINOR_MODE not defined (set in testAll.py, run with -v)!")
+endif
+ifndef SCALAR_OR_VECTOR
+COMPLAIN=$(error "Error:  environment variable SCALAR_OR_VECTOR not defined (set in testAll.py, run with -v)!")
+endif
+
+ifdef VERBOSE
+xaifBoosterVerbFlag=-g 1
+whirl2xaifVerbFlag=--debug 1
+endif
 
 ifeq ($(MAJOR_MODE),adm)
 MODULES+=		\
@@ -78,8 +93,6 @@ endif
 
 MODULES+= all_globals_mod.xb.x2w.w2f.pp.o 
 
-all: head.xb.x2w.w2f.pp.f
-
 ifndef OPENADROOT
   $(error "Error:  environment variable OPENADROOT not defined!")
 endif
@@ -105,6 +118,12 @@ LN=ln -sf
 RM=rm -rf
 
 ######################################################
+# default target
+######################################################
+
+all: driver
+
+######################################################
 # transformation
 ######################################################
 
@@ -119,11 +138,13 @@ head_sf.B: head_sf.f mfef90
 
 # WHIRL -> XAIF
 head_sf.xaif : head_sf.B whirl2xaif
-	./whirl2xaif --debug 1 -N -n -o $@ $<
+	$(COMPLAIN)
+	./whirl2xaif $(whirl2xaifVerbFlag) -N -n -o $@ $<
 
 # XAIF -> XAIF'
 head_sf.xb.xaif : head_sf.xaif xaif.xsd xaif_base.xsd xaif_inlinable_intrinsics.xsd xaif_derivative_propagator.xsd xaif_output.xsd xaifBooster
-	./xaifBooster -v -V -i $< -c ${XAIFSCHEMAROOT}/schema/examples/inlinable_intrinsics.xaif -o $@ $(CP_FLAG)
+	$(COMPLAIN)
+	./xaifBooster -v -V -i $< -c ${XAIFSCHEMAROOT}/schema/examples/inlinable_intrinsics.xaif -o $@ $(CP_FLAG) $(xaifBoosterVerbFlag)
 
 # XAIF' -> WHIRL'
 head_sf.xb.x2w.B : head_sf.xb.xaif xaif2whirl
@@ -135,6 +156,7 @@ head_sf.xb.x2w.w2f.f: head_sf.xb.x2w.B whirl2f whirl2f_be
 
 # postprocess F'
 head_sf.xb.x2w.w2f.pp.f: head_sf.xb.x2w.w2f.f multi-pp.pl ad_inline.f
+	$(COMPLAIN)
 	perl multi-pp.pl $(PP_FLAGS) $<
 
 # extract the transformed globals module so we the right order of 
@@ -172,6 +194,7 @@ ad_inline.f OAD_cp.f90 OAD_dct.f90 OAD_graph.f90 OAD_rev.f90 OAD_tape.f90 OAD_tr
 	@$(LN) ${OPENADROOT}/runTimeSupport/simple/$@ .
 
 OAD_active.f90:
+	$(COMPLAIN)
 	@$(LN) ${OPENADROOT}/runTimeSupport/${SCALAR_OR_VECTOR}/$@ .
 
 ######################################################
@@ -180,6 +203,7 @@ OAD_active.f90:
 
 # make the driver
 driver: $(MODULES) head.xb.x2w.w2f.pp.o driver.o 
+	$(COMPLAIN)
 	$(F90C) $(F90FLAGS) $^ -o $@ 
 
 run: params.conf tmpOutput driver 
