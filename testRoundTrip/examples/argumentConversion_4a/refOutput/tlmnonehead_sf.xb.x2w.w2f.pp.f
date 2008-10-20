@@ -41,7 +41,7 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_0(1 : 2)
+      type(active) :: OpenAD_Symbol_0(1 : 2, 1 : 3)
       type(active) :: OpenAD_Symbol_1
 C
 C     **** Parameters and Result ****
@@ -70,13 +70,13 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(AX(I,2),X(I))
       END DO
       CALL foo(AX(1,2),Y)
-C     $OpenAD$ INLINE convert_p2a_vector(subst,subst)
-      CALL convert_p2a_vector(OpenAD_Symbol_0,APX(1:2,2))
+C     $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
+      CALL convert_p2a_matrix(OpenAD_Symbol_0,APX)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
-      CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C     $OpenAD$ INLINE convert_a2p_vector(subst,subst)
-      CALL convert_a2p_vector(APX(1:2,2),OpenAD_Symbol_0)
+      CALL foo(OpenAD_Symbol_0(1,2),OpenAD_Symbol_1)
+C     $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
+      CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
 C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
       END SUBROUTINE
