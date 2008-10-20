@@ -10,6 +10,7 @@ makeCmd="make"
 globalBatchMode=False
 globalIgnoreFailingCases=False
 globalOfferAcceptAsDefault=False
+globalVerbose=False
 
 class NumericalError(Exception):
     """Exception thrown when the numerical comparison discovers error that is beyond the given threshold"""
@@ -279,7 +280,6 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 		return 0
     # clean up
     sys.stdout.flush()
-    os.environ["TARGET"] = "head"
     if (os.system(makeCmd + " testAllclean")):
 	raise MakeError, "Error while executing \"" + makeCmd + " testAllclean\""
     printSep("*","** running %i of %i (%s) -- %s %s %s " % (exNum,totalNum,exName,scalarOrVector,majorMode,ctrMode),sepLength)
@@ -298,8 +298,14 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
     os.environ["MAJOR_MODE"] = majorMode
     os.environ["MINOR_MODE"] = ctrMode
-    if (os.system(makeCmd)):
-	raise MakeError, makeCmd
+    if globalVerbose:
+        os.environ["VERBOSE"]='true'
+        sys.stdout.write("environment settings:\n")
+        sys.stdout.write("  SCALAR_OR_VECTOR="+scalarOrVector+"\n")
+        sys.stdout.write("  MAJOR_MODE="+majorMode+"\n")
+        sys.stdout.write("  MINOR_MODE="+ctrMode+"\n")
+    if (os.system(makeCmd+" head.xb.x2w.w2f.pp.f")):
+	raise MakeError, makeCmd+" head.xb.x2w.w2f.pp.f"
     # compile all the transformed bits
     driverMode = majorMode
     if (majorMode == "adm"):
@@ -348,6 +354,9 @@ def main():
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
                    action='store_true',default=False)
+    opt.add_option('-v','--verbose',dest='verbose',
+                   help="let the pipeline components produce some extra output",
+                   action='store_true',default=False)
     opt.add_option('-c','--compiler',dest='compiler',
                    type='choice', choices=compilers,
                    help="pick a compiler (defaults to ifort) from the following list: " +compilerOpts+" - the compiler should be in PATH",
@@ -363,6 +372,9 @@ def main():
         if options.offerAcceptAsDefault :
             global globalOfferAcceptAsDefault
             globalOfferAcceptAsDefault=True
+        if options.verbose :
+            global globalVerbose
+            globalVerbose=True
         if options.compiler :
             os.environ['F90C']=options.compiler
 	if not (os.environ.has_key('OPENADROOT')):
