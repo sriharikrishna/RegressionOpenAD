@@ -119,7 +119,7 @@ head_sf.B: head_sf.f mfef90
 
 # WHIRL -> XAIF
 head_sf.xaif : head_sf.B whirl2xaif
-	./whirl2xaif -N -n -o $@ $<
+	./whirl2xaif --debug 1 -N -n -o $@ $<
 
 # XAIF -> XAIF'
 head_sf.xb.xaif : head_sf.xaif xaif.xsd xaif_base.xsd xaif_inlinable_intrinsics.xsd xaif_derivative_propagator.xsd xaif_output.xsd xaifBooster
@@ -202,7 +202,7 @@ tmpOutput:
 	@mkdir -p $@
 
 testAllclean:
-	@$(RM) head_sf.* head.* driver* params.conf all_globals_* ad_template.f *mod-whirl tmpOutput data.tmp OAD_active.*
+	@$(RM) head_sf.* head.* driver* params.conf all_globals_* ad_template.f *mod-whirl tmpOutput data.tmp *.o
 
 clean: testAllclean
 	$(RM) *.xsd 
