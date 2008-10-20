@@ -41,6 +41,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
+      __value__(Y(1)) = 1.0D00
+      CALL zero_deriv(__deriv__(Y(1)))
       DO I = 1, 2, 1
         IF(__value__(X(1)) .GE. 1.0D00) THEN
           OpenAD_Symbol_2 = (__value__(X(1)) * __value__(Y(1)))

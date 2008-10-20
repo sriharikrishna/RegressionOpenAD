@@ -110,6 +110,7 @@ C
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
+      Y(1)%v = 1.0D00
       DO I = 1, 2, 1
         IF (X(1)%v .GE. 1.0D00) THEN
           Y(1)%v = (X(1)%v*Y(1)%v)
@@ -121,6 +122,7 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
+      Y(1)%v = 1.0D00
       OpenAD_Symbol_10 = 0_w2f__i8
       DO I = 1, 2, 1
         IF (X(1)%v .GE. 1.0D00) THEN
@@ -175,5 +177,6 @@ C$OPENAD XXX Template ad_template.f
         ENDIF
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8) + 1
       END DO
+          Y(1)%d = 0.0d0
           end if 
         end subroutine head

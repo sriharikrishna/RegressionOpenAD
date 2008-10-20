@@ -34,6 +34,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
+      Y(1)%v = 1.0D00
+      CALL zero_deriv(Y(1))
       DO I = 1, 2, 1
         IF (X(1)%v .GE. 1.0D00) THEN
           OpenAD_Symbol_2 = (X(1)%v*Y(1)%v)

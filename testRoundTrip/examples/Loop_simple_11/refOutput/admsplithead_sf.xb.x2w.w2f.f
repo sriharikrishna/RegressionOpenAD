@@ -54,6 +54,7 @@ C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
+      __value__(Y(1)) = 1.0D00
       DO I = 1, 2, 1
         IF(__value__(X(1)) .GE. 1.0D00) THEN
           __value__(Y(1)) = (__value__(X(1)) * __value__(Y(1)))
@@ -64,6 +65,7 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
+      __value__(Y(1)) = 1.0D00
       OpenAD_Symbol_10 = 0_w2f__i8
       DO I = 1, 2, 1
         IF(__value__(X(1)) .GE. 1.0D00) THEN
@@ -130,6 +132,8 @@ C         $OpenAD$ INLINE ZeroDeriv(subst)
         ENDIF
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8) + 1
       END DO
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ END REPLACEMENT
@@ -145,6 +149,7 @@ C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
+      __value__(Y(1)) = 1.0D00
       OpenAD_Symbol_16 = 0_w2f__i8
       DO I = 1, 2, 1
         IF(__value__(X(1)) .GE. 1.0D00) THEN
@@ -211,5 +216,7 @@ C         $OpenAD$ INLINE ZeroDeriv(subst)
         ENDIF
         OpenAD_Symbol_14 = INT(OpenAD_Symbol_14) + 1
       END DO
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
