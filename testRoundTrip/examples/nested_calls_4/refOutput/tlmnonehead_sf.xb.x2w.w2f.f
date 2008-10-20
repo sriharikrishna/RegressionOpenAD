@@ -59,6 +59,10 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       OpenAD_Symbol_4 = 1_w2f__i8
       CALL sax(1_w2f__i8, __deriv__(C), __deriv__(Y(4)))
       CALL saxpy(1_w2f__i8, __deriv__(D), __deriv__(Y(4)))
+      __value__(Y(1)) = __value__(X(3))
+      CALL setderiv(__deriv__(Y(1)), __deriv__(X(3)))
+      __value__(Y(2)) = __value__(X(4))
+      CALL setderiv(__deriv__(Y(2)), __deriv__(X(4)))
       END SUBROUTINE
 
       SUBROUTINE foo(A, B, C, D)

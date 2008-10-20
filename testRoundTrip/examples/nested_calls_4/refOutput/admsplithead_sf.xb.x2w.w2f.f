@@ -55,6 +55,8 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(P, __deriv__(OpenAD_Symbol_0))
       __value__(Y(3)) = (__value__(C) * __value__(D))
       __value__(Y(4)) = (__value__(C) + __value__(D))
+      __value__(Y(1)) = __value__(X(3))
+      __value__(Y(2)) = __value__(X(4))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
@@ -77,8 +79,18 @@ C     $OpenAD$ INLINE push(subst)
       __value__(Y(4)) = (__value__(C) + __value__(D))
       OpenAD_Symbol_3 = 1_w2f__i8
       OpenAD_Symbol_4 = 1_w2f__i8
+      __value__(Y(1)) = __value__(X(3))
+      __value__(Y(2)) = __value__(X(4))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(Y(2)), __deriv__(X(4)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(2)))
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(3)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(1_w2f__i8, __deriv__(Y(4)), __deriv__(D))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
@@ -133,8 +145,18 @@ C     $OpenAD$ INLINE push(subst)
       __value__(Y(4)) = (__value__(C) + __value__(D))
       OpenAD_Symbol_3 = 1_w2f__i8
       OpenAD_Symbol_4 = 1_w2f__i8
+      __value__(Y(1)) = __value__(X(3))
+      __value__(Y(2)) = __value__(X(4))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(Y(2)), __deriv__(X(4)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(2)))
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(3)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(1_w2f__i8, __deriv__(Y(4)), __deriv__(D))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)

@@ -9,6 +9,8 @@ c$openad INDEPENDENT(x)
       call foo(x(1),p,c,d)
       y(3)=c*d
       y(4)=c+d
+      y(1)=x(3)
+      y(2)=x(4)
 c$openad DEPENDENT(y)
       end subroutine head
 

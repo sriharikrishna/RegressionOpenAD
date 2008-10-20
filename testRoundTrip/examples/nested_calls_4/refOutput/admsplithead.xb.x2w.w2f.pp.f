@@ -109,6 +109,8 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(P,OpenAD_Symbol_0)
       Y(3)%v = (C%v*D%v)
       Y(4)%v = (C%v+D%v)
+      Y(1)%v = X(3)%v
+      Y(2)%v = X(4)%v
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -130,9 +132,15 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       Y(4)%v = (C%v+D%v)
       OpenAD_Symbol_3 = 1_w2f__i8
       OpenAD_Symbol_4 = 1_w2f__i8
+      Y(1)%v = X(3)%v
+      Y(2)%v = X(4)%v
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
+          X(4)%d = X(4)%d+Y(2)%d
+          Y(2)%d = 0.0d0
+          X(3)%d = X(3)%d+Y(1)%d
+          Y(1)%d = 0.0d0
           D%d = D%d+Y(4)%d*1 _w2f__i8
           C%d = C%d+Y(4)%d*1 _w2f__i8
           Y(4)%d = 0.0d0
