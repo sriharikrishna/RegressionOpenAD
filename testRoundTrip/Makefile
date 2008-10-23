@@ -14,14 +14,22 @@ endif
 ifeq ($(F90C),g95)
 FIXEDFORMAT=-ffixed-form
 FREEFORMAT=-ffree-form
-F90FLAGS=-g -O0 
+ifdef OPTIMIZE
+F90FLAGS=-O3
+else
+F90FLAGS=-g -O0
+endif 
 CC=gcc
 endif
 
 ifeq ($(F90C),gfortran)
 FIXEDFORMAT=-ffixed-form
 FREEFORMAT=-ffree-form
-F90FLAGS=-g -O0 
+ifdef OPTIMIZE
+F90FLAGS=-O3
+else
+F90FLAGS=-g -O0
+endif 
 CC=gcc
 endif
 
@@ -29,21 +37,33 @@ endif
 ifeq ($(F90C),ifort)
 FIXEDFORMAT=-fixed
 FREEFORMAT=-free
-F90FLAGS=-check all -g -fpe0 -O0 -traceback 
+ifdef OPTIMIZE
+F90FLAGS=-O3
+else
+F90FLAGS=-check all -g -fpe0 -O0 -traceback
+endif 
 CC=icc
 endif
 
 ifeq ($(F90C),f95)
 FIXEDFORMAT=-fixed
 FREEFORMAT=-free -132
-F90FLAGS=-g -w=unused
+ifdef OPTIMIZE
+F90FLAGS=-O3 -w=unused
+else
+F90FLAGS=-g -O0 -w=unused
+endif 
 CC=gcc
 endif
 
 ifeq ($(F90C),openf95)
 FIXEDFORMAT=-fixedform
 FREEFORMAT=-freeform
-F90FLAGS=-g 
+ifdef OPTIMIZE
+F90FLAGS=-O3
+else
+F90FLAGS=-g -O0
+endif 
 CC=opencc
 endif
 

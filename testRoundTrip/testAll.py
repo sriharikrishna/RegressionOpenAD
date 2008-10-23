@@ -12,6 +12,79 @@ globalIgnoreFailingCases=False
 globalOfferAcceptAsDefault=False
 globalVerbose=False
 
+class MultiColumnOutput:
+
+    ourColumnSeparator=2
+    
+    @staticmethod
+    def __getTermWidth():
+        import termios, fcntl, struct, sys
+        s = struct.pack("HHHH", 0, 0, 0, 0)
+        fd_stdout = sys.stdout.fileno()
+        x = fcntl.ioctl(fd_stdout, termios.TIOCGWINSZ, s)
+        (rows,cols,xPix,yPix)=struct.unpack("HHHH", x)
+        return cols
+
+    class ColumnInfo:
+
+        ourMinimalWidth=2
+        
+        def __init__(self):
+            self.width=self.ourMinimalWidth # minimal width
+
+    def __init__(self,stringList) :
+        self.stringList=stringList
+        self.totalWidth=self.__getTermWidth()
+
+    def __computeColumnInfos(self):
+        goodColumnInfos=[]
+        maxCols=self.totalWidth/self.ColumnInfo.ourMinimalWidth
+        listLen=len(self.stringList)
+        if listLen==0:
+            return goodColumnInfos
+        numCols=1 # 1 column to start with
+        while (True) :
+            if numCols>listLen:
+                break
+            columnInfos=[]
+            colLength=listLen/numCols
+            if (listLen%numCols>0):
+                colLength+=1
+            for i in xrange(0,numCols):
+                columnInfos.append(self.ColumnInfo())
+            for i in xrange(0,listLen):
+                # determine the column:
+                colForThis=i/colLength
+                if columnInfos[colForThis].width<len(self.stringList[i])+self.ourColumnSeparator :
+                    columnInfos[colForThis].width=len(self.stringList[i])+self.ourColumnSeparator
+            totalColumnWidth=sum([ c.width for c in columnInfos ])
+            if totalColumnWidth>self.totalWidth and numCols>1: 
+              break
+            goodColumnInfos=columnInfos[:]
+            numCols+=1
+        return goodColumnInfos
+    
+    def printIt(self):
+        columnInfos=self.__computeColumnInfos()
+        listLen=len(self.stringList)
+        numCols=len(columnInfos)
+        numRows=listLen/numCols
+        if (listLen%numCols>0) :
+            numRows+=1
+        thisRow=0
+        while thisRow<numRows:
+            listPos=thisRow
+            for columnInfo in columnInfos:
+                if listPos>=listLen:
+                    break
+                outString=self.stringList[listPos]
+                outString+=(' ' * (columnInfo.width - len(self.stringList[listPos])))
+                sys.stdout.write(outString)
+                listPos+=numRows
+            sys.stdout.write('\n')
+            thisRow+=1
+        sys.stdout.flush()
+
 class NumericalError(Exception):
     """Exception thrown when the numerical comparison discovers error that is beyond the given threshold"""
 
@@ -94,12 +167,18 @@ def printSep(sepChar,msg,sepLength):
     sys.stdout.write("\n")
     sys.stdout.flush()
 
+def numberedList(list):
+    numberedList=[]
+    digits=len(str(len(list)+1))
+    format='%'+str(digits)+'d:%s'
+    for (c,e) in enumerate(list):
+        numberedName=format%(c+1,e)
+        numberedList.append(numberedName)
+    return numberedList
 
 def populateExamplesList(args):
     allExamples = os.listdir("examples")
     allExamples.sort(key=str.lower) # default sort is case insensitive, this one isn't
-    if ("CVS" in allExamples):
-	allExamples.remove("CVS")
     rangeStart = 1
     rangeEnd = len(allExamples)
     examples = []
@@ -113,7 +192,8 @@ def populateExamplesList(args):
 		done = True
 		sys.stdout.write("pick from the following examples:\n")
 		sys.stdout.flush()
-		os.system("ls examples")
+                examples = allExamples
+                MultiColumnOutput(numberedList(examples)).printIt()    
 		examplesInput = raw_input("enter one or more regular expressions here or '(all [%i | %i %i])': ").split()
 		if (len(examplesInput) == 0):			# no arguments
 		    examples = allExamples
@@ -167,21 +247,12 @@ def populateExamplesList(args):
 	rangeEnd = len(examples)
 	printSep("=","",sepLength)
 	sys.stdout.write("The following examples match the given regular expression(s):\n")
-	i = 0
-	for ex in examples:
-	    i = i + 1
-	    sys.stdout.write("[%i-%s]  " % (i,ex))
-	sys.stdout.write("\n")
+        MultiColumnOutput(numberedList(examples)).printIt()    
 	printSep("=","",sepLength)
     else:
 	printSep("=","",sepLength)
 	sys.stdout.write("Running all examples with a range of (%i-%i):\n" % (rangeStart,rangeEnd))
-	i = 0
-        for ex in examples:
-            i = i + 1
-	    if (i >= rangeStart and i <= rangeEnd):
-		sys.stdout.write("[%i-%s]  " % (i,ex))
-	sys.stdout.write("\n")
+        MultiColumnOutput(numberedList(examples)[rangeStart-1:rangeEnd]).printIt()    
 	printSep("=","",sepLength)
     return (examples,rangeStart,rangeEnd)
 
@@ -361,6 +432,9 @@ def main():
                    type='choice', choices=compilers,
                    help="pick a compiler (defaults to ifort) from the following list: " +compilerOpts+" - the compiler should be in PATH",
                    default='ifort')
+    opt.add_option('-O','--optimize',dest='optimize',
+                   help="turn compiler optimization on (default off)",
+                   action='store_true',default=False)
     (options, args) = opt.parse_args()
     try:
         if os.environ.has_key('BATCH_MODE') or options.batchMode :
@@ -377,6 +451,8 @@ def main():
             globalVerbose=True
         if options.compiler :
             os.environ['F90C']=options.compiler
+        if options.optimize :
+            os.environ['OPTIMIZE']='true'
 	if not (os.environ.has_key('OPENADROOT')):
 	    raise ConfigError, "environment variable OPENADROOT not defined"
 	if not (os.environ.has_key('XAIFBOOSTER_BASE')):
