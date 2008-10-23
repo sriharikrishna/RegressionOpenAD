@@ -283,11 +283,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
@@ -383,9 +383,9 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_0(1 : 2)
+      type(active) :: OpenAD_Symbol_0(1 : 2, 1 : 3)
       type(active) :: OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_14(1 : 2)
+      type(active) :: OpenAD_Symbol_14(1 : 2, 1 : 3)
       type(active) :: OpenAD_Symbol_15
       INTEGER(w2f__i8) OpenAD_Symbol_4
       INTEGER(w2f__i8) OpenAD_Symbol_5
@@ -401,8 +401,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) APX(1 : 1, 1 : 2)
-      type(active) :: AX(1 : 1, 1 : 2)
+      REAL(w2f__8) APX(1 : 2, 1 : 3)
+      type(active) :: AX(1 : 2, 1 : 3)
       EXTERNAL foo
       INTEGER(w2f__i4) I
       REAL(w2f__8) PY
@@ -494,16 +494,16 @@ C            print*, " plain      ", our_rev_mode
 C original function
 C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
-        AX(1,INT(I))%v = X(I)%v
+        AX(INT(I),2)%v = X(I)%v
       END DO
-      CALL foo(AX(1,1),Y)
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(OpenAD_Symbol_0,APX(1:2,1))
+      CALL foo(AX(1,2),Y)
+C!! requested inline of 'convert_p2a_matrix' has no defn
+      CALL convert_p2a_matrix(OpenAD_Symbol_0,APX)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
-      CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(APX(1:2,1),OpenAD_Symbol_0)
+      CALL foo(OpenAD_Symbol_0(1,2),OpenAD_Symbol_1)
+C!! requested inline of 'convert_a2p_matrix' has no defn
+      CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
             our_rev_mode=our_orig_mode
@@ -521,7 +521,7 @@ C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_6 = 0_w2f__i8
       DO I = 1, 2, 1
-        AX(1,INT(I))%v = X(I)%v
+        AX(INT(I),2)%v = X(I)%v
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
@@ -530,14 +530,14 @@ C$OPENAD XXX Template ad_template.f
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
           integer_tape_pointer = integer_tape_pointer+1
-      CALL foo(AX(1,1),Y)
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(OpenAD_Symbol_0,APX(1:2,1))
+      CALL foo(AX(1,2),Y)
+C!! requested inline of 'convert_p2a_matrix' has no defn
+      CALL convert_p2a_matrix(OpenAD_Symbol_0,APX)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
-      CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(APX(1:2,1),OpenAD_Symbol_0)
+      CALL foo(OpenAD_Symbol_0(1,2),OpenAD_Symbol_1)
+C!! requested inline of 'convert_a2p_matrix' has no defn
+      CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
             our_rev_mode%arg_store=.FALSE.
@@ -585,8 +585,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-      CALL foo(OpenAD_Symbol_14,OpenAD_Symbol_15)
-      CALL foo(AX(1,1),Y)
+      CALL foo(OpenAD_Symbol_14(1,2),OpenAD_Symbol_15)
+      CALL foo(AX(1,2),Y)
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_5 = 1
@@ -595,9 +595,9 @@ C adjoint
           OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_13 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_13))%d = X(INT(OpenAD_Symbol_13))%d+AX(1,I
-     +NT(OpenAD_Symbol_12))%d
-          AX(1,INT(OpenAD_Symbol_12))%d = 0.0d0
+          X(INT(OpenAD_Symbol_13))%d = X(INT(OpenAD_Symbol_13))%d+AX(INT
+     +(OpenAD_Symbol_12),2)%d
+          AX(INT(OpenAD_Symbol_12),2)%d = 0.0d0
         OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
       END DO
             our_rev_mode%arg_store=.FALSE.
@@ -633,11 +633,11 @@ C     +" IT:",integer_tape_pointer
            graph%value = tree%value
            graph%doubles = tree%doubles
            graph%integers = tree%integers
-           write(itoa, '(I)') tree%doubles
+           write(itoa, '(I10)') tree%doubles
            itoa = adjustl(itoa)
-           write(itoa2, '(I)') tree%integers
+           write(itoa2, '(I10)') tree%integers
            itoa2 = adjustl(itoa2)
-           write(10, '(I, A, A, A, A, A, A, A)'), iaddr(tree),
+           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
      + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
      + trim(itoa), ':', trim(itoa2), '"];'
             Call graphprint(tree)
