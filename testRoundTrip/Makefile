@@ -245,14 +245,17 @@ run: params.conf tmpOutput driver
 tmpOutput: 
 	@mkdir -p $@
 
-testAllclean:
-	@$(RM) head_sf.* head.* driver* params.conf all_globals_* ad_template.f *mod-whirl tmpOutput data.tmp *.o
+minClean:
+	@$(RM) head_sf.* head.* driver* params.conf all_globals_* ad_template.f *mod-whirl tmpOutput data.tmp driver.o all_globals_mod.xb.x2w.w2f.pp.o head.xb.x2w.w2f.pp.o
 
-clean: testAllclean
+groupClean: minClean
+	@$(RM) *.o
+
+clean: groupClean
 	$(RM) *.xsd 
 	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f *.pl xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_dct.f90 OAD_graph.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
 	$(RM) *.mod *.o
 
 objs test : 
 
-.PHONY: all objs test clean testAllclean run
+.PHONY: all objs test minClean groupClean clean run

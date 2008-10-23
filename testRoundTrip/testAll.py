@@ -351,8 +351,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 		return 0
     # clean up
     sys.stdout.flush()
-    if (os.system(makeCmd + " testAllclean")):
-	raise MakeError, "Error while executing \"" + makeCmd + " testAllclean\""
+    if (os.system(makeCmd + " minClean")):
+	raise MakeError, "Error while executing \"" + makeCmd + " minClean\""
     printSep("*","** running %i of %i (%s) -- %s %s %s " % (exNum,totalNum,exName,scalarOrVector,majorMode,ctrMode),sepLength)
     # get head.f, params.conf, modules, templates, etc.
     if (os.system("ln -s %s/head.f ." % exDir) or not os.path.exists("head.f")):
@@ -458,6 +458,7 @@ def main():
 	if not (os.environ.has_key('XAIFBOOSTER_BASE')):
             sys.stderr.write("environment variable XAIFBOOSTER_BASE not defined, setting it relative to OPENADROOT\n")
 	    os.environ['XAIFBOOSTER_BASE']=os.path.join(os.environ['OPENADROOT'],'..')
+	os.system(makeCmd + " groupClean")
 	(examples,rangeStart,rangeEnd) = populateExamplesList(args[0:])
 	(scalarOrVectorMode,majorMode,ctrMode) = determineModes()
 	link_xaifBooster(majorMode)
