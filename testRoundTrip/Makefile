@@ -89,8 +89,6 @@ endif
 ifeq ($(MAJOR_MODE),adm)
 MODULES+=		\
 OAD_cp.o		\
-OAD_dct.o		\
-OAD_graph.o		\
 OAD_rev.o		\
 OAD_tape.o		\
 iaddr.o                         
@@ -210,7 +208,7 @@ ir_b2a:
 w2f__types.f90 iaddr.c:
 	@$(LN) ${OPENADROOT}/runTimeSupport/all/$@ .
 
-ad_inline.f OAD_cp.f90 OAD_dct.f90 OAD_graph.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90:
+ad_inline.f OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90:
 	@$(LN) ${OPENADROOT}/runTimeSupport/simple/$@ .
 
 OAD_active.f90:
@@ -253,7 +251,7 @@ groupClean: minClean
 
 clean: groupClean
 	$(RM) *.xsd 
-	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f *.pl xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_dct.f90 OAD_graph.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
+	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f *.pl xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
 	$(RM) *.mod *.o
 
 objs test : 

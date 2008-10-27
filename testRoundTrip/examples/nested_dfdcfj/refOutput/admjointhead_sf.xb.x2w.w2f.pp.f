@@ -61,11 +61,9 @@ C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
        subroutine head(NX,NY,X,FVEC,R)
-          use OAD_dct
           use OAD_tape
           use OAD_rev
           use OAD_cp
-          use OAD_graph
 
           ! original arguments get inserted before version
           ! and declared here together with all local variables
@@ -162,16 +160,6 @@ C
 
           type(modeType) :: our_orig_mode
 
-          !Variables for making graphs
-
-         type (list), pointer :: prev => NULL()
-         integer :: ierror, counter, counter2, counter3
-         
-         character (len = 20) itoa 
-         character (len = 20) itoa2
-
-         !end graph varibables
-
 	  ! call external C function used in inlined code
           !integer iaddr
           !external iaddr
@@ -185,12 +173,6 @@ C     +" AI:",theArgIStackoffset,
 C     +" DT:",double_tape_pointer, 
 C     +" IT:",integer_tape_pointer
 
-!function to make graphs
-          if (our_rev_mode%tape) then
-            Call makelinks('head', prev)
-          endif
-!end function to make graphs
-       
           if (our_rev_mode%arg_store) then 
 C            print*, " arg_store  ", our_rev_mode
 C store arguments
@@ -222,8 +204,6 @@ C$OPENAD XXX Template ad_template.f
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
             our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.TRUE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
@@ -259,45 +239,14 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-
-            !Part of making graphs
-              if (.not. associated(prev)) then
-                tree%doubles = double_tape_pointer - prevdouble-1
-                tree%integers = integer_tape_pointer - prevint-1
-                tree%argInts = -1*(theArgIStackOffset - prevIStack)
-                tree%argFloats = -1*(theArgFStackOffset - prevFStack)
-                tree%argBools =  -1*(theArgBStackOffset - prevBStack)
-                prevdouble = integer_tape_pointer
-                prevint = double_tape_pointer
-                prevBStack = -1*theArgBStackOffset
-                prevIStack = -1*theArgIStackOffset
-                prevFStack = -1*theArgFStackOffset                
-              else
-                prev%called%doubles = double_tape_pointer - prevdouble
-                prev%called%integers = integer_tape_pointer- prevint
-                prev%called%argInts =-1*(theArgIStackOffset-prevIStack)
-                prev%called%argFloats=-1*(theArgFStackOffset-prevFStack)
-                prev%called%argBools= -1*(theArgBStackOffset-prevBStack)
-                prevdouble = integer_tape_pointer
-                prevint = double_tape_pointer
-                prevBStack = -1*theArgBStackOffset
-                prevIStack = -1*theArgIStackOffset
-                prevFStack = -1*theArgFStackOffset
-              endif
-             !end Graph code
-C                call diff tape storage only once flag
           end if 
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
@@ -327,8 +276,6 @@ C adjoint
       CALL foo(NX,NY,X,FVEC,R,N,HX,HY,HY2,HX2)
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
@@ -338,55 +285,6 @@ C     +"a:AF:", theArgFStackoffset,
 C     +" AI:",theArgIStackoffset, 
 C     +" DT:",double_tape_pointer, 
 C     +" IT:",integer_tape_pointer
-
-         !graph code
-         prevint = integer_tape_pointer
-         prevdouble = double_tape_pointer
-         prevBStack = theArgBStackOffset
-         prevIStack = theArgIStackOffset
-         prevFStack = theArgFStackOffset
-         if (our_rev_mode%tape) then
-          if( associated(prev)) then
-             cur => prev
-           else  
-             !if(tree%first%called%value .eq. cur%called%value) then
-           Open (Unit=10, File='/tmp/calltree.out', status='replace', 
-     + action='write', iostat=ierror)
-           write(10, *) 'digraph G {'
-           write(10, *) 'nodesep=.05;'
-           write(10, *) 'ranksep=.05;'
-           graph%value = tree%value
-           graph%doubles = tree%doubles
-           graph%integers = tree%integers
-           write(itoa, '(I10)') tree%doubles
-           itoa = adjustl(itoa)
-           write(itoa2, '(I10)') tree%integers
-           itoa2 = adjustl(itoa2)
-           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
-     + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
-     + trim(itoa), ':', trim(itoa2), '"];'
-            Call graphprint(tree)
-            write(10, *) '1[ height=.25 label="SubroutineName',
-     + ' double:integer"];'
-            write(10, '(A,A)') '2[height=.25 label="Edge checkpoint',
-     + ' double:integer:boolean"];'
-            write(10, *) '}'
-            close(10)
-            Open (Unit=11, File='/tmp/callgraph.out', status='replace',
-     + action='write', iostat=ierror)
-            write(11, *) 'digraph G {'
-            write(11, *) 'nodesep=.05;'
-            write(11, *) 'ranksep=.05;'
-            call graph2print()
-            write(11, '(A,A)') '1[ height=.25 label="SubroutineName',
-     + ' tape double:integer checkpoint double:integer:boolean"];'
-            write(11, *) '}'
-            close(11)
-             !read *, five
-             !endif
-             endif
-           endif    
-         !end graph code
 
         end subroutine head
 C ========== begin copyright notice ==============
@@ -442,11 +340,9 @@ C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
        subroutine foo(NX,NY,X,FVEC,R,N,HX,HY,HY2,HX2)
-          use OAD_dct
           use OAD_tape
           use OAD_rev
           use OAD_cp
-          use OAD_graph
 
           ! original arguments get inserted before version
           ! and declared here together with all local variables
@@ -756,16 +652,6 @@ C
 
           type(modeType) :: our_orig_mode
 
-          !Variables for making graphs
-
-         type (list), pointer :: prev => NULL()
-         integer :: ierror, counter, counter2, counter3
-         
-         character (len = 20) itoa 
-         character (len = 20) itoa2
-
-         !end graph varibables
-
 	  ! call external C function used in inlined code
           !integer iaddr
           !external iaddr
@@ -779,12 +665,6 @@ C     +" AI:",theArgIStackoffset,
 C     +" DT:",double_tape_pointer, 
 C     +" IT:",integer_tape_pointer
 
-!function to make graphs
-          if (our_rev_mode%tape) then
-            Call makelinks('foo', prev)
-          endif
-!end function to make graphs
-       
           if (our_rev_mode%arg_store) then 
 C            print*, " arg_store  ", our_rev_mode
 C store arguments
@@ -929,8 +809,6 @@ C$OPENAD XXX Template ad_template.f
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
             our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.TRUE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
@@ -1278,45 +1156,14 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-
-            !Part of making graphs
-              if (.not. associated(prev)) then
-                tree%doubles = double_tape_pointer - prevdouble-1
-                tree%integers = integer_tape_pointer - prevint-1
-                tree%argInts = -1*(theArgIStackOffset - prevIStack)
-                tree%argFloats = -1*(theArgFStackOffset - prevFStack)
-                tree%argBools =  -1*(theArgBStackOffset - prevBStack)
-                prevdouble = integer_tape_pointer
-                prevint = double_tape_pointer
-                prevBStack = -1*theArgBStackOffset
-                prevIStack = -1*theArgIStackOffset
-                prevFStack = -1*theArgFStackOffset                
-              else
-                prev%called%doubles = double_tape_pointer - prevdouble
-                prev%called%integers = integer_tape_pointer- prevint
-                prev%called%argInts =-1*(theArgIStackOffset-prevIStack)
-                prev%called%argFloats=-1*(theArgFStackOffset-prevFStack)
-                prev%called%argBools= -1*(theArgBStackOffset-prevBStack)
-                prevdouble = integer_tape_pointer
-                prevint = double_tape_pointer
-                prevBStack = -1*theArgBStackOffset
-                prevIStack = -1*theArgIStackOffset
-                prevFStack = -1*theArgFStackOffset
-              endif
-             !end Graph code
-C                call diff tape storage only once flag
           end if 
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
@@ -1592,8 +1439,6 @@ C adjoint
       END DO
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
@@ -1603,55 +1448,6 @@ C     +"a:AF:", theArgFStackoffset,
 C     +" AI:",theArgIStackoffset, 
 C     +" DT:",double_tape_pointer, 
 C     +" IT:",integer_tape_pointer
-
-         !graph code
-         prevint = integer_tape_pointer
-         prevdouble = double_tape_pointer
-         prevBStack = theArgBStackOffset
-         prevIStack = theArgIStackOffset
-         prevFStack = theArgFStackOffset
-         if (our_rev_mode%tape) then
-          if( associated(prev)) then
-             cur => prev
-           else  
-             !if(tree%first%called%value .eq. cur%called%value) then
-           Open (Unit=10, File='/tmp/calltree.out', status='replace', 
-     + action='write', iostat=ierror)
-           write(10, *) 'digraph G {'
-           write(10, *) 'nodesep=.05;'
-           write(10, *) 'ranksep=.05;'
-           graph%value = tree%value
-           graph%doubles = tree%doubles
-           graph%integers = tree%integers
-           write(itoa, '(I10)') tree%doubles
-           itoa = adjustl(itoa)
-           write(itoa2, '(I10)') tree%integers
-           itoa2 = adjustl(itoa2)
-           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
-     + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
-     + trim(itoa), ':', trim(itoa2), '"];'
-            Call graphprint(tree)
-            write(10, *) '1[ height=.25 label="SubroutineName',
-     + ' double:integer"];'
-            write(10, '(A,A)') '2[height=.25 label="Edge checkpoint',
-     + ' double:integer:boolean"];'
-            write(10, *) '}'
-            close(10)
-            Open (Unit=11, File='/tmp/callgraph.out', status='replace',
-     + action='write', iostat=ierror)
-            write(11, *) 'digraph G {'
-            write(11, *) 'nodesep=.05;'
-            write(11, *) 'ranksep=.05;'
-            call graph2print()
-            write(11, '(A,A)') '1[ height=.25 label="SubroutineName',
-     + ' tape double:integer checkpoint double:integer:boolean"];'
-            write(11, *) '}'
-            close(11)
-             !read *, five
-             !endif
-             endif
-           endif    
-         !end graph code
 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -1708,11 +1504,9 @@ C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
        subroutine bar(PBB,PBL,PB,PBR,PLL,PL,P,PR,PRR,PTL,PT,PTR,PTT,HY2,
      +HX2,PLAP,PBLAP,PLLAP,PRLAP,PTLAP)
-          use OAD_dct
           use OAD_tape
           use OAD_rev
           use OAD_cp
-          use OAD_graph
 
           ! original arguments get inserted before version
           ! and declared here together with all local variables
@@ -1917,16 +1711,6 @@ C
 
           type(modeType) :: our_orig_mode
 
-          !Variables for making graphs
-
-         type (list), pointer :: prev => NULL()
-         integer :: ierror, counter, counter2, counter3
-         
-         character (len = 20) itoa 
-         character (len = 20) itoa2
-
-         !end graph varibables
-
 	  ! call external C function used in inlined code
           !integer iaddr
           !external iaddr
@@ -1940,12 +1724,6 @@ C     +" AI:",theArgIStackoffset,
 C     +" DT:",double_tape_pointer, 
 C     +" IT:",integer_tape_pointer
 
-!function to make graphs
-          if (our_rev_mode%tape) then
-            Call makelinks('bar', prev)
-          endif
-!end function to make graphs
-       
           if (our_rev_mode%arg_store) then 
 C            print*, " arg_store  ", our_rev_mode
 C store arguments
@@ -2051,8 +1829,6 @@ C$OPENAD XXX Template ad_template.f
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
             our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.TRUE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
@@ -2225,45 +2001,14 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-
-            !Part of making graphs
-              if (.not. associated(prev)) then
-                tree%doubles = double_tape_pointer - prevdouble-1
-                tree%integers = integer_tape_pointer - prevint-1
-                tree%argInts = -1*(theArgIStackOffset - prevIStack)
-                tree%argFloats = -1*(theArgFStackOffset - prevFStack)
-                tree%argBools =  -1*(theArgBStackOffset - prevBStack)
-                prevdouble = integer_tape_pointer
-                prevint = double_tape_pointer
-                prevBStack = -1*theArgBStackOffset
-                prevIStack = -1*theArgIStackOffset
-                prevFStack = -1*theArgFStackOffset                
-              else
-                prev%called%doubles = double_tape_pointer - prevdouble
-                prev%called%integers = integer_tape_pointer- prevint
-                prev%called%argInts =-1*(theArgIStackOffset-prevIStack)
-                prev%called%argFloats=-1*(theArgFStackOffset-prevFStack)
-                prev%called%argBools= -1*(theArgBStackOffset-prevBStack)
-                prevdouble = integer_tape_pointer
-                prevint = double_tape_pointer
-                prevBStack = -1*theArgBStackOffset
-                prevIStack = -1*theArgIStackOffset
-                prevFStack = -1*theArgFStackOffset
-              endif
-             !end Graph code
-C                call diff tape storage only once flag
           end if 
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
@@ -2365,8 +2110,6 @@ C adjoint
           PBLAP%d = 0.0d0
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%res_store=.FALSE.
-            our_rev_mode%res_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
@@ -2376,54 +2119,5 @@ C     +"a:AF:", theArgFStackoffset,
 C     +" AI:",theArgIStackoffset, 
 C     +" DT:",double_tape_pointer, 
 C     +" IT:",integer_tape_pointer
-
-         !graph code
-         prevint = integer_tape_pointer
-         prevdouble = double_tape_pointer
-         prevBStack = theArgBStackOffset
-         prevIStack = theArgIStackOffset
-         prevFStack = theArgFStackOffset
-         if (our_rev_mode%tape) then
-          if( associated(prev)) then
-             cur => prev
-           else  
-             !if(tree%first%called%value .eq. cur%called%value) then
-           Open (Unit=10, File='/tmp/calltree.out', status='replace', 
-     + action='write', iostat=ierror)
-           write(10, *) 'digraph G {'
-           write(10, *) 'nodesep=.05;'
-           write(10, *) 'ranksep=.05;'
-           graph%value = tree%value
-           graph%doubles = tree%doubles
-           graph%integers = tree%integers
-           write(itoa, '(I10)') tree%doubles
-           itoa = adjustl(itoa)
-           write(itoa2, '(I10)') tree%integers
-           itoa2 = adjustl(itoa2)
-           write(10, '(Z8, A, A, A, A, A, A, A)'), iaddr(tree),
-     + '[shape="box" height=.25 label="', trim(tree%value), ' ', 
-     + trim(itoa), ':', trim(itoa2), '"];'
-            Call graphprint(tree)
-            write(10, *) '1[ height=.25 label="SubroutineName',
-     + ' double:integer"];'
-            write(10, '(A,A)') '2[height=.25 label="Edge checkpoint',
-     + ' double:integer:boolean"];'
-            write(10, *) '}'
-            close(10)
-            Open (Unit=11, File='/tmp/callgraph.out', status='replace',
-     + action='write', iostat=ierror)
-            write(11, *) 'digraph G {'
-            write(11, *) 'nodesep=.05;'
-            write(11, *) 'ranksep=.05;'
-            call graph2print()
-            write(11, '(A,A)') '1[ height=.25 label="SubroutineName',
-     + ' tape double:integer checkpoint double:integer:boolean"];'
-            write(11, *) '}'
-            close(11)
-             !read *, five
-             !endif
-             endif
-           endif    
-         !end graph code
 
         end subroutine bar
