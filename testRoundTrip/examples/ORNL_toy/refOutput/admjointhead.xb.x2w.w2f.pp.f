@@ -83,17 +83,6 @@ C
 C     **** Statements ****
 C
 
-
-          !counters
-          integer, save :: theSwitch = 0
-
-          !Graph variables
-          integer, save :: prevint = 1
-          integer, save :: prevdouble = 1
-          integer, save :: prevBStack = 0
-          integer, save :: prevIStack = 0
-          integer, save :: prevFStack = 0
-          
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
      +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
@@ -116,35 +105,24 @@ C
 
           type(modeType) :: our_orig_mode
 
-	  ! call external C function used in inlined code
-          !integer iaddr
-          !external iaddr
-
-           ! call external Fortran function used in inlined code
-          external makelines
-
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"b:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
+! external C function used in inlined code
+          integer iaddr
+          external iaddr
 
           if (our_rev_mode%arg_store) then 
-C            print*, " arg_store  ", our_rev_mode
 C store arguments
           end if 
           if (our_rev_mode%arg_restore) then
-C            print*, " arg_restore", our_rev_mode
 C restore arguments
           end if
           if (our_rev_mode%plain) then
-C            print*, " plain      ", our_rev_mode
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
       CALL sq(2,X,Y)
       P = 2.0D00
       Q = (P * P)
+C original function end
             our_rev_mode=our_orig_mode
           end if 
           if (our_rev_mode%tape) then
@@ -158,6 +136,7 @@ C taping
       CALL sq(2,X,Y)
       P = 2.0D00
       Q = (P * P)
+C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
@@ -173,18 +152,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       CALL sq(2,X,Y)
+C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
           end if 
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"a:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
-
         end subroutine head
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -306,17 +280,6 @@ C
 C     **** Statements ****
 C
 
-
-          !counters
-          integer, save :: theSwitch = 0
-
-          !Graph variables
-          integer, save :: prevint = 1
-          integer, save :: prevdouble = 1
-          integer, save :: prevBStack = 0
-          integer, save :: prevIStack = 0
-          integer, save :: prevFStack = 0
-          
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
      +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
@@ -339,27 +302,16 @@ C
 
           type(modeType) :: our_orig_mode
 
-	  ! call external C function used in inlined code
-          !integer iaddr
-          !external iaddr
-
-           ! call external Fortran function used in inlined code
-          external makelines
-
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"b:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
+! external C function used in inlined code
+          integer iaddr
+          external iaddr
 
           if (our_rev_mode%arg_store) then 
-C            print*, " arg_store  ", our_rev_mode
 C store arguments
           call cp_store_real_vector(U,size(U),theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
           end if 
           if (our_rev_mode%arg_restore) then
-C            print*, " arg_restore", our_rev_mode
 C restore arguments
           do cp_loop_variable_1 = ubound(U,1),lbound(U,1),-1
              U(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
@@ -369,13 +321,13 @@ C+U(cp_loop_variable_1)%v
           end do
           end if
           if (our_rev_mode%plain) then
-C            print*, " plain      ", our_rev_mode
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
       V(1)%v = SQRT((U(1)%v**2)+(U(2)%v**2))
       V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
      +)%v**3)+U(2)%v*U(1)%v*2.0D00)
+C original function end
             our_rev_mode=our_orig_mode
           end if 
           if (our_rev_mode%tape) then
@@ -439,6 +391,7 @@ C taping
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_14
           double_tape_pointer = double_tape_pointer+1
+C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
@@ -485,16 +438,11 @@ C adjoint
           OpenAD_Symbol_44 = double_tape(double_tape_pointer)
           U(1)%d = U(1)%d+V(1)%d*OpenAD_Symbol_44
           V(1)%d = 0.0d0
+C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
           end if 
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"a:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
-
         end subroutine sq

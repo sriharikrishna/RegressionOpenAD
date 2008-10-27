@@ -101,17 +101,6 @@ C
 C     **** Statements ****
 C
 
-
-          !counters
-          integer, save :: theSwitch = 0
-
-          !Graph variables
-          integer, save :: prevint = 1
-          integer, save :: prevdouble = 1
-          integer, save :: prevBStack = 0
-          integer, save :: prevIStack = 0
-          integer, save :: prevFStack = 0
-          
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
      +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
@@ -134,21 +123,11 @@ C
 
           type(modeType) :: our_orig_mode
 
-	  ! call external C function used in inlined code
-          !integer iaddr
-          !external iaddr
-
-           ! call external Fortran function used in inlined code
-          external makelines
-
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"b:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
+! external C function used in inlined code
+          integer iaddr
+          external iaddr
 
           if (our_rev_mode%arg_store) then 
-C            print*, " arg_store  ", our_rev_mode
 C store arguments
           call cp_store_real_scalar(AGLOBAL%v,theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
@@ -156,7 +135,6 @@ C store arguments
      +ffset,theArgFStackSize)
           end if 
           if (our_rev_mode%arg_restore) then
-C            print*, " arg_restore", our_rev_mode
 C restore arguments
           do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
              X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
@@ -169,13 +147,13 @@ C write(*,'(A,EN26.16E3)')"restore(s)  ",AGLOBAL%v
           theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-C            print*, " plain      ", our_rev_mode
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
       AGLOBAL%v = (X(1)%v*X(2)%v)
       Y%v = AGLOBAL%v
+C original function end
             our_rev_mode=our_orig_mode
           end if 
           if (our_rev_mode%tape) then
@@ -199,6 +177,7 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
+C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
@@ -227,18 +206,13 @@ C adjoint
           OpenAD_Symbol_7 = double_tape(double_tape_pointer)
           X(1)%d = X(1)%d+AGLOBAL%d*OpenAD_Symbol_7
           AGLOBAL%d = 0.0d0
+C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
           end if 
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"a:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
-
         end subroutine foo
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -327,17 +301,6 @@ C
 C     **** Statements ****
 C
 
-
-          !counters
-          integer, save :: theSwitch = 0
-
-          !Graph variables
-          integer, save :: prevint = 1
-          integer, save :: prevdouble = 1
-          integer, save :: prevBStack = 0
-          integer, save :: prevIStack = 0
-          integer, save :: prevFStack = 0
-          
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
      +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
@@ -360,34 +323,22 @@ C
 
           type(modeType) :: our_orig_mode
 
-	  ! call external C function used in inlined code
-          !integer iaddr
-          !external iaddr
-
-           ! call external Fortran function used in inlined code
-          external makelines
-
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"b:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
+! external C function used in inlined code
+          integer iaddr
+          external iaddr
 
           if (our_rev_mode%arg_store) then 
-C            print*, " arg_store  ", our_rev_mode
 C store arguments
           call cp_store_real_scalar(AGLOBAL%v,theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
           end if 
           if (our_rev_mode%arg_restore) then
-C            print*, " arg_restore", our_rev_mode
 C restore arguments
           AGLOBAL%v = theArgFStack(theArgFStackoffset)
 C write(*,'(A,EN26.16E3)')"restore(s)  ",AGLOBAL%v
           theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-C            print*, " plain      ", our_rev_mode
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
@@ -395,6 +346,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(1))
       CALL bar(P)
       Y(2)%v = P%v
+C original function end
             our_rev_mode=our_orig_mode
           end if 
           if (our_rev_mode%tape) then
@@ -409,6 +361,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(1))
       CALL bar(P)
       Y(2)%v = P%v
+C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
@@ -427,18 +380,13 @@ C adjoint
           Y(2)%d = 0.0d0
       CALL bar(P)
       CALL foo(X,Y(1))
+C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
           end if 
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"a:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
-
         end subroutine head
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -523,17 +471,6 @@ C
 C     **** Statements ****
 C
 
-
-          !counters
-          integer, save :: theSwitch = 0
-
-          !Graph variables
-          integer, save :: prevint = 1
-          integer, save :: prevdouble = 1
-          integer, save :: prevBStack = 0
-          integer, save :: prevIStack = 0
-          integer, save :: prevFStack = 0
-          
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
      +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
@@ -556,39 +493,28 @@ C
 
           type(modeType) :: our_orig_mode
 
-	  ! call external C function used in inlined code
-          !integer iaddr
-          !external iaddr
-
-           ! call external Fortran function used in inlined code
-          external makelines
-
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"b:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
+! external C function used in inlined code
+          integer iaddr
+          external iaddr
 
           if (our_rev_mode%arg_store) then 
-C            print*, " arg_store  ", our_rev_mode
 C store arguments
           call cp_store_real_scalar(AGLOBAL%v,theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
           end if 
           if (our_rev_mode%arg_restore) then
-C            print*, " arg_restore", our_rev_mode
 C restore arguments
           AGLOBAL%v = theArgFStack(theArgFStackoffset)
 C write(*,'(A,EN26.16E3)')"restore(s)  ",AGLOBAL%v
           theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-C            print*, " plain      ", our_rev_mode
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
       AP%v = (AGLOBAL%v**3)
+C original function end
             our_rev_mode=our_orig_mode
           end if 
           if (our_rev_mode%tape) then
@@ -604,6 +530,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_2 = (3*(AGLOBAL%v**(3-INT(1 _w2f__i8))))
           double_tape(double_tape_pointer) = OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer+1
+C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
             our_rev_mode%plain=.FALSE.
@@ -622,16 +549,11 @@ C adjoint
           OpenAD_Symbol_8 = double_tape(double_tape_pointer)
           AGLOBAL%d = AGLOBAL%d+AP%d*OpenAD_Symbol_8
           AP%d = 0.0d0
+C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
           end if 
-C          write(*,'(A,I6,A,I6,A,I5,A,I5)')
-C     +"a:AF:", theArgFStackoffset, 
-C     +" AI:",theArgIStackoffset, 
-C     +" DT:",double_tape_pointer, 
-C     +" IT:",integer_tape_pointer
-
         end subroutine bar
