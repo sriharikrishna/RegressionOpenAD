@@ -10,6 +10,7 @@ makeCmd="make"
 globalBatchMode=False
 globalIgnoreFailingCases=False
 globalOfferAcceptAsDefault=False
+globalAcceptAll=False
 globalVerbose=False
 
 class MultiColumnOutput:
@@ -116,14 +117,17 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
 	sys.stdout.write("%s/refOutput/%s not available" % (fcexampleDir,referenceFile))
 	if not (globalBatchMode):
             answer=""
-            if (globalOfferAcceptAsDefault) :
-                answer=raw_input(", copy and hg add it? (y)/n: ")
-                if (answer != "n"):
-                    answer="y"
-            else:
-                answer=raw_input(", copy and hg add it? y/(n): ")
-                if (answer != "y"):
-                    answer="n"
+            if globalAcceptAll:
+                answer="y"
+            else:    
+                if (globalOfferAcceptAsDefault) :
+                    answer=raw_input(", copy and hg add it? (y)/n: ")
+                    if (answer != "n"):
+                        answer="y"
+                else:
+                    answer=raw_input(", copy and hg add it? y/(n): ")
+                    if (answer != "y"):
+                        answer="n"
             if (answer == "n"):
 		sys.stdout.write("cannot verify %s\n" % fcfileName)
                 sys.stdout.flush()
@@ -143,14 +147,17 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
 	sys.stdout.write("Transformation -- diff %s %s/refOutput/%s\n" % (fcfileName,fcexampleDir,referenceFile))
 	if not (globalBatchMode):
             answer=""
-            if (globalOfferAcceptAsDefault) :
-                answer=raw_input("accept/copy new %s to %s/refOutput/%s? (y)/n: " % (fcfileName,fcexampleDir,referenceFile))
-                if (answer != "n"):
-                    answer="y"
-            else:
-                answer=raw_input("accept/copy new %s to %s/refOutput/%s? y/(n): " % (fcfileName,fcexampleDir,referenceFile))
-                if (answer != "y"):
-                    answer="n"
+            if globalAcceptAll:
+                answer="y"
+            else:    
+                if (globalOfferAcceptAsDefault) :
+                    answer=raw_input("accept/copy new %s to %s/refOutput/%s? (y)/n: " % (fcfileName,fcexampleDir,referenceFile))
+                    if (answer != "n"):
+                        answer="y"
+                else:
+                    answer=raw_input("accept/copy new %s to %s/refOutput/%s? y/(n): " % (fcfileName,fcexampleDir,referenceFile))
+                    if (answer != "y"):
+                        answer="n"
             if (answer == "n"):
 		sys.stdout.write("skipping change\n")
 	    else:
@@ -422,6 +429,9 @@ def main():
     opt.add_option('-a','--offerAcceptAsDefault',dest='offerAcceptAsDefault',
                    help="offer accept as default for updating reference files",
                    action='store_true',default=False)
+    opt.add_option('-A','--acceptAll',dest='acceptAll',
+                   help="accept all changes without confirmation",
+                   action='store_true',default=False)
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
                    action='store_true',default=False)
@@ -446,6 +456,9 @@ def main():
         if options.offerAcceptAsDefault :
             global globalOfferAcceptAsDefault
             globalOfferAcceptAsDefault=True
+        if options.acceptAll :
+            global globalAcceptAll
+            globalAcceptAll=True
         if options.verbose :
             global globalVerbose
             globalVerbose=True
