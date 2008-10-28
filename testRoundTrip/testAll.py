@@ -22,8 +22,14 @@ class MultiColumnOutput:
         import termios, fcntl, struct, sys
         s = struct.pack("HHHH", 0, 0, 0, 0)
         fd_stdout = sys.stdout.fileno()
-        x = fcntl.ioctl(fd_stdout, termios.TIOCGWINSZ, s)
-        (rows,cols,xPix,yPix)=struct.unpack("HHHH", x)
+        cols=80
+	try:
+          x = fcntl.ioctl(fd_stdout, termios.TIOCGWINSZ, s)
+          (rows,cols,xPix,yPix)=struct.unpack("HHHH", x)
+	except IOError:
+	  if globalVerbose:
+	    sys.stderr.write("Error: cannot detect terminal width\n")
+	    sys.stderr.flush()
         return cols
 
     class ColumnInfo:
