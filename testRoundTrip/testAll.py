@@ -453,7 +453,7 @@ def main():
                    action='store_true',default=False)
     (options, args) = opt.parse_args()
     try:
-        if os.environ.has_key('BATCH_MODE') or options.batchMode :
+        if os.environ.has_key('BATCHMODE') or options.batchMode :
             global globalBatchMode
             globalBatchMode=True
         if options.ignoreFailingCases :
