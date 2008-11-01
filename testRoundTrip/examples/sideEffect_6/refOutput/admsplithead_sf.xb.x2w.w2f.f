@@ -42,16 +42,16 @@ C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
-      IF(A .EQ. 'two') THEN
+      IF(A(1 : LEN(A)) .EQ. 'two') THEN
         __value__(X) = (__value__(X) * 2.0D00)
       ENDIF
-      IF(A .EQ. 'three') THEN
+      IF(A(1 : LEN(A)) .EQ. 'three') THEN
         __value__(X) = (__value__(X) * 3.0D00)
       ENDIF
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      IF(A .EQ. 'two') THEN
+      IF(A(1 : LEN(A)) .EQ. 'two') THEN
         OpenAD_Symbol_2 = (__value__(X) * 2.0D00)
         OpenAD_Symbol_0 = 2.0D00
         __value__(X) = OpenAD_Symbol_2
@@ -63,7 +63,7 @@ C       $OpenAD$ INLINE push_i(subst)
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_11)
       ENDIF
-      IF(A .EQ. 'three') THEN
+      IF(A(1 : LEN(A)) .EQ. 'three') THEN
         OpenAD_Symbol_5 = (__value__(X) * 3.0D00)
         OpenAD_Symbol_3 = 3.0D00
         __value__(X) = OpenAD_Symbol_5
@@ -136,7 +136,7 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      IF(A .EQ. 'two') THEN
+      IF(A(1 : LEN(A)) .EQ. 'two') THEN
         OpenAD_Symbol_2 = (__value__(X) * 2.0D00)
         OpenAD_Symbol_0 = 2.0D00
         __value__(X) = OpenAD_Symbol_2
@@ -148,7 +148,7 @@ C       $OpenAD$ INLINE push_i(subst)
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_17)
       ENDIF
-      IF(A .EQ. 'three') THEN
+      IF(A(1 : LEN(A)) .EQ. 'three') THEN
         OpenAD_Symbol_5 = (__value__(X) * 3.0D00)
         OpenAD_Symbol_3 = 3.0D00
         __value__(X) = OpenAD_Symbol_5

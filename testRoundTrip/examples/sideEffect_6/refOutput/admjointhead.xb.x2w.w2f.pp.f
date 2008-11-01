@@ -139,10 +139,10 @@ C write(*,'(A,EN26.16E3)')"restore(s)  ",X%v
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-      IF(A .EQ. 'two') THEN
+      IF(A(1 : LEN(A)) .EQ. 'two') THEN
         X%v = (X%v*2.0D00)
       ENDIF
-      IF(A .EQ. 'three') THEN
+      IF(A(1 : LEN(A)) .EQ. 'three') THEN
         X%v = (X%v*3.0D00)
       ENDIF
 C original function end
@@ -157,7 +157,7 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-      IF(A .EQ. 'two') THEN
+      IF(A(1 : LEN(A)) .EQ. 'two') THEN
         OpenAD_Symbol_2 = (X%v*2.0D00)
         OpenAD_Symbol_0 = 2.0D00
         X%v = OpenAD_Symbol_2
@@ -169,7 +169,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
           integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-      IF(A .EQ. 'three') THEN
+      IF(A(1 : LEN(A)) .EQ. 'three') THEN
         OpenAD_Symbol_5 = (X%v*3.0D00)
         OpenAD_Symbol_3 = 3.0D00
         X%v = OpenAD_Symbol_5
