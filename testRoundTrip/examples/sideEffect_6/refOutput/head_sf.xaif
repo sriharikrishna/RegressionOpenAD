@@ -208,7 +208,7 @@
                 <xaif:Constant vertex_id="1" type="integer" feType="U8" value="0"/>
               </xaif:Index>
               <xaif:Bound>
-                <xaif:Intrinsic vertex_id="1" name="len" type="***"/>
+                <xaif:Intrinsic vertex_id="1" name="len" type="***" annotation="{IntrinsicKey#0_LEN_OP}"/>
                 <xaif:VariableReference vertex_id="2" du_ud="2" alias="4">
                   <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_2"/>
                 </xaif:VariableReference>
@@ -254,7 +254,7 @@
                 <xaif:Constant vertex_id="1" type="integer" feType="U8" value="0"/>
               </xaif:Index>
               <xaif:Bound>
-                <xaif:Intrinsic vertex_id="1" name="len" type="***"/>
+                <xaif:Intrinsic vertex_id="1" name="len" type="***" annotation="{IntrinsicKey#0_LEN_OP}"/>
                 <xaif:VariableReference vertex_id="2" du_ud="2" alias="4">
                   <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_2"/>
                 </xaif:VariableReference>
