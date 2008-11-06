@@ -355,15 +355,15 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_127 = 1_w2f__i8
           OpenAD_Symbol_128 = 1_w2f__i8
           OpenAD_Symbol_126 = 1_w2f__i8
-          OpenAD_Symbol_139 = (OpenAD_Symbol_116 * OpenAD_Symbol_113)
-          OpenAD_Symbol_140 = (OpenAD_Symbol_86 * OpenAD_Symbol_83)
-          OpenAD_Symbol_141 = (OpenAD_Symbol_99 * OpenAD_Symbol_97)
-          OpenAD_Symbol_142 = (OpenAD_Symbol_124 * OpenAD_Symbol_114)
-          OpenAD_Symbol_143 = (OpenAD_Symbol_122 * OpenAD_Symbol_114)
-          OpenAD_Symbol_144 = (OpenAD_Symbol_110 * OpenAD_Symbol_102)
-          OpenAD_Symbol_145 = (OpenAD_Symbol_108 * OpenAD_Symbol_102)
-          OpenAD_Symbol_146 = (OpenAD_Symbol_94 * OpenAD_Symbol_84)
-          OpenAD_Symbol_147 = (OpenAD_Symbol_92 * OpenAD_Symbol_84)
+          OpenAD_Symbol_139 = (OpenAD_Symbol_124 * OpenAD_Symbol_114)
+          OpenAD_Symbol_140 = (OpenAD_Symbol_122 * OpenAD_Symbol_114)
+          OpenAD_Symbol_141 = (OpenAD_Symbol_116 * OpenAD_Symbol_113)
+          OpenAD_Symbol_142 = (OpenAD_Symbol_110 * OpenAD_Symbol_102)
+          OpenAD_Symbol_143 = (OpenAD_Symbol_108 * OpenAD_Symbol_102)
+          OpenAD_Symbol_144 = (OpenAD_Symbol_99 * OpenAD_Symbol_97)
+          OpenAD_Symbol_145 = (OpenAD_Symbol_94 * OpenAD_Symbol_84)
+          OpenAD_Symbol_146 = (OpenAD_Symbol_92 * OpenAD_Symbol_84)
+          OpenAD_Symbol_147 = (OpenAD_Symbol_86 * OpenAD_Symbol_83)
           OpenAD_Symbol_148 = (OpenAD_Symbol_80 * OpenAD_Symbol_68)
           OpenAD_Symbol_149 = (OpenAD_Symbol_78 * OpenAD_Symbol_68)
           OpenAD_Symbol_150 = (OpenAD_Symbol_76 * OpenAD_Symbol_68)
@@ -372,32 +372,31 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_153 = (OpenAD_Symbol_46 * OpenAD_Symbol_34)
           OpenAD_Symbol_154 = (OpenAD_Symbol_44 * OpenAD_Symbol_34)
           OpenAD_Symbol_155 = (OpenAD_Symbol_42 * OpenAD_Symbol_34)
-          OpenAD_Symbol_156 = (OpenAD_Symbol_10 * OpenAD_Symbol_67 +
-     >  OpenAD_Symbol_10 * OpenAD_Symbol_85 * OpenAD_Symbol_83 +
-     >  OpenAD_Symbol_10 * OpenAD_Symbol_98 * OpenAD_Symbol_97 +
-     >  OpenAD_Symbol_10 *(OpenAD_Symbol_12 + OpenAD_Symbol_13) *(
-     > OpenAD_Symbol_101 + OpenAD_Symbol_115 * OpenAD_Symbol_113))
+          OpenAD_Symbol_156 = (OpenAD_Symbol_10 *(OpenAD_Symbol_67 +
+     >  OpenAD_Symbol_98 * OpenAD_Symbol_97 + OpenAD_Symbol_85 *
+     >  OpenAD_Symbol_83 +(OpenAD_Symbol_12 + OpenAD_Symbol_13) *(
+     > OpenAD_Symbol_101 + OpenAD_Symbol_115 * OpenAD_Symbol_113)))
           CALL sax(OpenAD_Symbol_33, __deriv__(S), __deriv__(BULKMOD(I,
      >  J)))
-          CALL saxpy(OpenAD_Symbol_139, __deriv__(S), __deriv__(BULKMOD
-     > (I, J)))
           CALL saxpy(OpenAD_Symbol_48, __deriv__(S3O2), __deriv__(
      > BULKMOD(I, J)))
-          CALL saxpy(OpenAD_Symbol_140, __deriv__(S), __deriv__(BULKMOD
-     > (I, J)))
-          CALL saxpy(OpenAD_Symbol_141, __deriv__(S3O2), __deriv__(
+          CALL saxpy(OpenAD_Symbol_139, __deriv__(T2), __deriv__(
      > BULKMOD(I, J)))
+          CALL saxpy(OpenAD_Symbol_140, __deriv__(T), __deriv__(BULKMOD
+     > (I, J)))
+          CALL saxpy(OpenAD_Symbol_141, __deriv__(S), __deriv__(BULKMOD
+     > (I, J)))
           CALL saxpy(OpenAD_Symbol_142, __deriv__(T2), __deriv__(
      > BULKMOD(I, J)))
           CALL saxpy(OpenAD_Symbol_143, __deriv__(T), __deriv__(BULKMOD
      > (I, J)))
-          CALL saxpy(OpenAD_Symbol_144, __deriv__(T2), __deriv__(
+          CALL saxpy(OpenAD_Symbol_144, __deriv__(S3O2), __deriv__(
      > BULKMOD(I, J)))
-          CALL saxpy(OpenAD_Symbol_145, __deriv__(T), __deriv__(BULKMOD
+          CALL saxpy(OpenAD_Symbol_145, __deriv__(T2), __deriv__(
+     > BULKMOD(I, J)))
+          CALL saxpy(OpenAD_Symbol_146, __deriv__(T), __deriv__(BULKMOD
      > (I, J)))
-          CALL saxpy(OpenAD_Symbol_146, __deriv__(T2), __deriv__(
-     > BULKMOD(I, J)))
-          CALL saxpy(OpenAD_Symbol_147, __deriv__(T), __deriv__(BULKMOD
+          CALL saxpy(OpenAD_Symbol_147, __deriv__(S), __deriv__(BULKMOD
      > (I, J)))
           CALL saxpy(OpenAD_Symbol_148, __deriv__(T3), __deriv__(
      > BULKMOD(I, J)))

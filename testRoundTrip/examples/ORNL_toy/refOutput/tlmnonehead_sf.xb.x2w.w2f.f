@@ -119,11 +119,11 @@ C
       OpenAD_Symbol_33 = (2.0D00 * OpenAD_Symbol_28)
       OpenAD_Symbol_34 = (OpenAD_Symbol_23 * INT((-1_w2f__i8)))
       CALL sax(OpenAD_Symbol_27, __deriv__(U(2)), __deriv__(V(2)))
-      CALL saxpy(OpenAD_Symbol_21, __deriv__(U(2)), __deriv__(V(2)))
-      CALL saxpy(OpenAD_Symbol_22, __deriv__(U(1)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_33, __deriv__(U(1)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_24, __deriv__(U(2)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_34, __deriv__(U(1)), __deriv__(V(2)))
+      CALL saxpy(OpenAD_Symbol_21, __deriv__(U(2)), __deriv__(V(2)))
+      CALL saxpy(OpenAD_Symbol_22, __deriv__(U(1)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_20, __deriv__(U(2)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_14, __deriv__(U(1)), __deriv__(V(2)))
       END SUBROUTINE
