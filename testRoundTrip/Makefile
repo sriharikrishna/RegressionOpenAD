@@ -123,6 +123,10 @@ ifndef OPEN64ROOT
   $(error "Error:  environment variable OPEN64ROOT not defined!")
 endif
 
+ifndef OPENADFORTTK_BASE
+  $(error "Error:  environment variable OPENADFORTTK_BASE not defined!")
+endif
+
 ifndef OPENADFORTTKROOT
   $(error "Error:  environment variable OPENADFORTTKROOT not defined!")
 endif
@@ -206,7 +210,7 @@ whirl2xaif xaif2whirl whirl2sexp sexp2whirl:
 	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
 
 %.py:
-	@$(LN) ${OPENADFORTTKROOT}/tools/SourceProcessing/$@ .
+	@$(LN) ${OPENADFORTTK_BASE}/tools/SourceProcessing/$@ .
 
 multi-pp.pl:
 	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
