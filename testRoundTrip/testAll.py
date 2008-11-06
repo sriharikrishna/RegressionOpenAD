@@ -382,8 +382,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         sys.stdout.write("  SCALAR_OR_VECTOR="+scalarOrVector+"\n")
         sys.stdout.write("  MAJOR_MODE="+majorMode+"\n")
         sys.stdout.write("  MINOR_MODE="+ctrMode+"\n")
-    if (os.system(makeCmd+" head.pre.xb.x2w.w2f.post.f")):
-	raise MakeError, makeCmd+" head.pre.xb.x2w.w2f.post.f"
+    if (os.system(makeCmd+" head.pre.xb.x2w.w2f.pp.f")):
+	raise MakeError, makeCmd+" head.pre.xb.x2w.w2f.pp.f"
     # compile all the transformed bits
     driverMode = majorMode
     if (majorMode == "adm"):

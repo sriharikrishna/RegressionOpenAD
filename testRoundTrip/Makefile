@@ -94,7 +94,8 @@ OAD_cp.o		\
 OAD_rev.o		\
 OAD_tape.o		\
 iaddr.o                         
-POSTPROCESS_FLAGS=-r
+PREPROCESS_FLAGS=--mode=reverse
+POSTPROCESS_FLAGS=
 ifeq ($(MINOR_MODE),joint)
 CP_FLAG=-I
 else
@@ -103,6 +104,7 @@ endif
 endif
 
 ifeq ($(MAJOR_MODE),tlm)
+PREPROCESS_FLAGS=--mode=forward
 POSTPROCESS_FLAGS=-f
 endif
 
@@ -111,7 +113,7 @@ POSTPROCESS_FLAGS=
 MODULES+=OAD_rev.o OAD_trace.o                   
 endif
 
-MODULES+= all_globals_mod.pre.xb.x2w.w2f.post.o 
+MODULES+= all_globals_mod.pre.xb.x2w.w2f.pp.o 
 
 ifndef OPENADROOT
   $(error "Error:  environment variable OPENADROOT not defined!")
@@ -172,24 +174,25 @@ head_sf.pre.xb.xaif : head_sf.pre.xaif xaif.xsd xaif_base.xsd xaif_inlinable_int
 
 # XAIF' -> WHIRL'
 head_sf.pre.xb.x2w.B : head_sf.pre.xb.xaif xaif2whirl
-	./xaif2whirl --structured head_sf.B $<
+	./xaif2whirl --structured head_sf.pre.B $<
 
 # WHIRL' -> F'
 head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 	./whirl2f -openad $<
 
 # postprocess F'
-head_sf.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
+head_sf.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f multi-pp.pl
 	$(COMPLAIN)
-	./postProcess.py $(POSTPROCESS_FLAGS) $< -o $@
+#	./postProcess.py $(POSTPROCESS_FLAGS) $< -o $@
+	perl multi-pp.pl $(PP_FLAGS) $<
 
 # extract the transformed globals module so we the right order of 
 # compilation with respect to the globals checkpoint module
-all_globals_mod.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.post.f
+all_globals_mod.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.pp.f
 	cat $< | sed -n '/MODULE all_globals_mod/,/END MODULE/p' > $@
 
 # remove the transformed globals module from the transformed head file
-head.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.post.f
+head.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.pp.f
 	cat $< | sed '/MODULE all_globals_mod/,/END MODULE/d' > $@
 
 # setup some links
@@ -202,8 +205,11 @@ mfef90:
 whirl2xaif xaif2whirl whirl2sexp sexp2whirl: 
 	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
 
-%.py: 
+%.py:
 	@$(LN) ${OPENADFORTTKROOT}/tools/SourceProcessing/$@ .
+
+multi-pp.pl:
+	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
 
 whirl2f whirl2f_be:
 	@$(LN) ${OPEN64ROOT}/whirl2f/$@ .
@@ -226,7 +232,7 @@ OAD_active.f90:
 ######################################################
 
 # make the driver
-driver: $(MODULES) head.pre.xb.x2w.w2f.post.o driver.o 
+driver: $(MODULES) head.pre.xb.x2w.w2f.pp.o driver.o 
 	$(COMPLAIN)
 	$(F90C) $(F90FLAGS) $^ -o $@ 
 
@@ -257,7 +263,7 @@ groupClean: minClean
 
 clean: groupClean
 	$(RM) *.xsd 
-	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f *.py xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
+	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f multi-pp.pl *Process.py xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
 	$(RM) *.mod *.o
 
 objs test : 
