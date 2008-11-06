@@ -69,7 +69,6 @@ endif
 
 ######################################################
 
-MODULES= w2f__types.o OAD_active.o
 COMPLAIN=
 ifndef MAJOR_MODE
 COMPLAIN=$(error "Error:  environment variable MAJOR_MODE not defined (set in testAll.py, run with -v)!")
@@ -86,13 +85,17 @@ xaifBoosterVerbFlag=-g 1
 whirl2xaifVerbFlag=--debug 1
 endif
 
+MODULES= w2f__types.o OAD_active.o
+PREPROCESS_FLAGS=
+
 ifeq ($(MAJOR_MODE),adm)
 MODULES+=		\
 OAD_cp.o		\
 OAD_rev.o		\
 OAD_tape.o		\
 iaddr.o                         
-PP_FLAGS=
+PREPROCESS_FLAGS=--mode=reverse
+POSTPROCESS_FLAGS=
 ifeq ($(MINOR_MODE),joint)
 CP_FLAG=-I
 else
@@ -101,15 +104,16 @@ endif
 endif
 
 ifeq ($(MAJOR_MODE),tlm)
-PP_FLAGS=-f
+PREPROCESS_FLAGS=--mode=forward
+POSTPROCESS_FLAGS=-f
 endif
 
 ifeq ($(MAJOR_MODE),trace)
-PP_FLAGS=
+POSTPROCESS_FLAGS=
 MODULES+=OAD_rev.o OAD_trace.o                   
 endif
 
-MODULES+= all_globals_mod.xb.x2w.w2f.pp.o 
+MODULES+= all_globals_mod.pre.xb.x2w.w2f.pp.o 
 
 ifndef OPENADROOT
   $(error "Error:  environment variable OPENADROOT not defined!")
@@ -117,6 +121,10 @@ endif
 
 ifndef OPEN64ROOT
   $(error "Error:  environment variable OPEN64ROOT not defined!")
+endif
+
+ifndef OPENADFORTTK_BASE
+  $(error "Error:  environment variable OPENADFORTTK_BASE not defined!")
 endif
 
 ifndef OPENADFORTTKROOT
@@ -150,40 +158,45 @@ all: driver
 head_sf.f : all_globals_mod.f head.f 
 	cat $^ > $@
 
+# preprocess F
+head_sf.pre.f: head_sf.f preProcess.py
+	./preProcess.py $(PREPROCESS_FLAGS) $< -o $@
+
 # F -> WHIRL
-head_sf.B: head_sf.f mfef90
+head_sf.pre.B: head_sf.pre.f mfef90
 	./mfef90 -z -F -N132 $<
 
 # WHIRL -> XAIF
-head_sf.xaif : head_sf.B whirl2xaif
+head_sf.pre.xaif : head_sf.pre.B whirl2xaif
 	$(COMPLAIN)
 	./whirl2xaif $(whirl2xaifVerbFlag) -N -n -o $@ $<
 
 # XAIF -> XAIF'
-head_sf.xb.xaif : head_sf.xaif xaif.xsd xaif_base.xsd xaif_inlinable_intrinsics.xsd xaif_derivative_propagator.xsd xaif_output.xsd xaifBooster
+head_sf.pre.xb.xaif : head_sf.pre.xaif xaif.xsd xaif_base.xsd xaif_inlinable_intrinsics.xsd xaif_derivative_propagator.xsd xaif_output.xsd xaifBooster
 	$(COMPLAIN)
 	./xaifBooster -v -V -i $< -c ${XAIFSCHEMAROOT}/schema/examples/inlinable_intrinsics.xaif -o $@ $(CP_FLAG) $(xaifBoosterVerbFlag)
 
 # XAIF' -> WHIRL'
-head_sf.xb.x2w.B : head_sf.xb.xaif xaif2whirl
-	./xaif2whirl --structured head_sf.B $<
+head_sf.pre.xb.x2w.B : head_sf.pre.xb.xaif xaif2whirl
+	./xaif2whirl --structured head_sf.pre.B $<
 
 # WHIRL' -> F'
-head_sf.xb.x2w.w2f.f: head_sf.xb.x2w.B whirl2f whirl2f_be
+head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 	./whirl2f -openad $<
 
 # postprocess F'
-head_sf.xb.x2w.w2f.pp.f: head_sf.xb.x2w.w2f.f multi-pp.pl ad_inline.f
+head_sf.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f multi-pp.pl
 	$(COMPLAIN)
-	perl multi-pp.pl $(PP_FLAGS) $<
+#	./postProcess.py $(POSTPROCESS_FLAGS) $< -o $@
+	perl multi-pp.pl $(POSTPROCESS_FLAGS) $<
 
 # extract the transformed globals module so we the right order of 
 # compilation with respect to the globals checkpoint module
-all_globals_mod.xb.x2w.w2f.pp.f: head_sf.xb.x2w.w2f.pp.f
+all_globals_mod.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.pp.f
 	cat $< | sed -n '/MODULE all_globals_mod/,/END MODULE/p' > $@
 
 # remove the transformed globals module from the transformed head file
-head.xb.x2w.w2f.pp.f: head_sf.xb.x2w.w2f.pp.f
+head.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.pp.f
 	cat $< | sed '/MODULE all_globals_mod/,/END MODULE/d' > $@
 
 # setup some links
@@ -196,7 +209,10 @@ mfef90:
 whirl2xaif xaif2whirl whirl2sexp sexp2whirl: 
 	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
 
-%.pl: 
+%.py:
+	@$(LN) ${OPENADFORTTK_BASE}/tools/SourceProcessing/$@ .
+
+multi-pp.pl:
 	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
 
 whirl2f whirl2f_be:
@@ -220,7 +236,7 @@ OAD_active.f90:
 ######################################################
 
 # make the driver
-driver: $(MODULES) head.xb.x2w.w2f.pp.o driver.o 
+driver: $(MODULES) head.pre.xb.x2w.w2f.pp.o driver.o 
 	$(COMPLAIN)
 	$(F90C) $(F90FLAGS) $^ -o $@ 
 
@@ -251,7 +267,7 @@ groupClean: minClean
 
 clean: groupClean
 	$(RM) *.xsd 
-	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f *.pl xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
+	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f multi-pp.pl *Process.py xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
 	$(RM) *.mod *.o
 
 objs test : 

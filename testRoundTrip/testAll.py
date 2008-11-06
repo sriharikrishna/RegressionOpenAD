@@ -119,6 +119,7 @@ def overridableLink(exampleFile,defaultFile,targetFileName):
 
 def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
     referenceFile = fcmode + fcfileName
+    referenceFile = referenceFile.replace('pre.','')
     if not (os.path.exists("%s/refOutput/%s" % (fcexampleDir,referenceFile))):
 	sys.stdout.write("%s/refOutput/%s not available" % (fcexampleDir,referenceFile))
 	if not (globalBatchMode):
@@ -388,8 +389,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         sys.stdout.write("  SCALAR_OR_VECTOR="+scalarOrVector+"\n")
         sys.stdout.write("  MAJOR_MODE="+majorMode+"\n")
         sys.stdout.write("  MINOR_MODE="+ctrMode+"\n")
-    if (os.system(makeCmd+" head.xb.x2w.w2f.pp.f")):
-	raise MakeError, makeCmd+" head.xb.x2w.w2f.pp.f"
+    if (os.system(makeCmd+" head.pre.xb.x2w.w2f.pp.f")):
+	raise MakeError, makeCmd+" head.pre.xb.x2w.w2f.pp.f"
     # compile all the transformed bits
     driverMode = majorMode
     if (majorMode == "adm"):
@@ -398,8 +399,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     if (os.system(makeCmd + " driver")):
 	raise MakeError, makeCmd + " driver"
     # compare all the transformation results
-    fileCompare(exDir,"head_sf.xaif","","file translated from")
-    for tfile in ["head_sf.xb.x2w.w2f.f","head_sf.xb.x2w.w2f.pp.f","head.xb.x2w.w2f.pp.f","head_sf.xb.xaif"]:
+    fileCompare(exDir,"head_sf.pre.xaif","","file translated from")
+    for tfile in ["head_sf.pre.xb.x2w.w2f.f","head_sf.pre.xb.x2w.w2f.pp.f","head.pre.xb.x2w.w2f.pp.f","head_sf.pre.xb.xaif"]:
 	fileCompare(exDir,tfile,majorMode + ctrMode,"file translated from")
     # execute the driver
     sys.stdout.flush()
