@@ -188,7 +188,7 @@ head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 head_sf.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f multi-pp.pl
 	$(COMPLAIN)
 #	./postProcess.py $(POSTPROCESS_FLAGS) $< -o $@
-	perl multi-pp.pl $(PP_FLAGS) $<
+	perl multi-pp.pl $(POSTPROCESS_FLAGS) $<
 
 # extract the transformed globals module so we the right order of 
 # compilation with respect to the globals checkpoint module
