@@ -1,14 +1,17 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import os
 import sys
 
-def showGraphs(errDict,errLimDict,name,n,m):
+def showGraphs(errDict,errLimDict,withAD,name,n,m):
     import tempfile
     plotFileName=tempfile.mktemp()
     plotFile=open(plotFileName,"w")
     plotFile.write('set terminal x11\n')
-    plotFile.write('set multiplot layout 2, 3 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
+    if withAD: 
+        plotFile.write('set multiplot layout 2, 3 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
+    else:     
+        plotFile.write('set multiplot layout 2, 1 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
     plotFile.write('set noxlabel\n')
     plotFile.write('set noxtics\n')
     plotFile.write('set noylabel\n')
@@ -53,7 +56,7 @@ def showGraphs(errDict,errLimDict,name,n,m):
         os.remove(plotFileName)
         map(os.remove,datFileNames)
 
-def compareFiles (fileDict,doBatch, graphs,name, verbose):
+def compareFiles (fileDict,withAD,doBatch, graphs,name, verbose):
     paramsFile=open("params.conf","r")
     n=int(paramsFile.readline())
     m=int(paramsFile.readline())
@@ -70,21 +73,25 @@ def compareFiles (fileDict,doBatch, graphs,name, verbose):
                 fElementString,fValueString = theLine.split('=')
                 numbers[fileKey].append(float(fValueString))
     errDict={}
-    for key in ['absErrADDD','relErrADDD','absErrCvR_AD','relErrCvR_AD','absErrCvR_DD','relErrCvR_DD'] :
+    if (withAD): 
+        for key in ['absErrADDD','relErrADDD','absErrCvR_AD','relErrCvR_AD'] :
+            errDict[key]=[]
+    for key in ['absErrCvR_DD','relErrCvR_DD'] :
       errDict[key]=[]
     for i in range(0,n*m):
-        # current AD vs DD
-        errDict['absErrADDD'].append(abs(numbers['curDD'][i]-numbers['curAD'][i]))
-        if (numbers['curAD'][i]!=0) :
-            errDict['relErrADDD'].append(abs((numbers['curDD'][i]-numbers['curAD'][i])/numbers['curAD'][i]))
-        else:
-            errDict['relErrADDD'].append(errDict['absErrADDD'][-1])
-        # AD current vs. ref
-        errDict['absErrCvR_AD'].append(abs(numbers['curAD'][i]-numbers['refAD'][i]))
-        if (numbers['refAD'][i]!=0) :
-            errDict['relErrCvR_AD'].append(abs((numbers['curAD'][i]-numbers['refAD'][i])/numbers['refAD'][i]))
-        else:
-            errDict['relErrCvR_AD'].append(errDict['absErrCvR_AD'][-1])
+        if (withAD): 
+            # current AD vs DD
+            errDict['absErrADDD'].append(abs(numbers['curDD'][i]-numbers['curAD'][i]))
+            if (numbers['curAD'][i]!=0) :
+                errDict['relErrADDD'].append(abs((numbers['curDD'][i]-numbers['curAD'][i])/numbers['curAD'][i]))
+            else:
+                errDict['relErrADDD'].append(errDict['absErrADDD'][-1])
+            # AD current vs. ref
+            errDict['absErrCvR_AD'].append(abs(numbers['curAD'][i]-numbers['refAD'][i]))
+            if (numbers['refAD'][i]!=0) :
+                errDict['relErrCvR_AD'].append(abs((numbers['curAD'][i]-numbers['refAD'][i])/numbers['refAD'][i]))
+            else:
+                errDict['relErrCvR_AD'].append(errDict['absErrCvR_AD'][-1])
         # DD current vs. ref
         errDict['absErrCvR_DD'].append(abs(numbers['curDD'][i]-numbers['refDD'][i]))
         if (numbers['refDD'][i]!=0) :
@@ -92,22 +99,25 @@ def compareFiles (fileDict,doBatch, graphs,name, verbose):
         else:
             errDict['relErrCvR_DD'].append(errDict['absErrCvR_DD'][-1])
     errLimDict={}
-    maxRelErrADDD=max(errDict['relErrADDD'])
-    maxAbsErrADDD=max(errDict['absErrADDD'])
-    errLimDict['relErrADDD']=relErrorMax
-    errLimDict['absErrADDD']=relErrorMax
-    returnValue=0
-    if (maxRelErrADDD>relErrorMax and maxAbsErrADDD>relErrorMax):
-        returnValue=1
-        if not doBatch : 
-            sys.stderr.write(" max discrepancy current AD vs. DD abs: %s rel %s\n" % (maxAbsErrADDD,maxAbsErrADDD))
     compEps=1.E-16
-    maxAbsDiscrCurRef=max([max(errDict['absErrCvR_AD']),max(errDict['absErrCvR_DD'])])
-    maxRelDiscrCurRef=max([max(errDict['relErrCvR_AD']),max(errDict['relErrCvR_DD'])])
-    errLimDict['absErrCvR_AD']=compEps
     errLimDict['absErrCvR_DD']=compEps
-    errLimDict['relErrCvR_AD']=compEps
     errLimDict['relErrCvR_DD']=compEps
+    maxAbsDiscrCurRef=max(errDict['absErrCvR_DD'])
+    maxRelDiscrCurRef=max(errDict['relErrCvR_DD'])
+    returnValue=0
+    if (withAD): 
+        maxRelErrADDD=max(errDict['relErrADDD'])
+        maxAbsErrADDD=max(errDict['absErrADDD'])
+        errLimDict['relErrADDD']=relErrorMax
+        errLimDict['absErrADDD']=relErrorMax
+        if (maxRelErrADDD>relErrorMax and maxAbsErrADDD>relErrorMax):
+            returnValue=1
+            if not doBatch : 
+                sys.stderr.write(" max discrepancy current AD vs. DD abs: %s rel %s\n" % (maxAbsErrADDD,maxAbsErrADDD))
+        maxAbsDiscrCurRef=max([max(errDict['absErrCvR_AD']),maxAbsDiscrCurRef])
+        maxRelDiscrCurRef=max([max(errDict['relErrCvR_AD']),maxRelDiscrCurRef])
+        errLimDict['absErrCvR_AD']=compEps
+        errLimDict['relErrCvR_AD']=compEps
     if (maxRelDiscrCurRef>compEps and maxAbsDiscrCurRef>compEps):
         returnValue=1
         if not doBatch : 
@@ -120,16 +130,12 @@ def compareFiles (fileDict,doBatch, graphs,name, verbose):
                 if (val > errLimDict[errKey]) :
                   sys.stderr.write("  F["+str(index/m+1)+"]["+str(index%m)+"]: %r\n" % (val))
     if (returnValue and graphs) :
-        showGraphs(errDict,errLimDict,name,n,m)
+        showGraphs(errDict,errLimDict,withAD,name,n,m)
     return returnValue
           
 def main():
     from optparse import OptionParser
-    keyList=["curDD","refDD","curAD","refAD"]
-    usage = '%prog [options] '
-    for i in keyList :
-        usage=usage+'<'+i+'_file> '
-    opt = OptionParser(usage=usage)
+    opt = OptionParser(usage='%prog [options] <curDD_file> <refDD_file [ <curAD_file> <refAD_file ]')
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
                    action='store_true',default=False)
@@ -144,15 +150,20 @@ def main():
                    action='store_true',default=False)
     (options, args) = opt.parse_args()
     returnValue=0
+    keyList=["curDD","refDD"]
+    withAD=False
     try:
-        if len(args)!=4 :
-            opt.error("expect 4 input file arguments, found " + str(len(args))+" : " + str(args))
+        if len(args)!=2  and len(args)!=4:
+            opt.error("expect 2 or 4 input file arguments, found " + str(len(args))+" : " + str(args))
+        if len(args)==4 :
+            keyList.extend(["curAD","refAD"])
+            withAD=True
         if options.batchMode and (options.graphs or options.verbose) :
             opt.error("options for batchMode and graphs/verbose are mutually exclusive")
         fileDict={}    
         for i in range(0,len(keyList)):
             fileDict[keyList[i]]=args[i]
-        returnValue=compareFiles(fileDict,options.batchMode, options.graphs,options.name, options.verbose)
+        returnValue=compareFiles(fileDict,withAD,options.batchMode, options.graphs,options.name, options.verbose)
     except RuntimeError, e:
         print 'caught exception: ',e
         return -1

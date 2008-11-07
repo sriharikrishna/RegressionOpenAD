@@ -292,10 +292,12 @@ def determineModes():
 	if (raw_input("use scalar mode or vector mode? (s)/v: ") == "v"):
 	    scalarOrVectorMode = "vector"
 	# determine major mode
-	majorModeInput = raw_input("use forward/reverse/trace major mode? (f)/r/t: ")
-	if (majorModeInput == "t"):	# TRACING MODE
+	majorModeInput = raw_input("use forward/reverse/trace/divDiff major mode? (f)/r/t/d: ")
+	if (majorModeInput == "t"):	# tracing mode
 	    majorMode = "trace"
-	elif (majorModeInput == "r"):	# REVERSE MODE
+	elif (majorModeInput == "d"):	# divided difference on original mode
+	    majorMode = "dd"
+	elif (majorModeInput == "r"):	# reverse mode
 	    majorMode = "adm"
 	    ctrMode = "split"
 	    # determine ctr mode
@@ -310,6 +312,8 @@ def determineModes():
 
 def link_xaifBooster(majorMode):
     # link an xaifBooster executable
+    if (majorMode=='dd'):
+        return
     if not (os.path.exists("xaifBooster")):
 	foundValidAlg = False
 	while not (foundValidAlg):
@@ -388,8 +392,9 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         sys.stdout.write("  SCALAR_OR_VECTOR="+scalarOrVector+"\n")
         sys.stdout.write("  MAJOR_MODE="+majorMode+"\n")
         sys.stdout.write("  MINOR_MODE="+ctrMode+"\n")
-    if (os.system(makeCmd+" head.xb.x2w.w2f.pp.f")):
-	raise MakeError, makeCmd+" head.xb.x2w.w2f.pp.f"
+    if (majorMode!='dd'): 
+        if (os.system(makeCmd+" head.xb.x2w.w2f.pp.f")):
+            raise MakeError, makeCmd+" head.xb.x2w.w2f.pp.f"
     # compile all the transformed bits
     driverMode = majorMode
     if (majorMode == "adm"):
@@ -397,24 +402,27 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     overridableLink(exDir + "/driver_" + scalarOrVector + "_" + driverMode + ".f90","genericFiles/" + scalarOrVector + "/driver_" + driverMode + ".f90","driver.f90")
     if (os.system(makeCmd + " driver")):
 	raise MakeError, makeCmd + " driver"
-    # compare all the transformation results
-    fileCompare(exDir,"head_sf.xaif","","file translated from")
-    for tfile in ["head_sf.xb.x2w.w2f.f","head_sf.xb.x2w.w2f.pp.f","head.xb.x2w.w2f.pp.f","head_sf.xb.xaif"]:
-	fileCompare(exDir,tfile,majorMode + ctrMode,"file translated from")
+    if (majorMode!='dd'): 
+        # compare all the transformation results
+        fileCompare(exDir,"head_sf.xaif","","file translated from")
+        for tfile in ["head_sf.xb.x2w.w2f.f","head_sf.xb.x2w.w2f.pp.f","head.xb.x2w.w2f.pp.f","head_sf.xb.xaif"]:
+            fileCompare(exDir,tfile,majorMode + ctrMode,"file translated from")
     # execute the driver
     sys.stdout.flush()
     if(os.system(makeCmd + " run")):
 	raise MakeError, makeCmd + " run"
-    # do numerical comparison
-    if (majorMode == "adm" or majorMode == "tlm"):
-	numFiles="tmpOutput/dd.out " + exDir + "/refOutput/dd.out tmpOutput/ad.out " + exDir + "/refOutput/ad.out"
+    if (majorMode != "trace"):
+        # do numerical comparison
+        numFiles="tmpOutput/dd.out " + exDir + "/refOutput/dd.out"
+        if (majorMode == "adm" or majorMode == "tlm"):
+            numFiles+=" tmpOutput/ad.out " + exDir + "/refOutput/ad.out"
         if not (globalBatchMode):
-	   testFlags = '-g -v'
+            testFlags = '-g -v'
         else:
-	   testFlags = '-b'
+            testFlags = '-b'
         sys.stdout.write("./numericalComparison.py %s -n %s %s\n" % (testFlags,exName,numFiles))
         if (os.system("./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles))):
-	   raise NumericalError
+            raise NumericalError
     printSep("*","",sepLength)
 
 
@@ -429,9 +437,6 @@ def main():
             compilerOpts+=" | "
     compilerOpts+=" ]"        
     opt = OptionParser(usage=usage)
-    opt.add_option('-i','--ignoreFailingCases',dest='ignoreFailingCases',
-                   help="don't if we should try to run  the cases known to fail",
-                   action='store_true',default=False)
     opt.add_option('-a','--offerAcceptAsDefault',dest='offerAcceptAsDefault',
                    help="offer accept as default for updating reference files",
                    action='store_true',default=False)
@@ -441,15 +446,18 @@ def main():
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
                    action='store_true',default=False)
-    opt.add_option('-v','--verbose',dest='verbose',
-                   help="let the pipeline components produce some extra output",
-                   action='store_true',default=False)
     opt.add_option('-c','--compiler',dest='compiler',
                    type='choice', choices=compilers,
                    help="pick a compiler (defaults to ifort) from the following list: " +compilerOpts+" - the compiler should be in PATH",
                    default='ifort')
+    opt.add_option('-i','--ignoreFailingCases',dest='ignoreFailingCases',
+                   help="don't if we should try to run  the cases known to fail",
+                   action='store_true',default=False)
     opt.add_option('-O','--optimize',dest='optimize',
                    help="turn compiler optimization on (default off)",
+                   action='store_true',default=False)
+    opt.add_option('-v','--verbose',dest='verbose',
+                   help="let the pipeline components produce some extra output",
                    action='store_true',default=False)
     (options, args) = opt.parse_args()
     try:
@@ -479,8 +487,8 @@ def main():
 	    os.environ['XAIFBOOSTER_BASE']=os.path.join(os.environ['OPENADROOT'],'..')
 	os.system(makeCmd + " groupClean")
 	(examples,rangeStart,rangeEnd) = populateExamplesList(args[0:])
-	(scalarOrVectorMode,majorMode,ctrMode) = determineModes()
-	link_xaifBooster(majorMode)
+        (scalarOrVectorMode,majorMode,ctrMode) = determineModes()
+        link_xaifBooster(majorMode)
 
 	# Run the examples
 	j = rangeStart-1

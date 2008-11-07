@@ -49,9 +49,9 @@ ifeq ($(F90C),f95)
 FIXEDFORMAT=-fixed
 FREEFORMAT=-free -132
 ifdef OPTIMIZE
-F90FLAGS=-O3 -w=unused
+F90FLAGS=-O4 -w=unused
 else
-F90FLAGS=-g -O0 -w=unused
+F90FLAGS=-g -O0 -strict95 -C=all -gline -ieee=full
 endif 
 CC=gcc
 endif
@@ -69,7 +69,6 @@ endif
 
 ######################################################
 
-MODULES= w2f__types.o OAD_active.o
 COMPLAIN=
 ifndef MAJOR_MODE
 COMPLAIN=$(error "Error:  environment variable MAJOR_MODE not defined (set in testAll.py, run with -v)!")
@@ -86,30 +85,48 @@ xaifBoosterVerbFlag=-g 1
 whirl2xaifVerbFlag=--debug 1
 endif
 
+# need to put modules in specific order:
+MODULES=
+
+ifneq ($(MAJOR_MODE),dd)
+MODULES+= w2f__types.o OAD_active.o
+endif
+
 ifeq ($(MAJOR_MODE),adm)
 MODULES+=		\
 OAD_cp.o		\
 OAD_rev.o		\
 OAD_tape.o		\
 iaddr.o                         
-PP_FLAGS=
-ifeq ($(MINOR_MODE),joint)
-CP_FLAG=-I
-else
-CP_FLAG=
-endif
 endif
 
+ifeq ($(MAJOR_MODE),trace)
+MODULES+=OAD_rev.o OAD_trace.o                   
+endif
+
+ifeq ($(MAJOR_MODE),dd)
+MODULES+= all_globals_mod.o
+else
+MODULES+= all_globals_mod.xb.x2w.w2f.pp.o 
+endif
+
+PP_FLAGS=
 ifeq ($(MAJOR_MODE),tlm)
 PP_FLAGS=-f
 endif
 
-ifeq ($(MAJOR_MODE),trace)
-PP_FLAGS=
-MODULES+=OAD_rev.o OAD_trace.o                   
+CP_FLAG=
+ifeq ($(MINOR_MODE),joint)
+CP_FLAG=-I
 endif
 
-MODULES+= all_globals_mod.xb.x2w.w2f.pp.o 
+DRIVER_PRE_REQ=$(MODULES)
+ifeq ($(MAJOR_MODE),dd)
+DRIVER_PRE_REQ+=head.o
+else
+DRIVER_PRE_REQ+=head.xb.x2w.w2f.pp.o
+endif 
+DRIVER_PRE_REQ+=driver.o
 
 ifndef OPENADROOT
   $(error "Error:  environment variable OPENADROOT not defined!")
@@ -220,7 +237,7 @@ OAD_active.f90:
 ######################################################
 
 # make the driver
-driver: $(MODULES) head.xb.x2w.w2f.pp.o driver.o 
+driver: $(DRIVER_PRE_REQ)
 	$(COMPLAIN)
 	$(F90C) $(F90FLAGS) $^ -o $@ 
 
