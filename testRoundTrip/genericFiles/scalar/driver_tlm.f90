@@ -74,7 +74,7 @@ program driver
   allocate(y0(m))
 
   do i=1,n   
-     x0(i)=i/2.
+     x0(i)=i/2.D0
   end do
 
   open(2,file='tmpOutput/dd.out')

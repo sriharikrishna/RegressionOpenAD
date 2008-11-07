@@ -97,12 +97,12 @@ program driver
   our_rev_mode%tape=.FALSE.
   our_rev_mode%adjoint=.FALSE.
   ! equilateral triangle coordinates (x1,x2,x3,y1,y2,y3)
-  x1%v=0.
-  x2%v=.5
-  x3%v=1.
-  x4%v=0.
-  x5%v=0.523598776
-  x6%v=0.
+  x1%v=0.D0
+  x2%v=.5D0
+  x3%v=1.D0
+  x4%v=0.D0
+  x5%v=0.523598776D0
+  x6%v=0.D0
   call head(obj,g_obj0,g_obj1,g_obj2,g_obj3,&
        &g_obj4,g_obj5,x1,x2,x3,x4,x5,x6,&
        &h_obj0,h_obj1,h_obj2,h_obj3,h_obj4,h_obj5,h_obj6,h_obj7,h_obj8,&

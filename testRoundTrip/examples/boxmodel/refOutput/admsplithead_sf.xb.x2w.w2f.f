@@ -135,7 +135,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_cycle_fields()
       DO L = 1, 3, 1
         IF(__value__(TNOW(L)) .LT.(-2.0D00)) THEN
-          __value__(TNOW(INT(L))) = 2.0
+          __value__(TNOW(INT(L))) = 2.0D00
         ENDIF
       END DO
 C     $OpenAD$ END REPLACEMENT
@@ -157,7 +157,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_177 = 0_w2f__i8
       DO L = 1, 3, 1
         IF(__value__(TNOW(L)) .LT.(-2.0D00)) THEN
-          __value__(TNOW(INT(L))) = 2.0
+          __value__(TNOW(INT(L))) = 2.0D00
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(L)
           OpenAD_Symbol_178 = 1_w2f__i8
@@ -363,7 +363,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_183 = 0_w2f__i8
       DO L = 1, 3, 1
         IF(__value__(TNOW(L)) .LT.(-2.0D00)) THEN
-          __value__(TNOW(INT(L))) = 2.0
+          __value__(TNOW(INT(L))) = 2.0D00
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(L)
           OpenAD_Symbol_184 = 1_w2f__i8
@@ -1415,11 +1415,11 @@ C$OPENAD XXX Template ad_template.f
       END DO
       DO L = 1, 6, 1
         IF(L .LE. 3) THEN
-          PROJ_T(INT(L)) = 1.0
-          PROJ_S(INT(L)) = 0.0
+          PROJ_T(INT(L)) = 1.0D00
+          PROJ_S(INT(L)) = 0.0D00
         ELSE
-          PROJ_T(INT(L)) = 0.0
-          PROJ_S(INT(L)) = 1.0
+          PROJ_T(INT(L)) = 0.0D00
+          PROJ_S(INT(L)) = 1.0D00
         ENDIF
       END DO
       DO L = 1, 6, 1
@@ -1502,14 +1502,14 @@ C     $OpenAD$ INLINE push_i(subst)
       OpenAD_Symbol_257 = 0_w2f__i8
       DO L = 1, 6, 1
         IF(L .LE. 3) THEN
-          PROJ_T(INT(L)) = 1.0
-          PROJ_S(INT(L)) = 0.0
+          PROJ_T(INT(L)) = 1.0D00
+          PROJ_S(INT(L)) = 0.0D00
           OpenAD_Symbol_258 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_258)
         ELSE
-          PROJ_T(INT(L)) = 0.0
-          PROJ_S(INT(L)) = 1.0
+          PROJ_T(INT(L)) = 0.0D00
+          PROJ_S(INT(L)) = 1.0D00
           OpenAD_Symbol_259 = 0_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_259)
@@ -1974,14 +1974,14 @@ C     $OpenAD$ INLINE push_i(subst)
       OpenAD_Symbol_281 = 0_w2f__i8
       DO L = 1, 6, 1
         IF(L .LE. 3) THEN
-          PROJ_T(INT(L)) = 1.0
-          PROJ_S(INT(L)) = 0.0
+          PROJ_T(INT(L)) = 1.0D00
+          PROJ_S(INT(L)) = 0.0D00
           OpenAD_Symbol_282 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_282)
         ELSE
-          PROJ_T(INT(L)) = 0.0
-          PROJ_S(INT(L)) = 1.0
+          PROJ_T(INT(L)) = 0.0D00
+          PROJ_S(INT(L)) = 1.0D00
           OpenAD_Symbol_283 = 0_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_283)

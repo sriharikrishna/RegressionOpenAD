@@ -72,8 +72,8 @@ program driver
   read(2,'(I5,/,I5,/,F8.1)') n, m, h
   close(2)
 
-  x0_1=1.0
-  x0_2=2.0
+  x0_1=1.0D0
+  x0_2=2.0D0
 
   open(2,file='tmpOutput/dd.out')
   write(2,*) "DD"

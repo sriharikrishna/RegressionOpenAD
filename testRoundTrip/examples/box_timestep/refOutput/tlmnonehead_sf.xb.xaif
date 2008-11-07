@@ -523,7 +523,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="1.00000000000000000000e+01"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.00000000000000000000e+01"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:Assignment statement_id="22">
@@ -539,7 +539,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="1.20000000000000000000e+01"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.20000000000000000000e+01"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:Assignment statement_id="28">
@@ -555,7 +555,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="1.40000000000000000000e+01"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.40000000000000000000e+01"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:Assignment statement_id="34">

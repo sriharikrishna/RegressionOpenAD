@@ -121,7 +121,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_cycle_fields()
       DO L = 1, 3, 1
         IF (TNOW(L)%v .LT. (-2.0D00)) THEN
-          TNOW(INT(L))%v = 2.0
+          TNOW(INT(L))%v = 2.0D00
         ENDIF
       END DO
           end if
@@ -139,7 +139,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_177 = 0_w2f__i8
       DO L = 1, 3, 1
         IF (TNOW(L)%v .LT. (-2.0D00)) THEN
-          TNOW(INT(L))%v = 2.0
+          TNOW(INT(L))%v = 2.0D00
           integer_tape(integer_tape_pointer) = L
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_178 = 1_w2f__i8
@@ -886,11 +886,11 @@ C$OPENAD XXX Template ad_template.f
       END DO
       DO L = 1, 6, 1
         IF(L .LE. 3) THEN
-          PROJ_T(INT(L)) = 1.0
-          PROJ_S(INT(L)) = 0.0
+          PROJ_T(INT(L)) = 1.0D00
+          PROJ_S(INT(L)) = 0.0D00
         ELSE
-          PROJ_T(INT(L)) = 0.0
-          PROJ_S(INT(L)) = 1.0
+          PROJ_T(INT(L)) = 0.0D00
+          PROJ_S(INT(L)) = 1.0D00
         ENDIF
       END DO
       DO L = 1, 6, 1
@@ -974,14 +974,14 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_257 = 0_w2f__i8
       DO L = 1, 6, 1
         IF(L .LE. 3) THEN
-          PROJ_T(INT(L)) = 1.0
-          PROJ_S(INT(L)) = 0.0
+          PROJ_T(INT(L)) = 1.0D00
+          PROJ_S(INT(L)) = 0.0D00
           OpenAD_Symbol_258 = 1_w2f__i8
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_258
           integer_tape_pointer = integer_tape_pointer+1
         ELSE
-          PROJ_T(INT(L)) = 0.0
-          PROJ_S(INT(L)) = 1.0
+          PROJ_T(INT(L)) = 0.0D00
+          PROJ_S(INT(L)) = 1.0D00
           OpenAD_Symbol_259 = 0_w2f__i8
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_259
           integer_tape_pointer = integer_tape_pointer+1

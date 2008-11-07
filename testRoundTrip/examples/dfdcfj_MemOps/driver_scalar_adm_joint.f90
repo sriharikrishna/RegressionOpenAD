@@ -79,7 +79,7 @@ program driver
   read(2,'(I5,/,I5,/,F8.1)') n, m, h
   close(2)
 
-  r%v=10.0
+  r%v=10.0D0
 
   allocate(x0(n))
   allocate(res_dd(m,n))

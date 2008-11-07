@@ -73,12 +73,12 @@ program driver
   allocate(y(m))
   allocate(y0(m))
 
-  x0(1)=0.
-  x0(2)=.5
-  x0(3)=1.
-  x0(4)=0.
-  x0(5)=0.523598776
-  x0(6)=0.
+  x0(1)=0.D0
+  x0(2)=.5D0
+  x0(3)=1.D0
+  x0(4)=0.D0
+  x0(5)=0.523598776D0
+  x0(6)=0.D0
 
   open(2,file='tmpOutput/dd.out')
   write(2,*) "DD"

@@ -9,9 +9,9 @@ c$openad XXX Template ad_template.f
 	  double precision t, t1
 c$openad INDEPENDENT(x)
 	  t=x(1)+x(2)
-	  t2=t*2
+	  t1=t*2
 	  call foo()
-	  y=2*t+3*t2
+	  y=2*t+3*t1
 c$openad DEPENDENT(y)
 	end subroutine
 

@@ -80,7 +80,7 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id="INTEGRATION_TIME_38" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#38}" active="0" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="INT_127" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#127}" active="1" temp="0">
+          <xaif:Symbol symbol_id="INT_126" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#126}" active="1" temp="0">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="METRIC1_40" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#40}" active="0" temp="0">
           </xaif:Symbol>
@@ -538,15 +538,15 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id="box_density__81" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#81}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="box_final_state__92" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#92}" active="1" temp="0">
+          <xaif:Symbol symbol_id="box_final_state__91" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#91}" active="1" temp="0">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="box_forward__79" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#79}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="box_ini_fields__94" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#94}" active="1" temp="0">
+          <xaif:Symbol symbol_id="box_ini_fields__93" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#93}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="box_ini_params__104" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#104}" active="1" temp="0">
+          <xaif:Symbol symbol_id="box_ini_params__103" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#103}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="box_model_body__137" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#137}" active="1" temp="0">
+          <xaif:Symbol symbol_id="box_model_body__136" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#136}" active="1" temp="0">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="box_robert_filter__82" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#82}" active="1" temp="0">
           </xaif:Symbol>
@@ -554,7 +554,7 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id="box_transport__84" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#84}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="box_update__141" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#141}" active="1" temp="0">
+          <xaif:Symbol symbol_id="box_update__139" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#139}" active="1" temp="0">
           </xaif:Symbol>
         </xaif:SymbolTable>
       </xaif:Scope>
@@ -2290,7 +2290,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="2.00000000000000000000e+00"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="2.00000000000000000000e+00"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:DerivativePropagator>
@@ -4245,7 +4245,7 @@
       </xaif:BasicBlock>
       <xaif:EndBranch vertex_id="128" annotation=""/>
       <xaif:BasicBlock vertex_id="408" annotation="" scope_id="13">
-        <xaif:SubroutineCall statement_id="284" symbol_id="box_update__141" scope_id="1" active="undefined">
+        <xaif:SubroutineCall statement_id="284" symbol_id="box_update__139" scope_id="1" active="undefined">
           <xaif:Argument position="1">
             <xaif:VariableReference vertex_id="1" active="true" alias="102" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="FLDNEW_7" annotation="" scope_id="13"/>
@@ -6345,7 +6345,7 @@
       <xaif:ControlFlowEdge edge_id="6" source="115" target="116" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="7" source="405" target="112" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="137" symbol_id="box_final_state__92" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" active="1">
+    <xaif:ControlFlowGraph vertex_id="137" symbol_id="box_final_state__91" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" active="1">
       <xaif:ModLocal>
         <xaif:SideEffectReference active="false" deriv="0" constant="0">
           <xaif:SymbolReference vertex_id="1" symbol_id="TSVEC_69" annotation="" scope_id="1"/>
@@ -6550,7 +6550,7 @@
       <xaif:ControlFlowEdge edge_id="11" source="388" target="16" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="12" source="389" target="20" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="138" symbol_id="box_ini_fields__94" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1">
+    <xaif:ControlFlowGraph vertex_id="138" symbol_id="box_ini_fields__93" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1">
       <xaif:ModLocal>
         <xaif:SideEffectReference active="false" deriv="0" constant="0">
           <xaif:SymbolReference vertex_id="1" symbol_id="METRIC_39" annotation="" scope_id="1"/>
@@ -7947,7 +7947,7 @@
       <xaif:ControlFlowEdge edge_id="16" source="391" target="31" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="17" source="392" target="35" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="139" symbol_id="box_ini_params__104" scope_id="1" controlflowgraph_scope_id="6" annotation="{PU_Id#5}" active="1">
+    <xaif:ControlFlowGraph vertex_id="139" symbol_id="box_ini_params__103" scope_id="1" controlflowgraph_scope_id="6" annotation="{PU_Id#5}" active="1">
       <xaif:ModLocal>
         <xaif:SideEffectReference active="false" deriv="0" constant="0">
           <xaif:SymbolReference vertex_id="1" symbol_id="ALPHA_21" annotation="" scope_id="1"/>
@@ -9330,7 +9330,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="1.00000000000000000000e+00"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.00000000000000000000e+00"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:Assignment statement_id="394">
@@ -9348,7 +9348,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="0.00000000000000000000e+00"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="0.00000000000000000000e+00"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
       </xaif:BasicBlock>
@@ -9370,7 +9370,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="0.00000000000000000000e+00"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="0.00000000000000000000e+00"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:Assignment statement_id="407">
@@ -9388,7 +9388,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="1.00000000000000000000e+00"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.00000000000000000000e+00"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
       </xaif:BasicBlock>
@@ -9920,7 +9920,7 @@
       <xaif:ControlFlowEdge edge_id="38" source="396" target="59" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="39" source="397" target="67" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="140" symbol_id="box_model_body__137" scope_id="1" controlflowgraph_scope_id="7" annotation="{PU_Id#6}" active="1">
+    <xaif:ControlFlowGraph vertex_id="140" symbol_id="box_model_body__136" scope_id="1" controlflowgraph_scope_id="7" annotation="{PU_Id#6}" active="1">
       <xaif:Mod>
         <xaif:SideEffectReference active="false" deriv="0" constant="0">
           <xaif:SymbolReference vertex_id="1" symbol_id="METRIC_39" annotation="" scope_id="1"/>
@@ -10091,7 +10091,7 @@
         <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_USE]"/>
-        <xaif:SubroutineCall statement_id="11" symbol_id="box_ini_fields__94" scope_id="1" active="undefined">
+        <xaif:SubroutineCall statement_id="11" symbol_id="box_ini_fields__93" scope_id="1" active="undefined">
         </xaif:SubroutineCall>
         <xaif:Marker statement_id="12" annotation="{WHIRL_Id#12} [passive: OPR_STID]"/>
       </xaif:BasicBlock>
@@ -10233,7 +10233,7 @@
       <xaif:BasicBlock vertex_id="87" annotation="" scope_id="7">
       </xaif:BasicBlock>
       <xaif:BasicBlock vertex_id="90" annotation="" scope_id="7">
-        <xaif:SubroutineCall statement_id="87" symbol_id="box_final_state__92" scope_id="1" active="undefined">
+        <xaif:SubroutineCall statement_id="87" symbol_id="box_final_state__91" scope_id="1" active="undefined">
         </xaif:SubroutineCall>
       </xaif:BasicBlock>
       <xaif:ControlFlowEdge edge_id="1" source="74" target="75" has_condition_value="0"/>
@@ -10263,7 +10263,7 @@
       <xaif:ControlFlowEdge edge_id="25" source="401" target="78" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="26" source="402" target="92" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="141" symbol_id="box_update__141" scope_id="1" controlflowgraph_scope_id="12" annotation="{PU_Id#11}" active="1">
+    <xaif:ControlFlowGraph vertex_id="141" symbol_id="box_update__139" scope_id="1" controlflowgraph_scope_id="12" annotation="{PU_Id#11}" active="1">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="FLDNEW_1" scope_id="12" annotation="{WHIRL_Id#2}" intent="inout"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="FLDOLD_2" scope_id="12" annotation="{WHIRL_Id#3}" intent="inout"/>

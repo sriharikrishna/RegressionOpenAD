@@ -64,7 +64,7 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       TYPE (OpenADTy_active) T
-      TYPE (OpenADTy_active) T2
+      TYPE (OpenADTy_active) T1
 C
 C     **** Top Level Pragmas ****
 C
@@ -76,40 +76,38 @@ C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
       __value__(T) = (__value__(X(1)) + __value__(X(2)))
-      __value__(T2) = (__value__(T) * 2.0D00)
+      __value__(T1) = (__value__(T) * 2.0D00)
       CALL foo()
-      __value__(Y) = (__value__(T2) * DBLE(3.0) + __value__(T) * 2.0D00
-     > )
+      __value__(Y) = (__value__(T) * 2.0D00 + __value__(T1) * 3.0D00)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       __value__(T) = (__value__(X(1)) + __value__(X(2)))
       OpenAD_Symbol_0 = 1_w2f__i8
       OpenAD_Symbol_1 = 1_w2f__i8
-      __value__(T2) = (__value__(T) * 2.0D00)
+      __value__(T1) = (__value__(T) * 2.0D00)
       OpenAD_Symbol_2 = 2.0D00
       CALL foo()
-      __value__(Y) = (__value__(T2) * DBLE(3.0) + __value__(T) * 2.0D00
-     > )
-      OpenAD_Symbol_6 = 3.0
+      __value__(Y) = (__value__(T) * 2.0D00 + __value__(T1) * 3.0D00)
+      OpenAD_Symbol_6 = 2.0D00
       OpenAD_Symbol_4 = 1_w2f__i8
-      OpenAD_Symbol_8 = 2.0D00
+      OpenAD_Symbol_8 = 3.0D00
       OpenAD_Symbol_5 = 1_w2f__i8
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(Y), __deriv__(T))
+      CALL Saxpy(3.0D00, __deriv__(Y), __deriv__(T1))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(3.0D00, __deriv__(Y), __deriv__(T2))
+      CALL Saxpy(2.0D00, __deriv__(Y), __deriv__(T))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y))
       CALL foo()
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(T2), __deriv__(X(2)))
+      CALL Saxpy(2.0D00, __deriv__(T1), __deriv__(X(2)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(T2), __deriv__(X(1)))
+      CALL Saxpy(2.0D00, __deriv__(T1), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(T2))
+      CALL ZeroDeriv(__deriv__(T1))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(1_w2f__i8, __deriv__(T), __deriv__(X(2)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
@@ -134,30 +132,29 @@ C$OPENAD XXX Template ad_template.f
       __value__(T) = (__value__(X(1)) + __value__(X(2)))
       OpenAD_Symbol_0 = 1_w2f__i8
       OpenAD_Symbol_1 = 1_w2f__i8
-      __value__(T2) = (__value__(T) * 2.0D00)
+      __value__(T1) = (__value__(T) * 2.0D00)
       OpenAD_Symbol_2 = 2.0D00
       CALL foo()
-      __value__(Y) = (__value__(T2) * DBLE(3.0) + __value__(T) * 2.0D00
-     > )
-      OpenAD_Symbol_6 = 3.0
+      __value__(Y) = (__value__(T) * 2.0D00 + __value__(T1) * 3.0D00)
+      OpenAD_Symbol_6 = 2.0D00
       OpenAD_Symbol_4 = 1_w2f__i8
-      OpenAD_Symbol_8 = 2.0D00
+      OpenAD_Symbol_8 = 3.0D00
       OpenAD_Symbol_5 = 1_w2f__i8
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(Y), __deriv__(T))
+      CALL Saxpy(3.0D00, __deriv__(Y), __deriv__(T1))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(3.0D00, __deriv__(Y), __deriv__(T2))
+      CALL Saxpy(2.0D00, __deriv__(Y), __deriv__(T))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y))
       CALL foo()
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(T2), __deriv__(X(2)))
+      CALL Saxpy(2.0D00, __deriv__(T1), __deriv__(X(2)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(T2), __deriv__(X(1)))
+      CALL Saxpy(2.0D00, __deriv__(T1), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(T2))
+      CALL ZeroDeriv(__deriv__(T1))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(1_w2f__i8, __deriv__(T), __deriv__(X(2)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)

@@ -78,9 +78,7 @@
       </xaif:Scope>
       <xaif:Scope vertex_id="4" annotation="{SymTab_Id#4}">
         <xaif:SymbolTable>
-          <xaif:Symbol symbol_id="T1_5" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#5}" active="0" temp="0">
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="T2_6" kind="variable" type="real" feType="F4" shape="scalar" annotation="{Sym_Id#6}" active="1" temp="0">
+          <xaif:Symbol symbol_id="T1_5" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#5}" active="1" temp="0">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="T_4" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#4}" active="1" temp="0">
           </xaif:Symbol>
@@ -131,10 +129,10 @@
       </xaif:StmtIdSet>
       <xaif:StmtIdSet key="5">
         <xaif:StatementId idRef="23"/>
-        <xaif:StatementId idRef="29"/>
+        <xaif:StatementId idRef="28"/>
       </xaif:StmtIdSet>
       <xaif:StmtIdSet key="6">
-        <xaif:StatementId idRef="29"/>
+        <xaif:StatementId idRef="28"/>
       </xaif:StmtIdSet>
     </xaif:DUUDSetMap>
     <xaif:DOSetMap>
@@ -237,7 +235,7 @@
         </xaif:Assignment>
         <xaif:Assignment statement_id="23">
           <xaif:AssignmentLHS active="true" alias="4" du_ud="6" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="T2_6" annotation="" scope_id="4"/>
+            <xaif:SymbolReference vertex_id="1" symbol_id="T1_5" annotation="" scope_id="4"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
             <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
@@ -318,7 +316,7 @@
               </xaif:X>
             </xaif:AX>
             <xaif:Y deriv="1">
-              <xaif:SymbolReference vertex_id="1" symbol_id="T2_6" annotation="" scope_id="4"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="T1_5" annotation="" scope_id="4"/>
             </xaif:Y>
           </xaif:Sax>
           <xaif:Saxpy>
@@ -339,28 +337,28 @@
               </xaif:X>
             </xaif:AX>
             <xaif:Y deriv="1">
-              <xaif:SymbolReference vertex_id="1" symbol_id="T2_6" annotation="" scope_id="4"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="T1_5" annotation="" scope_id="4"/>
             </xaif:Y>
           </xaif:Saxpy>
         </xaif:DerivativePropagator>
-        <xaif:SubroutineCall statement_id="28" symbol_id="foo__21" scope_id="1" active="undefined">
+        <xaif:SubroutineCall statement_id="27" symbol_id="foo__21" scope_id="1" active="undefined">
         </xaif:SubroutineCall>
-        <xaif:Assignment statement_id="29">
+        <xaif:Assignment statement_id="28">
           <xaif:AssignmentLHS active="true" alias="5" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
             <xaif:Intrinsic vertex_id="1" annotation="" name="add_scal_scal"/>
             <xaif:Intrinsic vertex_id="2" annotation="" name="mul_scal_scal"/>
-            <xaif:VariableReference vertex_id="3" active="true" alias="4" du_ud="4" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="T2_6" annotation="" scope_id="4"/>
-            </xaif:VariableReference>
-            <xaif:Constant vertex_id="4" type="real" feType="F4" value="3.00000000000000000000e+00"/>
-            <xaif:Intrinsic vertex_id="5" annotation="" name="mul_scal_scal"/>
-            <xaif:VariableReference vertex_id="6" active="true" alias="2" du_ud="3" deriv="0" constant="0">
+            <xaif:VariableReference vertex_id="3" active="true" alias="2" du_ud="3" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
             </xaif:VariableReference>
-            <xaif:Constant vertex_id="7" type="real" feType="F8" value="2.00000000000000000000e+00"/>
+            <xaif:Constant vertex_id="4" type="real" feType="F8" value="2.00000000000000000000e+00"/>
+            <xaif:Intrinsic vertex_id="5" annotation="" name="mul_scal_scal"/>
+            <xaif:VariableReference vertex_id="6" active="true" alias="4" du_ud="4" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="T1_5" annotation="" scope_id="4"/>
+            </xaif:VariableReference>
+            <xaif:Constant vertex_id="7" type="real" feType="F8" value="3.00000000000000000000e+00"/>
             <xaif:ExpressionEdge edge_id="1" source="3" target="2" position="1"/>
             <xaif:ExpressionEdge edge_id="2" source="4" target="2" position="2"/>
             <xaif:ExpressionEdge edge_id="3" source="6" target="5" position="1"/>
@@ -374,7 +372,7 @@
             <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_6" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="1"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F4" value="3.00000000000000000000e+00"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="2.00000000000000000000e+00"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:Assignment statement_id="_elementary_partial_4">
@@ -390,7 +388,7 @@
             <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_8" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="1"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Constant vertex_id="1" type="real" feType="F8" value="2.00000000000000000000e+00"/>
+            <xaif:Constant vertex_id="1" type="real" feType="F8" value="3.00000000000000000000e+00"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:Assignment statement_id="_elementary_partial_5">
@@ -405,10 +403,10 @@
           <xaif:Sax>
             <xaif:AX>
               <xaif:A>
-                <xaif:Constant vertex_id="1" type="real" feType="" value="3.00000000000000000000e+00"/>
+                <xaif:Constant vertex_id="1" type="real" feType="" value="2.00000000000000000000e+00"/>
               </xaif:A>
               <xaif:X deriv="1">
-                <xaif:SymbolReference vertex_id="1" symbol_id="T2_6" annotation="" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
               </xaif:X>
             </xaif:AX>
             <xaif:Y deriv="1">
@@ -418,10 +416,10 @@
           <xaif:Saxpy>
             <xaif:AX>
               <xaif:A>
-                <xaif:Constant vertex_id="1" type="real" feType="" value="2.00000000000000000000e+00"/>
+                <xaif:Constant vertex_id="1" type="real" feType="" value="3.00000000000000000000e+00"/>
               </xaif:A>
               <xaif:X deriv="1">
-                <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="T1_5" annotation="" scope_id="4"/>
               </xaif:X>
             </xaif:AX>
             <xaif:Y deriv="1">

@@ -116,7 +116,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_cycle_fields()
       DO L = 1, 3, 1
         IF(__value__(TNOW(L)) .LT.(-2.0D00)) THEN
-          __value__(TNOW(INT(L))) = 2.0
+          __value__(TNOW(INT(L))) = 2.0D00
           CALL zero_deriv(__deriv__(TNOW(INT(L))))
         ENDIF
       END DO
@@ -311,11 +311,11 @@ C$OPENAD XXX Template ad_template.f
       END DO
       DO L = 1, 6, 1
         IF(L .LE. 3) THEN
-          PROJ_T(INT(L)) = 1.0
-          PROJ_S(INT(L)) = 0.0
+          PROJ_T(INT(L)) = 1.0D00
+          PROJ_S(INT(L)) = 0.0D00
         ELSE
-          PROJ_T(INT(L)) = 0.0
-          PROJ_S(INT(L)) = 1.0
+          PROJ_T(INT(L)) = 0.0D00
+          PROJ_S(INT(L)) = 1.0D00
         ENDIF
       END DO
       DO L = 1, 6, 1
