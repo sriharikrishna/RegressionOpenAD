@@ -417,7 +417,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         if (majorMode == "adm" or majorMode == "tlm"):
             numFiles+=" tmpOutput/ad.out " + exDir + "/refOutput/ad.out"
         if not (globalBatchMode):
-            testFlags = '-g -v'
+            testFlags = '-g -v -i'
         else:
             testFlags = '-b'
         sys.stdout.write("./numericalComparison.py %s -n %s %s\n" % (testFlags,exName,numFiles))

@@ -3,7 +3,7 @@
 import os
 import sys
 
-def showGraphs(errDict,errLimDict,withAD,name,n,m):
+def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse):
     import tempfile
     plotFileName=tempfile.mktemp()
     plotFile=open(plotFileName,"w")
@@ -20,7 +20,7 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m):
     datFileNames=[]
     for errName in sorted(errDict.keys()):
 	errValList=errDict[errName]
-        plotFile.write('set title \"'+errName+'\"\n')
+        # write data to temp files
         datOverFileName=tempfile.mktemp()
         datFileNames.append(datOverFileName)
         datOverFile=open(datOverFileName,"w")
@@ -28,24 +28,38 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m):
         datFileNames.append(datUnderFileName)
         datUnderFile=open(datUnderFileName,"w")
 	errMin=errLimDict[errName]
+        foundOverLimit = False
         for (x,y) in enumerate(errValList):
             if (y>errLimDict[errName] ) :
+                foundOverLimit = True
                 datOverFile.write(str(x)+' '+str(y)+'\n')
             else :     
                 datUnderFile.write(str(x)+' '+str(y)+'\n')
             if (y>0 and y<errMin) :
                 errMin=y
+        datOverFile.close()
+        datUnderFile.close()
+        # set title
+        titleColor = foundOverLimit and 'red' \
+                                     or 'green'
+        plotFile.write('set title \"'+errName+'\" tc rgb \"'+titleColor+'\"\n')
+        # set ranges
+        plotFile.write('set xrange [-1:'+str(n*m)+']\n')
         if (errMin==errLimDict[errName]) :
             plotFile.write('set yrange ['+str(errMin/10)+':] \n')
         errMax=max(max(errDict[errName]),errLimDict[errName])
         if (errMax==errLimDict[errName]) :
             plotFile.write('set yrange [:'+str(errMax*10)+'] \n')
-        datOverFile.close()
-        datUnderFile.close()
+        # execute plot command
         plotFile.write('plot\\\n')
-        plotFile.write('\"'+datOverFileName+'\" with points pt 3 lc 1, \\\n')
-        plotFile.write('\"'+datUnderFileName+'\" with points pt 3 lc 2, \\\n')
+        if impulse:
+            plotFile.write('\"'+datOverFileName+'\" with impulses pt 3 lc 1 lw 2,\\\n')
+            plotFile.write('\"'+datUnderFileName+'\" with impulses pt 3 lc 2 lw 2,\\\n')
+        else:
+            plotFile.write('\"'+datOverFileName+'\" with points pt 3 lc 1, \\\n')
+            plotFile.write('\"'+datUnderFileName+'\" with points pt 3 lc 2, \\\n')
         plotFile.write(str(errLimDict[errName])+' with lines lt 3 lc 3\n')
+        # reset y range
         plotFile.write('set yrange [*:*] \n')
     plotFile.close()
     rc=os.system("gnuplot -persist "+plotFileName+" 2>/dev/null")
@@ -56,7 +70,7 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m):
         os.remove(plotFileName)
         map(os.remove,datFileNames)
 
-def compareFiles (fileDict,withAD,doBatch, graphs,name, verbose):
+def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,verbose):
     paramsFile=open("params.conf","r")
     n=int(paramsFile.readline())
     m=int(paramsFile.readline())
@@ -130,7 +144,7 @@ def compareFiles (fileDict,withAD,doBatch, graphs,name, verbose):
                 if (val > errLimDict[errKey]) :
                   sys.stderr.write("  F["+str(index/m+1)+"]["+str(index%m)+"]: %r\n" % (val))
     if (returnValue and graphs) :
-        showGraphs(errDict,errLimDict,withAD,name,n,m)
+        showGraphs(errDict,errLimDict,withAD,name,n,m,impulse)
     return returnValue
           
 def main():
@@ -145,6 +159,9 @@ def main():
     opt.add_option('-n','--name',dest='name', type="string",
                    help="the name of the test",
                    action='store',default="")
+    opt.add_option('-i','--impulse',dest='impulse',
+                   help="draw errors with impulses (bars)",
+                   action='store_true',default=False)
     opt.add_option('-v','--verbose',dest='verbose',
                    help="if limits are exceeded show verbose output",
                    action='store_true',default=False)
@@ -163,7 +180,7 @@ def main():
         fileDict={}    
         for i in range(0,len(keyList)):
             fileDict[keyList[i]]=args[i]
-        returnValue=compareFiles(fileDict,withAD,options.batchMode, options.graphs,options.name, options.verbose)
+        returnValue=compareFiles(fileDict,withAD,options.batchMode,options.graphs,options.name,options.impulse,options.verbose)
     except RuntimeError, e:
         print 'caught exception: ',e
         return -1
