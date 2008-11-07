@@ -15,10 +15,10 @@ c$openad XXX Template ad_template.f
       real*8 SItoBar
 
       eosJMDCKFw(1)=19659.33 
-      eosJMDCKFw(1)=144.4304 
-      eosJMDCKFw(1)=-1.706103 
-      eosJMDCKFw(1)=0.009648704 
-      eosJMDCKFw(1)=-4.190253e-05
+      eosJMDCKFw(2)=144.4304 
+      eosJMDCKFw(3)=-1.706103 
+      eosJMDCKFw(4)=0.009648704 
+      eosJMDCKFw(5)=-4.190253e-05
 
       eosJMDCKSw(1)=52.84855
       eosJMDCKSw(2)=-0.3101089 
