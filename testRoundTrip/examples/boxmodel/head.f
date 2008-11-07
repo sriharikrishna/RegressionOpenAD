@@ -62,7 +62,7 @@ c-- cycle fields
 CADJ STORE tNow = comlev1, key = ikey, byte = isbyte
 
             do l=1, ndim
-               if ( tNow(l) .LT. -2. )  tNow(l) = 2.
+               if ( tNow(l) .LT. -2.D0 )  tNow(l) = 2.D0
             end do
 
       end
@@ -324,11 +324,11 @@ c-- The thermohaline circulation due to the Salinity/ temperature
 c-- effects alone is given by R_S*P, R_T*P:
       do l = 1, 2*ndim
          if ( l. LE. ndim ) then
-            proj_t(l) = 1.
-            proj_s(l) = 0.
+            proj_t(l) = 1.D0
+            proj_s(l) = 0.D0
          else
-            proj_t(l) = 0.
-            proj_s(l) = 1.
+            proj_t(l) = 0.D0
+            proj_s(l) = 1.D0
          endif
       enddo
 

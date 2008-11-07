@@ -25,7 +25,7 @@
         <xaif:Symbol symbol_id=".preg_return_val_19" kind="variable" type="opaque" shape="scalar" annotation="{Sym_Id#19}" active="0"/>
         <xaif:Symbol symbol_id="all_globals_mod__20" kind="subroutine" type="void" annotation="{Sym_Id#20}"/>
         <xaif:Symbol symbol_id="head__21" kind="subroutine" type="void" annotation="{Sym_Id#21}"/>
-        <xaif:Symbol symbol_id="EXP_29" kind="subroutine" type="void" annotation="{Sym_Id#29}"/>
+        <xaif:Symbol symbol_id="EXP_27" kind="subroutine" type="void" annotation="{Sym_Id#27}"/>
       </xaif:SymbolTable>
     </xaif:Scope>
 
@@ -715,7 +715,7 @@
           <xaif:ExpressionEdge edge_id="9" source="16" target="14" position="2"/>
           <xaif:ExpressionEdge edge_id="10" source="13" target="12" position="1"/>
           <xaif:ExpressionEdge edge_id="11" source="14" target="12" position="2"/>
-          <xaif:Constant vertex_id="17" type="real" feType="F8" value="1.20000004768371582031e+00"/>
+          <xaif:Constant vertex_id="17" type="real" feType="F8" value="1.19999999999999995559e+00"/>
           <xaif:ExpressionEdge edge_id="12" source="12" target="11" position="1"/>
           <xaif:ExpressionEdge edge_id="13" source="17" target="11" position="2"/>
           <xaif:ExpressionEdge edge_id="14" source="3" target="2" position="1"/>

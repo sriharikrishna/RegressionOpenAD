@@ -232,7 +232,7 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       type(active) :: T
-      type(active) :: T2
+      type(active) :: T1
 C
 C     **** Top Level Pragmas ****
 C
@@ -280,9 +280,9 @@ C restore arguments
 C original function
 C$OPENAD XXX Template ad_template.f
       T%v = (X(1)%v+X(2)%v)
-      T2%v = (T%v*2.0D00)
+      T1%v = (T%v*2.0D00)
       CALL foo()
-      Y%v = (T2%v*DBLE(3.0)+T%v*2.0D00)
+      Y%v = (T%v*2.0D00+T1%v*3.0D00)
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -298,13 +298,13 @@ C$OPENAD XXX Template ad_template.f
       T%v = (X(1)%v+X(2)%v)
       OpenAD_Symbol_0 = 1_w2f__i8
       OpenAD_Symbol_1 = 1_w2f__i8
-      T2%v = (T%v*2.0D00)
+      T1%v = (T%v*2.0D00)
       OpenAD_Symbol_2 = 2.0D00
       CALL foo()
-      Y%v = (T2%v*DBLE(3.0)+T%v*2.0D00)
-      OpenAD_Symbol_6 = 3.0
+      Y%v = (T%v*2.0D00+T1%v*3.0D00)
+      OpenAD_Symbol_6 = 2.0D00
       OpenAD_Symbol_4 = 1_w2f__i8
-      OpenAD_Symbol_8 = 2.0D00
+      OpenAD_Symbol_8 = 3.0D00
       OpenAD_Symbol_5 = 1_w2f__i8
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -321,13 +321,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
+          T1%d = T1%d+Y%d*3.0D00
           T%d = T%d+Y%d*2.0D00
-          T2%d = T2%d+Y%d*3.0D00
           Y%d = 0.0d0
       CALL foo()
-          X(2)%d = X(2)%d+T2%d*2.0D00
-          X(1)%d = X(1)%d+T2%d*2.0D00
-          T2%d = 0.0d0
+          X(2)%d = X(2)%d+T1%d*2.0D00
+          X(1)%d = X(1)%d+T1%d*2.0D00
+          T1%d = 0.0d0
           X(2)%d = X(2)%d+T%d*1 _w2f__i8
           X(1)%d = X(1)%d+T%d*1 _w2f__i8
           T%d = 0.0d0

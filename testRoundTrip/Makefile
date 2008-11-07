@@ -40,7 +40,7 @@ FREEFORMAT=-free
 ifdef OPTIMIZE
 F90FLAGS=-O3
 else
-F90FLAGS=-check all -g -fpe0 -O0 -traceback
+F90FLAGS=-check all -g -fpe0 -O0 -traceback -fp-model strict 
 endif 
 CC=icc
 endif

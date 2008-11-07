@@ -311,7 +311,7 @@ C$OPENAD XXX Template ad_template.f
      > ) + 1.0D00)) *((__value__(X(8)) * H * H) / 1.2D+01))
         __value__(F(INT(I))) = (EXP(__value__(X(I)) /(__value__(X(I)) *
      >  __value__(X(9)) + 1.0D00)) *((__value__(X(8)) * H * H) /
-     >  1.20000004768371582031D00) + __value__(F(I)) - __value__(X(I))
+     >  1.19999999999999995559D00) + __value__(F(I)) - __value__(X(I))
      >  * 2.0D00)
         __value__(F(INT(I + 1))) = (__value__(X(I)) + EXP(__value__(X(I
      > )) /(__value__(X(I)) * __value__(X(9)) + 1.0D00)) *((__value__(X
@@ -478,7 +478,7 @@ C       $OpenAD$ INLINE push_i(subst)
         OpenAD_Symbol_90 = (H * H)
         OpenAD_Symbol_87 = (__value__(X(8)) * OpenAD_Symbol_90)
         OpenAD_Symbol_75 = (OpenAD_Symbol_87 /
-     >  1.20000004768371582031D00)
+     >  1.19999999999999995559D00)
         __value__(F(INT(I))) = (OpenAD_Symbol_74 * OpenAD_Symbol_75 +
      >  __value__(F(I)) - __value__(X(I)) * 2.0D00)
         OpenAD_Symbol_81 = (INT(1_w2f__i8) / OpenAD_Symbol_80)
@@ -490,7 +490,7 @@ C       $OpenAD$ INLINE push_i(subst)
         OpenAD_Symbol_79 = EXP(OpenAD_Symbol_78)
         OpenAD_Symbol_76 = OpenAD_Symbol_75
         OpenAD_Symbol_91 = OpenAD_Symbol_90
-        OpenAD_Symbol_88 = (INT(1_w2f__i8) / 1.20000004768371582031D00)
+        OpenAD_Symbol_88 = (INT(1_w2f__i8) / 1.19999999999999995559D00)
         OpenAD_Symbol_77 = OpenAD_Symbol_74
         OpenAD_Symbol_72 = 1_w2f__i8
         OpenAD_Symbol_93 = 1_w2f__i8
@@ -1100,7 +1100,7 @@ C       $OpenAD$ INLINE push_i(subst)
         OpenAD_Symbol_90 = (H * H)
         OpenAD_Symbol_87 = (__value__(X(8)) * OpenAD_Symbol_90)
         OpenAD_Symbol_75 = (OpenAD_Symbol_87 /
-     >  1.20000004768371582031D00)
+     >  1.19999999999999995559D00)
         __value__(F(INT(I))) = (OpenAD_Symbol_74 * OpenAD_Symbol_75 +
      >  __value__(F(I)) - __value__(X(I)) * 2.0D00)
         OpenAD_Symbol_81 = (INT(1_w2f__i8) / OpenAD_Symbol_80)
@@ -1112,7 +1112,7 @@ C       $OpenAD$ INLINE push_i(subst)
         OpenAD_Symbol_79 = EXP(OpenAD_Symbol_78)
         OpenAD_Symbol_76 = OpenAD_Symbol_75
         OpenAD_Symbol_91 = OpenAD_Symbol_90
-        OpenAD_Symbol_88 = (INT(1_w2f__i8) / 1.20000004768371582031D00)
+        OpenAD_Symbol_88 = (INT(1_w2f__i8) / 1.19999999999999995559D00)
         OpenAD_Symbol_77 = OpenAD_Symbol_74
         OpenAD_Symbol_72 = 1_w2f__i8
         OpenAD_Symbol_93 = 1_w2f__i8

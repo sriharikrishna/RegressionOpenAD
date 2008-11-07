@@ -75,7 +75,7 @@ program driver
   allocate(y(m))
 
   do i=1,n   
-     x(i)%v=i/2.
+     x(i)%v=i/2.D0
   end do
 
   call oad_trace_init()

@@ -24,10 +24,10 @@ c-- local variables:
       double precision dFldDt(3)
 c$openad INDEPENDENT(fldnow)
 c -- initialization
-      vol(1)=10.
-      vol(2)=12.
-      vol(3)=14.
-      delta_t=20.
+      vol(1)=10.D0
+      vol(2)=12.D0
+      vol(3)=14.D0
+      delta_t=20.D0
 
 c-- routine body
 

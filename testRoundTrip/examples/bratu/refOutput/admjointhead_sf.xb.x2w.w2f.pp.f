@@ -404,7 +404,7 @@ C$OPENAD XXX Template ad_template.f
         F(INT(I+(-1)))%v = (X(I)%v+F(I+(-1))%v+EXP(X(I)%v/(X(I)%v*X(9)%v
      ++1.0D00))*((X(8)%v*H*H)/1.2D+01))
         F(INT(I))%v = (EXP(X(I)%v/(X(I)%v*X(9)%v+1.0D00))*((X(8)%v*H*H)/
-     +1.20000004768371582031D00)+F(I)%v-X(I)%v*2.0D00)
+     +1.19999999999999995559D00)+F(I)%v-X(I)%v*2.0D00)
         F(INT(I+1))%v = (X(I)%v+EXP(X(I)%v/(X(I)%v*X(9)%v+1.0D00))*((X(8
      +)%v*H*H)/1.2D+01))
       END DO
@@ -571,7 +571,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_74 = EXP(OpenAD_Symbol_78)
         OpenAD_Symbol_90 = (H * H)
         OpenAD_Symbol_87 = (X(8)%v*OpenAD_Symbol_90)
-        OpenAD_Symbol_75 = (OpenAD_Symbol_87 /  1.20000004768371582031D0
+        OpenAD_Symbol_75 = (OpenAD_Symbol_87 /  1.19999999999999995559D0
      +0)
         F(INT(I))%v = (OpenAD_Symbol_74*OpenAD_Symbol_75+F(I)%v-X(I)%v*2
      +.0D00)
@@ -584,7 +584,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_79 = EXP(OpenAD_Symbol_78)
         OpenAD_Symbol_76 = OpenAD_Symbol_75
         OpenAD_Symbol_91 = OpenAD_Symbol_90
-        OpenAD_Symbol_88 = (INT(1_w2f__i8) / 1.20000004768371582031D00)
+        OpenAD_Symbol_88 = (INT(1_w2f__i8) / 1.19999999999999995559D00)
         OpenAD_Symbol_77 = OpenAD_Symbol_74
         OpenAD_Symbol_72 = 1_w2f__i8
         OpenAD_Symbol_93 = 1_w2f__i8

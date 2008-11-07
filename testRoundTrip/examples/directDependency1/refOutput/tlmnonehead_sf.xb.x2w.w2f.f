@@ -32,13 +32,13 @@ C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 2)
-      TYPE (OpenADTy_active) Y
+      TYPE (OpenADTy_active) Y(1 : 1)
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       TYPE (OpenADTy_active) T
-      TYPE (OpenADTy_active) T2
+      TYPE (OpenADTy_active) T1
 C
 C     **** Top Level Pragmas ****
 C
@@ -49,17 +49,17 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(T) = __value__(X(1))
-      __value__(T2) = (__value__(T) * 2.0D00)
+      __value__(T1) = (__value__(T) * 2.0D00)
       OpenAD_Symbol_0 = 2.0D00
       CALL setderiv(__deriv__(T), __deriv__(X(1)))
-      CALL sax(2.0D00, __deriv__(X(1)), __deriv__(T2))
+      CALL sax(2.0D00, __deriv__(X(1)), __deriv__(T1))
       CALL foo()
-      __value__(Y) = (__value__(T2) * DBLE(3.0) + __value__(T) * 2.0D00
+      __value__(Y(1)) = (__value__(T) * 2.0D00 + __value__(T1) * 3.0D00
      > )
-      OpenAD_Symbol_4 = 3.0
+      OpenAD_Symbol_4 = 2.0D00
       OpenAD_Symbol_2 = 1_w2f__i8
-      OpenAD_Symbol_6 = 2.0D00
+      OpenAD_Symbol_6 = 3.0D00
       OpenAD_Symbol_3 = 1_w2f__i8
-      CALL sax(3.0D00, __deriv__(T2), __deriv__(Y))
-      CALL saxpy(2.0D00, __deriv__(T), __deriv__(Y))
+      CALL sax(2.0D00, __deriv__(T), __deriv__(Y(1)))
+      CALL saxpy(3.0D00, __deriv__(T1), __deriv__(Y(1)))
       END SUBROUTINE

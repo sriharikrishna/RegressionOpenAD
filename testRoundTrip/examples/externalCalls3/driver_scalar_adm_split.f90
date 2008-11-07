@@ -79,7 +79,7 @@ program driver
   allocate(res_adj(m,n))
 
   do i=1,n   
-     x0(i)=i/2.
+     x0(i)=i/2.D0
   end do
 
   open(2,file='tmpOutput/dd.out')
