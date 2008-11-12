@@ -191,7 +191,7 @@ def numberedList(list):
 
 def populateExamplesList(args):
     allExamples = os.listdir("examples")
-    allExamples.sort(key=str.lower) # default sort is case insensitive, this one isn't
+    allExamples.sort(key=str.lower) # default sort is case sensitive, this one isn't
     rangeStart = 1
     rangeEnd = len(allExamples)
     examples = []
