@@ -29,14 +29,14 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      IF(A(1 : LEN(A)) .EQ. 'two') THEN
+      IF(A .EQ. 'two') THEN
         OpenAD_Symbol_2 = (__value__(X) * 2.0D00)
         OpenAD_Symbol_0 = 2.0D00
         __value__(X) = OpenAD_Symbol_2
         CALL setderiv(__deriv__(OpenAD_Symbol_6), __deriv__(X))
         CALL sax(2.0D00, __deriv__(OpenAD_Symbol_6), __deriv__(X))
       ENDIF
-      IF(A(1 : LEN(A)) .EQ. 'three') THEN
+      IF(A .EQ. 'three') THEN
         OpenAD_Symbol_5 = (__value__(X) * 3.0D00)
         OpenAD_Symbol_3 = 3.0D00
         __value__(X) = OpenAD_Symbol_5

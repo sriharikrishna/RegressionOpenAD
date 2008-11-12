@@ -22,14 +22,14 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      IF(A(1 : LEN(A)) .EQ. 'two') THEN
+      IF(A .EQ. 'two') THEN
         OpenAD_Symbol_2 = (X%v*2.0D00)
         OpenAD_Symbol_0 = 2.0D00
         X%v = OpenAD_Symbol_2
         CALL setderiv(OpenAD_Symbol_6,X)
         CALL sax(2.0D00,OpenAD_Symbol_6,X)
       ENDIF
-      IF(A(1 : LEN(A)) .EQ. 'three') THEN
+      IF(A .EQ. 'three') THEN
         OpenAD_Symbol_5 = (X%v*3.0D00)
         OpenAD_Symbol_3 = 3.0D00
         X%v = OpenAD_Symbol_5
