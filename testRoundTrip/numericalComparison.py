@@ -44,7 +44,7 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse):
                                      or 'green'
         plotFile.write('set title \"'+errName+'\" tc rgb \"'+titleColor+'\"\n')
         # set ranges
-        plotFile.write('set xrange [-'+str(n*m/20)+':'+str(n*m + n*m/20)+']\n')
+        plotFile.write('set xrange [-'+str(1 + n*m/20)+':'+str(n*m + n*m/20)+']\n')
         if (errMin==errLimDict[errName]) :
             plotFile.write('set yrange ['+str(errMin/10)+':] \n')
         errMax=max(max(errDict[errName]),errLimDict[errName])
