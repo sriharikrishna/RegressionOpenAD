@@ -242,6 +242,7 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
+      REAL(w2f__4) OAD_CTMP0
       REAL(w2f__8) PY
 C
 C     **** Top Level Pragmas ****
@@ -290,11 +291,14 @@ C restore arguments
 C original function
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
+      OAD_CTMP0 = 2.0
 C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,2.0)
+      CALL convert_p2a_scalar(OpenAD_Symbol_0,OAD_CTMP0)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
+C!! requested inline of 'convert_a2p_scalar' has no defn
+      CALL convert_a2p_scalar(OAD_CTMP0,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
 C original function end
@@ -310,11 +314,14 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
+      OAD_CTMP0 = 2.0
 C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,2.0)
+      CALL convert_p2a_scalar(OpenAD_Symbol_0,OAD_CTMP0)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
+C!! requested inline of 'convert_a2p_scalar' has no defn
+      CALL convert_a2p_scalar(OAD_CTMP0,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
 C taping end

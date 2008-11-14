@@ -79,6 +79,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
+      INTEGER(w2f__i4) OAD_CTMP0
       REAL(w2f__8) P
       REAL(w2f__8) Q
       EXTERNAL sq
@@ -96,19 +97,21 @@ C
 
          if (our_rev_mode%plain) then
 ! original function
-      CALL sq(2,X,Y)
+      OAD_CTMP0 = 2
+      CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P * P)
           end if
           if (our_rev_mode%tape) then
 ! taping
-      CALL sq(2,X,Y)
+      OAD_CTMP0 = 2
+      CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P * P)
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      CALL sq(2,X,Y)
+      CALL sq(OAD_CTMP0,X,Y)
           end if 
         end subroutine head
 C ========== begin copyright notice ==============

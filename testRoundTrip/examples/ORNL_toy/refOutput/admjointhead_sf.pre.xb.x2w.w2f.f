@@ -19,6 +19,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
+      INTEGER(w2f__i4) OAD_CTMP0
       REAL(w2f__8) P
       REAL(w2f__8) Q
       EXTERNAL sq
@@ -31,17 +32,19 @@ C
 C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
-      CALL sq(2, __deriv__(X), __deriv__(Y))
+      OAD_CTMP0 = 2
+      CALL sq(OAD_CTMP0, __deriv__(X), __deriv__(Y))
       P = 2.0D00
       Q = (P * P)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
-      CALL sq(2, __deriv__(X), __deriv__(Y))
+      OAD_CTMP0 = 2
+      CALL sq(OAD_CTMP0, __deriv__(X), __deriv__(Y))
       P = 2.0D00
       Q = (P * P)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-      CALL sq(2, __deriv__(X), __deriv__(Y))
+      CALL sq(OAD_CTMP0, __deriv__(X), __deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ END REPLACEMENT
@@ -56,12 +59,13 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
-      CALL sq(2, __deriv__(X), __deriv__(Y))
+      OAD_CTMP0 = 2
+      CALL sq(OAD_CTMP0, __deriv__(X), __deriv__(Y))
       P = 2.0D00
       Q = (P * P)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-      CALL sq(2, __deriv__(X), __deriv__(Y))
+      CALL sq(OAD_CTMP0, __deriv__(X), __deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 

@@ -111,9 +111,13 @@ C$OPENAD XXX Simple loop\t
       DO I = 1, K, 1
         Y(INT(I))%v = X(I)%v
       END DO
+          integer_tape(integer_tape_pointer) = K
+          integer_tape_pointer = integer_tape_pointer+1
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
+          integer_tape_pointer = integer_tape_pointer-1
+          K = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((K - 1) / 1)
       DO WHILE(I .GE. 1)
           X(I)%d = X(I)%d+Y(I)%d
@@ -194,6 +198,7 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL bar
+      INTEGER(w2f__i4) OAD_CTMP0
 C
 C     **** Top Level Pragmas ****
 C
@@ -209,15 +214,17 @@ C
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
-      CALL bar(X,Y,3)
+      OAD_CTMP0 = 3
+      CALL bar(X,Y,OAD_CTMP0)
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
-      CALL bar(X,Y,3)
+      OAD_CTMP0 = 3
+      CALL bar(X,Y,OAD_CTMP0)
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      CALL bar(X,Y,3)
+      CALL bar(X,Y,OAD_CTMP0)
           end if 
         end subroutine head

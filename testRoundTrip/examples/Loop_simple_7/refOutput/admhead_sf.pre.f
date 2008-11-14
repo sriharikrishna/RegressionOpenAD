@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
 	subroutine bar(x,y, k )
 	  double precision, dimension(3), intent(in) :: x
@@ -14,7 +18,9 @@ c$openad XXX Template ad_template.f
 	  double precision, dimension(3), intent(in) :: x
 	  double precision, dimension(3), intent(out) :: y
           integer i,j
+          integer :: oad_ctmp0
 c$openad INDEPENDENT(x)
-	  call bar(x,y,3)
+          oad_ctmp0 = 3
+          call bar(x,y,oad_ctmp0)
 c$openad DEPENDENT(y)
 	end subroutine

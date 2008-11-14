@@ -71,6 +71,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
+      INTEGER(w2f__i4) OAD_CTMP0
       REAL(w2f__8) P
       REAL(w2f__8) Q
       EXTERNAL sq
@@ -119,7 +120,8 @@ C restore arguments
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-      CALL sq(2,X,Y)
+      OAD_CTMP0 = 2
+      CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P * P)
 C original function end
@@ -133,7 +135,8 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-      CALL sq(2,X,Y)
+      OAD_CTMP0 = 2
+      CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P * P)
 C taping end
@@ -151,7 +154,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-      CALL sq(2,X,Y)
+      CALL sq(OAD_CTMP0,X,Y)
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

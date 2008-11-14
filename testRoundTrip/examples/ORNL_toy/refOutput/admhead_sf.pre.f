@@ -1,10 +1,16 @@
+      module all_globals_mod
+
+      end module
+
         subroutine head(x,y)
           implicit none
           double precision, dimension(2) :: x
           double precision, dimension(2) :: y
           real(8) :: p, q
+          integer :: oad_ctmp0
 c$openad INDEPENDENT(x)
-          call sq(2,x,y)
+          oad_ctmp0 = 2
+          call sq(oad_ctmp0,x,y)
           p=2.
           q=p*p
 c$openad DEPENDENT(y)

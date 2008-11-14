@@ -74,7 +74,9 @@
       </xaif:Scope>
       <xaif:Scope vertex_id="4" annotation="{SymTab_Id#4}">
         <xaif:SymbolTable>
-          <xaif:Symbol symbol_id="PY_4" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#4}" active="0" temp="0">
+          <xaif:Symbol symbol_id="OAD_CTMP0_4" kind="variable" type="real" feType="F4" shape="scalar" annotation="{Sym_Id#4}" active="0" temp="0">
+          </xaif:Symbol>
+          <xaif:Symbol symbol_id="PY_5" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#5}" active="0" temp="0">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="X_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#1}" active="1" temp="0">
           </xaif:Symbol>
@@ -106,7 +108,7 @@
         <xaif:AliasRange from_virtual_address="3" to_virtual_address="3" partial="0"/>
       </xaif:AliasSet>
       <xaif:AliasSet key="6">
-        <xaif:AliasRange from_virtual_address="4" to_virtual_address="5" partial="1"/>
+        <xaif:AliasRange from_virtual_address="4" to_virtual_address="4" partial="0"/>
         <xaif:AliasRange from_virtual_address="1" to_virtual_address="2" partial="0"/>
       </xaif:AliasSet>
     </xaif:AliasSetMap>
@@ -118,6 +120,10 @@
       <xaif:StmtIdSet key="2">
         <xaif:StatementId idRef=""/>
       </xaif:StmtIdSet>
+      <xaif:StmtIdSet key="3">
+        <xaif:StatementId idRef=""/>
+        <xaif:StatementId idRef="18"/>
+      </xaif:StmtIdSet>
     </xaif:DUUDSetMap>
     <xaif:DOSetMap>
       <xaif:StmtIdSet key="0">
@@ -128,7 +134,7 @@
         <xaif:StatementId idRef=""/>
       </xaif:StmtIdSet>
       <xaif:StmtIdSet key="3">
-        <xaif:StatementId idRef="16"/>
+        <xaif:StatementId idRef="18"/>
       </xaif:StmtIdSet>
     </xaif:DOSetMap>
     <xaif:ReplacementList vertex_id="10" symbol_id="all_globals_mod__20" scope_id="1" controlflowgraph_scope_id="2" annotation="{PU_Id#1}" template_name="reverse_subroutine_template">
@@ -423,6 +429,14 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
+          <xaif:Assignment statement_id="16">
+            <xaif:AssignmentLHS active="false" alias="6" du_ud="3" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="real" feType="F4" value="2.00000000000000000000e+00"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
@@ -430,7 +444,9 @@
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
-              <xaif:Constant vertex_id="1" type="real" feType="F4" value="2.00000000000000000000e+00"/>
+              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
@@ -441,11 +457,11 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="PY_4" annotation="" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="PY_5" annotation="" scope_id="4"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="16" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="18" symbol_id="foo__21" scope_id="1" active="undefined">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -460,7 +476,19 @@
           <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="PY_4" annotation="" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="2">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="PY_5" annotation="" scope_id="4"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -491,6 +519,14 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
+          <xaif:Assignment statement_id="16">
+            <xaif:AssignmentLHS active="false" alias="6" du_ud="3" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="real" feType="F4" value="2.00000000000000000000e+00"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
@@ -498,7 +534,9 @@
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
-              <xaif:Constant vertex_id="1" type="real" feType="F4" value="2.00000000000000000000e+00"/>
+              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
@@ -509,11 +547,11 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="PY_4" annotation="" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="PY_5" annotation="" scope_id="4"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="16" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="18" symbol_id="foo__21" scope_id="1" active="undefined">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -528,7 +566,19 @@
           <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="PY_4" annotation="" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="2">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="PY_5" annotation="" scope_id="4"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -639,6 +689,14 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
+          <xaif:Assignment statement_id="16">
+            <xaif:AssignmentLHS active="false" alias="6" du_ud="3" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="real" feType="F4" value="2.00000000000000000000e+00"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
@@ -646,7 +704,9 @@
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
-              <xaif:Constant vertex_id="1" type="real" feType="F4" value="2.00000000000000000000e+00"/>
+              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
@@ -657,11 +717,11 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="PY_4" annotation="" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="PY_5" annotation="" scope_id="4"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="16" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="18" symbol_id="foo__21" scope_id="1" active="undefined">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -676,7 +736,19 @@
           <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="PY_4" annotation="" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP0_4" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="2">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="PY_5" annotation="" scope_id="4"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">

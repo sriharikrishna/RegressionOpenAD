@@ -138,6 +138,8 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+          call cp_store_int_scalar(J,theArgIStack,theArgIStackoffset,the
+     +ArgIStackSize)
           call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
           call cp_store_real_vector(Y,size(Y),theArgFStack,theArgFStacko
@@ -168,6 +170,9 @@ C+Y(cp_loop_variable_1)%v
 C write(*,'(A,EN26.16E3)')"restore(v)  ",
 C+X(cp_loop_variable_1)%v
           end do
+          J = theArgIStack(theArgIStackoffset)
+C write(*,'(A,I5,I5)')"restore(s)  ",J,theArgIStackOffset
+          theArgIStackoffset = theArgIStackoffset-1
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -217,6 +222,8 @@ C$OPENAD XXX Simple loop
           integer_tape(integer_tape_pointer) = A(I,J)
           integer_tape_pointer = integer_tape_pointer+1
       END DO
+          integer_tape(integer_tape_pointer) = J
+          integer_tape_pointer = integer_tape_pointer+1
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -232,6 +239,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
+          integer_tape_pointer = integer_tape_pointer-1
+          J = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
           integer_tape_pointer = integer_tape_pointer-1
@@ -364,6 +373,7 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) OAD_CTMP0
 C
 C     **** Top Level Pragmas ****
 C
@@ -415,7 +425,8 @@ C$OPENAD XXX Template ad_template.f
           A(I, J) = (I + J)
         END DO
       END DO
-      CALL foo(X,Y,A,2)
+      OAD_CTMP0 = 2
+      CALL foo(X,Y,A,OAD_CTMP0)
       DO I = 1, 2, 1
         DO J = 1, 2, 1
           A(I, J) = 0
@@ -446,7 +457,8 @@ C$OPENAD XXX Template ad_template.f
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_23
           integer_tape_pointer = integer_tape_pointer+1
-      CALL foo(X,Y,A,2)
+      OAD_CTMP0 = 2
+      CALL foo(X,Y,A,OAD_CTMP0)
       OpenAD_Symbol_25 = 0_w2f__i8
       DO I = 1, 2, 1
         OpenAD_Symbol_26 = 0_w2f__i8
@@ -487,7 +499,7 @@ C adjoint
         END DO
         OpenAD_Symbol_16 = INT(OpenAD_Symbol_16) + 1
       END DO
-      CALL foo(X,Y,A,2)
+      CALL foo(X,Y,A,OAD_CTMP0)
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_19 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_20 = 1

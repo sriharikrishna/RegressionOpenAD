@@ -228,6 +228,8 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
+      INTEGER(w2f__i4) OAD_CTMP0
+      INTEGER(w2f__i4) OAD_CTMP1
 C
 C     **** Top Level Pragmas ****
 C
@@ -245,21 +247,25 @@ C
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = 1.0
       Y(2)%v = 1.0
-      CALL foo(X,Y,1)
-      CALL foo(X,Y,2)
+      OAD_CTMP0 = 1
+      CALL foo(X,Y,OAD_CTMP0)
+      OAD_CTMP1 = 2
+      CALL foo(X,Y,OAD_CTMP1)
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = 1.0
       Y(2)%v = 1.0
-      CALL foo(X,Y,1)
-      CALL foo(X,Y,2)
+      OAD_CTMP0 = 1
+      CALL foo(X,Y,OAD_CTMP0)
+      OAD_CTMP1 = 2
+      CALL foo(X,Y,OAD_CTMP1)
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      CALL foo(X,Y,2)
-      CALL foo(X,Y,1)
+      CALL foo(X,Y,OAD_CTMP1)
+      CALL foo(X,Y,OAD_CTMP0)
           Y(2)%d = 0.0d0
           Y(1)%d = 0.0d0
           end if 

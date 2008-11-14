@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
 	subroutine foo(x,y,k)
 	  double precision, dimension(2), intent(in) :: x
@@ -14,10 +18,14 @@ c$openad XXX Template ad_template.f
 	subroutine head(x,y)
 	  double precision, dimension(2), intent(in) :: x
 	  double precision, dimension(2), intent(out) :: y
+          integer :: oad_ctmp0
+          integer :: oad_ctmp1
 c$openad INDEPENDENT(x)
 	  y(1)=1.0
 	  y(2)=1.0
-          call foo(x,y,1)
-	  call foo(x,y,2)
+          oad_ctmp0 = 1
+          call foo(x,y,oad_ctmp0)
+          oad_ctmp1 = 2
+          call foo(x,y,oad_ctmp1)
 c$openad DEPENDENT(y)
 	end subroutine

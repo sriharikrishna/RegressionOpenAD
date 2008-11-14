@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
         subroutine foo(x,y,a,j)
           double precision, dimension(1), intent(in) :: x
@@ -22,6 +26,7 @@ c$openad XXX Template ad_template.f
 	  double precision, dimension(1), intent(in) :: x
 	  double precision, dimension(1), intent(out) :: y
           integer a(2,2)
+          integer :: oad_ctmp0
 c$openad INDEPENDENT(x)
 c set a
 	  do i=1,2
@@ -29,7 +34,8 @@ c set a
 	      a(i,j)=i+j
 	    end do
 	  end do
-	  call foo(x,y,a,2)
+          oad_ctmp0 = 2
+          call foo(x,y,a,oad_ctmp0)
 c unset a to make sure it is restored
           do i=1,2
             do j=1,2

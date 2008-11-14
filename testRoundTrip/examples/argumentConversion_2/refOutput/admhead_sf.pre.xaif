@@ -54,7 +54,9 @@
         <xaif:Symbol symbol_id="Y_2" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#2}" active="1">
         </xaif:Symbol>
         <xaif:Symbol symbol_id="foo__3" kind="subroutine" type="void" annotation="{Sym_Id#3}"/>
-        <xaif:Symbol symbol_id="PY_4" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#4}" active="0">
+        <xaif:Symbol symbol_id="OAD_CTMP0_4" kind="variable" type="real" feType="F4" shape="scalar" annotation="{Sym_Id#4}" active="0">
+        </xaif:Symbol>
+        <xaif:Symbol symbol_id="PY_5" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#5}" active="0">
         </xaif:Symbol>
       </xaif:SymbolTable>
     </xaif:Scope>
@@ -80,7 +82,7 @@
     </xaif:AliasSet>
     <xaif:AliasSet key="6">
       <xaif:AliasRange from_virtual_address="1" to_virtual_address="2" partial="0"/>
-      <xaif:AliasRange from_virtual_address="4" to_virtual_address="5" partial="1"/>
+      <xaif:AliasRange from_virtual_address="4" to_virtual_address="4" partial="0"/>
     </xaif:AliasSet>
   </xaif:AliasSetMap>
 
@@ -89,6 +91,10 @@
     <xaif:StmtIdSet key="1"/>
     <xaif:StmtIdSet key="2">
       <xaif:StatementId idRef=""/>
+    </xaif:StmtIdSet>
+    <xaif:StmtIdSet key="3">
+      <xaif:StatementId idRef=""/>
+      <xaif:StatementId idRef="18"/>
     </xaif:StmtIdSet>
   </xaif:DUUDSetMap>
 
@@ -99,7 +105,7 @@
       <xaif:StatementId idRef=""/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="3">
-      <xaif:StatementId idRef="16"/>
+      <xaif:StatementId idRef="18"/>
     </xaif:StmtIdSet>
   </xaif:DOSetMap>
 
@@ -139,7 +145,7 @@
     <xaif:BasicBlock vertex_id="5" scope_id="3">
       <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="9" lineNumber="61" do_chain="1">
+      <xaif:Assignment statement_id="9" lineNumber="9" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
         </xaif:AssignmentLHS>
@@ -198,7 +204,7 @@
     <xaif:BasicBlock vertex_id="8" scope_id="4">
       <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-      <xaif:SubroutineCall statement_id="11" scope_id="1" lineNumber="69" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="11" scope_id="1" lineNumber="18" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="4">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="X_1"/>
@@ -210,13 +216,23 @@
           </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>
-      <xaif:SubroutineCall statement_id="16" scope_id="1" lineNumber="70" symbol_id="foo__21">
-        <xaif:Argument position="1">
+      <xaif:Assignment statement_id="16" lineNumber="19" do_chain="1">
+        <xaif:AssignmentLHS du_ud="3" alias="6">
+          <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="OAD_CTMP0_4"/>
+        </xaif:AssignmentLHS>
+        <xaif:AssignmentRHS>
           <xaif:Constant vertex_id="1" type="real" feType="F4" value="2.0000000000e+00"/>
+        </xaif:AssignmentRHS>
+      </xaif:Assignment>
+      <xaif:SubroutineCall statement_id="18" scope_id="1" lineNumber="20" symbol_id="foo__21">
+        <xaif:Argument position="1">
+          <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
+            <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="OAD_CTMP0_4"/>
+          </xaif:VariableReference>
         </xaif:Argument>
         <xaif:Argument position="2">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
-            <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="PY_4"/>
+            <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="PY_5"/>
           </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>

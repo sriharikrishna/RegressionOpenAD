@@ -45,8 +45,12 @@ C$OPENAD XXX Simple loop\t
       DO I = 1, (K * 2), 1
         __value__(Y(INT(I))) = __value__(X(I))
       END DO
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(K)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
+C     $OpenAD$ INLINE pop_i(subst)
+      CALL pop_i(K)
       I = 1 + 1 *((K * 2 - 1) / 1)
       DO WHILE(I .GE. 1)
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
@@ -57,6 +61,8 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
       END DO
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
+C     $OpenAD$ INLINE cp_arg_store_integer_scalar(subst)
+      CALL cp_arg_store_integer_scalar(K)
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
       CALL cp_arg_store_real_vector_a(__deriv__(X))
 C     $OpenAD$ END REPLACEMENT
@@ -65,18 +71,24 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 6
 C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(X))
+C     $OpenAD$ INLINE cp_arg_restore_integer_scalar(subst)
+      CALL cp_arg_restore_integer_scalar(K)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 7
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 8
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
       CALL cp_arg_store_real_vector_a(__deriv__(Y))
+C     $OpenAD$ INLINE cp_arg_store_integer_scalar(subst)
+      CALL cp_arg_store_integer_scalar(K)
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
       CALL cp_arg_store_real_vector_a(__deriv__(X))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(X))
+C     $OpenAD$ INLINE cp_arg_restore_integer_scalar(subst)
+      CALL cp_arg_restore_integer_scalar(K)
 C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
@@ -126,6 +138,7 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL bar
+      INTEGER(w2f__i4) OAD_CTMP0
 C
 C     **** Top Level Pragmas ****
 C
@@ -136,14 +149,16 @@ C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
-      CALL bar(__deriv__(X), __deriv__(Y), 2)
+      OAD_CTMP0 = 2
+      CALL bar(__deriv__(X), __deriv__(Y), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      CALL bar(__deriv__(X), __deriv__(Y), 2)
+      OAD_CTMP0 = 2
+      CALL bar(__deriv__(X), __deriv__(Y), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-      CALL bar(__deriv__(X), __deriv__(Y), 2)
+      CALL bar(__deriv__(X), __deriv__(Y), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ END REPLACEMENT
@@ -159,9 +174,10 @@ C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      CALL bar(__deriv__(X), __deriv__(Y), 2)
+      OAD_CTMP0 = 2
+      CALL bar(__deriv__(X), __deriv__(Y), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-      CALL bar(__deriv__(X), __deriv__(Y), 2)
+      CALL bar(__deriv__(X), __deriv__(Y), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

@@ -113,6 +113,8 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+          call cp_store_int_scalar(K,theArgIStack,theArgIStackoffset,the
+     +ArgIStackSize)
           call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
           end if 
@@ -124,6 +126,9 @@ C restore arguments
 C write(*,'(A,EN26.16E3)')"restore(v)  ",
 C+X(cp_loop_variable_1)%v
           end do
+          K = theArgIStack(theArgIStackoffset)
+C write(*,'(A,I5,I5)')"restore(s)  ",K,theArgIStackOffset
+          theArgIStackoffset = theArgIStackoffset-1
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -150,6 +155,8 @@ C$OPENAD XXX Simple loop\t
       DO I = 1, (K * 2), 1
         Y(INT(I))%v = X(I)%v
       END DO
+          integer_tape(integer_tape_pointer) = K
+          integer_tape_pointer = integer_tape_pointer+1
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -165,6 +172,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
+          integer_tape_pointer = integer_tape_pointer-1
+          K = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((K * 2 - 1) / 1)
       DO WHILE(I .GE. 1)
           X(I)%d = X(I)%d+Y(I)%d
@@ -252,6 +261,7 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL bar
+      INTEGER(w2f__i4) OAD_CTMP0
 C
 C     **** Top Level Pragmas ****
 C
@@ -298,7 +308,8 @@ C restore arguments
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-      CALL bar(X,Y,2)
+      OAD_CTMP0 = 2
+      CALL bar(X,Y,OAD_CTMP0)
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -311,7 +322,8 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-      CALL bar(X,Y,2)
+      OAD_CTMP0 = 2
+      CALL bar(X,Y,OAD_CTMP0)
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -327,7 +339,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-      CALL bar(X,Y,2)
+      CALL bar(X,Y,OAD_CTMP0)
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

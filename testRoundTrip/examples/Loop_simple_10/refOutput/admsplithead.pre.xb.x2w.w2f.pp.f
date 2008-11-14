@@ -141,9 +141,13 @@ C$OPENAD XXX Simple loop
           integer_tape(integer_tape_pointer) = A(I,J)
           integer_tape_pointer = integer_tape_pointer+1
       END DO
+          integer_tape(integer_tape_pointer) = J
+          integer_tape_pointer = integer_tape_pointer+1
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
+          integer_tape_pointer = integer_tape_pointer-1
+          J = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
           integer_tape_pointer = integer_tape_pointer-1
@@ -269,6 +273,7 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) OAD_CTMP0
 C
 C     **** Top Level Pragmas ****
 C
@@ -289,7 +294,8 @@ C$OPENAD XXX Template ad_template.f
           A(I, J) = (I + J)
         END DO
       END DO
-      CALL foo(X,Y,A,2)
+      OAD_CTMP0 = 2
+      CALL foo(X,Y,A,OAD_CTMP0)
       DO I = 1, 2, 1
         DO J = 1, 2, 1
           A(I, J) = 0
@@ -312,7 +318,8 @@ C$OPENAD XXX Template ad_template.f
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_23
           integer_tape_pointer = integer_tape_pointer+1
-      CALL foo(X,Y,A,2)
+      OAD_CTMP0 = 2
+      CALL foo(X,Y,A,OAD_CTMP0)
       OpenAD_Symbol_25 = 0_w2f__i8
       DO I = 1, 2, 1
         OpenAD_Symbol_26 = 0_w2f__i8
@@ -341,7 +348,7 @@ C$OPENAD XXX Template ad_template.f
         END DO
         OpenAD_Symbol_16 = INT(OpenAD_Symbol_16) + 1
       END DO
-      CALL foo(X,Y,A,2)
+      CALL foo(X,Y,A,OAD_CTMP0)
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_19 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_20 = 1

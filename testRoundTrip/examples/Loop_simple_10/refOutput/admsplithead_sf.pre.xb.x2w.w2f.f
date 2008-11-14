@@ -85,8 +85,12 @@ C         $OpenAD$ INLINE push(subst)
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(A(I, J))
       END DO
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(J)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
+C     $OpenAD$ INLINE pop_i(subst)
+      CALL pop_i(J)
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
 C       $OpenAD$ INLINE pop_i(subst)
@@ -120,6 +124,8 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
+C     $OpenAD$ INLINE cp_arg_store_integer_scalar(subst)
+      CALL cp_arg_store_integer_scalar(J)
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
       CALL cp_arg_store_real_vector_a(__deriv__(X))
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
@@ -136,12 +142,16 @@ C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(Y))
 C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(X))
+C     $OpenAD$ INLINE cp_arg_restore_integer_scalar(subst)
+      CALL cp_arg_restore_integer_scalar(J)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 7
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 8
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
       CALL cp_arg_store_real_vector_a(__deriv__(Y))
+C     $OpenAD$ INLINE cp_arg_store_integer_scalar(subst)
+      CALL cp_arg_store_integer_scalar(J)
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
       CALL cp_arg_store_real_vector_a(__deriv__(X))
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
@@ -156,6 +166,8 @@ C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(Y))
 C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(X))
+C     $OpenAD$ INLINE cp_arg_restore_integer_scalar(subst)
+      CALL cp_arg_restore_integer_scalar(J)
 C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
@@ -271,6 +283,7 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
+      INTEGER(w2f__i4) OAD_CTMP0
 C
 C     **** Top Level Pragmas ****
 C
@@ -286,7 +299,8 @@ C$OPENAD XXX Template ad_template.f
           A(I, J) = (I + J)
         END DO
       END DO
-      CALL foo(__deriv__(X), __deriv__(Y), A, 2)
+      OAD_CTMP0 = 2
+      CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
       DO I = 1, 2, 1
         DO J = 1, 2, 1
           A(I, J) = 0
@@ -308,7 +322,8 @@ C       $OpenAD$ INLINE push_i(subst)
       END DO
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_23)
-      CALL foo(__deriv__(X), __deriv__(Y), A, 2)
+      OAD_CTMP0 = 2
+      CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
       OpenAD_Symbol_25 = 0_w2f__i8
       DO I = 1, 2, 1
         OpenAD_Symbol_26 = 0_w2f__i8
@@ -336,7 +351,7 @@ C       $OpenAD$ INLINE pop_i(subst)
         END DO
         OpenAD_Symbol_16 = INT(OpenAD_Symbol_16) + 1
       END DO
-      CALL foo(__deriv__(X), __deriv__(Y), A, 2)
+      CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_19)
       OpenAD_Symbol_20 = 1
@@ -377,7 +392,8 @@ C       $OpenAD$ INLINE push_i(subst)
       END DO
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_35)
-      CALL foo(__deriv__(X), __deriv__(Y), A, 2)
+      OAD_CTMP0 = 2
+      CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
       OpenAD_Symbol_37 = 0_w2f__i8
       DO I = 1, 2, 1
         OpenAD_Symbol_38 = 0_w2f__i8
@@ -405,7 +421,7 @@ C       $OpenAD$ INLINE pop_i(subst)
         END DO
         OpenAD_Symbol_28 = INT(OpenAD_Symbol_28) + 1
       END DO
-      CALL foo(__deriv__(X), __deriv__(Y), A, 2)
+      CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_31)
       OpenAD_Symbol_32 = 1

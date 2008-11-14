@@ -125,6 +125,8 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+          call cp_store_int_scalar(K,theArgIStack,theArgIStackoffset,the
+     +ArgIStackSize)
           call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
           call cp_store_real_vector(Y,size(Y),theArgFStack,theArgFStacko
@@ -144,6 +146,9 @@ C+Y(cp_loop_variable_1)%v
 C write(*,'(A,EN26.16E3)')"restore(v)  ",
 C+X(cp_loop_variable_1)%v
           end do
+          K = theArgIStack(theArgIStackoffset)
+C write(*,'(A,I5,I5)')"restore(s)  ",K,theArgIStackOffset
+          theArgIStackoffset = theArgIStackoffset-1
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -294,6 +299,8 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
+      INTEGER(w2f__i4) OAD_CTMP0
+      INTEGER(w2f__i4) OAD_CTMP1
 C
 C     **** Top Level Pragmas ****
 C
@@ -342,8 +349,10 @@ C original function
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = 1.0
       Y(2)%v = 1.0
-      CALL foo(X,Y,1)
-      CALL foo(X,Y,2)
+      OAD_CTMP0 = 1
+      CALL foo(X,Y,OAD_CTMP0)
+      OAD_CTMP1 = 2
+      CALL foo(X,Y,OAD_CTMP1)
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -358,8 +367,10 @@ C taping
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = 1.0
       Y(2)%v = 1.0
-      CALL foo(X,Y,1)
-      CALL foo(X,Y,2)
+      OAD_CTMP0 = 1
+      CALL foo(X,Y,OAD_CTMP0)
+      OAD_CTMP1 = 2
+      CALL foo(X,Y,OAD_CTMP1)
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -375,8 +386,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-      CALL foo(X,Y,2)
-      CALL foo(X,Y,1)
+      CALL foo(X,Y,OAD_CTMP1)
+      CALL foo(X,Y,OAD_CTMP0)
           Y(2)%d = 0.0d0
           Y(1)%d = 0.0d0
 C adjoint end
