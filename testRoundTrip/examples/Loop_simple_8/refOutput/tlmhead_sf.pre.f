@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
 	subroutine bar(x,y, k )
 	  double precision, dimension(4), intent(in) :: x

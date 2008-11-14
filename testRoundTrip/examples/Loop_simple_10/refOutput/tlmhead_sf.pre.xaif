@@ -280,7 +280,7 @@
     <xaif:BasicBlock vertex_id="5" scope_id="3">
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="12" lineNumber="63" do_chain="3">
+      <xaif:Assignment statement_id="12" lineNumber="11" do_chain="3">
         <xaif:AssignmentLHS du_ud="5" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -309,7 +309,7 @@
       <xaif:Marker statement_id="22" annotation="{WHIRL_Id#22} [passive: OPR_PRAGMA]"/>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="6" reversal="explicit" lineNumber="65">
+    <xaif:ForLoop vertex_id="6" reversal="explicit" lineNumber="13">
       <xaif:Initialization statement_id="25">
         <xaif:AssignmentLHS du_ud="6" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_5"/>
@@ -343,7 +343,7 @@
       </xaif:Update>
     </xaif:ForLoop>
 
-    <xaif:Branch vertex_id="7" lineNumber="66">
+    <xaif:Branch vertex_id="7" lineNumber="14">
       <xaif:Condition>
         <xaif:BooleanOperation vertex_id="1" name="not_equal"/>
         <xaif:VariableReference vertex_id="2" du_ud="2" alias="5">
@@ -373,7 +373,7 @@
     </xaif:Branch>
 
     <xaif:BasicBlock vertex_id="8" scope_id="3">
-      <xaif:Assignment statement_id="46" lineNumber="67" do_chain="3">
+      <xaif:Assignment statement_id="46" lineNumber="15" do_chain="3">
         <xaif:AssignmentLHS du_ud="5" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -443,7 +443,7 @@
     <xaif:EndLoop vertex_id="83"/>
 
     <xaif:BasicBlock vertex_id="9" scope_id="3">
-      <xaif:Assignment statement_id="72" lineNumber="69" do_chain="3">
+      <xaif:Assignment statement_id="72" lineNumber="17" do_chain="3">
         <xaif:AssignmentLHS du_ud="5" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -514,7 +514,7 @@
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="16" reversal="anonymous" lineNumber="83">
+    <xaif:ForLoop vertex_id="16" reversal="anonymous" lineNumber="31">
       <xaif:Initialization statement_id="13">
         <xaif:AssignmentLHS du_ud="11" alias="7">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_5"/>
@@ -550,7 +550,7 @@
 
     <xaif:BasicBlock vertex_id="17" scope_id="4"/>
 
-    <xaif:ForLoop vertex_id="18" reversal="anonymous" lineNumber="84">
+    <xaif:ForLoop vertex_id="18" reversal="anonymous" lineNumber="32">
       <xaif:Initialization statement_id="25">
         <xaif:AssignmentLHS du_ud="12" alias="8">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="J_6"/>
@@ -593,7 +593,7 @@
     <xaif:EndLoop vertex_id="21"/>
 
     <xaif:BasicBlock vertex_id="23" scope_id="4">
-      <xaif:SubroutineCall statement_id="45" scope_id="1" lineNumber="88" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="45" scope_id="1" lineNumber="36" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="10">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="X_1"/>
@@ -615,7 +615,7 @@
       </xaif:SubroutineCall>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="24" reversal="anonymous" lineNumber="90">
+    <xaif:ForLoop vertex_id="24" reversal="anonymous" lineNumber="38">
       <xaif:Initialization statement_id="59">
         <xaif:AssignmentLHS du_ud="14" alias="7">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_5"/>
@@ -651,7 +651,7 @@
 
     <xaif:BasicBlock vertex_id="25" scope_id="4"/>
 
-    <xaif:ForLoop vertex_id="26" reversal="anonymous" lineNumber="91">
+    <xaif:ForLoop vertex_id="26" reversal="anonymous" lineNumber="39">
       <xaif:Initialization statement_id="71">
         <xaif:AssignmentLHS du_ud="15" alias="8">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="J_6"/>
