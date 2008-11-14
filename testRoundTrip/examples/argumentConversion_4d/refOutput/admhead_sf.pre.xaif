@@ -155,7 +155,7 @@
     <xaif:BasicBlock vertex_id="5" scope_id="3">
       <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="9" lineNumber="61" do_chain="1">
+      <xaif:Assignment statement_id="9" lineNumber="9" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
         </xaif:AssignmentLHS>
@@ -229,7 +229,7 @@
     <xaif:BasicBlock vertex_id="8" scope_id="4">
       <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="11" lineNumber="70" do_chain="3">
+      <xaif:Assignment statement_id="11" lineNumber="18" do_chain="3">
         <xaif:AssignmentLHS du_ud="3" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="T_6"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -260,7 +260,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="23" lineNumber="71" do_chain="1">
+      <xaif:Assignment statement_id="23" lineNumber="19" do_chain="1">
         <xaif:AssignmentLHS du_ud="3" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="T_6"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -291,7 +291,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="35" scope_id="1" lineNumber="72" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="35" scope_id="1" lineNumber="20" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="T_6"/>
@@ -303,7 +303,7 @@
           </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>
-      <xaif:SubroutineCall statement_id="41" scope_id="1" lineNumber="73" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="41" scope_id="1" lineNumber="21" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="P_4"/>

@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 	module globals
 	  integer i
 	end module globals
