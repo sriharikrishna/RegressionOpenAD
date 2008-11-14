@@ -5,3 +5,6 @@ syntax: glob
 *~
 *.orig
 *.MOD
+testRoundTrip/.lastRun
+testRoundTrip/tmpOutput/*
+testRoundTrip/*.xsd
