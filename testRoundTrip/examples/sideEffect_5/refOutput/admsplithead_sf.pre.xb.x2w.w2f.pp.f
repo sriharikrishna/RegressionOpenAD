@@ -240,6 +240,7 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) OAD_CTMP0
       INTEGER(w2f__i8) OpenAD_Symbol_21
 C
 C     **** Top Level Pragmas ****
@@ -258,7 +259,8 @@ C
 C$OPENAD XXX Template ad_template.f
       G = 1
       I = 2
-      CALL foo(X,2)
+      OAD_CTMP0 = 2
+      CALL foo(X,OAD_CTMP0)
       CALL foo(X,I)
       Y(1)%v = 0
       DO I = 1, 3, 1
@@ -270,8 +272,11 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Template ad_template.f
       G = 1
       I = 2
-      CALL foo(X,2)
+      OAD_CTMP0 = 2
+      CALL foo(X,OAD_CTMP0)
           integer_tape(integer_tape_pointer) = G
+          integer_tape_pointer = integer_tape_pointer+1
+          integer_tape(integer_tape_pointer) = OAD_CTMP0
           integer_tape_pointer = integer_tape_pointer+1
       CALL foo(X,I)
           integer_tape(integer_tape_pointer) = G
@@ -314,7 +319,9 @@ C$OPENAD XXX Template ad_template.f
           G = integer_tape(integer_tape_pointer)
       CALL foo(X,I)
           integer_tape_pointer = integer_tape_pointer-1
+          OAD_CTMP0 = integer_tape(integer_tape_pointer)
+          integer_tape_pointer = integer_tape_pointer-1
           G = integer_tape(integer_tape_pointer)
-      CALL foo(X,2)
+      CALL foo(X,OAD_CTMP0)
           end if 
         end subroutine head

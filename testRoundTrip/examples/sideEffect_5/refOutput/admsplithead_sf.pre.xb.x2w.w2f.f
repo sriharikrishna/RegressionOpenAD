@@ -196,6 +196,7 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) OAD_CTMP0
       INTEGER(w2f__i8) OpenAD_Symbol_21
 C
 C     **** Top Level Pragmas ****
@@ -209,7 +210,8 @@ C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
       G = 1
       I = 2
-      CALL foo(__deriv__(X), 2)
+      OAD_CTMP0 = 2
+      CALL foo(__deriv__(X), OAD_CTMP0)
       CALL foo(__deriv__(X), I)
       __value__(Y(1)) = 0
       DO I = 1, 3, 1
@@ -220,9 +222,12 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       G = 1
       I = 2
-      CALL foo(__deriv__(X), 2)
+      OAD_CTMP0 = 2
+      CALL foo(__deriv__(X), OAD_CTMP0)
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(G)
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(OAD_CTMP0)
       CALL foo(__deriv__(X), I)
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(G)
@@ -270,8 +275,10 @@ C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(G)
       CALL foo(__deriv__(X), I)
 C     $OpenAD$ INLINE pop_i(subst)
+      CALL pop_i(OAD_CTMP0)
+C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(G)
-      CALL foo(__deriv__(X), 2)
+      CALL foo(__deriv__(X), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ INLINE cp_arg_store_integer_scalar(subst)
@@ -297,9 +304,12 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       G = 1
       I = 2
-      CALL foo(__deriv__(X), 2)
+      OAD_CTMP0 = 2
+      CALL foo(__deriv__(X), OAD_CTMP0)
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(G)
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(OAD_CTMP0)
       CALL foo(__deriv__(X), I)
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(G)
@@ -347,7 +357,9 @@ C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(G)
       CALL foo(__deriv__(X), I)
 C     $OpenAD$ INLINE pop_i(subst)
+      CALL pop_i(OAD_CTMP0)
+C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(G)
-      CALL foo(__deriv__(X), 2)
+      CALL foo(__deriv__(X), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

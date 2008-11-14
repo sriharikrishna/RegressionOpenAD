@@ -68,6 +68,8 @@
         <xaif:Symbol symbol_id="foo__3" kind="subroutine" type="void" annotation="{Sym_Id#3}"/>
         <xaif:Symbol symbol_id="I_4" kind="variable" type="integer" feType="I4" shape="scalar" annotation="{Sym_Id#4}" active="0">
         </xaif:Symbol>
+        <xaif:Symbol symbol_id="OAD_CTMP0_5" kind="variable" type="integer" feType="I4" shape="scalar" annotation="{Sym_Id#5}" active="0">
+        </xaif:Symbol>
       </xaif:SymbolTable>
     </xaif:Scope>
 
@@ -104,7 +106,7 @@
     </xaif:AliasSet>
     <xaif:AliasSet key="10">
       <xaif:AliasRange from_virtual_address="7" to_virtual_address="7" partial="0"/>
-      <xaif:AliasRange from_virtual_address="8" to_virtual_address="9" partial="1"/>
+      <xaif:AliasRange from_virtual_address="8" to_virtual_address="8" partial="0"/>
     </xaif:AliasSet>
     <xaif:AliasSet key="11">
       <xaif:AliasRange from_virtual_address="2" to_virtual_address="4" partial="0"/>
@@ -139,40 +141,34 @@
     <xaif:StmtIdSet key="6">
       <xaif:StatementId idRef="14"/>
       <xaif:StatementId idRef="16"/>
-      <xaif:StatementId idRef="36"/>
-      <xaif:StatementId idRef="41"/>
+      <xaif:StatementId idRef="38"/>
+      <xaif:StatementId idRef="43"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="7">
       <xaif:StatementId idRef=""/>
-      <xaif:StatementId idRef="16"/>
-      <xaif:StatementId idRef="22"/>
+      <xaif:StatementId idRef="18"/>
+      <xaif:StatementId idRef="24"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="8">
       <xaif:StatementId idRef=""/>
-      <xaif:StatementId idRef="28"/>
-      <xaif:StatementId idRef="46"/>
+      <xaif:StatementId idRef="30"/>
+      <xaif:StatementId idRef="48"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="9">
-      <xaif:StatementId idRef="16"/>
-      <xaif:StatementId idRef="22"/>
-      <xaif:StatementId idRef="34"/>
-      <xaif:StatementId idRef="41"/>
-      <xaif:StatementId idRef="46"/>
+      <xaif:StatementId idRef="18"/>
+      <xaif:StatementId idRef="24"/>
+      <xaif:StatementId idRef="36"/>
+      <xaif:StatementId idRef="43"/>
+      <xaif:StatementId idRef="48"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="10">
-      <xaif:StatementId idRef="22"/>
-      <xaif:StatementId idRef="34"/>
-      <xaif:StatementId idRef="41"/>
-      <xaif:StatementId idRef="46"/>
+      <xaif:StatementId idRef=""/>
+      <xaif:StatementId idRef="48"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="11">
-      <xaif:StatementId idRef=""/>
-      <xaif:StatementId idRef="46"/>
-    </xaif:StmtIdSet>
-    <xaif:StmtIdSet key="12">
-      <xaif:StatementId idRef="34"/>
-      <xaif:StatementId idRef="41"/>
-      <xaif:StatementId idRef="46"/>
+      <xaif:StatementId idRef="36"/>
+      <xaif:StatementId idRef="43"/>
+      <xaif:StatementId idRef="48"/>
     </xaif:StmtIdSet>
   </xaif:DUUDSetMap>
 
@@ -190,19 +186,21 @@
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="5">
       <xaif:StatementId idRef="16"/>
-      <xaif:StatementId idRef="36"/>
-      <xaif:StatementId idRef="41"/>
+      <xaif:StatementId idRef="38"/>
+      <xaif:StatementId idRef="43"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="6">
-      <xaif:StatementId idRef="22"/>
-      <xaif:StatementId idRef="36"/>
-      <xaif:StatementId idRef="41"/>
+      <xaif:StatementId idRef="38"/>
+      <xaif:StatementId idRef="43"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="7">
-      <xaif:StatementId idRef="46"/>
+      <xaif:StatementId idRef="24"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="8">
-      <xaif:StatementId idRef="41"/>
+      <xaif:StatementId idRef="48"/>
+    </xaif:StmtIdSet>
+    <xaif:StmtIdSet key="9">
+      <xaif:StatementId idRef="43"/>
     </xaif:StmtIdSet>
   </xaif:DOSetMap>
 
@@ -270,7 +268,7 @@
       <xaif:Marker statement_id="26" annotation="{WHIRL_Id#26} [passive: OPR_STID]"/>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="6" reversal="anonymous" lineNumber="67">
+    <xaif:ForLoop vertex_id="6" reversal="anonymous" lineNumber="15">
       <xaif:Initialization statement_id="32">
         <xaif:AssignmentLHS du_ud="5" alias="7">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_5"/>
@@ -311,7 +309,7 @@
     </xaif:ForLoop>
 
     <xaif:BasicBlock vertex_id="7" scope_id="3">
-      <xaif:Assignment statement_id="44" lineNumber="68" do_chain="4">
+      <xaif:Assignment statement_id="44" lineNumber="16" do_chain="4">
         <xaif:AssignmentLHS du_ud="4" alias="8">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_3"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -347,7 +345,7 @@
       </xaif:Assignment>
     </xaif:BasicBlock>
 
-    <xaif:EndLoop vertex_id="59"/>
+    <xaif:EndLoop vertex_id="60"/>
 
     <xaif:BasicBlock vertex_id="9" scope_id="3"/>
 
@@ -357,9 +355,9 @@
     <xaif:ControlFlowEdge edge_id="2" source="5" target="6"/>
     <xaif:ControlFlowEdge edge_id="3" source="6" target="7" has_condition_value="true" condition_value="1"/>
     <xaif:ControlFlowEdge edge_id="4" source="6" target="9"/>
-    <xaif:ControlFlowEdge edge_id="5" source="7" target="59"/>
+    <xaif:ControlFlowEdge edge_id="5" source="7" target="60"/>
     <xaif:ControlFlowEdge edge_id="6" source="9" target="10"/>
-    <xaif:ControlFlowEdge edge_id="7" source="59" target="6"/>
+    <xaif:ControlFlowEdge edge_id="7" source="60" target="6"/>
   </xaif:ControlFlowGraph>
 
   <!-- ******************************************************************** -->
@@ -415,17 +413,20 @@
       <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_USE]"/>
       <xaif:Marker statement_id="12" annotation="{WHIRL_Id#12} [passive: OPR_STID]"/>
       <xaif:Marker statement_id="14" annotation="{WHIRL_Id#14} [passive: OPR_STID]"/>
-      <xaif:SubroutineCall statement_id="16" scope_id="1" lineNumber="81" symbol_id="foo__22">
+      <xaif:Marker statement_id="16" annotation="{WHIRL_Id#16} [passive: OPR_STID]"/>
+      <xaif:SubroutineCall statement_id="18" scope_id="1" lineNumber="31" symbol_id="foo__22">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="11">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="X_1"/>
           </xaif:VariableReference>
         </xaif:Argument>
         <xaif:Argument position="2">
-          <xaif:Constant vertex_id="1" type="integer" feType="I4" value="2"/>
+          <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
+            <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="OAD_CTMP0_5"/>
+          </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>
-      <xaif:SubroutineCall statement_id="22" scope_id="1" lineNumber="82" symbol_id="foo__22">
+      <xaif:SubroutineCall statement_id="24" scope_id="1" lineNumber="32" symbol_id="foo__22">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="11">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="X_1"/>
@@ -437,8 +438,8 @@
           </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>
-      <xaif:Assignment statement_id="28" lineNumber="83" do_chain="7">
-        <xaif:AssignmentLHS du_ud="11" alias="12">
+      <xaif:Assignment statement_id="30" lineNumber="33" do_chain="8">
+        <xaif:AssignmentLHS du_ud="10" alias="12">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
             <xaif:IndexTriplet>
@@ -455,9 +456,9 @@
       </xaif:Assignment>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="13" reversal="anonymous" lineNumber="84">
-      <xaif:Initialization statement_id="36">
-        <xaif:AssignmentLHS du_ud="12" alias="10">
+    <xaif:ForLoop vertex_id="13" reversal="anonymous" lineNumber="34">
+      <xaif:Initialization statement_id="38">
+        <xaif:AssignmentLHS du_ud="11" alias="10">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_4"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
@@ -473,8 +474,8 @@
         <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
         <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
       </xaif:Condition>
-      <xaif:Update statement_id="41">
-        <xaif:AssignmentLHS du_ud="12" alias="10">
+      <xaif:Update statement_id="43">
+        <xaif:AssignmentLHS du_ud="11" alias="10">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_4"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
@@ -490,8 +491,8 @@
     </xaif:ForLoop>
 
     <xaif:BasicBlock vertex_id="14" scope_id="4">
-      <xaif:Assignment statement_id="46" lineNumber="85" do_chain="7">
-        <xaif:AssignmentLHS du_ud="11" alias="12">
+      <xaif:Assignment statement_id="48" lineNumber="35" do_chain="8">
+        <xaif:AssignmentLHS du_ud="10" alias="12">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
             <xaif:IndexTriplet>
@@ -534,7 +535,7 @@
       </xaif:Assignment>
     </xaif:BasicBlock>
 
-    <xaif:EndLoop vertex_id="60"/>
+    <xaif:EndLoop vertex_id="61"/>
 
     <xaif:BasicBlock vertex_id="16" scope_id="4"/>
 
@@ -544,9 +545,9 @@
     <xaif:ControlFlowEdge edge_id="2" source="12" target="13"/>
     <xaif:ControlFlowEdge edge_id="3" source="13" target="14" has_condition_value="true" condition_value="1"/>
     <xaif:ControlFlowEdge edge_id="4" source="13" target="16"/>
-    <xaif:ControlFlowEdge edge_id="5" source="14" target="60"/>
+    <xaif:ControlFlowEdge edge_id="5" source="14" target="61"/>
     <xaif:ControlFlowEdge edge_id="6" source="16" target="17"/>
-    <xaif:ControlFlowEdge edge_id="7" source="60" target="13"/>
+    <xaif:ControlFlowEdge edge_id="7" source="61" target="13"/>
   </xaif:ControlFlowGraph>
 
   <xaif:CallGraphEdge edge_id="1" source="20" target="19"/>
