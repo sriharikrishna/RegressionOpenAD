@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
       SUBROUTINE ad_roehf5 (nrm1, nrm2, nrm3, priml1, priml2, priml3,
      &priml4, priml5, primr1, primr2, primr3, primr4, primr5, gamma,

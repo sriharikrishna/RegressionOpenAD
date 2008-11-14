@@ -177,7 +177,7 @@
 
     <xaif:BasicBlock vertex_id="5" scope_id="3">
       <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="10" lineNumber="63" do_chain="1">
+      <xaif:Assignment statement_id="10" lineNumber="11" do_chain="1">
         <xaif:AssignmentLHS du_ud="9" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="NU_4"/>
         </xaif:AssignmentLHS>
@@ -195,7 +195,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="16" lineNumber="64" do_chain="1">
+      <xaif:Assignment statement_id="16" lineNumber="12" do_chain="1">
         <xaif:AssignmentLHS du_ud="10" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="GAMMA_3"/>
         </xaif:AssignmentLHS>
@@ -213,7 +213,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="22" lineNumber="65" do_chain="1">
+      <xaif:Assignment statement_id="22" lineNumber="13" do_chain="1">
         <xaif:AssignmentLHS du_ud="6" alias="5">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="OMEGA_5"/>
         </xaif:AssignmentLHS>
@@ -231,7 +231,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="28" lineNumber="66" do_chain="1">
+      <xaif:Assignment statement_id="28" lineNumber="14" do_chain="1">
         <xaif:AssignmentLHS du_ud="6" alias="6">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="T_6"/>
         </xaif:AssignmentLHS>
@@ -249,7 +249,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="34" lineNumber="68" do_chain="1">
+      <xaif:Assignment statement_id="34" lineNumber="16" do_chain="1">
         <xaif:AssignmentLHS du_ud="9" alias="7">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="V_7"/>
         </xaif:AssignmentLHS>
@@ -267,7 +267,7 @@
           <xaif:ExpressionEdge edge_id="3" source="2" target="1" position="1"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="40" lineNumber="69" do_chain="3">
+      <xaif:Assignment statement_id="40" lineNumber="17" do_chain="3">
         <xaif:AssignmentLHS du_ud="11" alias="8">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -303,7 +303,7 @@
           <xaif:ExpressionEdge edge_id="6" source="5" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="54" lineNumber="70" do_chain="1">
+      <xaif:Assignment statement_id="54" lineNumber="18" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="8">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">

@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 
 C -------------------------------------------------------
 C NOTE: THIS EXAMPLE SEGVS IN REVERSE BECAUSE OF BUG #78

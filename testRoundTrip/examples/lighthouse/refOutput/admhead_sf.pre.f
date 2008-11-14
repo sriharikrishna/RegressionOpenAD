@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 	subroutine head(x,y) 
 	  double precision, dimension(4) :: x
 	  double precision, dimension(2) :: y

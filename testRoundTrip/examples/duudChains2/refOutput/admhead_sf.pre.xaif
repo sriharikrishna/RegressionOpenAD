@@ -127,7 +127,7 @@
       <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_STID]"/>
     </xaif:BasicBlock>
 
-    <xaif:Branch vertex_id="23" lineNumber="64">
+    <xaif:Branch vertex_id="23" lineNumber="12">
       <xaif:Condition>
         <xaif:VariableReference vertex_id="1" du_ud="3" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="L_3"/>
@@ -136,7 +136,7 @@
     </xaif:Branch>
 
     <xaif:BasicBlock vertex_id="6" scope_id="3">
-      <xaif:Assignment statement_id="16" lineNumber="65" do_chain="1">
+      <xaif:Assignment statement_id="16" lineNumber="13" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -175,7 +175,7 @@
     <xaif:Exit vertex_id="9"/>
 
     <xaif:BasicBlock vertex_id="7" scope_id="3">
-      <xaif:Assignment statement_id="29" lineNumber="67" do_chain="1">
+      <xaif:Assignment statement_id="29" lineNumber="15" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">

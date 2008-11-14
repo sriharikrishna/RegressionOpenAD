@@ -135,7 +135,7 @@
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
     </xaif:BasicBlock>
 
-    <xaif:Branch vertex_id="29" lineNumber="62">
+    <xaif:Branch vertex_id="29" lineNumber="10">
       <xaif:Condition>
         <xaif:BooleanOperation vertex_id="1" name="less_or_equal"/>
         <xaif:VariableReference vertex_id="2" du_ud="2" alias="2">
@@ -166,7 +166,7 @@
     </xaif:Branch>
 
     <xaif:BasicBlock vertex_id="6" scope_id="3">
-      <xaif:Assignment statement_id="24" lineNumber="63" do_chain="3">
+      <xaif:Assignment statement_id="24" lineNumber="11" do_chain="3">
         <xaif:AssignmentLHS du_ud="4" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -210,7 +210,7 @@
 
     <xaif:EndBranch vertex_id="8"/>
 
-    <xaif:Branch vertex_id="30" lineNumber="67">
+    <xaif:Branch vertex_id="30" lineNumber="15">
       <xaif:Condition>
         <xaif:BooleanOperation vertex_id="1" name="equal"/>
         <xaif:VariableReference vertex_id="2" du_ud="3" alias="3">
@@ -231,7 +231,7 @@
     </xaif:Branch>
 
     <xaif:BasicBlock vertex_id="9" scope_id="3">
-      <xaif:Assignment statement_id="66" lineNumber="68" do_chain="1">
+      <xaif:Assignment statement_id="66" lineNumber="16" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -266,7 +266,7 @@
     <xaif:Exit vertex_id="12"/>
 
     <xaif:BasicBlock vertex_id="10" scope_id="3">
-      <xaif:Assignment statement_id="77" lineNumber="70" do_chain="1">
+      <xaif:Assignment statement_id="77" lineNumber="18" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -295,7 +295,7 @@
     </xaif:BasicBlock>
 
     <xaif:BasicBlock vertex_id="7" scope_id="3">
-      <xaif:Assignment statement_id="41" lineNumber="65" do_chain="3">
+      <xaif:Assignment statement_id="41" lineNumber="13" do_chain="3">
         <xaif:AssignmentLHS du_ud="4" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">

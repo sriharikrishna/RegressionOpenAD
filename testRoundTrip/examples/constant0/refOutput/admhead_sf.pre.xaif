@@ -114,7 +114,7 @@
     <xaif:BasicBlock vertex_id="5" scope_id="3">
       <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="11" lineNumber="63" do_chain="1">
+      <xaif:Assignment statement_id="11" lineNumber="11" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">

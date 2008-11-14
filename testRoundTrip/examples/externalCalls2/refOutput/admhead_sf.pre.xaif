@@ -167,7 +167,7 @@
     <xaif:BasicBlock vertex_id="5" scope_id="3">
       <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="9" lineNumber="62" do_chain="1">
+      <xaif:Assignment statement_id="9" lineNumber="10" do_chain="1">
         <xaif:AssignmentLHS du_ud="4" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="T_4"/>
         </xaif:AssignmentLHS>
@@ -185,14 +185,14 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="15" scope_id="1" lineNumber="63" symbol_id="barext__22">
+      <xaif:SubroutineCall statement_id="15" scope_id="1" lineNumber="11" symbol_id="barext__22">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="T_4"/>
           </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>
-      <xaif:Assignment statement_id="18" lineNumber="64" do_chain="1">
+      <xaif:Assignment statement_id="18" lineNumber="12" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
         </xaif:AssignmentLHS>
@@ -253,7 +253,7 @@
       <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_STID]"/>
-      <xaif:SubroutineCall statement_id="13" scope_id="1" lineNumber="75" symbol_id="barext__22">
+      <xaif:SubroutineCall statement_id="13" scope_id="1" lineNumber="23" symbol_id="barext__22">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="T_6"/>
@@ -271,7 +271,7 @@
         </xaif:Argument>
       </xaif:SubroutineCall>
       <xaif:Marker statement_id="19" annotation="{WHIRL_Id#19} [passive: OPR_STID]"/>
-      <xaif:SubroutineCall statement_id="21" scope_id="1" lineNumber="77" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="21" scope_id="1" lineNumber="25" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="6">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="X_1"/>

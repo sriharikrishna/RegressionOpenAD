@@ -155,7 +155,7 @@
     <xaif:BasicBlock vertex_id="8" scope_id="4">
       <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="11" lineNumber="67" do_chain="1">
+      <xaif:Assignment statement_id="11" lineNumber="15" do_chain="1">
         <xaif:AssignmentLHS du_ud="4" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="T_4"/>
         </xaif:AssignmentLHS>
@@ -173,8 +173,8 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="17" scope_id="1" lineNumber="68" symbol_id="foo__21"/>
-      <xaif:Assignment statement_id="18" lineNumber="69" do_chain="1">
+      <xaif:SubroutineCall statement_id="17" scope_id="1" lineNumber="16" symbol_id="foo__21"/>
+      <xaif:Assignment statement_id="18" lineNumber="17" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="Y_2"/>
         </xaif:AssignmentLHS>

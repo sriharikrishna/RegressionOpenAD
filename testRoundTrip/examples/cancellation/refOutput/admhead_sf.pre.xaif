@@ -194,7 +194,7 @@
     <xaif:BasicBlock vertex_id="5" scope_id="3">
       <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="12" annotation="{WHIRL_Id#12} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="13" lineNumber="65" do_chain="1">
+      <xaif:Assignment statement_id="13" lineNumber="13" do_chain="1">
         <xaif:AssignmentLHS du_ud="11" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_4"/>
         </xaif:AssignmentLHS>
@@ -214,7 +214,7 @@
           <xaif:ExpressionEdge edge_id="4" source="3" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="20" lineNumber="66" do_chain="1">
+      <xaif:Assignment statement_id="20" lineNumber="14" do_chain="1">
         <xaif:AssignmentLHS du_ud="12" alias="5">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="B_5"/>
         </xaif:AssignmentLHS>
@@ -230,7 +230,7 @@
           <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="24" lineNumber="67" do_chain="3">
+      <xaif:Assignment statement_id="24" lineNumber="15" do_chain="3">
         <xaif:AssignmentLHS du_ud="9" alias="6">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="C_6"/>
         </xaif:AssignmentLHS>
@@ -240,7 +240,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="26" lineNumber="69" do_chain="1">
+      <xaif:Assignment statement_id="26" lineNumber="17" do_chain="1">
         <xaif:AssignmentLHS du_ud="12" alias="6">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="C_6"/>
         </xaif:AssignmentLHS>
@@ -252,7 +252,7 @@
           <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="30" lineNumber="70" do_chain="1">
+      <xaif:Assignment statement_id="30" lineNumber="18" do_chain="1">
         <xaif:AssignmentLHS du_ud="10" alias="7">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="D_7"/>
         </xaif:AssignmentLHS>
@@ -262,7 +262,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="32" lineNumber="71" do_chain="4">
+      <xaif:Assignment statement_id="32" lineNumber="19" do_chain="4">
         <xaif:AssignmentLHS du_ud="8" alias="8">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="F_9"/>
         </xaif:AssignmentLHS>
@@ -272,7 +272,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="34" lineNumber="73" do_chain="1">
+      <xaif:Assignment statement_id="34" lineNumber="21" do_chain="1">
         <xaif:AssignmentLHS du_ud="12" alias="8">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="F_9"/>
         </xaif:AssignmentLHS>
@@ -292,7 +292,7 @@
           <xaif:ExpressionEdge edge_id="4" source="5" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="41" lineNumber="74" do_chain="1">
+      <xaif:Assignment statement_id="41" lineNumber="22" do_chain="1">
         <xaif:AssignmentLHS du_ud="12" alias="9">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="E_8"/>
         </xaif:AssignmentLHS>
@@ -312,7 +312,7 @@
           <xaif:ExpressionEdge edge_id="4" source="5" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="48" lineNumber="75" do_chain="1">
+      <xaif:Assignment statement_id="48" lineNumber="23" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="10">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_3"/>
         </xaif:AssignmentLHS>

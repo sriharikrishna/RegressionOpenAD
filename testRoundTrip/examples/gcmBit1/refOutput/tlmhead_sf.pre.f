@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
       SUBROUTINE FIND_BULKMOD(
      I      locPres, tFld, sFld,
