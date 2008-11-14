@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
       subroutine head(obj,g_obj0,g_obj1,g_obj2,g_obj3,g_obj4,g_obj5,
      &x0,x1,x2,x3,x4,x5,

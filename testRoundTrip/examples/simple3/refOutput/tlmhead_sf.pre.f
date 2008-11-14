@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
 	subroutine head(x1,x2,y1,y2) 
 	  double precision v3,v4,x1,x2,y1,y2

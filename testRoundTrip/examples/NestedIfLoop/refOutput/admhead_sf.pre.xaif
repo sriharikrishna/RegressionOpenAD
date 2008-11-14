@@ -150,7 +150,7 @@
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
     </xaif:BasicBlock>
 
-    <xaif:Branch vertex_id="36" lineNumber="63">
+    <xaif:Branch vertex_id="36" lineNumber="11">
       <xaif:Condition>
         <xaif:BooleanOperation vertex_id="1" name="less_than"/>
         <xaif:VariableReference vertex_id="2" du_ud="2" alias="2">
@@ -182,7 +182,7 @@
 
     <xaif:BasicBlock vertex_id="6" scope_id="3"/>
 
-    <xaif:ForLoop vertex_id="7" reversal="anonymous" lineNumber="64">
+    <xaif:ForLoop vertex_id="7" reversal="anonymous" lineNumber="12">
       <xaif:Initialization statement_id="26">
         <xaif:AssignmentLHS du_ud="5" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
@@ -217,7 +217,7 @@
     </xaif:ForLoop>
 
     <xaif:BasicBlock vertex_id="8" scope_id="3">
-      <xaif:Assignment statement_id="36" lineNumber="65" do_chain="4">
+      <xaif:Assignment statement_id="36" lineNumber="13" do_chain="4">
         <xaif:AssignmentLHS du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -275,7 +275,7 @@
 
     <xaif:BasicBlock vertex_id="10" scope_id="3"/>
 
-    <xaif:ForLoop vertex_id="11" reversal="anonymous" lineNumber="68">
+    <xaif:ForLoop vertex_id="11" reversal="anonymous" lineNumber="16">
       <xaif:Initialization statement_id="55">
         <xaif:AssignmentLHS du_ud="6" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
@@ -310,7 +310,7 @@
     </xaif:ForLoop>
 
     <xaif:BasicBlock vertex_id="12" scope_id="3">
-      <xaif:Assignment statement_id="65" lineNumber="69" do_chain="6">
+      <xaif:Assignment statement_id="65" lineNumber="17" do_chain="6">
         <xaif:AssignmentLHS du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">

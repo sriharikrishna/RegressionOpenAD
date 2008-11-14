@@ -152,7 +152,7 @@
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="6" reversal="anonymous" lineNumber="63">
+    <xaif:ForLoop vertex_id="6" reversal="anonymous" lineNumber="11">
       <xaif:Initialization statement_id="13">
         <xaif:AssignmentLHS du_ud="5" alias="2">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
@@ -186,7 +186,7 @@
       </xaif:Update>
     </xaif:ForLoop>
 
-    <xaif:Branch vertex_id="7" lineNumber="64">
+    <xaif:Branch vertex_id="7" lineNumber="12">
       <xaif:Condition>
         <xaif:BooleanOperation vertex_id="1" name="equal"/>
         <xaif:VariableReference vertex_id="2" du_ud="3" alias="2">
@@ -199,7 +199,7 @@
     </xaif:Branch>
 
     <xaif:BasicBlock vertex_id="8" scope_id="3">
-      <xaif:Assignment statement_id="28" lineNumber="65" do_chain="4">
+      <xaif:Assignment statement_id="28" lineNumber="13" do_chain="4">
         <xaif:AssignmentLHS du_ud="6" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -232,7 +232,7 @@
     <xaif:EndLoop vertex_id="32"/>
 
     <xaif:BasicBlock vertex_id="9" scope_id="3">
-      <xaif:Assignment statement_id="39" lineNumber="67" do_chain="4">
+      <xaif:Assignment statement_id="39" lineNumber="15" do_chain="4">
         <xaif:AssignmentLHS du_ud="6" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">

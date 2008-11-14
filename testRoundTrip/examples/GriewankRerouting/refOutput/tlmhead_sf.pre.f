@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 c$openad XXX Template ad_template.f
 	subroutine ad_reroute (x1, x2, y1, y2)
 	  double precision, intent(in):: x1,x2
