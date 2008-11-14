@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 	subroutine foo(x,y)
 	double precision :: x,y
 	  y=x

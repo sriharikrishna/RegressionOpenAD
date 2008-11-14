@@ -1,3 +1,7 @@
+      module all_globals_mod
+
+      end module
+
 	module aGlobalModule
 	  public :: globalString
 	  character(3) globalString

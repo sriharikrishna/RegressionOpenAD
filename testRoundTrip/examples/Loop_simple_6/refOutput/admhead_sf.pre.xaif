@@ -154,7 +154,7 @@
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
     </xaif:BasicBlock>
 
-    <xaif:Branch vertex_id="36" lineNumber="63">
+    <xaif:Branch vertex_id="36" lineNumber="11">
       <xaif:Condition>
         <xaif:BooleanOperation vertex_id="1" name="less_than"/>
         <xaif:VariableReference vertex_id="2" du_ud="2" alias="2">
@@ -178,7 +178,7 @@
       <xaif:Marker statement_id="20" annotation="{WHIRL_Id#20} [passive: OPR_PRAGMA]"/>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="7" reversal="explicit" lineNumber="65">
+    <xaif:ForLoop vertex_id="7" reversal="explicit" lineNumber="13">
       <xaif:Initialization statement_id="23">
         <xaif:AssignmentLHS du_ud="5" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
@@ -213,7 +213,7 @@
     </xaif:ForLoop>
 
     <xaif:BasicBlock vertex_id="8" scope_id="3">
-      <xaif:Assignment statement_id="33" lineNumber="66" do_chain="4">
+      <xaif:Assignment statement_id="33" lineNumber="14" do_chain="4">
         <xaif:AssignmentLHS du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -257,7 +257,7 @@
       <xaif:Marker statement_id="44" annotation="{WHIRL_Id#44} [passive: OPR_PRAGMA]"/>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="11" reversal="explicit" lineNumber="70">
+    <xaif:ForLoop vertex_id="11" reversal="explicit" lineNumber="18">
       <xaif:Initialization statement_id="47">
         <xaif:AssignmentLHS du_ud="6" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
@@ -292,7 +292,7 @@
     </xaif:ForLoop>
 
     <xaif:BasicBlock vertex_id="12" scope_id="3">
-      <xaif:Assignment statement_id="57" lineNumber="71" do_chain="6">
+      <xaif:Assignment statement_id="57" lineNumber="19" do_chain="6">
         <xaif:AssignmentLHS du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="Y_2"/>
           <xaif:ArrayElementReference vertex_id="2">
