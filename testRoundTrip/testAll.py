@@ -191,7 +191,7 @@ def numberedList(list):
 
 def populateExamplesList(args):
     allExamples = os.listdir("examples")
-    allExamples.sort(key=str.lower) # default sort is case insensitive, this one isn't
+    allExamples.sort(key=str.lower) # default sort is case sensitive, this one isn't
     rangeStart = 1
     rangeEnd = len(allExamples)
     examples = []
@@ -452,7 +452,7 @@ def main():
                    help="pick a compiler (defaults to ifort) from the following list: " +compilerOpts+" - the compiler should be in PATH",
                    default='ifort')
     opt.add_option('-i','--ignoreFailingCases',dest='ignoreFailingCases',
-                   help="don't if we should try to run  the cases known to fail",
+                   help="don't ask whether we should try to run the cases known to fail",
                    action='store_true',default=False)
     opt.add_option('-O','--optimize',dest='optimize',
                    help="turn compiler optimization on (default off)",
