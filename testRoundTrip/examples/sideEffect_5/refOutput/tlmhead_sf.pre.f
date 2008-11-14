@@ -1,3 +1,11 @@
+      module all_globals_mod
+      
+        public :: g
+        
+        integer g 
+        
+      end module
+
 c$openad XXX Template ad_template.f
 	subroutine foo(a,n) 
 	  use all_globals_mod
