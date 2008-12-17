@@ -2908,7 +2908,7 @@
         </xaif:BasicBlock>
         <xaif:Branch vertex_id="223" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="24" du_ud="18" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="I_17" annotation="" scope_id="4"/>
@@ -2982,7 +2982,7 @@
         <xaif:EndBranch vertex_id="27" annotation=""/>
         <xaif:Branch vertex_id="225" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="20" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NX_1" annotation="" scope_id="4"/>
@@ -3132,7 +3132,7 @@
         <xaif:EndBranch vertex_id="42" annotation=""/>
         <xaif:Branch vertex_id="228" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="21" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NY_2" annotation="" scope_id="4"/>
@@ -3220,7 +3220,7 @@
         <xaif:EndBranch vertex_id="51" annotation=""/>
         <xaif:Branch vertex_id="230" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="20" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NX_1" annotation="" scope_id="4"/>
@@ -4250,7 +4250,7 @@
         </xaif:BasicBlock>
         <xaif:Branch vertex_id="223" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="24" du_ud="18" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="I_17" annotation="" scope_id="4"/>
@@ -4331,7 +4331,7 @@
         <xaif:EndBranch vertex_id="27" annotation=""/>
         <xaif:Branch vertex_id="225" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="20" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NX_1" annotation="" scope_id="4"/>
@@ -4516,7 +4516,7 @@
         <xaif:EndBranch vertex_id="42" annotation=""/>
         <xaif:Branch vertex_id="228" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="21" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NY_2" annotation="" scope_id="4"/>
@@ -4627,7 +4627,7 @@
         <xaif:EndBranch vertex_id="51" annotation=""/>
         <xaif:Branch vertex_id="230" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="20" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NX_1" annotation="" scope_id="4"/>
@@ -9503,7 +9503,7 @@
         </xaif:BasicBlock>
         <xaif:Branch vertex_id="223" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="24" du_ud="18" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="I_17" annotation="" scope_id="4"/>
@@ -9584,7 +9584,7 @@
         <xaif:EndBranch vertex_id="27" annotation=""/>
         <xaif:Branch vertex_id="225" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="20" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NX_1" annotation="" scope_id="4"/>
@@ -9769,7 +9769,7 @@
         <xaif:EndBranch vertex_id="42" annotation=""/>
         <xaif:Branch vertex_id="228" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="21" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NY_2" annotation="" scope_id="4"/>
@@ -9880,7 +9880,7 @@
         <xaif:EndBranch vertex_id="51" annotation=""/>
         <xaif:Branch vertex_id="230" annotation="">
           <xaif:Condition>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+            <xaif:BooleanOperation vertex_id="1" name="or"/>
             <xaif:BooleanOperation vertex_id="2" name="equal"/>
             <xaif:VariableReference vertex_id="3" active="false" alias="20" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="NX_1" annotation="" scope_id="4"/>
