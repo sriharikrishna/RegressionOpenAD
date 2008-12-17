@@ -3,11 +3,19 @@
 import os
 import sys
 
-def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse):
+def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
     import tempfile
     plotFileName=tempfile.mktemp()
     plotFile=open(plotFileName,"w")
-    plotFile.write('set terminal x11\n')
+
+    # set output terminal
+    if makeSVG:
+        outputName = "numericalComparison.svg"
+        plotFile.write('set term svg font \'arial,11\' size 900,690\n')
+        plotFile.write('set output "'+outputName+'"\n')
+    else:
+        plotFile.write('set terminal x11\n')
+
     if withAD: 
         plotFile.write('set multiplot layout 2, 3 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
     else:     
@@ -62,7 +70,11 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse):
         # reset y range
         plotFile.write('set yrange [*:*] \n')
     plotFile.close()
-    rc=os.system("gnuplot -persist "+plotFileName+" 2>/dev/null")
+
+    # run gnuplot
+    persistStr = makeSVG and '' or '-persist '
+    rc = os.system("gnuplot "+persistStr+plotFileName+" 2>/dev/null")
+
     if (rc) :
         sys.stderr.write("gnuplot failed\n")
         sys.stderr.write("file "+plotFileName+"\n")
@@ -70,7 +82,11 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse):
         os.remove(plotFileName)
         map(os.remove,datFileNames)
 
-def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,verbose):
+    if makeSVG:
+        os.system("firefox "+outputName)
+        os.remove(outputName)
+
+def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
     paramsFile=open("params.conf","r")
     n=int(paramsFile.readline())
     m=int(paramsFile.readline())
@@ -144,7 +160,7 @@ def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,verbose):
                 if (val > errLimDict[errKey]) :
                   sys.stderr.write("  F["+str(index/m+1)+"]["+str(index%m)+"]: %r\n" % (val))
     if (returnValue and graphs) :
-        showGraphs(errDict,errLimDict,withAD,name,n,m,impulse)
+        showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG)
     return returnValue
           
 def main():
@@ -161,6 +177,9 @@ def main():
                    action='store',default="")
     opt.add_option('-i','--impulse',dest='impulse',
                    help="draw errors with impulses (bars)",
+                   action='store_true',default=False)
+    opt.add_option('-s','--svg',dest='makeSVG',
+                   help="make svg output and display with firefox",
                    action='store_true',default=False)
     opt.add_option('-v','--verbose',dest='verbose',
                    help="if limits are exceeded show verbose output",
@@ -180,7 +199,7 @@ def main():
         fileDict={}    
         for i in range(0,len(keyList)):
             fileDict[keyList[i]]=args[i]
-        returnValue=compareFiles(fileDict,withAD,options.batchMode,options.graphs,options.name,options.impulse,options.verbose)
+        returnValue=compareFiles(fileDict,withAD,options.batchMode,options.graphs,options.name,options.impulse,options.makeSVG,options.verbose)
     except RuntimeError, e:
         print 'caught exception: ',e
         return -1

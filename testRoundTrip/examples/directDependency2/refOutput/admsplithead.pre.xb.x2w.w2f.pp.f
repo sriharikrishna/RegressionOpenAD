@@ -145,16 +145,6 @@ C ========== end copyright notice ==============
       use OAD_active
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_8
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1 : 2)
@@ -189,16 +179,9 @@ C$OPENAD XXX Template ad_template.f
 ! taping
 C$OPENAD XXX Template ad_template.f
       T%v = (X(1)%v+X(2)%v)
-      OpenAD_Symbol_0 = 1_w2f__i8
-      OpenAD_Symbol_1 = 1_w2f__i8
       T1%v = (T%v*2.0D00)
-      OpenAD_Symbol_2 = 2.0D00
       CALL foo()
       Y%v = (T%v*2.0D00+T1%v*3.0D00)
-      OpenAD_Symbol_6 = 2.0D00
-      OpenAD_Symbol_4 = 1_w2f__i8
-      OpenAD_Symbol_8 = 3.0D00
-      OpenAD_Symbol_5 = 1_w2f__i8
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint

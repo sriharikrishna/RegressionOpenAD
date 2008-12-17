@@ -9,22 +9,17 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_10
+      REAL(w2f__8) OpenAD_Symbol_11
+      REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_18
-      REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_20
-      REAL(w2f__8) OpenAD_Symbol_21
-      REAL(w2f__8) OpenAD_Symbol_22
-      REAL(w2f__8) OpenAD_Symbol_23
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Parameters and Result ****
@@ -73,30 +68,25 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 11, 1
         OpenAD_Symbol_0 = (X(2)%v+V(I))
         TEMP1%v = (V(I)*OpenAD_Symbol_0)
-        OpenAD_Symbol_3 = 1_w2f__i8
         OpenAD_Symbol_2 = V(I)
-        OpenAD_Symbol_7 = (X(3)%v+V(I))
-        TEMP2%v = (X(4)%v+V(I)*OpenAD_Symbol_7)
-        OpenAD_Symbol_5 = 1_w2f__i8
-        OpenAD_Symbol_10 = 1_w2f__i8
-        OpenAD_Symbol_9 = V(I)
-        OpenAD_Symbol_6 = 1_w2f__i8
-        OpenAD_Symbol_14 = (X(1)%v*TEMP1%v)
-        FVEC(INT(I))%v = (Y(I)-(OpenAD_Symbol_14/TEMP2%v))
-        OpenAD_Symbol_17 = TEMP1%v
-        OpenAD_Symbol_18 = X(1)%v
-        OpenAD_Symbol_15 = (INT(1 _w2f__i8)/TEMP2%v)
-        OpenAD_Symbol_16 = (-(OpenAD_Symbol_14/(TEMP2%v*TEMP2%v)))
-        OpenAD_Symbol_13 = (-1_w2f__i8)
-        OpenAD_Symbol_19 = (OpenAD_Symbol_15 * INT((-1_w2f__i8)))
-        OpenAD_Symbol_20 = (OpenAD_Symbol_16 * INT((-1_w2f__i8)))
-        OpenAD_Symbol_21 = (OpenAD_Symbol_17 * OpenAD_Symbol_19)
-        OpenAD_Symbol_22 = (OpenAD_Symbol_9 * OpenAD_Symbol_20)
-        OpenAD_Symbol_23 = (OpenAD_Symbol_2 * OpenAD_Symbol_18 *
-     >  OpenAD_Symbol_19)
-        CALL sax(OpenAD_Symbol_20,X(4),FVEC(I))
-        CALL saxpy(OpenAD_Symbol_21,X(1),FVEC(I))
-        CALL saxpy(OpenAD_Symbol_22,X(3),FVEC(I))
-        CALL saxpy(OpenAD_Symbol_23,X(2),FVEC(I))
+        OpenAD_Symbol_4 = (X(3)%v+V(I))
+        TEMP2%v = (X(4)%v+V(I)*OpenAD_Symbol_4)
+        OpenAD_Symbol_6 = V(I)
+        OpenAD_Symbol_9 = (X(1)%v*TEMP1%v)
+        FVEC(INT(I))%v = (Y(I)-(OpenAD_Symbol_9/TEMP2%v))
+        OpenAD_Symbol_12 = TEMP1%v
+        OpenAD_Symbol_13 = X(1)%v
+        OpenAD_Symbol_10 = (INT(1 _w2f__i8)/TEMP2%v)
+        OpenAD_Symbol_11 = (-(OpenAD_Symbol_9/(TEMP2%v*TEMP2%v)))
+        OpenAD_Symbol_14 = (OpenAD_Symbol_10 * INT((-1_w2f__i8)))
+        OpenAD_Symbol_15 = (OpenAD_Symbol_11 * INT((-1_w2f__i8)))
+        OpenAD_Symbol_16 = (OpenAD_Symbol_12 * OpenAD_Symbol_14)
+        OpenAD_Symbol_17 = (OpenAD_Symbol_6 * OpenAD_Symbol_15)
+        OpenAD_Symbol_18 = (OpenAD_Symbol_2 * OpenAD_Symbol_13 *
+     >  OpenAD_Symbol_14)
+        CALL sax(OpenAD_Symbol_15,X(4),FVEC(I))
+        CALL saxpy(OpenAD_Symbol_16,X(1),FVEC(I))
+        CALL saxpy(OpenAD_Symbol_17,X(3),FVEC(I))
+        CALL saxpy(OpenAD_Symbol_18,X(2),FVEC(I))
       END DO
       END SUBROUTINE

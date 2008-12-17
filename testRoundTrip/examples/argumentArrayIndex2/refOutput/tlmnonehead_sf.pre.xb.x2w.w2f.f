@@ -12,10 +12,6 @@ C
       use w2f__types
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_2
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X
@@ -25,7 +21,6 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(Y) = (__value__(X) * 2.0D00)
-      OpenAD_Symbol_2 = 2.0D00
       CALL sax(2.0D00, __deriv__(X), __deriv__(Y))
       END SUBROUTINE
 

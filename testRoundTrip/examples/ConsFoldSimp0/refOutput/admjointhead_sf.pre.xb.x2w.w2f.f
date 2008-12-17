@@ -12,12 +12,6 @@ C
       use w2f__types
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
@@ -46,10 +40,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       __value__(T1) = (__value__(X(1)) + __value__(X(1)))
-      OpenAD_Symbol_0 = 1_w2f__i8
-      OpenAD_Symbol_1 = 1_w2f__i8
       __value__(T2) = (__value__(T1) * 2.0D00)
-      OpenAD_Symbol_2 = 2.0D00
       __value__(Y1) = __value__(T2)
       __value__(Y(1)) = __value__(Y1)
 C     $OpenAD$ END REPLACEMENT
@@ -76,10 +67,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       __value__(T1) = (__value__(X(1)) + __value__(X(1)))
-      OpenAD_Symbol_0 = 1_w2f__i8
-      OpenAD_Symbol_1 = 1_w2f__i8
       __value__(T2) = (__value__(T1) * 2.0D00)
-      OpenAD_Symbol_2 = 2.0D00
       __value__(Y1) = __value__(T2)
       __value__(Y(1)) = __value__(Y1)
 C     $OpenAD$ END REPLACEMENT

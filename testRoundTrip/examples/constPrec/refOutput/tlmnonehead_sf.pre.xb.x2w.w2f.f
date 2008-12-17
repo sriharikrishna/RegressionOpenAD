@@ -16,8 +16,7 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_3
 C
 C     **** Parameters and Result ****
 C
@@ -41,8 +40,7 @@ C
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (__value__(X(1)) * 1.74532925199432954744D-02)
       __value__(Y(1)) = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_2 = 1.74532925199432954744D-02
       OpenAD_Symbol_1 = (- SIN(OpenAD_Symbol_0))
-      OpenAD_Symbol_4 = (1.74532925199432954744D-02 * OpenAD_Symbol_1)
-      CALL sax(OpenAD_Symbol_4, __deriv__(X(1)), __deriv__(Y(1)))
+      OpenAD_Symbol_3 = (1.74532925199432954744D-02 * OpenAD_Symbol_1)
+      CALL sax(OpenAD_Symbol_3, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE

@@ -14,10 +14,6 @@ C
       use OAD_active
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_1
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X
@@ -27,7 +23,6 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*2.0D00)
-      OpenAD_Symbol_1 = 2.0D00
       CALL sax(2.0D00,X,Y)
       END SUBROUTINE
 
@@ -39,8 +34,8 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
+      type(active) :: OpenAD_Symbol_2
       type(active) :: OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_4
 C
 C     **** Parameters and Result ****
 C
@@ -66,12 +61,12 @@ C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(X(K),Y)
       Q(1)%v = Y%v
-      CALL setderiv(OpenAD_Symbol_3,Y)
-      CALL setderiv(Q(1),OpenAD_Symbol_3)
+      CALL setderiv(OpenAD_Symbol_2,Y)
+      CALL setderiv(Q(1),OpenAD_Symbol_2)
       Y%v = Q(1)%v
       P(1) = 1.0
-      CALL setderiv(OpenAD_Symbol_4,Q(1))
-      CALL setderiv(Y,OpenAD_Symbol_4)
+      CALL setderiv(OpenAD_Symbol_3,Q(1))
+      CALL setderiv(Y,OpenAD_Symbol_3)
       L = 1
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(OpenAD_Symbol_0,P(K))

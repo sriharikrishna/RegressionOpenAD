@@ -41,9 +41,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_7
 C
 C     **** Parameters and Result ****
 C
@@ -61,9 +59,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_2 = (X(1)%v*3.141592653589793116D00)
       OpenAD_Symbol_0 = (OpenAD_Symbol_2 * 2.0D00)
       Y(1)%v = SIN(OpenAD_Symbol_0)
-      OpenAD_Symbol_5 = 3.141592653589793116D00
-      OpenAD_Symbol_3 = 2.0D00
       OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_7 = (6.283185307179586232D00 * OpenAD_Symbol_1)
-      CALL sax(OpenAD_Symbol_7,X(1),Y(1))
+      OpenAD_Symbol_5 = (6.283185307179586232D00 * OpenAD_Symbol_1)
+      CALL sax(OpenAD_Symbol_5,X(1),Y(1))
       END SUBROUTINE

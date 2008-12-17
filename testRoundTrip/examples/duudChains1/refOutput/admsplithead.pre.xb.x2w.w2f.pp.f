@@ -65,14 +65,12 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_2
+      INTEGER(w2f__i8) OpenAD_Symbol_2
+      INTEGER(w2f__i8) OpenAD_Symbol_3
       INTEGER(w2f__i8) OpenAD_Symbol_4
       INTEGER(w2f__i8) OpenAD_Symbol_5
       INTEGER(w2f__i8) OpenAD_Symbol_6
       INTEGER(w2f__i8) OpenAD_Symbol_7
-      INTEGER(w2f__i8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
 C
 C     **** Parameters and Result ****
 C
@@ -85,8 +83,8 @@ C
       type(active) :: T(1 : 2)
       INTEGER(w2f__i8) OpenAD_Symbol_10
       INTEGER(w2f__i8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_13
+      INTEGER(w2f__i8) OpenAD_Symbol_8
+      INTEGER(w2f__i8) OpenAD_Symbol_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -110,46 +108,44 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_6 = 0_w2f__i8
+      OpenAD_Symbol_4 = 0_w2f__i8
       DO I = 1, 2, 1
         T(INT(I))%v = (X(I)%v*2.0D00)
-        OpenAD_Symbol_0 = 2.0D00
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
         Y(INT(I))%v = (T(I)%v*4.0D00)
-        OpenAD_Symbol_2 = 4.0D00
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6) + INT(1_w2f__i8))
+        OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4) + INT(1_w2f__i8))
       END DO
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
+          integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
           integer_tape_pointer = integer_tape_pointer+1
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
-      OpenAD_Symbol_5 = 1
-      DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
+          OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
+      OpenAD_Symbol_3 = 1
+      DO WHILE(INT(OpenAD_Symbol_3) .LE. INT(OpenAD_Symbol_2))
+          integer_tape_pointer = integer_tape_pointer-1
+          OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
+          integer_tape_pointer = integer_tape_pointer-1
+          OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
+          T(INT(OpenAD_Symbol_9))%d = T(INT(OpenAD_Symbol_9))%d+Y(INT(Op
+     +enAD_Symbol_8))%d*4.0D00
+          Y(INT(OpenAD_Symbol_8))%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_11 = integer_tape(integer_tape_pointer)
-          T(INT(OpenAD_Symbol_11))%d = T(INT(OpenAD_Symbol_11))%d+Y(INT(
-     +OpenAD_Symbol_10))%d*4.0D00
-          Y(INT(OpenAD_Symbol_10))%d = 0.0d0
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_13 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_13))%d = X(INT(OpenAD_Symbol_13))%d+T(INT(
-     +OpenAD_Symbol_12))%d*2.0D00
-          T(INT(OpenAD_Symbol_12))%d = 0.0d0
-        OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
+          X(INT(OpenAD_Symbol_11))%d = X(INT(OpenAD_Symbol_11))%d+T(INT(
+     +OpenAD_Symbol_10))%d*2.0D00
+          T(INT(OpenAD_Symbol_10))%d = 0.0d0
+        OpenAD_Symbol_3 = INT(OpenAD_Symbol_3) + 1
       END DO
           end if 
         end subroutine head

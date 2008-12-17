@@ -25,9 +25,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_Symbol_16
-      REAL(w2f__8) OpenAD_Symbol_17
-      REAL(w2f__8) OpenAD_Symbol_18
-      type(active) :: OpenAD_Symbol_19
+      type(active) :: OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -73,25 +71,23 @@ C
       OpenAD_Symbol_8 = V%v
       OpenAD_Symbol_9 = NU%v
       OpenAD_Symbol_6 = (INT(1_w2f__i8) / OpenAD_Symbol_5)
-      OpenAD_Symbol_10 = 1_w2f__i8
-      OpenAD_Symbol_11 = (-1_w2f__i8)
       OpenAD_Symbol_7 = (-(OpenAD_Symbol_4 /(OpenAD_Symbol_5 *
      >  OpenAD_Symbol_5)))
-      OpenAD_Symbol_15 = (OpenAD_Symbol_1 *(INT((-1_w2f__i8)) *
+      OpenAD_Symbol_13 = (OpenAD_Symbol_1 *(INT((-1_w2f__i8)) *
      >  OpenAD_Symbol_7 + OpenAD_Symbol_9 * OpenAD_Symbol_6))
-      OpenAD_Symbol_16 = (OpenAD_Symbol_3 * OpenAD_Symbol_15)
-      OpenAD_Symbol_17 = (OpenAD_Symbol_2 * OpenAD_Symbol_15)
-      OpenAD_Symbol_18 = (OpenAD_Symbol_8 * OpenAD_Symbol_6)
+      OpenAD_Symbol_14 = (OpenAD_Symbol_3 * OpenAD_Symbol_13)
+      OpenAD_Symbol_15 = (OpenAD_Symbol_2 * OpenAD_Symbol_13)
+      OpenAD_Symbol_16 = (OpenAD_Symbol_8 * OpenAD_Symbol_6)
       CALL setderiv(GAMMA,X(2))
-      CALL sax(OpenAD_Symbol_16,X(4),Y(1))
-      CALL saxpy(OpenAD_Symbol_17,X(3),Y(1))
+      CALL sax(OpenAD_Symbol_14,X(4),Y(1))
+      CALL saxpy(OpenAD_Symbol_15,X(3),Y(1))
       CALL saxpy(OpenAD_Symbol_7,X(2),Y(1))
-      CALL saxpy(OpenAD_Symbol_18,X(1),Y(1))
-      OpenAD_Symbol_14 = (Y(1)%v*GAMMA%v)
-      OpenAD_Symbol_12 = GAMMA%v
-      OpenAD_Symbol_13 = Y(1)%v
-      Y(2)%v = OpenAD_Symbol_14
-      CALL setderiv(OpenAD_Symbol_19,Y(1))
-      CALL sax(OpenAD_Symbol_12,OpenAD_Symbol_19,Y(2))
-      CALL saxpy(OpenAD_Symbol_13,GAMMA,Y(2))
+      CALL saxpy(OpenAD_Symbol_16,X(1),Y(1))
+      OpenAD_Symbol_12 = (Y(1)%v*GAMMA%v)
+      OpenAD_Symbol_10 = GAMMA%v
+      OpenAD_Symbol_11 = Y(1)%v
+      Y(2)%v = OpenAD_Symbol_12
+      CALL setderiv(OpenAD_Symbol_17,Y(1))
+      CALL sax(OpenAD_Symbol_10,OpenAD_Symbol_17,Y(2))
+      CALL saxpy(OpenAD_Symbol_11,GAMMA,Y(2))
       END SUBROUTINE

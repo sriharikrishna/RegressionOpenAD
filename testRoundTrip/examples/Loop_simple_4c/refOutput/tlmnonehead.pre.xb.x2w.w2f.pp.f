@@ -24,18 +24,13 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_10
-      type(active) :: OpenAD_Symbol_11
-      REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_Symbol_13
-      type(active) :: OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
+      type(active) :: OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_Symbol_8
+      type(active) :: OpenAD_Symbol_9
 C
 C     **** Parameters and Result ****
 C
@@ -55,29 +50,24 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         IF(GLOBALSTRING .EQ. 'yes') THEN
           Y(INT(I))%v = (Y(I)%v+X(I)%v*X(I)%v)
-          OpenAD_Symbol_0 = 1_w2f__i8
-          OpenAD_Symbol_2 = X(I)%v
-          OpenAD_Symbol_3 = X(I)%v
-          OpenAD_Symbol_1 = 1_w2f__i8
-          CALL setderiv(OpenAD_Symbol_11,Y(I))
-          CALL sax(OpenAD_Symbol_2,X(I),Y(I))
-          CALL saxpy(OpenAD_Symbol_3,X(I),Y(I))
-          CALL saxpy(1 _w2f__i8,OpenAD_Symbol_11,Y(I))
+          OpenAD_Symbol_0 = X(I)%v
+          OpenAD_Symbol_1 = X(I)%v
+          CALL setderiv(OpenAD_Symbol_6,Y(I))
+          CALL sax(OpenAD_Symbol_0,X(I),Y(I))
+          CALL saxpy(OpenAD_Symbol_1,X(I),Y(I))
+          CALL saxpy(1 _w2f__i8,OpenAD_Symbol_6,Y(I))
         ENDIF
         IF(GLOBALSTRING .EQ. 'no') THEN
-          OpenAD_Symbol_6 = (X(I)%v*X(I)%v)
-          Y(INT(I))%v = (Y(I)%v+OpenAD_Symbol_6*2.0D00)
-          OpenAD_Symbol_4 = 1_w2f__i8
-          OpenAD_Symbol_9 = X(I)%v
-          OpenAD_Symbol_10 = X(I)%v
-          OpenAD_Symbol_7 = 2.0D00
-          OpenAD_Symbol_5 = 1_w2f__i8
-          OpenAD_Symbol_12 = (OpenAD_Symbol_9 * 2.0D00)
-          OpenAD_Symbol_13 = (OpenAD_Symbol_10 * 2.0D00)
-          CALL setderiv(OpenAD_Symbol_14,Y(I))
-          CALL sax(OpenAD_Symbol_12,X(I),Y(I))
-          CALL saxpy(OpenAD_Symbol_13,X(I),Y(I))
-          CALL saxpy(1 _w2f__i8,OpenAD_Symbol_14,Y(I))
+          OpenAD_Symbol_2 = (X(I)%v*X(I)%v)
+          Y(INT(I))%v = (Y(I)%v+OpenAD_Symbol_2*2.0D00)
+          OpenAD_Symbol_4 = X(I)%v
+          OpenAD_Symbol_5 = X(I)%v
+          OpenAD_Symbol_7 = (OpenAD_Symbol_4 * 2.0D00)
+          OpenAD_Symbol_8 = (OpenAD_Symbol_5 * 2.0D00)
+          CALL setderiv(OpenAD_Symbol_9,Y(I))
+          CALL sax(OpenAD_Symbol_7,X(I),Y(I))
+          CALL saxpy(OpenAD_Symbol_8,X(I),Y(I))
+          CALL saxpy(1 _w2f__i8,OpenAD_Symbol_9,Y(I))
         ENDIF
       END DO
       GLOBALSTRING = 'either'

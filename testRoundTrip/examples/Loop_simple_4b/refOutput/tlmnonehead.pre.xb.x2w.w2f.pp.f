@@ -9,9 +9,7 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_4
+      type(active) :: OpenAD_Symbol_2
 C
 C     **** Parameters and Result ****
 C
@@ -32,14 +30,12 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         J = K
         Y(INT(J))%v = (Y(J)%v+X(I)%v*X(I)%v)
-        OpenAD_Symbol_0 = 1_w2f__i8
-        OpenAD_Symbol_2 = X(I)%v
-        OpenAD_Symbol_3 = X(I)%v
-        OpenAD_Symbol_1 = 1_w2f__i8
-        CALL setderiv(OpenAD_Symbol_4,Y(J))
-        CALL sax(OpenAD_Symbol_2,X(I),Y(J))
-        CALL saxpy(OpenAD_Symbol_3,X(I),Y(J))
-        CALL saxpy(1 _w2f__i8,OpenAD_Symbol_4,Y(J))
+        OpenAD_Symbol_0 = X(I)%v
+        OpenAD_Symbol_1 = X(I)%v
+        CALL setderiv(OpenAD_Symbol_2,Y(J))
+        CALL sax(OpenAD_Symbol_0,X(I),Y(J))
+        CALL saxpy(OpenAD_Symbol_1,X(I),Y(J))
+        CALL saxpy(1 _w2f__i8,OpenAD_Symbol_2,Y(J))
       END DO
       END SUBROUTINE
 

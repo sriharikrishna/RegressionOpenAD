@@ -11,6 +11,7 @@ globalBatchMode=False
 globalIgnoreFailingCases=False
 globalOfferAcceptAsDefault=False
 globalAcceptAll=False
+globalMakeSVG=False
 globalVerbose=False
 
 class MultiColumnOutput:
@@ -421,6 +422,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
             testFlags = '-g -v -i'
         else:
             testFlags = '-b'
+        if globalMakeSVG:
+            testFlags += ' -s'
         sys.stdout.write("./numericalComparison.py %s -n %s %s\n" % (testFlags,exName,numFiles))
         if (os.system("./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles))):
             raise NumericalError
@@ -457,6 +460,9 @@ def main():
     opt.add_option('-O','--optimize',dest='optimize',
                    help="turn compiler optimization on (default off)",
                    action='store_true',default=False)
+    opt.add_option('-s','--svg',dest='makeSVG',
+                   help="make svg output for numericalComparison and display with firefox",
+                   action='store_true',default=False)
     opt.add_option('-v','--verbose',dest='verbose',
                    help="let the pipeline components produce some extra output",
                    action='store_true',default=False)
@@ -474,6 +480,9 @@ def main():
         if options.acceptAll :
             global globalAcceptAll
             globalAcceptAll=True
+        if options.makeSVG:
+            global globalMakeSVG
+            globalMakeSVG=True
         if options.verbose :
             global globalVerbose
             globalVerbose=True

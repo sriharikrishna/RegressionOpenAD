@@ -72,14 +72,12 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_12
       INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
+      type(active) :: OpenAD_Symbol_3
+      type(active) :: OpenAD_Symbol_4
       type(active) :: OpenAD_Symbol_5
-      type(active) :: OpenAD_Symbol_6
-      type(active) :: OpenAD_Symbol_7
+      INTEGER(w2f__i8) OpenAD_Symbol_6
+      INTEGER(w2f__i8) OpenAD_Symbol_7
       INTEGER(w2f__i8) OpenAD_Symbol_8
       INTEGER(w2f__i8) OpenAD_Symbol_9
 C
@@ -92,8 +90,8 @@ C     **** Local Variables and Functions ****
 C
       CHARACTER(10) ASTRING
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_Symbol_17
-      REAL(w2f__8) OpenAD_Symbol_18
+      REAL(w2f__8) OpenAD_Symbol_15
+      REAL(w2f__8) OpenAD_Symbol_16
 C
 C     **** Top Level Pragmas ****
 C
@@ -140,8 +138,6 @@ C$OPENAD XXX Simple loop
         ENDIF
         IF(ASTRING .EQ. 'bloh') THEN
           Y(1)%v = (Y(1)%v-X(1)%v)
-          OpenAD_Symbol_3 = 1_w2f__i8
-          OpenAD_Symbol_4 = (-1_w2f__i8)
         ENDIF
       END DO
           stringlength_tape(stringlength_tape_pointer) = len(ASTRING)
@@ -152,10 +148,10 @@ C$OPENAD XXX Simple loop
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          OpenAD_Symbol_7%d = OpenAD_Symbol_7%d+Y(1)%d
+          OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+Y(1)%d
           Y(1)%d = 0.0d0
-          Y(1)%d = Y(1)%d+OpenAD_Symbol_7%d
-          OpenAD_Symbol_7%d = 0.0d0
+          Y(1)%d = Y(1)%d+OpenAD_Symbol_5%d
+          OpenAD_Symbol_5%d = 0.0d0
           stringlength_tape_pointer = stringlength_tape_pointer-1
           character_tape_pointer = character_tape_pointer-stringlength_t
      +ape(stringlength_tape_pointer)
@@ -166,21 +162,21 @@ C$OPENAD XXX Simple loop
       DO WHILE(I .GE. 1)
         IF(ASTRING .EQ. 'bloh') THEN
           X(1)%d = X(1)%d+Y(1)%d*-1 _w2f__i8
-          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(1)%d*1 _w2f__i8
+          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d*1 _w2f__i8
           Y(1)%d = 0.0d0
-          Y(1)%d = Y(1)%d+OpenAD_Symbol_6%d
-          OpenAD_Symbol_6%d = 0.0d0
+          Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
+          OpenAD_Symbol_4%d = 0.0d0
         ENDIF
         IF(ASTRING .EQ. 'blah') THEN
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_17 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+Y(1)%d*OpenAD_Symbol_17
+          OpenAD_Symbol_15 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_15
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_18 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_18
+          OpenAD_Symbol_16 = double_tape(double_tape_pointer)
+          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_16
           Y(1)%d = 0.0d0
-          Y(1)%d = Y(1)%d+OpenAD_Symbol_5%d
-          OpenAD_Symbol_5%d = 0.0d0
+          Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
+          OpenAD_Symbol_3%d = 0.0d0
         ENDIF
         I = I - 1
       END DO

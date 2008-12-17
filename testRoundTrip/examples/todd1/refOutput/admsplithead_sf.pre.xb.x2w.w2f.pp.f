@@ -78,26 +78,22 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_100
       REAL(w2f__8) OpenAD_Symbol_101
       REAL(w2f__8) OpenAD_Symbol_103
-      REAL(w2f__8) OpenAD_Symbol_104
       REAL(w2f__8) OpenAD_Symbol_105
       REAL(w2f__8) OpenAD_Symbol_106
       REAL(w2f__8) OpenAD_Symbol_107
       REAL(w2f__8) OpenAD_Symbol_108
       REAL(w2f__8) OpenAD_Symbol_11
-      REAL(w2f__8) OpenAD_Symbol_110
+      REAL(w2f__8) OpenAD_Symbol_111
       REAL(w2f__8) OpenAD_Symbol_112
-      REAL(w2f__8) OpenAD_Symbol_113
       REAL(w2f__8) OpenAD_Symbol_114
-      REAL(w2f__8) OpenAD_Symbol_115
       REAL(w2f__8) OpenAD_Symbol_116
       REAL(w2f__8) OpenAD_Symbol_117
+      REAL(w2f__8) OpenAD_Symbol_118
       REAL(w2f__8) OpenAD_Symbol_119
-      REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_Symbol_121
       REAL(w2f__8) OpenAD_Symbol_122
       REAL(w2f__8) OpenAD_Symbol_123
       REAL(w2f__8) OpenAD_Symbol_124
@@ -106,7 +102,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_127
       REAL(w2f__8) OpenAD_Symbol_128
       REAL(w2f__8) OpenAD_Symbol_129
-      REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_130
       REAL(w2f__8) OpenAD_Symbol_131
       REAL(w2f__8) OpenAD_Symbol_132
@@ -116,20 +111,15 @@ C
       REAL(w2f__8) OpenAD_Symbol_136
       REAL(w2f__8) OpenAD_Symbol_137
       REAL(w2f__8) OpenAD_Symbol_138
-      REAL(w2f__8) OpenAD_Symbol_139
+      REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_140
-      REAL(w2f__8) OpenAD_Symbol_141
       REAL(w2f__8) OpenAD_Symbol_142
-      REAL(w2f__8) OpenAD_Symbol_143
-      REAL(w2f__8) OpenAD_Symbol_144
-      REAL(w2f__8) OpenAD_Symbol_145
       REAL(w2f__8) OpenAD_Symbol_146
       REAL(w2f__8) OpenAD_Symbol_147
-      REAL(w2f__8) OpenAD_Symbol_148
       REAL(w2f__8) OpenAD_Symbol_149
       REAL(w2f__8) OpenAD_Symbol_15
-      REAL(w2f__8) OpenAD_Symbol_151
-      REAL(w2f__8) OpenAD_Symbol_153
+      REAL(w2f__8) OpenAD_Symbol_150
+      REAL(w2f__8) OpenAD_Symbol_152
       REAL(w2f__8) OpenAD_Symbol_154
       REAL(w2f__8) OpenAD_Symbol_155
       REAL(w2f__8) OpenAD_Symbol_156
@@ -145,14 +135,18 @@ C
       REAL(w2f__8) OpenAD_Symbol_165
       REAL(w2f__8) OpenAD_Symbol_166
       REAL(w2f__8) OpenAD_Symbol_167
+      REAL(w2f__8) OpenAD_Symbol_168
       REAL(w2f__8) OpenAD_Symbol_169
       REAL(w2f__8) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_170
       REAL(w2f__8) OpenAD_Symbol_171
       REAL(w2f__8) OpenAD_Symbol_172
+      REAL(w2f__8) OpenAD_Symbol_173
       REAL(w2f__8) OpenAD_Symbol_174
       REAL(w2f__8) OpenAD_Symbol_175
+      REAL(w2f__8) OpenAD_Symbol_176
       REAL(w2f__8) OpenAD_Symbol_177
+      REAL(w2f__8) OpenAD_Symbol_178
       REAL(w2f__8) OpenAD_Symbol_179
       REAL(w2f__8) OpenAD_Symbol_18
       REAL(w2f__8) OpenAD_Symbol_180
@@ -170,10 +164,12 @@ C
       REAL(w2f__8) OpenAD_Symbol_191
       REAL(w2f__8) OpenAD_Symbol_192
       REAL(w2f__8) OpenAD_Symbol_193
+      REAL(w2f__8) OpenAD_Symbol_194
       REAL(w2f__8) OpenAD_Symbol_195
       REAL(w2f__8) OpenAD_Symbol_196
       REAL(w2f__8) OpenAD_Symbol_197
       REAL(w2f__8) OpenAD_Symbol_198
+      REAL(w2f__8) OpenAD_Symbol_199
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_20
       REAL(w2f__8) OpenAD_Symbol_200
@@ -186,6 +182,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_207
       REAL(w2f__8) OpenAD_Symbol_208
       REAL(w2f__8) OpenAD_Symbol_209
+      REAL(w2f__8) OpenAD_Symbol_21
       REAL(w2f__8) OpenAD_Symbol_210
       REAL(w2f__8) OpenAD_Symbol_211
       REAL(w2f__8) OpenAD_Symbol_212
@@ -205,21 +202,27 @@ C
       REAL(w2f__8) OpenAD_Symbol_225
       REAL(w2f__8) OpenAD_Symbol_226
       REAL(w2f__8) OpenAD_Symbol_227
+      REAL(w2f__8) OpenAD_Symbol_228
       REAL(w2f__8) OpenAD_Symbol_229
       REAL(w2f__8) OpenAD_Symbol_23
+      REAL(w2f__8) OpenAD_Symbol_230
       REAL(w2f__8) OpenAD_Symbol_231
       REAL(w2f__8) OpenAD_Symbol_232
       REAL(w2f__8) OpenAD_Symbol_233
       REAL(w2f__8) OpenAD_Symbol_234
       REAL(w2f__8) OpenAD_Symbol_235
+      REAL(w2f__8) OpenAD_Symbol_236
       REAL(w2f__8) OpenAD_Symbol_237
       REAL(w2f__8) OpenAD_Symbol_238
       REAL(w2f__8) OpenAD_Symbol_239
       REAL(w2f__8) OpenAD_Symbol_24
       REAL(w2f__8) OpenAD_Symbol_240
       REAL(w2f__8) OpenAD_Symbol_241
+      REAL(w2f__8) OpenAD_Symbol_242
+      REAL(w2f__8) OpenAD_Symbol_243
       REAL(w2f__8) OpenAD_Symbol_244
       REAL(w2f__8) OpenAD_Symbol_245
+      REAL(w2f__8) OpenAD_Symbol_246
       REAL(w2f__8) OpenAD_Symbol_247
       REAL(w2f__8) OpenAD_Symbol_248
       REAL(w2f__8) OpenAD_Symbol_249
@@ -229,7 +232,9 @@ C
       REAL(w2f__8) OpenAD_Symbol_252
       REAL(w2f__8) OpenAD_Symbol_253
       REAL(w2f__8) OpenAD_Symbol_254
+      REAL(w2f__8) OpenAD_Symbol_255
       REAL(w2f__8) OpenAD_Symbol_256
+      REAL(w2f__8) OpenAD_Symbol_257
       REAL(w2f__8) OpenAD_Symbol_258
       REAL(w2f__8) OpenAD_Symbol_259
       REAL(w2f__8) OpenAD_Symbol_26
@@ -243,7 +248,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_267
       REAL(w2f__8) OpenAD_Symbol_268
       REAL(w2f__8) OpenAD_Symbol_269
-      REAL(w2f__8) OpenAD_Symbol_27
       REAL(w2f__8) OpenAD_Symbol_270
       REAL(w2f__8) OpenAD_Symbol_271
       REAL(w2f__8) OpenAD_Symbol_272
@@ -280,12 +284,13 @@ C
       REAL(w2f__8) OpenAD_Symbol_301
       REAL(w2f__8) OpenAD_Symbol_302
       REAL(w2f__8) OpenAD_Symbol_303
-      REAL(w2f__8) OpenAD_Symbol_304
+      type(active) :: OpenAD_Symbol_304
       REAL(w2f__8) OpenAD_Symbol_305
       REAL(w2f__8) OpenAD_Symbol_306
       REAL(w2f__8) OpenAD_Symbol_307
       REAL(w2f__8) OpenAD_Symbol_308
       REAL(w2f__8) OpenAD_Symbol_309
+      REAL(w2f__8) OpenAD_Symbol_31
       REAL(w2f__8) OpenAD_Symbol_310
       REAL(w2f__8) OpenAD_Symbol_311
       REAL(w2f__8) OpenAD_Symbol_312
@@ -311,165 +316,50 @@ C
       REAL(w2f__8) OpenAD_Symbol_330
       REAL(w2f__8) OpenAD_Symbol_331
       REAL(w2f__8) OpenAD_Symbol_332
-      REAL(w2f__8) OpenAD_Symbol_333
+      type(active) :: OpenAD_Symbol_333
       REAL(w2f__8) OpenAD_Symbol_334
       REAL(w2f__8) OpenAD_Symbol_335
-      REAL(w2f__8) OpenAD_Symbol_336
+      type(active) :: OpenAD_Symbol_336
       REAL(w2f__8) OpenAD_Symbol_337
       REAL(w2f__8) OpenAD_Symbol_338
       REAL(w2f__8) OpenAD_Symbol_339
-      REAL(w2f__8) OpenAD_Symbol_34
-      REAL(w2f__8) OpenAD_Symbol_340
-      REAL(w2f__8) OpenAD_Symbol_341
-      REAL(w2f__8) OpenAD_Symbol_342
-      REAL(w2f__8) OpenAD_Symbol_343
-      REAL(w2f__8) OpenAD_Symbol_344
-      REAL(w2f__8) OpenAD_Symbol_345
-      REAL(w2f__8) OpenAD_Symbol_346
-      REAL(w2f__8) OpenAD_Symbol_347
-      REAL(w2f__8) OpenAD_Symbol_348
-      REAL(w2f__8) OpenAD_Symbol_349
       REAL(w2f__8) OpenAD_Symbol_35
-      REAL(w2f__8) OpenAD_Symbol_350
-      REAL(w2f__8) OpenAD_Symbol_351
-      REAL(w2f__8) OpenAD_Symbol_352
-      REAL(w2f__8) OpenAD_Symbol_353
-      REAL(w2f__8) OpenAD_Symbol_354
-      REAL(w2f__8) OpenAD_Symbol_355
-      REAL(w2f__8) OpenAD_Symbol_356
-      REAL(w2f__8) OpenAD_Symbol_357
-      REAL(w2f__8) OpenAD_Symbol_358
-      REAL(w2f__8) OpenAD_Symbol_359
       REAL(w2f__8) OpenAD_Symbol_36
-      REAL(w2f__8) OpenAD_Symbol_360
-      REAL(w2f__8) OpenAD_Symbol_361
-      REAL(w2f__8) OpenAD_Symbol_362
-      REAL(w2f__8) OpenAD_Symbol_363
-      REAL(w2f__8) OpenAD_Symbol_364
-      REAL(w2f__8) OpenAD_Symbol_365
-      REAL(w2f__8) OpenAD_Symbol_366
-      REAL(w2f__8) OpenAD_Symbol_367
-      REAL(w2f__8) OpenAD_Symbol_368
-      REAL(w2f__8) OpenAD_Symbol_369
-      REAL(w2f__8) OpenAD_Symbol_37
-      REAL(w2f__8) OpenAD_Symbol_370
-      REAL(w2f__8) OpenAD_Symbol_371
-      REAL(w2f__8) OpenAD_Symbol_372
-      REAL(w2f__8) OpenAD_Symbol_373
-      REAL(w2f__8) OpenAD_Symbol_374
-      REAL(w2f__8) OpenAD_Symbol_375
-      REAL(w2f__8) OpenAD_Symbol_376
-      REAL(w2f__8) OpenAD_Symbol_377
-      REAL(w2f__8) OpenAD_Symbol_378
-      REAL(w2f__8) OpenAD_Symbol_379
       REAL(w2f__8) OpenAD_Symbol_38
-      REAL(w2f__8) OpenAD_Symbol_380
-      REAL(w2f__8) OpenAD_Symbol_381
-      REAL(w2f__8) OpenAD_Symbol_382
-      REAL(w2f__8) OpenAD_Symbol_383
-      REAL(w2f__8) OpenAD_Symbol_384
-      REAL(w2f__8) OpenAD_Symbol_385
-      REAL(w2f__8) OpenAD_Symbol_386
-      REAL(w2f__8) OpenAD_Symbol_387
-      REAL(w2f__8) OpenAD_Symbol_388
-      REAL(w2f__8) OpenAD_Symbol_389
       REAL(w2f__8) OpenAD_Symbol_39
-      REAL(w2f__8) OpenAD_Symbol_390
-      REAL(w2f__8) OpenAD_Symbol_391
-      REAL(w2f__8) OpenAD_Symbol_392
-      REAL(w2f__8) OpenAD_Symbol_393
-      REAL(w2f__8) OpenAD_Symbol_394
-      REAL(w2f__8) OpenAD_Symbol_395
-      REAL(w2f__8) OpenAD_Symbol_396
-      REAL(w2f__8) OpenAD_Symbol_397
-      REAL(w2f__8) OpenAD_Symbol_398
-      REAL(w2f__8) OpenAD_Symbol_399
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_40
-      REAL(w2f__8) OpenAD_Symbol_400
-      REAL(w2f__8) OpenAD_Symbol_401
-      REAL(w2f__8) OpenAD_Symbol_402
-      REAL(w2f__8) OpenAD_Symbol_403
-      REAL(w2f__8) OpenAD_Symbol_404
-      REAL(w2f__8) OpenAD_Symbol_405
-      REAL(w2f__8) OpenAD_Symbol_406
-      REAL(w2f__8) OpenAD_Symbol_407
-      REAL(w2f__8) OpenAD_Symbol_408
-      REAL(w2f__8) OpenAD_Symbol_409
       REAL(w2f__8) OpenAD_Symbol_41
-      REAL(w2f__8) OpenAD_Symbol_410
-      REAL(w2f__8) OpenAD_Symbol_411
-      REAL(w2f__8) OpenAD_Symbol_412
-      REAL(w2f__8) OpenAD_Symbol_413
-      type(active) :: OpenAD_Symbol_414
-      REAL(w2f__8) OpenAD_Symbol_415
-      REAL(w2f__8) OpenAD_Symbol_416
-      REAL(w2f__8) OpenAD_Symbol_417
-      REAL(w2f__8) OpenAD_Symbol_418
-      REAL(w2f__8) OpenAD_Symbol_419
       REAL(w2f__8) OpenAD_Symbol_42
-      REAL(w2f__8) OpenAD_Symbol_420
-      REAL(w2f__8) OpenAD_Symbol_421
-      REAL(w2f__8) OpenAD_Symbol_422
-      REAL(w2f__8) OpenAD_Symbol_423
-      REAL(w2f__8) OpenAD_Symbol_424
-      REAL(w2f__8) OpenAD_Symbol_425
-      REAL(w2f__8) OpenAD_Symbol_426
-      REAL(w2f__8) OpenAD_Symbol_427
-      REAL(w2f__8) OpenAD_Symbol_428
-      REAL(w2f__8) OpenAD_Symbol_429
-      REAL(w2f__8) OpenAD_Symbol_43
-      REAL(w2f__8) OpenAD_Symbol_430
-      REAL(w2f__8) OpenAD_Symbol_431
-      REAL(w2f__8) OpenAD_Symbol_432
-      REAL(w2f__8) OpenAD_Symbol_433
-      REAL(w2f__8) OpenAD_Symbol_434
-      REAL(w2f__8) OpenAD_Symbol_435
-      REAL(w2f__8) OpenAD_Symbol_436
-      REAL(w2f__8) OpenAD_Symbol_437
-      REAL(w2f__8) OpenAD_Symbol_438
-      REAL(w2f__8) OpenAD_Symbol_439
       REAL(w2f__8) OpenAD_Symbol_44
-      REAL(w2f__8) OpenAD_Symbol_440
-      REAL(w2f__8) OpenAD_Symbol_441
-      REAL(w2f__8) OpenAD_Symbol_442
-      type(active) :: OpenAD_Symbol_443
-      REAL(w2f__8) OpenAD_Symbol_444
-      REAL(w2f__8) OpenAD_Symbol_445
-      type(active) :: OpenAD_Symbol_446
-      REAL(w2f__8) OpenAD_Symbol_447
-      REAL(w2f__8) OpenAD_Symbol_448
-      REAL(w2f__8) OpenAD_Symbol_449
       REAL(w2f__8) OpenAD_Symbol_45
-      REAL(w2f__8) OpenAD_Symbol_46
+      REAL(w2f__8) OpenAD_Symbol_47
       REAL(w2f__8) OpenAD_Symbol_48
-      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_49
       REAL(w2f__8) OpenAD_Symbol_50
       REAL(w2f__8) OpenAD_Symbol_51
       REAL(w2f__8) OpenAD_Symbol_52
       REAL(w2f__8) OpenAD_Symbol_53
-      REAL(w2f__8) OpenAD_Symbol_55
+      REAL(w2f__8) OpenAD_Symbol_54
       REAL(w2f__8) OpenAD_Symbol_56
+      REAL(w2f__8) OpenAD_Symbol_57
       REAL(w2f__8) OpenAD_Symbol_58
       REAL(w2f__8) OpenAD_Symbol_59
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_60
       REAL(w2f__8) OpenAD_Symbol_61
       REAL(w2f__8) OpenAD_Symbol_62
+      REAL(w2f__8) OpenAD_Symbol_63
       REAL(w2f__8) OpenAD_Symbol_64
       REAL(w2f__8) OpenAD_Symbol_65
+      REAL(w2f__8) OpenAD_Symbol_66
       REAL(w2f__8) OpenAD_Symbol_67
       REAL(w2f__8) OpenAD_Symbol_68
       REAL(w2f__8) OpenAD_Symbol_69
-      REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_70
       REAL(w2f__8) OpenAD_Symbol_71
       REAL(w2f__8) OpenAD_Symbol_72
-      REAL(w2f__8) OpenAD_Symbol_73
-      REAL(w2f__8) OpenAD_Symbol_74
       REAL(w2f__8) OpenAD_Symbol_75
-      REAL(w2f__8) OpenAD_Symbol_77
-      REAL(w2f__8) OpenAD_Symbol_78
       REAL(w2f__8) OpenAD_Symbol_79
       REAL(w2f__8) OpenAD_Symbol_8
       REAL(w2f__8) OpenAD_Symbol_80
@@ -580,6 +470,116 @@ C
       REAL(w2f__8) TSQRT3
       REAL(w2f__8) TWO3RD
       REAL(w2f__8) TWOSQRT3
+      REAL(w2f__8) OpenAD_Symbol_340
+      REAL(w2f__8) OpenAD_Symbol_341
+      REAL(w2f__8) OpenAD_Symbol_342
+      REAL(w2f__8) OpenAD_Symbol_343
+      REAL(w2f__8) OpenAD_Symbol_344
+      REAL(w2f__8) OpenAD_Symbol_345
+      REAL(w2f__8) OpenAD_Symbol_346
+      REAL(w2f__8) OpenAD_Symbol_347
+      REAL(w2f__8) OpenAD_Symbol_348
+      REAL(w2f__8) OpenAD_Symbol_349
+      REAL(w2f__8) OpenAD_Symbol_350
+      REAL(w2f__8) OpenAD_Symbol_351
+      REAL(w2f__8) OpenAD_Symbol_352
+      REAL(w2f__8) OpenAD_Symbol_353
+      REAL(w2f__8) OpenAD_Symbol_354
+      REAL(w2f__8) OpenAD_Symbol_355
+      REAL(w2f__8) OpenAD_Symbol_356
+      REAL(w2f__8) OpenAD_Symbol_357
+      REAL(w2f__8) OpenAD_Symbol_358
+      REAL(w2f__8) OpenAD_Symbol_359
+      REAL(w2f__8) OpenAD_Symbol_360
+      REAL(w2f__8) OpenAD_Symbol_361
+      REAL(w2f__8) OpenAD_Symbol_362
+      REAL(w2f__8) OpenAD_Symbol_363
+      REAL(w2f__8) OpenAD_Symbol_364
+      REAL(w2f__8) OpenAD_Symbol_365
+      REAL(w2f__8) OpenAD_Symbol_366
+      REAL(w2f__8) OpenAD_Symbol_367
+      REAL(w2f__8) OpenAD_Symbol_368
+      REAL(w2f__8) OpenAD_Symbol_369
+      REAL(w2f__8) OpenAD_Symbol_370
+      REAL(w2f__8) OpenAD_Symbol_371
+      REAL(w2f__8) OpenAD_Symbol_372
+      REAL(w2f__8) OpenAD_Symbol_373
+      REAL(w2f__8) OpenAD_Symbol_374
+      REAL(w2f__8) OpenAD_Symbol_375
+      REAL(w2f__8) OpenAD_Symbol_376
+      REAL(w2f__8) OpenAD_Symbol_377
+      REAL(w2f__8) OpenAD_Symbol_378
+      REAL(w2f__8) OpenAD_Symbol_379
+      REAL(w2f__8) OpenAD_Symbol_380
+      REAL(w2f__8) OpenAD_Symbol_381
+      REAL(w2f__8) OpenAD_Symbol_382
+      REAL(w2f__8) OpenAD_Symbol_383
+      REAL(w2f__8) OpenAD_Symbol_384
+      REAL(w2f__8) OpenAD_Symbol_385
+      REAL(w2f__8) OpenAD_Symbol_386
+      REAL(w2f__8) OpenAD_Symbol_387
+      REAL(w2f__8) OpenAD_Symbol_388
+      REAL(w2f__8) OpenAD_Symbol_389
+      REAL(w2f__8) OpenAD_Symbol_390
+      REAL(w2f__8) OpenAD_Symbol_391
+      REAL(w2f__8) OpenAD_Symbol_392
+      REAL(w2f__8) OpenAD_Symbol_393
+      REAL(w2f__8) OpenAD_Symbol_394
+      REAL(w2f__8) OpenAD_Symbol_395
+      REAL(w2f__8) OpenAD_Symbol_396
+      REAL(w2f__8) OpenAD_Symbol_397
+      REAL(w2f__8) OpenAD_Symbol_398
+      REAL(w2f__8) OpenAD_Symbol_399
+      REAL(w2f__8) OpenAD_Symbol_400
+      REAL(w2f__8) OpenAD_Symbol_401
+      REAL(w2f__8) OpenAD_Symbol_402
+      REAL(w2f__8) OpenAD_Symbol_403
+      REAL(w2f__8) OpenAD_Symbol_404
+      REAL(w2f__8) OpenAD_Symbol_405
+      REAL(w2f__8) OpenAD_Symbol_406
+      REAL(w2f__8) OpenAD_Symbol_407
+      REAL(w2f__8) OpenAD_Symbol_408
+      REAL(w2f__8) OpenAD_Symbol_409
+      REAL(w2f__8) OpenAD_Symbol_410
+      REAL(w2f__8) OpenAD_Symbol_411
+      REAL(w2f__8) OpenAD_Symbol_412
+      REAL(w2f__8) OpenAD_Symbol_413
+      REAL(w2f__8) OpenAD_Symbol_414
+      REAL(w2f__8) OpenAD_Symbol_415
+      REAL(w2f__8) OpenAD_Symbol_416
+      REAL(w2f__8) OpenAD_Symbol_417
+      REAL(w2f__8) OpenAD_Symbol_418
+      REAL(w2f__8) OpenAD_Symbol_419
+      REAL(w2f__8) OpenAD_Symbol_420
+      REAL(w2f__8) OpenAD_Symbol_421
+      REAL(w2f__8) OpenAD_Symbol_422
+      REAL(w2f__8) OpenAD_Symbol_423
+      REAL(w2f__8) OpenAD_Symbol_424
+      REAL(w2f__8) OpenAD_Symbol_425
+      REAL(w2f__8) OpenAD_Symbol_426
+      REAL(w2f__8) OpenAD_Symbol_427
+      REAL(w2f__8) OpenAD_Symbol_428
+      REAL(w2f__8) OpenAD_Symbol_429
+      REAL(w2f__8) OpenAD_Symbol_430
+      REAL(w2f__8) OpenAD_Symbol_431
+      REAL(w2f__8) OpenAD_Symbol_432
+      REAL(w2f__8) OpenAD_Symbol_433
+      REAL(w2f__8) OpenAD_Symbol_434
+      REAL(w2f__8) OpenAD_Symbol_435
+      REAL(w2f__8) OpenAD_Symbol_436
+      REAL(w2f__8) OpenAD_Symbol_437
+      REAL(w2f__8) OpenAD_Symbol_438
+      REAL(w2f__8) OpenAD_Symbol_439
+      REAL(w2f__8) OpenAD_Symbol_440
+      REAL(w2f__8) OpenAD_Symbol_441
+      REAL(w2f__8) OpenAD_Symbol_442
+      REAL(w2f__8) OpenAD_Symbol_443
+      REAL(w2f__8) OpenAD_Symbol_444
+      REAL(w2f__8) OpenAD_Symbol_445
+      REAL(w2f__8) OpenAD_Symbol_446
+      REAL(w2f__8) OpenAD_Symbol_447
+      REAL(w2f__8) OpenAD_Symbol_448
+      REAL(w2f__8) OpenAD_Symbol_449
       REAL(w2f__8) OpenAD_Symbol_450
       REAL(w2f__8) OpenAD_Symbol_451
       REAL(w2f__8) OpenAD_Symbol_452
@@ -695,116 +695,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_562
       REAL(w2f__8) OpenAD_Symbol_563
       REAL(w2f__8) OpenAD_Symbol_564
-      REAL(w2f__8) OpenAD_Symbol_565
-      REAL(w2f__8) OpenAD_Symbol_566
-      REAL(w2f__8) OpenAD_Symbol_567
-      REAL(w2f__8) OpenAD_Symbol_568
-      REAL(w2f__8) OpenAD_Symbol_569
-      REAL(w2f__8) OpenAD_Symbol_570
-      REAL(w2f__8) OpenAD_Symbol_571
-      REAL(w2f__8) OpenAD_Symbol_572
-      REAL(w2f__8) OpenAD_Symbol_573
-      REAL(w2f__8) OpenAD_Symbol_574
-      REAL(w2f__8) OpenAD_Symbol_575
-      REAL(w2f__8) OpenAD_Symbol_576
-      REAL(w2f__8) OpenAD_Symbol_577
-      REAL(w2f__8) OpenAD_Symbol_578
-      REAL(w2f__8) OpenAD_Symbol_579
-      REAL(w2f__8) OpenAD_Symbol_580
-      REAL(w2f__8) OpenAD_Symbol_581
-      REAL(w2f__8) OpenAD_Symbol_582
-      REAL(w2f__8) OpenAD_Symbol_583
-      REAL(w2f__8) OpenAD_Symbol_584
-      REAL(w2f__8) OpenAD_Symbol_585
-      REAL(w2f__8) OpenAD_Symbol_586
-      REAL(w2f__8) OpenAD_Symbol_587
-      REAL(w2f__8) OpenAD_Symbol_588
-      REAL(w2f__8) OpenAD_Symbol_589
-      REAL(w2f__8) OpenAD_Symbol_590
-      REAL(w2f__8) OpenAD_Symbol_591
-      REAL(w2f__8) OpenAD_Symbol_592
-      REAL(w2f__8) OpenAD_Symbol_593
-      REAL(w2f__8) OpenAD_Symbol_594
-      REAL(w2f__8) OpenAD_Symbol_595
-      REAL(w2f__8) OpenAD_Symbol_596
-      REAL(w2f__8) OpenAD_Symbol_597
-      REAL(w2f__8) OpenAD_Symbol_598
-      REAL(w2f__8) OpenAD_Symbol_599
-      REAL(w2f__8) OpenAD_Symbol_600
-      REAL(w2f__8) OpenAD_Symbol_601
-      REAL(w2f__8) OpenAD_Symbol_602
-      REAL(w2f__8) OpenAD_Symbol_603
-      REAL(w2f__8) OpenAD_Symbol_604
-      REAL(w2f__8) OpenAD_Symbol_605
-      REAL(w2f__8) OpenAD_Symbol_606
-      REAL(w2f__8) OpenAD_Symbol_607
-      REAL(w2f__8) OpenAD_Symbol_608
-      REAL(w2f__8) OpenAD_Symbol_609
-      REAL(w2f__8) OpenAD_Symbol_610
-      REAL(w2f__8) OpenAD_Symbol_611
-      REAL(w2f__8) OpenAD_Symbol_612
-      REAL(w2f__8) OpenAD_Symbol_613
-      REAL(w2f__8) OpenAD_Symbol_614
-      REAL(w2f__8) OpenAD_Symbol_615
-      REAL(w2f__8) OpenAD_Symbol_616
-      REAL(w2f__8) OpenAD_Symbol_617
-      REAL(w2f__8) OpenAD_Symbol_618
-      REAL(w2f__8) OpenAD_Symbol_619
-      REAL(w2f__8) OpenAD_Symbol_620
-      REAL(w2f__8) OpenAD_Symbol_621
-      REAL(w2f__8) OpenAD_Symbol_622
-      REAL(w2f__8) OpenAD_Symbol_623
-      REAL(w2f__8) OpenAD_Symbol_624
-      REAL(w2f__8) OpenAD_Symbol_625
-      REAL(w2f__8) OpenAD_Symbol_626
-      REAL(w2f__8) OpenAD_Symbol_627
-      REAL(w2f__8) OpenAD_Symbol_628
-      REAL(w2f__8) OpenAD_Symbol_629
-      REAL(w2f__8) OpenAD_Symbol_630
-      REAL(w2f__8) OpenAD_Symbol_631
-      REAL(w2f__8) OpenAD_Symbol_632
-      REAL(w2f__8) OpenAD_Symbol_633
-      REAL(w2f__8) OpenAD_Symbol_634
-      REAL(w2f__8) OpenAD_Symbol_635
-      REAL(w2f__8) OpenAD_Symbol_636
-      REAL(w2f__8) OpenAD_Symbol_637
-      REAL(w2f__8) OpenAD_Symbol_638
-      REAL(w2f__8) OpenAD_Symbol_639
-      REAL(w2f__8) OpenAD_Symbol_640
-      REAL(w2f__8) OpenAD_Symbol_641
-      REAL(w2f__8) OpenAD_Symbol_642
-      REAL(w2f__8) OpenAD_Symbol_643
-      REAL(w2f__8) OpenAD_Symbol_644
-      REAL(w2f__8) OpenAD_Symbol_645
-      REAL(w2f__8) OpenAD_Symbol_646
-      REAL(w2f__8) OpenAD_Symbol_647
-      REAL(w2f__8) OpenAD_Symbol_648
-      REAL(w2f__8) OpenAD_Symbol_649
-      REAL(w2f__8) OpenAD_Symbol_650
-      REAL(w2f__8) OpenAD_Symbol_651
-      REAL(w2f__8) OpenAD_Symbol_652
-      REAL(w2f__8) OpenAD_Symbol_653
-      REAL(w2f__8) OpenAD_Symbol_654
-      REAL(w2f__8) OpenAD_Symbol_655
-      REAL(w2f__8) OpenAD_Symbol_656
-      REAL(w2f__8) OpenAD_Symbol_657
-      REAL(w2f__8) OpenAD_Symbol_658
-      REAL(w2f__8) OpenAD_Symbol_659
-      REAL(w2f__8) OpenAD_Symbol_660
-      REAL(w2f__8) OpenAD_Symbol_661
-      REAL(w2f__8) OpenAD_Symbol_662
-      REAL(w2f__8) OpenAD_Symbol_663
-      REAL(w2f__8) OpenAD_Symbol_664
-      REAL(w2f__8) OpenAD_Symbol_665
-      REAL(w2f__8) OpenAD_Symbol_666
-      REAL(w2f__8) OpenAD_Symbol_667
-      REAL(w2f__8) OpenAD_Symbol_668
-      REAL(w2f__8) OpenAD_Symbol_669
-      REAL(w2f__8) OpenAD_Symbol_670
-      REAL(w2f__8) OpenAD_Symbol_671
-      REAL(w2f__8) OpenAD_Symbol_672
-      REAL(w2f__8) OpenAD_Symbol_673
-      REAL(w2f__8) OpenAD_Symbol_674
 C
 C     **** Top Level Pragmas ****
 C
@@ -964,307 +854,585 @@ C$OPENAD XXX Template ad_template.f
       FOUR3RD = 1.33333337306976318359D00
       BM1 = (-2.0D00)
       MATR0%v = (X1%v-X0%v)
-      OpenAD_Symbol_0 = 1_w2f__i8
-      OpenAD_Symbol_1 = (-1_w2f__i8)
-      OpenAD_Symbol_2 = (X2%v*2.0D00-X1%v-X0%v)
-      MATR1%v = (SQRT3*OpenAD_Symbol_2)
-      OpenAD_Symbol_9 = 2.0D00
-      OpenAD_Symbol_7 = 1_w2f__i8
-      OpenAD_Symbol_8 = (-1_w2f__i8)
-      OpenAD_Symbol_5 = 1_w2f__i8
-      OpenAD_Symbol_6 = (-1_w2f__i8)
-      OpenAD_Symbol_4 = SQRT3
+      OpenAD_Symbol_0 = (X2%v*2.0D00-X1%v-X0%v)
+      MATR1%v = (SQRT3*OpenAD_Symbol_0)
+      OpenAD_Symbol_2 = SQRT3
       MATR2%v = (X4%v-X3%v)
-      OpenAD_Symbol_11 = 1_w2f__i8
-      OpenAD_Symbol_12 = (-1_w2f__i8)
-      OpenAD_Symbol_13 = (X5%v*2.0D00-X4%v-X3%v)
-      MATR3%v = (SQRT3*OpenAD_Symbol_13)
-      OpenAD_Symbol_20 = 2.0D00
-      OpenAD_Symbol_18 = 1_w2f__i8
-      OpenAD_Symbol_19 = (-1_w2f__i8)
-      OpenAD_Symbol_16 = 1_w2f__i8
-      OpenAD_Symbol_17 = (-1_w2f__i8)
-      OpenAD_Symbol_15 = SQRT3
+      OpenAD_Symbol_4 = (X5%v*2.0D00-X4%v-X3%v)
+      MATR3%v = (SQRT3*OpenAD_Symbol_4)
+      OpenAD_Symbol_6 = SQRT3
       M03%v = (MATR0%v*MATR3%v)
-      OpenAD_Symbol_22 = MATR3%v
-      OpenAD_Symbol_23 = MATR0%v
+      OpenAD_Symbol_8 = MATR3%v
+      OpenAD_Symbol_9 = MATR0%v
       M12%v = (MATR1%v*MATR2%v)
-      OpenAD_Symbol_24 = MATR2%v
-      OpenAD_Symbol_25 = MATR1%v
+      OpenAD_Symbol_10 = MATR2%v
+      OpenAD_Symbol_11 = MATR1%v
       G%v = (M03%v-M12%v)
-      OpenAD_Symbol_26 = 1_w2f__i8
-      OpenAD_Symbol_27 = (-1_w2f__i8)
       D00%v = (M03%v*2.0D00)
-      OpenAD_Symbol_28 = 2.0D00
       D11%v = (M12%v*2.0D00)
-      OpenAD_Symbol_30 = 2.0D00
       M00%v = (MATR0%v*MATR0%v)
-      OpenAD_Symbol_32 = MATR0%v
-      OpenAD_Symbol_33 = MATR0%v
+      OpenAD_Symbol_14 = MATR0%v
+      OpenAD_Symbol_15 = MATR0%v
       M11%v = (MATR1%v*MATR1%v)
-      OpenAD_Symbol_34 = MATR1%v
-      OpenAD_Symbol_35 = MATR1%v
+      OpenAD_Symbol_16 = MATR1%v
+      OpenAD_Symbol_17 = MATR1%v
       M22%v = (MATR2%v*MATR2%v)
-      OpenAD_Symbol_36 = MATR2%v
-      OpenAD_Symbol_37 = MATR2%v
+      OpenAD_Symbol_18 = MATR2%v
+      OpenAD_Symbol_19 = MATR2%v
       M33%v = (MATR3%v*MATR3%v)
-      OpenAD_Symbol_38 = MATR3%v
-      OpenAD_Symbol_39 = MATR3%v
+      OpenAD_Symbol_20 = MATR3%v
+      OpenAD_Symbol_21 = MATR3%v
       D12%v = (M00%v*M33%v)
-      OpenAD_Symbol_40 = M33%v
-      OpenAD_Symbol_41 = M00%v
+      OpenAD_Symbol_22 = M33%v
+      OpenAD_Symbol_23 = M00%v
       D03%v = (M11%v*M22%v)
-      OpenAD_Symbol_42 = M22%v
-      OpenAD_Symbol_43 = M11%v
+      OpenAD_Symbol_24 = M22%v
+      OpenAD_Symbol_25 = M11%v
       F%v = (D03%v+D12%v)
-      OpenAD_Symbol_44 = 1_w2f__i8
-      OpenAD_Symbol_45 = 1_w2f__i8
       NORM = F%v
-      OpenAD_Symbol_46 = (1.0D00/G%v)
-      LOC1%v = (A*OpenAD_Symbol_46)
-      OpenAD_Symbol_50 = (-(1.0D00/(G%v*G%v)))
-      OpenAD_Symbol_48 = A
+      OpenAD_Symbol_26 = (1.0D00/G%v)
+      LOC1%v = (A*OpenAD_Symbol_26)
+      OpenAD_Symbol_30 = (-(1.0D00/(G%v*G%v)))
+      OpenAD_Symbol_28 = A
       OBJ%v = (F%v*LOC1%v)
-      OpenAD_Symbol_51 = LOC1%v
-      OpenAD_Symbol_52 = F%v
-      OpenAD_Symbol_56 = (G%v*G%v)
-      OpenAD_Symbol_53 = (1.0D00 / OpenAD_Symbol_56)
-      LOC2%v = (AB*OpenAD_Symbol_53)
-      OpenAD_Symbol_59 = G%v
-      OpenAD_Symbol_60 = G%v
-      OpenAD_Symbol_58 = (-(1.0D00 /(OpenAD_Symbol_56 *  OpenAD_Symbol_5
+      OpenAD_Symbol_31 = LOC1%v
+      OpenAD_Symbol_32 = F%v
+      OpenAD_Symbol_36 = (G%v*G%v)
+      OpenAD_Symbol_33 = (1.0D00 / OpenAD_Symbol_36)
+      LOC2%v = (AB*OpenAD_Symbol_33)
+      OpenAD_Symbol_39 = G%v
+      OpenAD_Symbol_40 = G%v
+      OpenAD_Symbol_38 = (-(1.0D00 /(OpenAD_Symbol_36 *  OpenAD_Symbol_3
      +6)))
-      OpenAD_Symbol_55 = AB
-      OpenAD_Symbol_61 = (AB * B)
-      OpenAD_Symbol_68 = (G%v*G%v)
-      OpenAD_Symbol_65 = (G%v*OpenAD_Symbol_68)
-      OpenAD_Symbol_62 = (1.0D00 / OpenAD_Symbol_65)
-      GG%v = (OpenAD_Symbol_61*OpenAD_Symbol_62)
-      OpenAD_Symbol_69 = OpenAD_Symbol_68
-      OpenAD_Symbol_71 = G%v
-      OpenAD_Symbol_72 = G%v
-      OpenAD_Symbol_70 = G%v
-      OpenAD_Symbol_67 = (-(1.0D00 /(OpenAD_Symbol_65 *  OpenAD_Symbol_6
+      OpenAD_Symbol_35 = AB
+      OpenAD_Symbol_41 = (AB * B)
+      OpenAD_Symbol_48 = (G%v*G%v)
+      OpenAD_Symbol_45 = (G%v*OpenAD_Symbol_48)
+      OpenAD_Symbol_42 = (1.0D00 / OpenAD_Symbol_45)
+      GG%v = (OpenAD_Symbol_41*OpenAD_Symbol_42)
+      OpenAD_Symbol_49 = OpenAD_Symbol_48
+      OpenAD_Symbol_51 = G%v
+      OpenAD_Symbol_52 = G%v
+      OpenAD_Symbol_50 = G%v
+      OpenAD_Symbol_47 = (-(1.0D00 /(OpenAD_Symbol_45 *  OpenAD_Symbol_4
      +5)))
-      OpenAD_Symbol_64 = OpenAD_Symbol_61
-      OpenAD_Symbol_265 = (OpenAD_Symbol_50 * OpenAD_Symbol_48)
-      OpenAD_Symbol_266 = (OpenAD_Symbol_265 * OpenAD_Symbol_52)
-      OpenAD_Symbol_267 = (INT((-1_w2f__i8)) * OpenAD_Symbol_15)
-      OpenAD_Symbol_268 = (INT((-1_w2f__i8)) * OpenAD_Symbol_15)
-      OpenAD_Symbol_269 = (2.0D00 * OpenAD_Symbol_15)
-      OpenAD_Symbol_270 = (INT((-1_w2f__i8)) * OpenAD_Symbol_4)
-      OpenAD_Symbol_271 = (INT((-1_w2f__i8)) * OpenAD_Symbol_4)
-      OpenAD_Symbol_272 = (2.0D00 * OpenAD_Symbol_4)
-      OpenAD_Symbol_273 = (INT((-1_w2f__i8)) * OpenAD_Symbol_25)
-      OpenAD_Symbol_274 = (INT((-1_w2f__i8)) * OpenAD_Symbol_22)
-      OpenAD_Symbol_275 = (OpenAD_Symbol_24 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_276 = (OpenAD_Symbol_24 * 2.0D00)
-      OpenAD_Symbol_277 = (OpenAD_Symbol_25 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_278 = (OpenAD_Symbol_273 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_279 = (OpenAD_Symbol_25 * 2.0D00)
-      OpenAD_Symbol_280 = (OpenAD_Symbol_273 * 2.0D00)
-      OpenAD_Symbol_281 = (OpenAD_Symbol_267 * OpenAD_Symbol_23)
-      OpenAD_Symbol_282 = (OpenAD_Symbol_268 * OpenAD_Symbol_23)
-      OpenAD_Symbol_283 = (OpenAD_Symbol_269 * OpenAD_Symbol_23)
-      OpenAD_Symbol_284 = (OpenAD_Symbol_22 * 2.0D00)
-      OpenAD_Symbol_285 = (OpenAD_Symbol_274 * 2.0D00)
-      OpenAD_Symbol_286 = (OpenAD_Symbol_281 * 2.0D00)
-      OpenAD_Symbol_287 = (OpenAD_Symbol_282 * 2.0D00)
-      OpenAD_Symbol_288 = (OpenAD_Symbol_283 * 2.0D00)
-      OpenAD_Symbol_289 = (OpenAD_Symbol_270 * OpenAD_Symbol_275)
-      OpenAD_Symbol_290 = (OpenAD_Symbol_271 * OpenAD_Symbol_275)
-      OpenAD_Symbol_291 = (OpenAD_Symbol_272 * OpenAD_Symbol_275)
-      OpenAD_Symbol_292 = (OpenAD_Symbol_270 * OpenAD_Symbol_276)
-      OpenAD_Symbol_293 = (OpenAD_Symbol_271 * OpenAD_Symbol_276)
-      OpenAD_Symbol_294 = (OpenAD_Symbol_272 * OpenAD_Symbol_276)
-      OpenAD_Symbol_295 = (OpenAD_Symbol_277 * OpenAD_Symbol_265)
-      OpenAD_Symbol_296 = (OpenAD_Symbol_278 * OpenAD_Symbol_265)
-      OpenAD_Symbol_297 = (OpenAD_Symbol_22 * OpenAD_Symbol_265)
-      OpenAD_Symbol_298 = (OpenAD_Symbol_274 * OpenAD_Symbol_265)
-      OpenAD_Symbol_299 = (OpenAD_Symbol_281 * OpenAD_Symbol_265)
-      OpenAD_Symbol_300 = (OpenAD_Symbol_282 * OpenAD_Symbol_265)
-      OpenAD_Symbol_301 = (OpenAD_Symbol_283 * OpenAD_Symbol_265)
-      OpenAD_Symbol_302 = (OpenAD_Symbol_289 * OpenAD_Symbol_265)
-      OpenAD_Symbol_303 = (OpenAD_Symbol_290 * OpenAD_Symbol_265)
-      OpenAD_Symbol_304 = (OpenAD_Symbol_291 * OpenAD_Symbol_265)
-      OpenAD_Symbol_305 = (OpenAD_Symbol_32 + OpenAD_Symbol_33)
-      OpenAD_Symbol_306 = (OpenAD_Symbol_34 + OpenAD_Symbol_35)
-      OpenAD_Symbol_307 = (OpenAD_Symbol_36 + OpenAD_Symbol_37)
-      OpenAD_Symbol_308 = (OpenAD_Symbol_38 + OpenAD_Symbol_39)
-      OpenAD_Symbol_309 = ((OpenAD_Symbol_69 +(OpenAD_Symbol_71 +  OpenA
-     +D_Symbol_72) * OpenAD_Symbol_70) * OpenAD_Symbol_67 *  OpenAD_Symb
-     +ol_64)
-      OpenAD_Symbol_310 = ((OpenAD_Symbol_59 + OpenAD_Symbol_60) *  Open
-     +AD_Symbol_58 * OpenAD_Symbol_55)
-      OpenAD_Symbol_311 = (OpenAD_Symbol_308 * OpenAD_Symbol_41)
-      OpenAD_Symbol_312 = (OpenAD_Symbol_306 * OpenAD_Symbol_42)
-      OpenAD_Symbol_313 = (OpenAD_Symbol_307 * OpenAD_Symbol_43)
-      OpenAD_Symbol_314 = (OpenAD_Symbol_305 * OpenAD_Symbol_40)
-      OpenAD_Symbol_315 = (INT((-1_w2f__i8)) * OpenAD_Symbol_307)
-      OpenAD_Symbol_316 = (INT((-1_w2f__i8)) * OpenAD_Symbol_313)
-      OpenAD_Symbol_317 = (INT((-1_w2f__i8)) * OpenAD_Symbol_305)
-      OpenAD_Symbol_318 = (INT((-1_w2f__i8)) * OpenAD_Symbol_314)
-      OpenAD_Symbol_319 = (OpenAD_Symbol_312 * OpenAD_Symbol_51)
-      OpenAD_Symbol_320 = (OpenAD_Symbol_311 * OpenAD_Symbol_51)
-      OpenAD_Symbol_321 = (OpenAD_Symbol_267 * OpenAD_Symbol_308)
-      OpenAD_Symbol_322 = (OpenAD_Symbol_268 * OpenAD_Symbol_308)
-      OpenAD_Symbol_323 = (OpenAD_Symbol_269 * OpenAD_Symbol_308)
-      OpenAD_Symbol_324 = (OpenAD_Symbol_267 * OpenAD_Symbol_311)
-      OpenAD_Symbol_325 = (OpenAD_Symbol_268 * OpenAD_Symbol_311)
-      OpenAD_Symbol_326 = (OpenAD_Symbol_269 * OpenAD_Symbol_311)
-      OpenAD_Symbol_327 = (OpenAD_Symbol_267 * OpenAD_Symbol_311)
-      OpenAD_Symbol_328 = (OpenAD_Symbol_268 * OpenAD_Symbol_311)
-      OpenAD_Symbol_329 = (OpenAD_Symbol_269 * OpenAD_Symbol_311)
-      OpenAD_Symbol_330 = (OpenAD_Symbol_270 * OpenAD_Symbol_306)
-      OpenAD_Symbol_331 = (OpenAD_Symbol_271 * OpenAD_Symbol_306)
-      OpenAD_Symbol_332 = (OpenAD_Symbol_272 * OpenAD_Symbol_306)
-      OpenAD_Symbol_333 = (OpenAD_Symbol_270 * OpenAD_Symbol_312)
-      OpenAD_Symbol_334 = (OpenAD_Symbol_271 * OpenAD_Symbol_312)
-      OpenAD_Symbol_335 = (OpenAD_Symbol_272 * OpenAD_Symbol_312)
-      OpenAD_Symbol_336 = (OpenAD_Symbol_270 * OpenAD_Symbol_312)
-      OpenAD_Symbol_337 = (OpenAD_Symbol_271 * OpenAD_Symbol_312)
-      OpenAD_Symbol_338 = (OpenAD_Symbol_272 * OpenAD_Symbol_312)
-      OpenAD_Symbol_339 = (OpenAD_Symbol_277 * OpenAD_Symbol_309)
-      OpenAD_Symbol_340 = (OpenAD_Symbol_278 * OpenAD_Symbol_309)
-      OpenAD_Symbol_341 = (OpenAD_Symbol_22 * OpenAD_Symbol_309)
-      OpenAD_Symbol_342 = (OpenAD_Symbol_274 * OpenAD_Symbol_309)
-      OpenAD_Symbol_343 = (OpenAD_Symbol_281 * OpenAD_Symbol_309)
-      OpenAD_Symbol_344 = (OpenAD_Symbol_282 * OpenAD_Symbol_309)
-      OpenAD_Symbol_345 = (OpenAD_Symbol_283 * OpenAD_Symbol_309)
-      OpenAD_Symbol_346 = (OpenAD_Symbol_289 * OpenAD_Symbol_309)
-      OpenAD_Symbol_347 = (OpenAD_Symbol_290 * OpenAD_Symbol_309)
-      OpenAD_Symbol_348 = (OpenAD_Symbol_291 * OpenAD_Symbol_309)
-      OpenAD_Symbol_349 = (OpenAD_Symbol_277 * OpenAD_Symbol_310)
-      OpenAD_Symbol_350 = (OpenAD_Symbol_278 * OpenAD_Symbol_310)
-      OpenAD_Symbol_351 = (OpenAD_Symbol_22 * OpenAD_Symbol_310)
-      OpenAD_Symbol_352 = (OpenAD_Symbol_274 * OpenAD_Symbol_310)
-      OpenAD_Symbol_353 = (OpenAD_Symbol_281 * OpenAD_Symbol_310)
-      OpenAD_Symbol_354 = (OpenAD_Symbol_282 * OpenAD_Symbol_310)
-      OpenAD_Symbol_355 = (OpenAD_Symbol_283 * OpenAD_Symbol_310)
-      OpenAD_Symbol_356 = (OpenAD_Symbol_289 * OpenAD_Symbol_310)
-      OpenAD_Symbol_357 = (OpenAD_Symbol_290 * OpenAD_Symbol_310)
-      OpenAD_Symbol_358 = (OpenAD_Symbol_291 * OpenAD_Symbol_310)
-      OpenAD_Symbol_359 = (OpenAD_Symbol_313 * OpenAD_Symbol_51 +  OpenA
-     +D_Symbol_277 * OpenAD_Symbol_266)
-      OpenAD_Symbol_360 = (OpenAD_Symbol_316 * OpenAD_Symbol_51 +  OpenA
-     +D_Symbol_278 * OpenAD_Symbol_266)
-      OpenAD_Symbol_361 = (OpenAD_Symbol_314 * OpenAD_Symbol_51 +  OpenA
-     +D_Symbol_22 * OpenAD_Symbol_266)
-      OpenAD_Symbol_362 = (OpenAD_Symbol_318 * OpenAD_Symbol_51 +  OpenA
-     +D_Symbol_274 * OpenAD_Symbol_266)
-      OpenAD_Symbol_363 = (OpenAD_Symbol_267 * OpenAD_Symbol_320 +  Open
-     +AD_Symbol_281 * OpenAD_Symbol_266)
-      OpenAD_Symbol_364 = (OpenAD_Symbol_268 * OpenAD_Symbol_320 +  Open
-     +AD_Symbol_282 * OpenAD_Symbol_266)
-      OpenAD_Symbol_365 = (OpenAD_Symbol_269 * OpenAD_Symbol_320 +  Open
-     +AD_Symbol_283 * OpenAD_Symbol_266)
-      OpenAD_Symbol_366 = (OpenAD_Symbol_270 * OpenAD_Symbol_319 +  Open
-     +AD_Symbol_289 * OpenAD_Symbol_266)
-      OpenAD_Symbol_367 = (OpenAD_Symbol_271 * OpenAD_Symbol_319 +  Open
-     +AD_Symbol_290 * OpenAD_Symbol_266)
-      OpenAD_Symbol_368 = (OpenAD_Symbol_272 * OpenAD_Symbol_319 +  Open
-     +AD_Symbol_291 * OpenAD_Symbol_266)
-          double_tape(double_tape_pointer) = OpenAD_Symbol_305
+      OpenAD_Symbol_44 = OpenAD_Symbol_41
+      OpenAD_Symbol_155 = (OpenAD_Symbol_30 * OpenAD_Symbol_28)
+      OpenAD_Symbol_156 = (OpenAD_Symbol_155 * OpenAD_Symbol_32)
+      OpenAD_Symbol_157 = (INT((-1_w2f__i8)) * OpenAD_Symbol_6)
+      OpenAD_Symbol_158 = (INT((-1_w2f__i8)) * OpenAD_Symbol_6)
+      OpenAD_Symbol_159 = (2.0D00 * OpenAD_Symbol_6)
+      OpenAD_Symbol_160 = (INT((-1_w2f__i8)) * OpenAD_Symbol_2)
+      OpenAD_Symbol_161 = (INT((-1_w2f__i8)) * OpenAD_Symbol_2)
+      OpenAD_Symbol_162 = (2.0D00 * OpenAD_Symbol_2)
+      OpenAD_Symbol_163 = (INT((-1_w2f__i8)) * OpenAD_Symbol_11)
+      OpenAD_Symbol_164 = (INT((-1_w2f__i8)) * OpenAD_Symbol_8)
+      OpenAD_Symbol_165 = (OpenAD_Symbol_10 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_166 = (OpenAD_Symbol_10 * 2.0D00)
+      OpenAD_Symbol_167 = (OpenAD_Symbol_11 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_168 = (OpenAD_Symbol_163 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_169 = (OpenAD_Symbol_11 * 2.0D00)
+      OpenAD_Symbol_170 = (OpenAD_Symbol_163 * 2.0D00)
+      OpenAD_Symbol_171 = (OpenAD_Symbol_157 * OpenAD_Symbol_9)
+      OpenAD_Symbol_172 = (OpenAD_Symbol_158 * OpenAD_Symbol_9)
+      OpenAD_Symbol_173 = (OpenAD_Symbol_159 * OpenAD_Symbol_9)
+      OpenAD_Symbol_174 = (OpenAD_Symbol_8 * 2.0D00)
+      OpenAD_Symbol_175 = (OpenAD_Symbol_164 * 2.0D00)
+      OpenAD_Symbol_176 = (OpenAD_Symbol_171 * 2.0D00)
+      OpenAD_Symbol_177 = (OpenAD_Symbol_172 * 2.0D00)
+      OpenAD_Symbol_178 = (OpenAD_Symbol_173 * 2.0D00)
+      OpenAD_Symbol_179 = (OpenAD_Symbol_160 * OpenAD_Symbol_165)
+      OpenAD_Symbol_180 = (OpenAD_Symbol_161 * OpenAD_Symbol_165)
+      OpenAD_Symbol_181 = (OpenAD_Symbol_162 * OpenAD_Symbol_165)
+      OpenAD_Symbol_182 = (OpenAD_Symbol_160 * OpenAD_Symbol_166)
+      OpenAD_Symbol_183 = (OpenAD_Symbol_161 * OpenAD_Symbol_166)
+      OpenAD_Symbol_184 = (OpenAD_Symbol_162 * OpenAD_Symbol_166)
+      OpenAD_Symbol_185 = (OpenAD_Symbol_167 * OpenAD_Symbol_155)
+      OpenAD_Symbol_186 = (OpenAD_Symbol_168 * OpenAD_Symbol_155)
+      OpenAD_Symbol_187 = (OpenAD_Symbol_8 * OpenAD_Symbol_155)
+      OpenAD_Symbol_188 = (OpenAD_Symbol_164 * OpenAD_Symbol_155)
+      OpenAD_Symbol_189 = (OpenAD_Symbol_171 * OpenAD_Symbol_155)
+      OpenAD_Symbol_190 = (OpenAD_Symbol_172 * OpenAD_Symbol_155)
+      OpenAD_Symbol_191 = (OpenAD_Symbol_173 * OpenAD_Symbol_155)
+      OpenAD_Symbol_192 = (OpenAD_Symbol_179 * OpenAD_Symbol_155)
+      OpenAD_Symbol_193 = (OpenAD_Symbol_180 * OpenAD_Symbol_155)
+      OpenAD_Symbol_194 = (OpenAD_Symbol_181 * OpenAD_Symbol_155)
+      OpenAD_Symbol_195 = (OpenAD_Symbol_14 + OpenAD_Symbol_15)
+      OpenAD_Symbol_196 = (OpenAD_Symbol_16 + OpenAD_Symbol_17)
+      OpenAD_Symbol_197 = (OpenAD_Symbol_18 + OpenAD_Symbol_19)
+      OpenAD_Symbol_198 = (OpenAD_Symbol_20 + OpenAD_Symbol_21)
+      OpenAD_Symbol_199 = ((OpenAD_Symbol_49 +(OpenAD_Symbol_51 +  OpenA
+     +D_Symbol_52) * OpenAD_Symbol_50) * OpenAD_Symbol_47 *  OpenAD_Symb
+     +ol_44)
+      OpenAD_Symbol_200 = ((OpenAD_Symbol_39 + OpenAD_Symbol_40) *  Open
+     +AD_Symbol_38 * OpenAD_Symbol_35)
+      OpenAD_Symbol_201 = (OpenAD_Symbol_198 * OpenAD_Symbol_23)
+      OpenAD_Symbol_202 = (OpenAD_Symbol_196 * OpenAD_Symbol_24)
+      OpenAD_Symbol_203 = (OpenAD_Symbol_197 * OpenAD_Symbol_25)
+      OpenAD_Symbol_204 = (OpenAD_Symbol_195 * OpenAD_Symbol_22)
+      OpenAD_Symbol_205 = (INT((-1_w2f__i8)) * OpenAD_Symbol_197)
+      OpenAD_Symbol_206 = (INT((-1_w2f__i8)) * OpenAD_Symbol_203)
+      OpenAD_Symbol_207 = (INT((-1_w2f__i8)) * OpenAD_Symbol_195)
+      OpenAD_Symbol_208 = (INT((-1_w2f__i8)) * OpenAD_Symbol_204)
+      OpenAD_Symbol_209 = (OpenAD_Symbol_202 * OpenAD_Symbol_31)
+      OpenAD_Symbol_210 = (OpenAD_Symbol_201 * OpenAD_Symbol_31)
+      OpenAD_Symbol_211 = (OpenAD_Symbol_157 * OpenAD_Symbol_198)
+      OpenAD_Symbol_212 = (OpenAD_Symbol_158 * OpenAD_Symbol_198)
+      OpenAD_Symbol_213 = (OpenAD_Symbol_159 * OpenAD_Symbol_198)
+      OpenAD_Symbol_214 = (OpenAD_Symbol_157 * OpenAD_Symbol_201)
+      OpenAD_Symbol_215 = (OpenAD_Symbol_158 * OpenAD_Symbol_201)
+      OpenAD_Symbol_216 = (OpenAD_Symbol_159 * OpenAD_Symbol_201)
+      OpenAD_Symbol_217 = (OpenAD_Symbol_157 * OpenAD_Symbol_201)
+      OpenAD_Symbol_218 = (OpenAD_Symbol_158 * OpenAD_Symbol_201)
+      OpenAD_Symbol_219 = (OpenAD_Symbol_159 * OpenAD_Symbol_201)
+      OpenAD_Symbol_220 = (OpenAD_Symbol_160 * OpenAD_Symbol_196)
+      OpenAD_Symbol_221 = (OpenAD_Symbol_161 * OpenAD_Symbol_196)
+      OpenAD_Symbol_222 = (OpenAD_Symbol_162 * OpenAD_Symbol_196)
+      OpenAD_Symbol_223 = (OpenAD_Symbol_160 * OpenAD_Symbol_202)
+      OpenAD_Symbol_224 = (OpenAD_Symbol_161 * OpenAD_Symbol_202)
+      OpenAD_Symbol_225 = (OpenAD_Symbol_162 * OpenAD_Symbol_202)
+      OpenAD_Symbol_226 = (OpenAD_Symbol_160 * OpenAD_Symbol_202)
+      OpenAD_Symbol_227 = (OpenAD_Symbol_161 * OpenAD_Symbol_202)
+      OpenAD_Symbol_228 = (OpenAD_Symbol_162 * OpenAD_Symbol_202)
+      OpenAD_Symbol_229 = (OpenAD_Symbol_167 * OpenAD_Symbol_199)
+      OpenAD_Symbol_230 = (OpenAD_Symbol_168 * OpenAD_Symbol_199)
+      OpenAD_Symbol_231 = (OpenAD_Symbol_8 * OpenAD_Symbol_199)
+      OpenAD_Symbol_232 = (OpenAD_Symbol_164 * OpenAD_Symbol_199)
+      OpenAD_Symbol_233 = (OpenAD_Symbol_171 * OpenAD_Symbol_199)
+      OpenAD_Symbol_234 = (OpenAD_Symbol_172 * OpenAD_Symbol_199)
+      OpenAD_Symbol_235 = (OpenAD_Symbol_173 * OpenAD_Symbol_199)
+      OpenAD_Symbol_236 = (OpenAD_Symbol_179 * OpenAD_Symbol_199)
+      OpenAD_Symbol_237 = (OpenAD_Symbol_180 * OpenAD_Symbol_199)
+      OpenAD_Symbol_238 = (OpenAD_Symbol_181 * OpenAD_Symbol_199)
+      OpenAD_Symbol_239 = (OpenAD_Symbol_167 * OpenAD_Symbol_200)
+      OpenAD_Symbol_240 = (OpenAD_Symbol_168 * OpenAD_Symbol_200)
+      OpenAD_Symbol_241 = (OpenAD_Symbol_8 * OpenAD_Symbol_200)
+      OpenAD_Symbol_242 = (OpenAD_Symbol_164 * OpenAD_Symbol_200)
+      OpenAD_Symbol_243 = (OpenAD_Symbol_171 * OpenAD_Symbol_200)
+      OpenAD_Symbol_244 = (OpenAD_Symbol_172 * OpenAD_Symbol_200)
+      OpenAD_Symbol_245 = (OpenAD_Symbol_173 * OpenAD_Symbol_200)
+      OpenAD_Symbol_246 = (OpenAD_Symbol_179 * OpenAD_Symbol_200)
+      OpenAD_Symbol_247 = (OpenAD_Symbol_180 * OpenAD_Symbol_200)
+      OpenAD_Symbol_248 = (OpenAD_Symbol_181 * OpenAD_Symbol_200)
+      OpenAD_Symbol_249 = (OpenAD_Symbol_203 * OpenAD_Symbol_31 +  OpenA
+     +D_Symbol_167 * OpenAD_Symbol_156)
+      OpenAD_Symbol_250 = (OpenAD_Symbol_206 * OpenAD_Symbol_31 +  OpenA
+     +D_Symbol_168 * OpenAD_Symbol_156)
+      OpenAD_Symbol_251 = (OpenAD_Symbol_204 * OpenAD_Symbol_31 +  OpenA
+     +D_Symbol_8 * OpenAD_Symbol_156)
+      OpenAD_Symbol_252 = (OpenAD_Symbol_208 * OpenAD_Symbol_31 +  OpenA
+     +D_Symbol_164 * OpenAD_Symbol_156)
+      OpenAD_Symbol_253 = (OpenAD_Symbol_157 * OpenAD_Symbol_210 +  Open
+     +AD_Symbol_171 * OpenAD_Symbol_156)
+      OpenAD_Symbol_254 = (OpenAD_Symbol_158 * OpenAD_Symbol_210 +  Open
+     +AD_Symbol_172 * OpenAD_Symbol_156)
+      OpenAD_Symbol_255 = (OpenAD_Symbol_159 * OpenAD_Symbol_210 +  Open
+     +AD_Symbol_173 * OpenAD_Symbol_156)
+      OpenAD_Symbol_256 = (OpenAD_Symbol_160 * OpenAD_Symbol_209 +  Open
+     +AD_Symbol_179 * OpenAD_Symbol_156)
+      OpenAD_Symbol_257 = (OpenAD_Symbol_161 * OpenAD_Symbol_209 +  Open
+     +AD_Symbol_180 * OpenAD_Symbol_156)
+      OpenAD_Symbol_258 = (OpenAD_Symbol_162 * OpenAD_Symbol_209 +  Open
+     +AD_Symbol_181 * OpenAD_Symbol_156)
+          double_tape(double_tape_pointer) = OpenAD_Symbol_195
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_317
+          double_tape(double_tape_pointer) = OpenAD_Symbol_207
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_307
+          double_tape(double_tape_pointer) = OpenAD_Symbol_197
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_315
+          double_tape(double_tape_pointer) = OpenAD_Symbol_205
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_270
+          double_tape(double_tape_pointer) = OpenAD_Symbol_160
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_271
+          double_tape(double_tape_pointer) = OpenAD_Symbol_161
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_272
+          double_tape(double_tape_pointer) = OpenAD_Symbol_162
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_157
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_158
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_159
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_8
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_164
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_171
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_172
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_173
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_174
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_175
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_176
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_177
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_178
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_169
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_170
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_182
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_183
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_184
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_220
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_221
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_222
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_211
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_212
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_213
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_204
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_208
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_214
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_215
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_216
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_203
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_206
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_223
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_224
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_225
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_203
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_206
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_204
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_208
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_217
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_218
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_219
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_226
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_227
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_228
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_185
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_186
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_187
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_188
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_189
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_190
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_191
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_192
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_193
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_194
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_249
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_250
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_251
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_252
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_253
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_254
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_255
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_256
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_257
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_258
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_239
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_240
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_241
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_242
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_243
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_244
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_245
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_246
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_247
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_248
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_229
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_230
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_231
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_232
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_233
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_234
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_235
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_236
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_237
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_238
+          double_tape_pointer = double_tape_pointer+1
+      G%v = (F%v*LOC2%v)
+      OpenAD_Symbol_53 = LOC2%v
+      OpenAD_Symbol_54 = F%v
+      F%v = (LOC1%v*2.0D00)
+      ADJ_M0%v = (F%v*MATR0%v+G%v*MATR3%v)
+      OpenAD_Symbol_56 = MATR0%v
+      OpenAD_Symbol_57 = F%v
+      OpenAD_Symbol_58 = MATR3%v
+      OpenAD_Symbol_59 = G%v
+      ADJ_M1%v = (F%v*MATR1%v-G%v*MATR2%v)
+      OpenAD_Symbol_60 = MATR1%v
+      OpenAD_Symbol_61 = F%v
+      OpenAD_Symbol_62 = MATR2%v
+      OpenAD_Symbol_63 = G%v
+      ADJ_M2%v = (F%v*MATR2%v-G%v*MATR1%v)
+      OpenAD_Symbol_64 = MATR2%v
+      OpenAD_Symbol_65 = F%v
+      OpenAD_Symbol_66 = MATR1%v
+      OpenAD_Symbol_67 = G%v
+      ADJ_M3%v = (F%v*MATR3%v+G%v*MATR0%v)
+      OpenAD_Symbol_68 = MATR3%v
+      OpenAD_Symbol_69 = F%v
+      OpenAD_Symbol_70 = MATR0%v
+      OpenAD_Symbol_71 = G%v
+      LOC1%v = (ADJ_M1%v*SQRT3)
+      OpenAD_Symbol_72 = SQRT3
+      G_OBJ0%v = (-(ADJ_M0%v+LOC1%v))
+      G_OBJ1%v = (ADJ_M0%v-LOC1%v)
+      G_OBJ2%v = (LOC1%v*2.0D00)
+      OpenAD_Symbol_259 = (OpenAD_Symbol_66 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_260 = (OpenAD_Symbol_67 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_261 = (OpenAD_Symbol_62 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_262 = (OpenAD_Symbol_63 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_263 = (2.0D00 * OpenAD_Symbol_68)
+      OpenAD_Symbol_264 = (2.0D00 * OpenAD_Symbol_64)
+      OpenAD_Symbol_265 = (2.0D00 * OpenAD_Symbol_60)
+      OpenAD_Symbol_266 = (2.0D00 * OpenAD_Symbol_56)
+      OpenAD_Symbol_267 = (OpenAD_Symbol_59 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_268 = (OpenAD_Symbol_57 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_269 = (OpenAD_Symbol_72 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_270 = (OpenAD_Symbol_72 * 2.0D00)
+      OpenAD_Symbol_271 = (OpenAD_Symbol_72 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_272 = (OpenAD_Symbol_58 + OpenAD_Symbol_261 *  OpenA
+     +D_Symbol_269)
+      OpenAD_Symbol_273 = (OpenAD_Symbol_261 * OpenAD_Symbol_270)
+      OpenAD_Symbol_274 = (OpenAD_Symbol_58 * INT((-1_w2f__i8)) +  OpenA
+     +D_Symbol_261 * OpenAD_Symbol_271)
+      OpenAD_Symbol_275 = (OpenAD_Symbol_262 * OpenAD_Symbol_269)
+      OpenAD_Symbol_276 = (OpenAD_Symbol_262 * OpenAD_Symbol_270)
+      OpenAD_Symbol_277 = (OpenAD_Symbol_262 * OpenAD_Symbol_271)
+      OpenAD_Symbol_278 = (OpenAD_Symbol_61 * OpenAD_Symbol_269)
+      OpenAD_Symbol_279 = (OpenAD_Symbol_61 * OpenAD_Symbol_270)
+      OpenAD_Symbol_280 = (OpenAD_Symbol_61 * OpenAD_Symbol_271)
+      OpenAD_Symbol_281 = (OpenAD_Symbol_266 + OpenAD_Symbol_265 *  Open
+     +AD_Symbol_269)
+      OpenAD_Symbol_282 = (OpenAD_Symbol_265 * OpenAD_Symbol_270)
+      OpenAD_Symbol_283 = (OpenAD_Symbol_266 * INT((-1_w2f__i8)) +  Open
+     +AD_Symbol_265 * OpenAD_Symbol_271)
+      OpenAD_Symbol_284 = (OpenAD_Symbol_53 * OpenAD_Symbol_70)
+      OpenAD_Symbol_285 = (OpenAD_Symbol_53 * OpenAD_Symbol_259)
+      OpenAD_Symbol_286 = (OpenAD_Symbol_53 * OpenAD_Symbol_272)
+      OpenAD_Symbol_287 = (OpenAD_Symbol_53 * OpenAD_Symbol_274)
+      OpenAD_Symbol_288 = (OpenAD_Symbol_53 * OpenAD_Symbol_273)
+      OpenAD_Symbol_289 = (OpenAD_Symbol_54 * OpenAD_Symbol_70)
+      OpenAD_Symbol_290 = (OpenAD_Symbol_54 * OpenAD_Symbol_259)
+      OpenAD_Symbol_291 = (OpenAD_Symbol_54 * OpenAD_Symbol_272)
+      OpenAD_Symbol_292 = (OpenAD_Symbol_54 * OpenAD_Symbol_274)
+      OpenAD_Symbol_293 = (OpenAD_Symbol_54 * OpenAD_Symbol_273)
+          double_tape(double_tape_pointer) = OpenAD_Symbol_260
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_65
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_264
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_285
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_290
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_71
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_69
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_263
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_284
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_289
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_59
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_57
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_275
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_278
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_281
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_286
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_291
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_276
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_279
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_282
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_288
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_293
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_267
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_268
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_269
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_22
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_274
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_281
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_282
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_283
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_284
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_285
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_286
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_287
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_288
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_279
+          double_tape(double_tape_pointer) = OpenAD_Symbol_277
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_280
           double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_283
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_287
+          double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_292
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_293
+      LOC1%v = (ADJ_M3%v*SQRT3)
+      OpenAD_Symbol_75 = SQRT3
+      G_OBJ3%v = (-(ADJ_M2%v+LOC1%v))
+      G_OBJ4%v = (ADJ_M2%v-LOC1%v)
+      G_OBJ5%v = (LOC1%v*2.0D00)
+      OpenAD_Symbol_79 = (LOC2%v*2.0D00)
+      LOC2%v = OpenAD_Symbol_79
+      R00%v = (D00%v*LOC2%v+GG%v*M33%v)
+      OpenAD_Symbol_80 = LOC2%v
+      OpenAD_Symbol_81 = D00%v
+      OpenAD_Symbol_82 = M33%v
+      OpenAD_Symbol_83 = GG%v
+      R11%v = (D11%v*LOC2%v+GG%v*M22%v)
+      OpenAD_Symbol_84 = LOC2%v
+      OpenAD_Symbol_85 = D11%v
+      OpenAD_Symbol_86 = M22%v
+      OpenAD_Symbol_87 = GG%v
+      R22 = (D11%v*LOC2%v+GG%v*M11%v)
+      R33 = (D00%v*LOC2%v+GG%v*M00%v)
+      M01%v = (MATR0%v*MATR1%v)
+      OpenAD_Symbol_88 = MATR1%v
+      OpenAD_Symbol_89 = MATR0%v
+      M02%v = (MATR0%v*MATR2%v)
+      OpenAD_Symbol_90 = MATR2%v
+      OpenAD_Symbol_91 = MATR0%v
+      M12%v = (MATR1%v*MATR2%v)
+      OpenAD_Symbol_92 = MATR2%v
+      OpenAD_Symbol_93 = MATR1%v
+      M13%v = (MATR1%v*MATR3%v)
+      OpenAD_Symbol_94 = MATR3%v
+      OpenAD_Symbol_95 = MATR1%v
+      M23%v = (MATR2%v*MATR3%v)
+      OpenAD_Symbol_96 = MATR3%v
+      OpenAD_Symbol_97 = MATR2%v
+      OpenAD_Symbol_98 = (M02%v+M13%v)
+      D01%v = (LOC2%v*OpenAD_Symbol_98)
+      OpenAD_Symbol_99 = OpenAD_Symbol_98
+      OpenAD_Symbol_100 = LOC2%v
+      OpenAD_Symbol_294 = (OpenAD_Symbol_94 * OpenAD_Symbol_100)
+      OpenAD_Symbol_295 = (OpenAD_Symbol_95 * OpenAD_Symbol_100)
+      OpenAD_Symbol_296 = (OpenAD_Symbol_90 * OpenAD_Symbol_100)
+      OpenAD_Symbol_297 = (OpenAD_Symbol_91 * OpenAD_Symbol_100)
+      OpenAD_Symbol_298 = (2.0D00 * OpenAD_Symbol_99)
+      OpenAD_Symbol_299 = (2.0D00 * OpenAD_Symbol_85)
+      OpenAD_Symbol_300 = (2.0D00 * OpenAD_Symbol_81)
+      OpenAD_Symbol_301 = (OpenAD_Symbol_75 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_302 = (OpenAD_Symbol_75 * 2.0D00)
+      OpenAD_Symbol_303 = (OpenAD_Symbol_75 * INT((-1_w2f__i8)))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_301
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_302
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_88
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_89
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_90
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_91
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_92
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_93
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_94
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_95
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_96
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_97
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_303
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_83
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_82
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_80
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_300
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_87
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_86
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_84
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_299
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_294
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_330
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_331
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_332
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_321
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_322
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_323
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_314
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_318
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_324
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_325
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_326
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_313
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_316
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_333
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_334
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_335
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_313
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_316
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_314
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_318
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_327
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_328
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_329
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_336
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_337
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_338
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_295
           double_tape_pointer = double_tape_pointer+1
@@ -1274,1437 +1442,1049 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_298
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_299
+      LOC1%v = (R11%v*THIRD)
+      OpenAD_Symbol_101 = THIRD
+      OpenAD_Symbol_103 = (D01%v+GG%v*M23%v)
+      F%v = (TWOSQRT3*OpenAD_Symbol_103)
+      OpenAD_Symbol_106 = M23%v
+      OpenAD_Symbol_107 = GG%v
+      OpenAD_Symbol_105 = TWOSQRT3
+      G%v = (LOC1%v+R00%v)
+      H_OBJ1%v = (LOC1%v-R00%v)
+      H_OBJ0%v = (F%v+G%v)
+      H_OBJ3%v = (G%v-F%v)
+      OpenAD_Symbol_305 = (OpenAD_Symbol_106 * OpenAD_Symbol_105)
+      OpenAD_Symbol_306 = (OpenAD_Symbol_107 * OpenAD_Symbol_105)
+      OpenAD_Symbol_307 = (OpenAD_Symbol_105 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_308 = (OpenAD_Symbol_305 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_309 = (OpenAD_Symbol_306 * INT((-1_w2f__i8)))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_101
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_300
+          double_tape(double_tape_pointer) = OpenAD_Symbol_105
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_301
+          double_tape(double_tape_pointer) = OpenAD_Symbol_305
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_302
+          double_tape(double_tape_pointer) = OpenAD_Symbol_306
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_303
+          double_tape(double_tape_pointer) = OpenAD_Symbol_101
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_304
+          double_tape(double_tape_pointer) = OpenAD_Symbol_105
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_359
+          double_tape(double_tape_pointer) = OpenAD_Symbol_305
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_360
+          double_tape(double_tape_pointer) = OpenAD_Symbol_306
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_361
+          double_tape(double_tape_pointer) = OpenAD_Symbol_101
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_362
+          double_tape(double_tape_pointer) = OpenAD_Symbol_307
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_363
+          double_tape(double_tape_pointer) = OpenAD_Symbol_308
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_364
+          double_tape(double_tape_pointer) = OpenAD_Symbol_309
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_365
+      LOC1%v = (-(R11%v*TWO3RD))
+      OpenAD_Symbol_108 = TWO3RD
+      H_OBJ2%v = (LOC1%v-F%v)
+      H_OBJ4%v = (F%v+LOC1%v)
+      H_OBJ5%v = (FOUR3RD*R11%v)
+      OpenAD_Symbol_111 = FOUR3RD
+      OpenAD_Symbol_310 = (OpenAD_Symbol_108 * INT((-1_w2f__i8)))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_111
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_366
+          double_tape(double_tape_pointer) = OpenAD_Symbol_310
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_367
+          double_tape(double_tape_pointer) = OpenAD_Symbol_310
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_368
+      LOC1%v = (R00%v*THIRD)
+      OpenAD_Symbol_112 = THIRD
+      OpenAD_Symbol_114 = (D01%v+GG%v*M01%v)
+      F%v = (TWOSQRT3*OpenAD_Symbol_114)
+      OpenAD_Symbol_117 = M01%v
+      OpenAD_Symbol_118 = GG%v
+      OpenAD_Symbol_116 = TWOSQRT3
+      G%v = (LOC1%v+R11%v)
+      H_OBJ16%v = (LOC1%v-R11%v)
+      H_OBJ15%v = (F%v+G%v)
+      H_OBJ18%v = (G%v-F%v)
+      OpenAD_Symbol_311 = (OpenAD_Symbol_117 * OpenAD_Symbol_116)
+      OpenAD_Symbol_312 = (OpenAD_Symbol_118 * OpenAD_Symbol_116)
+      OpenAD_Symbol_313 = (OpenAD_Symbol_116 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_314 = (OpenAD_Symbol_311 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_315 = (OpenAD_Symbol_312 * INT((-1_w2f__i8)))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_112
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_349
+          double_tape(double_tape_pointer) = OpenAD_Symbol_116
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_350
+          double_tape(double_tape_pointer) = OpenAD_Symbol_311
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_351
+          double_tape(double_tape_pointer) = OpenAD_Symbol_312
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_352
+          double_tape(double_tape_pointer) = OpenAD_Symbol_112
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_353
+          double_tape(double_tape_pointer) = OpenAD_Symbol_116
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_354
+          double_tape(double_tape_pointer) = OpenAD_Symbol_311
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_355
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_356
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_357
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_358
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_339
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_340
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_341
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_342
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_343
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_344
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_345
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_346
+          double_tape(double_tape_pointer) = OpenAD_Symbol_312
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_347
+          double_tape(double_tape_pointer) = OpenAD_Symbol_112
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_348
+          double_tape(double_tape_pointer) = OpenAD_Symbol_313
           double_tape_pointer = double_tape_pointer+1
-      G%v = (F%v*LOC2%v)
-      OpenAD_Symbol_73 = LOC2%v
-      OpenAD_Symbol_74 = F%v
-      F%v = (LOC1%v*2.0D00)
-      OpenAD_Symbol_75 = 2.0D00
-      ADJ_M0%v = (F%v*MATR0%v+G%v*MATR3%v)
-      OpenAD_Symbol_79 = MATR0%v
-      OpenAD_Symbol_80 = F%v
-      OpenAD_Symbol_77 = 1_w2f__i8
-      OpenAD_Symbol_81 = MATR3%v
-      OpenAD_Symbol_82 = G%v
-      OpenAD_Symbol_78 = 1_w2f__i8
-      ADJ_M1%v = (F%v*MATR1%v-G%v*MATR2%v)
-      OpenAD_Symbol_85 = MATR1%v
-      OpenAD_Symbol_86 = F%v
-      OpenAD_Symbol_83 = 1_w2f__i8
-      OpenAD_Symbol_87 = MATR2%v
-      OpenAD_Symbol_88 = G%v
-      OpenAD_Symbol_84 = (-1_w2f__i8)
-      ADJ_M2%v = (F%v*MATR2%v-G%v*MATR1%v)
-      OpenAD_Symbol_91 = MATR2%v
-      OpenAD_Symbol_92 = F%v
-      OpenAD_Symbol_89 = 1_w2f__i8
-      OpenAD_Symbol_93 = MATR1%v
-      OpenAD_Symbol_94 = G%v
-      OpenAD_Symbol_90 = (-1_w2f__i8)
-      ADJ_M3%v = (F%v*MATR3%v+G%v*MATR0%v)
-      OpenAD_Symbol_97 = MATR3%v
-      OpenAD_Symbol_98 = F%v
-      OpenAD_Symbol_95 = 1_w2f__i8
-      OpenAD_Symbol_99 = MATR0%v
-      OpenAD_Symbol_100 = G%v
-      OpenAD_Symbol_96 = 1_w2f__i8
-      LOC1%v = (ADJ_M1%v*SQRT3)
-      OpenAD_Symbol_101 = SQRT3
-      G_OBJ0%v = (-(ADJ_M0%v+LOC1%v))
-      OpenAD_Symbol_104 = 1_w2f__i8
-      OpenAD_Symbol_105 = 1_w2f__i8
-      OpenAD_Symbol_103 = (-1_w2f__i8)
-      G_OBJ1%v = (ADJ_M0%v-LOC1%v)
-      OpenAD_Symbol_106 = 1_w2f__i8
-      OpenAD_Symbol_107 = (-1_w2f__i8)
-      G_OBJ2%v = (LOC1%v*2.0D00)
-      OpenAD_Symbol_108 = 2.0D00
-      OpenAD_Symbol_369 = (OpenAD_Symbol_93 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_370 = (OpenAD_Symbol_94 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_371 = (OpenAD_Symbol_87 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_372 = (OpenAD_Symbol_88 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_373 = (2.0D00 * OpenAD_Symbol_97)
-      OpenAD_Symbol_374 = (2.0D00 * OpenAD_Symbol_91)
-      OpenAD_Symbol_375 = (2.0D00 * OpenAD_Symbol_85)
-      OpenAD_Symbol_376 = (2.0D00 * OpenAD_Symbol_79)
-      OpenAD_Symbol_377 = (OpenAD_Symbol_82 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_378 = (OpenAD_Symbol_80 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_379 = (OpenAD_Symbol_101 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_380 = (OpenAD_Symbol_101 * 2.0D00)
-      OpenAD_Symbol_381 = (OpenAD_Symbol_101 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_382 = (OpenAD_Symbol_81 + OpenAD_Symbol_371 *  OpenA
-     +D_Symbol_379)
-      OpenAD_Symbol_383 = (OpenAD_Symbol_371 * OpenAD_Symbol_380)
-      OpenAD_Symbol_384 = (OpenAD_Symbol_81 * INT((-1_w2f__i8)) +  OpenA
-     +D_Symbol_371 * OpenAD_Symbol_381)
-      OpenAD_Symbol_385 = (OpenAD_Symbol_372 * OpenAD_Symbol_379)
-      OpenAD_Symbol_386 = (OpenAD_Symbol_372 * OpenAD_Symbol_380)
-      OpenAD_Symbol_387 = (OpenAD_Symbol_372 * OpenAD_Symbol_381)
-      OpenAD_Symbol_388 = (OpenAD_Symbol_86 * OpenAD_Symbol_379)
-      OpenAD_Symbol_389 = (OpenAD_Symbol_86 * OpenAD_Symbol_380)
-      OpenAD_Symbol_390 = (OpenAD_Symbol_86 * OpenAD_Symbol_381)
-      OpenAD_Symbol_391 = (OpenAD_Symbol_376 + OpenAD_Symbol_375 *  Open
-     +AD_Symbol_379)
-      OpenAD_Symbol_392 = (OpenAD_Symbol_375 * OpenAD_Symbol_380)
-      OpenAD_Symbol_393 = (OpenAD_Symbol_376 * INT((-1_w2f__i8)) +  Open
-     +AD_Symbol_375 * OpenAD_Symbol_381)
-      OpenAD_Symbol_394 = (OpenAD_Symbol_73 * OpenAD_Symbol_99)
-      OpenAD_Symbol_395 = (OpenAD_Symbol_73 * OpenAD_Symbol_369)
-      OpenAD_Symbol_396 = (OpenAD_Symbol_73 * OpenAD_Symbol_382)
-      OpenAD_Symbol_397 = (OpenAD_Symbol_73 * OpenAD_Symbol_384)
-      OpenAD_Symbol_398 = (OpenAD_Symbol_73 * OpenAD_Symbol_383)
-      OpenAD_Symbol_399 = (OpenAD_Symbol_74 * OpenAD_Symbol_99)
-      OpenAD_Symbol_400 = (OpenAD_Symbol_74 * OpenAD_Symbol_369)
-      OpenAD_Symbol_401 = (OpenAD_Symbol_74 * OpenAD_Symbol_382)
-      OpenAD_Symbol_402 = (OpenAD_Symbol_74 * OpenAD_Symbol_384)
-      OpenAD_Symbol_403 = (OpenAD_Symbol_74 * OpenAD_Symbol_383)
-          double_tape(double_tape_pointer) = OpenAD_Symbol_370
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_92
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_374
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_395
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_400
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_100
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_98
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_373
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_394
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_399
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_82
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_80
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_385
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_388
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_391
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_396
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_401
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_386
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_389
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_392
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_398
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_403
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_377
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_378
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_387
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_390
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_393
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_397
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_402
-          double_tape_pointer = double_tape_pointer+1
-      LOC1%v = (ADJ_M3%v*SQRT3)
-      OpenAD_Symbol_110 = SQRT3
-      G_OBJ3%v = (-(ADJ_M2%v+LOC1%v))
-      OpenAD_Symbol_113 = 1_w2f__i8
-      OpenAD_Symbol_114 = 1_w2f__i8
-      OpenAD_Symbol_112 = (-1_w2f__i8)
-      G_OBJ4%v = (ADJ_M2%v-LOC1%v)
-      OpenAD_Symbol_115 = 1_w2f__i8
-      OpenAD_Symbol_116 = (-1_w2f__i8)
-      G_OBJ5%v = (LOC1%v*2.0D00)
-      OpenAD_Symbol_117 = 2.0D00
-      OpenAD_Symbol_121 = (LOC2%v*2.0D00)
-      OpenAD_Symbol_119 = 2.0D00
-      LOC2%v = OpenAD_Symbol_121
-      R00%v = (D00%v*LOC2%v+GG%v*M33%v)
-      OpenAD_Symbol_124 = LOC2%v
-      OpenAD_Symbol_125 = D00%v
-      OpenAD_Symbol_122 = 1_w2f__i8
-      OpenAD_Symbol_126 = M33%v
+          double_tape(double_tape_pointer) = OpenAD_Symbol_314
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_315
+          double_tape_pointer = double_tape_pointer+1
+      LOC1%v = (-(R00%v*TWO3RD))
+      OpenAD_Symbol_119 = TWO3RD
+      H_OBJ17%v = (LOC1%v-F%v)
+      H_OBJ19%v = (F%v+LOC1%v)
+      H_OBJ20%v = (FOUR3RD*R00%v)
+      OpenAD_Symbol_122 = FOUR3RD
+      OpenAD_Symbol_316 = (OpenAD_Symbol_119 * INT((-1_w2f__i8)))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_122
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_316
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_316
+          double_tape_pointer = double_tape_pointer+1
+      OpenAD_Symbol_123 = (M01%v+M23%v)
+      LOC1%v = (LOC2%v*OpenAD_Symbol_123)
+      OpenAD_Symbol_124 = OpenAD_Symbol_123
+      OpenAD_Symbol_125 = LOC2%v
+      R13%v = (LOC1%v+GG%v*M02%v)
+      OpenAD_Symbol_126 = M02%v
       OpenAD_Symbol_127 = GG%v
-      OpenAD_Symbol_123 = 1_w2f__i8
-      R11%v = (D11%v*LOC2%v+GG%v*M22%v)
+      R02%v = (LOC1%v+GG%v*M13%v)
+      OpenAD_Symbol_128 = M13%v
+      OpenAD_Symbol_129 = GG%v
+      R03%v = (D03%v*LOC2%v+GG%v*M03%v)
       OpenAD_Symbol_130 = LOC2%v
-      OpenAD_Symbol_131 = D11%v
-      OpenAD_Symbol_128 = 1_w2f__i8
-      OpenAD_Symbol_132 = M22%v
+      OpenAD_Symbol_131 = D03%v
+      OpenAD_Symbol_132 = M03%v
       OpenAD_Symbol_133 = GG%v
-      OpenAD_Symbol_129 = 1_w2f__i8
-      R22 = (D11%v*LOC2%v+GG%v*M11%v)
-      R33 = (D00%v*LOC2%v+GG%v*M00%v)
-      M01%v = (MATR0%v*MATR1%v)
-      OpenAD_Symbol_134 = MATR1%v
-      OpenAD_Symbol_135 = MATR0%v
-      M02%v = (MATR0%v*MATR2%v)
-      OpenAD_Symbol_136 = MATR2%v
-      OpenAD_Symbol_137 = MATR0%v
-      M12%v = (MATR1%v*MATR2%v)
-      OpenAD_Symbol_138 = MATR2%v
-      OpenAD_Symbol_139 = MATR1%v
-      M13%v = (MATR1%v*MATR3%v)
-      OpenAD_Symbol_140 = MATR3%v
-      OpenAD_Symbol_141 = MATR1%v
-      M23%v = (MATR2%v*MATR3%v)
-      OpenAD_Symbol_142 = MATR3%v
-      OpenAD_Symbol_143 = MATR2%v
-      OpenAD_Symbol_144 = (M02%v+M13%v)
-      D01%v = (LOC2%v*OpenAD_Symbol_144)
-      OpenAD_Symbol_145 = OpenAD_Symbol_144
-      OpenAD_Symbol_147 = 1_w2f__i8
-      OpenAD_Symbol_148 = 1_w2f__i8
-      OpenAD_Symbol_146 = LOC2%v
-      OpenAD_Symbol_404 = (OpenAD_Symbol_140 * OpenAD_Symbol_146)
-      OpenAD_Symbol_405 = (OpenAD_Symbol_141 * OpenAD_Symbol_146)
-      OpenAD_Symbol_406 = (OpenAD_Symbol_136 * OpenAD_Symbol_146)
-      OpenAD_Symbol_407 = (OpenAD_Symbol_137 * OpenAD_Symbol_146)
-      OpenAD_Symbol_408 = (2.0D00 * OpenAD_Symbol_145)
-      OpenAD_Symbol_409 = (2.0D00 * OpenAD_Symbol_131)
-      OpenAD_Symbol_410 = (2.0D00 * OpenAD_Symbol_125)
-      OpenAD_Symbol_411 = (OpenAD_Symbol_110 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_412 = (OpenAD_Symbol_110 * 2.0D00)
-      OpenAD_Symbol_413 = (OpenAD_Symbol_110 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_411
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_412
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_134
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_135
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_136
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_137
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_138
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_139
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_140
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_141
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_142
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_143
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_413
+      R12%v = (D12%v*LOC2%v+GG%v*M12%v)
+      OpenAD_Symbol_134 = LOC2%v
+      OpenAD_Symbol_135 = D12%v
+      OpenAD_Symbol_136 = M12%v
+      OpenAD_Symbol_137 = GG%v
+      G%v = (-(R13%v*TWO3RD))
+      OpenAD_Symbol_138 = TWO3RD
+      F%v = (R03%v*TWOSQRT3)
+      OpenAD_Symbol_140 = TWOSQRT3
+      H_OBJ8%v = (G%v-F%v)
+      H_OBJ11%v = (F%v+G%v)
+      OpenAD_Symbol_317 = (OpenAD_Symbol_138 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_318 = (OpenAD_Symbol_140 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_319 = (OpenAD_Symbol_133 * OpenAD_Symbol_318)
+      OpenAD_Symbol_320 = (OpenAD_Symbol_130 * OpenAD_Symbol_318)
+      OpenAD_Symbol_321 = (OpenAD_Symbol_133 * OpenAD_Symbol_140)
+      OpenAD_Symbol_322 = (OpenAD_Symbol_130 * OpenAD_Symbol_140)
+      OpenAD_Symbol_323 = (OpenAD_Symbol_126 * OpenAD_Symbol_317)
+      OpenAD_Symbol_324 = (OpenAD_Symbol_127 * OpenAD_Symbol_317)
+      OpenAD_Symbol_325 = (OpenAD_Symbol_124 * OpenAD_Symbol_317)
+      OpenAD_Symbol_326 = (OpenAD_Symbol_125 * OpenAD_Symbol_317)
+      OpenAD_Symbol_327 = (OpenAD_Symbol_125 * OpenAD_Symbol_317)
+      OpenAD_Symbol_328 = (OpenAD_Symbol_132 * OpenAD_Symbol_318 +  Open
+     +AD_Symbol_323)
+      OpenAD_Symbol_329 = (OpenAD_Symbol_131 * OpenAD_Symbol_318 +  Open
+     +AD_Symbol_325)
+      OpenAD_Symbol_330 = (OpenAD_Symbol_132 * OpenAD_Symbol_140 +  Open
+     +AD_Symbol_323)
+      OpenAD_Symbol_331 = (OpenAD_Symbol_131 * OpenAD_Symbol_140 +  Open
+     +AD_Symbol_325)
+          double_tape(double_tape_pointer) = OpenAD_Symbol_126
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_127
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_126
+          double_tape(double_tape_pointer) = OpenAD_Symbol_124
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_125
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_125
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_128
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_129
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_124
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_410
+          double_tape(double_tape_pointer) = OpenAD_Symbol_125
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_133
+          double_tape(double_tape_pointer) = OpenAD_Symbol_125
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_132
           double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_133
+          double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_130
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_409
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_404
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_405
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_406
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_407
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_408
-          double_tape_pointer = double_tape_pointer+1
-      LOC1%v = (R11%v*THIRD)
-      OpenAD_Symbol_149 = THIRD
-      OpenAD_Symbol_151 = (D01%v+GG%v*M23%v)
-      F%v = (TWOSQRT3*OpenAD_Symbol_151)
-      OpenAD_Symbol_154 = 1_w2f__i8
-      OpenAD_Symbol_156 = M23%v
-      OpenAD_Symbol_157 = GG%v
-      OpenAD_Symbol_155 = 1_w2f__i8
-      OpenAD_Symbol_153 = TWOSQRT3
-      G%v = (LOC1%v+R00%v)
-      OpenAD_Symbol_158 = 1_w2f__i8
-      OpenAD_Symbol_159 = 1_w2f__i8
-      H_OBJ1%v = (LOC1%v-R00%v)
-      OpenAD_Symbol_160 = 1_w2f__i8
-      OpenAD_Symbol_161 = (-1_w2f__i8)
-      H_OBJ0%v = (F%v+G%v)
-      OpenAD_Symbol_162 = 1_w2f__i8
-      OpenAD_Symbol_163 = 1_w2f__i8
-      H_OBJ3%v = (G%v-F%v)
-      OpenAD_Symbol_164 = 1_w2f__i8
-      OpenAD_Symbol_165 = (-1_w2f__i8)
-      OpenAD_Symbol_415 = (OpenAD_Symbol_156 * OpenAD_Symbol_153)
-      OpenAD_Symbol_416 = (OpenAD_Symbol_157 * OpenAD_Symbol_153)
-      OpenAD_Symbol_417 = (OpenAD_Symbol_153 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_418 = (OpenAD_Symbol_415 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_419 = (OpenAD_Symbol_416 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_149
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_153
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_415
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_416
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_149
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_153
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_415
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_416
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_149
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_417
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_418
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_419
-          double_tape_pointer = double_tape_pointer+1
-      LOC1%v = (-(R11%v*TWO3RD))
-      OpenAD_Symbol_167 = TWO3RD
-      OpenAD_Symbol_166 = (-1_w2f__i8)
-      H_OBJ2%v = (LOC1%v-F%v)
-      OpenAD_Symbol_169 = 1_w2f__i8
-      OpenAD_Symbol_170 = (-1_w2f__i8)
-      H_OBJ4%v = (F%v+LOC1%v)
-      OpenAD_Symbol_171 = 1_w2f__i8
-      OpenAD_Symbol_172 = 1_w2f__i8
-      H_OBJ5%v = (FOUR3RD*R11%v)
-      OpenAD_Symbol_174 = FOUR3RD
-      OpenAD_Symbol_420 = (OpenAD_Symbol_167 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_174
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_420
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_420
-          double_tape_pointer = double_tape_pointer+1
-      LOC1%v = (R00%v*THIRD)
-      OpenAD_Symbol_175 = THIRD
-      OpenAD_Symbol_177 = (D01%v+GG%v*M01%v)
-      F%v = (TWOSQRT3*OpenAD_Symbol_177)
-      OpenAD_Symbol_180 = 1_w2f__i8
-      OpenAD_Symbol_182 = M01%v
-      OpenAD_Symbol_183 = GG%v
-      OpenAD_Symbol_181 = 1_w2f__i8
-      OpenAD_Symbol_179 = TWOSQRT3
-      G%v = (LOC1%v+R11%v)
-      OpenAD_Symbol_184 = 1_w2f__i8
-      OpenAD_Symbol_185 = 1_w2f__i8
-      H_OBJ16%v = (LOC1%v-R11%v)
-      OpenAD_Symbol_186 = 1_w2f__i8
-      OpenAD_Symbol_187 = (-1_w2f__i8)
-      H_OBJ15%v = (F%v+G%v)
-      OpenAD_Symbol_188 = 1_w2f__i8
-      OpenAD_Symbol_189 = 1_w2f__i8
-      H_OBJ18%v = (G%v-F%v)
-      OpenAD_Symbol_190 = 1_w2f__i8
-      OpenAD_Symbol_191 = (-1_w2f__i8)
-      OpenAD_Symbol_421 = (OpenAD_Symbol_182 * OpenAD_Symbol_179)
-      OpenAD_Symbol_422 = (OpenAD_Symbol_183 * OpenAD_Symbol_179)
-      OpenAD_Symbol_423 = (OpenAD_Symbol_179 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_424 = (OpenAD_Symbol_421 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_425 = (OpenAD_Symbol_422 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_175
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_179
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_421
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_422
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_175
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_179
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_421
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_422
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_175
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_423
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_424
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_425
-          double_tape_pointer = double_tape_pointer+1
-      LOC1%v = (-(R00%v*TWO3RD))
-      OpenAD_Symbol_193 = TWO3RD
-      OpenAD_Symbol_192 = (-1_w2f__i8)
-      H_OBJ17%v = (LOC1%v-F%v)
-      OpenAD_Symbol_195 = 1_w2f__i8
-      OpenAD_Symbol_196 = (-1_w2f__i8)
-      H_OBJ19%v = (F%v+LOC1%v)
-      OpenAD_Symbol_197 = 1_w2f__i8
-      OpenAD_Symbol_198 = 1_w2f__i8
-      H_OBJ20%v = (FOUR3RD*R00%v)
-      OpenAD_Symbol_200 = FOUR3RD
-      OpenAD_Symbol_426 = (OpenAD_Symbol_193 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_200
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_426
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_426
-          double_tape_pointer = double_tape_pointer+1
-      OpenAD_Symbol_201 = (M01%v+M23%v)
-      LOC1%v = (LOC2%v*OpenAD_Symbol_201)
-      OpenAD_Symbol_202 = OpenAD_Symbol_201
-      OpenAD_Symbol_204 = 1_w2f__i8
-      OpenAD_Symbol_205 = 1_w2f__i8
-      OpenAD_Symbol_203 = LOC2%v
-      R13%v = (LOC1%v+GG%v*M02%v)
-      OpenAD_Symbol_206 = 1_w2f__i8
-      OpenAD_Symbol_208 = M02%v
-      OpenAD_Symbol_209 = GG%v
-      OpenAD_Symbol_207 = 1_w2f__i8
-      R02%v = (LOC1%v+GG%v*M13%v)
-      OpenAD_Symbol_210 = 1_w2f__i8
-      OpenAD_Symbol_212 = M13%v
-      OpenAD_Symbol_213 = GG%v
-      OpenAD_Symbol_211 = 1_w2f__i8
-      R03%v = (D03%v*LOC2%v+GG%v*M03%v)
-      OpenAD_Symbol_216 = LOC2%v
-      OpenAD_Symbol_217 = D03%v
-      OpenAD_Symbol_214 = 1_w2f__i8
-      OpenAD_Symbol_218 = M03%v
-      OpenAD_Symbol_219 = GG%v
-      OpenAD_Symbol_215 = 1_w2f__i8
-      R12%v = (D12%v*LOC2%v+GG%v*M12%v)
-      OpenAD_Symbol_222 = LOC2%v
-      OpenAD_Symbol_223 = D12%v
-      OpenAD_Symbol_220 = 1_w2f__i8
-      OpenAD_Symbol_224 = M12%v
-      OpenAD_Symbol_225 = GG%v
-      OpenAD_Symbol_221 = 1_w2f__i8
-      G%v = (-(R13%v*TWO3RD))
-      OpenAD_Symbol_227 = TWO3RD
-      OpenAD_Symbol_226 = (-1_w2f__i8)
-      F%v = (R03%v*TWOSQRT3)
-      OpenAD_Symbol_229 = TWOSQRT3
-      H_OBJ8%v = (G%v-F%v)
-      OpenAD_Symbol_231 = 1_w2f__i8
-      OpenAD_Symbol_232 = (-1_w2f__i8)
-      H_OBJ11%v = (F%v+G%v)
-      OpenAD_Symbol_233 = 1_w2f__i8
-      OpenAD_Symbol_234 = 1_w2f__i8
-      OpenAD_Symbol_427 = (OpenAD_Symbol_227 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_428 = (OpenAD_Symbol_229 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_429 = (OpenAD_Symbol_219 * OpenAD_Symbol_428)
-      OpenAD_Symbol_430 = (OpenAD_Symbol_216 * OpenAD_Symbol_428)
-      OpenAD_Symbol_431 = (OpenAD_Symbol_219 * OpenAD_Symbol_229)
-      OpenAD_Symbol_432 = (OpenAD_Symbol_216 * OpenAD_Symbol_229)
-      OpenAD_Symbol_433 = (OpenAD_Symbol_208 * OpenAD_Symbol_427)
-      OpenAD_Symbol_434 = (OpenAD_Symbol_209 * OpenAD_Symbol_427)
-      OpenAD_Symbol_435 = (OpenAD_Symbol_202 * OpenAD_Symbol_427)
-      OpenAD_Symbol_436 = (OpenAD_Symbol_203 * OpenAD_Symbol_427)
-      OpenAD_Symbol_437 = (OpenAD_Symbol_203 * OpenAD_Symbol_427)
-      OpenAD_Symbol_438 = (OpenAD_Symbol_218 * OpenAD_Symbol_428 +  Open
-     +AD_Symbol_433)
-      OpenAD_Symbol_439 = (OpenAD_Symbol_217 * OpenAD_Symbol_428 +  Open
-     +AD_Symbol_435)
-      OpenAD_Symbol_440 = (OpenAD_Symbol_218 * OpenAD_Symbol_229 +  Open
-     +AD_Symbol_433)
-      OpenAD_Symbol_441 = (OpenAD_Symbol_217 * OpenAD_Symbol_229 +  Open
-     +AD_Symbol_435)
-          double_tape(double_tape_pointer) = OpenAD_Symbol_208
+          double_tape(double_tape_pointer) = OpenAD_Symbol_131
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_209
+          double_tape(double_tape_pointer) = OpenAD_Symbol_136
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_202
+          double_tape(double_tape_pointer) = OpenAD_Symbol_134
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_203
+          double_tape(double_tape_pointer) = OpenAD_Symbol_137
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_203
+          double_tape(double_tape_pointer) = OpenAD_Symbol_135
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_212
+          double_tape(double_tape_pointer) = OpenAD_Symbol_323
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_213
+          double_tape(double_tape_pointer) = OpenAD_Symbol_324
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_202
+          double_tape(double_tape_pointer) = OpenAD_Symbol_325
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_203
+          double_tape(double_tape_pointer) = OpenAD_Symbol_326
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_203
+          double_tape(double_tape_pointer) = OpenAD_Symbol_327
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_218
+          double_tape(double_tape_pointer) = OpenAD_Symbol_319
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_219
+          double_tape(double_tape_pointer) = OpenAD_Symbol_320
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_216
+          double_tape(double_tape_pointer) = OpenAD_Symbol_328
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_217
+          double_tape(double_tape_pointer) = OpenAD_Symbol_324
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_224
+          double_tape(double_tape_pointer) = OpenAD_Symbol_329
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_222
+          double_tape(double_tape_pointer) = OpenAD_Symbol_326
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_225
+          double_tape(double_tape_pointer) = OpenAD_Symbol_327
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_223
+          double_tape(double_tape_pointer) = OpenAD_Symbol_321
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_433
+          double_tape(double_tape_pointer) = OpenAD_Symbol_322
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_434
+          double_tape(double_tape_pointer) = OpenAD_Symbol_330
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_435
+          double_tape(double_tape_pointer) = OpenAD_Symbol_324
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_436
+          double_tape(double_tape_pointer) = OpenAD_Symbol_331
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_437
+          double_tape(double_tape_pointer) = OpenAD_Symbol_326
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_429
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_430
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_438
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_434
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_439
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_436
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_437
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_431
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_432
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_440
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_434
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_441
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_436
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_437
+          double_tape(double_tape_pointer) = OpenAD_Symbol_327
           double_tape_pointer = double_tape_pointer+1
       F%v = (R12%v*TWOSQRT3)
-      OpenAD_Symbol_235 = TWOSQRT3
+      OpenAD_Symbol_142 = TWOSQRT3
       H_OBJ12%v = (G%v-F%v)
-      OpenAD_Symbol_237 = 1_w2f__i8
-      OpenAD_Symbol_238 = (-1_w2f__i8)
       H_OBJ13%v = (F%v+G%v)
-      OpenAD_Symbol_239 = 1_w2f__i8
-      OpenAD_Symbol_240 = 1_w2f__i8
       H_OBJ14%v = (R13%v*1.2D+01)
-      OpenAD_Symbol_241 = 1.2D+01
       G%v = (FOUR3RD*R02%v)
-      OpenAD_Symbol_244 = FOUR3RD
-      OpenAD_Symbol_442 = (OpenAD_Symbol_235 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_442
+      OpenAD_Symbol_146 = FOUR3RD
+      OpenAD_Symbol_332 = (OpenAD_Symbol_142 * INT((-1_w2f__i8)))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_332
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_235
+          double_tape(double_tape_pointer) = OpenAD_Symbol_142
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_244
+          double_tape(double_tape_pointer) = OpenAD_Symbol_146
           double_tape_pointer = double_tape_pointer+1
-      OpenAD_Symbol_245 = (R03%v+R12%v)
-      F%v = (SQRT3*OpenAD_Symbol_245)
-      OpenAD_Symbol_248 = 1_w2f__i8
-      OpenAD_Symbol_249 = 1_w2f__i8
-      OpenAD_Symbol_247 = SQRT3
+      OpenAD_Symbol_147 = (R03%v+R12%v)
+      F%v = (SQRT3*OpenAD_Symbol_147)
+      OpenAD_Symbol_149 = SQRT3
       H_OBJ10%v = (G%v-F%v)
-      OpenAD_Symbol_250 = 1_w2f__i8
-      OpenAD_Symbol_251 = (-1_w2f__i8)
       H_OBJ6%v = (F%v+G%v)
-      OpenAD_Symbol_252 = 1_w2f__i8
-      OpenAD_Symbol_253 = 1_w2f__i8
       G%v = (R02%v*TWO3RD)
-      OpenAD_Symbol_254 = TWO3RD
-      OpenAD_Symbol_444 = (OpenAD_Symbol_247 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_445 = (OpenAD_Symbol_247 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_254
+      OpenAD_Symbol_150 = TWO3RD
+      OpenAD_Symbol_334 = (OpenAD_Symbol_149 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_335 = (OpenAD_Symbol_149 * INT((-1_w2f__i8)))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_150
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_444
+          double_tape(double_tape_pointer) = OpenAD_Symbol_334
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_445
+          double_tape(double_tape_pointer) = OpenAD_Symbol_335
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_247
+          double_tape(double_tape_pointer) = OpenAD_Symbol_149
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_247
+          double_tape(double_tape_pointer) = OpenAD_Symbol_149
           double_tape_pointer = double_tape_pointer+1
-      OpenAD_Symbol_256 = (R03%v-R12%v)
-      F%v = (SQRT3*OpenAD_Symbol_256)
-      OpenAD_Symbol_259 = 1_w2f__i8
-      OpenAD_Symbol_260 = (-1_w2f__i8)
-      OpenAD_Symbol_258 = SQRT3
+      OpenAD_Symbol_152 = (R03%v-R12%v)
+      F%v = (SQRT3*OpenAD_Symbol_152)
+      OpenAD_Symbol_154 = SQRT3
       H_OBJ9%v = (G%v-F%v)
-      OpenAD_Symbol_261 = 1_w2f__i8
-      OpenAD_Symbol_262 = (-1_w2f__i8)
       H_OBJ7%v = (F%v+G%v)
-      OpenAD_Symbol_263 = 1_w2f__i8
-      OpenAD_Symbol_264 = 1_w2f__i8
-      OpenAD_Symbol_447 = (INT((-1_w2f__i8)) * OpenAD_Symbol_258)
-      OpenAD_Symbol_448 = (OpenAD_Symbol_258 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_449 = (OpenAD_Symbol_447 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_448
+      OpenAD_Symbol_337 = (INT((-1_w2f__i8)) * OpenAD_Symbol_154)
+      OpenAD_Symbol_338 = (OpenAD_Symbol_154 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_339 = (OpenAD_Symbol_337 * INT((-1_w2f__i8)))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_338
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_449
+          double_tape(double_tape_pointer) = OpenAD_Symbol_339
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_258
+          double_tape(double_tape_pointer) = OpenAD_Symbol_154
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_447
+          double_tape(double_tape_pointer) = OpenAD_Symbol_337
           double_tape_pointer = double_tape_pointer+1
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           G%d = G%d+H_OBJ7%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_450 = double_tape(double_tape_pointer)
-          R12%d = R12%d+H_OBJ7%d*OpenAD_Symbol_450
+          OpenAD_Symbol_340 = double_tape(double_tape_pointer)
+          R12%d = R12%d+H_OBJ7%d*OpenAD_Symbol_340
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_451 = double_tape(double_tape_pointer)
-          R03%d = R03%d+H_OBJ7%d*OpenAD_Symbol_451
+          OpenAD_Symbol_341 = double_tape(double_tape_pointer)
+          R03%d = R03%d+H_OBJ7%d*OpenAD_Symbol_341
           H_OBJ7%d = 0.0d0
           G%d = G%d+H_OBJ9%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_452 = double_tape(double_tape_pointer)
-          R12%d = R12%d+H_OBJ9%d*OpenAD_Symbol_452
+          OpenAD_Symbol_342 = double_tape(double_tape_pointer)
+          R12%d = R12%d+H_OBJ9%d*OpenAD_Symbol_342
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_453 = double_tape(double_tape_pointer)
-          R03%d = R03%d+H_OBJ9%d*OpenAD_Symbol_453
+          OpenAD_Symbol_343 = double_tape(double_tape_pointer)
+          R03%d = R03%d+H_OBJ9%d*OpenAD_Symbol_343
           H_OBJ9%d = 0.0d0
-          OpenAD_Symbol_446%d = OpenAD_Symbol_446%d+H_OBJ6%d*1 _w2f__i8
+          OpenAD_Symbol_336%d = OpenAD_Symbol_336%d+H_OBJ6%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_454 = double_tape(double_tape_pointer)
-          R12%d = R12%d+H_OBJ6%d*OpenAD_Symbol_454
+          OpenAD_Symbol_344 = double_tape(double_tape_pointer)
+          R12%d = R12%d+H_OBJ6%d*OpenAD_Symbol_344
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_455 = double_tape(double_tape_pointer)
-          R03%d = R03%d+H_OBJ6%d*OpenAD_Symbol_455
+          OpenAD_Symbol_345 = double_tape(double_tape_pointer)
+          R03%d = R03%d+H_OBJ6%d*OpenAD_Symbol_345
           H_OBJ6%d = 0.0d0
-          OpenAD_Symbol_446%d = OpenAD_Symbol_446%d+H_OBJ10%d*1 _w2f__i8
+          OpenAD_Symbol_336%d = OpenAD_Symbol_336%d+H_OBJ10%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_456 = double_tape(double_tape_pointer)
-          R12%d = R12%d+H_OBJ10%d*OpenAD_Symbol_456
+          OpenAD_Symbol_346 = double_tape(double_tape_pointer)
+          R12%d = R12%d+H_OBJ10%d*OpenAD_Symbol_346
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_457 = double_tape(double_tape_pointer)
-          R03%d = R03%d+H_OBJ10%d*OpenAD_Symbol_457
+          OpenAD_Symbol_347 = double_tape(double_tape_pointer)
+          R03%d = R03%d+H_OBJ10%d*OpenAD_Symbol_347
           H_OBJ10%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_458 = double_tape(double_tape_pointer)
-          R02%d = R02%d+G%d*OpenAD_Symbol_458
+          OpenAD_Symbol_348 = double_tape(double_tape_pointer)
+          R02%d = R02%d+G%d*OpenAD_Symbol_348
           G%d = 0.0d0
-          G%d = G%d+OpenAD_Symbol_446%d
-          OpenAD_Symbol_446%d = 0.0d0
+          G%d = G%d+OpenAD_Symbol_336%d
+          OpenAD_Symbol_336%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_459 = double_tape(double_tape_pointer)
-          R02%d = R02%d+G%d*OpenAD_Symbol_459
+          OpenAD_Symbol_349 = double_tape(double_tape_pointer)
+          R02%d = R02%d+G%d*OpenAD_Symbol_349
           G%d = 0.0d0
           R13%d = R13%d+H_OBJ14%d*1.2D+01
           H_OBJ14%d = 0.0d0
-          OpenAD_Symbol_443%d = OpenAD_Symbol_443%d+H_OBJ13%d*1 _w2f__i8
+          OpenAD_Symbol_333%d = OpenAD_Symbol_333%d+H_OBJ13%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_460 = double_tape(double_tape_pointer)
-          R12%d = R12%d+H_OBJ13%d*OpenAD_Symbol_460
+          OpenAD_Symbol_350 = double_tape(double_tape_pointer)
+          R12%d = R12%d+H_OBJ13%d*OpenAD_Symbol_350
           H_OBJ13%d = 0.0d0
-          OpenAD_Symbol_443%d = OpenAD_Symbol_443%d+H_OBJ12%d*1 _w2f__i8
+          OpenAD_Symbol_333%d = OpenAD_Symbol_333%d+H_OBJ12%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_461 = double_tape(double_tape_pointer)
-          R12%d = R12%d+H_OBJ12%d*OpenAD_Symbol_461
+          OpenAD_Symbol_351 = double_tape(double_tape_pointer)
+          R12%d = R12%d+H_OBJ12%d*OpenAD_Symbol_351
           H_OBJ12%d = 0.0d0
-          G%d = G%d+OpenAD_Symbol_443%d
-          OpenAD_Symbol_443%d = 0.0d0
+          G%d = G%d+OpenAD_Symbol_333%d
+          OpenAD_Symbol_333%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_462 = double_tape(double_tape_pointer)
-          M23%d = M23%d+H_OBJ11%d*OpenAD_Symbol_462
+          OpenAD_Symbol_352 = double_tape(double_tape_pointer)
+          M23%d = M23%d+H_OBJ11%d*OpenAD_Symbol_352
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_463 = double_tape(double_tape_pointer)
-          M01%d = M01%d+H_OBJ11%d*OpenAD_Symbol_463
+          OpenAD_Symbol_353 = double_tape(double_tape_pointer)
+          M01%d = M01%d+H_OBJ11%d*OpenAD_Symbol_353
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_464 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+H_OBJ11%d*OpenAD_Symbol_464
+          OpenAD_Symbol_354 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+H_OBJ11%d*OpenAD_Symbol_354
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_465 = double_tape(double_tape_pointer)
-          M02%d = M02%d+H_OBJ11%d*OpenAD_Symbol_465
+          OpenAD_Symbol_355 = double_tape(double_tape_pointer)
+          M02%d = M02%d+H_OBJ11%d*OpenAD_Symbol_355
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_466 = double_tape(double_tape_pointer)
-          GG%d = GG%d+H_OBJ11%d*OpenAD_Symbol_466
+          OpenAD_Symbol_356 = double_tape(double_tape_pointer)
+          GG%d = GG%d+H_OBJ11%d*OpenAD_Symbol_356
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_467 = double_tape(double_tape_pointer)
-          D03%d = D03%d+H_OBJ11%d*OpenAD_Symbol_467
+          OpenAD_Symbol_357 = double_tape(double_tape_pointer)
+          D03%d = D03%d+H_OBJ11%d*OpenAD_Symbol_357
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_468 = double_tape(double_tape_pointer)
-          M03%d = M03%d+H_OBJ11%d*OpenAD_Symbol_468
+          OpenAD_Symbol_358 = double_tape(double_tape_pointer)
+          M03%d = M03%d+H_OBJ11%d*OpenAD_Symbol_358
           H_OBJ11%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_469 = double_tape(double_tape_pointer)
-          M23%d = M23%d+H_OBJ8%d*OpenAD_Symbol_469
+          OpenAD_Symbol_359 = double_tape(double_tape_pointer)
+          M23%d = M23%d+H_OBJ8%d*OpenAD_Symbol_359
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_470 = double_tape(double_tape_pointer)
-          M01%d = M01%d+H_OBJ8%d*OpenAD_Symbol_470
+          OpenAD_Symbol_360 = double_tape(double_tape_pointer)
+          M01%d = M01%d+H_OBJ8%d*OpenAD_Symbol_360
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_471 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+H_OBJ8%d*OpenAD_Symbol_471
+          OpenAD_Symbol_361 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+H_OBJ8%d*OpenAD_Symbol_361
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_472 = double_tape(double_tape_pointer)
-          M02%d = M02%d+H_OBJ8%d*OpenAD_Symbol_472
+          OpenAD_Symbol_362 = double_tape(double_tape_pointer)
+          M02%d = M02%d+H_OBJ8%d*OpenAD_Symbol_362
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_473 = double_tape(double_tape_pointer)
-          GG%d = GG%d+H_OBJ8%d*OpenAD_Symbol_473
+          OpenAD_Symbol_363 = double_tape(double_tape_pointer)
+          GG%d = GG%d+H_OBJ8%d*OpenAD_Symbol_363
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_474 = double_tape(double_tape_pointer)
-          D03%d = D03%d+H_OBJ8%d*OpenAD_Symbol_474
+          OpenAD_Symbol_364 = double_tape(double_tape_pointer)
+          D03%d = D03%d+H_OBJ8%d*OpenAD_Symbol_364
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_475 = double_tape(double_tape_pointer)
-          M03%d = M03%d+H_OBJ8%d*OpenAD_Symbol_475
+          OpenAD_Symbol_365 = double_tape(double_tape_pointer)
+          M03%d = M03%d+H_OBJ8%d*OpenAD_Symbol_365
           H_OBJ8%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_476 = double_tape(double_tape_pointer)
-          M23%d = M23%d+G%d*OpenAD_Symbol_476
+          OpenAD_Symbol_366 = double_tape(double_tape_pointer)
+          M23%d = M23%d+G%d*OpenAD_Symbol_366
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_477 = double_tape(double_tape_pointer)
-          M01%d = M01%d+G%d*OpenAD_Symbol_477
+          OpenAD_Symbol_367 = double_tape(double_tape_pointer)
+          M01%d = M01%d+G%d*OpenAD_Symbol_367
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_478 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+G%d*OpenAD_Symbol_478
+          OpenAD_Symbol_368 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+G%d*OpenAD_Symbol_368
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_479 = double_tape(double_tape_pointer)
-          M02%d = M02%d+G%d*OpenAD_Symbol_479
+          OpenAD_Symbol_369 = double_tape(double_tape_pointer)
+          M02%d = M02%d+G%d*OpenAD_Symbol_369
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_480 = double_tape(double_tape_pointer)
-          GG%d = GG%d+G%d*OpenAD_Symbol_480
+          OpenAD_Symbol_370 = double_tape(double_tape_pointer)
+          GG%d = GG%d+G%d*OpenAD_Symbol_370
           G%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_481 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+R12%d*OpenAD_Symbol_481
+          OpenAD_Symbol_371 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+R12%d*OpenAD_Symbol_371
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_482 = double_tape(double_tape_pointer)
-          M12%d = M12%d+R12%d*OpenAD_Symbol_482
+          OpenAD_Symbol_372 = double_tape(double_tape_pointer)
+          M12%d = M12%d+R12%d*OpenAD_Symbol_372
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_483 = double_tape(double_tape_pointer)
-          D12%d = D12%d+R12%d*OpenAD_Symbol_483
+          OpenAD_Symbol_373 = double_tape(double_tape_pointer)
+          D12%d = D12%d+R12%d*OpenAD_Symbol_373
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_484 = double_tape(double_tape_pointer)
-          GG%d = GG%d+R12%d*OpenAD_Symbol_484
+          OpenAD_Symbol_374 = double_tape(double_tape_pointer)
+          GG%d = GG%d+R12%d*OpenAD_Symbol_374
           R12%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_485 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+R03%d*OpenAD_Symbol_485
+          OpenAD_Symbol_375 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+R03%d*OpenAD_Symbol_375
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_486 = double_tape(double_tape_pointer)
-          D03%d = D03%d+R03%d*OpenAD_Symbol_486
+          OpenAD_Symbol_376 = double_tape(double_tape_pointer)
+          D03%d = D03%d+R03%d*OpenAD_Symbol_376
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_487 = double_tape(double_tape_pointer)
-          M03%d = M03%d+R03%d*OpenAD_Symbol_487
+          OpenAD_Symbol_377 = double_tape(double_tape_pointer)
+          M03%d = M03%d+R03%d*OpenAD_Symbol_377
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_488 = double_tape(double_tape_pointer)
-          GG%d = GG%d+R03%d*OpenAD_Symbol_488
+          OpenAD_Symbol_378 = double_tape(double_tape_pointer)
+          GG%d = GG%d+R03%d*OpenAD_Symbol_378
           R03%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_489 = double_tape(double_tape_pointer)
-          M23%d = M23%d+R02%d*OpenAD_Symbol_489
+          OpenAD_Symbol_379 = double_tape(double_tape_pointer)
+          M23%d = M23%d+R02%d*OpenAD_Symbol_379
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_490 = double_tape(double_tape_pointer)
-          M01%d = M01%d+R02%d*OpenAD_Symbol_490
+          OpenAD_Symbol_380 = double_tape(double_tape_pointer)
+          M01%d = M01%d+R02%d*OpenAD_Symbol_380
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_491 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+R02%d*OpenAD_Symbol_491
+          OpenAD_Symbol_381 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+R02%d*OpenAD_Symbol_381
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_492 = double_tape(double_tape_pointer)
-          M13%d = M13%d+R02%d*OpenAD_Symbol_492
+          OpenAD_Symbol_382 = double_tape(double_tape_pointer)
+          M13%d = M13%d+R02%d*OpenAD_Symbol_382
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_493 = double_tape(double_tape_pointer)
-          GG%d = GG%d+R02%d*OpenAD_Symbol_493
+          OpenAD_Symbol_383 = double_tape(double_tape_pointer)
+          GG%d = GG%d+R02%d*OpenAD_Symbol_383
           R02%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_494 = double_tape(double_tape_pointer)
-          M23%d = M23%d+R13%d*OpenAD_Symbol_494
+          OpenAD_Symbol_384 = double_tape(double_tape_pointer)
+          M23%d = M23%d+R13%d*OpenAD_Symbol_384
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_495 = double_tape(double_tape_pointer)
-          M01%d = M01%d+R13%d*OpenAD_Symbol_495
+          OpenAD_Symbol_385 = double_tape(double_tape_pointer)
+          M01%d = M01%d+R13%d*OpenAD_Symbol_385
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_496 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+R13%d*OpenAD_Symbol_496
+          OpenAD_Symbol_386 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+R13%d*OpenAD_Symbol_386
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_497 = double_tape(double_tape_pointer)
-          M02%d = M02%d+R13%d*OpenAD_Symbol_497
+          OpenAD_Symbol_387 = double_tape(double_tape_pointer)
+          M02%d = M02%d+R13%d*OpenAD_Symbol_387
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_498 = double_tape(double_tape_pointer)
-          GG%d = GG%d+R13%d*OpenAD_Symbol_498
+          OpenAD_Symbol_388 = double_tape(double_tape_pointer)
+          GG%d = GG%d+R13%d*OpenAD_Symbol_388
           R13%d = 0.0d0
           F%d = F%d+H_OBJ19%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_499 = double_tape(double_tape_pointer)
-          R00%d = R00%d+H_OBJ19%d*OpenAD_Symbol_499
+          OpenAD_Symbol_389 = double_tape(double_tape_pointer)
+          R00%d = R00%d+H_OBJ19%d*OpenAD_Symbol_389
           H_OBJ19%d = 0.0d0
           F%d = F%d+H_OBJ17%d*-1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_500 = double_tape(double_tape_pointer)
-          R00%d = R00%d+H_OBJ17%d*OpenAD_Symbol_500
+          OpenAD_Symbol_390 = double_tape(double_tape_pointer)
+          R00%d = R00%d+H_OBJ17%d*OpenAD_Symbol_390
           H_OBJ17%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_501 = double_tape(double_tape_pointer)
-          R00%d = R00%d+H_OBJ20%d*OpenAD_Symbol_501
+          OpenAD_Symbol_391 = double_tape(double_tape_pointer)
+          R00%d = R00%d+H_OBJ20%d*OpenAD_Symbol_391
           H_OBJ20%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_502 = double_tape(double_tape_pointer)
-          M01%d = M01%d+H_OBJ18%d*OpenAD_Symbol_502
+          OpenAD_Symbol_392 = double_tape(double_tape_pointer)
+          M01%d = M01%d+H_OBJ18%d*OpenAD_Symbol_392
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_503 = double_tape(double_tape_pointer)
-          GG%d = GG%d+H_OBJ18%d*OpenAD_Symbol_503
+          OpenAD_Symbol_393 = double_tape(double_tape_pointer)
+          GG%d = GG%d+H_OBJ18%d*OpenAD_Symbol_393
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_504 = double_tape(double_tape_pointer)
-          D01%d = D01%d+H_OBJ18%d*OpenAD_Symbol_504
+          OpenAD_Symbol_394 = double_tape(double_tape_pointer)
+          D01%d = D01%d+H_OBJ18%d*OpenAD_Symbol_394
           R11%d = R11%d+H_OBJ18%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_505 = double_tape(double_tape_pointer)
-          R00%d = R00%d+H_OBJ18%d*OpenAD_Symbol_505
+          OpenAD_Symbol_395 = double_tape(double_tape_pointer)
+          R00%d = R00%d+H_OBJ18%d*OpenAD_Symbol_395
           H_OBJ18%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_506 = double_tape(double_tape_pointer)
-          M01%d = M01%d+H_OBJ15%d*OpenAD_Symbol_506
+          OpenAD_Symbol_396 = double_tape(double_tape_pointer)
+          M01%d = M01%d+H_OBJ15%d*OpenAD_Symbol_396
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_507 = double_tape(double_tape_pointer)
-          GG%d = GG%d+H_OBJ15%d*OpenAD_Symbol_507
+          OpenAD_Symbol_397 = double_tape(double_tape_pointer)
+          GG%d = GG%d+H_OBJ15%d*OpenAD_Symbol_397
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_508 = double_tape(double_tape_pointer)
-          D01%d = D01%d+H_OBJ15%d*OpenAD_Symbol_508
+          OpenAD_Symbol_398 = double_tape(double_tape_pointer)
+          D01%d = D01%d+H_OBJ15%d*OpenAD_Symbol_398
           R11%d = R11%d+H_OBJ15%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_509 = double_tape(double_tape_pointer)
-          R00%d = R00%d+H_OBJ15%d*OpenAD_Symbol_509
+          OpenAD_Symbol_399 = double_tape(double_tape_pointer)
+          R00%d = R00%d+H_OBJ15%d*OpenAD_Symbol_399
           H_OBJ15%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_510 = double_tape(double_tape_pointer)
-          M01%d = M01%d+F%d*OpenAD_Symbol_510
+          OpenAD_Symbol_400 = double_tape(double_tape_pointer)
+          M01%d = M01%d+F%d*OpenAD_Symbol_400
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_511 = double_tape(double_tape_pointer)
-          GG%d = GG%d+F%d*OpenAD_Symbol_511
+          OpenAD_Symbol_401 = double_tape(double_tape_pointer)
+          GG%d = GG%d+F%d*OpenAD_Symbol_401
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_512 = double_tape(double_tape_pointer)
-          D01%d = D01%d+F%d*OpenAD_Symbol_512
+          OpenAD_Symbol_402 = double_tape(double_tape_pointer)
+          D01%d = D01%d+F%d*OpenAD_Symbol_402
           F%d = 0.0d0
           R11%d = R11%d+H_OBJ16%d*-1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_513 = double_tape(double_tape_pointer)
-          R00%d = R00%d+H_OBJ16%d*OpenAD_Symbol_513
+          OpenAD_Symbol_403 = double_tape(double_tape_pointer)
+          R00%d = R00%d+H_OBJ16%d*OpenAD_Symbol_403
           H_OBJ16%d = 0.0d0
           F%d = F%d+H_OBJ4%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_514 = double_tape(double_tape_pointer)
-          R11%d = R11%d+H_OBJ4%d*OpenAD_Symbol_514
+          OpenAD_Symbol_404 = double_tape(double_tape_pointer)
+          R11%d = R11%d+H_OBJ4%d*OpenAD_Symbol_404
           H_OBJ4%d = 0.0d0
           F%d = F%d+H_OBJ2%d*-1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_515 = double_tape(double_tape_pointer)
-          R11%d = R11%d+H_OBJ2%d*OpenAD_Symbol_515
+          OpenAD_Symbol_405 = double_tape(double_tape_pointer)
+          R11%d = R11%d+H_OBJ2%d*OpenAD_Symbol_405
           H_OBJ2%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_516 = double_tape(double_tape_pointer)
-          R11%d = R11%d+H_OBJ5%d*OpenAD_Symbol_516
+          OpenAD_Symbol_406 = double_tape(double_tape_pointer)
+          R11%d = R11%d+H_OBJ5%d*OpenAD_Symbol_406
           H_OBJ5%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_517 = double_tape(double_tape_pointer)
-          M23%d = M23%d+H_OBJ3%d*OpenAD_Symbol_517
+          OpenAD_Symbol_407 = double_tape(double_tape_pointer)
+          M23%d = M23%d+H_OBJ3%d*OpenAD_Symbol_407
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_518 = double_tape(double_tape_pointer)
-          GG%d = GG%d+H_OBJ3%d*OpenAD_Symbol_518
+          OpenAD_Symbol_408 = double_tape(double_tape_pointer)
+          GG%d = GG%d+H_OBJ3%d*OpenAD_Symbol_408
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_519 = double_tape(double_tape_pointer)
-          D01%d = D01%d+H_OBJ3%d*OpenAD_Symbol_519
+          OpenAD_Symbol_409 = double_tape(double_tape_pointer)
+          D01%d = D01%d+H_OBJ3%d*OpenAD_Symbol_409
           R00%d = R00%d+H_OBJ3%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_520 = double_tape(double_tape_pointer)
-          R11%d = R11%d+H_OBJ3%d*OpenAD_Symbol_520
+          OpenAD_Symbol_410 = double_tape(double_tape_pointer)
+          R11%d = R11%d+H_OBJ3%d*OpenAD_Symbol_410
           H_OBJ3%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_521 = double_tape(double_tape_pointer)
-          M23%d = M23%d+H_OBJ0%d*OpenAD_Symbol_521
+          OpenAD_Symbol_411 = double_tape(double_tape_pointer)
+          M23%d = M23%d+H_OBJ0%d*OpenAD_Symbol_411
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_522 = double_tape(double_tape_pointer)
-          GG%d = GG%d+H_OBJ0%d*OpenAD_Symbol_522
+          OpenAD_Symbol_412 = double_tape(double_tape_pointer)
+          GG%d = GG%d+H_OBJ0%d*OpenAD_Symbol_412
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_523 = double_tape(double_tape_pointer)
-          D01%d = D01%d+H_OBJ0%d*OpenAD_Symbol_523
+          OpenAD_Symbol_413 = double_tape(double_tape_pointer)
+          D01%d = D01%d+H_OBJ0%d*OpenAD_Symbol_413
           R00%d = R00%d+H_OBJ0%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_524 = double_tape(double_tape_pointer)
-          R11%d = R11%d+H_OBJ0%d*OpenAD_Symbol_524
+          OpenAD_Symbol_414 = double_tape(double_tape_pointer)
+          R11%d = R11%d+H_OBJ0%d*OpenAD_Symbol_414
           H_OBJ0%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_525 = double_tape(double_tape_pointer)
-          M23%d = M23%d+F%d*OpenAD_Symbol_525
+          OpenAD_Symbol_415 = double_tape(double_tape_pointer)
+          M23%d = M23%d+F%d*OpenAD_Symbol_415
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_526 = double_tape(double_tape_pointer)
-          GG%d = GG%d+F%d*OpenAD_Symbol_526
+          OpenAD_Symbol_416 = double_tape(double_tape_pointer)
+          GG%d = GG%d+F%d*OpenAD_Symbol_416
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_527 = double_tape(double_tape_pointer)
-          D01%d = D01%d+F%d*OpenAD_Symbol_527
+          OpenAD_Symbol_417 = double_tape(double_tape_pointer)
+          D01%d = D01%d+F%d*OpenAD_Symbol_417
           F%d = 0.0d0
           R00%d = R00%d+H_OBJ1%d*-1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_528 = double_tape(double_tape_pointer)
-          R11%d = R11%d+H_OBJ1%d*OpenAD_Symbol_528
+          OpenAD_Symbol_418 = double_tape(double_tape_pointer)
+          R11%d = R11%d+H_OBJ1%d*OpenAD_Symbol_418
           H_OBJ1%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_529 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_414%d = OpenAD_Symbol_414%d+D01%d*OpenAD_Symbol_
-     +529
+          OpenAD_Symbol_419 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_304%d = OpenAD_Symbol_304%d+D01%d*OpenAD_Symbol_
+     +419
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_530 = double_tape(double_tape_pointer)
-          MATR2%d = MATR2%d+D01%d*OpenAD_Symbol_530
+          OpenAD_Symbol_420 = double_tape(double_tape_pointer)
+          MATR2%d = MATR2%d+D01%d*OpenAD_Symbol_420
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_531 = double_tape(double_tape_pointer)
-          MATR0%d = MATR0%d+D01%d*OpenAD_Symbol_531
+          OpenAD_Symbol_421 = double_tape(double_tape_pointer)
+          MATR0%d = MATR0%d+D01%d*OpenAD_Symbol_421
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_532 = double_tape(double_tape_pointer)
-          MATR3%d = MATR3%d+D01%d*OpenAD_Symbol_532
+          OpenAD_Symbol_422 = double_tape(double_tape_pointer)
+          MATR3%d = MATR3%d+D01%d*OpenAD_Symbol_422
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_533 = double_tape(double_tape_pointer)
-          MATR1%d = MATR1%d+D01%d*OpenAD_Symbol_533
+          OpenAD_Symbol_423 = double_tape(double_tape_pointer)
+          MATR1%d = MATR1%d+D01%d*OpenAD_Symbol_423
           D01%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_534 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_414%d = OpenAD_Symbol_414%d+R11%d*OpenAD_Symbol_
-     +534
+          OpenAD_Symbol_424 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_304%d = OpenAD_Symbol_304%d+R11%d*OpenAD_Symbol_
+     +424
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_535 = double_tape(double_tape_pointer)
-          D11%d = D11%d+R11%d*OpenAD_Symbol_535
+          OpenAD_Symbol_425 = double_tape(double_tape_pointer)
+          D11%d = D11%d+R11%d*OpenAD_Symbol_425
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_536 = double_tape(double_tape_pointer)
-          GG%d = GG%d+R11%d*OpenAD_Symbol_536
+          OpenAD_Symbol_426 = double_tape(double_tape_pointer)
+          GG%d = GG%d+R11%d*OpenAD_Symbol_426
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_537 = double_tape(double_tape_pointer)
-          M22%d = M22%d+R11%d*OpenAD_Symbol_537
+          OpenAD_Symbol_427 = double_tape(double_tape_pointer)
+          M22%d = M22%d+R11%d*OpenAD_Symbol_427
           R11%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_538 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_414%d = OpenAD_Symbol_414%d+R00%d*OpenAD_Symbol_
-     +538
+          OpenAD_Symbol_428 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_304%d = OpenAD_Symbol_304%d+R00%d*OpenAD_Symbol_
+     +428
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_539 = double_tape(double_tape_pointer)
-          D00%d = D00%d+R00%d*OpenAD_Symbol_539
+          OpenAD_Symbol_429 = double_tape(double_tape_pointer)
+          D00%d = D00%d+R00%d*OpenAD_Symbol_429
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_540 = double_tape(double_tape_pointer)
-          GG%d = GG%d+R00%d*OpenAD_Symbol_540
+          OpenAD_Symbol_430 = double_tape(double_tape_pointer)
+          GG%d = GG%d+R00%d*OpenAD_Symbol_430
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_541 = double_tape(double_tape_pointer)
-          M33%d = M33%d+R00%d*OpenAD_Symbol_541
+          OpenAD_Symbol_431 = double_tape(double_tape_pointer)
+          M33%d = M33%d+R00%d*OpenAD_Symbol_431
           R00%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_542 = double_tape(double_tape_pointer)
-          ADJ_M3%d = ADJ_M3%d+G_OBJ3%d*OpenAD_Symbol_542
+          OpenAD_Symbol_432 = double_tape(double_tape_pointer)
+          ADJ_M3%d = ADJ_M3%d+G_OBJ3%d*OpenAD_Symbol_432
           ADJ_M2%d = ADJ_M2%d+G_OBJ3%d*-1 _w2f__i8
           G_OBJ3%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_543 = double_tape(double_tape_pointer)
-          MATR3%d = MATR3%d+M23%d*OpenAD_Symbol_543
+          OpenAD_Symbol_433 = double_tape(double_tape_pointer)
+          MATR3%d = MATR3%d+M23%d*OpenAD_Symbol_433
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_544 = double_tape(double_tape_pointer)
-          MATR2%d = MATR2%d+M23%d*OpenAD_Symbol_544
+          OpenAD_Symbol_434 = double_tape(double_tape_pointer)
+          MATR2%d = MATR2%d+M23%d*OpenAD_Symbol_434
           M23%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_545 = double_tape(double_tape_pointer)
-          MATR3%d = MATR3%d+M13%d*OpenAD_Symbol_545
+          OpenAD_Symbol_435 = double_tape(double_tape_pointer)
+          MATR3%d = MATR3%d+M13%d*OpenAD_Symbol_435
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_546 = double_tape(double_tape_pointer)
-          MATR1%d = MATR1%d+M13%d*OpenAD_Symbol_546
+          OpenAD_Symbol_436 = double_tape(double_tape_pointer)
+          MATR1%d = MATR1%d+M13%d*OpenAD_Symbol_436
           M13%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_547 = double_tape(double_tape_pointer)
-          MATR2%d = MATR2%d+M12%d*OpenAD_Symbol_547
+          OpenAD_Symbol_437 = double_tape(double_tape_pointer)
+          MATR2%d = MATR2%d+M12%d*OpenAD_Symbol_437
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_548 = double_tape(double_tape_pointer)
-          MATR1%d = MATR1%d+M12%d*OpenAD_Symbol_548
+          OpenAD_Symbol_438 = double_tape(double_tape_pointer)
+          MATR1%d = MATR1%d+M12%d*OpenAD_Symbol_438
           M12%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_549 = double_tape(double_tape_pointer)
-          MATR2%d = MATR2%d+M02%d*OpenAD_Symbol_549
+          OpenAD_Symbol_439 = double_tape(double_tape_pointer)
+          MATR2%d = MATR2%d+M02%d*OpenAD_Symbol_439
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_550 = double_tape(double_tape_pointer)
-          MATR0%d = MATR0%d+M02%d*OpenAD_Symbol_550
+          OpenAD_Symbol_440 = double_tape(double_tape_pointer)
+          MATR0%d = MATR0%d+M02%d*OpenAD_Symbol_440
           M02%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_551 = double_tape(double_tape_pointer)
-          MATR1%d = MATR1%d+M01%d*OpenAD_Symbol_551
+          OpenAD_Symbol_441 = double_tape(double_tape_pointer)
+          MATR1%d = MATR1%d+M01%d*OpenAD_Symbol_441
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_552 = double_tape(double_tape_pointer)
-          MATR0%d = MATR0%d+M01%d*OpenAD_Symbol_552
+          OpenAD_Symbol_442 = double_tape(double_tape_pointer)
+          MATR0%d = MATR0%d+M01%d*OpenAD_Symbol_442
           M01%d = 0.0d0
-          OpenAD_Symbol_414%d = OpenAD_Symbol_414%d+LOC2%d*2.0D00
+          OpenAD_Symbol_304%d = OpenAD_Symbol_304%d+LOC2%d*2.0D00
           LOC2%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_553 = double_tape(double_tape_pointer)
-          ADJ_M3%d = ADJ_M3%d+G_OBJ5%d*OpenAD_Symbol_553
+          OpenAD_Symbol_443 = double_tape(double_tape_pointer)
+          ADJ_M3%d = ADJ_M3%d+G_OBJ5%d*OpenAD_Symbol_443
           G_OBJ5%d = 0.0d0
           ADJ_M2%d = ADJ_M2%d+G_OBJ4%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_554 = double_tape(double_tape_pointer)
-          ADJ_M3%d = ADJ_M3%d+G_OBJ4%d*OpenAD_Symbol_554
+          OpenAD_Symbol_444 = double_tape(double_tape_pointer)
+          ADJ_M3%d = ADJ_M3%d+G_OBJ4%d*OpenAD_Symbol_444
           G_OBJ4%d = 0.0d0
-          LOC2%d = LOC2%d+OpenAD_Symbol_414%d
-          OpenAD_Symbol_414%d = 0.0d0
+          LOC2%d = LOC2%d+OpenAD_Symbol_304%d
+          OpenAD_Symbol_304%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_555 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+G_OBJ0%d*OpenAD_Symbol_555
+          OpenAD_Symbol_445 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+G_OBJ0%d*OpenAD_Symbol_445
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_556 = double_tape(double_tape_pointer)
-          F%d = F%d+G_OBJ0%d*OpenAD_Symbol_556
+          OpenAD_Symbol_446 = double_tape(double_tape_pointer)
+          F%d = F%d+G_OBJ0%d*OpenAD_Symbol_446
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_557 = double_tape(double_tape_pointer)
-          LOC1%d = LOC1%d+G_OBJ0%d*OpenAD_Symbol_557
+          OpenAD_Symbol_447 = double_tape(double_tape_pointer)
+          LOC1%d = LOC1%d+G_OBJ0%d*OpenAD_Symbol_447
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_558 = double_tape(double_tape_pointer)
-          MATR1%d = MATR1%d+G_OBJ0%d*OpenAD_Symbol_558
+          OpenAD_Symbol_448 = double_tape(double_tape_pointer)
+          MATR1%d = MATR1%d+G_OBJ0%d*OpenAD_Symbol_448
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_559 = double_tape(double_tape_pointer)
-          MATR2%d = MATR2%d+G_OBJ0%d*OpenAD_Symbol_559
+          OpenAD_Symbol_449 = double_tape(double_tape_pointer)
+          MATR2%d = MATR2%d+G_OBJ0%d*OpenAD_Symbol_449
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_560 = double_tape(double_tape_pointer)
-          MATR0%d = MATR0%d+G_OBJ0%d*OpenAD_Symbol_560
+          OpenAD_Symbol_450 = double_tape(double_tape_pointer)
+          MATR0%d = MATR0%d+G_OBJ0%d*OpenAD_Symbol_450
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_561 = double_tape(double_tape_pointer)
-          MATR3%d = MATR3%d+G_OBJ0%d*OpenAD_Symbol_561
+          OpenAD_Symbol_451 = double_tape(double_tape_pointer)
+          MATR3%d = MATR3%d+G_OBJ0%d*OpenAD_Symbol_451
           G_OBJ0%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_562 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+G_OBJ2%d*OpenAD_Symbol_562
+          OpenAD_Symbol_452 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+G_OBJ2%d*OpenAD_Symbol_452
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_563 = double_tape(double_tape_pointer)
-          F%d = F%d+G_OBJ2%d*OpenAD_Symbol_563
+          OpenAD_Symbol_453 = double_tape(double_tape_pointer)
+          F%d = F%d+G_OBJ2%d*OpenAD_Symbol_453
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_564 = double_tape(double_tape_pointer)
-          LOC1%d = LOC1%d+G_OBJ2%d*OpenAD_Symbol_564
+          OpenAD_Symbol_454 = double_tape(double_tape_pointer)
+          LOC1%d = LOC1%d+G_OBJ2%d*OpenAD_Symbol_454
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_565 = double_tape(double_tape_pointer)
-          MATR1%d = MATR1%d+G_OBJ2%d*OpenAD_Symbol_565
+          OpenAD_Symbol_455 = double_tape(double_tape_pointer)
+          MATR1%d = MATR1%d+G_OBJ2%d*OpenAD_Symbol_455
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_566 = double_tape(double_tape_pointer)
-          MATR2%d = MATR2%d+G_OBJ2%d*OpenAD_Symbol_566
+          OpenAD_Symbol_456 = double_tape(double_tape_pointer)
+          MATR2%d = MATR2%d+G_OBJ2%d*OpenAD_Symbol_456
           G_OBJ2%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_567 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+G_OBJ1%d*OpenAD_Symbol_567
+          OpenAD_Symbol_457 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+G_OBJ1%d*OpenAD_Symbol_457
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_568 = double_tape(double_tape_pointer)
-          F%d = F%d+G_OBJ1%d*OpenAD_Symbol_568
+          OpenAD_Symbol_458 = double_tape(double_tape_pointer)
+          F%d = F%d+G_OBJ1%d*OpenAD_Symbol_458
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_569 = double_tape(double_tape_pointer)
-          LOC1%d = LOC1%d+G_OBJ1%d*OpenAD_Symbol_569
+          OpenAD_Symbol_459 = double_tape(double_tape_pointer)
+          LOC1%d = LOC1%d+G_OBJ1%d*OpenAD_Symbol_459
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_570 = double_tape(double_tape_pointer)
-          MATR1%d = MATR1%d+G_OBJ1%d*OpenAD_Symbol_570
+          OpenAD_Symbol_460 = double_tape(double_tape_pointer)
+          MATR1%d = MATR1%d+G_OBJ1%d*OpenAD_Symbol_460
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_571 = double_tape(double_tape_pointer)
-          MATR2%d = MATR2%d+G_OBJ1%d*OpenAD_Symbol_571
+          OpenAD_Symbol_461 = double_tape(double_tape_pointer)
+          MATR2%d = MATR2%d+G_OBJ1%d*OpenAD_Symbol_461
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_572 = double_tape(double_tape_pointer)
-          MATR0%d = MATR0%d+G_OBJ1%d*OpenAD_Symbol_572
+          OpenAD_Symbol_462 = double_tape(double_tape_pointer)
+          MATR0%d = MATR0%d+G_OBJ1%d*OpenAD_Symbol_462
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_573 = double_tape(double_tape_pointer)
-          MATR3%d = MATR3%d+G_OBJ1%d*OpenAD_Symbol_573
+          OpenAD_Symbol_463 = double_tape(double_tape_pointer)
+          MATR3%d = MATR3%d+G_OBJ1%d*OpenAD_Symbol_463
           G_OBJ1%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_574 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+ADJ_M3%d*OpenAD_Symbol_574
+          OpenAD_Symbol_464 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+ADJ_M3%d*OpenAD_Symbol_464
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_575 = double_tape(double_tape_pointer)
-          F%d = F%d+ADJ_M3%d*OpenAD_Symbol_575
+          OpenAD_Symbol_465 = double_tape(double_tape_pointer)
+          F%d = F%d+ADJ_M3%d*OpenAD_Symbol_465
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_576 = double_tape(double_tape_pointer)
-          LOC1%d = LOC1%d+ADJ_M3%d*OpenAD_Symbol_576
+          OpenAD_Symbol_466 = double_tape(double_tape_pointer)
+          LOC1%d = LOC1%d+ADJ_M3%d*OpenAD_Symbol_466
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_577 = double_tape(double_tape_pointer)
-          MATR3%d = MATR3%d+ADJ_M3%d*OpenAD_Symbol_577
+          OpenAD_Symbol_467 = double_tape(double_tape_pointer)
+          MATR3%d = MATR3%d+ADJ_M3%d*OpenAD_Symbol_467
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_578 = double_tape(double_tape_pointer)
-          MATR0%d = MATR0%d+ADJ_M3%d*OpenAD_Symbol_578
+          OpenAD_Symbol_468 = double_tape(double_tape_pointer)
+          MATR0%d = MATR0%d+ADJ_M3%d*OpenAD_Symbol_468
           ADJ_M3%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_579 = double_tape(double_tape_pointer)
-          LOC2%d = LOC2%d+ADJ_M2%d*OpenAD_Symbol_579
+          OpenAD_Symbol_469 = double_tape(double_tape_pointer)
+          LOC2%d = LOC2%d+ADJ_M2%d*OpenAD_Symbol_469
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_580 = double_tape(double_tape_pointer)
-          F%d = F%d+ADJ_M2%d*OpenAD_Symbol_580
+          OpenAD_Symbol_470 = double_tape(double_tape_pointer)
+          F%d = F%d+ADJ_M2%d*OpenAD_Symbol_470
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_581 = double_tape(double_tape_pointer)
-          LOC1%d = LOC1%d+ADJ_M2%d*OpenAD_Symbol_581
+          OpenAD_Symbol_471 = double_tape(double_tape_pointer)
+          LOC1%d = LOC1%d+ADJ_M2%d*OpenAD_Symbol_471
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_582 = double_tape(double_tape_pointer)
-          MATR2%d = MATR2%d+ADJ_M2%d*OpenAD_Symbol_582
+          OpenAD_Symbol_472 = double_tape(double_tape_pointer)
+          MATR2%d = MATR2%d+ADJ_M2%d*OpenAD_Symbol_472
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_583 = double_tape(double_tape_pointer)
-          MATR1%d = MATR1%d+ADJ_M2%d*OpenAD_Symbol_583
+          OpenAD_Symbol_473 = double_tape(double_tape_pointer)
+          MATR1%d = MATR1%d+ADJ_M2%d*OpenAD_Symbol_473
           ADJ_M2%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_584 = double_tape(double_tape_pointer)
-          X2%d = X2%d+GG%d*OpenAD_Symbol_584
+          OpenAD_Symbol_474 = double_tape(double_tape_pointer)
+          X2%d = X2%d+GG%d*OpenAD_Symbol_474
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_585 = double_tape(double_tape_pointer)
-          X1%d = X1%d+GG%d*OpenAD_Symbol_585
+          OpenAD_Symbol_475 = double_tape(double_tape_pointer)
+          X1%d = X1%d+GG%d*OpenAD_Symbol_475
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_586 = double_tape(double_tape_pointer)
-          X0%d = X0%d+GG%d*OpenAD_Symbol_586
+          OpenAD_Symbol_476 = double_tape(double_tape_pointer)
+          X0%d = X0%d+GG%d*OpenAD_Symbol_476
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_587 = double_tape(double_tape_pointer)
-          X5%d = X5%d+GG%d*OpenAD_Symbol_587
+          OpenAD_Symbol_477 = double_tape(double_tape_pointer)
+          X5%d = X5%d+GG%d*OpenAD_Symbol_477
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_588 = double_tape(double_tape_pointer)
-          X4%d = X4%d+GG%d*OpenAD_Symbol_588
+          OpenAD_Symbol_478 = double_tape(double_tape_pointer)
+          X4%d = X4%d+GG%d*OpenAD_Symbol_478
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_589 = double_tape(double_tape_pointer)
-          X3%d = X3%d+GG%d*OpenAD_Symbol_589
+          OpenAD_Symbol_479 = double_tape(double_tape_pointer)
+          X3%d = X3%d+GG%d*OpenAD_Symbol_479
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_590 = double_tape(double_tape_pointer)
-          X0%d = X0%d+GG%d*OpenAD_Symbol_590
+          OpenAD_Symbol_480 = double_tape(double_tape_pointer)
+          X0%d = X0%d+GG%d*OpenAD_Symbol_480
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_591 = double_tape(double_tape_pointer)
-          X1%d = X1%d+GG%d*OpenAD_Symbol_591
+          OpenAD_Symbol_481 = double_tape(double_tape_pointer)
+          X1%d = X1%d+GG%d*OpenAD_Symbol_481
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_592 = double_tape(double_tape_pointer)
-          X3%d = X3%d+GG%d*OpenAD_Symbol_592
+          OpenAD_Symbol_482 = double_tape(double_tape_pointer)
+          X3%d = X3%d+GG%d*OpenAD_Symbol_482
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_593 = double_tape(double_tape_pointer)
-          X4%d = X4%d+GG%d*OpenAD_Symbol_593
+          OpenAD_Symbol_483 = double_tape(double_tape_pointer)
+          X4%d = X4%d+GG%d*OpenAD_Symbol_483
           GG%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_594 = double_tape(double_tape_pointer)
-          X2%d = X2%d+LOC2%d*OpenAD_Symbol_594
+          OpenAD_Symbol_484 = double_tape(double_tape_pointer)
+          X2%d = X2%d+LOC2%d*OpenAD_Symbol_484
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_595 = double_tape(double_tape_pointer)
-          X1%d = X1%d+LOC2%d*OpenAD_Symbol_595
+          OpenAD_Symbol_485 = double_tape(double_tape_pointer)
+          X1%d = X1%d+LOC2%d*OpenAD_Symbol_485
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_596 = double_tape(double_tape_pointer)
-          X0%d = X0%d+LOC2%d*OpenAD_Symbol_596
+          OpenAD_Symbol_486 = double_tape(double_tape_pointer)
+          X0%d = X0%d+LOC2%d*OpenAD_Symbol_486
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_597 = double_tape(double_tape_pointer)
-          X5%d = X5%d+LOC2%d*OpenAD_Symbol_597
+          OpenAD_Symbol_487 = double_tape(double_tape_pointer)
+          X5%d = X5%d+LOC2%d*OpenAD_Symbol_487
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_598 = double_tape(double_tape_pointer)
-          X4%d = X4%d+LOC2%d*OpenAD_Symbol_598
+          OpenAD_Symbol_488 = double_tape(double_tape_pointer)
+          X4%d = X4%d+LOC2%d*OpenAD_Symbol_488
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_599 = double_tape(double_tape_pointer)
-          X3%d = X3%d+LOC2%d*OpenAD_Symbol_599
+          OpenAD_Symbol_489 = double_tape(double_tape_pointer)
+          X3%d = X3%d+LOC2%d*OpenAD_Symbol_489
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_600 = double_tape(double_tape_pointer)
-          X0%d = X0%d+LOC2%d*OpenAD_Symbol_600
+          OpenAD_Symbol_490 = double_tape(double_tape_pointer)
+          X0%d = X0%d+LOC2%d*OpenAD_Symbol_490
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_601 = double_tape(double_tape_pointer)
-          X1%d = X1%d+LOC2%d*OpenAD_Symbol_601
+          OpenAD_Symbol_491 = double_tape(double_tape_pointer)
+          X1%d = X1%d+LOC2%d*OpenAD_Symbol_491
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_602 = double_tape(double_tape_pointer)
-          X3%d = X3%d+LOC2%d*OpenAD_Symbol_602
+          OpenAD_Symbol_492 = double_tape(double_tape_pointer)
+          X3%d = X3%d+LOC2%d*OpenAD_Symbol_492
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_603 = double_tape(double_tape_pointer)
-          X4%d = X4%d+LOC2%d*OpenAD_Symbol_603
+          OpenAD_Symbol_493 = double_tape(double_tape_pointer)
+          X4%d = X4%d+LOC2%d*OpenAD_Symbol_493
           LOC2%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_604 = double_tape(double_tape_pointer)
-          X2%d = X2%d+OBJ%d*OpenAD_Symbol_604
+          OpenAD_Symbol_494 = double_tape(double_tape_pointer)
+          X2%d = X2%d+OBJ%d*OpenAD_Symbol_494
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_605 = double_tape(double_tape_pointer)
-          X1%d = X1%d+OBJ%d*OpenAD_Symbol_605
+          OpenAD_Symbol_495 = double_tape(double_tape_pointer)
+          X1%d = X1%d+OBJ%d*OpenAD_Symbol_495
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_606 = double_tape(double_tape_pointer)
-          X0%d = X0%d+OBJ%d*OpenAD_Symbol_606
+          OpenAD_Symbol_496 = double_tape(double_tape_pointer)
+          X0%d = X0%d+OBJ%d*OpenAD_Symbol_496
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_607 = double_tape(double_tape_pointer)
-          X5%d = X5%d+OBJ%d*OpenAD_Symbol_607
+          OpenAD_Symbol_497 = double_tape(double_tape_pointer)
+          X5%d = X5%d+OBJ%d*OpenAD_Symbol_497
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_608 = double_tape(double_tape_pointer)
-          X4%d = X4%d+OBJ%d*OpenAD_Symbol_608
+          OpenAD_Symbol_498 = double_tape(double_tape_pointer)
+          X4%d = X4%d+OBJ%d*OpenAD_Symbol_498
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_609 = double_tape(double_tape_pointer)
-          X3%d = X3%d+OBJ%d*OpenAD_Symbol_609
+          OpenAD_Symbol_499 = double_tape(double_tape_pointer)
+          X3%d = X3%d+OBJ%d*OpenAD_Symbol_499
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_610 = double_tape(double_tape_pointer)
-          X0%d = X0%d+OBJ%d*OpenAD_Symbol_610
+          OpenAD_Symbol_500 = double_tape(double_tape_pointer)
+          X0%d = X0%d+OBJ%d*OpenAD_Symbol_500
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_611 = double_tape(double_tape_pointer)
-          X1%d = X1%d+OBJ%d*OpenAD_Symbol_611
+          OpenAD_Symbol_501 = double_tape(double_tape_pointer)
+          X1%d = X1%d+OBJ%d*OpenAD_Symbol_501
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_612 = double_tape(double_tape_pointer)
-          X3%d = X3%d+OBJ%d*OpenAD_Symbol_612
+          OpenAD_Symbol_502 = double_tape(double_tape_pointer)
+          X3%d = X3%d+OBJ%d*OpenAD_Symbol_502
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_613 = double_tape(double_tape_pointer)
-          X4%d = X4%d+OBJ%d*OpenAD_Symbol_613
+          OpenAD_Symbol_503 = double_tape(double_tape_pointer)
+          X4%d = X4%d+OBJ%d*OpenAD_Symbol_503
           OBJ%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_614 = double_tape(double_tape_pointer)
-          X2%d = X2%d+LOC1%d*OpenAD_Symbol_614
+          OpenAD_Symbol_504 = double_tape(double_tape_pointer)
+          X2%d = X2%d+LOC1%d*OpenAD_Symbol_504
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_615 = double_tape(double_tape_pointer)
-          X1%d = X1%d+LOC1%d*OpenAD_Symbol_615
+          OpenAD_Symbol_505 = double_tape(double_tape_pointer)
+          X1%d = X1%d+LOC1%d*OpenAD_Symbol_505
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_616 = double_tape(double_tape_pointer)
-          X0%d = X0%d+LOC1%d*OpenAD_Symbol_616
+          OpenAD_Symbol_506 = double_tape(double_tape_pointer)
+          X0%d = X0%d+LOC1%d*OpenAD_Symbol_506
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_617 = double_tape(double_tape_pointer)
-          X5%d = X5%d+LOC1%d*OpenAD_Symbol_617
+          OpenAD_Symbol_507 = double_tape(double_tape_pointer)
+          X5%d = X5%d+LOC1%d*OpenAD_Symbol_507
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_618 = double_tape(double_tape_pointer)
-          X4%d = X4%d+LOC1%d*OpenAD_Symbol_618
+          OpenAD_Symbol_508 = double_tape(double_tape_pointer)
+          X4%d = X4%d+LOC1%d*OpenAD_Symbol_508
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_619 = double_tape(double_tape_pointer)
-          X3%d = X3%d+LOC1%d*OpenAD_Symbol_619
+          OpenAD_Symbol_509 = double_tape(double_tape_pointer)
+          X3%d = X3%d+LOC1%d*OpenAD_Symbol_509
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_620 = double_tape(double_tape_pointer)
-          X0%d = X0%d+LOC1%d*OpenAD_Symbol_620
+          OpenAD_Symbol_510 = double_tape(double_tape_pointer)
+          X0%d = X0%d+LOC1%d*OpenAD_Symbol_510
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_621 = double_tape(double_tape_pointer)
-          X1%d = X1%d+LOC1%d*OpenAD_Symbol_621
+          OpenAD_Symbol_511 = double_tape(double_tape_pointer)
+          X1%d = X1%d+LOC1%d*OpenAD_Symbol_511
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_622 = double_tape(double_tape_pointer)
-          X3%d = X3%d+LOC1%d*OpenAD_Symbol_622
+          OpenAD_Symbol_512 = double_tape(double_tape_pointer)
+          X3%d = X3%d+LOC1%d*OpenAD_Symbol_512
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_623 = double_tape(double_tape_pointer)
-          X4%d = X4%d+LOC1%d*OpenAD_Symbol_623
+          OpenAD_Symbol_513 = double_tape(double_tape_pointer)
+          X4%d = X4%d+LOC1%d*OpenAD_Symbol_513
           LOC1%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_624 = double_tape(double_tape_pointer)
-          X2%d = X2%d+F%d*OpenAD_Symbol_624
+          OpenAD_Symbol_514 = double_tape(double_tape_pointer)
+          X2%d = X2%d+F%d*OpenAD_Symbol_514
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_625 = double_tape(double_tape_pointer)
-          X1%d = X1%d+F%d*OpenAD_Symbol_625
+          OpenAD_Symbol_515 = double_tape(double_tape_pointer)
+          X1%d = X1%d+F%d*OpenAD_Symbol_515
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_626 = double_tape(double_tape_pointer)
-          X0%d = X0%d+F%d*OpenAD_Symbol_626
+          OpenAD_Symbol_516 = double_tape(double_tape_pointer)
+          X0%d = X0%d+F%d*OpenAD_Symbol_516
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_627 = double_tape(double_tape_pointer)
-          X5%d = X5%d+F%d*OpenAD_Symbol_627
+          OpenAD_Symbol_517 = double_tape(double_tape_pointer)
+          X5%d = X5%d+F%d*OpenAD_Symbol_517
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_628 = double_tape(double_tape_pointer)
-          X4%d = X4%d+F%d*OpenAD_Symbol_628
+          OpenAD_Symbol_518 = double_tape(double_tape_pointer)
+          X4%d = X4%d+F%d*OpenAD_Symbol_518
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_629 = double_tape(double_tape_pointer)
-          X3%d = X3%d+F%d*OpenAD_Symbol_629
+          OpenAD_Symbol_519 = double_tape(double_tape_pointer)
+          X3%d = X3%d+F%d*OpenAD_Symbol_519
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_630 = double_tape(double_tape_pointer)
-          X0%d = X0%d+F%d*OpenAD_Symbol_630
+          OpenAD_Symbol_520 = double_tape(double_tape_pointer)
+          X0%d = X0%d+F%d*OpenAD_Symbol_520
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_631 = double_tape(double_tape_pointer)
-          X1%d = X1%d+F%d*OpenAD_Symbol_631
+          OpenAD_Symbol_521 = double_tape(double_tape_pointer)
+          X1%d = X1%d+F%d*OpenAD_Symbol_521
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_632 = double_tape(double_tape_pointer)
-          X3%d = X3%d+F%d*OpenAD_Symbol_632
+          OpenAD_Symbol_522 = double_tape(double_tape_pointer)
+          X3%d = X3%d+F%d*OpenAD_Symbol_522
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_633 = double_tape(double_tape_pointer)
-          X4%d = X4%d+F%d*OpenAD_Symbol_633
+          OpenAD_Symbol_523 = double_tape(double_tape_pointer)
+          X4%d = X4%d+F%d*OpenAD_Symbol_523
           F%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_634 = double_tape(double_tape_pointer)
-          X2%d = X2%d+D03%d*OpenAD_Symbol_634
+          OpenAD_Symbol_524 = double_tape(double_tape_pointer)
+          X2%d = X2%d+D03%d*OpenAD_Symbol_524
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_635 = double_tape(double_tape_pointer)
-          X1%d = X1%d+D03%d*OpenAD_Symbol_635
+          OpenAD_Symbol_525 = double_tape(double_tape_pointer)
+          X1%d = X1%d+D03%d*OpenAD_Symbol_525
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_636 = double_tape(double_tape_pointer)
-          X0%d = X0%d+D03%d*OpenAD_Symbol_636
+          OpenAD_Symbol_526 = double_tape(double_tape_pointer)
+          X0%d = X0%d+D03%d*OpenAD_Symbol_526
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_637 = double_tape(double_tape_pointer)
-          X3%d = X3%d+D03%d*OpenAD_Symbol_637
+          OpenAD_Symbol_527 = double_tape(double_tape_pointer)
+          X3%d = X3%d+D03%d*OpenAD_Symbol_527
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_638 = double_tape(double_tape_pointer)
-          X4%d = X4%d+D03%d*OpenAD_Symbol_638
+          OpenAD_Symbol_528 = double_tape(double_tape_pointer)
+          X4%d = X4%d+D03%d*OpenAD_Symbol_528
           D03%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_639 = double_tape(double_tape_pointer)
-          X5%d = X5%d+D12%d*OpenAD_Symbol_639
+          OpenAD_Symbol_529 = double_tape(double_tape_pointer)
+          X5%d = X5%d+D12%d*OpenAD_Symbol_529
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_640 = double_tape(double_tape_pointer)
-          X4%d = X4%d+D12%d*OpenAD_Symbol_640
+          OpenAD_Symbol_530 = double_tape(double_tape_pointer)
+          X4%d = X4%d+D12%d*OpenAD_Symbol_530
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_641 = double_tape(double_tape_pointer)
-          X3%d = X3%d+D12%d*OpenAD_Symbol_641
+          OpenAD_Symbol_531 = double_tape(double_tape_pointer)
+          X3%d = X3%d+D12%d*OpenAD_Symbol_531
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_642 = double_tape(double_tape_pointer)
-          X0%d = X0%d+D12%d*OpenAD_Symbol_642
+          OpenAD_Symbol_532 = double_tape(double_tape_pointer)
+          X0%d = X0%d+D12%d*OpenAD_Symbol_532
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_643 = double_tape(double_tape_pointer)
-          X1%d = X1%d+D12%d*OpenAD_Symbol_643
+          OpenAD_Symbol_533 = double_tape(double_tape_pointer)
+          X1%d = X1%d+D12%d*OpenAD_Symbol_533
           D12%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_644 = double_tape(double_tape_pointer)
-          X5%d = X5%d+M33%d*OpenAD_Symbol_644
+          OpenAD_Symbol_534 = double_tape(double_tape_pointer)
+          X5%d = X5%d+M33%d*OpenAD_Symbol_534
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_645 = double_tape(double_tape_pointer)
-          X4%d = X4%d+M33%d*OpenAD_Symbol_645
+          OpenAD_Symbol_535 = double_tape(double_tape_pointer)
+          X4%d = X4%d+M33%d*OpenAD_Symbol_535
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_646 = double_tape(double_tape_pointer)
-          X3%d = X3%d+M33%d*OpenAD_Symbol_646
+          OpenAD_Symbol_536 = double_tape(double_tape_pointer)
+          X3%d = X3%d+M33%d*OpenAD_Symbol_536
           M33%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_647 = double_tape(double_tape_pointer)
-          X2%d = X2%d+M11%d*OpenAD_Symbol_647
+          OpenAD_Symbol_537 = double_tape(double_tape_pointer)
+          X2%d = X2%d+M11%d*OpenAD_Symbol_537
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_648 = double_tape(double_tape_pointer)
-          X1%d = X1%d+M11%d*OpenAD_Symbol_648
+          OpenAD_Symbol_538 = double_tape(double_tape_pointer)
+          X1%d = X1%d+M11%d*OpenAD_Symbol_538
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_649 = double_tape(double_tape_pointer)
-          X0%d = X0%d+M11%d*OpenAD_Symbol_649
+          OpenAD_Symbol_539 = double_tape(double_tape_pointer)
+          X0%d = X0%d+M11%d*OpenAD_Symbol_539
           M11%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_650 = double_tape(double_tape_pointer)
-          X2%d = X2%d+D11%d*OpenAD_Symbol_650
+          OpenAD_Symbol_540 = double_tape(double_tape_pointer)
+          X2%d = X2%d+D11%d*OpenAD_Symbol_540
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_651 = double_tape(double_tape_pointer)
-          X1%d = X1%d+D11%d*OpenAD_Symbol_651
+          OpenAD_Symbol_541 = double_tape(double_tape_pointer)
+          X1%d = X1%d+D11%d*OpenAD_Symbol_541
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_652 = double_tape(double_tape_pointer)
-          X0%d = X0%d+D11%d*OpenAD_Symbol_652
+          OpenAD_Symbol_542 = double_tape(double_tape_pointer)
+          X0%d = X0%d+D11%d*OpenAD_Symbol_542
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_653 = double_tape(double_tape_pointer)
-          X3%d = X3%d+D11%d*OpenAD_Symbol_653
+          OpenAD_Symbol_543 = double_tape(double_tape_pointer)
+          X3%d = X3%d+D11%d*OpenAD_Symbol_543
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_654 = double_tape(double_tape_pointer)
-          X4%d = X4%d+D11%d*OpenAD_Symbol_654
+          OpenAD_Symbol_544 = double_tape(double_tape_pointer)
+          X4%d = X4%d+D11%d*OpenAD_Symbol_544
           D11%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_655 = double_tape(double_tape_pointer)
-          X5%d = X5%d+D00%d*OpenAD_Symbol_655
+          OpenAD_Symbol_545 = double_tape(double_tape_pointer)
+          X5%d = X5%d+D00%d*OpenAD_Symbol_545
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_656 = double_tape(double_tape_pointer)
-          X4%d = X4%d+D00%d*OpenAD_Symbol_656
+          OpenAD_Symbol_546 = double_tape(double_tape_pointer)
+          X4%d = X4%d+D00%d*OpenAD_Symbol_546
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_657 = double_tape(double_tape_pointer)
-          X3%d = X3%d+D00%d*OpenAD_Symbol_657
+          OpenAD_Symbol_547 = double_tape(double_tape_pointer)
+          X3%d = X3%d+D00%d*OpenAD_Symbol_547
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_658 = double_tape(double_tape_pointer)
-          X0%d = X0%d+D00%d*OpenAD_Symbol_658
+          OpenAD_Symbol_548 = double_tape(double_tape_pointer)
+          X0%d = X0%d+D00%d*OpenAD_Symbol_548
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_659 = double_tape(double_tape_pointer)
-          X1%d = X1%d+D00%d*OpenAD_Symbol_659
+          OpenAD_Symbol_549 = double_tape(double_tape_pointer)
+          X1%d = X1%d+D00%d*OpenAD_Symbol_549
           D00%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_660 = double_tape(double_tape_pointer)
-          X5%d = X5%d+M03%d*OpenAD_Symbol_660
+          OpenAD_Symbol_550 = double_tape(double_tape_pointer)
+          X5%d = X5%d+M03%d*OpenAD_Symbol_550
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_661 = double_tape(double_tape_pointer)
-          X4%d = X4%d+M03%d*OpenAD_Symbol_661
+          OpenAD_Symbol_551 = double_tape(double_tape_pointer)
+          X4%d = X4%d+M03%d*OpenAD_Symbol_551
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_662 = double_tape(double_tape_pointer)
-          X3%d = X3%d+M03%d*OpenAD_Symbol_662
+          OpenAD_Symbol_552 = double_tape(double_tape_pointer)
+          X3%d = X3%d+M03%d*OpenAD_Symbol_552
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_663 = double_tape(double_tape_pointer)
-          X0%d = X0%d+M03%d*OpenAD_Symbol_663
+          OpenAD_Symbol_553 = double_tape(double_tape_pointer)
+          X0%d = X0%d+M03%d*OpenAD_Symbol_553
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_664 = double_tape(double_tape_pointer)
-          X1%d = X1%d+M03%d*OpenAD_Symbol_664
+          OpenAD_Symbol_554 = double_tape(double_tape_pointer)
+          X1%d = X1%d+M03%d*OpenAD_Symbol_554
           M03%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_665 = double_tape(double_tape_pointer)
-          X5%d = X5%d+MATR3%d*OpenAD_Symbol_665
+          OpenAD_Symbol_555 = double_tape(double_tape_pointer)
+          X5%d = X5%d+MATR3%d*OpenAD_Symbol_555
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_666 = double_tape(double_tape_pointer)
-          X4%d = X4%d+MATR3%d*OpenAD_Symbol_666
+          OpenAD_Symbol_556 = double_tape(double_tape_pointer)
+          X4%d = X4%d+MATR3%d*OpenAD_Symbol_556
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_667 = double_tape(double_tape_pointer)
-          X3%d = X3%d+MATR3%d*OpenAD_Symbol_667
+          OpenAD_Symbol_557 = double_tape(double_tape_pointer)
+          X3%d = X3%d+MATR3%d*OpenAD_Symbol_557
           MATR3%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_668 = double_tape(double_tape_pointer)
-          X2%d = X2%d+MATR1%d*OpenAD_Symbol_668
+          OpenAD_Symbol_558 = double_tape(double_tape_pointer)
+          X2%d = X2%d+MATR1%d*OpenAD_Symbol_558
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_669 = double_tape(double_tape_pointer)
-          X1%d = X1%d+MATR1%d*OpenAD_Symbol_669
+          OpenAD_Symbol_559 = double_tape(double_tape_pointer)
+          X1%d = X1%d+MATR1%d*OpenAD_Symbol_559
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_670 = double_tape(double_tape_pointer)
-          X0%d = X0%d+MATR1%d*OpenAD_Symbol_670
+          OpenAD_Symbol_560 = double_tape(double_tape_pointer)
+          X0%d = X0%d+MATR1%d*OpenAD_Symbol_560
           MATR1%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_671 = double_tape(double_tape_pointer)
-          X3%d = X3%d+M22%d*OpenAD_Symbol_671
+          OpenAD_Symbol_561 = double_tape(double_tape_pointer)
+          X3%d = X3%d+M22%d*OpenAD_Symbol_561
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_672 = double_tape(double_tape_pointer)
-          X4%d = X4%d+M22%d*OpenAD_Symbol_672
+          OpenAD_Symbol_562 = double_tape(double_tape_pointer)
+          X4%d = X4%d+M22%d*OpenAD_Symbol_562
           M22%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_673 = double_tape(double_tape_pointer)
-          X0%d = X0%d+M00%d*OpenAD_Symbol_673
+          OpenAD_Symbol_563 = double_tape(double_tape_pointer)
+          X0%d = X0%d+M00%d*OpenAD_Symbol_563
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_674 = double_tape(double_tape_pointer)
-          X1%d = X1%d+M00%d*OpenAD_Symbol_674
+          OpenAD_Symbol_564 = double_tape(double_tape_pointer)
+          X1%d = X1%d+M00%d*OpenAD_Symbol_564
           M00%d = 0.0d0
           X3%d = X3%d+MATR2%d*-1 _w2f__i8
           X4%d = X4%d+MATR2%d*1 _w2f__i8
