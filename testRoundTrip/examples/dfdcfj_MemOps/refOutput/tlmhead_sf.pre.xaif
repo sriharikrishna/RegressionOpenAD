@@ -826,7 +826,7 @@
 
     <xaif:Branch vertex_id="146" lineNumber="74">
       <xaif:Condition>
-        <xaif:Intrinsic vertex_id="1" name="or" type="***"/>
+        <xaif:BooleanOperation vertex_id="1" name="or"/>
         <xaif:BooleanOperation vertex_id="2" name="equal"/>
         <xaif:VariableReference vertex_id="3" du_ud="7" alias="14">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_15"/>
@@ -906,7 +906,7 @@
 
     <xaif:Branch vertex_id="148" lineNumber="89">
       <xaif:Condition>
-        <xaif:Intrinsic vertex_id="1" name="or" type="***"/>
+        <xaif:BooleanOperation vertex_id="1" name="or"/>
         <xaif:BooleanOperation vertex_id="2" name="equal"/>
         <xaif:VariableReference vertex_id="3" du_ud="2" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="NX_1"/>
@@ -1066,7 +1066,7 @@
 
     <xaif:Branch vertex_id="151" lineNumber="115">
       <xaif:Condition>
-        <xaif:Intrinsic vertex_id="1" name="or" type="***"/>
+        <xaif:BooleanOperation vertex_id="1" name="or"/>
         <xaif:BooleanOperation vertex_id="2" name="equal"/>
         <xaif:VariableReference vertex_id="3" du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="NY_2"/>
@@ -1160,7 +1160,7 @@
 
     <xaif:Branch vertex_id="153" lineNumber="131">
       <xaif:Condition>
-        <xaif:Intrinsic vertex_id="1" name="or" type="***"/>
+        <xaif:BooleanOperation vertex_id="1" name="or"/>
         <xaif:BooleanOperation vertex_id="2" name="equal"/>
         <xaif:VariableReference vertex_id="3" du_ud="2" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="NX_1"/>

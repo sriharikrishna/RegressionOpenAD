@@ -1214,7 +1214,7 @@
       </xaif:BasicBlock>
       <xaif:Branch vertex_id="146" annotation="">
         <xaif:Condition>
-          <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+          <xaif:BooleanOperation vertex_id="1" name="or"/>
           <xaif:BooleanOperation vertex_id="2" name="equal"/>
           <xaif:VariableReference vertex_id="3" active="false" alias="14" du_ud="7" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="I_15" annotation="" scope_id="3"/>
@@ -1316,7 +1316,7 @@
       <xaif:EndBranch vertex_id="18" annotation=""/>
       <xaif:Branch vertex_id="148" annotation="">
         <xaif:Condition>
-          <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+          <xaif:BooleanOperation vertex_id="1" name="or"/>
           <xaif:BooleanOperation vertex_id="2" name="equal"/>
           <xaif:VariableReference vertex_id="3" active="false" alias="3" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="NX_1" annotation="" scope_id="3"/>
@@ -1541,7 +1541,7 @@
       <xaif:EndBranch vertex_id="33" annotation=""/>
       <xaif:Branch vertex_id="151" annotation="">
         <xaif:Condition>
-          <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+          <xaif:BooleanOperation vertex_id="1" name="or"/>
           <xaif:BooleanOperation vertex_id="2" name="equal"/>
           <xaif:VariableReference vertex_id="3" active="false" alias="4" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="NY_2" annotation="" scope_id="3"/>
@@ -1663,7 +1663,7 @@
       <xaif:EndBranch vertex_id="42" annotation=""/>
       <xaif:Branch vertex_id="153" annotation="">
         <xaif:Condition>
-          <xaif:Intrinsic vertex_id="1" annotation="" name="or"/>
+          <xaif:BooleanOperation vertex_id="1" name="or"/>
           <xaif:BooleanOperation vertex_id="2" name="equal"/>
           <xaif:VariableReference vertex_id="3" active="false" alias="3" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="NX_1" annotation="" scope_id="3"/>
