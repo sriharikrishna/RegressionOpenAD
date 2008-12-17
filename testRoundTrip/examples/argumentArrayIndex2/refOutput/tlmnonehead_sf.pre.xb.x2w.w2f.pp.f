@@ -14,10 +14,6 @@ C
       use OAD_active
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_2
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X
@@ -27,7 +23,6 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*2.0D00)
-      OpenAD_Symbol_2 = 2.0D00
       CALL sax(2.0D00,X,Y)
       END SUBROUTINE
 

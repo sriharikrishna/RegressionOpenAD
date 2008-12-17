@@ -14,10 +14,6 @@ C
       use OAD_active
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1 : 3)
@@ -44,7 +40,6 @@ C$OPENAD XXX Simple loop\t
           CALL setderiv(Y(I),X(I))
         ELSE
           Y(INT(I))%v = (X(I)%v*2.0D00)
-          OpenAD_Symbol_0 = 2.0D00
           CALL sax(2.0D00,X(I),Y(I))
         ENDIF
       END DO

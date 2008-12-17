@@ -16,8 +16,6 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
 C
 C     **** Parameters and Result ****
 C
@@ -46,8 +44,6 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_Symbol_1, __deriv__(X(I)), __deriv__(Y(I)))
         ELSE
           __value__(Y(INT(I))) = (__value__(X(I)) + __value__(X(I)))
-          OpenAD_Symbol_2 = 1_w2f__i8
-          OpenAD_Symbol_3 = 1_w2f__i8
           CALL sax(1_w2f__i8, __deriv__(X(I)), __deriv__(Y(I)))
           CALL saxpy(1_w2f__i8, __deriv__(X(I)), __deriv__(Y(I)))
         ENDIF

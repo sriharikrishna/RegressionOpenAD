@@ -14,11 +14,8 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      TYPE (OpenADTy_active) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_1
+      TYPE (OpenADTy_active) OpenAD_Symbol_2
 C
 C     **** Parameters and Result ****
 C
@@ -48,18 +45,15 @@ C$OPENAD XXX Simple loop
         __value__(S) = __value__(X(I))
         CALL setderiv(__deriv__(S), __deriv__(X(I)))
         IF(__value__(S) .LT. 0.0D00) THEN
-          OpenAD_Symbol_2 = (__value__(X(I)) * 2.0D00)
-          OpenAD_Symbol_0 = 2.0D00
-          __value__(X(INT(I))) = OpenAD_Symbol_2
-          CALL setderiv(__deriv__(OpenAD_Symbol_5), __deriv__(X(I)))
-          CALL sax(2.0D00, __deriv__(OpenAD_Symbol_5), __deriv__(X(I)))
+          OpenAD_Symbol_1 = (__value__(X(I)) * 2.0D00)
+          __value__(X(INT(I))) = OpenAD_Symbol_1
+          CALL setderiv(__deriv__(OpenAD_Symbol_2), __deriv__(X(I)))
+          CALL sax(2.0D00, __deriv__(OpenAD_Symbol_2), __deriv__(X(I)))
         ELSE
           __value__(S) = 0.0D00
           CALL zero_deriv(__deriv__(S))
         ENDIF
         __value__(Y(INT(I))) = (__value__(X(I)) + __value__(S))
-        OpenAD_Symbol_3 = 1_w2f__i8
-        OpenAD_Symbol_4 = 1_w2f__i8
         CALL sax(1_w2f__i8, __deriv__(X(I)), __deriv__(Y(I)))
         CALL saxpy(1_w2f__i8, __deriv__(S), __deriv__(Y(I)))
       END DO

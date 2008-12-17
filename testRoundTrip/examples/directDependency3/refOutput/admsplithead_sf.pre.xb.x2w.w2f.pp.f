@@ -154,10 +154,6 @@ C ========== end copyright notice ==============
       use OAD_active
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1 : 2)
@@ -192,7 +188,6 @@ C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
       CALL foo()
       Y%v = (T%v*2.0D00)
-      OpenAD_Symbol_0 = 2.0D00
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint

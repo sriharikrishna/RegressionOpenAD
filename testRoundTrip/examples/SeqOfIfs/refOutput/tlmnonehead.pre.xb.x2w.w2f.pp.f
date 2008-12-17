@@ -7,11 +7,7 @@
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_4
+      type(active) :: OpenAD_Symbol_0
 C
 C     **** Parameters and Result ****
 C
@@ -30,14 +26,10 @@ C
 C$OPENAD XXX Template ad_template.f
       IF (X(1)%v .LE. X(2)%v) THEN
         Y(1)%v = (X(2)%v-X(1)%v)
-        OpenAD_Symbol_0 = 1_w2f__i8
-        OpenAD_Symbol_1 = (-1_w2f__i8)
         CALL sax(1 _w2f__i8,X(2),Y(1))
         CALL saxpy(-1 _w2f__i8,X(1),Y(1))
       ELSE
         Y(1)%v = (X(1)%v-X(2)%v)
-        OpenAD_Symbol_2 = 1_w2f__i8
-        OpenAD_Symbol_3 = (-1_w2f__i8)
         CALL sax(1 _w2f__i8,X(1),Y(1))
         CALL saxpy(-1 _w2f__i8,X(2),Y(1))
       ENDIF
@@ -46,7 +38,7 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(Y(2),X(1))
       ELSE
         Y(2)%v = Y(1)%v
-        CALL setderiv(OpenAD_Symbol_4,Y(1))
-        CALL setderiv(Y(2),OpenAD_Symbol_4)
+        CALL setderiv(OpenAD_Symbol_0,Y(1))
+        CALL setderiv(Y(2),OpenAD_Symbol_0)
       ENDIF
       END SUBROUTINE

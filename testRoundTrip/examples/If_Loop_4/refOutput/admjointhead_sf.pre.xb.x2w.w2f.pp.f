@@ -76,9 +76,9 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_10
+      type(active) :: OpenAD_Symbol_10
       type(active) :: OpenAD_Symbol_11
-      type(active) :: OpenAD_Symbol_12
+      INTEGER(w2f__i8) OpenAD_Symbol_12
       INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_14
       INTEGER(w2f__i8) OpenAD_Symbol_15
@@ -91,7 +91,6 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_21
       INTEGER(w2f__i8) OpenAD_Symbol_22
       INTEGER(w2f__i8) OpenAD_Symbol_23
-      INTEGER(w2f__i8) OpenAD_Symbol_24
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_Symbol_6
@@ -108,14 +107,14 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       REAL(w2f__8) PI
+      INTEGER(w2f__i8) OpenAD_Symbol_24
       INTEGER(w2f__i8) OpenAD_Symbol_25
-      INTEGER(w2f__i8) OpenAD_Symbol_26
-      REAL(w2f__8) OpenAD_Symbol_27
+      REAL(w2f__8) OpenAD_Symbol_26
+      INTEGER(w2f__i8) OpenAD_Symbol_27
       INTEGER(w2f__i8) OpenAD_Symbol_28
-      INTEGER(w2f__i8) OpenAD_Symbol_29
+      REAL(w2f__8) OpenAD_Symbol_29
       REAL(w2f__8) OpenAD_Symbol_30
       REAL(w2f__8) OpenAD_Symbol_31
-      REAL(w2f__8) OpenAD_Symbol_32
 C
 C     **** Top Level Pragmas ****
 C
@@ -184,48 +183,47 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       PI = 3.14149999618530273438D00
-      OpenAD_Symbol_16 = 0_w2f__i8
+      OpenAD_Symbol_15 = 0_w2f__i8
       DO I = 1, 9, 1
         IF(I .GT. 5) THEN
           OpenAD_Symbol_0 = SIN(X(I)%v)
           Y(INT(I))%v = (PI*OpenAD_Symbol_0)
           OpenAD_Symbol_3 = COS(X(I)%v)
           OpenAD_Symbol_2 = PI
-          OpenAD_Symbol_10 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
-          double_tape(double_tape_pointer) = OpenAD_Symbol_10
+          OpenAD_Symbol_9 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
+          double_tape(double_tape_pointer) = OpenAD_Symbol_9
           double_tape_pointer = double_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
-          OpenAD_Symbol_17 = 1_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_17
+          OpenAD_Symbol_16 = 1_w2f__i8
+          integer_tape(integer_tape_pointer) = OpenAD_Symbol_16
           integer_tape_pointer = integer_tape_pointer+1
         ELSE
           Y(INT(I))%v = (PI+COS(X(I)%v))
-          OpenAD_Symbol_6 = (-SIN(X(I)%v))
-          OpenAD_Symbol_5 = 1_w2f__i8
-          double_tape(double_tape_pointer) = OpenAD_Symbol_6
+          OpenAD_Symbol_5 = (-SIN(X(I)%v))
+          double_tape(double_tape_pointer) = OpenAD_Symbol_5
           double_tape_pointer = double_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
-          OpenAD_Symbol_18 = 0_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_18
+          OpenAD_Symbol_17 = 0_w2f__i8
+          integer_tape(integer_tape_pointer) = OpenAD_Symbol_17
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
-        OpenAD_Symbol_16 = (INT(OpenAD_Symbol_16) + INT(1_w2f__i8))
+        OpenAD_Symbol_15 = (INT(OpenAD_Symbol_15) + INT(1_w2f__i8))
       END DO
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_16
+          integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
           integer_tape_pointer = integer_tape_pointer+1
-      OpenAD_Symbol_9 = (Y(1)%v*Y(9)%v)
-      OpenAD_Symbol_7 = Y(9)%v
-      OpenAD_Symbol_8 = Y(1)%v
-      Y(10)%v = OpenAD_Symbol_9
-          double_tape(double_tape_pointer) = OpenAD_Symbol_7
+      OpenAD_Symbol_8 = (Y(1)%v*Y(9)%v)
+      OpenAD_Symbol_6 = Y(9)%v
+      OpenAD_Symbol_7 = Y(1)%v
+      Y(10)%v = OpenAD_Symbol_8
+          double_tape(double_tape_pointer) = OpenAD_Symbol_6
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_8
+          double_tape(double_tape_pointer) = OpenAD_Symbol_7
           double_tape_pointer = double_tape_pointer+1
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -243,46 +241,46 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_31 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_12%d = OpenAD_Symbol_12%d+Y(10)%d*OpenAD_Symbol_
-     +31
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_32 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_30 = double_tape(double_tape_pointer)
           OpenAD_Symbol_11%d = OpenAD_Symbol_11%d+Y(10)%d*OpenAD_Symbol_
-     +32
+     +30
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_31 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_10%d = OpenAD_Symbol_10%d+Y(10)%d*OpenAD_Symbol_
+     +31
           Y(10)%d = 0.0d0
-          Y(9)%d = Y(9)%d+OpenAD_Symbol_12%d
-          OpenAD_Symbol_12%d = 0.0d0
-          Y(1)%d = Y(1)%d+OpenAD_Symbol_11%d
+          Y(9)%d = Y(9)%d+OpenAD_Symbol_11%d
           OpenAD_Symbol_11%d = 0.0d0
+          Y(1)%d = Y(1)%d+OpenAD_Symbol_10%d
+          OpenAD_Symbol_10%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_13 = integer_tape(integer_tape_pointer)
-      OpenAD_Symbol_14 = 1
-      DO WHILE(INT(OpenAD_Symbol_14) .LE. INT(OpenAD_Symbol_13))
+          OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
+      OpenAD_Symbol_13 = 1
+      DO WHILE(INT(OpenAD_Symbol_13) .LE. INT(OpenAD_Symbol_12))
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_15 = integer_tape(integer_tape_pointer)
-        IF(OpenAD_Symbol_15 .ne. 0) THEN
+          OpenAD_Symbol_14 = integer_tape(integer_tape_pointer)
+        IF(OpenAD_Symbol_14 .ne. 0) THEN
+          integer_tape_pointer = integer_tape_pointer-1
+          OpenAD_Symbol_24 = integer_tape(integer_tape_pointer)
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_25 = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_26 = integer_tape(integer_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_27 = double_tape(double_tape_pointer)
-          X(INT(OpenAD_Symbol_26))%d = X(INT(OpenAD_Symbol_26))%d+Y(INT(
-     +OpenAD_Symbol_25))%d*OpenAD_Symbol_27
-          Y(INT(OpenAD_Symbol_25))%d = 0.0d0
+          OpenAD_Symbol_26 = double_tape(double_tape_pointer)
+          X(INT(OpenAD_Symbol_25))%d = X(INT(OpenAD_Symbol_25))%d+Y(INT(
+     +OpenAD_Symbol_24))%d*OpenAD_Symbol_26
+          Y(INT(OpenAD_Symbol_24))%d = 0.0d0
         ELSE
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_28 = integer_tape(integer_tape_pointer)
+          OpenAD_Symbol_27 = integer_tape(integer_tape_pointer)
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_29 = integer_tape(integer_tape_pointer)
+          OpenAD_Symbol_28 = integer_tape(integer_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_30 = double_tape(double_tape_pointer)
-          X(INT(OpenAD_Symbol_29))%d = X(INT(OpenAD_Symbol_29))%d+Y(INT(
-     +OpenAD_Symbol_28))%d*OpenAD_Symbol_30
-          Y(INT(OpenAD_Symbol_28))%d = 0.0d0
+          OpenAD_Symbol_29 = double_tape(double_tape_pointer)
+          X(INT(OpenAD_Symbol_28))%d = X(INT(OpenAD_Symbol_28))%d+Y(INT(
+     +OpenAD_Symbol_27))%d*OpenAD_Symbol_29
+          Y(INT(OpenAD_Symbol_27))%d = 0.0d0
         ENDIF
-        OpenAD_Symbol_14 = INT(OpenAD_Symbol_14) + 1
+        OpenAD_Symbol_13 = INT(OpenAD_Symbol_13) + 1
       END DO
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

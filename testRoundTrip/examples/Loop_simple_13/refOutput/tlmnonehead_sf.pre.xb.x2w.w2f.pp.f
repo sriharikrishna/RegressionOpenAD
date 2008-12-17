@@ -14,11 +14,6 @@ C
       use OAD_active
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1 : 2)
@@ -51,8 +46,6 @@ C$OPENAD XXX Simple loop
           CALL zero_deriv(S)
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
-        OpenAD_Symbol_0 = 1_w2f__i8
-        OpenAD_Symbol_1 = 1_w2f__i8
         CALL sax(1 _w2f__i8,X(I),Y(I))
         CALL saxpy(1 _w2f__i8,S,Y(I))
       END DO

@@ -67,12 +67,10 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_4
+      type(active) :: OpenAD_Symbol_2
+      INTEGER(w2f__i8) OpenAD_Symbol_3
+      INTEGER(w2f__i8) OpenAD_Symbol_4
       INTEGER(w2f__i8) OpenAD_Symbol_5
-      INTEGER(w2f__i8) OpenAD_Symbol_6
-      INTEGER(w2f__i8) OpenAD_Symbol_7
 C
 C     **** Parameters and Result ****
 C
@@ -85,13 +83,13 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       INTEGER(w2f__i8) OpenAD_Symbol_10
-      REAL(w2f__8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
+      INTEGER(w2f__i8) OpenAD_Symbol_11
+      REAL(w2f__8) OpenAD_Symbol_12
       INTEGER(w2f__i8) OpenAD_Symbol_13
-      REAL(w2f__8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
+      INTEGER(w2f__i8) OpenAD_Symbol_6
+      INTEGER(w2f__i8) OpenAD_Symbol_7
       INTEGER(w2f__i8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Statements ****
 C
@@ -115,13 +113,11 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         Y(INT(J))%v = (Y(J)%v+X(I)%v*X(I)%v)
-        OpenAD_Symbol_0 = 1_w2f__i8
-        OpenAD_Symbol_2 = X(I)%v
-        OpenAD_Symbol_3 = X(I)%v
-        OpenAD_Symbol_1 = 1_w2f__i8
-          double_tape(double_tape_pointer) = OpenAD_Symbol_2
+        OpenAD_Symbol_0 = X(I)%v
+        OpenAD_Symbol_1 = X(I)%v
+          double_tape(double_tape_pointer) = OpenAD_Symbol_0
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_3
+          double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
       END DO
           integer_tape(integer_tape_pointer) = J
@@ -133,16 +129,16 @@ C$OPENAD XXX Simple loop
           J = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(J)%d*1 _w2f__i8
+          OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Y(J)%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_11 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(J)%d*OpenAD_Symbol_11
+          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(J)%d*OpenAD_Symbol_9
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_14 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(J)%d*OpenAD_Symbol_14
+          OpenAD_Symbol_12 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(J)%d*OpenAD_Symbol_12
           Y(J)%d = 0.0d0
-          Y(J)%d = Y(J)%d+OpenAD_Symbol_4%d
-          OpenAD_Symbol_4%d = 0.0d0
+          Y(J)%d = Y(J)%d+OpenAD_Symbol_2%d
+          OpenAD_Symbol_2%d = 0.0d0
         I = I - 1
       END DO
           end if 

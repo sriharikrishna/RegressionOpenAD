@@ -74,9 +74,8 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      INTEGER(w2f__i8) OpenAD_Symbol_10
+      INTEGER(w2f__i8) OpenAD_Symbol_0
+      INTEGER(w2f__i8) OpenAD_Symbol_1
       INTEGER(w2f__i8) OpenAD_Symbol_2
       INTEGER(w2f__i8) OpenAD_Symbol_3
       INTEGER(w2f__i8) OpenAD_Symbol_4
@@ -84,7 +83,6 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_6
       INTEGER(w2f__i8) OpenAD_Symbol_7
       INTEGER(w2f__i8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
 C
 C     **** Parameters and Result ****
 C
@@ -95,10 +93,10 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       type(active) :: S
+      INTEGER(w2f__i8) OpenAD_Symbol_10
       INTEGER(w2f__i8) OpenAD_Symbol_11
       INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_13
-      INTEGER(w2f__i8) OpenAD_Symbol_14
+      INTEGER(w2f__i8) OpenAD_Symbol_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -137,17 +135,15 @@ C$OPENAD XXX Simple loop
         S%v = X(I)%v
         IF (S%v .GT. 0.0D00) THEN
           S%v = 0.0D00
-          OpenAD_Symbol_3 = 1_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
+          OpenAD_Symbol_1 = 1_w2f__i8
+          integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
           integer_tape_pointer = integer_tape_pointer+1
         ELSE
-          OpenAD_Symbol_4 = 0_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
+          OpenAD_Symbol_2 = 0_w2f__i8
+          integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
-        OpenAD_Symbol_0 = 1_w2f__i8
-        OpenAD_Symbol_1 = 1_w2f__i8
       END DO
           end if 
           if (our_rev_mode%adjoint) then
@@ -158,8 +154,8 @@ C$OPENAD XXX Simple loop
           X(I)%d = X(I)%d+Y(I)%d*1 _w2f__i8
           Y(I)%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
-        IF(OpenAD_Symbol_2 .ne. 0) THEN
+          OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
+        IF(OpenAD_Symbol_0 .ne. 0) THEN
           S%d = 0.0d0
         ENDIF
           X(I)%d = X(I)%d+S%d

@@ -16,12 +16,10 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_5
-      type(active) :: OpenAD_Symbol_6
-      type(active) :: OpenAD_Symbol_7
+      type(active) :: OpenAD_Symbol_4
+      type(active) :: OpenAD_Symbol_5
 C
 C     **** Parameters and Result ****
 C
@@ -32,18 +30,16 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'two') THEN
-        OpenAD_Symbol_2 = (X%v*2.0D00)
-        OpenAD_Symbol_0 = 2.0D00
-        X%v = OpenAD_Symbol_2
-        CALL setderiv(OpenAD_Symbol_6,X)
-        CALL sax(2.0D00,OpenAD_Symbol_6,X)
+        OpenAD_Symbol_1 = (X%v*2.0D00)
+        X%v = OpenAD_Symbol_1
+        CALL setderiv(OpenAD_Symbol_4,X)
+        CALL sax(2.0D00,OpenAD_Symbol_4,X)
       ENDIF
       IF(A(1 : LEN(A)) .EQ. 'three') THEN
-        OpenAD_Symbol_5 = (X%v*3.0D00)
-        OpenAD_Symbol_3 = 3.0D00
-        X%v = OpenAD_Symbol_5
-        CALL setderiv(OpenAD_Symbol_7,X)
-        CALL sax(3.0D00,OpenAD_Symbol_7,X)
+        OpenAD_Symbol_3 = (X%v*3.0D00)
+        X%v = OpenAD_Symbol_3
+        CALL setderiv(OpenAD_Symbol_5,X)
+        CALL sax(3.0D00,OpenAD_Symbol_5,X)
       ENDIF
       END SUBROUTINE
 

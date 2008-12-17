@@ -18,9 +18,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
+      TYPE (OpenADTy_active) OpenAD_Symbol_5
       TYPE (OpenADTy_active) OpenAD_Symbol_6
-      TYPE (OpenADTy_active) OpenAD_Symbol_7
 C
 C     **** Parameters and Result ****
 C
@@ -47,23 +46,22 @@ C$OPENAD XXX Template ad_template.f
         GO TO 24
 24      CONTINUE
         __value__(Y(INT(I))) = (__value__(X(I)) * 2.0D00)
-        OpenAD_Symbol_4 = 2.0D00
         CALL sax(2.0D00, __deriv__(X(I)), __deriv__(Y(I)))
         GO TO 21
 19      CONTINUE
         OpenAD_Symbol_1 = SIN(__value__(X(I)))
         OpenAD_Symbol_0 = COS(__value__(X(I)))
         __value__(Y(INT(I))) = OpenAD_Symbol_1
-        CALL setderiv(__deriv__(OpenAD_Symbol_6), __deriv__(X(I)))
-        CALL sax(OpenAD_Symbol_0, __deriv__(OpenAD_Symbol_6), __deriv__
+        CALL setderiv(__deriv__(OpenAD_Symbol_5), __deriv__(X(I)))
+        CALL sax(OpenAD_Symbol_0, __deriv__(OpenAD_Symbol_5), __deriv__
      > (Y(I)))
         GO TO 21
 23      CONTINUE
         OpenAD_Symbol_3 = COS(__value__(X(I)))
         OpenAD_Symbol_2 = (- SIN(__value__(X(I))))
         __value__(Y(INT(I))) = OpenAD_Symbol_3
-        CALL setderiv(__deriv__(OpenAD_Symbol_7), __deriv__(X(I)))
-        CALL sax(OpenAD_Symbol_2, __deriv__(OpenAD_Symbol_7), __deriv__
+        CALL setderiv(__deriv__(OpenAD_Symbol_6), __deriv__(X(I)))
+        CALL sax(OpenAD_Symbol_2, __deriv__(OpenAD_Symbol_6), __deriv__
      > (Y(I)))
         GO TO 21
 21      CONTINUE
