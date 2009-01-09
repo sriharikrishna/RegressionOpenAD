@@ -520,7 +520,7 @@ def main():
 		else:
 		    return -1
 	    except NumericalError:
-		print "NUMERICAL ERROR in test %i of %i (%s)." % (j+1,len(examples),examples[j])
+		print "WARNING: numerical discrepancies in test %i of %i (%s)." % (j+1,len(examples),examples[j])
 		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
 			return -1
