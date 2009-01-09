@@ -394,8 +394,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         sys.stdout.write("  MAJOR_MODE="+majorMode+"\n")
         sys.stdout.write("  MINOR_MODE="+ctrMode+"\n")
     if (majorMode!='dd'): 
-        if (os.system(makeCmd+" head.pre.xb.x2w.w2f.pp.f")):
-            raise MakeError, makeCmd+" head.pre.xb.x2w.w2f.pp.f"
+        if (os.system(makeCmd+" head.pre.xb.x2w.w2f.post.f")):
+            raise MakeError, makeCmd+" head.pre.xb.x2w.w2f.post.f"
     # compile all the transformed bits
     driverMode = majorMode
     if (majorMode == "adm"):
@@ -407,7 +407,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         # compare all the transformation results
 	for tfile in ['head_sf.pre.f','head_sf.pre.xaif']:
             fileCompare(exDir,tfile,majorMode,"file translated from")
-        for tfile in ["head_sf.pre.xb.x2w.w2f.f","head_sf.pre.xb.x2w.w2f.pp.f","head.pre.xb.x2w.w2f.pp.f","head_sf.pre.xb.xaif"]:
+        for tfile in ["head_sf.pre.xb.x2w.w2f.f","head_sf.pre.xb.x2w.w2f.post.f","head.pre.xb.x2w.w2f.post.f","head_sf.pre.xb.xaif"]:
             fileCompare(exDir,tfile,majorMode + ctrMode,"file translated from")
     # execute the driver
     sys.stdout.flush()
