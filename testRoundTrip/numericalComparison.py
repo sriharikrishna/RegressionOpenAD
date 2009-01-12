@@ -61,8 +61,8 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
         # execute plot command
         plotFile.write('plot\\\n')
         if impulse:
-            plotFile.write('\"'+datOverFileName+'\" with impulses pt 3 lc 1 lw 2,\\\n')
-            plotFile.write('\"'+datUnderFileName+'\" with impulses pt 3 lc 2 lw 2,\\\n')
+            plotFile.write('\"'+datOverFileName+'\" with impulses lc 1 lw 2,\\\n')
+            plotFile.write('\"'+datUnderFileName+'\" with impulses lc 2 lw 2,\\\n')
         else:
             plotFile.write('\"'+datOverFileName+'\" with points pt 3 lc 1, \\\n')
             plotFile.write('\"'+datUnderFileName+'\" with points pt 3 lc 2, \\\n')
