@@ -39,10 +39,10 @@ C
       OpenAD_Symbol_0 = Q%v
       OpenAD_Symbol_1 = P%v
       Q%v = OpenAD_Symbol_2
+      I = (I + 1)
       CALL setderiv(OpenAD_Symbol_6,Q)
       CALL sax(OpenAD_Symbol_0,P,Q)
       CALL saxpy(OpenAD_Symbol_1,OpenAD_Symbol_6,Q)
-      I = I + 1
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

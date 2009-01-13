@@ -156,7 +156,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      N = NX * NY
+      N = (NX * NY)
       NXP1 = (NX + 1)
       NYP1 = (NY + 1)
       HX = (1.0D00 / NXP1)
@@ -165,7 +165,7 @@ C$OPENAD XXX Template ad_template.f
       HX2 = (HX * HX)
       DO I = 1, NY, 1
         DO J = 1, NX, 1
-          K = J + NX *(I +(-1))
+          K = (J + NX *(I +(-1)))
           IF((I .eq. 1) .OR.(J .eq. 1)) THEN
             __value__(PBL) = 0.0D00
             CALL zero_deriv(__deriv__(PBL))

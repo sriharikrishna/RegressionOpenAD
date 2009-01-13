@@ -30,6 +30,6 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(Y(1)) = __value__(X(1))
+      I = (INT(__value__(X(1)) +(-1.0D00)) + 1)
       CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
-      I = INT(__value__(X(1)) +(-1.0D00)) + 1
       END SUBROUTINE

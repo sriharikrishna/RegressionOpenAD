@@ -349,7 +349,7 @@ C$OPENAD XXX Template ad_template.f
      +v*4.0D00)
                 CALL sax(3.0D00,X(XCOUNT),TFLD(I,J,K,L,M))
                 CALL sax(4.0D00,X(XCOUNT),SFLD(I,J,K,L,M))
-                XCOUNT = XCOUNT + 1
+                XCOUNT = (XCOUNT + 1)
               END DO
             END DO
           END DO

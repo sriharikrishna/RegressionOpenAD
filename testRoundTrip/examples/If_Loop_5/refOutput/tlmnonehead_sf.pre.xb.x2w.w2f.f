@@ -60,7 +60,7 @@ C$OPENAD XXX Template ad_template.f
           CALL sax(OpenAD_Symbol_2, __deriv__(OpenAD_Symbol_8),
      >  __deriv__(Y(1)))
         ENDIF
-        I = I + 1
+        I = (I + 1)
       END DO
       OpenAD_Symbol_6 = (__value__(Y(1)) * __value__(Y(2)))
       OpenAD_Symbol_4 = __value__(Y(2))

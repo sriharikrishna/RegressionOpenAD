@@ -643,7 +643,7 @@
     <xaif:EndBranch vertex_id="8"/>
 
     <xaif:ForLoop vertex_id="9" reversal="anonymous" lineNumber="62">
-      <xaif:Initialization statement_id="307">
+      <xaif:Initialization statement_id="307" do_chain="9">
         <xaif:AssignmentLHS du_ud="9" alias="10">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="L_10"/>
         </xaif:AssignmentLHS>
@@ -660,7 +660,7 @@
         <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
         <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
       </xaif:Condition>
-      <xaif:Update statement_id="312">
+      <xaif:Update statement_id="312" do_chain="9">
         <xaif:AssignmentLHS du_ud="9" alias="10">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="L_10"/>
         </xaif:AssignmentLHS>

@@ -270,7 +270,16 @@
         </xaif:Update>
       </xaif:ForLoop>
       <xaif:BasicBlock vertex_id="7" annotation="" scope_id="3">
-        <xaif:Marker statement_id="23" annotation="{WHIRL_Id#23} [passive: OPR_STID]"/>
+        <xaif:Assignment statement_id="23">
+          <xaif:AssignmentLHS active="false" alias="3" du_ud="7" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="J_5" annotation="" scope_id="3"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:VariableReference vertex_id="1" active="false" alias="4" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="K_3" annotation="" scope_id="3"/>
+            </xaif:VariableReference>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
         <xaif:Assignment statement_id="25">
           <xaif:AssignmentLHS active="true" alias="5" du_ud="4" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="3"/>

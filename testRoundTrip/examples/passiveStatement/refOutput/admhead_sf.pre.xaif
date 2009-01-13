@@ -145,7 +145,34 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Marker statement_id="21" annotation="{WHIRL_Id#21} [passive: OPR_STID]"/>
+      <xaif:Assignment statement_id="21" lineNumber="11" do_chain="1">
+        <xaif:AssignmentLHS du_ud="1" alias="4">
+          <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
+        </xaif:AssignmentLHS>
+        <xaif:AssignmentRHS>
+          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+          <xaif:Intrinsic vertex_id="2" name="int_scal" type="***" annotation="{IntrinsicKey#1_INT}"/>
+          <xaif:Intrinsic vertex_id="3" name="add_scal_scal" type="***"/>
+          <xaif:VariableReference vertex_id="4" du_ud="2" alias="3">
+            <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="X_1"/>
+            <xaif:ArrayElementReference vertex_id="2">
+              <xaif:IndexTriplet>
+                <xaif:Index>
+                  <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                </xaif:Index>
+              </xaif:IndexTriplet>
+            </xaif:ArrayElementReference>
+            <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+          </xaif:VariableReference>
+          <xaif:Constant vertex_id="5" type="real" feType="F8" value="-1.00000000000000000000e+00"/>
+          <xaif:ExpressionEdge edge_id="1" source="4" target="3" position="1"/>
+          <xaif:ExpressionEdge edge_id="2" source="5" target="3" position="2"/>
+          <xaif:ExpressionEdge edge_id="3" source="3" target="2" position="1"/>
+          <xaif:Constant vertex_id="6" type="integer" feType="I4" value="1"/>
+          <xaif:ExpressionEdge edge_id="4" source="2" target="1" position="1"/>
+          <xaif:ExpressionEdge edge_id="5" source="6" target="1" position="2"/>
+        </xaif:AssignmentRHS>
+      </xaif:Assignment>
     </xaif:BasicBlock>
 
     <xaif:Exit vertex_id="6"/>

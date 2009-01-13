@@ -54,7 +54,7 @@ C$OPENAD XXX Simple loop
           CALL saxpy(OpenAD_Symbol_1, __deriv__(X(J)), __deriv__(Y(I)))
           CALL saxpy(1_w2f__i8, __deriv__(OpenAD_Symbol_2), __deriv__(Y
      > (I)))
-          J = J + 1
+          J = (J + 1)
         END DO
       END DO
       END SUBROUTINE

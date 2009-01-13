@@ -60,7 +60,7 @@ C$OPENAD XXX Template ad_template.f
           CALL setderiv(OpenAD_Symbol_8,X(2))
           CALL sax(OpenAD_Symbol_2,OpenAD_Symbol_8,Y(1))
         ENDIF
-        I = I + 1
+        I = (I + 1)
       END DO
       OpenAD_Symbol_6 = (Y(1)%v*Y(2)%v)
       OpenAD_Symbol_4 = Y(2)%v

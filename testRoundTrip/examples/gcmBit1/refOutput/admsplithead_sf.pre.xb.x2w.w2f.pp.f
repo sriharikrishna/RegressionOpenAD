@@ -1233,7 +1233,7 @@ C$OPENAD XXX Template ad_template.f
      +v*3.0D00)
                 SFLD(INT(I),INT(J),INT(K),INT(L),INT(M))%v = (X(XCOUNT)%
      +v*4.0D00)
-                XCOUNT = XCOUNT + 1
+                XCOUNT = (XCOUNT + 1)
               END DO
             END DO
           END DO
@@ -1295,7 +1295,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
           integer_tape(integer_tape_pointer) = M
           integer_tape_pointer = integer_tape_pointer+1
-                XCOUNT = XCOUNT + 1
+                XCOUNT = (XCOUNT + 1)
                 OpenAD_Symbol_147 = (INT(OpenAD_Symbol_147) + INT( 1_w2f
      +__i8))
               END DO

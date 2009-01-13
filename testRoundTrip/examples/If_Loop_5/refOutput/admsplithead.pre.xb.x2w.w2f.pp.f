@@ -123,7 +123,7 @@ C$OPENAD XXX Template ad_template.f
         ELSE
           Y(1)%v = COS(X(2)%v)
         ENDIF
-        I = I + 1
+        I = (I + 1)
       END DO
       Y(2)%v = (Y(1)%v*Y(2)%v)
           end if
@@ -152,7 +152,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_16
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
-        I = I + 1
+        I = (I + 1)
         OpenAD_Symbol_14 = (INT(OpenAD_Symbol_14) + INT(1_w2f__i8))
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_14

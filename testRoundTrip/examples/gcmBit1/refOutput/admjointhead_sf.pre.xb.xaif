@@ -1877,9 +1877,30 @@
               <xaif:Constant vertex_id="1" type="real" feType="F4" value="6.20732298890000023583e-10"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:Marker statement_id="167" annotation="{WHIRL_Id#167} [passive: OPR_STID]"/>
-          <xaif:Marker statement_id="169" annotation="{WHIRL_Id#169} [passive: OPR_STID]"/>
-          <xaif:Marker statement_id="171" annotation="{WHIRL_Id#171} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="167">
+            <xaif:AssignmentLHS active="false" alias="5" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="K_15" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
+          <xaif:Assignment statement_id="169">
+            <xaif:AssignmentLHS active="false" alias="6" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="BI_5" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
+          <xaif:Assignment statement_id="171">
+            <xaif:AssignmentLHS active="false" alias="7" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="BJ_6" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:Assignment statement_id="173">
             <xaif:AssignmentLHS active="false" alias="8" du_ud="13" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="SITOBAR_20" annotation="" scope_id="3"/>
@@ -3231,9 +3252,30 @@
               <xaif:Constant vertex_id="1" type="real" feType="F4" value="6.20732298890000023583e-10"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:Marker statement_id="167" annotation="{WHIRL_Id#167} [passive: OPR_STID]"/>
-          <xaif:Marker statement_id="169" annotation="{WHIRL_Id#169} [passive: OPR_STID]"/>
-          <xaif:Marker statement_id="171" annotation="{WHIRL_Id#171} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="167">
+            <xaif:AssignmentLHS active="false" alias="5" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="K_15" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
+          <xaif:Assignment statement_id="169">
+            <xaif:AssignmentLHS active="false" alias="6" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="BI_5" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
+          <xaif:Assignment statement_id="171">
+            <xaif:AssignmentLHS active="false" alias="7" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="BJ_6" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:Assignment statement_id="173">
             <xaif:AssignmentLHS active="false" alias="8" du_ud="13" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="SITOBAR_20" annotation="" scope_id="3"/>
@@ -8823,9 +8865,30 @@
               <xaif:Constant vertex_id="1" type="real" feType="F4" value="6.20732298890000023583e-10"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:Marker statement_id="167" annotation="{WHIRL_Id#167} [passive: OPR_STID]"/>
-          <xaif:Marker statement_id="169" annotation="{WHIRL_Id#169} [passive: OPR_STID]"/>
-          <xaif:Marker statement_id="171" annotation="{WHIRL_Id#171} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="167">
+            <xaif:AssignmentLHS active="false" alias="5" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="K_15" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
+          <xaif:Assignment statement_id="169">
+            <xaif:AssignmentLHS active="false" alias="6" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="BI_5" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
+          <xaif:Assignment statement_id="171">
+            <xaif:AssignmentLHS active="false" alias="7" du_ud="24" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="BJ_6" annotation="" scope_id="3"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:Assignment statement_id="173">
             <xaif:AssignmentLHS active="false" alias="8" du_ud="13" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="SITOBAR_20" annotation="" scope_id="3"/>
@@ -13859,7 +13922,14 @@
         <xaif:BasicBlock vertex_id="20" annotation="" scope_id="4">
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-          <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="11">
+            <xaif:AssignmentLHS active="false" alias="26" du_ud="43" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:ForLoop vertex_id="21" annotation="" reversal="anonymous">
           <xaif:Initialization statement_id="15">
@@ -14200,7 +14270,20 @@
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:Marker statement_id="127" annotation="{WHIRL_Id#127} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="127">
+            <xaif:AssignmentLHS active="false" alias="26" du_ud="43" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Intrinsic vertex_id="1" annotation="" name="add_scal_scal"/>
+              <xaif:VariableReference vertex_id="2" active="false" alias="26" du_ud="36" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
+              <xaif:Constant vertex_id="3" type="integer" feType="I4" value="1"/>
+              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:EndLoop vertex_id="146" annotation=""/>
         <xaif:EndLoop vertex_id="32" annotation=""/>
@@ -14395,7 +14478,14 @@
         <xaif:BasicBlock vertex_id="20" annotation="" scope_id="4">
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-          <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="11">
+            <xaif:AssignmentLHS active="false" alias="26" du_ud="43" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:ForLoop vertex_id="21" annotation="" reversal="anonymous">
           <xaif:Initialization statement_id="15">
@@ -14841,7 +14931,20 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:Marker statement_id="127" annotation="{WHIRL_Id#127} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="127">
+            <xaif:AssignmentLHS active="false" alias="26" du_ud="43" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Intrinsic vertex_id="1" annotation="" name="add_scal_scal"/>
+              <xaif:VariableReference vertex_id="2" active="false" alias="26" du_ud="36" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
+              <xaif:Constant vertex_id="3" type="integer" feType="I4" value="1"/>
+              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:EndLoop vertex_id="146" annotation=""/>
         <xaif:EndLoop vertex_id="32" annotation=""/>
@@ -16259,7 +16362,14 @@
         <xaif:BasicBlock vertex_id="20" annotation="" scope_id="4">
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-          <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="11">
+            <xaif:AssignmentLHS active="false" alias="26" du_ud="43" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:ForLoop vertex_id="21" annotation="" reversal="anonymous">
           <xaif:Initialization statement_id="15">
@@ -16705,7 +16815,20 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:Marker statement_id="127" annotation="{WHIRL_Id#127} [passive: OPR_STID]"/>
+          <xaif:Assignment statement_id="127">
+            <xaif:AssignmentLHS active="false" alias="26" du_ud="43" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Intrinsic vertex_id="1" annotation="" name="add_scal_scal"/>
+              <xaif:VariableReference vertex_id="2" active="false" alias="26" du_ud="36" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="XCOUNT_13" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
+              <xaif:Constant vertex_id="3" type="integer" feType="I4" value="1"/>
+              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:EndLoop vertex_id="146" annotation=""/>
         <xaif:EndLoop vertex_id="32" annotation=""/>

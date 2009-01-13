@@ -67,7 +67,7 @@ C$OPENAD XXX Template ad_template.f
         ELSE
           __value__(Y(1)) = COS(__value__(X(2)))
         ENDIF
-        I = I + 1
+        I = (I + 1)
       END DO
       __value__(Y(2)) = (__value__(Y(1)) * __value__(Y(2)))
 C     $OpenAD$ END REPLACEMENT
@@ -95,7 +95,7 @@ C         $OpenAD$ INLINE push(subst)
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_16)
         ENDIF
-        I = I + 1
+        I = (I + 1)
         OpenAD_Symbol_14 = (INT(OpenAD_Symbol_14) + INT(1_w2f__i8))
       END DO
 C     $OpenAD$ INLINE push_i(subst)
@@ -200,7 +200,7 @@ C         $OpenAD$ INLINE push(subst)
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_22)
         ENDIF
-        I = I + 1
+        I = (I + 1)
         OpenAD_Symbol_20 = (INT(OpenAD_Symbol_20) + INT(1_w2f__i8))
       END DO
 C     $OpenAD$ INLINE push_i(subst)

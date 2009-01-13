@@ -282,7 +282,7 @@ C$OPENAD XXX Template ad_template.f
       NOISE_CORRELATION_TIME = (DAY * 1.5D+01)
       DELTA_T = (DAY * 5.0D00)
       INTEGRATION_TIME = (YEAR * 5.0D+01)
-      N_MAX = INT((INTEGRATION_TIME / DELTA_T))
+      N_MAX = INT(INTEGRATION_TIME / DELTA_T)
       FDEPS = 9.99999999999999954748D-07
       Y(1) = (THOUSAND / 3.2680000000000000715D-02)
       Y(2) = (THOUSAND / 7.9399999999999991418D-03)
@@ -363,14 +363,14 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL box_ini_fields()
-      MAXLEV2 = (N_MAX / 73) + 1
+      MAXLEV2 = ((N_MAX / 73) + 1)
       IF(N_MAX .GT. 3650) THEN
         WRITE(*, *) 'NEED TO SET nlev1*nlev2 >= n_max '
       ELSE
         DO ILEV2 = 1, 50, 1
           IF(ILEV2 .LE. MAXLEV2) THEN
             DO ILEV1 = 1, 73, 1
-              ILOOP = ILEV1 + ILEV2 * 73 +(-73)
+              ILOOP = (ILEV1 + ILEV2 * 73 +(-73))
               IF(ILOOP .LE. N_MAX) THEN
                 CALL box_forward(ILEV1)
               ENDIF

@@ -380,7 +380,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(1),OAD_CTMP0,OAD_CTMP1,OAD_CTMP2)
       OAD_CTMP3 = 3
       OAD_CTMP4 = 1
-      OAD_CTMP5 = -1
+      OAD_CTMP5 = (-1)
       CALL foo(X,Y(2),OAD_CTMP3,OAD_CTMP4,OAD_CTMP5)
       OAD_CTMP6 = 1
       OAD_CTMP7 = 5
@@ -388,7 +388,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(3),OAD_CTMP6,OAD_CTMP7,OAD_CTMP8)
       OAD_CTMP9 = 5
       OAD_CTMP10 = 1
-      OAD_CTMP11 = -2
+      OAD_CTMP11 = (-2)
       CALL foo(X,Y(4),OAD_CTMP9,OAD_CTMP10,OAD_CTMP11)
 C original function end
             our_rev_mode=our_orig_mode
@@ -409,7 +409,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(1),OAD_CTMP0,OAD_CTMP1,OAD_CTMP2)
       OAD_CTMP3 = 3
       OAD_CTMP4 = 1
-      OAD_CTMP5 = -1
+      OAD_CTMP5 = (-1)
       CALL foo(X,Y(2),OAD_CTMP3,OAD_CTMP4,OAD_CTMP5)
       OAD_CTMP6 = 1
       OAD_CTMP7 = 5
@@ -417,7 +417,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(3),OAD_CTMP6,OAD_CTMP7,OAD_CTMP8)
       OAD_CTMP9 = 5
       OAD_CTMP10 = 1
-      OAD_CTMP11 = -2
+      OAD_CTMP11 = (-2)
       CALL foo(X,Y(4),OAD_CTMP9,OAD_CTMP10,OAD_CTMP11)
 C taping end
             our_rev_mode%arg_store=.FALSE.

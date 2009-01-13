@@ -455,7 +455,7 @@
     </xaif:BasicBlock>
 
     <xaif:ForLoop vertex_id="6" reversal="anonymous" lineNumber="18">
-      <xaif:Initialization statement_id="112">
+      <xaif:Initialization statement_id="112" do_chain="5">
         <xaif:AssignmentLHS du_ud="10" alias="5">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_4"/>
         </xaif:AssignmentLHS>
@@ -472,7 +472,7 @@
         <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
         <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
       </xaif:Condition>
-      <xaif:Update statement_id="117">
+      <xaif:Update statement_id="117" do_chain="5">
         <xaif:AssignmentLHS du_ud="10" alias="5">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_4"/>
         </xaif:AssignmentLHS>

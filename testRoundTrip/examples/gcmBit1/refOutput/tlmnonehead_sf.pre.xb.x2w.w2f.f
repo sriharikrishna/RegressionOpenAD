@@ -391,7 +391,7 @@ C$OPENAD XXX Template ad_template.f
      > , J, K, L, M)))
                 CALL sax(4.0D00, __deriv__(X(XCOUNT)), __deriv__(SFLD(I
      > , J, K, L, M)))
-                XCOUNT = XCOUNT + 1
+                XCOUNT = (XCOUNT + 1)
               END DO
             END DO
           END DO
