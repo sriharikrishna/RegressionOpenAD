@@ -13,6 +13,10 @@ globalOfferAcceptAsDefault=False
 globalAcceptAll=False
 globalMakeSVG=False
 globalVerbose=False
+globalOkCount=0
+globalKnownFailCount=0
+globalNewFailCount=0
+globalDiffCmd='diff'
 
 class MultiColumnOutput:
 
@@ -119,56 +123,63 @@ def overridableLink(exampleFile,defaultFile,targetFileName):
 
 
 def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
-    referenceFile = fcmode + fcfileName
-    if not (os.path.exists("%s/refOutput/%s" % (fcexampleDir,referenceFile))):
-	sys.stdout.write("%s/refOutput/%s not available" % (fcexampleDir,referenceFile))
+    referenceFile = os.path.join(fcexampleDir,'refOutput',fcmode + fcfileName)
+    if not (os.path.exists(referenceFile)):
+	sys.stdout.write(referenceFile+" not available")
 	if not (globalBatchMode):
             answer=""
             if globalAcceptAll:
                 answer="y"
             else:    
                 if (globalOfferAcceptAsDefault) :
-                    answer=raw_input(", copy and hg add it? (y)/n: ")
-                    if (answer != "n"):
+                    answer = (raw_input(", copy and hg add it? (y)/n: "))
+                    if (answer != "n") :
                         answer="y"
                 else:
-                    answer=raw_input(", copy and hg add it? y/(n): ")
-                    if (answer != "y"):
+                    answer = (raw_input(", copy and hg add it? y/(n): "))
+                    if (answer != "y") :
                         answer="n"
             if (answer == "n"):
 		sys.stdout.write("cannot verify %s\n" % fcfileName)
                 sys.stdout.flush()
                 return 0
 	    else:
-		shutil.copy(fcfileName,"%s/refOutput/%s" % (fcexampleDir,referenceFile))
-		if (os.system("hg add %s/refOutput/%s" % (fcexampleDir,referenceFile))):
-		    raise RuntimeError, "\"hg add %s/refOutput/%s\" not successful" % (fcexampleDir,referenceFile)
+		shutil.copy(fcfileName,referenceFile)
+                cmd="hg add "+referenceFile
+		if (os.system(cmd)):
+		    raise RuntimeError, "\""+cmd+"\" not successful"
 	else: # BATCHMODE
 	    sys.stdout.write("\n")
             sys.stdout.flush()
             return 0
-    hasDiff = os.system("diff -I '%s' %s %s/refOutput/%s" % (ignoreString,fcfileName,fcexampleDir,referenceFile))
+    cmd="diff "
+    if (ignoreString != '') : 
+	cmd+="-I '"+ignoreString+"' "
+    cmd+=fcfileName+" "+referenceFile        
+    hasDiff = os.system(cmd+" > /dev/null")
     if (hasDiff == 512):
-	raise RuntimeError, "command \"diff -I \"%s\" %s %s/refOutput/%s\" not successful" % (ignoreString,fcfileName,fcexampleDir,referenceFile)
-    elif (hasDiff == 256):
-	sys.stdout.write("Transformation -- diff %s %s/refOutput/%s\n" % (fcfileName,fcexampleDir,referenceFile))
+	raise RuntimeError, "command "+cmd+" not successful"
+    elif (hasDiff != 0):
+	if not (globalBatchMode):
+            os.system(globalDiffCmd+" "+fcfileName+" "+referenceFile)
+	sys.stdout.write("Transformation -- diff "+fcfileName+" "+referenceFile+"\n")
 	if not (globalBatchMode):
             answer=""
             if globalAcceptAll:
                 answer="y"
             else:    
                 if (globalOfferAcceptAsDefault) :
-                    answer=raw_input("accept/copy new %s to %s/refOutput/%s? (y)/n: " % (fcfileName,fcexampleDir,referenceFile))
+                    answer = raw_input("   accept/copy new %s to %s? (y)/n: " % (fcfileName,referenceFile))
                     if (answer != "n"):
                         answer="y"
                 else:
-                    answer=raw_input("accept/copy new %s to %s/refOutput/%s? y/(n): " % (fcfileName,fcexampleDir,referenceFile))
+                    answer = raw_input("   accept/copy new %s to %s? y/(n): " % (fcfileName,referenceFile))
                     if (answer != "y"):
                         answer="n"
             if (answer == "n"):
 		sys.stdout.write("skipping change\n")
 	    else:
-		shutil.copy(fcfileName,fcexampleDir + "/refOutput/" + referenceFile)
+		shutil.copy(fcfileName,referenceFile)
     sys.stdout.flush()
 
 
@@ -356,6 +367,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     exDir = "examples/" + exName
     if not (os.path.exists(exDir)):
 	raise ConfigError, "examples/%s does not exist" % exName
+    failCountAdjusted=False
     failReasonFile = exDir + "/FAILREASON_" + majorMode + "_" + ctrMode
     if (os.path.exists(failReasonFile)):
 	if (globalBatchMode or globalIgnoreFailingCases):
@@ -367,6 +379,11 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	    printSep("*","",sepLength)
 	    if (raw_input("run it anyway? y/(n): ") != "y"):
 		return 0
+        global globalKnownFailCount
+        globalKnownFailCount+=1
+        global globalNewFailCount
+        globalNewFailCount-=1
+        failCountAdjusted=True
     # clean up
     sys.stdout.flush()
     if (os.system(makeCmd + " minClean")):
@@ -428,6 +445,12 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         if (os.system("./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles))):
             raise NumericalError
     printSep("*","",sepLength)
+    global globalOkCount
+    globalOkCount+=1
+    if failCountAdjusted:
+        globalKnownFailCount-=1
+        globalNewFailCount+=1
+        failCountAdjusted=True
 
 
 def main():
@@ -454,6 +477,8 @@ def main():
                    type='choice', choices=compilers,
                    help="pick a compiler (defaults to ifort) from the following list: " +compilerOpts+" - the compiler should be in PATH",
                    default='ifort')
+    opt.add_option('-d','--diff',dest='diff',
+                   help="different diff command (e.g. kdiff3) to show differences in case the regular diff detects differences")
     opt.add_option('-i','--ignoreFailingCases',dest='ignoreFailingCases',
                    help="don't ask whether we should try to run the cases known to fail",
                    action='store_true',default=False)
@@ -467,6 +492,8 @@ def main():
                    help="let the pipeline components produce some extra output",
                    action='store_true',default=False)
     (options, args) = opt.parse_args()
+    global globalNewFailCount
+    globalNewFailCount=0
     try:
         if os.environ.has_key('BATCHMODE') or options.batchMode :
             global globalBatchMode
@@ -480,6 +507,9 @@ def main():
         if options.acceptAll :
             global globalAcceptAll
             globalAcceptAll=True
+        if options.diff :
+            global globalDiffCmd
+            globalDiffCmd=options.diff 
         if options.makeSVG:
             global globalMakeSVG
             globalMakeSVG=True
@@ -507,6 +537,7 @@ def main():
 		runTest(scalarOrVectorMode,majorMode,ctrMode,examples[j],j+1,len(examples))
 	    except ConfigError, errtxt:
 		print "ERROR (environment configuration) in test %i of %i (%s): %s" % (j+1,len(examples),examples[j],errtxt)
+	        globalNewFailCount+=1
 		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
 			return -1
@@ -514,6 +545,7 @@ def main():
 		    return -1
 	    except MakeError, errtxt:
 		print "ERROR in test %i of %i (%s) while executing \"%s\"." % (j+1,len(examples),examples[j],errtxt)
+	        globalNewFailCount+=1
 		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
 			return -1
@@ -523,9 +555,13 @@ def main():
 		print "WARNING: numerical discrepancies in test %i of %i (%s)." % (j+1,len(examples),examples[j])
 		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
+                        globalNewFailCount+=1
 			return -1
+                global globalOkCount
+                globalOkCount+=1
 	    except RuntimeError, errtxt:
 		print "ERROR in test %i of %i (%s): %s." % (j+1,len(examples),examples[j],errtxt)
+	        globalNewFailCount+=1
 		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
 			return -1
@@ -541,7 +577,7 @@ def main():
     except RuntimeError, errtxt:
 	print 'caught exception: ',errtxt
 	return -1
-    print "ALL OK (or acknowledged)"
+    print "total test count: "+str(rangeEnd-rangeStart+1)+";  OK or accepted numerical discrepancy:"+str(globalOkCount)+"; known errors:"+str(globalKnownFailCount)+"; new errors:"+str(globalNewFailCount)
     return 0
 
 if __name__ == "__main__":
