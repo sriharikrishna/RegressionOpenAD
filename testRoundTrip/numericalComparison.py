@@ -5,7 +5,7 @@ import sys
 
 def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
     import tempfile
-    plotFileName=tempfile.mktemp()
+    plotFileName=tempfile.mktemp(suffix='.gnu')
     plotFile=open(plotFileName,"w")
 
     # set output terminal
@@ -14,17 +14,18 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
         plotFile.write('set term svg font \'arial,11\' size 900,690\n')
         plotFile.write('set output "'+outputName+'"\n')
     else:
-        plotFile.write('set terminal x11\n')
-
+        plotFile.write('set terminal x11 persist\n')
+    # set global options
+    plotFile.write('unset key\n')
+    plotFile.write('unset xtics\n')
+    plotFile.write('unset xlabel\n')
+    plotFile.write('unset ylabel\n')
+    plotFile.write('set logscale y\n')
+    # set layout
     if withAD: 
         plotFile.write('set multiplot layout 2, 3 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
     else:     
         plotFile.write('set multiplot layout 2, 1 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
-    plotFile.write('set noxlabel\n')
-    plotFile.write('set noxtics\n')
-    plotFile.write('set noylabel\n')
-    plotFile.write('set logscale y\n')
-    plotFile.write('set nokey\n')
     datFileNames=[]
     for errName in sorted(errDict.keys()):
 	errValList=errDict[errName]
@@ -61,24 +62,21 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
         # execute plot command
         plotFile.write('plot\\\n')
         if impulse:
-            plotFile.write('\"'+datOverFileName+'\" with impulses pt 3 lc 1 lw 2,\\\n')
-            plotFile.write('\"'+datUnderFileName+'\" with impulses pt 3 lc 2 lw 2,\\\n')
+            plotFile.write('\"'+datOverFileName+'\" with impulses lc 1 lw 2,\\\n')
+            plotFile.write('\"'+datUnderFileName+'\" with impulses lc 2 lw 2,\\\n')
         else:
             plotFile.write('\"'+datOverFileName+'\" with points pt 3 lc 1, \\\n')
             plotFile.write('\"'+datUnderFileName+'\" with points pt 3 lc 2, \\\n')
         plotFile.write(str(errLimDict[errName])+' with lines lt 3 lc 3\n')
         # reset y range
         plotFile.write('set yrange [*:*] \n')
+    plotFile.write('unset multiplot\n')
     plotFile.close()
 
     # run gnuplot
-    persistStr = makeSVG and '' or '-persist '
-    rc = os.system("gnuplot "+persistStr+plotFileName+" 2>/dev/null")
-
-    if (rc) :
-        sys.stderr.write("gnuplot failed\n")
-        sys.stderr.write("file "+plotFileName+"\n")
-    else :     
+    if (os.system("gnuplot "+plotFileName+" 2>/dev/null")):
+        sys.stderr.write('gnuplot failed.  plotFile: '+plotFileName+'\n')
+    else:     
         os.remove(plotFileName)
         map(os.remove,datFileNames)
 
