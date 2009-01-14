@@ -58,9 +58,9 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(Q(1),OpenAD_Symbol_3)
       Y%v = Q(1)%v
       P(1) = 1.0
+      L = 1
       CALL setderiv(OpenAD_Symbol_4,Q(1))
       CALL setderiv(Y,OpenAD_Symbol_4)
-      L = 1
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(OpenAD_Symbol_0,P(K))
       CALL foo(OpenAD_Symbol_0,Q(L))

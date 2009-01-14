@@ -64,9 +64,9 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(Q(1)), __deriv__(OpenAD_Symbol_3))
       __value__(Y) = __value__(Q(1))
       P(1) = 1.0
+      L = 1
       CALL setderiv(__deriv__(OpenAD_Symbol_4), __deriv__(Q(1)))
       CALL setderiv(__deriv__(Y), __deriv__(OpenAD_Symbol_4))
-      L = 1
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), P(K))
       CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(Q(L)))

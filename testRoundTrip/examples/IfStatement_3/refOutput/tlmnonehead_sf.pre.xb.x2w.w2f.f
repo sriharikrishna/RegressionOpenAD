@@ -1,0 +1,61 @@
+
+      MODULE all_globals_mod
+      use w2f__types
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+
+      SUBROUTINE foo(X, L)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) X
+      LOGICAL(w2f__i4) L
+C
+C     **** Statements ****
+C
+C$OPENAD XXX Template ad_template.f
+      L = (X .ne. 0.0D00)
+      END SUBROUTINE
+
+      SUBROUTINE head(X, Y)
+      use w2f__types
+      IMPLICIT NONE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_0
+C
+C     **** Parameters and Result ****
+C
+      TYPE (OpenADTy_active) X(1 : 1)
+      TYPE (OpenADTy_active) Y(1 : 1)
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL foo
+      LOGICAL(w2f__i4) L
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
+C$OPENAD XXX Template ad_template.f
+C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
+      CALL convert_a2p_scalar(OpenAD_Symbol_0, __deriv__(X(1)))
+      CALL foo(OpenAD_Symbol_0, L)
+C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
+      CALL convert_p2a_scalar(__deriv__(X(1)), OpenAD_Symbol_0)
+      IF(L) THEN
+        __value__(Y(1)) = __value__(X(1))
+        CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
+      ENDIF
+      END SUBROUTINE

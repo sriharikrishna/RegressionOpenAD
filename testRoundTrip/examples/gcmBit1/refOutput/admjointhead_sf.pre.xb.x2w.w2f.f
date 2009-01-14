@@ -1920,7 +1920,7 @@ C$OPENAD XXX Template ad_template.f
      >  = (__value__(X(XCOUNT)) * 3.0D00)
                 __value__(SFLD(INT(I), INT(J), INT(K), INT(L), INT(M)))
      >  = (__value__(X(XCOUNT)) * 4.0D00)
-                XCOUNT = XCOUNT + 1
+                XCOUNT = (XCOUNT + 1)
               END DO
             END DO
           END DO
@@ -1984,7 +1984,7 @@ C               $OpenAD$ INLINE push_i(subst)
                 CALL push_i(L)
 C               $OpenAD$ INLINE push_i(subst)
                 CALL push_i(M)
-                XCOUNT = XCOUNT + 1
+                XCOUNT = (XCOUNT + 1)
                 OpenAD_Symbol_147 = (INT(OpenAD_Symbol_147) + INT(
      > 1_w2f__i8))
               END DO
@@ -2206,7 +2206,7 @@ C               $OpenAD$ INLINE push_i(subst)
                 CALL push_i(L)
 C               $OpenAD$ INLINE push_i(subst)
                 CALL push_i(M)
-                XCOUNT = XCOUNT + 1
+                XCOUNT = (XCOUNT + 1)
                 OpenAD_Symbol_168 = (INT(OpenAD_Symbol_168) + INT(
      > 1_w2f__i8))
               END DO

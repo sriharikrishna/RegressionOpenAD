@@ -32,6 +32,6 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = X(1)%v
+      I = (INT(X(1)%v+(-1.0D00))+1)
       CALL setderiv(Y(1),X(1))
-      I = INT(X(1)%v+(-1.0D00))+1
       END SUBROUTINE

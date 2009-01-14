@@ -87,13 +87,13 @@ C
 ! original function
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = X(1)%v
-      I = INT(X(1)%v+(-1.0D00))+1
+      I = (INT(X(1)%v+(-1.0D00))+1)
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = X(1)%v
-      I = INT(X(1)%v+(-1.0D00))+1
+      I = (INT(X(1)%v+(-1.0D00))+1)
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint

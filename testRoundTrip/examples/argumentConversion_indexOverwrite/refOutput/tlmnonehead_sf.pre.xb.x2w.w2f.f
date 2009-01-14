@@ -45,11 +45,11 @@ C
       OpenAD_Symbol_0 = __value__(Q)
       OpenAD_Symbol_1 = __value__(P)
       __value__(Q) = OpenAD_Symbol_2
+      I = (I + 1)
       CALL setderiv(__deriv__(OpenAD_Symbol_6), __deriv__(Q))
       CALL sax(OpenAD_Symbol_0, __deriv__(P), __deriv__(Q))
       CALL saxpy(OpenAD_Symbol_1, __deriv__(OpenAD_Symbol_6), __deriv__
      > (Q))
-      I = I + 1
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

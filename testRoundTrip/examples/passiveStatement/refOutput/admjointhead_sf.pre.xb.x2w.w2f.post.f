@@ -128,7 +128,7 @@ C restore arguments
 C original function
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = X(1)%v
-      I = INT(X(1)%v+(-1.0D00))+1
+      I = (INT(X(1)%v+(-1.0D00))+1)
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -142,7 +142,7 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = X(1)%v
-      I = INT(X(1)%v+(-1.0D00))+1
+      I = (INT(X(1)%v+(-1.0D00))+1)
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.

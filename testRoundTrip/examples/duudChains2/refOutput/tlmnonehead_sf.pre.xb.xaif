@@ -139,7 +139,14 @@
       <xaif:BasicBlock vertex_id="5" annotation="" scope_id="3">
         <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-        <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_STID]"/>
+        <xaif:Assignment statement_id="11">
+          <xaif:AssignmentLHS active="false" alias="2" du_ud="4" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="L_3" annotation="" scope_id="3"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:Constant vertex_id="1" type="bool" feType="I4" value="true"/>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
       </xaif:BasicBlock>
       <xaif:Branch vertex_id="23" annotation="">
         <xaif:Condition>

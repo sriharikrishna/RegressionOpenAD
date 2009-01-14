@@ -5,7 +5,7 @@ import sys
 
 def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
     import tempfile
-    plotFileName=tempfile.mktemp()
+    plotFileName=tempfile.mktemp(suffix='.gnu')
     plotFile=open(plotFileName,"w")
 
     # set output terminal
@@ -14,17 +14,18 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
         plotFile.write('set term svg font \'arial,11\' size 900,690\n')
         plotFile.write('set output "'+outputName+'"\n')
     else:
-        plotFile.write('set terminal x11\n')
-
+        plotFile.write('set terminal x11 persist\n')
+    # set global options
+    plotFile.write('unset key\n')
+    plotFile.write('unset xtics\n')
+    plotFile.write('unset xlabel\n')
+    plotFile.write('unset ylabel\n')
+    plotFile.write('set logscale y\n')
+    # set layout
     if withAD: 
         plotFile.write('set multiplot layout 2, 3 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
     else:     
         plotFile.write('set multiplot layout 2, 1 title \"'+str(name)+' n='+str(n)+',m='+str(m)+'\"\n')
-    plotFile.write('set noxlabel\n')
-    plotFile.write('set noxtics\n')
-    plotFile.write('set noylabel\n')
-    plotFile.write('set logscale y\n')
-    plotFile.write('set nokey\n')
     datFileNames=[]
     for errName in sorted(errDict.keys()):
 	errValList=errDict[errName]
@@ -61,24 +62,21 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
         # execute plot command
         plotFile.write('plot\\\n')
         if impulse:
-            plotFile.write('\"'+datOverFileName+'\" with impulses pt 3 lc 1 lw 2,\\\n')
-            plotFile.write('\"'+datUnderFileName+'\" with impulses pt 3 lc 2 lw 2,\\\n')
+            plotFile.write('\"'+datOverFileName+'\" with impulses lc 1 lw 2,\\\n')
+            plotFile.write('\"'+datUnderFileName+'\" with impulses lc 2 lw 2,\\\n')
         else:
             plotFile.write('\"'+datOverFileName+'\" with points pt 3 lc 1, \\\n')
             plotFile.write('\"'+datUnderFileName+'\" with points pt 3 lc 2, \\\n')
         plotFile.write(str(errLimDict[errName])+' with lines lt 3 lc 3\n')
         # reset y range
         plotFile.write('set yrange [*:*] \n')
+    plotFile.write('unset multiplot\n')
     plotFile.close()
 
     # run gnuplot
-    persistStr = makeSVG and '' or '-persist '
-    rc = os.system("gnuplot "+persistStr+plotFileName+" 2>/dev/null")
-
-    if (rc) :
-        sys.stderr.write("gnuplot failed\n")
-        sys.stderr.write("file "+plotFileName+"\n")
-    else :     
+    if (os.system("gnuplot "+plotFileName+" 2>/dev/null")):
+        sys.stderr.write('gnuplot failed.  plotFile: '+plotFileName+'\n')
+    else:     
         os.remove(plotFileName)
         map(os.remove,datFileNames)
 
@@ -104,50 +102,50 @@ def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
                 numbers[fileKey].append(float(fValueString))
     errDict={}
     if (withAD): 
-        for key in ['absErrADDD','relErrADDD','absErrCvR_AD','relErrCvR_AD'] :
+        for key in ['absDiscrADDD','relDiscrADDD','absDiscrCvR_AD','relDiscrCvR_AD'] :
             errDict[key]=[]
-    for key in ['absErrCvR_DD','relErrCvR_DD'] :
+    for key in ['absDiscrCvR_DD','relDiscrCvR_DD'] :
       errDict[key]=[]
     for i in range(0,n*m):
         if (withAD): 
             # current AD vs DD
-            errDict['absErrADDD'].append(abs(numbers['curDD'][i]-numbers['curAD'][i]))
+            errDict['absDiscrADDD'].append(abs(numbers['curDD'][i]-numbers['curAD'][i]))
             if (numbers['curAD'][i]!=0) :
-                errDict['relErrADDD'].append(abs((numbers['curDD'][i]-numbers['curAD'][i])/numbers['curAD'][i]))
+                errDict['relDiscrADDD'].append(abs((numbers['curDD'][i]-numbers['curAD'][i])/numbers['curAD'][i]))
             else:
-                errDict['relErrADDD'].append(errDict['absErrADDD'][-1])
+                errDict['relDiscrADDD'].append(errDict['absDiscrADDD'][-1])
             # AD current vs. ref
-            errDict['absErrCvR_AD'].append(abs(numbers['curAD'][i]-numbers['refAD'][i]))
+            errDict['absDiscrCvR_AD'].append(abs(numbers['curAD'][i]-numbers['refAD'][i]))
             if (numbers['refAD'][i]!=0) :
-                errDict['relErrCvR_AD'].append(abs((numbers['curAD'][i]-numbers['refAD'][i])/numbers['refAD'][i]))
+                errDict['relDiscrCvR_AD'].append(abs((numbers['curAD'][i]-numbers['refAD'][i])/numbers['refAD'][i]))
             else:
-                errDict['relErrCvR_AD'].append(errDict['absErrCvR_AD'][-1])
+                errDict['relDiscrCvR_AD'].append(errDict['absDiscrCvR_AD'][-1])
         # DD current vs. ref
-        errDict['absErrCvR_DD'].append(abs(numbers['curDD'][i]-numbers['refDD'][i]))
+        errDict['absDiscrCvR_DD'].append(abs(numbers['curDD'][i]-numbers['refDD'][i]))
         if (numbers['refDD'][i]!=0) :
-            errDict['relErrCvR_DD'].append(abs((numbers['curDD'][i]-numbers['refDD'][i])/numbers['refDD'][i]))
+            errDict['relDiscrCvR_DD'].append(abs((numbers['curDD'][i]-numbers['refDD'][i])/numbers['refDD'][i]))
         else:
-            errDict['relErrCvR_DD'].append(errDict['absErrCvR_DD'][-1])
+            errDict['relDiscrCvR_DD'].append(errDict['absDiscrCvR_DD'][-1])
     errLimDict={}
     compEps=1.E-16
-    errLimDict['absErrCvR_DD']=compEps
-    errLimDict['relErrCvR_DD']=compEps
-    maxAbsDiscrCurRef=max(errDict['absErrCvR_DD'])
-    maxRelDiscrCurRef=max(errDict['relErrCvR_DD'])
+    errLimDict['absDiscrCvR_DD']=compEps
+    errLimDict['relDiscrCvR_DD']=compEps
+    maxAbsDiscrCurRef=max(errDict['absDiscrCvR_DD'])
+    maxRelDiscrCurRef=max(errDict['relDiscrCvR_DD'])
     returnValue=0
     if (withAD): 
-        maxRelErrADDD=max(errDict['relErrADDD'])
-        maxAbsErrADDD=max(errDict['absErrADDD'])
-        errLimDict['relErrADDD']=relErrorMax
-        errLimDict['absErrADDD']=relErrorMax
+        maxRelErrADDD=max(errDict['relDiscrADDD'])
+        maxAbsErrADDD=max(errDict['absDiscrADDD'])
+        errLimDict['relDiscrADDD']=relErrorMax
+        errLimDict['absDiscrADDD']=relErrorMax
         if (maxRelErrADDD>relErrorMax and maxAbsErrADDD>relErrorMax):
             returnValue=1
             if not doBatch : 
                 sys.stderr.write(" max discrepancy current AD vs. DD abs: %s rel %s\n" % (maxAbsErrADDD,maxAbsErrADDD))
-        maxAbsDiscrCurRef=max([max(errDict['absErrCvR_AD']),maxAbsDiscrCurRef])
-        maxRelDiscrCurRef=max([max(errDict['relErrCvR_AD']),maxRelDiscrCurRef])
-        errLimDict['absErrCvR_AD']=compEps
-        errLimDict['relErrCvR_AD']=compEps
+        maxAbsDiscrCurRef=max([max(errDict['absDiscrCvR_AD']),maxAbsDiscrCurRef])
+        maxRelDiscrCurRef=max([max(errDict['relDiscrCvR_AD']),maxRelDiscrCurRef])
+        errLimDict['absDiscrCvR_AD']=compEps
+        errLimDict['relDiscrCvR_AD']=compEps
     if (maxRelDiscrCurRef>compEps and maxAbsDiscrCurRef>compEps):
         returnValue=1
         if not doBatch : 

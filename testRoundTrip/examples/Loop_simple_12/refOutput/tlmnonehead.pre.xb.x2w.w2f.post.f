@@ -45,7 +45,7 @@ C$OPENAD XXX Simple loop
           CALL sax(OpenAD_Symbol_0,X(I),Y(I))
           CALL saxpy(OpenAD_Symbol_1,X(J),Y(I))
           CALL saxpy(1 _w2f__i8,OpenAD_Symbol_2,Y(I))
-          J = J + 1
+          J = (J + 1)
         END DO
       END DO
       END SUBROUTINE

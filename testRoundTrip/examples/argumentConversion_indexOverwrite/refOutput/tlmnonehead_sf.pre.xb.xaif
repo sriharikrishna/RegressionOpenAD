@@ -288,6 +288,20 @@
             </xaif:VariableReference>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
+        <xaif:Assignment statement_id="13">
+          <xaif:AssignmentLHS active="false" alias="4" du_ud="2" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="I_22" annotation="" scope_id="1"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:Intrinsic vertex_id="1" annotation="" name="add_scal_scal"/>
+            <xaif:VariableReference vertex_id="2" active="false" alias="4" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="I_22" annotation="" scope_id="1"/>
+            </xaif:VariableReference>
+            <xaif:Constant vertex_id="3" type="integer" feType="I4" value="1"/>
+            <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+            <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
         <xaif:DerivativePropagator>
           <xaif:SetDeriv>
             <xaif:Tgt deriv="1">
@@ -328,7 +342,6 @@
             </xaif:Y>
           </xaif:Saxpy>
         </xaif:DerivativePropagator>
-        <xaif:Marker statement_id="13" annotation="{WHIRL_Id#13} [passive: OPR_STID]"/>
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="9" annotation=""/>
       <xaif:ControlFlowEdge edge_id="1" source="7" target="8" has_condition_value="0"/>
@@ -379,7 +392,14 @@
         <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="11" annotation="{WHIRL_Id#11} [passive: OPR_USE]"/>
-        <xaif:Marker statement_id="12" annotation="{WHIRL_Id#12} [passive: OPR_STID]"/>
+        <xaif:Assignment statement_id="12">
+          <xaif:AssignmentLHS active="false" alias="5" du_ud="3" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="I_22" annotation="" scope_id="1"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
         <xaif:Assignment statement_id="14">
           <xaif:AssignmentLHS active="true" alias="6" du_ud="5" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="5"/>

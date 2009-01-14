@@ -183,7 +183,7 @@
     <xaif:BasicBlock vertex_id="6" scope_id="3"/>
 
     <xaif:ForLoop vertex_id="7" reversal="anonymous" lineNumber="12">
-      <xaif:Initialization statement_id="26">
+      <xaif:Initialization statement_id="26" do_chain="3">
         <xaif:AssignmentLHS du_ud="5" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
         </xaif:AssignmentLHS>
@@ -200,7 +200,7 @@
         <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
         <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
       </xaif:Condition>
-      <xaif:Update statement_id="31">
+      <xaif:Update statement_id="31" do_chain="3">
         <xaif:AssignmentLHS du_ud="5" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
         </xaif:AssignmentLHS>
@@ -276,7 +276,7 @@
     <xaif:BasicBlock vertex_id="10" scope_id="3"/>
 
     <xaif:ForLoop vertex_id="11" reversal="anonymous" lineNumber="16">
-      <xaif:Initialization statement_id="55">
+      <xaif:Initialization statement_id="55" do_chain="5">
         <xaif:AssignmentLHS du_ud="6" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
         </xaif:AssignmentLHS>
@@ -293,7 +293,7 @@
         <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
         <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
       </xaif:Condition>
-      <xaif:Update statement_id="60">
+      <xaif:Update statement_id="60" do_chain="5">
         <xaif:AssignmentLHS du_ud="6" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
         </xaif:AssignmentLHS>
