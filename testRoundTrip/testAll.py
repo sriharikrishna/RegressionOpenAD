@@ -336,7 +336,7 @@ def link_xaifBooster(majorMode):
 	    i = 0
 	    defaultAlgNum = -1
 	    for alg in xaifBoosterAlgs:
-		algPath = "%s/algorithms/%s/test/t" % (os.environ['XAIFBOOSTER_BASE'],alg)
+		algPath = "%s/algorithms/%s/driver/oadDriver" % (os.environ['XAIFBOOSTER_BASE'],alg)
 		if (os.path.exists(algPath)): # filter out those that have no t executable
 		    sys.stdout.write("%i: %s\n" % (i,alg))
 		    sys.stdout.flush()
