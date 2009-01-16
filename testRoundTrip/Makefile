@@ -207,7 +207,7 @@ head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 # postprocess F'
 head_sf.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
 	$(COMPLAIN)
-	./postProcess.py -v $(POSTPROCESS_FLAGS) $< -o $@
+	./postProcess.py $(POSTPROCESS_FLAGS) $< -o $@
 
 # extract the transformed globals module so we the right order of 
 # compilation with respect to the globals checkpoint module
