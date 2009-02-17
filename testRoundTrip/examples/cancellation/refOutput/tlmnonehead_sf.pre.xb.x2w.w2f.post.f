@@ -68,7 +68,7 @@ C
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (X1%v/X2%v)
       A%v = (1.0D00/OpenAD_Symbol_0)
-      OpenAD_Symbol_3 = (INT(1 _w2f__i8)/X2%v)
+      OpenAD_Symbol_3 = (INT(1_w2f__i8)/X2%v)
       OpenAD_Symbol_4 = (-(X1%v/(X2%v*X2%v)))
       OpenAD_Symbol_2 = (-(1.0D00 /(OpenAD_Symbol_0 * OpenAD_Symbol_0))
      > )

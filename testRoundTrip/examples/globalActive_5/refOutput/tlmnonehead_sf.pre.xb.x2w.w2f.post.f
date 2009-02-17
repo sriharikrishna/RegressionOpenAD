@@ -7,8 +7,8 @@
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Statements ****
 C

@@ -99,8 +99,8 @@ C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) NX
       INTEGER(w2f__i4) NY
-      type(active) :: X(1 : INT((NX * NY)))
-      type(active) :: FVEC(1 : INT((NX * NY)))
+      type(active) :: X(1:INT((NX*NY)))
+      type(active) :: FVEC(1:INT((NX*NY)))
       REAL(w2f__8) R
 C
 C     **** Local Variables and Functions ****

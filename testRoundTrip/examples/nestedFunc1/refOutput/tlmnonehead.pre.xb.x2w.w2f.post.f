@@ -8,9 +8,9 @@ C
 C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) J
-      type(active) :: X(1 : J)
+      type(active) :: X(1:J)
       INTENT(IN)  X
-      type(active) :: Y(1 : 1)
+      type(active) :: Y(1:1)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****
@@ -33,7 +33,7 @@ C$OPENAD XXX Template ad_template.f
 
         SUBROUTINE FOO()
         use w2f__types
-      use OAD_active
+        use OAD_active
         IMPLICIT NONE
 C
 C       **** Global Variables & Derived Type Definitions ****

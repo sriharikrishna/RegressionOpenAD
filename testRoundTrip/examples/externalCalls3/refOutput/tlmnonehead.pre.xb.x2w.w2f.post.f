@@ -25,6 +25,6 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       T1 = X
-      CALL barext(X, T2)
+      CALL barext(X,T2)
       Y = T2
       END SUBROUTINE

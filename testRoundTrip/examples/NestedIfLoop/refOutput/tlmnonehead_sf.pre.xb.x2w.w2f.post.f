@@ -23,9 +23,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       INTENT(IN)  X
-      type(active) :: Y(1 : 2)
+      type(active) :: Y(1:2)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****
@@ -40,7 +40,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      IF (X(1)%v .LT. X(2)%v) THEN
+      IF (X(1)%v.LT.X(2)%v) THEN
         DO I = 1, 2, 1
           Y(INT(I))%v = (X(I)%v*X(I)%v)
           OpenAD_Symbol_0 = X(I)%v

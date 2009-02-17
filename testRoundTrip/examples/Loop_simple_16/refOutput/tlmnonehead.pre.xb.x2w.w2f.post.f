@@ -14,7 +14,7 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 5)
+      type(active) :: X(1:5)
       INTENT(IN)  X
       type(active) :: Y
       INTEGER(w2f__i4) L
@@ -47,9 +47,9 @@ C$OPENAD XXX Simple loop
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 5)
+      type(active) :: X(1:5)
       INTENT(IN)  X
-      type(active) :: Y(1 : 4)
+      type(active) :: Y(1:4)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****

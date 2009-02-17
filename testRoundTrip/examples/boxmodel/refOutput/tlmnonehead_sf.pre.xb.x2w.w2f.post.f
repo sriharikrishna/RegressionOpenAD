@@ -35,24 +35,24 @@ C
       REAL(w2f__8) PROJ_T(1 : 6)
       REAL(w2f__8) R(1 : 6)
       REAL(w2f__8) R1(1 : 6)
-      type(active) :: RHO(1 : 3)
+      type(active) :: RHO(1:3)
       REAL(w2f__8) ROBERT_FILTER_COEFF
       REAL(w2f__8) R_S(1 : 6)
       REAL(w2f__8) R_T(1 : 6)
-      type(active) :: S(1 : 3)
-      type(active) :: SNEW(1 : 3)
-      type(active) :: SNOW(1 : 3)
-      type(active) :: SOLD(1 : 3)
+      type(active) :: S(1:3)
+      type(active) :: SNEW(1:3)
+      type(active) :: SNOW(1:3)
+      type(active) :: SOLD(1:3)
       REAL(w2f__8) SSTAR(1 : 2)
       REAL(w2f__8) SV
-      type(active) :: T(1 : 3)
+      type(active) :: T(1:3)
       REAL(w2f__8) THC_S
       REAL(w2f__8) THC_T
       REAL(w2f__8) THC_TOT
       REAL(w2f__8) THOUSAND
-      type(active) :: TNEW(1 : 3)
-      type(active) :: TNOW(1 : 3)
-      type(active) :: TOLD(1 : 3)
+      type(active) :: TNEW(1:3)
+      type(active) :: TNOW(1:3)
+      type(active) :: TOLD(1:3)
       REAL(w2f__8) TSTAR(1 : 2)
       REAL(w2f__8) TSVEC(1 : 6)
       REAL(w2f__8) U0
@@ -61,7 +61,7 @@ C
       LOGICAL(w2f__i4) VERBMODE
       REAL(w2f__8) VOL(1 : 3)
       REAL(w2f__8) X(1 : 6, 1 : 6)
-      type(active) :: XX(1 : 6)
+      type(active) :: XX(1:6)
       REAL(w2f__8) Y(1 : 6)
       REAL(w2f__8) YEAR
 C
@@ -112,7 +112,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_robert_filter(SNOW,SOLD,SNEW)
       CALL box_cycle_fields()
       DO L = 1, 3, 1
-        IF (TNOW(L)%v .LT. (-2.0D00)) THEN
+        IF (TNOW(L)%v.LT.(-2.0D00)) THEN
           TNOW(INT(L))%v = 2.0D00
           CALL zero_deriv(TNOW(INT(L)))
         ENDIF
@@ -206,10 +206,10 @@ C$OPENAD XXX Template ad_template.f
         S(INT(L))%v = (S(L)%v+XX(L+3)%v)
         CALL setderiv(OpenAD_Symbol_123,T(L))
         CALL setderiv(OpenAD_Symbol_124,S(L))
-        CALL sax(1 _w2f__i8,OpenAD_Symbol_123,T(L))
-        CALL saxpy(1 _w2f__i8,XX(L),T(L))
-        CALL sax(1 _w2f__i8,OpenAD_Symbol_124,S(L))
-        CALL saxpy(1 _w2f__i8,XX(L+3),S(L))
+        CALL sax(1_w2f__i8,OpenAD_Symbol_123,T(L))
+        CALL saxpy(1_w2f__i8,XX(L),T(L))
+        CALL sax(1_w2f__i8,OpenAD_Symbol_124,S(L))
+        CALL saxpy(1_w2f__i8,XX(L+3),S(L))
       END DO
       DO L = 1, 3, 1
         TNEW(INT(L))%v = T(L)%v
@@ -395,9 +395,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: TLOC(1 : 3)
-      type(active) :: SLOC(1 : 3)
-      type(active) :: RHOLOC(1 : 3)
+      type(active) :: TLOC(1:3)
+      type(active) :: SLOC(1:3)
+      type(active) :: RHOLOC(1:3)
 C
 C     **** Local Variables and Functions ****
 C
@@ -442,7 +442,7 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: RHOLOC(1 : 3)
+      type(active) :: RHOLOC(1:3)
       type(active) :: UVELLOC
 C
 C     **** Local Variables and Functions ****
@@ -490,9 +490,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: FLDNOW(1 : 3)
-      type(active) :: FLDOLD(1 : 3)
-      type(active) :: FLDNEW(1 : 3)
+      type(active) :: FLDNOW(1:3)
+      type(active) :: FLDOLD(1:3)
+      type(active) :: FLDNEW(1:3)
 C
 C     **** Local Variables and Functions ****
 C
@@ -520,7 +520,7 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(OpenAD_Symbol_82,FLDOLD(L),FLDNOW(L))
         CALL saxpy(OpenAD_Symbol_82,FLDNEW(L),FLDNOW(L))
         CALL saxpy(OpenAD_Symbol_118,OpenAD_Symbol_120,FLDNOW(L))
-        CALL saxpy(1 _w2f__i8,OpenAD_Symbol_119,FLDNOW(L))
+        CALL saxpy(1_w2f__i8,OpenAD_Symbol_119,FLDNOW(L))
       END DO
       END SUBROUTINE
 
@@ -575,9 +575,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: FLDNEW(1 : 3)
-      type(active) :: FLDOLD(1 : 3)
-      type(active) :: DFLDDT(1 : 3)
+      type(active) :: FLDNEW(1:3)
+      type(active) :: FLDOLD(1:3)
+      type(active) :: DFLDDT(1:3)
 C
 C     **** Local Variables and Functions ****
 C
@@ -597,7 +597,7 @@ C$OPENAD XXX Template ad_template.f
         FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*OpenAD_Symbol_85)
         OpenAD_Symbol_86 = OpenAD_Symbol_85
         CALL sax(OpenAD_Symbol_86,DFLDDT(L),FLDNEW(L))
-        CALL saxpy(1 _w2f__i8,FLDOLD(L),FLDNEW(L))
+        CALL saxpy(1_w2f__i8,FLDOLD(L),FLDNEW(L))
       END DO
       END SUBROUTINE
 
@@ -688,14 +688,14 @@ C
       REAL(w2f__8) FLDSTAR(1 : 2)
       REAL(w2f__8) EXTFORLOC(1 : 2)
       type(active) :: UVELLOC
-      type(active) :: FLDNOW(1 : 3)
-      type(active) :: FLDOLD(1 : 3)
-      type(active) :: FLDNEW(1 : 3)
+      type(active) :: FLDNOW(1:3)
+      type(active) :: FLDOLD(1:3)
+      type(active) :: FLDNEW(1:3)
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL box_update
-      type(active) :: DFLDDT(1 : 3)
+      type(active) :: DFLDDT(1:3)
       INTEGER(w2f__i4) ISBYTE
       PARAMETER ( ISBYTE = 8)
       INTEGER(w2f__i4) NLEV1
@@ -706,7 +706,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      IF (UVELLOC%v .GE. 0.0D00) THEN
+      IF (UVELLOC%v.GE.0.0D00) THEN
         OpenAD_Symbol_19 = (FLDSTAR(1)-FLDNOW(1)%v)
         OpenAD_Symbol_16 = (GAMMALOC * OpenAD_Symbol_19)
         OpenAD_Symbol_23 = (FLDNOW(3)%v-FLDNOW(1)%v)

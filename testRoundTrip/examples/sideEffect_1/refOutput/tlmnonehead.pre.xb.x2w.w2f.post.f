@@ -26,7 +26,7 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
+      type(active) :: X(1:1)
       type(active) :: Y
 C
 C     **** Statements ****
@@ -76,8 +76,8 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C

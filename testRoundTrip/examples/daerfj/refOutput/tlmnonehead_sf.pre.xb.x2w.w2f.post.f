@@ -33,8 +33,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 4)
-      type(active) :: FVEC(1 : 11)
+      type(active) :: X(1:4)
+      type(active) :: FVEC(1:11)
 C
 C     **** Local Variables and Functions ****
 C
@@ -85,7 +85,7 @@ C$OPENAD XXX Template ad_template.f
         FVEC(INT(I))%v = (Y(I)-(OpenAD_Symbol_9/TEMP2%v))
         OpenAD_Symbol_12 = TEMP1%v
         OpenAD_Symbol_13 = X(1)%v
-        OpenAD_Symbol_10 = (INT(1 _w2f__i8)/TEMP2%v)
+        OpenAD_Symbol_10 = (INT(1_w2f__i8)/TEMP2%v)
         OpenAD_Symbol_11 = (-(OpenAD_Symbol_9/(TEMP2%v*TEMP2%v)))
         OpenAD_Symbol_14 = (OpenAD_Symbol_10 * INT((-1_w2f__i8)))
         OpenAD_Symbol_15 = (OpenAD_Symbol_11 * INT((-1_w2f__i8)))

@@ -34,9 +34,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       INTENT(IN)  X
-      type(active) :: Y(1 : 2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -55,7 +55,7 @@ C$OPENAD XXX Simple loop
           CALL setderiv(OpenAD_Symbol_6,Y(I))
           CALL sax(OpenAD_Symbol_0,X(I),Y(I))
           CALL saxpy(OpenAD_Symbol_1,X(I),Y(I))
-          CALL saxpy(1 _w2f__i8,OpenAD_Symbol_6,Y(I))
+          CALL saxpy(1_w2f__i8,OpenAD_Symbol_6,Y(I))
         ENDIF
         IF(GLOBALSTRING .EQ. 'no') THEN
           OpenAD_Symbol_2 = (X(I)%v*X(I)%v)
@@ -67,7 +67,7 @@ C$OPENAD XXX Simple loop
           CALL setderiv(OpenAD_Symbol_9,Y(I))
           CALL sax(OpenAD_Symbol_7,X(I),Y(I))
           CALL saxpy(OpenAD_Symbol_8,X(I),Y(I))
-          CALL saxpy(1 _w2f__i8,OpenAD_Symbol_9,Y(I))
+          CALL saxpy(1_w2f__i8,OpenAD_Symbol_9,Y(I))
         ENDIF
       END DO
       GLOBALSTRING = 'either'
@@ -82,9 +82,9 @@ C$OPENAD XXX Simple loop
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       INTENT(IN)  X
-      type(active) :: Y(1 : 2)
+      type(active) :: Y(1:2)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****

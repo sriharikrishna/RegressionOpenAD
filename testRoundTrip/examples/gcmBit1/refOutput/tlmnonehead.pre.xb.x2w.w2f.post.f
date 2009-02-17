@@ -91,10 +91,10 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: LOCPRES(1 : 2, 1 : 2)
-      type(active) :: TFLD(1 : 2, 1 : 2, 1 : 2, 1 : 2, 1 : 2)
-      type(active) :: SFLD(1 : 2, 1 : 2, 1 : 2, 1 : 2, 1 : 2)
-      type(active) :: BULKMOD(1 : 2, 1 : 2)
+      type(active) :: LOCPRES(1:2,1:2)
+      type(active) :: TFLD(1:2,1:2,1:2,1:2,1:2)
+      type(active) :: SFLD(1:2,1:2,1:2,1:2,1:2)
+      type(active) :: BULKMOD(1:2,1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -175,7 +175,7 @@ C$OPENAD XXX Template ad_template.f
           CALL sax(OpenAD_Symbol_90,TFLD(I,J,K,BI,BJ),T3)
           CALL sax(OpenAD_Symbol_91,TFLD(I,J,K,BI,BJ),T4)
           CALL setderiv(S,SFLD(I,J,K,BI,BJ))
-          IF (S%v .GT. 0.0D00) THEN
+          IF (S%v.GT.0.0D00) THEN
             OpenAD_Symbol_6 = SQRT(S%v)
             S3O2%v = (S%v*OpenAD_Symbol_6)
             OpenAD_Symbol_7 = OpenAD_Symbol_6
@@ -310,21 +310,21 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 32)
-      type(active) :: Y(1 : 4)
+      type(active) :: X(1:32)
+      type(active) :: Y(1:4)
 C
 C     **** Local Variables and Functions ****
 C
-      type(active) :: BULKMOD(1 : 2, 1 : 2)
+      type(active) :: BULKMOD(1:2,1:2)
       EXTERNAL find_bulkmod
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       INTEGER(w2f__i4) K
       INTEGER(w2f__i4) L
-      type(active) :: LOCPRES(1 : 2, 1 : 2)
+      type(active) :: LOCPRES(1:2,1:2)
       INTEGER(w2f__i4) M
-      type(active) :: SFLD(1 : 2, 1 : 2, 1 : 2, 1 : 2, 1 : 2)
-      type(active) :: TFLD(1 : 2, 1 : 2, 1 : 2, 1 : 2, 1 : 2)
+      type(active) :: SFLD(1:2,1:2,1:2,1:2,1:2)
+      type(active) :: TFLD(1:2,1:2,1:2,1:2,1:2)
       INTEGER(w2f__i4) XCOUNT
 C
 C     **** Top Level Pragmas ****

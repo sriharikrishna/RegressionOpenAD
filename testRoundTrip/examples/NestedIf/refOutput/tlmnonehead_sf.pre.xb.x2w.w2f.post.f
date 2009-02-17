@@ -22,9 +22,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       INTENT(IN)  X
-      type(active) :: Y(1 : 2)
+      type(active) :: Y(1:2)
       INTENT(OUT)  Y
 C
 C     **** Top Level Pragmas ****
@@ -35,8 +35,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      IF (X(1)%v .LE. X(2)%v) THEN
-        IF (X(1)%v .eq. X(2)%v) THEN
+      IF (X(1)%v.LE.X(2)%v) THEN
+        IF (X(1)%v.eq.X(2)%v) THEN
           Y(1)%v = (X(1)%v*X(1)%v)
           OpenAD_Symbol_0 = X(1)%v
           OpenAD_Symbol_1 = X(1)%v
@@ -44,13 +44,13 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_Symbol_1,X(1),Y(1))
         ELSE
           Y(1)%v = (X(2)%v-X(1)%v)
-          CALL sax(1 _w2f__i8,X(2),Y(1))
-          CALL saxpy(-1 _w2f__i8,X(1),Y(1))
+          CALL sax(1_w2f__i8,X(2),Y(1))
+          CALL saxpy(-1_w2f__i8,X(1),Y(1))
         ENDIF
       ELSE
         Y(1)%v = (X(1)%v-X(2)%v)
-        CALL sax(1 _w2f__i8,X(1),Y(1))
-        CALL saxpy(-1 _w2f__i8,X(2),Y(1))
+        CALL sax(1_w2f__i8,X(1),Y(1))
+        CALL saxpy(-1_w2f__i8,X(2),Y(1))
       ENDIF
       Y(2)%v = Y(1)%v
       CALL setderiv(OpenAD_Symbol_2,Y(1))

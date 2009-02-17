@@ -24,9 +24,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
+      type(active) :: X(1:1)
       INTENT(IN)  X
-      type(active) :: Y(1 : 1)
+      type(active) :: Y(1:1)
       INTENT(OUT)  Y
 C
 C     **** Top Level Pragmas ****
@@ -39,7 +39,7 @@ C
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = 2.0
       CALL zero_deriv(Y(1))
-      IF (X(1)%v .GT. 0.0D00) THEN
+      IF (X(1)%v.GT.0.0D00) THEN
         Y(1)%v = X(1)%v
         CALL setderiv(Y(1),X(1))
       ENDIF

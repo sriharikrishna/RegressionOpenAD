@@ -22,8 +22,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 4)
-      type(active) :: Y(1 : 4)
+      type(active) :: X(1:4)
+      type(active) :: Y(1:4)
 C
 C     **** Local Variables and Functions ****
 C
@@ -53,8 +53,8 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL sax(OpenAD_Symbol_1,C,Y(3))
       CALL saxpy(OpenAD_Symbol_2,D,Y(3))
       Y(4)%v = (C%v+D%v)
-      CALL sax(1 _w2f__i8,C,Y(4))
-      CALL saxpy(1 _w2f__i8,D,Y(4))
+      CALL sax(1_w2f__i8,C,Y(4))
+      CALL saxpy(1_w2f__i8,D,Y(4))
       Y(1)%v = X(3)%v
       CALL setderiv(Y(1),X(3))
       Y(2)%v = X(4)%v

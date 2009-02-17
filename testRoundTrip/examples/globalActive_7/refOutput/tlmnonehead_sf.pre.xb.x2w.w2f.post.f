@@ -35,7 +35,7 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       type(active) :: Y
 C
 C     **** Statements ****
@@ -56,8 +56,8 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -83,7 +83,7 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_0(1 : 2)
+      type(active) :: OpenAD_Symbol_0(1:2)
       type(active) :: OpenAD_Symbol_1
 C
 C     **** Parameters and Result ****

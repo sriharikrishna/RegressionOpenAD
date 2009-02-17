@@ -27,8 +27,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -45,7 +45,7 @@ C
 C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(OpenAD_Symbol_0,X(1))
-      CALL foo(OpenAD_Symbol_0, L)
+      CALL foo(OpenAD_Symbol_0,L)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
       IF(L) THEN

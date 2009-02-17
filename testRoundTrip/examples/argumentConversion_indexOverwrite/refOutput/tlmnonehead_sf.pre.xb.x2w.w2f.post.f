@@ -70,15 +70,15 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       INTENT(IN)  X
-      type(active) :: Y(1 : 1)
+      type(active) :: Y(1:1)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
-      type(active) :: V(1 : 2)
+      type(active) :: V(1:2)
 C
 C     **** Top Level Pragmas ****
 C

@@ -16,9 +16,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 3)
+      type(active) :: X(1:3)
       INTENT(IN)  X
-      type(active) :: Y(1 : 3)
+      type(active) :: Y(1:3)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****
@@ -33,7 +33,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      IF (X(1)%v .LT. 4.0D00) THEN
+      IF (X(1)%v.LT.4.0D00) THEN
 C$OPENAD XXX Simple loop\t
         DO I = 1, 3, 1
           Y(INT(I))%v = X(I)%v

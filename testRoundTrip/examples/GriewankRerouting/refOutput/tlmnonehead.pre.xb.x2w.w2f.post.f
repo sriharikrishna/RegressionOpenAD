@@ -49,7 +49,7 @@ C$OPENAD XXX Template ad_template.f
       T1%v = X1%v
       T2%v = X2%v
       T3%v = (T1%v/T2%v)
-      OpenAD_Symbol_0 = (INT(1 _w2f__i8)/T2%v)
+      OpenAD_Symbol_0 = (INT(1_w2f__i8)/T2%v)
       OpenAD_Symbol_1 = (-(T1%v/(T2%v*T2%v)))
       T4%v = (T1%v*T2%v)
       OpenAD_Symbol_2 = T2%v
@@ -58,7 +58,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_4 = T4%v
       OpenAD_Symbol_5 = T3%v
       Y2%v = (T3%v/T4%v)
-      OpenAD_Symbol_6 = (INT(1 _w2f__i8)/T4%v)
+      OpenAD_Symbol_6 = (INT(1_w2f__i8)/T4%v)
       OpenAD_Symbol_7 = (-(T3%v/(T4%v*T4%v)))
       OpenAD_Symbol_8 = (OpenAD_Symbol_0 * OpenAD_Symbol_4 +
      >  OpenAD_Symbol_2 * OpenAD_Symbol_5)

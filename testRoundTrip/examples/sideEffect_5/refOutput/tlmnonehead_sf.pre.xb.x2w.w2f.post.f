@@ -27,7 +27,7 @@ C
 C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) N
-      type(active) :: A(1 : INT((N + G)))
+      type(active) :: A(1:INT((N+G)))
 C
 C     **** Local Variables and Functions ****
 C
@@ -56,8 +56,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 3)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:3)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -81,7 +81,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 3, 1
         Y(1)%v = (X(I)%v+Y(1)%v)
         CALL setderiv(OpenAD_Symbol_3,Y(1))
-        CALL sax(1 _w2f__i8,X(I),Y(1))
-        CALL saxpy(1 _w2f__i8,OpenAD_Symbol_3,Y(1))
+        CALL sax(1_w2f__i8,X(I),Y(1))
+        CALL saxpy(1_w2f__i8,OpenAD_Symbol_3,Y(1))
       END DO
       END SUBROUTINE

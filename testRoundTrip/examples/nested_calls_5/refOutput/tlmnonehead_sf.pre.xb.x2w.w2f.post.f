@@ -16,8 +16,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -60,5 +60,5 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = A%v
       CALL sax(OpenAD_Symbol_0,A,C)
       CALL saxpy(OpenAD_Symbol_1,A,C)
-      CALL saxpy(1 _w2f__i8,B,C)
+      CALL saxpy(1_w2f__i8,B,C)
       END SUBROUTINE

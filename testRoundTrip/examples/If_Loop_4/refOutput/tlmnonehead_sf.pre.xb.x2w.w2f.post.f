@@ -29,9 +29,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 10)
+      type(active) :: X(1:10)
       INTENT(IN)  X
-      type(active) :: Y(1 : 10)
+      type(active) :: Y(1:10)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****

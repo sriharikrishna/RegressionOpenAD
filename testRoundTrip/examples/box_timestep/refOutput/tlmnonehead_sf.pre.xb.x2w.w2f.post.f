@@ -82,14 +82,14 @@ C
       REAL(w2f__8) FLDSTAR(1 : 2)
       REAL(w2f__8) EXTFORLOC(1 : 2)
       REAL(w2f__8) UVELLOC
-      type(active) :: FLDNOW(1 : 3)
+      type(active) :: FLDNOW(1:3)
       REAL(w2f__8) FLDOLD(1 : 3)
-      type(active) :: FLDNEW(1 : 3)
+      type(active) :: FLDNEW(1:3)
 C
 C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) DELTA_T
-      type(active) :: DFLDDT(1 : 3)
+      type(active) :: DFLDDT(1:3)
       INTEGER(w2f__i4) L
       REAL(w2f__8) VOL(1 : 3)
 C

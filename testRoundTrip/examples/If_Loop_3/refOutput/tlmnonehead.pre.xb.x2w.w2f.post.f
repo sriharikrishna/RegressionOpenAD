@@ -18,9 +18,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
+      type(active) :: X(1:1)
       INTENT(IN)  X
-      type(active) :: Y(1 : 1)
+      type(active) :: Y(1:1)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****
@@ -40,7 +40,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 1, 1
         Y(1)%v = X(1)%v
         CALL setderiv(Y(1),X(1))
-        IF (Y(1)%v .GT. 0.0D00) THEN
+        IF (Y(1)%v.GT.0.0D00) THEN
           Y(1)%v = X(1)%v
           CALL setderiv(Y(1),X(1))
           DO J = 1, 3, 1
@@ -49,7 +49,7 @@ C$OPENAD XXX Template ad_template.f
             DO K = 1, 3, 1
               Y(1)%v = X(1)%v
               CALL setderiv(Y(1),X(1))
-              IF (X(1)%v .GT. 0.0D00) THEN
+              IF (X(1)%v.GT.0.0D00) THEN
                 OpenAD_Symbol_2 = (X(1)%v*Y(1)%v)
                 OpenAD_Symbol_0 = Y(1)%v
                 OpenAD_Symbol_1 = X(1)%v
@@ -62,7 +62,7 @@ C$OPENAD XXX Template ad_template.f
           END DO
         ELSE
           OpenAD_Symbol_5 = (Y(1)%v/X(1)%v)
-          OpenAD_Symbol_3 = (INT(1 _w2f__i8)/X(1)%v)
+          OpenAD_Symbol_3 = (INT(1_w2f__i8)/X(1)%v)
           OpenAD_Symbol_4 = (-(Y(1)%v/(X(1)%v*X(1)%v)))
           Y(1)%v = OpenAD_Symbol_5
           CALL setderiv(OpenAD_Symbol_7,Y(1))

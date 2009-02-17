@@ -16,9 +16,9 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
+      type(active) :: X(1:1)
       INTENT(IN)  X
-      type(active) :: Y(1 : 1)
+      type(active) :: Y(1:1)
       INTENT(OUT)  Y
 C
 C     **** Local Variables and Functions ****
@@ -51,8 +51,8 @@ C$OPENAD XXX Simple loop
         IF(ASTRING .EQ. 'bloh') THEN
           Y(1)%v = (Y(1)%v-X(1)%v)
           CALL setderiv(OpenAD_Symbol_4,Y(1))
-          CALL sax(1 _w2f__i8,OpenAD_Symbol_4,Y(1))
-          CALL saxpy(-1 _w2f__i8,X(1),Y(1))
+          CALL sax(1_w2f__i8,OpenAD_Symbol_4,Y(1))
+          CALL saxpy(-1_w2f__i8,X(1),Y(1))
         ENDIF
       END DO
       CALL setderiv(OpenAD_Symbol_5,Y(1))

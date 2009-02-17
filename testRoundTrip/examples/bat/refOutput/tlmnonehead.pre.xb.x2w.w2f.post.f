@@ -31,8 +31,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 4)
-      type(active) :: Y(1 : 4)
+      type(active) :: X(1:4)
+      type(active) :: Y(1:4)
 C
 C     **** Local Variables and Functions ****
 C
@@ -49,7 +49,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       T1%v = (X(1)%v/X(2)%v)
-      OpenAD_Symbol_0 = (INT(1 _w2f__i8)/X(2)%v)
+      OpenAD_Symbol_0 = (INT(1_w2f__i8)/X(2)%v)
       OpenAD_Symbol_1 = (-(X(1)%v/(X(2)%v*X(2)%v)))
       T2%v = (X(3)%v*X(4)%v)
       OpenAD_Symbol_2 = X(4)%v

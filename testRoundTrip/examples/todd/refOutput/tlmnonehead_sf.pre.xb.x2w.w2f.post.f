@@ -68,8 +68,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 6)
-      type(active) :: OBJ(1 : 1)
+      type(active) :: X(1:6)
+      type(active) :: OBJ(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -87,7 +87,7 @@ C
       type(active) :: M12
       type(active) :: M22
       type(active) :: M33
-      type(active) :: MATR(0 : 3)
+      type(active) :: MATR(0:3)
       REAL(w2f__8) SQRT3
 C
 C     **** Top Level Pragmas ****
@@ -101,8 +101,8 @@ C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
       SQRT3 = 5.77350258827209472656D-01
       MATR(0)%v = (X(2)%v-X(1)%v)
-      CALL sax(1 _w2f__i8,X(2),MATR(0))
-      CALL saxpy(-1 _w2f__i8,X(1),MATR(0))
+      CALL sax(1_w2f__i8,X(2),MATR(0))
+      CALL saxpy(-1_w2f__i8,X(1),MATR(0))
       OpenAD_Symbol_0 = (X(3)%v*2.0D00-X(2)%v-X(1)%v)
       MATR(1)%v = (SQRT3*OpenAD_Symbol_0)
       OpenAD_Symbol_2 = SQRT3
@@ -113,8 +113,8 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_Symbol_32,X(2),MATR(1))
       CALL saxpy(OpenAD_Symbol_33,X(3),MATR(1))
       MATR(2)%v = (X(5)%v-X(4)%v)
-      CALL sax(1 _w2f__i8,X(5),MATR(2))
-      CALL saxpy(-1 _w2f__i8,X(4),MATR(2))
+      CALL sax(1_w2f__i8,X(5),MATR(2))
+      CALL saxpy(-1_w2f__i8,X(4),MATR(2))
       OpenAD_Symbol_4 = (X(6)%v*2.0D00-X(5)%v-X(4)%v)
       MATR(3)%v = (SQRT3*OpenAD_Symbol_4)
       OpenAD_Symbol_6 = SQRT3

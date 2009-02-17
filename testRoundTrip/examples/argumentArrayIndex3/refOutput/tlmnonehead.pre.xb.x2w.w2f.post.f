@@ -30,7 +30,7 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       type(active) :: Y
 C
 C     **** Local Variables and Functions ****
@@ -39,7 +39,7 @@ C
       INTEGER(w2f__i4) K
       INTEGER(w2f__i4) L
       REAL(w2f__8) P(1 : 2)
-      type(active) :: Q(1 : 2)
+      type(active) :: Q(1:2)
 C
 C     **** Top Level Pragmas ****
 C

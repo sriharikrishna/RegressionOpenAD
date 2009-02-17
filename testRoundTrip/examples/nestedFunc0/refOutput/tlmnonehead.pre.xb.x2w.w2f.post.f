@@ -7,8 +7,8 @@
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Top Level Pragmas ****
 C
@@ -23,7 +23,7 @@ C$OPENAD XXX Template ad_template.f
 
         SUBROUTINE FOO()
         use w2f__types
-      use OAD_active
+        use OAD_active
         IMPLICIT NONE
 C
 C       **** Global Variables & Derived Type Definitions ****

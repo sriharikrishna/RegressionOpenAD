@@ -57,7 +57,7 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(OpenAD_Symbol_0,GX)
 C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(OpenAD_Symbol_1,GY)
-      CALL bar(OpenAD_Symbol_0, OpenAD_Symbol_1)
+      CALL bar(OpenAD_Symbol_0,OpenAD_Symbol_1)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(GX,OpenAD_Symbol_0)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
@@ -72,8 +72,8 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Top Level Pragmas ****
 C

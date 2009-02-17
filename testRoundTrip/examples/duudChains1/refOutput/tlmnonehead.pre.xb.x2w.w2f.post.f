@@ -7,13 +7,13 @@
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      type(active) :: T(1 : 2)
+      type(active) :: T(1:2)
 C
 C     **** Top Level Pragmas ****
 C

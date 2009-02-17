@@ -37,13 +37,13 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       type(active) :: Y
 C
 C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) APX(1 : 2, 1 : 2)
-      type(active) :: AX(1 : 2, 1 : 2)
+      type(active) :: AX(1:2,1:2)
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J

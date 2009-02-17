@@ -7,8 +7,8 @@
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -27,7 +27,7 @@ C
 C$OPENAD XXX Template ad_template.f
       CALL foo(X(1),Y(1))
       P = 1.0D00
-      CALL bar(P, Q)
+      CALL bar(P,Q)
       END SUBROUTINE
 
       SUBROUTINE foo(A, B)

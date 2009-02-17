@@ -16,8 +16,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -41,12 +41,12 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         S%v = X(I)%v
         CALL setderiv(S,X(I))
-        IF (S%v .GT. 0.0D00) THEN
+        IF (S%v.GT.0.0D00) THEN
           S%v = 0.0D00
           CALL zero_deriv(S)
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
-        CALL sax(1 _w2f__i8,X(I),Y(I))
-        CALL saxpy(1 _w2f__i8,S,Y(I))
+        CALL sax(1_w2f__i8,X(I),Y(I))
+        CALL saxpy(1_w2f__i8,S,Y(I))
       END DO
       END SUBROUTINE
