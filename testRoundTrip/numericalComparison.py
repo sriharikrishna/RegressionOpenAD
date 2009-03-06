@@ -139,7 +139,7 @@ def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
         errLimDict['relDiscrADDD']=relErrorMax
         errLimDict['absDiscrADDD']=relErrorMax
         if (maxRelErrADDD>relErrorMax and maxAbsErrADDD>relErrorMax):
-            returnValue=1
+            returnValue=-1
             if not doBatch : 
                 sys.stderr.write(" max discrepancy current AD vs. DD abs: %s rel %s\n" % (maxAbsErrADDD,maxAbsErrADDD))
         maxAbsDiscrCurRef=max([max(errDict['absDiscrCvR_AD']),maxAbsDiscrCurRef])
@@ -147,7 +147,7 @@ def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
         errLimDict['absDiscrCvR_AD']=compEps
         errLimDict['relDiscrCvR_AD']=compEps
     if (maxRelDiscrCurRef>compEps and maxAbsDiscrCurRef>compEps):
-        returnValue=1
+        returnValue=-1
         if not doBatch : 
             sys.stderr.write(" max discrepancy cur. vs. ref. abs: %s rel %s\n" % (maxRelDiscrCurRef,maxAbsDiscrCurRef))
     if (returnValue and verbose) :
@@ -200,7 +200,7 @@ def main():
         returnValue=compareFiles(fileDict,withAD,options.batchMode,options.graphs,options.name,options.impulse,options.makeSVG,options.verbose)
     except RuntimeError, e:
         print 'caught exception: ',e
-        return -1
+        return 1
     return returnValue
 
 if __name__ == "__main__":

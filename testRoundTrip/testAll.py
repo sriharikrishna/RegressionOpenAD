@@ -97,8 +97,11 @@ class MultiColumnOutput:
             thisRow+=1
         sys.stdout.flush()
 
-class NumericalError(Exception):
+class NumericalDiscrepancy(Exception):
     """Exception thrown when the numerical comparison discovers error that is beyond the given threshold"""
+
+class NumericalError(Exception):
+   '''Exception thrown when the numerical comparison process fails for some reason other than numerical discrepancy'''
 
 class MakeError(Exception):
     """Exception thrown when the a make command fails"""
@@ -441,8 +444,12 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
             testFlags = '-b'
         if globalMakeSVG:
             testFlags += ' -s'
-        sys.stdout.write("./numericalComparison.py %s -n %s %s\n" % (testFlags,exName,numFiles))
-        if (os.system("./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles))):
+        numCompareStr = "./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles)
+        sys.stdout.write(numCompareStr+'\n')
+        numCompareReturn = os.system(numCompareStr)
+        if (numCompareReturn == 65280):
+            raise NumericalDiscrepancy
+        elif (numCompareReturn):
             raise NumericalError
     printSep("*","",sepLength)
     global globalOkCount
@@ -551,7 +558,7 @@ def main():
 			return -1
 		else:
 		    return -1
-	    except NumericalError:
+	    except NumericalDiscrepancy:
 		print "WARNING: numerical discrepancies in test %i of %i (%s)." % (j+1,len(examples),examples[j])
 		if not (globalBatchMode):
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
@@ -559,6 +566,14 @@ def main():
 			return -1
                 global globalOkCount
                 globalOkCount+=1
+	    except NumericalError:
+                print "ERROR: numerical comparison failed in test %i of %i (%s)." % (j+1,len(examples),examples[j])
+                if not (globalBatchMode):
+                    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
+                        globalNewFailCount+=1
+                        return -1
+                else:
+                    return -1
 	    except RuntimeError, errtxt:
 		print "ERROR in test %i of %i (%s): %s." % (j+1,len(examples),examples[j],errtxt)
 	        globalNewFailCount+=1
