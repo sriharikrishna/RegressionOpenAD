@@ -73,7 +73,7 @@ program driver
   type(active) flux_ph1, flux_ph2, flux_ph3, flux_ph4, flux_ph5
 
   double precision, dimension(19) :: x0
-  real :: h
+  double precision :: h
   integer:: n,m
   integer i,j,k
 

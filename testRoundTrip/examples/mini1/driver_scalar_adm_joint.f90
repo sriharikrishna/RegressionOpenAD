@@ -61,7 +61,7 @@ program driver
   external head
 
   type(active):: x, y
-  real h
+  double precision h
 
   type(active):: xph, yph
 

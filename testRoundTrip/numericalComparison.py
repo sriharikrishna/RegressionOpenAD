@@ -88,7 +88,10 @@ def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
     paramsFile=open("params.conf","r")
     n=int(paramsFile.readline())
     m=int(paramsFile.readline())
-    h=float(paramsFile.readline())
+    # the following readline gets h, which isn't used here.
+    # we don't even bother with it, because it might be
+    # in a fortran-specific format for specifying constants
+    paramsFile.readline()
     relErrorMax=float(paramsFile.readline())
     paramsFile.close()
     numbers={}

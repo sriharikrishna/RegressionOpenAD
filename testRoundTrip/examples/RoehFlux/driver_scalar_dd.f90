@@ -70,7 +70,7 @@ program driver
   double precision flux_ph(5)
 
   double precision, dimension(19) :: x0
-  real :: h
+  double precision :: h
   integer :: n, m
   integer i,j,k
 

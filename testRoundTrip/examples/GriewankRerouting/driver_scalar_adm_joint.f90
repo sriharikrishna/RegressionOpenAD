@@ -70,7 +70,7 @@ program driver
 
   double precision, dimension(2) :: x0
   double precision, dimension(2,2) :: res_adj
-  real :: h
+  double precision :: h
   integer :: n, m
   integer i,j,k
 

@@ -60,7 +60,7 @@ program driver
   external head
 
   double precision, dimension(:), allocatable :: x0,y0
-  real h
+  double precision h
   integer n,m
   integer i,j,k
 
