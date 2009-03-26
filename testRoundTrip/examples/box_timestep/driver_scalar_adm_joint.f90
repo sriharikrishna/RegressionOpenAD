@@ -63,15 +63,15 @@ program driver
   double precision :: h
   double precision jac(kdim,kdim)
 
-  type(active) :: gamma_t
-  type(active) :: nullforce(1 : 2)
-  type(active) :: tstar(1 : 2)
+  double precision :: gamma_t
+  double precision :: nullforce(1 : 2)
+  double precision :: tstar(1 : 2)
 
 
-  type(active) :: told(1 : 3)
+  double precision :: told(1 : 3)
   type(active) :: tnow(1 : 3)
   type(active) :: tnow_ph(1 : 3)
-  type(active) :: uvel
+  double precision :: uvel
 
   type(active) :: tnew(1 : 3)
   type(active) :: tnew_ph(1 : 3)
@@ -92,15 +92,15 @@ program driver
   our_rev_mode%tape=.FALSE.
   our_rev_mode%adjoint=.FALSE.
   do i=1,kdim
-     gamma_t=active(1,0)
-     nullforce=(/active(1,0),active(1,0)/)
-     tstar=(/active(1,0),active(1,0)/)
-     told=(/active(1,0),active(1,0),active(1,0)/)
-     tnow=(/active(1,0),active(1,0),active(1,0)/)
+     gamma_t=1.0D0
+     nullforce=(/1.0D0,1.0D0/)
+     tstar=(/1.0D0,1.0D0/)
+     told=(/1.0D0,1.0D0,1.0D0/)
+     tnow=(/active(1.0D0,0.0D0),active(1.0D0,0.0D0),active(1.0D0,0.0D0)/)
      tnow_ph=tnow
-     tnew=(/active(0,0),active(0,0),active(0,0)/)
+     tnew=(/active(0.0D0,0.0D0),active(0.0D0,0.0D0),active(0.0D0,0.0D0)/)
      tnew_ph=tnew
-     uvel=active(1,0)
+     uvel=1.0D0
      do j=1,kdim
         if (j==i) then
            tnow_ph(i)%v=tnow_ph(i)%v+h
@@ -133,12 +133,12 @@ program driver
            tnew(j)%d=0.0
         end if
      end do
-     gamma_t=active(1,0)
-     nullforce=(/active(1,0),active(1,0)/)
-     tstar=(/active(1,0),active(1,0)/)
-     told=(/active(1,0),active(1,0),active(1,0)/)
-     tnow=(/active(1,0),active(1,0),active(1,0)/)
-     uvel=active(1,0)
+     gamma_t=1.0D0
+     nullforce=(/1.0D0,1.0D0/)
+     tstar=(/1.0D0,1.0D0/)
+     told=(/1.0D0,1.0D0,1.0D0/)
+     tnow=(/active(1.0D0,0.0D0),active(1.0D0,0.0D0),active(1.0D0,0.0D0)/)
+     uvel=1.0D0
      our_rev_mode%arg_store=.FALSE.
      our_rev_mode%arg_restore=.FALSE.
      our_rev_mode%res_store=.FALSE.
