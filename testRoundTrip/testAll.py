@@ -307,11 +307,13 @@ def determineModes():
 	if (raw_input("use scalar mode or vector mode? (s)/v: ") == "v"):
 	    scalarOrVectorMode = "vector"
 	# determine major mode
-	majorModeInput = raw_input("use forward/reverse/trace/divDiff major mode? (f)/r/t/d: ")
+	majorModeInput = raw_input("use forward/reverse/trace/divDiff/mfef90 major mode? (f)/r/t/d/m: ")
 	if (majorModeInput == "t"):	# tracing mode
 	    majorMode = "trace"
 	elif (majorModeInput == "d"):	# divided difference on original mode
 	    majorMode = "dd"
+	elif (majorModeInput == "m"):	# divided difference on original that has passed through mfef90 and the pre/postprocessor exclusively
+	    majorMode = "mf"
 	elif (majorModeInput == "r"):	# reverse mode
 	    majorMode = "adm"
 	    ctrMode = "split"
@@ -327,7 +329,7 @@ def determineModes():
 
 def link_xaifBooster(majorMode):
     # link an xaifBooster executable
-    if (majorMode=='dd'):
+    if (majorMode == 'dd' or majorMode == 'mf'):
         return
     if not (os.path.exists("xaifBooster")):
 	foundValidAlg = False
@@ -413,7 +415,10 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         sys.stdout.write("  SCALAR_OR_VECTOR="+scalarOrVector+"\n")
         sys.stdout.write("  MAJOR_MODE="+majorMode+"\n")
         sys.stdout.write("  MINOR_MODE="+ctrMode+"\n")
-    if (majorMode!='dd'): 
+    if (majorMode == 'mf'):
+        if (os.system(makeCmd+" head.pre.w2f.f")):
+            raise MakeError, makeCmd+" head.pre.w2f.f"
+    elif (majorMode != 'dd'): 
         if (os.system(makeCmd+" head.pre.xb.x2w.w2f.pp.f")):
             raise MakeError, makeCmd+" head.pre.xb.x2w.w2f.pp.f"
     # compile all the transformed bits
@@ -423,7 +428,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     overridableLink(exDir + "/driver_" + scalarOrVector + "_" + driverMode + ".f90","genericFiles/" + scalarOrVector + "/driver_" + driverMode + ".f90","driver.f90")
     if (os.system(makeCmd + " driver")):
 	raise MakeError, makeCmd + " driver"
-    if (majorMode!='dd'): 
+    if (majorMode!='dd' and majorMode != 'mf'): 
         # compare all the transformation results
 	for tfile in ['head_sf.pre.f','head_sf.pre.xaif']:
             fileCompare(exDir,tfile,majorMode,"file translated from")
