@@ -311,5 +311,6 @@ clean: groupClean
 	$(RM) *.xsd 
 	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f multi-pp.pl *Process.py xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
 	$(RM) *.mod *.o
+	$(RM) plotOutput
 
 .PHONY: all minClean groupClean clean run

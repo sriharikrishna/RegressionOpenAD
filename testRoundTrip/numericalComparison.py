@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import shutil
 import sys
 
 def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
@@ -10,7 +11,7 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
 
     # set output terminal
     if makeSVG:
-        outputName = "numericalComparison.svg"
+        outputName = 'numericalComparison-'+name+'.svg'
         plotFile.write('set term svg font \'arial,11\' size 900,690\n')
         plotFile.write('set output "'+outputName+'"\n')
     else:
@@ -81,8 +82,10 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
         map(os.remove,datFileNames)
 
     if makeSVG:
-        os.system("firefox "+outputName)
-        os.remove(outputName)
+        plotDir = 'plotOutput'
+        if not (os.path.exists(plotDir)):
+            os.mkdir(plotDir)
+        shutil.move(outputName,plotDir)
 
 def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
     paramsFile=open("params.conf","r")
@@ -180,7 +183,7 @@ def main():
                    help="draw errors with impulses (bars)",
                    action='store_true',default=False)
     opt.add_option('-s','--svg',dest='makeSVG',
-                   help="make svg output and display with firefox",
+                   help="make svg output and place it into the directory 'plotOutput'",
                    action='store_true',default=False)
     opt.add_option('-v','--verbose',dest='verbose',
                    help="if limits are exceeded show verbose output",
