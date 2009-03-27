@@ -16,6 +16,7 @@ testRoundTrip/mfef90
 testRoundTrip/multi-pp.pl
 testRoundTrip/OAD_active.f90
 testRoundTrip/params.conf
+testRoundTrip/plotOutput/*
 testRoundTrip/preProcess.py
 testRoundTrip/tmpOutput/*
 testRoundTrip/w2f__types.f90
