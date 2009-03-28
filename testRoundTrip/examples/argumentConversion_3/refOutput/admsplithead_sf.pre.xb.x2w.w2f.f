@@ -216,11 +216,11 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(1)))
+      CALL IncDeriv(__deriv__(Y(1)), __deriv__(GY))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(GY), __deriv__(X(1)))
+      CALL IncDeriv(__deriv__(GY), __deriv__(GX))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(GY))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
@@ -272,11 +272,11 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(1)))
+      CALL IncDeriv(__deriv__(Y(1)), __deriv__(GY))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(GY), __deriv__(X(1)))
+      CALL IncDeriv(__deriv__(GY), __deriv__(GX))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(GY))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)

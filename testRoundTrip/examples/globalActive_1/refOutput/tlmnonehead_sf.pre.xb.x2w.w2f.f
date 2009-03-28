@@ -50,6 +50,5 @@ C$OPENAD XXX Template ad_template.f
       __value__(Y(1)) = __value__(AGLOBAL)
       CALL sax(OpenAD_Symbol_0, __deriv__(X(1)), __deriv__(AGLOBAL))
       CALL saxpy(OpenAD_Symbol_1, __deriv__(X(2)), __deriv__(AGLOBAL))
-      CALL sax(OpenAD_Symbol_0, __deriv__(X(1)), __deriv__(Y(1)))
-      CALL saxpy(OpenAD_Symbol_1, __deriv__(X(2)), __deriv__(Y(1)))
+      CALL setderiv(__deriv__(Y(1)), __deriv__(AGLOBAL))
       END SUBROUTINE

@@ -136,38 +136,38 @@ C$OPENAD XXX Template ad_template.f
       Y2%v = (T3%v/T4%v)
       OpenAD_Symbol_6 = (INT(1 _w2f__i8)/T4%v)
       OpenAD_Symbol_7 = (-(T3%v/(T4%v*T4%v)))
-      OpenAD_Symbol_8 = (OpenAD_Symbol_0 * OpenAD_Symbol_4 +  OpenAD_Sym
-     +bol_2 * OpenAD_Symbol_5)
-      OpenAD_Symbol_9 = (OpenAD_Symbol_0 * OpenAD_Symbol_6 +  OpenAD_Sym
-     +bol_2 * OpenAD_Symbol_7)
-      OpenAD_Symbol_10 = (OpenAD_Symbol_1 * OpenAD_Symbol_4 +  OpenAD_Sy
-     +mbol_3 * OpenAD_Symbol_5)
-      OpenAD_Symbol_11 = (OpenAD_Symbol_1 * OpenAD_Symbol_6 +  OpenAD_Sy
-     +mbol_3 * OpenAD_Symbol_7)
+      OpenAD_Symbol_8 = (OpenAD_Symbol_3 * OpenAD_Symbol_5 +  OpenAD_Sym
+     +bol_1 * OpenAD_Symbol_4)
+      OpenAD_Symbol_9 = (OpenAD_Symbol_3 * OpenAD_Symbol_7 +  OpenAD_Sym
+     +bol_1 * OpenAD_Symbol_6)
+      OpenAD_Symbol_10 = (OpenAD_Symbol_2 * OpenAD_Symbol_7 +  OpenAD_Sy
+     +mbol_0 * OpenAD_Symbol_6)
+      OpenAD_Symbol_11 = (OpenAD_Symbol_2 * OpenAD_Symbol_5 +  OpenAD_Sy
+     +mbol_0 * OpenAD_Symbol_4)
           double_tape(double_tape_pointer) = OpenAD_Symbol_8
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_10
+          double_tape(double_tape_pointer) = OpenAD_Symbol_11
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_9
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_11
+          double_tape(double_tape_pointer) = OpenAD_Symbol_10
           double_tape_pointer = double_tape_pointer+1
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-          X2%d = X2%d+Y2%d*OpenAD_Symbol_12
+          X1%d = X1%d+Y2%d*OpenAD_Symbol_12
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_13 = double_tape(double_tape_pointer)
-          X1%d = X1%d+Y2%d*OpenAD_Symbol_13
+          X2%d = X2%d+Y2%d*OpenAD_Symbol_13
           Y2%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_14 = double_tape(double_tape_pointer)
-          X2%d = X2%d+Y1%d*OpenAD_Symbol_14
+          X1%d = X1%d+Y1%d*OpenAD_Symbol_14
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-          X1%d = X1%d+Y1%d*OpenAD_Symbol_15
+          X2%d = X2%d+Y1%d*OpenAD_Symbol_15
           Y1%d = 0.0d0
           end if 
         end subroutine ad_reroute

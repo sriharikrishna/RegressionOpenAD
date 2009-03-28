@@ -520,16 +520,8 @@
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
-              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                <xaif:ArrayElementReference vertex_id="2">
-                  <xaif:IndexTriplet>
-                    <xaif:Index>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Index>
-                  </xaif:IndexTriplet>
-                </xaif:ArrayElementReference>
-                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="5" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -772,16 +764,8 @@
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
-              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                <xaif:ArrayElementReference vertex_id="2">
-                  <xaif:IndexTriplet>
-                    <xaif:Index>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Index>
-                  </xaif:IndexTriplet>
-                </xaif:ArrayElementReference>
-                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="5" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>

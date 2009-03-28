@@ -81,6 +81,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_20
       REAL(w2f__8) OpenAD_Symbol_21
       REAL(w2f__8) OpenAD_Symbol_22
+      type(active) :: OpenAD_Symbol_23
+      type(active) :: OpenAD_Symbol_24
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
@@ -96,8 +98,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_23
-      REAL(w2f__8) OpenAD_Symbol_24
       REAL(w2f__8) OpenAD_Symbol_25
       REAL(w2f__8) OpenAD_Symbol_26
       REAL(w2f__8) OpenAD_Symbol_27
@@ -106,10 +106,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_30
       REAL(w2f__8) OpenAD_Symbol_31
       REAL(w2f__8) OpenAD_Symbol_32
-      REAL(w2f__8) OpenAD_Symbol_33
-      REAL(w2f__8) OpenAD_Symbol_34
-      REAL(w2f__8) OpenAD_Symbol_35
-      REAL(w2f__8) OpenAD_Symbol_36
 C
 C     **** Top Level Pragmas ****
 C
@@ -156,79 +152,61 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_20 = (OpenAD_Symbol_9 * OpenAD_Symbol_15)
       OpenAD_Symbol_21 = (OpenAD_Symbol_10 * OpenAD_Symbol_15)
       OpenAD_Symbol_22 = (OpenAD_Symbol_11 * OpenAD_Symbol_15)
-          double_tape(double_tape_pointer) = OpenAD_Symbol_16
+          double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_17
           double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_18
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_16
+          double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_19
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_18
-          double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_20
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_18
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_20
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_18
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_18
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_21
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_22
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_20
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_20
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
-          double_tape_pointer = double_tape_pointer+1
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-          X(3)%d = X(3)%d+Y(1)%d*OpenAD_Symbol_23
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-          X(6)%d = X(6)%d+Y(1)%d*OpenAD_Symbol_24
-          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_25 = double_tape(double_tape_pointer)
-          X(5)%d = X(5)%d+Y(1)%d*OpenAD_Symbol_25
+          X(4)%d = X(4)%d+Y(1)%d*OpenAD_Symbol_25
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_26 = double_tape(double_tape_pointer)
-          X(4)%d = X(4)%d+Y(1)%d*OpenAD_Symbol_26
+          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_26
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_27 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_27
+          OpenAD_Symbol_23%d = OpenAD_Symbol_23%d+Y(1)%d*OpenAD_Symbol_2
+     +7
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_28 = double_tape(double_tape_pointer)
-          X(10)%d = X(10)%d+Y(1)%d*OpenAD_Symbol_28
+          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_28
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_29 = double_tape(double_tape_pointer)
-          X(9)%d = X(9)%d+Y(1)%d*OpenAD_Symbol_29
+          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_29
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_30 = double_tape(double_tape_pointer)
-          X(7)%d = X(7)%d+Y(1)%d*OpenAD_Symbol_30
+          OpenAD_Symbol_24%d = OpenAD_Symbol_24%d+Y(1)%d*OpenAD_Symbol_3
+     +0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_31 = double_tape(double_tape_pointer)
-          X(11)%d = X(11)%d+Y(1)%d*OpenAD_Symbol_31
+          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_31
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_32 = double_tape(double_tape_pointer)
-          X(8)%d = X(8)%d+Y(1)%d*OpenAD_Symbol_32
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_33 = double_tape(double_tape_pointer)
-          X(12)%d = X(12)%d+Y(1)%d*OpenAD_Symbol_33
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_34 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_34
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_35 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_35
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_36 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_36
+          X(3)%d = X(3)%d+Y(1)%d*OpenAD_Symbol_32
           Y(1)%d = 0.0d0
+          X(10)%d = X(10)%d+OpenAD_Symbol_24%d*1 _w2f__i8
+          X(9)%d = X(9)%d+OpenAD_Symbol_24%d*1 _w2f__i8
+          X(11)%d = X(11)%d+OpenAD_Symbol_24%d*1 _w2f__i8
+          X(12)%d = X(12)%d+OpenAD_Symbol_24%d*1 _w2f__i8
+          OpenAD_Symbol_24%d = 0.0d0
+          X(6)%d = X(6)%d+OpenAD_Symbol_23%d*1 _w2f__i8
+          X(5)%d = X(5)%d+OpenAD_Symbol_23%d*1 _w2f__i8
+          X(7)%d = X(7)%d+OpenAD_Symbol_23%d*1 _w2f__i8
+          X(8)%d = X(8)%d+OpenAD_Symbol_23%d*1 _w2f__i8
+          OpenAD_Symbol_23%d = 0.0d0
           end if 
         end subroutine head

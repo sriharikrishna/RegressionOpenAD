@@ -21,6 +21,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_108
       REAL(w2f__8) OpenAD_Symbol_109
       REAL(w2f__8) OpenAD_Symbol_110
+      REAL(w2f__8) OpenAD_Symbol_111
       REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_16
@@ -171,9 +172,9 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_91 = (OpenAD_Symbol_4 + OpenAD_Symbol_90 *
      >  OpenAD_Symbol_5)
           CALL setderiv(T,TFLD(I,J,K,BI,BJ))
-          CALL sax(OpenAD_Symbol_89,TFLD(I,J,K,BI,BJ),T2)
-          CALL sax(OpenAD_Symbol_90,TFLD(I,J,K,BI,BJ),T3)
-          CALL sax(OpenAD_Symbol_91,TFLD(I,J,K,BI,BJ),T4)
+          CALL sax(OpenAD_Symbol_89,T,T2)
+          CALL sax(OpenAD_Symbol_90,T,T3)
+          CALL sax(OpenAD_Symbol_91,T,T4)
           CALL setderiv(S,SFLD(I,J,K,BI,BJ))
           IF (S%v .GT. 0.0D00) THEN
             OpenAD_Symbol_6 = SQRT(S%v)
@@ -182,8 +183,8 @@ C$OPENAD XXX Template ad_template.f
             OpenAD_Symbol_9 = (5.0D-01 / OpenAD_Symbol_6)
             OpenAD_Symbol_8 = S%v
             OpenAD_Symbol_92 = (OpenAD_Symbol_9 * OpenAD_Symbol_8)
-            CALL sax(OpenAD_Symbol_92,S,S3O2)
-            CALL saxpy(OpenAD_Symbol_7,S,S3O2)
+            CALL sax(OpenAD_Symbol_7,S,S3O2)
+            CALL saxpy(OpenAD_Symbol_92,S,S3O2)
           ELSE
             S%v = 0.0D00
             S3O2%v = 0.0D00
@@ -254,51 +255,54 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_85 = EOSJMDCKP(14)
           OpenAD_Symbol_78 = OpenAD_Symbol_75
           BULKMOD(INT(I),INT(J))%v = (BMPRES%v+BMFRESH%v+BMSALT%v)
-          OpenAD_Symbol_93 = (OpenAD_Symbol_85 * OpenAD_Symbol_78)
-          OpenAD_Symbol_94 = (OpenAD_Symbol_83 * OpenAD_Symbol_78)
-          OpenAD_Symbol_95 = (OpenAD_Symbol_80 * OpenAD_Symbol_77)
-          OpenAD_Symbol_96 = (OpenAD_Symbol_74 * OpenAD_Symbol_69)
-          OpenAD_Symbol_97 = (OpenAD_Symbol_72 * OpenAD_Symbol_69)
-          OpenAD_Symbol_98 = (OpenAD_Symbol_66 * OpenAD_Symbol_64)
+          OpenAD_Symbol_93 = (OpenAD_Symbol_80 * OpenAD_Symbol_77)
+          OpenAD_Symbol_94 = (OpenAD_Symbol_56 * OpenAD_Symbol_53)
+          OpenAD_Symbol_95 = (OpenAD_Symbol_50 * OpenAD_Symbol_43)
+          OpenAD_Symbol_96 = (OpenAD_Symbol_32 * OpenAD_Symbol_25)
+          OpenAD_Symbol_97 = (OpenAD_Symbol_85 * OpenAD_Symbol_78)
+          OpenAD_Symbol_98 = (OpenAD_Symbol_74 * OpenAD_Symbol_69)
           OpenAD_Symbol_99 = (OpenAD_Symbol_61 * OpenAD_Symbol_54)
-          OpenAD_Symbol_100 = (OpenAD_Symbol_59 * OpenAD_Symbol_54)
-          OpenAD_Symbol_101 = (OpenAD_Symbol_56 * OpenAD_Symbol_53)
-          OpenAD_Symbol_102 = (OpenAD_Symbol_50 * OpenAD_Symbol_43)
-          OpenAD_Symbol_103 = (OpenAD_Symbol_48 * OpenAD_Symbol_43)
-          OpenAD_Symbol_104 = (OpenAD_Symbol_46 * OpenAD_Symbol_43)
-          OpenAD_Symbol_105 = (OpenAD_Symbol_40 * OpenAD_Symbol_35)
-          OpenAD_Symbol_106 = (OpenAD_Symbol_38 * OpenAD_Symbol_35)
-          OpenAD_Symbol_107 = (OpenAD_Symbol_32 * OpenAD_Symbol_25)
-          OpenAD_Symbol_108 = (OpenAD_Symbol_30 * OpenAD_Symbol_25)
+          OpenAD_Symbol_100 = (OpenAD_Symbol_48 * OpenAD_Symbol_43)
+          OpenAD_Symbol_101 = (OpenAD_Symbol_40 * OpenAD_Symbol_35)
+          OpenAD_Symbol_102 = (OpenAD_Symbol_30 * OpenAD_Symbol_25)
+          OpenAD_Symbol_103 = (OpenAD_Symbol_83 * OpenAD_Symbol_78)
+          OpenAD_Symbol_104 = (OpenAD_Symbol_72 * OpenAD_Symbol_69)
+          OpenAD_Symbol_105 = (OpenAD_Symbol_66 * OpenAD_Symbol_64)
+          OpenAD_Symbol_106 = (OpenAD_Symbol_59 * OpenAD_Symbol_54)
+          OpenAD_Symbol_107 = (OpenAD_Symbol_46 * OpenAD_Symbol_43)
+          OpenAD_Symbol_108 = (OpenAD_Symbol_38 * OpenAD_Symbol_35)
           OpenAD_Symbol_109 = (OpenAD_Symbol_28 * OpenAD_Symbol_25)
-          OpenAD_Symbol_110 = (OpenAD_Symbol_10 *(OpenAD_Symbol_42 +
-     >  OpenAD_Symbol_65 * OpenAD_Symbol_64 + OpenAD_Symbol_55 *
-     >  OpenAD_Symbol_53 +(OpenAD_Symbol_12 + OpenAD_Symbol_13) *(
-     > OpenAD_Symbol_68 + OpenAD_Symbol_79 * OpenAD_Symbol_77)))
-          CALL sax(OpenAD_Symbol_24,S,BULKMOD(I,J))
+          OpenAD_Symbol_110 = (OpenAD_Symbol_12 + OpenAD_Symbol_13)
+          OpenAD_Symbol_111 = (OpenAD_Symbol_10 * OpenAD_Symbol_42 +
+     >  OpenAD_Symbol_10 * OpenAD_Symbol_110 * OpenAD_Symbol_79 *
+     >  OpenAD_Symbol_77 + OpenAD_Symbol_10 * OpenAD_Symbol_110 *
+     >  OpenAD_Symbol_68 + OpenAD_Symbol_10 * OpenAD_Symbol_55 *
+     >  OpenAD_Symbol_53 + OpenAD_Symbol_10 * OpenAD_Symbol_65 *
+     >  OpenAD_Symbol_64)
+          CALL sax(OpenAD_Symbol_111,LOCPRES(I,J),BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_24,S,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_93,S,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_94,S,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_95,T3,BULKMOD(I,J))
           CALL saxpy(OpenAD_Symbol_34,S3O2,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_93,T2,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_94,T,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_95,S,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_96,T2,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_97,T,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_98,S3O2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_96,T3,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_97,T2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_98,T2,BULKMOD(I,J))
           CALL saxpy(OpenAD_Symbol_99,T2,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_100,T,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_101,S,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_102,T3,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_103,T2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_100,T2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_101,T2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_102,T2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_103,T,BULKMOD(I,J))
           CALL saxpy(OpenAD_Symbol_104,T,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_105,T2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_105,S3O2,BULKMOD(I,J))
           CALL saxpy(OpenAD_Symbol_106,T,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_107,T3,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_108,T2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_107,T,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_108,T,BULKMOD(I,J))
           CALL saxpy(OpenAD_Symbol_109,T,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_22,T4,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_20,T3,BULKMOD(I,J))
           CALL saxpy(OpenAD_Symbol_18,T2,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_20,T3,BULKMOD(I,J))
+          CALL saxpy(OpenAD_Symbol_22,T4,BULKMOD(I,J))
           CALL saxpy(OpenAD_Symbol_16,T,BULKMOD(I,J))
-          CALL saxpy(OpenAD_Symbol_110,LOCPRES(I,J),BULKMOD(I,J))
         END DO
       END DO
       END SUBROUTINE

@@ -78,8 +78,8 @@ C
       type(active) :: C
       type(active) :: D
       EXTERNAL foo
-      REAL(w2f__8) OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_11
+      REAL(w2f__8) OpenAD_Symbol_12
 C
 C     **** Top Level Pragmas ****
 C
@@ -122,11 +122,11 @@ C$OPENAD XXX Template ad_template.f
           C%d = C%d+Y(4)%d*1 _w2f__i8
           Y(4)%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_10 = double_tape(double_tape_pointer)
-          D%d = D%d+Y(3)%d*OpenAD_Symbol_10
-          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_11 = double_tape(double_tape_pointer)
-          C%d = C%d+Y(3)%d*OpenAD_Symbol_11
+          D%d = D%d+Y(3)%d*OpenAD_Symbol_11
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_12 = double_tape(double_tape_pointer)
+          C%d = C%d+Y(3)%d*OpenAD_Symbol_12
           Y(3)%d = 0.0d0
       CALL foo(X(1),X(2),C,D)
           X(4)%d = X(4)%d+Y(2)%d
@@ -201,6 +201,7 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
+      type(active) :: OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -219,7 +220,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
@@ -255,17 +255,12 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_7
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_7
-          double_tape_pointer = double_tape_pointer+1
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-          B%d = B%d+D%d*OpenAD_Symbol_12
-          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_13 = double_tape(double_tape_pointer)
-          A%d = A%d+D%d*OpenAD_Symbol_13
+          OpenAD_Symbol_10%d = OpenAD_Symbol_10%d+D%d*OpenAD_Symbol_13
           D%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_14 = double_tape(double_tape_pointer)
@@ -274,5 +269,8 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_15 = double_tape(double_tape_pointer)
           A%d = A%d+C%d*OpenAD_Symbol_15
           C%d = 0.0d0
+          B%d = B%d+OpenAD_Symbol_10%d*1 _w2f__i8
+          A%d = A%d+OpenAD_Symbol_10%d*1 _w2f__i8
+          OpenAD_Symbol_10%d = 0.0d0
           end if 
         end subroutine foo

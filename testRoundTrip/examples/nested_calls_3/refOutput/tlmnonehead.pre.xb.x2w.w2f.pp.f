@@ -51,6 +51,7 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
+      type(active) :: OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -80,8 +81,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_7 = (- SIN(OpenAD_Symbol_6))
       OpenAD_Symbol_8 = (OpenAD_Symbol_4 * OpenAD_Symbol_3)
       OpenAD_Symbol_9 = (OpenAD_Symbol_5 * OpenAD_Symbol_3)
+      CALL sax(1 _w2f__i8,A,OpenAD_Symbol_10)
+      CALL saxpy(1 _w2f__i8,B,OpenAD_Symbol_10)
       CALL sax(OpenAD_Symbol_8,A,C)
       CALL saxpy(OpenAD_Symbol_9,B,C)
-      CALL sax(OpenAD_Symbol_7,A,D)
-      CALL saxpy(OpenAD_Symbol_7,B,D)
+      CALL sax(OpenAD_Symbol_7,OpenAD_Symbol_10,D)
       END SUBROUTINE

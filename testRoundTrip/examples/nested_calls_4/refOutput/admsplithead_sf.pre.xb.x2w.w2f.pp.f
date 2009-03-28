@@ -76,7 +76,7 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_13
+      type(active) :: OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_2
 C
 C     **** Parameters and Result ****
@@ -90,8 +90,8 @@ C
       type(active) :: D
       EXTERNAL foo
       REAL(w2f__8) P
-      REAL(w2f__8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_12
+      REAL(w2f__8) OpenAD_Symbol_13
 C
 C     **** Top Level Pragmas ****
 C
@@ -150,13 +150,13 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
           C%d = C%d+Y(4)%d*1 _w2f__i8
           Y(4)%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_11 = double_tape(double_tape_pointer)
-          D%d = D%d+Y(3)%d*OpenAD_Symbol_11
-          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-          C%d = C%d+Y(3)%d*OpenAD_Symbol_12
+          D%d = D%d+Y(3)%d*OpenAD_Symbol_12
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_13 = double_tape(double_tape_pointer)
+          C%d = C%d+Y(3)%d*OpenAD_Symbol_13
           Y(3)%d = 0.0d0
-      CALL foo(X(1),OpenAD_Symbol_13,C,D)
+      CALL foo(X(1),OpenAD_Symbol_14,C,D)
       CALL foo(X(1),X(2),C,D)
           end if 
         end subroutine head
@@ -227,6 +227,7 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_10
+      type(active) :: OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
@@ -244,7 +245,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_18
@@ -280,17 +280,12 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_8
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_8
-          double_tape_pointer = double_tape_pointer+1
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-          B%d = B%d+D%d*OpenAD_Symbol_15
-          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_16 = double_tape(double_tape_pointer)
-          A%d = A%d+D%d*OpenAD_Symbol_16
+          OpenAD_Symbol_11%d = OpenAD_Symbol_11%d+D%d*OpenAD_Symbol_16
           D%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_17 = double_tape(double_tape_pointer)
@@ -299,5 +294,8 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_18 = double_tape(double_tape_pointer)
           A%d = A%d+C%d*OpenAD_Symbol_18
           C%d = 0.0d0
+          B%d = B%d+OpenAD_Symbol_11%d*1 _w2f__i8
+          A%d = A%d+OpenAD_Symbol_11%d*1 _w2f__i8
+          OpenAD_Symbol_11%d = 0.0d0
           end if 
         end subroutine foo

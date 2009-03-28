@@ -32,6 +32,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_20
       REAL(w2f__8) OpenAD_Symbol_21
       REAL(w2f__8) OpenAD_Symbol_22
+      type(active) :: OpenAD_Symbol_23
+      type(active) :: OpenAD_Symbol_24
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
@@ -80,18 +82,20 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_20 = (OpenAD_Symbol_9 * OpenAD_Symbol_15)
       OpenAD_Symbol_21 = (OpenAD_Symbol_10 * OpenAD_Symbol_15)
       OpenAD_Symbol_22 = (OpenAD_Symbol_11 * OpenAD_Symbol_15)
-      CALL sax(OpenAD_Symbol_16,X(2),Y(1))
+      CALL sax(1 _w2f__i8,X(8),OpenAD_Symbol_23)
+      CALL saxpy(1 _w2f__i8,X(7),OpenAD_Symbol_23)
+      CALL saxpy(1 _w2f__i8,X(5),OpenAD_Symbol_23)
+      CALL saxpy(1 _w2f__i8,X(6),OpenAD_Symbol_23)
+      CALL sax(1 _w2f__i8,X(12),OpenAD_Symbol_24)
+      CALL saxpy(1 _w2f__i8,X(11),OpenAD_Symbol_24)
+      CALL saxpy(1 _w2f__i8,X(9),OpenAD_Symbol_24)
+      CALL saxpy(1 _w2f__i8,X(10),OpenAD_Symbol_24)
+      CALL sax(OpenAD_Symbol_1,X(3),Y(1))
       CALL saxpy(OpenAD_Symbol_17,X(1),Y(1))
+      CALL saxpy(OpenAD_Symbol_18,OpenAD_Symbol_24,Y(1))
+      CALL saxpy(OpenAD_Symbol_16,X(2),Y(1))
       CALL saxpy(OpenAD_Symbol_19,X(1),Y(1))
-      CALL saxpy(OpenAD_Symbol_18,X(12),Y(1))
-      CALL saxpy(OpenAD_Symbol_20,X(8),Y(1))
-      CALL saxpy(OpenAD_Symbol_18,X(11),Y(1))
-      CALL saxpy(OpenAD_Symbol_20,X(7),Y(1))
-      CALL saxpy(OpenAD_Symbol_18,X(9),Y(1))
-      CALL saxpy(OpenAD_Symbol_18,X(10),Y(1))
+      CALL saxpy(OpenAD_Symbol_20,OpenAD_Symbol_23,Y(1))
       CALL saxpy(OpenAD_Symbol_21,X(2),Y(1))
       CALL saxpy(OpenAD_Symbol_22,X(4),Y(1))
-      CALL saxpy(OpenAD_Symbol_20,X(5),Y(1))
-      CALL saxpy(OpenAD_Symbol_20,X(6),Y(1))
-      CALL saxpy(OpenAD_Symbol_1,X(3),Y(1))
       END SUBROUTINE

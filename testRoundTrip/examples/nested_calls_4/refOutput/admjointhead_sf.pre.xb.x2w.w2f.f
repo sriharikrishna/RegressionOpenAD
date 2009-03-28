@@ -16,7 +16,7 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       TYPE (OpenADTy_active) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_Symbol_13
+      TYPE (OpenADTy_active) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_2
 C
 C     **** Parameters and Result ****
@@ -30,8 +30,8 @@ C
       TYPE (OpenADTy_active) D
       EXTERNAL foo
       REAL(w2f__8) P
-      REAL(w2f__8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_12
+      REAL(w2f__8) OpenAD_Symbol_13
 C
 C     **** Top Level Pragmas ****
 C
@@ -94,16 +94,16 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(4)))
 C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_11)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_11, __deriv__(Y(3)), __deriv__(D))
-C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_12)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_12, __deriv__(Y(3)), __deriv__(C))
+      CALL Saxpy(OpenAD_Symbol_12, __deriv__(Y(3)), __deriv__(D))
+C     $OpenAD$ INLINE Pop(subst)
+      CALL Pop(OpenAD_Symbol_13)
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_13, __deriv__(Y(3)), __deriv__(C))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(3)))
-      CALL foo(__deriv__(X(1)), __deriv__(OpenAD_Symbol_13), __deriv__(
+      CALL foo(__deriv__(X(1)), __deriv__(OpenAD_Symbol_14), __deriv__(
      > C), __deriv__(D))
       CALL foo(__deriv__(X(1)), __deriv__(X(2)), __deriv__(C),
      >  __deriv__(D))
@@ -158,16 +158,16 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(4)))
 C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_11)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_11, __deriv__(Y(3)), __deriv__(D))
-C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_12)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_12, __deriv__(Y(3)), __deriv__(C))
+      CALL Saxpy(OpenAD_Symbol_12, __deriv__(Y(3)), __deriv__(D))
+C     $OpenAD$ INLINE Pop(subst)
+      CALL Pop(OpenAD_Symbol_13)
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_13, __deriv__(Y(3)), __deriv__(C))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(3)))
-      CALL foo(__deriv__(X(1)), __deriv__(OpenAD_Symbol_13), __deriv__(
+      CALL foo(__deriv__(X(1)), __deriv__(OpenAD_Symbol_14), __deriv__(
      > C), __deriv__(D))
       CALL foo(__deriv__(X(1)), __deriv__(X(2)), __deriv__(C),
      >  __deriv__(D))
@@ -181,6 +181,7 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_10
+      TYPE (OpenADTy_active) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
@@ -198,7 +199,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_18
@@ -228,18 +228,13 @@ C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_10)
 C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_8)
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_8)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_15)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_15, __deriv__(D), __deriv__(B))
-C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_16)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_16, __deriv__(D), __deriv__(A))
+      CALL Saxpy(OpenAD_Symbol_16, __deriv__(D), __deriv__(
+     > OpenAD_Symbol_11))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(D))
 C     $OpenAD$ INLINE Pop(subst)
@@ -252,6 +247,12 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_18, __deriv__(C), __deriv__(A))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(C))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(1_w2f__i8, __deriv__(OpenAD_Symbol_11), __deriv__(B))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(1_w2f__i8, __deriv__(OpenAD_Symbol_11), __deriv__(A))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(OpenAD_Symbol_11))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
@@ -307,18 +308,13 @@ C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_10)
 C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_8)
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_8)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_15)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_15, __deriv__(D), __deriv__(B))
-C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_16)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_16, __deriv__(D), __deriv__(A))
+      CALL Saxpy(OpenAD_Symbol_16, __deriv__(D), __deriv__(
+     > OpenAD_Symbol_11))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(D))
 C     $OpenAD$ INLINE Pop(subst)
@@ -331,5 +327,11 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_18, __deriv__(C), __deriv__(A))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(C))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(1_w2f__i8, __deriv__(OpenAD_Symbol_11), __deriv__(B))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(1_w2f__i8, __deriv__(OpenAD_Symbol_11), __deriv__(A))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(OpenAD_Symbol_11))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

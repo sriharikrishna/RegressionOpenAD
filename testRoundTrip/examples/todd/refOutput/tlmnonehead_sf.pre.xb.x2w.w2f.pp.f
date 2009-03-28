@@ -37,8 +37,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_28
       REAL(w2f__8) OpenAD_Symbol_29
       REAL(w2f__8) OpenAD_Symbol_30
-      REAL(w2f__8) OpenAD_Symbol_31
-      REAL(w2f__8) OpenAD_Symbol_32
+      type(active) :: OpenAD_Symbol_31
+      type(active) :: OpenAD_Symbol_32
       REAL(w2f__8) OpenAD_Symbol_33
       REAL(w2f__8) OpenAD_Symbol_34
       REAL(w2f__8) OpenAD_Symbol_35
@@ -49,19 +49,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_40
       REAL(w2f__8) OpenAD_Symbol_41
-      REAL(w2f__8) OpenAD_Symbol_42
-      REAL(w2f__8) OpenAD_Symbol_43
-      REAL(w2f__8) OpenAD_Symbol_44
-      REAL(w2f__8) OpenAD_Symbol_45
-      REAL(w2f__8) OpenAD_Symbol_46
-      REAL(w2f__8) OpenAD_Symbol_47
-      REAL(w2f__8) OpenAD_Symbol_48
-      REAL(w2f__8) OpenAD_Symbol_49
-      REAL(w2f__8) OpenAD_Symbol_50
-      REAL(w2f__8) OpenAD_Symbol_51
-      REAL(w2f__8) OpenAD_Symbol_52
-      REAL(w2f__8) OpenAD_Symbol_53
-      REAL(w2f__8) OpenAD_Symbol_54
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_8
       REAL(w2f__8) OpenAD_Symbol_9
@@ -106,24 +93,20 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (X(3)%v*2.0D00-X(2)%v-X(1)%v)
       MATR(1)%v = (SQRT3*OpenAD_Symbol_0)
       OpenAD_Symbol_2 = SQRT3
-      OpenAD_Symbol_31 = (INT((-1_w2f__i8)) * OpenAD_Symbol_2)
-      OpenAD_Symbol_32 = (INT((-1_w2f__i8)) * OpenAD_Symbol_2)
-      OpenAD_Symbol_33 = (2.0D00 * OpenAD_Symbol_2)
-      CALL sax(OpenAD_Symbol_31,X(1),MATR(1))
-      CALL saxpy(OpenAD_Symbol_32,X(2),MATR(1))
-      CALL saxpy(OpenAD_Symbol_33,X(3),MATR(1))
+      CALL sax(-1 _w2f__i8,X(1),OpenAD_Symbol_31)
+      CALL saxpy(-1 _w2f__i8,X(2),OpenAD_Symbol_31)
+      CALL saxpy(2.0D00,X(3),OpenAD_Symbol_31)
+      CALL sax(OpenAD_Symbol_2,OpenAD_Symbol_31,MATR(1))
       MATR(2)%v = (X(5)%v-X(4)%v)
       CALL sax(1 _w2f__i8,X(5),MATR(2))
       CALL saxpy(-1 _w2f__i8,X(4),MATR(2))
       OpenAD_Symbol_4 = (X(6)%v*2.0D00-X(5)%v-X(4)%v)
       MATR(3)%v = (SQRT3*OpenAD_Symbol_4)
       OpenAD_Symbol_6 = SQRT3
-      OpenAD_Symbol_34 = (INT((-1_w2f__i8)) * OpenAD_Symbol_6)
-      OpenAD_Symbol_35 = (INT((-1_w2f__i8)) * OpenAD_Symbol_6)
-      OpenAD_Symbol_36 = (2.0D00 * OpenAD_Symbol_6)
-      CALL sax(OpenAD_Symbol_34,X(4),MATR(3))
-      CALL saxpy(OpenAD_Symbol_35,X(5),MATR(3))
-      CALL saxpy(OpenAD_Symbol_36,X(6),MATR(3))
+      CALL sax(-1 _w2f__i8,X(4),OpenAD_Symbol_32)
+      CALL saxpy(-1 _w2f__i8,X(5),OpenAD_Symbol_32)
+      CALL saxpy(2.0D00,X(6),OpenAD_Symbol_32)
+      CALL sax(OpenAD_Symbol_6,OpenAD_Symbol_32,MATR(3))
       M03%v = (MATR(0)%v*MATR(3)%v)
       OpenAD_Symbol_8 = MATR(3)%v
       OpenAD_Symbol_9 = MATR(0)%v
@@ -159,39 +142,37 @@ C$OPENAD XXX Template ad_template.f
       OBJ(1)%v = (F%v*LOC1%v)
       OpenAD_Symbol_29 = LOC1%v
       OpenAD_Symbol_30 = F%v
-      OpenAD_Symbol_37 = (OpenAD_Symbol_28 * OpenAD_Symbol_26 *
+      OpenAD_Symbol_33 = (OpenAD_Symbol_28 * OpenAD_Symbol_26 *
      >  OpenAD_Symbol_30)
-      OpenAD_Symbol_38 = (OpenAD_Symbol_23 * OpenAD_Symbol_29)
-      OpenAD_Symbol_39 = (OpenAD_Symbol_22 * OpenAD_Symbol_29)
-      OpenAD_Symbol_40 = (OpenAD_Symbol_21 * OpenAD_Symbol_29)
-      OpenAD_Symbol_41 = (OpenAD_Symbol_20 * OpenAD_Symbol_29)
-      OpenAD_Symbol_42 = (OpenAD_Symbol_19 * OpenAD_Symbol_40)
-      OpenAD_Symbol_43 = (OpenAD_Symbol_18 * OpenAD_Symbol_40)
-      OpenAD_Symbol_44 = (OpenAD_Symbol_17 * OpenAD_Symbol_38)
-      OpenAD_Symbol_45 = (OpenAD_Symbol_16 * OpenAD_Symbol_38)
-      OpenAD_Symbol_46 = (OpenAD_Symbol_15 * OpenAD_Symbol_39)
-      OpenAD_Symbol_47 = (OpenAD_Symbol_14 * OpenAD_Symbol_39)
-      OpenAD_Symbol_48 = (OpenAD_Symbol_13 * OpenAD_Symbol_41)
-      OpenAD_Symbol_49 = (OpenAD_Symbol_12 * OpenAD_Symbol_41)
-      OpenAD_Symbol_50 = (INT((-1_w2f__i8)) * OpenAD_Symbol_37)
-      OpenAD_Symbol_51 = (OpenAD_Symbol_10 * OpenAD_Symbol_50)
-      OpenAD_Symbol_52 = (OpenAD_Symbol_11 * OpenAD_Symbol_50)
-      OpenAD_Symbol_53 = (OpenAD_Symbol_8 * OpenAD_Symbol_37)
-      OpenAD_Symbol_54 = (OpenAD_Symbol_9 * OpenAD_Symbol_37)
+      OpenAD_Symbol_34 = (OpenAD_Symbol_16 * OpenAD_Symbol_23 *
+     >  OpenAD_Symbol_29)
+      OpenAD_Symbol_35 = (OpenAD_Symbol_17 * OpenAD_Symbol_23 *
+     >  OpenAD_Symbol_29)
+      OpenAD_Symbol_36 = (OpenAD_Symbol_14 * OpenAD_Symbol_22 *
+     >  OpenAD_Symbol_29)
+      OpenAD_Symbol_37 = (OpenAD_Symbol_15 * OpenAD_Symbol_22 *
+     >  OpenAD_Symbol_29)
+      OpenAD_Symbol_38 = (OpenAD_Symbol_18 * OpenAD_Symbol_21 *
+     >  OpenAD_Symbol_29)
+      OpenAD_Symbol_39 = (OpenAD_Symbol_19 * OpenAD_Symbol_21 *
+     >  OpenAD_Symbol_29)
+      OpenAD_Symbol_40 = (OpenAD_Symbol_12 * OpenAD_Symbol_20 *
+     >  OpenAD_Symbol_29)
+      OpenAD_Symbol_41 = (OpenAD_Symbol_13 * OpenAD_Symbol_20 *
+     >  OpenAD_Symbol_29)
       CALL sax(OpenAD_Symbol_8,MATR(0),M03)
       CALL saxpy(OpenAD_Symbol_9,MATR(3),M03)
       CALL sax(OpenAD_Symbol_10,MATR(1),M12)
       CALL saxpy(OpenAD_Symbol_11,MATR(2),M12)
-      CALL sax(OpenAD_Symbol_42,MATR(3),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_43,MATR(3),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_44,MATR(2),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_45,MATR(2),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_46,MATR(1),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_47,MATR(1),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_48,MATR(0),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_49,MATR(0),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_51,MATR(1),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_52,MATR(2),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_53,MATR(0),OBJ(1))
-      CALL saxpy(OpenAD_Symbol_54,MATR(3),OBJ(1))
+      CALL sax(1 _w2f__i8,M03,G)
+      CALL saxpy(-1 _w2f__i8,M12,G)
+      CALL sax(OpenAD_Symbol_33,G,OBJ(1))
+      CALL saxpy(OpenAD_Symbol_34,MATR(2),OBJ(1))
+      CALL saxpy(OpenAD_Symbol_35,MATR(2),OBJ(1))
+      CALL saxpy(OpenAD_Symbol_36,MATR(1),OBJ(1))
+      CALL saxpy(OpenAD_Symbol_37,MATR(1),OBJ(1))
+      CALL saxpy(OpenAD_Symbol_38,MATR(3),OBJ(1))
+      CALL saxpy(OpenAD_Symbol_39,MATR(3),OBJ(1))
+      CALL saxpy(OpenAD_Symbol_40,MATR(0),OBJ(1))
+      CALL saxpy(OpenAD_Symbol_41,MATR(0),OBJ(1))
       END SUBROUTINE

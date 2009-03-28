@@ -94,9 +94,9 @@ C$OPENAD XXX Template ad_template.f
       __value__(C) = (__value__(B) + __value__(A) * __value__(A))
       OpenAD_Symbol_8 = __value__(A)
       OpenAD_Symbol_9 = __value__(A)
-      CALL sax(OpenAD_Symbol_8, __deriv__(A), __deriv__(C))
+      CALL sax(1_w2f__i8, __deriv__(B), __deriv__(C))
+      CALL saxpy(OpenAD_Symbol_8, __deriv__(A), __deriv__(C))
       CALL saxpy(OpenAD_Symbol_9, __deriv__(A), __deriv__(C))
-      CALL saxpy(1_w2f__i8, __deriv__(B), __deriv__(C))
       END SUBROUTINE
 
       SUBROUTINE bar(A)

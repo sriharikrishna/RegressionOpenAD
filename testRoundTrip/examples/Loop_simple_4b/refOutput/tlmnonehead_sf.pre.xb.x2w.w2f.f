@@ -41,10 +41,10 @@ C$OPENAD XXX Simple loop
         OpenAD_Symbol_0 = __value__(X(I))
         OpenAD_Symbol_1 = __value__(X(I))
         CALL setderiv(__deriv__(OpenAD_Symbol_2), __deriv__(Y(J)))
-        CALL sax(OpenAD_Symbol_0, __deriv__(X(I)), __deriv__(Y(J)))
+        CALL sax(1_w2f__i8, __deriv__(OpenAD_Symbol_2), __deriv__(Y(J))
+     > )
+        CALL saxpy(OpenAD_Symbol_0, __deriv__(X(I)), __deriv__(Y(J)))
         CALL saxpy(OpenAD_Symbol_1, __deriv__(X(I)), __deriv__(Y(J)))
-        CALL saxpy(1_w2f__i8, __deriv__(OpenAD_Symbol_2), __deriv__(Y(J
-     > )))
       END DO
       END SUBROUTINE
 

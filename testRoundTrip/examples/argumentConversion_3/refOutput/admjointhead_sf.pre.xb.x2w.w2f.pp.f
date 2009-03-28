@@ -528,9 +528,9 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          X(1)%d = X(1)%d+Y(1)%d
+          GY%d = GY%d+Y(1)%d
           Y(1)%d = 0.0d0
-          X(1)%d = X(1)%d+GY%d
+          GX%d = GX%d+GY%d
           GY%d = 0.0d0
           X(1)%d = X(1)%d+GX%d
           GX%d = 0.0d0

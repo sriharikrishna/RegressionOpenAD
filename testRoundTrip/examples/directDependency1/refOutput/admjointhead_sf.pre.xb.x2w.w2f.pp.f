@@ -308,7 +308,7 @@ C adjoint
           T%d = T%d+Y(1)%d*2.0D00
           Y(1)%d = 0.0d0
       CALL foo()
-          X(1)%d = X(1)%d+T1%d*2.0D00
+          T%d = T%d+T1%d*2.0D00
           T1%d = 0.0d0
           X(1)%d = X(1)%d+T%d
           T%d = 0.0d0

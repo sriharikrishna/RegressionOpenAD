@@ -184,18 +184,20 @@ C taping
       OpenAD_Symbol_6 = (INT(1_w2f__i8) / OpenAD_Symbol_5)
       OpenAD_Symbol_7 = (-(OpenAD_Symbol_4 /(OpenAD_Symbol_5 *  OpenAD_S
      +ymbol_5)))
-      OpenAD_Symbol_13 = (OpenAD_Symbol_1 *(INT((-1_w2f__i8)) *  OpenAD_
-     +Symbol_7 + OpenAD_Symbol_9 * OpenAD_Symbol_6))
-      OpenAD_Symbol_14 = (OpenAD_Symbol_3 * OpenAD_Symbol_13)
-      OpenAD_Symbol_15 = (OpenAD_Symbol_2 * OpenAD_Symbol_13)
-      OpenAD_Symbol_16 = (OpenAD_Symbol_8 * OpenAD_Symbol_6)
+      OpenAD_Symbol_13 = (OpenAD_Symbol_9 * OpenAD_Symbol_6 + INT(( -1_w
+     +2f__i8)) * OpenAD_Symbol_7)
+      OpenAD_Symbol_14 = (OpenAD_Symbol_8 * OpenAD_Symbol_6)
+      OpenAD_Symbol_15 = (OpenAD_Symbol_2 * OpenAD_Symbol_1 *  OpenAD_Sy
+     +mbol_13)
+      OpenAD_Symbol_16 = (OpenAD_Symbol_3 * OpenAD_Symbol_1 *  OpenAD_Sy
+     +mbol_13)
           double_tape(double_tape_pointer) = OpenAD_Symbol_14
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_15
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_7
-          double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_16
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_7
           double_tape_pointer = double_tape_pointer+1
       OpenAD_Symbol_12 = (Y(1)%v*GAMMA%v)
       OpenAD_Symbol_10 = GAMMA%v
@@ -232,16 +234,16 @@ C adjoint
           OpenAD_Symbol_17%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_20 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_20
+          GAMMA%d = GAMMA%d+Y(1)%d*OpenAD_Symbol_20
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_21 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_21
+          X(4)%d = X(4)%d+Y(1)%d*OpenAD_Symbol_21
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_22 = double_tape(double_tape_pointer)
           X(3)%d = X(3)%d+Y(1)%d*OpenAD_Symbol_22
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-          X(4)%d = X(4)%d+Y(1)%d*OpenAD_Symbol_23
+          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_23
           Y(1)%d = 0.0d0
           X(2)%d = X(2)%d+GAMMA%d
           GAMMA%d = 0.0d0

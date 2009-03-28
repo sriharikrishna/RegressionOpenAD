@@ -329,13 +329,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          B%d = B%d+C%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_2 = double_tape(double_tape_pointer)
           A%d = A%d+C%d*OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_3 = double_tape(double_tape_pointer)
           A%d = A%d+C%d*OpenAD_Symbol_3
+          B%d = B%d+C%d*1 _w2f__i8
           C%d = 0.0d0
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

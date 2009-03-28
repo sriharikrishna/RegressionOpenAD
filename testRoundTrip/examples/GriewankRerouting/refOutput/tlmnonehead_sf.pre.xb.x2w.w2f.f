@@ -69,16 +69,16 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_6 = (INT(1_w2f__i8) / __value__(T4))
       OpenAD_Symbol_7 = (-(__value__(T3) /(__value__(T4) * __value__(T4
      > ))))
-      OpenAD_Symbol_8 = (OpenAD_Symbol_0 * OpenAD_Symbol_4 +
-     >  OpenAD_Symbol_2 * OpenAD_Symbol_5)
-      OpenAD_Symbol_9 = (OpenAD_Symbol_0 * OpenAD_Symbol_6 +
-     >  OpenAD_Symbol_2 * OpenAD_Symbol_7)
-      OpenAD_Symbol_10 = (OpenAD_Symbol_1 * OpenAD_Symbol_4 +
-     >  OpenAD_Symbol_3 * OpenAD_Symbol_5)
-      OpenAD_Symbol_11 = (OpenAD_Symbol_1 * OpenAD_Symbol_6 +
-     >  OpenAD_Symbol_3 * OpenAD_Symbol_7)
-      CALL sax(OpenAD_Symbol_8, __deriv__(X1), __deriv__(Y1))
-      CALL saxpy(OpenAD_Symbol_10, __deriv__(X2), __deriv__(Y1))
-      CALL sax(OpenAD_Symbol_9, __deriv__(X1), __deriv__(Y2))
-      CALL saxpy(OpenAD_Symbol_11, __deriv__(X2), __deriv__(Y2))
+      OpenAD_Symbol_8 = (OpenAD_Symbol_3 * OpenAD_Symbol_5 +
+     >  OpenAD_Symbol_1 * OpenAD_Symbol_4)
+      OpenAD_Symbol_9 = (OpenAD_Symbol_3 * OpenAD_Symbol_7 +
+     >  OpenAD_Symbol_1 * OpenAD_Symbol_6)
+      OpenAD_Symbol_10 = (OpenAD_Symbol_2 * OpenAD_Symbol_7 +
+     >  OpenAD_Symbol_0 * OpenAD_Symbol_6)
+      OpenAD_Symbol_11 = (OpenAD_Symbol_2 * OpenAD_Symbol_5 +
+     >  OpenAD_Symbol_0 * OpenAD_Symbol_4)
+      CALL sax(OpenAD_Symbol_8, __deriv__(X2), __deriv__(Y1))
+      CALL saxpy(OpenAD_Symbol_11, __deriv__(X1), __deriv__(Y1))
+      CALL sax(OpenAD_Symbol_9, __deriv__(X2), __deriv__(Y2))
+      CALL saxpy(OpenAD_Symbol_10, __deriv__(X1), __deriv__(Y2))
       END SUBROUTINE

@@ -46,11 +46,15 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(Y(1)), __deriv__(X(1)))
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(Y(1)), __deriv__(X(1)))
+      CALL Saxpy(2.0D00, __deriv__(Y(1)), __deriv__(T1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(1_w2f__i8, __deriv__(T1), __deriv__(X(1)))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(1_w2f__i8, __deriv__(T1), __deriv__(X(1)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(T1))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ END REPLACEMENT
@@ -73,10 +77,14 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(Y(1)), __deriv__(X(1)))
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(2.0D00, __deriv__(Y(1)), __deriv__(X(1)))
+      CALL Saxpy(2.0D00, __deriv__(Y(1)), __deriv__(T1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(1_w2f__i8, __deriv__(T1), __deriv__(X(1)))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(1_w2f__i8, __deriv__(T1), __deriv__(X(1)))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(T1))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

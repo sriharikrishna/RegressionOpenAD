@@ -122,19 +122,19 @@ C
       CHARACTER(3) LOCALSTRING
       INTEGER(w2f__i8) OpenAD_Symbol_19
       INTEGER(w2f__i8) OpenAD_Symbol_20
-      INTEGER(w2f__i8) OpenAD_Symbol_21
-      REAL(w2f__8) OpenAD_Symbol_22
+      REAL(w2f__8) OpenAD_Symbol_21
+      INTEGER(w2f__i8) OpenAD_Symbol_22
       INTEGER(w2f__i8) OpenAD_Symbol_23
-      INTEGER(w2f__i8) OpenAD_Symbol_24
-      REAL(w2f__8) OpenAD_Symbol_25
+      REAL(w2f__8) OpenAD_Symbol_24
+      INTEGER(w2f__i8) OpenAD_Symbol_25
       INTEGER(w2f__i8) OpenAD_Symbol_26
       INTEGER(w2f__i8) OpenAD_Symbol_27
       INTEGER(w2f__i8) OpenAD_Symbol_28
-      INTEGER(w2f__i8) OpenAD_Symbol_29
-      REAL(w2f__8) OpenAD_Symbol_30
+      REAL(w2f__8) OpenAD_Symbol_29
+      INTEGER(w2f__i8) OpenAD_Symbol_30
       INTEGER(w2f__i8) OpenAD_Symbol_31
-      INTEGER(w2f__i8) OpenAD_Symbol_32
-      REAL(w2f__8) OpenAD_Symbol_33
+      REAL(w2f__8) OpenAD_Symbol_32
+      INTEGER(w2f__i8) OpenAD_Symbol_33
       INTEGER(w2f__i8) OpenAD_Symbol_34
 C
 C     **** Statements ****
@@ -277,25 +277,25 @@ C adjoint
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
         IF(GLOBALSTRING .EQ. 'no') THEN
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_29 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_29
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_32 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_32
           OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d*1 _w2f__i8
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_30 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_30
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_33 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_33
           Y(I)%d = 0.0d0
           Y(I)%d = Y(I)%d+OpenAD_Symbol_9%d
           OpenAD_Symbol_9%d = 0.0d0
         ENDIF
         IF(GLOBALSTRING .EQ. 'yes') THEN
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_21 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_21
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_24 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_24
           OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d*1 _w2f__i8
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_22 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_22
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_25 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_25
           Y(I)%d = 0.0d0
           Y(I)%d = Y(I)%d+OpenAD_Symbol_6%d
           OpenAD_Symbol_6%d = 0.0d0

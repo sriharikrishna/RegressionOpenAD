@@ -278,13 +278,13 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          B%d = B%d+C%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_27 = double_tape(double_tape_pointer)
           A%d = A%d+C%d*OpenAD_Symbol_27
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_28 = double_tape(double_tape_pointer)
           A%d = A%d+C%d*OpenAD_Symbol_28
+          B%d = B%d+C%d*1 _w2f__i8
           C%d = 0.0d0
       CALL bar(B)
           end if 
