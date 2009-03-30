@@ -100,7 +100,6 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i8) OpenAD_Symbol_16
-      INTEGER(w2f__i8) OpenAD_Symbol_17
 C
 C     **** Statements ****
 C
@@ -181,8 +180,6 @@ C$OPENAD XXX Template ad_template.f
         A(INT(I))%v = OpenAD_Symbol_1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6) + INT(1_w2f__i8))
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
@@ -211,9 +208,7 @@ C adjoint
           OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+A(INT(OpenAD_Symbol_16))
      +%d*2.0D00
           A(INT(OpenAD_Symbol_16))%d = 0.0d0
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
-          A(INT(OpenAD_Symbol_17))%d = A(INT(OpenAD_Symbol_17))%d+OpenAD
+          A(INT(OpenAD_Symbol_16))%d = A(INT(OpenAD_Symbol_16))%d+OpenAD
      +_Symbol_2%d
           OpenAD_Symbol_2%d = 0.0d0
         OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
@@ -314,7 +309,7 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) OAD_CTMP0
-      INTEGER(w2f__i8) OpenAD_Symbol_18
+      INTEGER(w2f__i8) OpenAD_Symbol_17
 C
 C     **** Top Level Pragmas ****
 C
@@ -429,10 +424,10 @@ C adjoint
           OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_11 = 1
       DO WHILE(INT(OpenAD_Symbol_11) .LE. INT(OpenAD_Symbol_10))
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*1 _w2f__i8
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_18 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_18))%d = X(INT(OpenAD_Symbol_18))%d+Y(1)%d
+          OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*1 _w2f__i8
+          X(INT(OpenAD_Symbol_17))%d = X(INT(OpenAD_Symbol_17))%d+Y(1)%d
      +*1 _w2f__i8
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d

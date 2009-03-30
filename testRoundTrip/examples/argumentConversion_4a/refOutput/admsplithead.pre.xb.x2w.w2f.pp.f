@@ -104,9 +104,9 @@ C$OPENAD XXX Template ad_template.f
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_10 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y%d*OpenAD_Symbol_10
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_11 = double_tape(double_tape_pointer)
+          X(2)%d = X(2)%d+Y%d*OpenAD_Symbol_10
           X(1)%d = X(1)%d+Y%d*OpenAD_Symbol_11
           Y%d = 0.0d0
           end if 
@@ -179,8 +179,8 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0(1 : 2, 1 : 3)
       type(active) :: OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_14(1 : 2, 1 : 3)
-      type(active) :: OpenAD_Symbol_15
+      type(active) :: OpenAD_Symbol_13(1 : 2, 1 : 3)
+      type(active) :: OpenAD_Symbol_14
       INTEGER(w2f__i8) OpenAD_Symbol_4
       INTEGER(w2f__i8) OpenAD_Symbol_5
       INTEGER(w2f__i8) OpenAD_Symbol_6
@@ -201,7 +201,6 @@ C
       INTEGER(w2f__i4) I
       REAL(w2f__8) PY
       INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_13
 C
 C     **** Top Level Pragmas ****
 C
@@ -239,8 +238,6 @@ C$OPENAD XXX Template ad_template.f
         AX(INT(I),2)%v = X(I)%v
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6) + INT(1_w2f__i8))
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
@@ -258,7 +255,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      CALL foo(OpenAD_Symbol_14(1,2),OpenAD_Symbol_15)
+      CALL foo(OpenAD_Symbol_13(1,2),OpenAD_Symbol_14)
       CALL foo(AX(1,2),Y)
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
@@ -266,9 +263,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_13 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_13))%d = X(INT(OpenAD_Symbol_13))%d+AX(INT
+          X(INT(OpenAD_Symbol_12))%d = X(INT(OpenAD_Symbol_12))%d+AX(INT
      +(OpenAD_Symbol_12),2)%d
           AX(INT(OpenAD_Symbol_12),2)%d = 0.0d0
         OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1

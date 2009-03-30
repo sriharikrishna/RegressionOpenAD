@@ -192,13 +192,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          AGLOBAL%d = AGLOBAL%d+Y(1)%d
-          Y(1)%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_2 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+AGLOBAL%d*OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+          AGLOBAL%d = AGLOBAL%d+Y(1)%d
+          Y(1)%d = 0.0d0
+          X(2)%d = X(2)%d+AGLOBAL%d*OpenAD_Symbol_2
           X(1)%d = X(1)%d+AGLOBAL%d*OpenAD_Symbol_3
           AGLOBAL%d = 0.0d0
 C adjoint end

@@ -46,10 +46,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_10)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_10, __deriv__(Y), __deriv__(X(2)))
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_11)
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_10, __deriv__(Y), __deriv__(X(2)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_11, __deriv__(Y), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
@@ -92,10 +92,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_10)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_10, __deriv__(Y), __deriv__(X(2)))
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_11)
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_10, __deriv__(Y), __deriv__(X(2)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_11, __deriv__(Y), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
@@ -111,8 +111,8 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       TYPE (OpenADTy_active) OpenAD_Symbol_0(1 : 2, 1 : 3)
       TYPE (OpenADTy_active) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_Symbol_14(1 : 2, 1 : 3)
-      TYPE (OpenADTy_active) OpenAD_Symbol_15
+      TYPE (OpenADTy_active) OpenAD_Symbol_13(1 : 2, 1 : 3)
+      TYPE (OpenADTy_active) OpenAD_Symbol_14
       INTEGER(w2f__i8) OpenAD_Symbol_4
       INTEGER(w2f__i8) OpenAD_Symbol_5
       INTEGER(w2f__i8) OpenAD_Symbol_6
@@ -133,7 +133,6 @@ C
       INTEGER(w2f__i4) I
       REAL(w2f__8) PY
       INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_13
 C
 C     **** Top Level Pragmas ****
 C
@@ -166,8 +165,6 @@ C$OPENAD XXX Template ad_template.f
         __value__(AX(INT(I), 2)) = __value__(X(I))
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(I)
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(I)
         OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6) + INT(1_w2f__i8))
       END DO
 C     $OpenAD$ INLINE push_i(subst)
@@ -185,8 +182,8 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(PY, __deriv__(OpenAD_Symbol_1))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-      CALL foo(__deriv__(OpenAD_Symbol_14(1, 2)), __deriv__(
-     > OpenAD_Symbol_15))
+      CALL foo(__deriv__(OpenAD_Symbol_13(1, 2)), __deriv__(
+     > OpenAD_Symbol_14))
       CALL foo(__deriv__(AX(1, 2)), __deriv__(Y))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_4)
@@ -194,11 +191,9 @@ C     $OpenAD$ INLINE pop_i(subst)
       DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
 C       $OpenAD$ INLINE pop_i(subst)
         CALL pop_i(OpenAD_Symbol_12)
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_13)
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
         CALL IncDeriv(__deriv__(AX(INT(OpenAD_Symbol_12), 2)),
-     >  __deriv__(X(INT(OpenAD_Symbol_13))))
+     >  __deriv__(X(INT(OpenAD_Symbol_12))))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(AX(INT(OpenAD_Symbol_12), 2)))
         OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
@@ -223,8 +218,6 @@ C$OPENAD XXX Template ad_template.f
         __value__(AX(INT(I), 2)) = __value__(X(I))
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(I)
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(I)
         OpenAD_Symbol_9 = (INT(OpenAD_Symbol_9) + INT(1_w2f__i8))
       END DO
 C     $OpenAD$ INLINE push_i(subst)
@@ -242,8 +235,8 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(PY, __deriv__(OpenAD_Symbol_1))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-      CALL foo(__deriv__(OpenAD_Symbol_14(1, 2)), __deriv__(
-     > OpenAD_Symbol_15))
+      CALL foo(__deriv__(OpenAD_Symbol_13(1, 2)), __deriv__(
+     > OpenAD_Symbol_14))
       CALL foo(__deriv__(AX(1, 2)), __deriv__(Y))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_7)
@@ -251,11 +244,9 @@ C     $OpenAD$ INLINE pop_i(subst)
       DO WHILE(INT(OpenAD_Symbol_8) .LE. INT(OpenAD_Symbol_7))
 C       $OpenAD$ INLINE pop_i(subst)
         CALL pop_i(OpenAD_Symbol_12)
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_13)
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
         CALL IncDeriv(__deriv__(AX(INT(OpenAD_Symbol_12), 2)),
-     >  __deriv__(X(INT(OpenAD_Symbol_13))))
+     >  __deriv__(X(INT(OpenAD_Symbol_12))))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(AX(INT(OpenAD_Symbol_12), 2)))
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8) + 1

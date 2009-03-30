@@ -183,9 +183,9 @@ C adjoint
       DO WHILE(I .GE. 1)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_8
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_9 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_8
           X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_9
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d

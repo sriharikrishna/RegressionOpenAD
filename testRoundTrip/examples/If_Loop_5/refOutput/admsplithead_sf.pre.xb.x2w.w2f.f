@@ -112,11 +112,11 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_25)
+C     $OpenAD$ INLINE Pop(subst)
+      CALL Pop(OpenAD_Symbol_26)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_25, __deriv__(Y(2)), __deriv__(
      > OpenAD_Symbol_10))
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_26)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_26, __deriv__(Y(2)), __deriv__(
      > OpenAD_Symbol_9))
@@ -217,11 +217,11 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_25)
+C     $OpenAD$ INLINE Pop(subst)
+      CALL Pop(OpenAD_Symbol_26)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_25, __deriv__(Y(2)), __deriv__(
      > OpenAD_Symbol_10))
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_26)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_26, __deriv__(Y(2)), __deriv__(
      > OpenAD_Symbol_9))

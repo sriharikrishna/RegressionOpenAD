@@ -237,9 +237,9 @@ C$OPENAD XXX Template ad_template.f
               IF(OpenAD_Symbol_15 .ne. 0) THEN
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_38 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(1)%d*OpenAD_Symbol_38
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_39 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(1)%d*OpenAD_Symbol_38
           X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_39
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_6%d
@@ -252,9 +252,9 @@ C$OPENAD XXX Template ad_template.f
         ELSE
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_40 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_40
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_41 = double_tape(double_tape_pointer)
+          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_40
           OpenAD_Symbol_7%d = OpenAD_Symbol_7%d+Y(1)%d*OpenAD_Symbol_41
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_7%d

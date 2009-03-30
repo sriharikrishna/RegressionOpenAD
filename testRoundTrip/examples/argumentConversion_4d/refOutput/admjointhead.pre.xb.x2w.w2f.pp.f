@@ -164,9 +164,9 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_4 = double_tape(double_tape_pointer)
-          X(4)%d = X(4)%d+Y%d*OpenAD_Symbol_4
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+          X(4)%d = X(4)%d+Y%d*OpenAD_Symbol_4
           X(2)%d = X(2)%d+Y%d*OpenAD_Symbol_5
           Y%d = 0.0d0
 C adjoint end

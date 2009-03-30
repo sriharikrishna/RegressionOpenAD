@@ -34,8 +34,8 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
+      INTEGER(w2f__i8) OpenAD_Symbol_8
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -67,10 +67,10 @@ C     $OpenAD$ INLINE push_i(subst)
       __value__(T) = OpenAD_Symbol_2
 C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
 C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(I)
       I = 3
       __value__(Y(1)) = SIN(__value__(T))
       OpenAD_Symbol_3 = COS(__value__(T))
@@ -94,18 +94,18 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_7, __deriv__(Y(1)), __deriv__(T))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_8)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_8, __deriv__(T), __deriv__(
-     > OpenAD_Symbol_5))
 C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_9)
+      CALL pop_i(OpenAD_Symbol_8)
+C     $OpenAD$ INLINE Pop(subst)
+      CALL Pop(OpenAD_Symbol_9)
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_10)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_9, __deriv__(T), __deriv__(
+     > OpenAD_Symbol_5))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_10, __deriv__(T), __deriv__(X(INT(
-     > OpenAD_Symbol_9))))
+     > OpenAD_Symbol_8))))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(T))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
@@ -144,10 +144,10 @@ C     $OpenAD$ INLINE push_i(subst)
       __value__(T) = OpenAD_Symbol_2
 C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
 C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(I)
       I = 3
       __value__(Y(1)) = SIN(__value__(T))
       OpenAD_Symbol_3 = COS(__value__(T))
@@ -171,18 +171,18 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_7, __deriv__(Y(1)), __deriv__(T))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_8)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_8, __deriv__(T), __deriv__(
-     > OpenAD_Symbol_5))
 C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_9)
+      CALL pop_i(OpenAD_Symbol_8)
+C     $OpenAD$ INLINE Pop(subst)
+      CALL Pop(OpenAD_Symbol_9)
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_10)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_9, __deriv__(T), __deriv__(
+     > OpenAD_Symbol_5))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_10, __deriv__(T), __deriv__(X(INT(
-     > OpenAD_Symbol_9))))
+     > OpenAD_Symbol_8))))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(T))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)

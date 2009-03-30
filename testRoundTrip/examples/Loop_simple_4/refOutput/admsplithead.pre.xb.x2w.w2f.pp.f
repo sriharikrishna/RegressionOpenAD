@@ -82,14 +82,10 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
-      INTEGER(w2f__i8) OpenAD_Symbol_10
-      REAL(w2f__8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_6
       INTEGER(w2f__i8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Statements ****
 C
@@ -131,10 +127,10 @@ C$OPENAD XXX Simple loop
       DO WHILE(I .GE. 1)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(J)%d*OpenAD_Symbol_8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_11 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(J)%d*OpenAD_Symbol_11
+          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(J)%d*OpenAD_Symbol_8
+          X(I)%d = X(I)%d+Y(J)%d*OpenAD_Symbol_9
           OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Y(J)%d*1 _w2f__i8
           Y(J)%d = 0.0d0
           Y(J)%d = Y(J)%d+OpenAD_Symbol_2%d

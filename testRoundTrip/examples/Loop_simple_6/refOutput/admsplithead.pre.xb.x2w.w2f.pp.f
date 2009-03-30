@@ -88,8 +88,6 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
 C
 C     **** Top Level Pragmas ****
 C

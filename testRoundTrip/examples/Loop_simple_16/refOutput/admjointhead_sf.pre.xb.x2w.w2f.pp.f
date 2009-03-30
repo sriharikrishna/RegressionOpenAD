@@ -94,8 +94,8 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_Symbol_7
-      INTEGER(w2f__i8) OpenAD_Symbol_8
+      INTEGER(w2f__i8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_Symbol_8
       REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Statements ****
@@ -224,10 +224,10 @@ C adjoint
       DO WHILE(((S .GT. 0.0D00) .AND.(I .GE. L)) .OR.((S .LT. 0.0D00)  .
      +AND.(I .LE. L)))
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_7 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y%d*OpenAD_Symbol_7
+          OpenAD_Symbol_8 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_9 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y%d*OpenAD_Symbol_8
           X(I)%d = X(I)%d+Y%d*OpenAD_Symbol_9
           Y%d = 0.0d0
           Y%d = Y%d+OpenAD_Symbol_3%d

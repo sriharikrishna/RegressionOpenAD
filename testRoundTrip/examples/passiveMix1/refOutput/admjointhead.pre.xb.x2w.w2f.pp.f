@@ -86,8 +86,8 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
+      INTEGER(w2f__i8) OpenAD_Symbol_8
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -164,10 +164,10 @@ C$OPENAD XXX Template ad_template.f
       T%v = OpenAD_Symbol_2
           double_tape(double_tape_pointer) = OpenAD_Symbol_0
           double_tape_pointer = double_tape_pointer+1
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
+          integer_tape(integer_tape_pointer) = I
+          integer_tape_pointer = integer_tape_pointer+1
       I = 3
       Y(1)%v = SIN(T%v)
       OpenAD_Symbol_3 = COS(T%v)
@@ -200,14 +200,14 @@ C adjoint
           OpenAD_Symbol_7 = double_tape(double_tape_pointer)
           T%d = T%d+Y(1)%d*OpenAD_Symbol_7
           Y(1)%d = 0.0d0
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+T%d*OpenAD_Symbol_8
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
+          OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_10 = double_tape(double_tape_pointer)
-          X(INT(OpenAD_Symbol_9))%d = X(INT(OpenAD_Symbol_9))%d+T%d*Open
+          OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+T%d*OpenAD_Symbol_9
+          X(INT(OpenAD_Symbol_8))%d = X(INT(OpenAD_Symbol_8))%d+T%d*Open
      +AD_Symbol_10
           T%d = 0.0d0
           T%d = T%d+OpenAD_Symbol_5%d

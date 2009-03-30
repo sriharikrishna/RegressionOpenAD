@@ -173,29 +173,29 @@ C$OPENAD XXX Template ad_template.f
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_25 = double_tape(double_tape_pointer)
-          X(4)%d = X(4)%d+Y(1)%d*OpenAD_Symbol_25
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_26 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_26
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_27 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_23%d = OpenAD_Symbol_23%d+Y(1)%d*OpenAD_Symbol_2
-     +7
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_28 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_28
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_29 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_29
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_30 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_24%d = OpenAD_Symbol_24%d+Y(1)%d*OpenAD_Symbol_3
-     +0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_31 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_31
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_32 = double_tape(double_tape_pointer)
+          X(4)%d = X(4)%d+Y(1)%d*OpenAD_Symbol_25
+          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_26
+          OpenAD_Symbol_23%d = OpenAD_Symbol_23%d+Y(1)%d*OpenAD_Symbol_2
+     +7
+          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_28
+          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_29
+          OpenAD_Symbol_24%d = OpenAD_Symbol_24%d+Y(1)%d*OpenAD_Symbol_3
+     +0
+          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_31
           X(3)%d = X(3)%d+Y(1)%d*OpenAD_Symbol_32
           Y(1)%d = 0.0d0
           X(10)%d = X(10)%d+OpenAD_Symbol_24%d*1 _w2f__i8

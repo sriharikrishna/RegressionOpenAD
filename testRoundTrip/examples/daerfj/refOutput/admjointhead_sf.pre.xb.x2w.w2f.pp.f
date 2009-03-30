@@ -108,11 +108,9 @@ C
       REAL(w2f__8) Y(1 : 11)
       INTEGER(w2f__i8) OpenAD_Symbol_23
       REAL(w2f__8) OpenAD_Symbol_24
-      INTEGER(w2f__i8) OpenAD_Symbol_25
+      REAL(w2f__8) OpenAD_Symbol_25
       REAL(w2f__8) OpenAD_Symbol_26
-      INTEGER(w2f__i8) OpenAD_Symbol_27
-      REAL(w2f__8) OpenAD_Symbol_28
-      REAL(w2f__8) OpenAD_Symbol_29
+      REAL(w2f__8) OpenAD_Symbol_27
 C
 C     **** Top Level Pragmas ****
 C
@@ -243,12 +241,8 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_14
           double_tape_pointer = double_tape_pointer+1
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_15
           double_tape_pointer = double_tape_pointer+1
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_16
           double_tape_pointer = double_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
@@ -280,22 +274,18 @@ C adjoint
           OpenAD_Symbol_23 = integer_tape(integer_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+FVEC(INT(OpenAD_Symbol_23))%d*OpenAD_Symbol_24
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_25 = integer_tape(integer_tape_pointer)
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_25 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_26 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+FVEC(INT(OpenAD_Symbol_25))%d*OpenAD_Symbol_26
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_27 = integer_tape(integer_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_28 = double_tape(double_tape_pointer)
-          TEMP2%d = TEMP2%d+FVEC(INT(OpenAD_Symbol_27))%d*OpenAD_Symbol_
-     +28
-          FVEC(INT(OpenAD_Symbol_27))%d = 0.0d0
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_29 = double_tape(double_tape_pointer)
-          X(3)%d = X(3)%d+TEMP2%d*OpenAD_Symbol_29
+          OpenAD_Symbol_27 = double_tape(double_tape_pointer)
+          X(2)%d = X(2)%d+FVEC(INT(OpenAD_Symbol_23))%d*OpenAD_Symbol_24
+          X(1)%d = X(1)%d+FVEC(INT(OpenAD_Symbol_23))%d*OpenAD_Symbol_25
+          TEMP2%d = TEMP2%d+FVEC(INT(OpenAD_Symbol_23))%d*OpenAD_Symbol_
+     +26
+          FVEC(INT(OpenAD_Symbol_23))%d = 0.0d0
+          X(3)%d = X(3)%d+TEMP2%d*OpenAD_Symbol_27
           X(4)%d = X(4)%d+TEMP2%d*1 _w2f__i8
           TEMP2%d = 0.0d0
         OpenAD_Symbol_18 = INT(OpenAD_Symbol_18) + 1

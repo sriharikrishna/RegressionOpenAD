@@ -218,9 +218,9 @@ C adjoint
         IF(OpenAD_Symbol_7 .ne. 0) THEN
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_17 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_17
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_18 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_17
           X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_18
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
