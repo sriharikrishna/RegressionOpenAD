@@ -155,8 +155,8 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_123
-      type(active) :: OpenAD_Symbol_124
+      type(active) :: OpenAD_Symbol_120
+      type(active) :: OpenAD_Symbol_121
 C
 C     **** Local Variables and Functions ****
 C
@@ -204,11 +204,11 @@ C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
         T(INT(L))%v = (T(L)%v+XX(L)%v)
         S(INT(L))%v = (S(L)%v+XX(L+3)%v)
-        CALL setderiv(OpenAD_Symbol_123,T(L))
-        CALL setderiv(OpenAD_Symbol_124,S(L))
-        CALL sax(1_w2f__i8,OpenAD_Symbol_123,T(L))
+        CALL setderiv(OpenAD_Symbol_120,T(L))
+        CALL setderiv(OpenAD_Symbol_121,S(L))
+        CALL sax(1_w2f__i8,OpenAD_Symbol_120,T(L))
         CALL saxpy(1_w2f__i8,XX(L),T(L))
-        CALL sax(1_w2f__i8,OpenAD_Symbol_124,S(L))
+        CALL sax(1_w2f__i8,OpenAD_Symbol_121,S(L))
         CALL saxpy(1_w2f__i8,XX(L+3),S(L))
       END DO
       DO L = 1, 3, 1
@@ -436,9 +436,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_89
       REAL(w2f__8) OpenAD_Symbol_9
-      REAL(w2f__8) OpenAD_Symbol_90
-      REAL(w2f__8) OpenAD_Symbol_91
-      REAL(w2f__8) OpenAD_Symbol_92
+      type(active) :: OpenAD_Symbol_90
 C
 C     **** Parameters and Result ****
 C
@@ -465,12 +463,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_10 = OpenAD_Symbol_9
       OpenAD_Symbol_6 = U0
       OpenAD_Symbol_89 = (OpenAD_Symbol_6 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_90 = (INT((-1_w2f__i8)) * OpenAD_Symbol_89)
-      OpenAD_Symbol_91 = (OpenAD_Symbol_10 * OpenAD_Symbol_89)
-      OpenAD_Symbol_92 = (OpenAD_Symbol_7 * OpenAD_Symbol_89)
-      CALL sax(OpenAD_Symbol_90,RHOLOC(2),UVELLOC)
-      CALL saxpy(OpenAD_Symbol_91,RHOLOC(3),UVELLOC)
-      CALL saxpy(OpenAD_Symbol_92,RHOLOC(1),UVELLOC)
+      CALL sax(-1_w2f__i8,RHOLOC(2),OpenAD_Symbol_90)
+      CALL saxpy(OpenAD_Symbol_7,RHOLOC(1),OpenAD_Symbol_90)
+      CALL saxpy(OpenAD_Symbol_10,RHOLOC(3),OpenAD_Symbol_90)
+      CALL sax(OpenAD_Symbol_89,OpenAD_Symbol_90,UVELLOC)
       END SUBROUTINE
 
       SUBROUTINE box_robert_filter(FLDNOW, FLDOLD, FLDNEW)
@@ -481,9 +477,9 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_118
-      type(active) :: OpenAD_Symbol_119
-      type(active) :: OpenAD_Symbol_120
+      type(active) :: OpenAD_Symbol_115
+      type(active) :: OpenAD_Symbol_116
+      type(active) :: OpenAD_Symbol_117
       REAL(w2f__8) OpenAD_Symbol_80
       REAL(w2f__8) OpenAD_Symbol_82
       REAL(w2f__8) OpenAD_Symbol_84
@@ -513,14 +509,13 @@ C$OPENAD XXX Template ad_template.f
      +l_80)
         OpenAD_Symbol_82 = ROBERT_FILTER_COEFF
         FLDNOW(INT(L))%v = OpenAD_Symbol_84
-        OpenAD_Symbol_118 = (2.0D00 * INT((-1_w2f__i8)) *
-     >  OpenAD_Symbol_82)
-        CALL setderiv(OpenAD_Symbol_119,FLDNOW(L))
-        CALL setderiv(OpenAD_Symbol_120,FLDNOW(L))
-        CALL sax(OpenAD_Symbol_82,FLDOLD(L),FLDNOW(L))
-        CALL saxpy(OpenAD_Symbol_82,FLDNEW(L),FLDNOW(L))
-        CALL saxpy(OpenAD_Symbol_118,OpenAD_Symbol_120,FLDNOW(L))
-        CALL saxpy(1_w2f__i8,OpenAD_Symbol_119,FLDNOW(L))
+        CALL setderiv(OpenAD_Symbol_115,FLDNOW(L))
+        CALL setderiv(OpenAD_Symbol_116,FLDNOW(L))
+        CALL sax(1_w2f__i8,FLDOLD(L),OpenAD_Symbol_117)
+        CALL saxpy(1_w2f__i8,FLDNEW(L),OpenAD_Symbol_117)
+        CALL saxpy(-2.0D00,OpenAD_Symbol_116,OpenAD_Symbol_117)
+        CALL sax(1_w2f__i8,OpenAD_Symbol_115,FLDNOW(L))
+        CALL saxpy(OpenAD_Symbol_82,OpenAD_Symbol_117,FLDNOW(L))
       END DO
       END SUBROUTINE
 
@@ -532,8 +527,8 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_121
-      type(active) :: OpenAD_Symbol_122
+      type(active) :: OpenAD_Symbol_118
+      type(active) :: OpenAD_Symbol_119
 C
 C     **** Local Variables and Functions ****
 C
@@ -551,13 +546,13 @@ C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
         TOLD(INT(L))%v = TNOW(L)%v
         TNOW(INT(L))%v = TNEW(L)%v
-        CALL setderiv(OpenAD_Symbol_121,TNOW(L))
-        CALL setderiv(TOLD(L),OpenAD_Symbol_121)
+        CALL setderiv(OpenAD_Symbol_118,TNOW(L))
+        CALL setderiv(TOLD(L),OpenAD_Symbol_118)
         CALL setderiv(TNOW(L),TNEW(L))
         SOLD(INT(L))%v = SNOW(L)%v
         SNOW(INT(L))%v = SNEW(L)%v
-        CALL setderiv(OpenAD_Symbol_122,SNOW(L))
-        CALL setderiv(SOLD(L),OpenAD_Symbol_122)
+        CALL setderiv(OpenAD_Symbol_119,SNOW(L))
+        CALL setderiv(SOLD(L),OpenAD_Symbol_119)
         CALL setderiv(SNOW(L),SNEW(L))
       END DO
       END SUBROUTINE
@@ -596,8 +591,8 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_85 = (DELTA_T * 2.0D00)
         FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*OpenAD_Symbol_85)
         OpenAD_Symbol_86 = OpenAD_Symbol_85
-        CALL sax(OpenAD_Symbol_86,DFLDDT(L),FLDNEW(L))
-        CALL saxpy(1_w2f__i8,FLDOLD(L),FLDNEW(L))
+        CALL sax(1_w2f__i8,FLDOLD(L),FLDNEW(L))
+        CALL saxpy(OpenAD_Symbol_86,DFLDDT(L),FLDNEW(L))
       END DO
       END SUBROUTINE
 
@@ -611,23 +606,20 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_100
-      REAL(w2f__8) OpenAD_Symbol_101
+      type(active) :: OpenAD_Symbol_101
       REAL(w2f__8) OpenAD_Symbol_102
       REAL(w2f__8) OpenAD_Symbol_103
       REAL(w2f__8) OpenAD_Symbol_104
       REAL(w2f__8) OpenAD_Symbol_105
-      REAL(w2f__8) OpenAD_Symbol_106
+      type(active) :: OpenAD_Symbol_106
       REAL(w2f__8) OpenAD_Symbol_107
       REAL(w2f__8) OpenAD_Symbol_108
       REAL(w2f__8) OpenAD_Symbol_109
       REAL(w2f__8) OpenAD_Symbol_110
-      REAL(w2f__8) OpenAD_Symbol_111
+      type(active) :: OpenAD_Symbol_111
       REAL(w2f__8) OpenAD_Symbol_112
       REAL(w2f__8) OpenAD_Symbol_113
-      REAL(w2f__8) OpenAD_Symbol_114
-      REAL(w2f__8) OpenAD_Symbol_115
-      REAL(w2f__8) OpenAD_Symbol_116
-      REAL(w2f__8) OpenAD_Symbol_117
+      type(active) :: OpenAD_Symbol_114
       REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_16
@@ -674,12 +666,14 @@ C
       REAL(w2f__8) OpenAD_Symbol_77
       REAL(w2f__8) OpenAD_Symbol_78
       REAL(w2f__8) OpenAD_Symbol_79
+      REAL(w2f__8) OpenAD_Symbol_91
+      REAL(w2f__8) OpenAD_Symbol_92
       REAL(w2f__8) OpenAD_Symbol_93
-      REAL(w2f__8) OpenAD_Symbol_94
+      type(active) :: OpenAD_Symbol_94
       REAL(w2f__8) OpenAD_Symbol_95
       REAL(w2f__8) OpenAD_Symbol_96
       REAL(w2f__8) OpenAD_Symbol_97
-      REAL(w2f__8) OpenAD_Symbol_98
+      type(active) :: OpenAD_Symbol_98
       REAL(w2f__8) OpenAD_Symbol_99
 C
 C     **** Parameters and Result ****
@@ -718,15 +712,15 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_24 = OpenAD_Symbol_23
         OpenAD_Symbol_25 = UVELLOC%v
         OpenAD_Symbol_13 = (INT(1_w2f__i8) / VOL(1))
-        OpenAD_Symbol_93 = (OpenAD_Symbol_24 * OpenAD_Symbol_13)
-        OpenAD_Symbol_94 = (OpenAD_Symbol_25 * OpenAD_Symbol_13)
-        OpenAD_Symbol_95 = (INT((-1_w2f__i8)) * OpenAD_Symbol_94)
-        OpenAD_Symbol_96 = (INT((-1_w2f__i8)) * OpenAD_Symbol_21 *
+        OpenAD_Symbol_91 = (OpenAD_Symbol_24 * OpenAD_Symbol_13)
+        OpenAD_Symbol_92 = (OpenAD_Symbol_25 * OpenAD_Symbol_13)
+        OpenAD_Symbol_93 = (INT((-1_w2f__i8)) * OpenAD_Symbol_21 *
      >  OpenAD_Symbol_18 * OpenAD_Symbol_13)
-        CALL sax(OpenAD_Symbol_93,UVELLOC,DFLDDT(1))
-        CALL saxpy(OpenAD_Symbol_94,FLDNOW(3),DFLDDT(1))
-        CALL saxpy(OpenAD_Symbol_95,FLDNOW(1),DFLDDT(1))
-        CALL saxpy(OpenAD_Symbol_96,FLDNOW(1),DFLDDT(1))
+        CALL sax(1_w2f__i8,FLDNOW(3),OpenAD_Symbol_94)
+        CALL saxpy(-1_w2f__i8,FLDNOW(1),OpenAD_Symbol_94)
+        CALL sax(OpenAD_Symbol_91,UVELLOC,DFLDDT(1))
+        CALL saxpy(OpenAD_Symbol_92,OpenAD_Symbol_94,DFLDDT(1))
+        CALL saxpy(OpenAD_Symbol_93,FLDNOW(1),DFLDDT(1))
         OpenAD_Symbol_33 = (FLDSTAR(2)-FLDNOW(2)%v)
         OpenAD_Symbol_30 = (GAMMALOC * OpenAD_Symbol_33)
         OpenAD_Symbol_37 = (FLDNOW(1)%v-FLDNOW(2)%v)
@@ -738,27 +732,27 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_38 = OpenAD_Symbol_37
         OpenAD_Symbol_39 = UVELLOC%v
         OpenAD_Symbol_27 = (INT(1_w2f__i8) / VOL(2))
-        OpenAD_Symbol_97 = (OpenAD_Symbol_38 * OpenAD_Symbol_27)
-        OpenAD_Symbol_98 = (OpenAD_Symbol_39 * OpenAD_Symbol_27)
-        OpenAD_Symbol_99 = (INT((-1_w2f__i8)) * OpenAD_Symbol_98)
-        OpenAD_Symbol_100 = (INT((-1_w2f__i8)) * OpenAD_Symbol_35 *
+        OpenAD_Symbol_95 = (OpenAD_Symbol_38 * OpenAD_Symbol_27)
+        OpenAD_Symbol_96 = (OpenAD_Symbol_39 * OpenAD_Symbol_27)
+        OpenAD_Symbol_97 = (INT((-1_w2f__i8)) * OpenAD_Symbol_35 *
      >  OpenAD_Symbol_32 * OpenAD_Symbol_27)
-        CALL sax(OpenAD_Symbol_97,UVELLOC,DFLDDT(2))
-        CALL saxpy(OpenAD_Symbol_98,FLDNOW(1),DFLDDT(2))
-        CALL saxpy(OpenAD_Symbol_99,FLDNOW(2),DFLDDT(2))
-        CALL saxpy(OpenAD_Symbol_100,FLDNOW(2),DFLDDT(2))
+        CALL sax(1_w2f__i8,FLDNOW(1),OpenAD_Symbol_98)
+        CALL saxpy(-1_w2f__i8,FLDNOW(2),OpenAD_Symbol_98)
+        CALL sax(OpenAD_Symbol_95,UVELLOC,DFLDDT(2))
+        CALL saxpy(OpenAD_Symbol_96,OpenAD_Symbol_98,DFLDDT(2))
+        CALL saxpy(OpenAD_Symbol_97,FLDNOW(2),DFLDDT(2))
         OpenAD_Symbol_43 = (FLDNOW(2)%v-FLDNOW(3)%v)
         OpenAD_Symbol_40 = (UVELLOC%v*OpenAD_Symbol_43)
         DFLDDT(3)%v = (OpenAD_Symbol_40/VOL(3))
         OpenAD_Symbol_44 = OpenAD_Symbol_43
         OpenAD_Symbol_45 = UVELLOC%v
         OpenAD_Symbol_41 = (INT(1_w2f__i8) / VOL(3))
-        OpenAD_Symbol_101 = (OpenAD_Symbol_44 * OpenAD_Symbol_41)
-        OpenAD_Symbol_102 = (OpenAD_Symbol_45 * OpenAD_Symbol_41)
-        OpenAD_Symbol_103 = (INT((-1_w2f__i8)) * OpenAD_Symbol_102)
-        CALL sax(OpenAD_Symbol_101,UVELLOC,DFLDDT(3))
-        CALL saxpy(OpenAD_Symbol_102,FLDNOW(2),DFLDDT(3))
-        CALL saxpy(OpenAD_Symbol_103,FLDNOW(3),DFLDDT(3))
+        OpenAD_Symbol_99 = (OpenAD_Symbol_44 * OpenAD_Symbol_41)
+        OpenAD_Symbol_100 = (OpenAD_Symbol_45 * OpenAD_Symbol_41)
+        CALL sax(1_w2f__i8,FLDNOW(2),OpenAD_Symbol_101)
+        CALL saxpy(-1_w2f__i8,FLDNOW(3),OpenAD_Symbol_101)
+        CALL sax(OpenAD_Symbol_99,UVELLOC,DFLDDT(3))
+        CALL saxpy(OpenAD_Symbol_100,OpenAD_Symbol_101,DFLDDT(3))
       ELSE
         OpenAD_Symbol_53 = (FLDSTAR(1)-FLDNOW(1)%v)
         OpenAD_Symbol_50 = (GAMMALOC * OpenAD_Symbol_53)
@@ -771,16 +765,16 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_58 = OpenAD_Symbol_57
         OpenAD_Symbol_59 = UVELLOC%v
         OpenAD_Symbol_47 = (INT(1_w2f__i8) / VOL(1))
-        OpenAD_Symbol_104 = (INT((-1_w2f__i8)) * OpenAD_Symbol_47)
-        OpenAD_Symbol_105 = (OpenAD_Symbol_58 * OpenAD_Symbol_104)
-        OpenAD_Symbol_106 = (OpenAD_Symbol_59 * OpenAD_Symbol_104)
-        OpenAD_Symbol_107 = (INT((-1_w2f__i8)) * OpenAD_Symbol_106)
-        OpenAD_Symbol_108 = (INT((-1_w2f__i8)) * OpenAD_Symbol_55 *
+        OpenAD_Symbol_102 = (INT((-1_w2f__i8)) * OpenAD_Symbol_47)
+        OpenAD_Symbol_103 = (OpenAD_Symbol_58 * OpenAD_Symbol_102)
+        OpenAD_Symbol_104 = (OpenAD_Symbol_59 * OpenAD_Symbol_102)
+        OpenAD_Symbol_105 = (INT((-1_w2f__i8)) * OpenAD_Symbol_55 *
      >  OpenAD_Symbol_52 * OpenAD_Symbol_47)
-        CALL sax(OpenAD_Symbol_105,UVELLOC,DFLDDT(1))
-        CALL saxpy(OpenAD_Symbol_106,FLDNOW(2),DFLDDT(1))
-        CALL saxpy(OpenAD_Symbol_107,FLDNOW(1),DFLDDT(1))
-        CALL saxpy(OpenAD_Symbol_108,FLDNOW(1),DFLDDT(1))
+        CALL sax(1_w2f__i8,FLDNOW(2),OpenAD_Symbol_106)
+        CALL saxpy(-1_w2f__i8,FLDNOW(1),OpenAD_Symbol_106)
+        CALL sax(OpenAD_Symbol_103,UVELLOC,DFLDDT(1))
+        CALL saxpy(OpenAD_Symbol_104,OpenAD_Symbol_106,DFLDDT(1))
+        CALL saxpy(OpenAD_Symbol_105,FLDNOW(1),DFLDDT(1))
         OpenAD_Symbol_67 = (FLDSTAR(2)-FLDNOW(2)%v)
         OpenAD_Symbol_64 = (GAMMALOC * OpenAD_Symbol_67)
         OpenAD_Symbol_71 = (FLDNOW(3)%v-FLDNOW(2)%v)
@@ -792,29 +786,30 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_72 = OpenAD_Symbol_71
         OpenAD_Symbol_73 = UVELLOC%v
         OpenAD_Symbol_61 = (INT(1_w2f__i8) / VOL(2))
-        OpenAD_Symbol_109 = (INT((-1_w2f__i8)) * OpenAD_Symbol_61)
-        OpenAD_Symbol_110 = (OpenAD_Symbol_72 * OpenAD_Symbol_109)
-        OpenAD_Symbol_111 = (OpenAD_Symbol_73 * OpenAD_Symbol_109)
-        OpenAD_Symbol_112 = (INT((-1_w2f__i8)) * OpenAD_Symbol_111)
-        OpenAD_Symbol_113 = (INT((-1_w2f__i8)) * OpenAD_Symbol_69 *
+        OpenAD_Symbol_107 = (INT((-1_w2f__i8)) * OpenAD_Symbol_61)
+        OpenAD_Symbol_108 = (OpenAD_Symbol_72 * OpenAD_Symbol_107)
+        OpenAD_Symbol_109 = (OpenAD_Symbol_73 * OpenAD_Symbol_107)
+        OpenAD_Symbol_110 = (INT((-1_w2f__i8)) * OpenAD_Symbol_69 *
      >  OpenAD_Symbol_66 * OpenAD_Symbol_61)
-        CALL sax(OpenAD_Symbol_110,UVELLOC,DFLDDT(2))
-        CALL saxpy(OpenAD_Symbol_111,FLDNOW(3),DFLDDT(2))
-        CALL saxpy(OpenAD_Symbol_112,FLDNOW(2),DFLDDT(2))
-        CALL saxpy(OpenAD_Symbol_113,FLDNOW(2),DFLDDT(2))
+        CALL sax(1_w2f__i8,FLDNOW(3),OpenAD_Symbol_111)
+        CALL saxpy(-1_w2f__i8,FLDNOW(2),OpenAD_Symbol_111)
+        CALL sax(OpenAD_Symbol_108,UVELLOC,DFLDDT(2))
+        CALL saxpy(OpenAD_Symbol_109,OpenAD_Symbol_111,DFLDDT(2))
+        CALL saxpy(OpenAD_Symbol_110,FLDNOW(2),DFLDDT(2))
         OpenAD_Symbol_77 = (FLDNOW(1)%v-FLDNOW(3)%v)
         OpenAD_Symbol_74 = (UVELLOC%v*OpenAD_Symbol_77)
         DFLDDT(3)%v = (-(OpenAD_Symbol_74/VOL(3)))
         OpenAD_Symbol_78 = OpenAD_Symbol_77
         OpenAD_Symbol_79 = UVELLOC%v
         OpenAD_Symbol_75 = (INT(1_w2f__i8) / VOL(3))
-        OpenAD_Symbol_114 = (OpenAD_Symbol_75 * INT((-1_w2f__i8)))
-        OpenAD_Symbol_115 = (OpenAD_Symbol_78 * OpenAD_Symbol_114)
-        OpenAD_Symbol_116 = (OpenAD_Symbol_79 * OpenAD_Symbol_114)
-        OpenAD_Symbol_117 = (INT((-1_w2f__i8)) * OpenAD_Symbol_116)
-        CALL sax(OpenAD_Symbol_115,UVELLOC,DFLDDT(3))
-        CALL saxpy(OpenAD_Symbol_116,FLDNOW(1),DFLDDT(3))
-        CALL saxpy(OpenAD_Symbol_117,FLDNOW(3),DFLDDT(3))
+        OpenAD_Symbol_112 = (OpenAD_Symbol_78 * OpenAD_Symbol_75 * INT(
+     > (-1_w2f__i8)))
+        OpenAD_Symbol_113 = (OpenAD_Symbol_79 * OpenAD_Symbol_75 * INT(
+     > (-1_w2f__i8)))
+        CALL sax(1_w2f__i8,FLDNOW(1),OpenAD_Symbol_114)
+        CALL saxpy(-1_w2f__i8,FLDNOW(3),OpenAD_Symbol_114)
+        CALL sax(OpenAD_Symbol_112,UVELLOC,DFLDDT(3))
+        CALL saxpy(OpenAD_Symbol_113,OpenAD_Symbol_114,DFLDDT(3))
       ENDIF
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
       END SUBROUTINE

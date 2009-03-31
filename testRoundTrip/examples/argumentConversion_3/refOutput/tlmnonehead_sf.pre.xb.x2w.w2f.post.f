@@ -96,6 +96,6 @@ C$OPENAD XXX Template ad_template.f
       GY%v = GX%v
       Y(1)%v = GY%v
       CALL setderiv(GX,X(1))
-      CALL setderiv(GY,X(1))
-      CALL setderiv(Y(1),X(1))
+      CALL setderiv(GY,GX)
+      CALL setderiv(Y(1),GY)
       END SUBROUTINE
