@@ -64,7 +64,7 @@ program driver
   type(active) :: x1, x2, x1ph, x2ph
   type(active) :: y1, y2, y1ph, y2ph
   double precision res_adj(2,2)
-  real :: h
+  double precision :: h
   integer n,m
   integer i,j,k
 

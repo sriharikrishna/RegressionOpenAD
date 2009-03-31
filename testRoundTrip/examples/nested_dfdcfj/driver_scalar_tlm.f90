@@ -61,13 +61,13 @@ program driver
   double precision, dimension(:,:), allocatable :: res_dd, res_ad
   type(active), dimension(:), allocatable :: x, xph
   type(active), dimension(:), allocatable :: y, yph
-  real h
+  double precision h
   integer n,m,nx1,nx2
   integer i,j,k
   double precision  hx1,hx2,xx2,xx1
-  type(active)::r
-  double precision zero,one,two,three,four
-  parameter(zero=0.0d0,one=1.0d0,two=2.0d0,three=3.0d0,four=4.0d0)
+  double precision :: r
+  double precision one
+  parameter(one=1.0d0)
 
   nx1=5
   nx2=5
@@ -77,7 +77,7 @@ program driver
   read(2,'(I5,/,I5,/,F8.1)') n, m, h
   close(2)
 
-  r%v=10.0
+  r=10.0D0
 
   allocate(x0(n))
   allocate(res_dd(m,n))

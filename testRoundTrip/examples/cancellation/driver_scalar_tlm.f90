@@ -14,7 +14,7 @@ program driver
   type(active) y_ph
 
   double precision, dimension(2) :: x0
-  real :: h
+  double precision :: h
   integer:: n,m
   integer i,j,k
 

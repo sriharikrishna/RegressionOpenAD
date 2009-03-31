@@ -48,7 +48,8 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (OpenAD_Symbol_2 * 3.141592653589793116D00)
       __value__(Y(1)) = SIN(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_5 = (6.283185307179586232D00 * OpenAD_Symbol_1)
+      OpenAD_Symbol_5 = (2.0D00 * 3.141592653589793116D00 *
+     >  OpenAD_Symbol_1)
 C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_5)
 C     $OpenAD$ END REPLACEMENT
@@ -78,7 +79,8 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (OpenAD_Symbol_2 * 3.141592653589793116D00)
       __value__(Y(1)) = SIN(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_5 = (6.283185307179586232D00 * OpenAD_Symbol_1)
+      OpenAD_Symbol_5 = (2.0D00 * 3.141592653589793116D00 *
+     >  OpenAD_Symbol_1)
 C     $OpenAD$ INLINE push(subst)
       CALL push(OpenAD_Symbol_5)
 C     $OpenAD$ END REPLACEMENT

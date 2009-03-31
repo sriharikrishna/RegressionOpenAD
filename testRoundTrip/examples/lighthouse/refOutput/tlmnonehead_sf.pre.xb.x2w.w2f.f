@@ -71,16 +71,18 @@ C
       OpenAD_Symbol_6 = (INT(1_w2f__i8) / OpenAD_Symbol_5)
       OpenAD_Symbol_7 = (-(OpenAD_Symbol_4 /(OpenAD_Symbol_5 *
      >  OpenAD_Symbol_5)))
-      OpenAD_Symbol_13 = (OpenAD_Symbol_1 *(INT((-1_w2f__i8)) *
-     >  OpenAD_Symbol_7 + OpenAD_Symbol_9 * OpenAD_Symbol_6))
-      OpenAD_Symbol_14 = (OpenAD_Symbol_3 * OpenAD_Symbol_13)
-      OpenAD_Symbol_15 = (OpenAD_Symbol_2 * OpenAD_Symbol_13)
-      OpenAD_Symbol_16 = (OpenAD_Symbol_8 * OpenAD_Symbol_6)
+      OpenAD_Symbol_13 = (OpenAD_Symbol_9 * OpenAD_Symbol_6 + INT((
+     > -1_w2f__i8)) * OpenAD_Symbol_7)
+      OpenAD_Symbol_14 = (OpenAD_Symbol_8 * OpenAD_Symbol_6)
+      OpenAD_Symbol_15 = (OpenAD_Symbol_2 * OpenAD_Symbol_1 *
+     >  OpenAD_Symbol_13)
+      OpenAD_Symbol_16 = (OpenAD_Symbol_3 * OpenAD_Symbol_1 *
+     >  OpenAD_Symbol_13)
       CALL setderiv(__deriv__(GAMMA), __deriv__(X(2)))
-      CALL sax(OpenAD_Symbol_14, __deriv__(X(4)), __deriv__(Y(1)))
+      CALL sax(OpenAD_Symbol_14, __deriv__(X(1)), __deriv__(Y(1)))
       CALL saxpy(OpenAD_Symbol_15, __deriv__(X(3)), __deriv__(Y(1)))
-      CALL saxpy(OpenAD_Symbol_7, __deriv__(X(2)), __deriv__(Y(1)))
-      CALL saxpy(OpenAD_Symbol_16, __deriv__(X(1)), __deriv__(Y(1)))
+      CALL saxpy(OpenAD_Symbol_16, __deriv__(X(4)), __deriv__(Y(1)))
+      CALL saxpy(OpenAD_Symbol_7, __deriv__(GAMMA), __deriv__(Y(1)))
       OpenAD_Symbol_12 = (__value__(Y(1)) * __value__(GAMMA))
       OpenAD_Symbol_10 = __value__(GAMMA)
       OpenAD_Symbol_11 = __value__(Y(1))

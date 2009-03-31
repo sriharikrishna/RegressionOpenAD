@@ -91,6 +91,6 @@ C$OPENAD XXX Template ad_template.f
       __value__(GY) = __value__(GX)
       __value__(Y(1)) = __value__(GY)
       CALL setderiv(__deriv__(GX), __deriv__(X(1)))
-      CALL setderiv(__deriv__(GY), __deriv__(X(1)))
-      CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
+      CALL setderiv(__deriv__(GY), __deriv__(GX))
+      CALL setderiv(__deriv__(Y(1)), __deriv__(GY))
       END SUBROUTINE

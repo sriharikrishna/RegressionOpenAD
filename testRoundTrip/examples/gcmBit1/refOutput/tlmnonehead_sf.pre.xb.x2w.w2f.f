@@ -28,6 +28,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_108
       REAL(w2f__8) OpenAD_Symbol_109
       REAL(w2f__8) OpenAD_Symbol_110
+      REAL(w2f__8) OpenAD_Symbol_111
       REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_16
@@ -178,12 +179,9 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_91 = (OpenAD_Symbol_4 + OpenAD_Symbol_90 *
      >  OpenAD_Symbol_5)
           CALL setderiv(__deriv__(T), __deriv__(TFLD(I, J, K, BI, BJ)))
-          CALL sax(OpenAD_Symbol_89, __deriv__(TFLD(I, J, K, BI, BJ)),
-     >  __deriv__(T2))
-          CALL sax(OpenAD_Symbol_90, __deriv__(TFLD(I, J, K, BI, BJ)),
-     >  __deriv__(T3))
-          CALL sax(OpenAD_Symbol_91, __deriv__(TFLD(I, J, K, BI, BJ)),
-     >  __deriv__(T4))
+          CALL sax(OpenAD_Symbol_89, __deriv__(T), __deriv__(T2))
+          CALL sax(OpenAD_Symbol_90, __deriv__(T), __deriv__(T3))
+          CALL sax(OpenAD_Symbol_91, __deriv__(T), __deriv__(T4))
           CALL setderiv(__deriv__(S), __deriv__(SFLD(I, J, K, BI, BJ)))
           IF(__value__(S) .GT. 0.0D00) THEN
             OpenAD_Symbol_6 = SQRT(__value__(S))
@@ -192,8 +190,8 @@ C$OPENAD XXX Template ad_template.f
             OpenAD_Symbol_9 = (5.0D-01 / OpenAD_Symbol_6)
             OpenAD_Symbol_8 = __value__(S)
             OpenAD_Symbol_92 = (OpenAD_Symbol_9 * OpenAD_Symbol_8)
-            CALL sax(OpenAD_Symbol_92, __deriv__(S), __deriv__(S3O2))
-            CALL saxpy(OpenAD_Symbol_7, __deriv__(S), __deriv__(S3O2))
+            CALL sax(OpenAD_Symbol_7, __deriv__(S), __deriv__(S3O2))
+            CALL saxpy(OpenAD_Symbol_92, __deriv__(S), __deriv__(S3O2))
           ELSE
             __value__(S) = 0.0D00
             __value__(S3O2) = 0.0D00
@@ -269,75 +267,78 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_78 = OpenAD_Symbol_75
           __value__(BULKMOD(INT(I), INT(J))) = (__value__(BMPRES) +
      >  __value__(BMFRESH) + __value__(BMSALT))
-          OpenAD_Symbol_93 = (OpenAD_Symbol_85 * OpenAD_Symbol_78)
-          OpenAD_Symbol_94 = (OpenAD_Symbol_83 * OpenAD_Symbol_78)
-          OpenAD_Symbol_95 = (OpenAD_Symbol_80 * OpenAD_Symbol_77)
-          OpenAD_Symbol_96 = (OpenAD_Symbol_74 * OpenAD_Symbol_69)
-          OpenAD_Symbol_97 = (OpenAD_Symbol_72 * OpenAD_Symbol_69)
-          OpenAD_Symbol_98 = (OpenAD_Symbol_66 * OpenAD_Symbol_64)
+          OpenAD_Symbol_93 = (OpenAD_Symbol_80 * OpenAD_Symbol_77)
+          OpenAD_Symbol_94 = (OpenAD_Symbol_56 * OpenAD_Symbol_53)
+          OpenAD_Symbol_95 = (OpenAD_Symbol_50 * OpenAD_Symbol_43)
+          OpenAD_Symbol_96 = (OpenAD_Symbol_32 * OpenAD_Symbol_25)
+          OpenAD_Symbol_97 = (OpenAD_Symbol_85 * OpenAD_Symbol_78)
+          OpenAD_Symbol_98 = (OpenAD_Symbol_74 * OpenAD_Symbol_69)
           OpenAD_Symbol_99 = (OpenAD_Symbol_61 * OpenAD_Symbol_54)
-          OpenAD_Symbol_100 = (OpenAD_Symbol_59 * OpenAD_Symbol_54)
-          OpenAD_Symbol_101 = (OpenAD_Symbol_56 * OpenAD_Symbol_53)
-          OpenAD_Symbol_102 = (OpenAD_Symbol_50 * OpenAD_Symbol_43)
-          OpenAD_Symbol_103 = (OpenAD_Symbol_48 * OpenAD_Symbol_43)
-          OpenAD_Symbol_104 = (OpenAD_Symbol_46 * OpenAD_Symbol_43)
-          OpenAD_Symbol_105 = (OpenAD_Symbol_40 * OpenAD_Symbol_35)
-          OpenAD_Symbol_106 = (OpenAD_Symbol_38 * OpenAD_Symbol_35)
-          OpenAD_Symbol_107 = (OpenAD_Symbol_32 * OpenAD_Symbol_25)
-          OpenAD_Symbol_108 = (OpenAD_Symbol_30 * OpenAD_Symbol_25)
+          OpenAD_Symbol_100 = (OpenAD_Symbol_48 * OpenAD_Symbol_43)
+          OpenAD_Symbol_101 = (OpenAD_Symbol_40 * OpenAD_Symbol_35)
+          OpenAD_Symbol_102 = (OpenAD_Symbol_30 * OpenAD_Symbol_25)
+          OpenAD_Symbol_103 = (OpenAD_Symbol_83 * OpenAD_Symbol_78)
+          OpenAD_Symbol_104 = (OpenAD_Symbol_72 * OpenAD_Symbol_69)
+          OpenAD_Symbol_105 = (OpenAD_Symbol_66 * OpenAD_Symbol_64)
+          OpenAD_Symbol_106 = (OpenAD_Symbol_59 * OpenAD_Symbol_54)
+          OpenAD_Symbol_107 = (OpenAD_Symbol_46 * OpenAD_Symbol_43)
+          OpenAD_Symbol_108 = (OpenAD_Symbol_38 * OpenAD_Symbol_35)
           OpenAD_Symbol_109 = (OpenAD_Symbol_28 * OpenAD_Symbol_25)
-          OpenAD_Symbol_110 = (OpenAD_Symbol_10 *(OpenAD_Symbol_42 +
-     >  OpenAD_Symbol_65 * OpenAD_Symbol_64 + OpenAD_Symbol_55 *
-     >  OpenAD_Symbol_53 +(OpenAD_Symbol_12 + OpenAD_Symbol_13) *(
-     > OpenAD_Symbol_68 + OpenAD_Symbol_79 * OpenAD_Symbol_77)))
-          CALL sax(OpenAD_Symbol_24, __deriv__(S), __deriv__(BULKMOD(I,
-     >  J)))
+          OpenAD_Symbol_110 = (OpenAD_Symbol_12 + OpenAD_Symbol_13)
+          OpenAD_Symbol_111 = (OpenAD_Symbol_10 * OpenAD_Symbol_42 +
+     >  OpenAD_Symbol_10 * OpenAD_Symbol_110 * OpenAD_Symbol_79 *
+     >  OpenAD_Symbol_77 + OpenAD_Symbol_10 * OpenAD_Symbol_110 *
+     >  OpenAD_Symbol_68 + OpenAD_Symbol_10 * OpenAD_Symbol_55 *
+     >  OpenAD_Symbol_53 + OpenAD_Symbol_10 * OpenAD_Symbol_65 *
+     >  OpenAD_Symbol_64)
+          CALL sax(OpenAD_Symbol_111, __deriv__(LOCPRES(I, J)),
+     >  __deriv__(BULKMOD(I, J)))
+          CALL saxpy(OpenAD_Symbol_24, __deriv__(S), __deriv__(BULKMOD(
+     > I, J)))
+          CALL saxpy(OpenAD_Symbol_93, __deriv__(S), __deriv__(BULKMOD(
+     > I, J)))
+          CALL saxpy(OpenAD_Symbol_94, __deriv__(S), __deriv__(BULKMOD(
+     > I, J)))
+          CALL saxpy(OpenAD_Symbol_95, __deriv__(T3), __deriv__(BULKMOD
+     > (I, J)))
           CALL saxpy(OpenAD_Symbol_34, __deriv__(S3O2), __deriv__(
      > BULKMOD(I, J)))
-          CALL saxpy(OpenAD_Symbol_93, __deriv__(T2), __deriv__(BULKMOD
+          CALL saxpy(OpenAD_Symbol_96, __deriv__(T3), __deriv__(BULKMOD
      > (I, J)))
-          CALL saxpy(OpenAD_Symbol_94, __deriv__(T), __deriv__(BULKMOD(
-     > I, J)))
-          CALL saxpy(OpenAD_Symbol_95, __deriv__(S), __deriv__(BULKMOD(
-     > I, J)))
-          CALL saxpy(OpenAD_Symbol_96, __deriv__(T2), __deriv__(BULKMOD
+          CALL saxpy(OpenAD_Symbol_97, __deriv__(T2), __deriv__(BULKMOD
      > (I, J)))
-          CALL saxpy(OpenAD_Symbol_97, __deriv__(T), __deriv__(BULKMOD(
-     > I, J)))
-          CALL saxpy(OpenAD_Symbol_98, __deriv__(S3O2), __deriv__(
-     > BULKMOD(I, J)))
+          CALL saxpy(OpenAD_Symbol_98, __deriv__(T2), __deriv__(BULKMOD
+     > (I, J)))
           CALL saxpy(OpenAD_Symbol_99, __deriv__(T2), __deriv__(BULKMOD
      > (I, J)))
-          CALL saxpy(OpenAD_Symbol_100, __deriv__(T), __deriv__(BULKMOD
-     > (I, J)))
-          CALL saxpy(OpenAD_Symbol_101, __deriv__(S), __deriv__(BULKMOD
-     > (I, J)))
-          CALL saxpy(OpenAD_Symbol_102, __deriv__(T3), __deriv__(
+          CALL saxpy(OpenAD_Symbol_100, __deriv__(T2), __deriv__(
      > BULKMOD(I, J)))
-          CALL saxpy(OpenAD_Symbol_103, __deriv__(T2), __deriv__(
+          CALL saxpy(OpenAD_Symbol_101, __deriv__(T2), __deriv__(
      > BULKMOD(I, J)))
+          CALL saxpy(OpenAD_Symbol_102, __deriv__(T2), __deriv__(
+     > BULKMOD(I, J)))
+          CALL saxpy(OpenAD_Symbol_103, __deriv__(T), __deriv__(BULKMOD
+     > (I, J)))
           CALL saxpy(OpenAD_Symbol_104, __deriv__(T), __deriv__(BULKMOD
      > (I, J)))
-          CALL saxpy(OpenAD_Symbol_105, __deriv__(T2), __deriv__(
+          CALL saxpy(OpenAD_Symbol_105, __deriv__(S3O2), __deriv__(
      > BULKMOD(I, J)))
           CALL saxpy(OpenAD_Symbol_106, __deriv__(T), __deriv__(BULKMOD
      > (I, J)))
-          CALL saxpy(OpenAD_Symbol_107, __deriv__(T3), __deriv__(
-     > BULKMOD(I, J)))
-          CALL saxpy(OpenAD_Symbol_108, __deriv__(T2), __deriv__(
-     > BULKMOD(I, J)))
+          CALL saxpy(OpenAD_Symbol_107, __deriv__(T), __deriv__(BULKMOD
+     > (I, J)))
+          CALL saxpy(OpenAD_Symbol_108, __deriv__(T), __deriv__(BULKMOD
+     > (I, J)))
           CALL saxpy(OpenAD_Symbol_109, __deriv__(T), __deriv__(BULKMOD
-     > (I, J)))
-          CALL saxpy(OpenAD_Symbol_22, __deriv__(T4), __deriv__(BULKMOD
-     > (I, J)))
-          CALL saxpy(OpenAD_Symbol_20, __deriv__(T3), __deriv__(BULKMOD
      > (I, J)))
           CALL saxpy(OpenAD_Symbol_18, __deriv__(T2), __deriv__(BULKMOD
      > (I, J)))
+          CALL saxpy(OpenAD_Symbol_20, __deriv__(T3), __deriv__(BULKMOD
+     > (I, J)))
+          CALL saxpy(OpenAD_Symbol_22, __deriv__(T4), __deriv__(BULKMOD
+     > (I, J)))
           CALL saxpy(OpenAD_Symbol_16, __deriv__(T), __deriv__(BULKMOD(
      > I, J)))
-          CALL saxpy(OpenAD_Symbol_110, __deriv__(LOCPRES(I, J)),
-     >  __deriv__(BULKMOD(I, J)))
         END DO
       END DO
       END SUBROUTINE

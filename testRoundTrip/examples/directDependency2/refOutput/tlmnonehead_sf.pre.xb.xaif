@@ -266,42 +266,13 @@
                 <xaif:Constant vertex_id="1" type="real" feType="" value="2.00000000000000000000e+00"/>
               </xaif:A>
               <xaif:X deriv="1">
-                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                <xaif:ArrayElementReference vertex_id="2">
-                  <xaif:IndexTriplet>
-                    <xaif:Index>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Index>
-                  </xaif:IndexTriplet>
-                </xaif:ArrayElementReference>
-                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
               </xaif:X>
             </xaif:AX>
             <xaif:Y deriv="1">
               <xaif:SymbolReference vertex_id="1" symbol_id="T1_5" annotation="" scope_id="4"/>
             </xaif:Y>
           </xaif:Sax>
-          <xaif:Saxpy>
-            <xaif:AX>
-              <xaif:A>
-                <xaif:Constant vertex_id="1" type="real" feType="" value="2.00000000000000000000e+00"/>
-              </xaif:A>
-              <xaif:X deriv="1">
-                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                <xaif:ArrayElementReference vertex_id="2">
-                  <xaif:IndexTriplet>
-                    <xaif:Index>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="2"/>
-                    </xaif:Index>
-                  </xaif:IndexTriplet>
-                </xaif:ArrayElementReference>
-                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-              </xaif:X>
-            </xaif:AX>
-            <xaif:Y deriv="1">
-              <xaif:SymbolReference vertex_id="1" symbol_id="T1_5" annotation="" scope_id="4"/>
-            </xaif:Y>
-          </xaif:Saxpy>
         </xaif:DerivativePropagator>
         <xaif:SubroutineCall statement_id="27" symbol_id="foo__21" scope_id="1" active="undefined">
         </xaif:SubroutineCall>

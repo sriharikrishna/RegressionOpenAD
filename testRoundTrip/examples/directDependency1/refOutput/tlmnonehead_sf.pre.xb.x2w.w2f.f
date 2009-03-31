@@ -43,7 +43,7 @@ C$OPENAD XXX Template ad_template.f
       __value__(T) = __value__(X(1))
       __value__(T1) = (__value__(T) * 2.0D00)
       CALL setderiv(__deriv__(T), __deriv__(X(1)))
-      CALL sax(2.0D00, __deriv__(X(1)), __deriv__(T1))
+      CALL sax(2.0D00, __deriv__(T), __deriv__(T1))
       CALL foo()
       __value__(Y(1)) = (__value__(T) * 2.0D00 + __value__(T1) * 3.0D00
      > )

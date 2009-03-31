@@ -29,10 +29,8 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      INTEGER(w2f__i8) OpenAD_Symbol_10
       INTEGER(w2f__i8) OpenAD_Symbol_7
       INTEGER(w2f__i8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -101,15 +99,11 @@ C$OPENAD XXX Simple loop\t
           __value__(Y(INT(I))) = __value__(X(I))
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(I)
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(I)
           OpenAD_Symbol_5 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_5)
         ELSE
           __value__(Y(INT(I))) = (__value__(X(I)) * 2.0D00)
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(I)
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(I)
           OpenAD_Symbol_6 = 0_w2f__i8
@@ -131,23 +125,19 @@ C       $OpenAD$ INLINE pop_i(subst)
         IF(OpenAD_Symbol_3 .ne. 0) THEN
 C         $OpenAD$ INLINE pop_i(subst)
           CALL pop_i(OpenAD_Symbol_7)
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_8)
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
           CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_7))), __deriv__(X
-     > (INT(OpenAD_Symbol_8))))
+     > (INT(OpenAD_Symbol_7))))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_7))))
         ELSE
 C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_9)
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_10)
+          CALL pop_i(OpenAD_Symbol_8)
 C         $OpenAD$ INLINE Saxpy(subst,subst,subst)
-          CALL Saxpy(2.0D00, __deriv__(Y(INT(OpenAD_Symbol_9))),
-     >  __deriv__(X(INT(OpenAD_Symbol_10))))
+          CALL Saxpy(2.0D00, __deriv__(Y(INT(OpenAD_Symbol_8))),
+     >  __deriv__(X(INT(OpenAD_Symbol_8))))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
-          CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_9))))
+          CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_8))))
         ENDIF
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2) + 1
       END DO

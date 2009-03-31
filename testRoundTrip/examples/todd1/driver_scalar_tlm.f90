@@ -72,7 +72,7 @@ program driver
        &h_obj17ph,h_obj18ph,h_obj19ph,h_obj20ph
 
   double precision, dimension(:), allocatable :: res_dd, res_ad
-  real h
+  double precision h
   integer n,m
   integer i,k
 

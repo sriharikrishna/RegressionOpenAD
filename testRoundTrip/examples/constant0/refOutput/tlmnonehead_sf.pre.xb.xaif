@@ -212,12 +212,16 @@
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
             <xaif:Intrinsic vertex_id="1" name="mul_scal_scal"/>
-            <xaif:Constant vertex_id="2" type="real" feType="" value="6.28318530717958623200e+00"/>
-            <xaif:VariableReference vertex_id="3" active="false" deriv="0" constant="0">
+            <xaif:Constant vertex_id="2" type="real" feType="" value="2.00000000000000000000e+00"/>
+            <xaif:Intrinsic vertex_id="3" name="mul_scal_scal"/>
+            <xaif:Constant vertex_id="4" type="real" feType="" value="3.14159265358979311600e+00"/>
+            <xaif:VariableReference vertex_id="5" active="false" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="1"/>
             </xaif:VariableReference>
             <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-            <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
+            <xaif:ExpressionEdge edge_id="2" source="4" target="3" position="1"/>
+            <xaif:ExpressionEdge edge_id="3" source="5" target="3" position="2"/>
+            <xaif:ExpressionEdge edge_id="4" source="3" target="1" position="2"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:DerivativePropagator>

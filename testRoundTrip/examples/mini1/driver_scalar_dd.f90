@@ -57,7 +57,7 @@ program driver
   external head
 
   double precision:: x, y
-  real h
+  double precision h
 
   double precision:: xph, yph
 

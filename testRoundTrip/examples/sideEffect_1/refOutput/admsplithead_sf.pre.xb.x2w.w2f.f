@@ -59,10 +59,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_6)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_6, __deriv__(Y), __deriv__(X(1)))
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_7)
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_6, __deriv__(Y), __deriv__(X(1)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_7, __deriv__(Y), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
@@ -105,10 +105,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_6)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_6, __deriv__(Y), __deriv__(X(1)))
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_7)
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_6, __deriv__(Y), __deriv__(X(1)))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_7, __deriv__(Y), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
@@ -159,10 +159,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_8)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_8, __deriv__(X), __deriv__(AGLOBAL))
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_9)
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_8, __deriv__(X), __deriv__(AGLOBAL))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_9, __deriv__(X), __deriv__(
      > OpenAD_Symbol_5))
@@ -219,10 +219,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_8)
-C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_8, __deriv__(X), __deriv__(AGLOBAL))
 C     $OpenAD$ INLINE Pop(subst)
       CALL Pop(OpenAD_Symbol_9)
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(OpenAD_Symbol_8, __deriv__(X), __deriv__(AGLOBAL))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_9, __deriv__(X), __deriv__(
      > OpenAD_Symbol_5))

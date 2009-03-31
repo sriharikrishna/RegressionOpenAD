@@ -21,7 +21,6 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i8) OpenAD_Symbol_0
-      INTEGER(w2f__i8) OpenAD_Symbol_1
 C
 C     **** Statements ****
 C
@@ -34,17 +33,13 @@ C$OPENAD XXX Template ad_template.f
       __value__(Y(INT(A))) = __value__(X(A))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(A)
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(A)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_1)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_0))), __deriv__(X(INT
-     > (OpenAD_Symbol_1))))
+     > (OpenAD_Symbol_0))))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_0))))
 C     $OpenAD$ END REPLACEMENT
@@ -85,17 +80,13 @@ C$OPENAD XXX Template ad_template.f
       __value__(Y(INT(A))) = __value__(X(A))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(A)
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(A)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_1)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_0))), __deriv__(X(INT
-     > (OpenAD_Symbol_1))))
+     > (OpenAD_Symbol_0))))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_0))))
 C     $OpenAD$ END REPLACEMENT

@@ -75,7 +75,7 @@ program driver
 
   double precision, dimension(19) :: x0
   double precision, dimension(5,19) :: res_adj
-  real :: h
+  double precision :: h
   integer :: n, m
   integer i,j,k
 

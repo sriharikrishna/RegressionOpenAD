@@ -59,7 +59,7 @@ program driver
   double precision, dimension(:), allocatable :: x0
   double precision, dimension(:), allocatable :: x, xph
   double precision, dimension(:), allocatable :: y, yph
-  real h
+  double precision h
   integer n,m
   integer i,j,k
 

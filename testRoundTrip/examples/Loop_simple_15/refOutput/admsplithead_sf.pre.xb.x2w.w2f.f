@@ -37,8 +37,6 @@ C
       REAL(w2f__8) S
       INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
 C
 C     **** Top Level Pragmas ****
 C
@@ -139,8 +137,6 @@ C$OPENAD XXX Simple loop
           __value__(X(INT(I))) = OpenAD_Symbol_1
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(I)
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(I)
           OpenAD_Symbol_11 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_11)
@@ -151,8 +147,6 @@ C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_12)
         ENDIF
         __value__(Y(INT(I))) = (__value__(X(I)) + S)
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(I)
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(I)
         OpenAD_Symbol_10 = (INT(OpenAD_Symbol_10) + INT(1_w2f__i8))
@@ -166,14 +160,12 @@ C     $OpenAD$ INLINE pop_i(subst)
       OpenAD_Symbol_8 = 1
       DO WHILE(INT(OpenAD_Symbol_8) .LE. INT(OpenAD_Symbol_7))
 C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_15)
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_16)
+        CALL pop_i(OpenAD_Symbol_14)
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_15))), __deriv__(X(
-     > INT(OpenAD_Symbol_16))))
+        CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_14))), __deriv__(X(
+     > INT(OpenAD_Symbol_14))))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
-        CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_15))))
+        CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_14))))
 C       $OpenAD$ INLINE pop_i(subst)
         CALL pop_i(OpenAD_Symbol_9)
         IF(OpenAD_Symbol_9 .ne. 0) THEN
@@ -184,11 +176,9 @@ C         $OpenAD$ INLINE Saxpy(subst,subst,subst)
      >  __deriv__(OpenAD_Symbol_3))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(X(INT(OpenAD_Symbol_13))))
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_14)
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
           CALL IncDeriv(__deriv__(OpenAD_Symbol_3), __deriv__(X(INT(
-     > OpenAD_Symbol_14))))
+     > OpenAD_Symbol_13))))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(OpenAD_Symbol_3))
         ENDIF

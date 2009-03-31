@@ -59,7 +59,7 @@ program driver
   double precision x0_1,x0_2
   double precision :: x1, x2, x1ph, x2ph
   double precision :: y1, y2, y1ph, y2ph
-  real :: h
+  double precision :: h
   integer n,m
   integer i,j,k
 

@@ -268,10 +268,10 @@ C
       REAL(w2f__8) OpenAD_Symbol_342
       REAL(w2f__8) OpenAD_Symbol_343
       REAL(w2f__8) OpenAD_Symbol_344
-      REAL(w2f__8) OpenAD_Symbol_345
-      REAL(w2f__8) OpenAD_Symbol_346
-      REAL(w2f__8) OpenAD_Symbol_347
-      REAL(w2f__8) OpenAD_Symbol_348
+      TYPE (OpenADTy_active) OpenAD_Symbol_345
+      TYPE (OpenADTy_active) OpenAD_Symbol_346
+      TYPE (OpenADTy_active) OpenAD_Symbol_347
+      TYPE (OpenADTy_active) OpenAD_Symbol_348
       REAL(w2f__8) OpenAD_Symbol_349
       REAL(w2f__8) OpenAD_Symbol_35
       REAL(w2f__8) OpenAD_Symbol_350
@@ -281,12 +281,12 @@ C
       REAL(w2f__8) OpenAD_Symbol_354
       REAL(w2f__8) OpenAD_Symbol_355
       REAL(w2f__8) OpenAD_Symbol_356
-      REAL(w2f__8) OpenAD_Symbol_357
-      REAL(w2f__8) OpenAD_Symbol_358
+      TYPE (OpenADTy_active) OpenAD_Symbol_357
+      TYPE (OpenADTy_active) OpenAD_Symbol_358
       REAL(w2f__8) OpenAD_Symbol_359
       REAL(w2f__8) OpenAD_Symbol_360
       REAL(w2f__8) OpenAD_Symbol_361
-      REAL(w2f__8) OpenAD_Symbol_362
+      TYPE (OpenADTy_active) OpenAD_Symbol_362
       REAL(w2f__8) OpenAD_Symbol_363
       REAL(w2f__8) OpenAD_Symbol_364
       REAL(w2f__8) OpenAD_Symbol_365
@@ -307,19 +307,19 @@ C
       REAL(w2f__8) OpenAD_Symbol_379
       REAL(w2f__8) OpenAD_Symbol_380
       REAL(w2f__8) OpenAD_Symbol_381
-      REAL(w2f__8) OpenAD_Symbol_382
-      REAL(w2f__8) OpenAD_Symbol_383
-      REAL(w2f__8) OpenAD_Symbol_384
-      REAL(w2f__8) OpenAD_Symbol_385
-      REAL(w2f__8) OpenAD_Symbol_386
-      REAL(w2f__8) OpenAD_Symbol_387
-      REAL(w2f__8) OpenAD_Symbol_388
-      REAL(w2f__8) OpenAD_Symbol_389
+      TYPE (OpenADTy_active) OpenAD_Symbol_382
+      TYPE (OpenADTy_active) OpenAD_Symbol_383
+      TYPE (OpenADTy_active) OpenAD_Symbol_384
+      TYPE (OpenADTy_active) OpenAD_Symbol_385
+      TYPE (OpenADTy_active) OpenAD_Symbol_386
+      TYPE (OpenADTy_active) OpenAD_Symbol_387
+      TYPE (OpenADTy_active) OpenAD_Symbol_388
+      TYPE (OpenADTy_active) OpenAD_Symbol_389
       REAL(w2f__8) OpenAD_Symbol_39
-      REAL(w2f__8) OpenAD_Symbol_390
-      REAL(w2f__8) OpenAD_Symbol_391
-      REAL(w2f__8) OpenAD_Symbol_392
-      REAL(w2f__8) OpenAD_Symbol_393
+      TYPE (OpenADTy_active) OpenAD_Symbol_390
+      TYPE (OpenADTy_active) OpenAD_Symbol_391
+      TYPE (OpenADTy_active) OpenAD_Symbol_392
+      TYPE (OpenADTy_active) OpenAD_Symbol_393
       REAL(w2f__8) OpenAD_Symbol_394
       REAL(w2f__8) OpenAD_Symbol_395
       REAL(w2f__8) OpenAD_Symbol_396
@@ -340,7 +340,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_41
       REAL(w2f__8) OpenAD_Symbol_410
       REAL(w2f__8) OpenAD_Symbol_411
-      TYPE (OpenADTy_active) OpenAD_Symbol_412
+      REAL(w2f__8) OpenAD_Symbol_412
       REAL(w2f__8) OpenAD_Symbol_413
       REAL(w2f__8) OpenAD_Symbol_414
       REAL(w2f__8) OpenAD_Symbol_415
@@ -351,358 +351,54 @@ C
       REAL(w2f__8) OpenAD_Symbol_42
       REAL(w2f__8) OpenAD_Symbol_420
       REAL(w2f__8) OpenAD_Symbol_421
-      REAL(w2f__8) OpenAD_Symbol_422
-      REAL(w2f__8) OpenAD_Symbol_423
-      REAL(w2f__8) OpenAD_Symbol_424
-      REAL(w2f__8) OpenAD_Symbol_425
-      REAL(w2f__8) OpenAD_Symbol_426
-      REAL(w2f__8) OpenAD_Symbol_427
-      REAL(w2f__8) OpenAD_Symbol_428
-      REAL(w2f__8) OpenAD_Symbol_429
+      TYPE (OpenADTy_active) OpenAD_Symbol_422
+      TYPE (OpenADTy_active) OpenAD_Symbol_423
+      TYPE (OpenADTy_active) OpenAD_Symbol_424
+      TYPE (OpenADTy_active) OpenAD_Symbol_425
+      TYPE (OpenADTy_active) OpenAD_Symbol_426
+      TYPE (OpenADTy_active) OpenAD_Symbol_427
+      TYPE (OpenADTy_active) OpenAD_Symbol_428
+      TYPE (OpenADTy_active) OpenAD_Symbol_429
       REAL(w2f__8) OpenAD_Symbol_43
-      REAL(w2f__8) OpenAD_Symbol_430
-      REAL(w2f__8) OpenAD_Symbol_431
+      TYPE (OpenADTy_active) OpenAD_Symbol_430
+      TYPE (OpenADTy_active) OpenAD_Symbol_431
       REAL(w2f__8) OpenAD_Symbol_432
-      REAL(w2f__8) OpenAD_Symbol_433
+      TYPE (OpenADTy_active) OpenAD_Symbol_433
       REAL(w2f__8) OpenAD_Symbol_434
-      REAL(w2f__8) OpenAD_Symbol_435
+      TYPE (OpenADTy_active) OpenAD_Symbol_435
       REAL(w2f__8) OpenAD_Symbol_436
-      REAL(w2f__8) OpenAD_Symbol_437
-      REAL(w2f__8) OpenAD_Symbol_438
-      REAL(w2f__8) OpenAD_Symbol_439
+      TYPE (OpenADTy_active) OpenAD_Symbol_437
       REAL(w2f__8) OpenAD_Symbol_44
-      REAL(w2f__8) OpenAD_Symbol_440
-      REAL(w2f__8) OpenAD_Symbol_441
-      REAL(w2f__8) OpenAD_Symbol_442
-      REAL(w2f__8) OpenAD_Symbol_443
-      REAL(w2f__8) OpenAD_Symbol_444
-      REAL(w2f__8) OpenAD_Symbol_445
-      REAL(w2f__8) OpenAD_Symbol_446
-      REAL(w2f__8) OpenAD_Symbol_447
-      REAL(w2f__8) OpenAD_Symbol_448
-      REAL(w2f__8) OpenAD_Symbol_449
       REAL(w2f__8) OpenAD_Symbol_45
-      REAL(w2f__8) OpenAD_Symbol_450
-      REAL(w2f__8) OpenAD_Symbol_451
-      REAL(w2f__8) OpenAD_Symbol_452
-      REAL(w2f__8) OpenAD_Symbol_453
-      REAL(w2f__8) OpenAD_Symbol_454
-      REAL(w2f__8) OpenAD_Symbol_455
-      REAL(w2f__8) OpenAD_Symbol_456
-      REAL(w2f__8) OpenAD_Symbol_457
-      REAL(w2f__8) OpenAD_Symbol_458
-      REAL(w2f__8) OpenAD_Symbol_459
       REAL(w2f__8) OpenAD_Symbol_46
-      REAL(w2f__8) OpenAD_Symbol_460
-      REAL(w2f__8) OpenAD_Symbol_461
-      REAL(w2f__8) OpenAD_Symbol_462
-      REAL(w2f__8) OpenAD_Symbol_463
-      REAL(w2f__8) OpenAD_Symbol_464
-      REAL(w2f__8) OpenAD_Symbol_465
-      REAL(w2f__8) OpenAD_Symbol_466
-      REAL(w2f__8) OpenAD_Symbol_467
-      REAL(w2f__8) OpenAD_Symbol_468
-      REAL(w2f__8) OpenAD_Symbol_469
       REAL(w2f__8) OpenAD_Symbol_47
-      REAL(w2f__8) OpenAD_Symbol_470
-      REAL(w2f__8) OpenAD_Symbol_471
-      REAL(w2f__8) OpenAD_Symbol_472
-      REAL(w2f__8) OpenAD_Symbol_473
-      REAL(w2f__8) OpenAD_Symbol_474
-      REAL(w2f__8) OpenAD_Symbol_475
-      REAL(w2f__8) OpenAD_Symbol_476
-      REAL(w2f__8) OpenAD_Symbol_477
-      REAL(w2f__8) OpenAD_Symbol_478
-      REAL(w2f__8) OpenAD_Symbol_479
       REAL(w2f__8) OpenAD_Symbol_48
-      REAL(w2f__8) OpenAD_Symbol_480
-      REAL(w2f__8) OpenAD_Symbol_481
-      REAL(w2f__8) OpenAD_Symbol_482
-      REAL(w2f__8) OpenAD_Symbol_483
-      REAL(w2f__8) OpenAD_Symbol_484
-      REAL(w2f__8) OpenAD_Symbol_485
-      REAL(w2f__8) OpenAD_Symbol_486
-      REAL(w2f__8) OpenAD_Symbol_487
-      REAL(w2f__8) OpenAD_Symbol_488
-      REAL(w2f__8) OpenAD_Symbol_489
       REAL(w2f__8) OpenAD_Symbol_49
-      REAL(w2f__8) OpenAD_Symbol_490
-      REAL(w2f__8) OpenAD_Symbol_491
-      REAL(w2f__8) OpenAD_Symbol_492
-      REAL(w2f__8) OpenAD_Symbol_493
-      REAL(w2f__8) OpenAD_Symbol_494
-      REAL(w2f__8) OpenAD_Symbol_495
-      REAL(w2f__8) OpenAD_Symbol_496
-      REAL(w2f__8) OpenAD_Symbol_497
-      REAL(w2f__8) OpenAD_Symbol_498
-      REAL(w2f__8) OpenAD_Symbol_499
       REAL(w2f__8) OpenAD_Symbol_50
-      REAL(w2f__8) OpenAD_Symbol_500
-      REAL(w2f__8) OpenAD_Symbol_501
-      REAL(w2f__8) OpenAD_Symbol_502
-      REAL(w2f__8) OpenAD_Symbol_503
-      REAL(w2f__8) OpenAD_Symbol_504
-      REAL(w2f__8) OpenAD_Symbol_505
-      REAL(w2f__8) OpenAD_Symbol_506
-      REAL(w2f__8) OpenAD_Symbol_507
-      REAL(w2f__8) OpenAD_Symbol_508
-      REAL(w2f__8) OpenAD_Symbol_509
       REAL(w2f__8) OpenAD_Symbol_51
-      REAL(w2f__8) OpenAD_Symbol_510
-      REAL(w2f__8) OpenAD_Symbol_511
-      REAL(w2f__8) OpenAD_Symbol_512
-      REAL(w2f__8) OpenAD_Symbol_513
-      REAL(w2f__8) OpenAD_Symbol_514
-      REAL(w2f__8) OpenAD_Symbol_515
-      REAL(w2f__8) OpenAD_Symbol_516
-      REAL(w2f__8) OpenAD_Symbol_517
-      REAL(w2f__8) OpenAD_Symbol_518
-      REAL(w2f__8) OpenAD_Symbol_519
       REAL(w2f__8) OpenAD_Symbol_52
-      REAL(w2f__8) OpenAD_Symbol_520
-      REAL(w2f__8) OpenAD_Symbol_521
-      REAL(w2f__8) OpenAD_Symbol_522
-      REAL(w2f__8) OpenAD_Symbol_523
-      REAL(w2f__8) OpenAD_Symbol_524
-      REAL(w2f__8) OpenAD_Symbol_525
-      REAL(w2f__8) OpenAD_Symbol_526
-      REAL(w2f__8) OpenAD_Symbol_527
-      REAL(w2f__8) OpenAD_Symbol_528
-      REAL(w2f__8) OpenAD_Symbol_529
       REAL(w2f__8) OpenAD_Symbol_53
-      REAL(w2f__8) OpenAD_Symbol_530
-      REAL(w2f__8) OpenAD_Symbol_531
-      REAL(w2f__8) OpenAD_Symbol_532
-      REAL(w2f__8) OpenAD_Symbol_533
-      REAL(w2f__8) OpenAD_Symbol_534
-      REAL(w2f__8) OpenAD_Symbol_535
-      REAL(w2f__8) OpenAD_Symbol_536
-      REAL(w2f__8) OpenAD_Symbol_537
-      REAL(w2f__8) OpenAD_Symbol_538
-      REAL(w2f__8) OpenAD_Symbol_539
       REAL(w2f__8) OpenAD_Symbol_54
-      REAL(w2f__8) OpenAD_Symbol_540
-      REAL(w2f__8) OpenAD_Symbol_541
-      REAL(w2f__8) OpenAD_Symbol_542
-      REAL(w2f__8) OpenAD_Symbol_543
-      REAL(w2f__8) OpenAD_Symbol_544
-      REAL(w2f__8) OpenAD_Symbol_545
-      REAL(w2f__8) OpenAD_Symbol_546
-      REAL(w2f__8) OpenAD_Symbol_547
-      REAL(w2f__8) OpenAD_Symbol_548
-      REAL(w2f__8) OpenAD_Symbol_549
       REAL(w2f__8) OpenAD_Symbol_55
-      REAL(w2f__8) OpenAD_Symbol_550
-      REAL(w2f__8) OpenAD_Symbol_551
-      REAL(w2f__8) OpenAD_Symbol_552
-      REAL(w2f__8) OpenAD_Symbol_553
-      REAL(w2f__8) OpenAD_Symbol_554
-      REAL(w2f__8) OpenAD_Symbol_555
-      REAL(w2f__8) OpenAD_Symbol_556
-      REAL(w2f__8) OpenAD_Symbol_557
-      REAL(w2f__8) OpenAD_Symbol_558
-      REAL(w2f__8) OpenAD_Symbol_559
       REAL(w2f__8) OpenAD_Symbol_56
-      REAL(w2f__8) OpenAD_Symbol_560
-      REAL(w2f__8) OpenAD_Symbol_561
-      REAL(w2f__8) OpenAD_Symbol_562
-      REAL(w2f__8) OpenAD_Symbol_563
-      REAL(w2f__8) OpenAD_Symbol_564
-      REAL(w2f__8) OpenAD_Symbol_565
-      REAL(w2f__8) OpenAD_Symbol_566
-      REAL(w2f__8) OpenAD_Symbol_567
-      REAL(w2f__8) OpenAD_Symbol_568
-      REAL(w2f__8) OpenAD_Symbol_569
       REAL(w2f__8) OpenAD_Symbol_57
-      REAL(w2f__8) OpenAD_Symbol_570
-      REAL(w2f__8) OpenAD_Symbol_571
-      REAL(w2f__8) OpenAD_Symbol_572
-      REAL(w2f__8) OpenAD_Symbol_573
-      REAL(w2f__8) OpenAD_Symbol_574
-      REAL(w2f__8) OpenAD_Symbol_575
-      REAL(w2f__8) OpenAD_Symbol_576
-      REAL(w2f__8) OpenAD_Symbol_577
-      REAL(w2f__8) OpenAD_Symbol_578
-      REAL(w2f__8) OpenAD_Symbol_579
       REAL(w2f__8) OpenAD_Symbol_58
-      REAL(w2f__8) OpenAD_Symbol_580
-      REAL(w2f__8) OpenAD_Symbol_581
-      REAL(w2f__8) OpenAD_Symbol_582
-      REAL(w2f__8) OpenAD_Symbol_583
-      REAL(w2f__8) OpenAD_Symbol_584
-      REAL(w2f__8) OpenAD_Symbol_585
-      REAL(w2f__8) OpenAD_Symbol_586
-      REAL(w2f__8) OpenAD_Symbol_587
-      REAL(w2f__8) OpenAD_Symbol_588
-      REAL(w2f__8) OpenAD_Symbol_589
       REAL(w2f__8) OpenAD_Symbol_59
-      REAL(w2f__8) OpenAD_Symbol_590
-      REAL(w2f__8) OpenAD_Symbol_591
-      REAL(w2f__8) OpenAD_Symbol_592
-      REAL(w2f__8) OpenAD_Symbol_593
-      REAL(w2f__8) OpenAD_Symbol_594
-      REAL(w2f__8) OpenAD_Symbol_595
-      REAL(w2f__8) OpenAD_Symbol_596
-      REAL(w2f__8) OpenAD_Symbol_597
-      REAL(w2f__8) OpenAD_Symbol_598
-      REAL(w2f__8) OpenAD_Symbol_599
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_60
-      REAL(w2f__8) OpenAD_Symbol_600
-      REAL(w2f__8) OpenAD_Symbol_601
-      REAL(w2f__8) OpenAD_Symbol_602
-      REAL(w2f__8) OpenAD_Symbol_603
-      REAL(w2f__8) OpenAD_Symbol_604
-      REAL(w2f__8) OpenAD_Symbol_605
-      REAL(w2f__8) OpenAD_Symbol_606
-      REAL(w2f__8) OpenAD_Symbol_607
-      REAL(w2f__8) OpenAD_Symbol_608
-      REAL(w2f__8) OpenAD_Symbol_609
       REAL(w2f__8) OpenAD_Symbol_61
-      REAL(w2f__8) OpenAD_Symbol_610
-      REAL(w2f__8) OpenAD_Symbol_611
-      REAL(w2f__8) OpenAD_Symbol_612
-      REAL(w2f__8) OpenAD_Symbol_613
-      REAL(w2f__8) OpenAD_Symbol_614
-      REAL(w2f__8) OpenAD_Symbol_615
-      REAL(w2f__8) OpenAD_Symbol_616
-      REAL(w2f__8) OpenAD_Symbol_617
-      REAL(w2f__8) OpenAD_Symbol_618
-      REAL(w2f__8) OpenAD_Symbol_619
       REAL(w2f__8) OpenAD_Symbol_62
-      REAL(w2f__8) OpenAD_Symbol_620
-      REAL(w2f__8) OpenAD_Symbol_621
-      REAL(w2f__8) OpenAD_Symbol_622
-      REAL(w2f__8) OpenAD_Symbol_623
-      REAL(w2f__8) OpenAD_Symbol_624
-      REAL(w2f__8) OpenAD_Symbol_625
-      REAL(w2f__8) OpenAD_Symbol_626
-      REAL(w2f__8) OpenAD_Symbol_627
-      REAL(w2f__8) OpenAD_Symbol_628
-      TYPE (OpenADTy_active) OpenAD_Symbol_629
       REAL(w2f__8) OpenAD_Symbol_63
-      TYPE (OpenADTy_active) OpenAD_Symbol_630
-      TYPE (OpenADTy_active) OpenAD_Symbol_631
-      REAL(w2f__8) OpenAD_Symbol_632
-      REAL(w2f__8) OpenAD_Symbol_633
-      REAL(w2f__8) OpenAD_Symbol_634
-      REAL(w2f__8) OpenAD_Symbol_635
-      REAL(w2f__8) OpenAD_Symbol_636
-      REAL(w2f__8) OpenAD_Symbol_637
-      REAL(w2f__8) OpenAD_Symbol_638
-      REAL(w2f__8) OpenAD_Symbol_639
       REAL(w2f__8) OpenAD_Symbol_64
-      REAL(w2f__8) OpenAD_Symbol_640
-      REAL(w2f__8) OpenAD_Symbol_641
-      REAL(w2f__8) OpenAD_Symbol_642
-      REAL(w2f__8) OpenAD_Symbol_643
-      REAL(w2f__8) OpenAD_Symbol_644
-      REAL(w2f__8) OpenAD_Symbol_645
-      REAL(w2f__8) OpenAD_Symbol_646
-      REAL(w2f__8) OpenAD_Symbol_647
-      REAL(w2f__8) OpenAD_Symbol_648
-      REAL(w2f__8) OpenAD_Symbol_649
       REAL(w2f__8) OpenAD_Symbol_65
-      REAL(w2f__8) OpenAD_Symbol_650
-      REAL(w2f__8) OpenAD_Symbol_651
-      REAL(w2f__8) OpenAD_Symbol_652
-      REAL(w2f__8) OpenAD_Symbol_653
-      REAL(w2f__8) OpenAD_Symbol_654
-      REAL(w2f__8) OpenAD_Symbol_655
-      REAL(w2f__8) OpenAD_Symbol_656
-      REAL(w2f__8) OpenAD_Symbol_657
-      REAL(w2f__8) OpenAD_Symbol_658
-      REAL(w2f__8) OpenAD_Symbol_659
       REAL(w2f__8) OpenAD_Symbol_66
-      REAL(w2f__8) OpenAD_Symbol_660
-      REAL(w2f__8) OpenAD_Symbol_661
-      REAL(w2f__8) OpenAD_Symbol_662
-      REAL(w2f__8) OpenAD_Symbol_663
-      REAL(w2f__8) OpenAD_Symbol_664
-      REAL(w2f__8) OpenAD_Symbol_665
-      REAL(w2f__8) OpenAD_Symbol_666
-      REAL(w2f__8) OpenAD_Symbol_667
-      REAL(w2f__8) OpenAD_Symbol_668
-      REAL(w2f__8) OpenAD_Symbol_669
       REAL(w2f__8) OpenAD_Symbol_67
-      REAL(w2f__8) OpenAD_Symbol_670
-      REAL(w2f__8) OpenAD_Symbol_671
-      REAL(w2f__8) OpenAD_Symbol_672
-      REAL(w2f__8) OpenAD_Symbol_673
-      REAL(w2f__8) OpenAD_Symbol_674
-      REAL(w2f__8) OpenAD_Symbol_675
-      REAL(w2f__8) OpenAD_Symbol_676
-      REAL(w2f__8) OpenAD_Symbol_677
-      REAL(w2f__8) OpenAD_Symbol_678
-      REAL(w2f__8) OpenAD_Symbol_679
       REAL(w2f__8) OpenAD_Symbol_68
-      REAL(w2f__8) OpenAD_Symbol_680
-      REAL(w2f__8) OpenAD_Symbol_681
-      REAL(w2f__8) OpenAD_Symbol_682
-      REAL(w2f__8) OpenAD_Symbol_683
-      REAL(w2f__8) OpenAD_Symbol_684
-      REAL(w2f__8) OpenAD_Symbol_685
-      REAL(w2f__8) OpenAD_Symbol_686
-      REAL(w2f__8) OpenAD_Symbol_687
-      REAL(w2f__8) OpenAD_Symbol_688
-      REAL(w2f__8) OpenAD_Symbol_689
       REAL(w2f__8) OpenAD_Symbol_69
-      REAL(w2f__8) OpenAD_Symbol_690
-      REAL(w2f__8) OpenAD_Symbol_691
-      REAL(w2f__8) OpenAD_Symbol_692
-      REAL(w2f__8) OpenAD_Symbol_693
-      REAL(w2f__8) OpenAD_Symbol_694
-      REAL(w2f__8) OpenAD_Symbol_695
-      REAL(w2f__8) OpenAD_Symbol_696
-      REAL(w2f__8) OpenAD_Symbol_697
-      REAL(w2f__8) OpenAD_Symbol_698
-      REAL(w2f__8) OpenAD_Symbol_699
       REAL(w2f__8) OpenAD_Symbol_70
-      REAL(w2f__8) OpenAD_Symbol_700
-      REAL(w2f__8) OpenAD_Symbol_701
-      REAL(w2f__8) OpenAD_Symbol_702
-      REAL(w2f__8) OpenAD_Symbol_703
-      REAL(w2f__8) OpenAD_Symbol_704
-      REAL(w2f__8) OpenAD_Symbol_705
-      REAL(w2f__8) OpenAD_Symbol_706
-      REAL(w2f__8) OpenAD_Symbol_707
-      REAL(w2f__8) OpenAD_Symbol_708
-      REAL(w2f__8) OpenAD_Symbol_709
       REAL(w2f__8) OpenAD_Symbol_71
-      REAL(w2f__8) OpenAD_Symbol_710
-      REAL(w2f__8) OpenAD_Symbol_711
-      REAL(w2f__8) OpenAD_Symbol_712
-      REAL(w2f__8) OpenAD_Symbol_713
-      REAL(w2f__8) OpenAD_Symbol_714
-      REAL(w2f__8) OpenAD_Symbol_715
-      REAL(w2f__8) OpenAD_Symbol_716
-      REAL(w2f__8) OpenAD_Symbol_717
-      REAL(w2f__8) OpenAD_Symbol_718
-      REAL(w2f__8) OpenAD_Symbol_719
       REAL(w2f__8) OpenAD_Symbol_72
-      REAL(w2f__8) OpenAD_Symbol_720
-      REAL(w2f__8) OpenAD_Symbol_721
-      REAL(w2f__8) OpenAD_Symbol_722
-      REAL(w2f__8) OpenAD_Symbol_723
-      REAL(w2f__8) OpenAD_Symbol_724
-      REAL(w2f__8) OpenAD_Symbol_725
-      REAL(w2f__8) OpenAD_Symbol_726
-      REAL(w2f__8) OpenAD_Symbol_727
-      REAL(w2f__8) OpenAD_Symbol_728
-      REAL(w2f__8) OpenAD_Symbol_729
       REAL(w2f__8) OpenAD_Symbol_73
-      REAL(w2f__8) OpenAD_Symbol_730
-      REAL(w2f__8) OpenAD_Symbol_731
-      REAL(w2f__8) OpenAD_Symbol_732
-      REAL(w2f__8) OpenAD_Symbol_733
-      REAL(w2f__8) OpenAD_Symbol_734
-      REAL(w2f__8) OpenAD_Symbol_735
-      REAL(w2f__8) OpenAD_Symbol_736
-      REAL(w2f__8) OpenAD_Symbol_737
-      REAL(w2f__8) OpenAD_Symbol_738
-      REAL(w2f__8) OpenAD_Symbol_739
-      REAL(w2f__8) OpenAD_Symbol_740
-      REAL(w2f__8) OpenAD_Symbol_741
       REAL(w2f__8) OpenAD_Symbol_75
       REAL(w2f__8) OpenAD_Symbol_77
       REAL(w2f__8) OpenAD_Symbol_79
@@ -952,177 +648,95 @@ C$OPENAD XXX Template ad_template.f
       __value__(CAVE) = (__value__(GM1) * OpenAD_Symbol_81)
       OpenAD_Symbol_82 = OpenAD_Symbol_81
       OpenAD_Symbol_83 = __value__(GM1)
-      OpenAD_Symbol_328 = (OpenAD_Symbol_69 * OpenAD_Symbol_83)
-      OpenAD_Symbol_329 = (INT((-1_w2f__i8)) * OpenAD_Symbol_83)
-      OpenAD_Symbol_330 = (OpenAD_Symbol_71 * OpenAD_Symbol_83)
-      OpenAD_Symbol_331 = (OpenAD_Symbol_50 * OpenAD_Symbol_330)
-      OpenAD_Symbol_332 = (OpenAD_Symbol_53 * OpenAD_Symbol_331)
-      OpenAD_Symbol_333 = (OpenAD_Symbol_42 * OpenAD_Symbol_328)
-      OpenAD_Symbol_334 = (OpenAD_Symbol_45 * OpenAD_Symbol_333)
-      OpenAD_Symbol_335 = (OpenAD_Symbol_51 * OpenAD_Symbol_330)
-      OpenAD_Symbol_336 = (OpenAD_Symbol_43 * OpenAD_Symbol_328)
-      OpenAD_Symbol_337 = (OpenAD_Symbol_54 * OpenAD_Symbol_331)
-      OpenAD_Symbol_338 = (OpenAD_Symbol_55 * OpenAD_Symbol_337)
-      OpenAD_Symbol_339 = (OpenAD_Symbol_46 * OpenAD_Symbol_333)
-      OpenAD_Symbol_340 = (OpenAD_Symbol_47 * OpenAD_Symbol_339)
-      OpenAD_Symbol_341 = (OpenAD_Symbol_21 * OpenAD_Symbol_18)
-      OpenAD_Symbol_342 = (OpenAD_Symbol_56 * OpenAD_Symbol_337)
-      OpenAD_Symbol_343 = (OpenAD_Symbol_48 * OpenAD_Symbol_339)
-      OpenAD_Symbol_344 = (OpenAD_Symbol_79 * 5.0D-01)
-      OpenAD_Symbol_345 = (OpenAD_Symbol_77 * 5.0D-01)
-      OpenAD_Symbol_346 = (OpenAD_Symbol_75 * 5.0D-01)
-      OpenAD_Symbol_347 = (INT((-1_w2f__i8)) * OpenAD_Symbol_68 +
-     >  OpenAD_Symbol_66)
-      OpenAD_Symbol_348 = (INT((-1_w2f__i8)) * OpenAD_Symbol_64 +
-     >  OpenAD_Symbol_62)
-      OpenAD_Symbol_349 = (INT((-1_w2f__i8)) * OpenAD_Symbol_60 +
-     >  OpenAD_Symbol_58)
-      OpenAD_Symbol_350 = (OpenAD_Symbol_39 * 5.0D-01)
-      OpenAD_Symbol_351 = (OpenAD_Symbol_31 * 5.0D-01)
-      OpenAD_Symbol_352 = (OpenAD_Symbol_37 * 5.0D-01)
-      OpenAD_Symbol_353 = (OpenAD_Symbol_350 * OpenAD_Symbol_330)
-      OpenAD_Symbol_354 = (OpenAD_Symbol_352 * OpenAD_Symbol_330)
-      OpenAD_Symbol_355 = (OpenAD_Symbol_35 * 5.0D-01)
-      OpenAD_Symbol_356 = (OpenAD_Symbol_35 * 5.0D-01 *
-     >  OpenAD_Symbol_330)
-      OpenAD_Symbol_357 = (OpenAD_Symbol_29 * 5.0D-01)
-      OpenAD_Symbol_358 = (OpenAD_Symbol_351 * OpenAD_Symbol_328)
-      OpenAD_Symbol_359 = (OpenAD_Symbol_357 * OpenAD_Symbol_328)
-      OpenAD_Symbol_360 = (OpenAD_Symbol_27 * 5.0D-01)
-      OpenAD_Symbol_361 = (OpenAD_Symbol_27 * 5.0D-01 *
-     >  OpenAD_Symbol_328)
-      OpenAD_Symbol_362 = (OpenAD_Symbol_67 * OpenAD_Symbol_344)
-      OpenAD_Symbol_363 = (OpenAD_Symbol_65 * OpenAD_Symbol_344)
-      OpenAD_Symbol_364 = (OpenAD_Symbol_63 * OpenAD_Symbol_345)
-      OpenAD_Symbol_365 = (OpenAD_Symbol_347 * OpenAD_Symbol_344 +
-     >  OpenAD_Symbol_348 * OpenAD_Symbol_345)
-      OpenAD_Symbol_366 = (OpenAD_Symbol_61 * OpenAD_Symbol_345)
-      OpenAD_Symbol_367 = (OpenAD_Symbol_346 * OpenAD_Symbol_329)
-      OpenAD_Symbol_368 = (OpenAD_Symbol_362 * OpenAD_Symbol_329)
-      OpenAD_Symbol_369 = (OpenAD_Symbol_363 * OpenAD_Symbol_329)
-      OpenAD_Symbol_370 = (OpenAD_Symbol_364 * OpenAD_Symbol_329)
-      OpenAD_Symbol_371 = (OpenAD_Symbol_366 * OpenAD_Symbol_329)
-      OpenAD_Symbol_372 = (OpenAD_Symbol_59 * OpenAD_Symbol_346)
-      OpenAD_Symbol_373 = (OpenAD_Symbol_365 + OpenAD_Symbol_349 *
-     >  OpenAD_Symbol_346)
-      OpenAD_Symbol_374 = (OpenAD_Symbol_57 * OpenAD_Symbol_346)
-      OpenAD_Symbol_375 = (OpenAD_Symbol_59 * OpenAD_Symbol_367)
-      OpenAD_Symbol_376 = (OpenAD_Symbol_70 * OpenAD_Symbol_83 + INT((
-     > -1_w2f__i8)) * OpenAD_Symbol_72 * OpenAD_Symbol_83 +
-     >  OpenAD_Symbol_365 * OpenAD_Symbol_329 + OpenAD_Symbol_349 *
-     >  OpenAD_Symbol_367)
-      OpenAD_Symbol_377 = (OpenAD_Symbol_57 * OpenAD_Symbol_367)
-      OpenAD_Symbol_378 = (OpenAD_Symbol_22 * OpenAD_Symbol_341)
-      OpenAD_Symbol_379 = (OpenAD_Symbol_378 * OpenAD_Symbol_376)
-      OpenAD_Symbol_380 = (OpenAD_Symbol_23 * OpenAD_Symbol_341 *
-     >  OpenAD_Symbol_376)
-      OpenAD_Symbol_381 = (OpenAD_Symbol_23 * OpenAD_Symbol_341 *
-     >  OpenAD_Symbol_347)
-      OpenAD_Symbol_382 = (OpenAD_Symbol_23 * OpenAD_Symbol_341 *
-     >  OpenAD_Symbol_348)
-      OpenAD_Symbol_383 = (OpenAD_Symbol_23 * OpenAD_Symbol_341 *
-     >  OpenAD_Symbol_349)
-      OpenAD_Symbol_384 = (OpenAD_Symbol_23 * OpenAD_Symbol_341 *
-     >  OpenAD_Symbol_373)
-      OpenAD_Symbol_385 = (OpenAD_Symbol_378 * OpenAD_Symbol_347)
-      OpenAD_Symbol_386 = (OpenAD_Symbol_378 * OpenAD_Symbol_348)
-      OpenAD_Symbol_387 = (OpenAD_Symbol_378 * OpenAD_Symbol_349)
-      OpenAD_Symbol_388 = (OpenAD_Symbol_378 * OpenAD_Symbol_373)
+      OpenAD_Symbol_328 = (OpenAD_Symbol_54 * OpenAD_Symbol_50)
+      OpenAD_Symbol_329 = (OpenAD_Symbol_46 * OpenAD_Symbol_42)
+      OpenAD_Symbol_330 = (5.0D-01 * INT((-1_w2f__i8)) *
+     >  OpenAD_Symbol_83)
+      OpenAD_Symbol_331 = (OpenAD_Symbol_71 * OpenAD_Symbol_83)
+      OpenAD_Symbol_332 = (OpenAD_Symbol_69 * OpenAD_Symbol_83)
+      OpenAD_Symbol_333 = (OpenAD_Symbol_18 *(OpenAD_Symbol_70 *
+     >  OpenAD_Symbol_83 + INT((-1_w2f__i8)) * OpenAD_Symbol_72 *
+     >  OpenAD_Symbol_83))
+      OpenAD_Symbol_334 = (OpenAD_Symbol_18 *(OpenAD_Symbol_66 + INT((
+     > -1_w2f__i8)) * OpenAD_Symbol_68))
+      OpenAD_Symbol_335 = (OpenAD_Symbol_18 *(OpenAD_Symbol_62 + INT((
+     > -1_w2f__i8)) * OpenAD_Symbol_64))
+      OpenAD_Symbol_336 = (OpenAD_Symbol_18 *(OpenAD_Symbol_58 + INT((
+     > -1_w2f__i8)) * OpenAD_Symbol_60))
+      OpenAD_Symbol_337 = (OpenAD_Symbol_22 * OpenAD_Symbol_21)
+      OpenAD_Symbol_338 = (OpenAD_Symbol_23 * OpenAD_Symbol_21)
+      OpenAD_Symbol_339 = (OpenAD_Symbol_45 * OpenAD_Symbol_42)
+      OpenAD_Symbol_340 = (OpenAD_Symbol_47 * OpenAD_Symbol_329)
+      OpenAD_Symbol_341 = (OpenAD_Symbol_48 * OpenAD_Symbol_329)
+      OpenAD_Symbol_342 = (OpenAD_Symbol_53 * OpenAD_Symbol_50)
+      OpenAD_Symbol_343 = (OpenAD_Symbol_55 * OpenAD_Symbol_328)
+      OpenAD_Symbol_344 = (OpenAD_Symbol_56 * OpenAD_Symbol_328)
       CALL sax(OpenAD_Symbol_10, __deriv__(NRM(1)), __deriv__(NXHAT))
       CALL saxpy(OpenAD_Symbol_11, __deriv__(NSIZEI), __deriv__(NXHAT))
       CALL sax(OpenAD_Symbol_12, __deriv__(NRM(2)), __deriv__(NYHAT))
       CALL saxpy(OpenAD_Symbol_13, __deriv__(NSIZEI), __deriv__(NYHAT))
       CALL sax(OpenAD_Symbol_14, __deriv__(NRM(3)), __deriv__(NZHAT))
       CALL saxpy(OpenAD_Symbol_15, __deriv__(NSIZEI), __deriv__(NZHAT))
-      CALL sax(OpenAD_Symbol_351, __deriv__(PRIML(5)), __deriv__(THETAL
-     > ))
-      CALL saxpy(OpenAD_Symbol_357, __deriv__(PRIML(4)), __deriv__(
-     > THETAL))
-      CALL saxpy(OpenAD_Symbol_360, __deriv__(PRIML(3)), __deriv__(
-     > THETAL))
-      CALL sax(OpenAD_Symbol_350, __deriv__(PRIMR(5)), __deriv__(THETAR
-     > ))
-      CALL saxpy(OpenAD_Symbol_352, __deriv__(PRIMR(4)), __deriv__(
-     > THETAR))
-      CALL saxpy(OpenAD_Symbol_355, __deriv__(PRIMR(3)), __deriv__(
-     > THETAR))
+      CALL sax(OpenAD_Symbol_337, __deriv__(PRIMR(2)), __deriv__(
+     > OpenAD_Symbol_345))
+      CALL saxpy(OpenAD_Symbol_338, __deriv__(PRIML(2)), __deriv__(
+     > OpenAD_Symbol_345))
+      CALL sax(OpenAD_Symbol_31, __deriv__(PRIML(5)), __deriv__(
+     > OpenAD_Symbol_346))
+      CALL saxpy(OpenAD_Symbol_27, __deriv__(PRIML(3)), __deriv__(
+     > OpenAD_Symbol_346))
+      CALL saxpy(OpenAD_Symbol_29, __deriv__(PRIML(4)), __deriv__(
+     > OpenAD_Symbol_346))
+      CALL sax(OpenAD_Symbol_39, __deriv__(PRIMR(5)), __deriv__(
+     > OpenAD_Symbol_347))
+      CALL saxpy(OpenAD_Symbol_35, __deriv__(PRIMR(3)), __deriv__(
+     > OpenAD_Symbol_347))
+      CALL saxpy(OpenAD_Symbol_37, __deriv__(PRIMR(4)), __deriv__(
+     > OpenAD_Symbol_347))
+      CALL sax(5.0D-01, __deriv__(OpenAD_Symbol_346), __deriv__(THETAL)
+     > )
+      CALL sax(5.0D-01, __deriv__(OpenAD_Symbol_347), __deriv__(THETAR)
+     > )
+      CALL sax(1_w2f__i8, __deriv__(THETAL), __deriv__(HL))
+      CALL saxpy(OpenAD_Symbol_43, __deriv__(PRIML(2)), __deriv__(HL))
+      CALL saxpy(OpenAD_Symbol_339, __deriv__(PRIML(1)), __deriv__(HL))
+      CALL saxpy(OpenAD_Symbol_340, __deriv__(GAMMA), __deriv__(HL))
+      CALL saxpy(OpenAD_Symbol_341, __deriv__(GM1INV), __deriv__(HL))
+      CALL sax(1_w2f__i8, __deriv__(THETAR), __deriv__(HR))
+      CALL saxpy(OpenAD_Symbol_51, __deriv__(PRIMR(2)), __deriv__(HR))
+      CALL saxpy(OpenAD_Symbol_342, __deriv__(PRIMR(1)), __deriv__(HR))
+      CALL saxpy(OpenAD_Symbol_343, __deriv__(GAMMA), __deriv__(HR))
+      CALL saxpy(OpenAD_Symbol_344, __deriv__(GM1INV), __deriv__(HR))
       CALL sax(OpenAD_Symbol_59, __deriv__(PRIMR(3)), __deriv__(UAVE))
+      CALL saxpy(OpenAD_Symbol_336, __deriv__(OpenAD_Symbol_345),
+     >  __deriv__(UAVE))
       CALL saxpy(OpenAD_Symbol_57, __deriv__(PRIML(3)), __deriv__(UAVE)
      > )
-      CALL saxpy(OpenAD_Symbol_383, __deriv__(PRIML(2)), __deriv__(UAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_387, __deriv__(PRIMR(2)), __deriv__(UAVE
-     > ))
       CALL sax(OpenAD_Symbol_63, __deriv__(PRIMR(4)), __deriv__(VAVE))
       CALL saxpy(OpenAD_Symbol_61, __deriv__(PRIML(4)), __deriv__(VAVE)
      > )
-      CALL saxpy(OpenAD_Symbol_382, __deriv__(PRIML(2)), __deriv__(VAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_386, __deriv__(PRIMR(2)), __deriv__(VAVE
-     > ))
+      CALL saxpy(OpenAD_Symbol_335, __deriv__(OpenAD_Symbol_345),
+     >  __deriv__(VAVE))
       CALL sax(OpenAD_Symbol_67, __deriv__(PRIMR(5)), __deriv__(WAVE))
       CALL saxpy(OpenAD_Symbol_65, __deriv__(PRIML(5)), __deriv__(WAVE)
      > )
-      CALL saxpy(OpenAD_Symbol_381, __deriv__(PRIML(2)), __deriv__(WAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_385, __deriv__(PRIMR(2)), __deriv__(WAVE
-     > ))
-      CALL sax(OpenAD_Symbol_362, __deriv__(PRIMR(5)), __deriv__(THTAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_363, __deriv__(PRIML(5)), __deriv__(
-     > THTAVE))
-      CALL saxpy(OpenAD_Symbol_364, __deriv__(PRIMR(4)), __deriv__(
-     > THTAVE))
-      CALL saxpy(OpenAD_Symbol_366, __deriv__(PRIML(4)), __deriv__(
-     > THTAVE))
-      CALL saxpy(OpenAD_Symbol_372, __deriv__(PRIMR(3)), __deriv__(
-     > THTAVE))
-      CALL saxpy(OpenAD_Symbol_374, __deriv__(PRIML(3)), __deriv__(
-     > THTAVE))
-      CALL saxpy(OpenAD_Symbol_384, __deriv__(PRIML(2)), __deriv__(
-     > THTAVE))
-      CALL saxpy(OpenAD_Symbol_388, __deriv__(PRIMR(2)), __deriv__(
-     > THTAVE))
-      CALL sax(OpenAD_Symbol_332, __deriv__(PRIMR(1)), __deriv__(CAVE))
-      CALL saxpy(OpenAD_Symbol_334, __deriv__(PRIML(1)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_335, __deriv__(PRIMR(2)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_336, __deriv__(PRIML(2)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_338, __deriv__(GAMMA), __deriv__(CAVE))
-      CALL saxpy(OpenAD_Symbol_340, __deriv__(GAMMA), __deriv__(CAVE))
-      CALL saxpy(OpenAD_Symbol_342, __deriv__(GM1INV), __deriv__(CAVE))
-      CALL saxpy(OpenAD_Symbol_343, __deriv__(GM1INV), __deriv__(CAVE))
-      CALL saxpy(OpenAD_Symbol_353, __deriv__(PRIMR(5)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_354, __deriv__(PRIMR(4)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_356, __deriv__(PRIMR(3)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_358, __deriv__(PRIML(5)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_359, __deriv__(PRIML(4)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_361, __deriv__(PRIML(3)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_368, __deriv__(PRIMR(5)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_369, __deriv__(PRIML(5)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_370, __deriv__(PRIMR(4)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_371, __deriv__(PRIML(4)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_375, __deriv__(PRIMR(3)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_377, __deriv__(PRIML(3)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_379, __deriv__(PRIMR(2)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_380, __deriv__(PRIML(2)), __deriv__(CAVE
-     > ))
-      CALL saxpy(OpenAD_Symbol_82, __deriv__(GM1), __deriv__(CAVE))
+      CALL saxpy(OpenAD_Symbol_334, __deriv__(OpenAD_Symbol_345),
+     >  __deriv__(WAVE))
+      CALL sax(OpenAD_Symbol_79, __deriv__(WAVE), __deriv__(
+     > OpenAD_Symbol_348))
+      CALL saxpy(OpenAD_Symbol_77, __deriv__(VAVE), __deriv__(
+     > OpenAD_Symbol_348))
+      CALL saxpy(OpenAD_Symbol_75, __deriv__(UAVE), __deriv__(
+     > OpenAD_Symbol_348))
+      CALL sax(5.0D-01, __deriv__(OpenAD_Symbol_348), __deriv__(THTAVE)
+     > )
+      CALL sax(OpenAD_Symbol_82, __deriv__(GM1), __deriv__(CAVE))
+      CALL saxpy(OpenAD_Symbol_330, __deriv__(OpenAD_Symbol_348),
+     >  __deriv__(CAVE))
+      CALL saxpy(OpenAD_Symbol_331, __deriv__(HR), __deriv__(CAVE))
+      CALL saxpy(OpenAD_Symbol_332, __deriv__(HL), __deriv__(CAVE))
+      CALL saxpy(OpenAD_Symbol_333, __deriv__(OpenAD_Symbol_345),
+     >  __deriv__(CAVE))
       OpenAD_Symbol_85 = SIN(__value__(CAVE))
       OpenAD_Symbol_84 = COS(__value__(CAVE))
       __value__(CAVE) = OpenAD_Symbol_85
@@ -1165,94 +779,51 @@ C$OPENAD XXX Template ad_template.f
       __value__(LAM2) = (__value__(LAMCM) ** 2)
       OpenAD_Symbol_109 = (2 *(__value__(LAMCM) **(2 - INT(1_w2f__i8)))
      > )
-      OpenAD_Symbol_389 = (OpenAD_Symbol_105 * OpenAD_Symbol_107)
-      OpenAD_Symbol_390 = (OpenAD_Symbol_106 * OpenAD_Symbol_107)
-      OpenAD_Symbol_391 = (OpenAD_Symbol_102 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_392 = (OpenAD_Symbol_103 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_393 = (OpenAD_Symbol_98 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_394 = (OpenAD_Symbol_99 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_395 = (OpenAD_Symbol_94 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_396 = (OpenAD_Symbol_95 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_397 = (OpenAD_Symbol_84 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_398 = (OpenAD_Symbol_84 * OpenAD_Symbol_390)
-      OpenAD_Symbol_399 = (OpenAD_Symbol_84 * INT((-1_w2f__i8)) *
-     >  OpenAD_Symbol_109)
-      OpenAD_Symbol_400 = (OpenAD_Symbol_90 * OpenAD_Symbol_390)
-      OpenAD_Symbol_401 = (OpenAD_Symbol_91 * OpenAD_Symbol_390)
-      OpenAD_Symbol_402 = (OpenAD_Symbol_88 * OpenAD_Symbol_390)
-      OpenAD_Symbol_403 = (OpenAD_Symbol_89 * OpenAD_Symbol_390)
-      OpenAD_Symbol_404 = (OpenAD_Symbol_86 * OpenAD_Symbol_390)
-      OpenAD_Symbol_405 = (OpenAD_Symbol_87 * OpenAD_Symbol_390)
-      OpenAD_Symbol_406 = (OpenAD_Symbol_90 * OpenAD_Symbol_109)
-      OpenAD_Symbol_407 = (OpenAD_Symbol_91 * OpenAD_Symbol_109)
-      OpenAD_Symbol_408 = (OpenAD_Symbol_88 * OpenAD_Symbol_109)
-      OpenAD_Symbol_409 = (OpenAD_Symbol_89 * OpenAD_Symbol_109)
-      OpenAD_Symbol_410 = (OpenAD_Symbol_86 * OpenAD_Symbol_109)
-      OpenAD_Symbol_411 = (OpenAD_Symbol_87 * OpenAD_Symbol_109)
-      CALL setderiv(__deriv__(OpenAD_Symbol_412), __deriv__(CAVE))
-      CALL sax(OpenAD_Symbol_84, __deriv__(OpenAD_Symbol_412),
+      OpenAD_Symbol_349 = (OpenAD_Symbol_105 * OpenAD_Symbol_107)
+      OpenAD_Symbol_350 = (OpenAD_Symbol_106 * OpenAD_Symbol_107)
+      OpenAD_Symbol_351 = (OpenAD_Symbol_94 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_352 = (OpenAD_Symbol_95 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_353 = (OpenAD_Symbol_98 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_354 = (OpenAD_Symbol_99 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_355 = (OpenAD_Symbol_102 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_356 = (OpenAD_Symbol_103 * INT((-1_w2f__i8)))
+      CALL setderiv(__deriv__(OpenAD_Symbol_357), __deriv__(CAVE))
+      CALL sax(OpenAD_Symbol_84, __deriv__(OpenAD_Symbol_357),
      >  __deriv__(CAVE))
-      CALL sax(OpenAD_Symbol_395, __deriv__(NZHAT), __deriv__(UTILDE))
-      CALL saxpy(OpenAD_Symbol_396, __deriv__(VAVE), __deriv__(UTILDE))
-      CALL saxpy(OpenAD_Symbol_92, __deriv__(NYHAT), __deriv__(UTILDE))
+      CALL sax(OpenAD_Symbol_92, __deriv__(NYHAT), __deriv__(UTILDE))
       CALL saxpy(OpenAD_Symbol_93, __deriv__(WAVE), __deriv__(UTILDE))
-      CALL sax(OpenAD_Symbol_393, __deriv__(NXHAT), __deriv__(VTILDE))
-      CALL saxpy(OpenAD_Symbol_394, __deriv__(WAVE), __deriv__(VTILDE))
-      CALL saxpy(OpenAD_Symbol_96, __deriv__(NZHAT), __deriv__(VTILDE))
-      CALL saxpy(OpenAD_Symbol_97, __deriv__(UAVE), __deriv__(VTILDE))
-      CALL sax(OpenAD_Symbol_391, __deriv__(NYHAT), __deriv__(WTILDE))
-      CALL saxpy(OpenAD_Symbol_392, __deriv__(UAVE), __deriv__(WTILDE))
-      CALL saxpy(OpenAD_Symbol_100, __deriv__(NXHAT), __deriv__(WTILDE)
+      CALL saxpy(OpenAD_Symbol_351, __deriv__(NZHAT), __deriv__(UTILDE)
      > )
+      CALL saxpy(OpenAD_Symbol_352, __deriv__(VAVE), __deriv__(UTILDE))
+      CALL sax(OpenAD_Symbol_96, __deriv__(NZHAT), __deriv__(VTILDE))
+      CALL saxpy(OpenAD_Symbol_97, __deriv__(UAVE), __deriv__(VTILDE))
+      CALL saxpy(OpenAD_Symbol_353, __deriv__(NXHAT), __deriv__(VTILDE)
+     > )
+      CALL saxpy(OpenAD_Symbol_354, __deriv__(WAVE), __deriv__(VTILDE))
+      CALL sax(OpenAD_Symbol_100, __deriv__(NXHAT), __deriv__(WTILDE))
       CALL saxpy(OpenAD_Symbol_101, __deriv__(VAVE), __deriv__(WTILDE))
-      CALL sax(OpenAD_Symbol_90, __deriv__(NZHAT), __deriv__(UHAT))
-      CALL saxpy(OpenAD_Symbol_91, __deriv__(WAVE), __deriv__(UHAT))
+      CALL saxpy(OpenAD_Symbol_355, __deriv__(NYHAT), __deriv__(WTILDE)
+     > )
+      CALL saxpy(OpenAD_Symbol_356, __deriv__(UAVE), __deriv__(WTILDE))
+      CALL sax(OpenAD_Symbol_86, __deriv__(NXHAT), __deriv__(UHAT))
+      CALL saxpy(OpenAD_Symbol_87, __deriv__(UAVE), __deriv__(UHAT))
       CALL saxpy(OpenAD_Symbol_88, __deriv__(NYHAT), __deriv__(UHAT))
       CALL saxpy(OpenAD_Symbol_89, __deriv__(VAVE), __deriv__(UHAT))
-      CALL saxpy(OpenAD_Symbol_86, __deriv__(NXHAT), __deriv__(UHAT))
-      CALL saxpy(OpenAD_Symbol_87, __deriv__(UAVE), __deriv__(UHAT))
-      CALL sax(OpenAD_Symbol_397, __deriv__(OpenAD_Symbol_412),
-     >  __deriv__(LAMCM))
-      CALL saxpy(OpenAD_Symbol_90, __deriv__(NZHAT), __deriv__(LAMCM))
-      CALL saxpy(OpenAD_Symbol_91, __deriv__(WAVE), __deriv__(LAMCM))
-      CALL saxpy(OpenAD_Symbol_88, __deriv__(NYHAT), __deriv__(LAMCM))
-      CALL saxpy(OpenAD_Symbol_89, __deriv__(VAVE), __deriv__(LAMCM))
-      CALL saxpy(OpenAD_Symbol_86, __deriv__(NXHAT), __deriv__(LAMCM))
-      CALL saxpy(OpenAD_Symbol_87, __deriv__(UAVE), __deriv__(LAMCM))
-      CALL sax(OpenAD_Symbol_90, __deriv__(NZHAT), __deriv__(LAMU))
-      CALL saxpy(OpenAD_Symbol_91, __deriv__(WAVE), __deriv__(LAMU))
-      CALL saxpy(OpenAD_Symbol_88, __deriv__(NYHAT), __deriv__(LAMU))
-      CALL saxpy(OpenAD_Symbol_89, __deriv__(VAVE), __deriv__(LAMU))
-      CALL saxpy(OpenAD_Symbol_86, __deriv__(NXHAT), __deriv__(LAMU))
-      CALL saxpy(OpenAD_Symbol_87, __deriv__(UAVE), __deriv__(LAMU))
-      CALL sax(OpenAD_Symbol_84, __deriv__(OpenAD_Symbol_412),
-     >  __deriv__(LAMCP))
-      CALL saxpy(OpenAD_Symbol_90, __deriv__(NZHAT), __deriv__(LAMCP))
-      CALL saxpy(OpenAD_Symbol_91, __deriv__(WAVE), __deriv__(LAMCP))
-      CALL saxpy(OpenAD_Symbol_88, __deriv__(NYHAT), __deriv__(LAMCP))
-      CALL saxpy(OpenAD_Symbol_89, __deriv__(VAVE), __deriv__(LAMCP))
-      CALL saxpy(OpenAD_Symbol_86, __deriv__(NXHAT), __deriv__(LAMCP))
-      CALL saxpy(OpenAD_Symbol_87, __deriv__(UAVE), __deriv__(LAMCP))
-      CALL sax(OpenAD_Symbol_399, __deriv__(OpenAD_Symbol_412),
-     >  __deriv__(LAM2))
-      CALL saxpy(OpenAD_Symbol_406, __deriv__(NZHAT), __deriv__(LAM2))
-      CALL saxpy(OpenAD_Symbol_407, __deriv__(WAVE), __deriv__(LAM2))
-      CALL saxpy(OpenAD_Symbol_408, __deriv__(NYHAT), __deriv__(LAM2))
-      CALL saxpy(OpenAD_Symbol_409, __deriv__(VAVE), __deriv__(LAM2))
-      CALL saxpy(OpenAD_Symbol_410, __deriv__(NXHAT), __deriv__(LAM2))
-      CALL saxpy(OpenAD_Symbol_411, __deriv__(UAVE), __deriv__(LAM2))
-      CALL sax(OpenAD_Symbol_389, __deriv__(NLEFIX), __deriv__(DELTA2))
-      CALL saxpy(OpenAD_Symbol_398, __deriv__(OpenAD_Symbol_412),
+      CALL saxpy(OpenAD_Symbol_90, __deriv__(NZHAT), __deriv__(UHAT))
+      CALL saxpy(OpenAD_Symbol_91, __deriv__(WAVE), __deriv__(UHAT))
+      CALL sax(1_w2f__i8, __deriv__(UHAT), __deriv__(LAMCM))
+      CALL saxpy(-1_w2f__i8, __deriv__(CAVE), __deriv__(LAMCM))
+      CALL setderiv(__deriv__(LAMU), __deriv__(UHAT))
+      CALL sax(1_w2f__i8, __deriv__(CAVE), __deriv__(LAMCP))
+      CALL saxpy(1_w2f__i8, __deriv__(UHAT), __deriv__(LAMCP))
+      CALL sax(1_w2f__i8, __deriv__(CAVE), __deriv__(OpenAD_Symbol_358)
+     > )
+      CALL saxpy(1_w2f__i8, __deriv__(UHAT), __deriv__(
+     > OpenAD_Symbol_358))
+      CALL sax(OpenAD_Symbol_109, __deriv__(LAMCM), __deriv__(LAM2))
+      CALL sax(OpenAD_Symbol_349, __deriv__(NLEFIX), __deriv__(DELTA2))
+      CALL saxpy(OpenAD_Symbol_350, __deriv__(OpenAD_Symbol_358),
      >  __deriv__(DELTA2))
-      CALL saxpy(OpenAD_Symbol_400, __deriv__(NZHAT), __deriv__(DELTA2)
-     > )
-      CALL saxpy(OpenAD_Symbol_401, __deriv__(WAVE), __deriv__(DELTA2))
-      CALL saxpy(OpenAD_Symbol_402, __deriv__(NYHAT), __deriv__(DELTA2)
-     > )
-      CALL saxpy(OpenAD_Symbol_403, __deriv__(VAVE), __deriv__(DELTA2))
-      CALL saxpy(OpenAD_Symbol_404, __deriv__(NXHAT), __deriv__(DELTA2)
-     > )
-      CALL saxpy(OpenAD_Symbol_405, __deriv__(UAVE), __deriv__(DELTA2))
       IF(__value__(DELTA2) .LT. __value__(LAM2)) THEN
         __value__(ALAMCM) = __value__(LAMCM)
         CALL setderiv(__deriv__(ALAMCM), __deriv__(LAMCM))
@@ -1263,13 +834,15 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_321 = (INT(1_w2f__i8) / __value__(DELTA2))
         OpenAD_Symbol_322 = (-(OpenAD_Symbol_320 /(__value__(DELTA2) *
      >  __value__(DELTA2))))
-        OpenAD_Symbol_741 = (5.0D-01 * OpenAD_Symbol_321)
-        CALL sax(OpenAD_Symbol_741, __deriv__(DELTA2), __deriv__(ALAMCM
+        OpenAD_Symbol_436 = (5.0D-01 * OpenAD_Symbol_321)
+        CALL sax(1_w2f__i8, __deriv__(DELTA2), __deriv__(
+     > OpenAD_Symbol_437))
+        CALL saxpy(1_w2f__i8, __deriv__(LAM2), __deriv__(
+     > OpenAD_Symbol_437))
+        CALL sax(OpenAD_Symbol_322, __deriv__(DELTA2), __deriv__(ALAMCM
      > ))
-        CALL saxpy(OpenAD_Symbol_741, __deriv__(LAM2), __deriv__(ALAMCM
-     > ))
-        CALL saxpy(OpenAD_Symbol_322, __deriv__(DELTA2), __deriv__(
-     > ALAMCM))
+        CALL saxpy(OpenAD_Symbol_436, __deriv__(OpenAD_Symbol_437),
+     >  __deriv__(ALAMCM))
       ENDIF
       __value__(LAM2) = (__value__(LAMCP) ** 2)
       OpenAD_Symbol_111 = (2 *(__value__(LAMCP) **(2 - INT(1_w2f__i8)))
@@ -1285,13 +858,15 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_316 = (INT(1_w2f__i8) / __value__(DELTA2))
         OpenAD_Symbol_317 = (-(OpenAD_Symbol_315 /(__value__(DELTA2) *
      >  __value__(DELTA2))))
-        OpenAD_Symbol_740 = (5.0D-01 * OpenAD_Symbol_316)
-        CALL sax(OpenAD_Symbol_740, __deriv__(DELTA2), __deriv__(ALAMCP
+        OpenAD_Symbol_434 = (5.0D-01 * OpenAD_Symbol_316)
+        CALL sax(1_w2f__i8, __deriv__(DELTA2), __deriv__(
+     > OpenAD_Symbol_435))
+        CALL saxpy(1_w2f__i8, __deriv__(LAM2), __deriv__(
+     > OpenAD_Symbol_435))
+        CALL sax(OpenAD_Symbol_317, __deriv__(DELTA2), __deriv__(ALAMCP
      > ))
-        CALL saxpy(OpenAD_Symbol_740, __deriv__(LAM2), __deriv__(ALAMCP
-     > ))
-        CALL saxpy(OpenAD_Symbol_317, __deriv__(DELTA2), __deriv__(
-     > ALAMCP))
+        CALL saxpy(OpenAD_Symbol_434, __deriv__(OpenAD_Symbol_435),
+     >  __deriv__(ALAMCP))
       ENDIF
       OpenAD_Symbol_113 = (__value__(CAVE) + __value__(UHAT))
       __value__(DELTA) = (__value__(LEFIX) * OpenAD_Symbol_113)
@@ -1302,13 +877,17 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_117 = __value__(DELTA)
       __value__(LAM2) = (__value__(LAMU) ** 2)
       OpenAD_Symbol_118 = (2 *(__value__(LAMU) **(2 - INT(1_w2f__i8))))
-      OpenAD_Symbol_413 = (OpenAD_Symbol_116 + OpenAD_Symbol_117)
-      OpenAD_Symbol_414 = (OpenAD_Symbol_114 * OpenAD_Symbol_413)
-      OpenAD_Symbol_415 = (OpenAD_Symbol_115 * OpenAD_Symbol_413)
+      OpenAD_Symbol_359 = (OpenAD_Symbol_116 + OpenAD_Symbol_117)
+      OpenAD_Symbol_360 = (OpenAD_Symbol_114 * OpenAD_Symbol_359)
+      OpenAD_Symbol_361 = (OpenAD_Symbol_115 * OpenAD_Symbol_359)
+      CALL sax(1_w2f__i8, __deriv__(CAVE), __deriv__(OpenAD_Symbol_362)
+     > )
+      CALL saxpy(1_w2f__i8, __deriv__(UHAT), __deriv__(
+     > OpenAD_Symbol_362))
       CALL sax(OpenAD_Symbol_118, __deriv__(LAMU), __deriv__(LAM2))
-      CALL sax(OpenAD_Symbol_414, __deriv__(LEFIX), __deriv__(DELTA2))
-      CALL saxpy(OpenAD_Symbol_415, __deriv__(CAVE), __deriv__(DELTA2))
-      CALL saxpy(OpenAD_Symbol_415, __deriv__(UHAT), __deriv__(DELTA2))
+      CALL sax(OpenAD_Symbol_360, __deriv__(LEFIX), __deriv__(DELTA2))
+      CALL saxpy(OpenAD_Symbol_361, __deriv__(OpenAD_Symbol_362),
+     >  __deriv__(DELTA2))
       IF(__value__(DELTA2) .LT. __value__(LAM2)) THEN
         __value__(ALAMU) = __value__(LAMU)
         CALL setderiv(__deriv__(ALAMU), __deriv__(LAMU))
@@ -1319,13 +898,15 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_311 = (INT(1_w2f__i8) / __value__(DELTA2))
         OpenAD_Symbol_312 = (-(OpenAD_Symbol_310 /(__value__(DELTA2) *
      >  __value__(DELTA2))))
-        OpenAD_Symbol_739 = (5.0D-01 * OpenAD_Symbol_311)
-        CALL sax(OpenAD_Symbol_739, __deriv__(DELTA2), __deriv__(ALAMU)
+        OpenAD_Symbol_432 = (5.0D-01 * OpenAD_Symbol_311)
+        CALL sax(1_w2f__i8, __deriv__(DELTA2), __deriv__(
+     > OpenAD_Symbol_433))
+        CALL saxpy(1_w2f__i8, __deriv__(LAM2), __deriv__(
+     > OpenAD_Symbol_433))
+        CALL sax(OpenAD_Symbol_312, __deriv__(DELTA2), __deriv__(ALAMU)
      > )
-        CALL saxpy(OpenAD_Symbol_739, __deriv__(LAM2), __deriv__(ALAMU)
-     > )
-        CALL saxpy(OpenAD_Symbol_312, __deriv__(DELTA2), __deriv__(
-     > ALAMU))
+        CALL saxpy(OpenAD_Symbol_432, __deriv__(OpenAD_Symbol_433),
+     >  __deriv__(ALAMU))
       ENDIF
       OpenAD_Symbol_120 = (__value__(LAMCM) - __value__(ALAMCM))
       __value__(ALAMCM) = (OpenAD_Symbol_120 * 5.0D-01)
@@ -1453,280 +1034,40 @@ C$OPENAD XXX Template ad_template.f
       __value__(ALP5) = (OpenAD_Symbol_206 * 5.0D-01)
       OpenAD_Symbol_208 = __value__(UHAT)
       OpenAD_Symbol_209 = __value__(DR)
-      OpenAD_Symbol_416 = (INT((-1_w2f__i8)) * OpenAD_Symbol_203)
-      OpenAD_Symbol_417 = (INT((-1_w2f__i8)) * OpenAD_Symbol_191)
-      OpenAD_Symbol_418 = (INT((-1_w2f__i8)) * OpenAD_Symbol_179)
-      OpenAD_Symbol_419 = (INT((-1_w2f__i8)) * OpenAD_Symbol_155)
-      OpenAD_Symbol_420 = (INT((-1_w2f__i8)) * OpenAD_Symbol_198)
-      OpenAD_Symbol_421 = (INT((-1_w2f__i8)) * OpenAD_Symbol_186)
-      OpenAD_Symbol_422 = (INT((-1_w2f__i8)) * OpenAD_Symbol_174)
-      OpenAD_Symbol_423 = (INT((-1_w2f__i8)) * OpenAD_Symbol_155)
-      OpenAD_Symbol_424 = (OpenAD_Symbol_208 *(-5.0D-01))
-      OpenAD_Symbol_425 = (OpenAD_Symbol_209 *(-5.0D-01))
-      OpenAD_Symbol_426 = (OpenAD_Symbol_204 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_427 = (OpenAD_Symbol_205 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_428 = (OpenAD_Symbol_199 * OpenAD_Symbol_198)
-      OpenAD_Symbol_429 = (OpenAD_Symbol_200 * OpenAD_Symbol_198)
-      OpenAD_Symbol_430 = (OpenAD_Symbol_192 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_431 = (OpenAD_Symbol_193 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_432 = (OpenAD_Symbol_187 * OpenAD_Symbol_186)
-      OpenAD_Symbol_433 = (OpenAD_Symbol_188 * OpenAD_Symbol_186)
-      OpenAD_Symbol_434 = (OpenAD_Symbol_180 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_435 = (OpenAD_Symbol_181 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_436 = (OpenAD_Symbol_175 * OpenAD_Symbol_174)
-      OpenAD_Symbol_437 = (OpenAD_Symbol_176 * OpenAD_Symbol_174)
-      OpenAD_Symbol_438 = (OpenAD_Symbol_168 * 5.0D-01)
-      OpenAD_Symbol_439 = (OpenAD_Symbol_169 * 5.0D-01)
-      OpenAD_Symbol_440 = (OpenAD_Symbol_158 * OpenAD_Symbol_155)
-      OpenAD_Symbol_441 = (OpenAD_Symbol_159 * OpenAD_Symbol_155)
-      OpenAD_Symbol_442 = (OpenAD_Symbol_156 * OpenAD_Symbol_154)
-      OpenAD_Symbol_443 = (OpenAD_Symbol_157 * OpenAD_Symbol_154)
-      OpenAD_Symbol_444 = (OpenAD_Symbol_150 * OpenAD_Symbol_419)
-      OpenAD_Symbol_445 = (OpenAD_Symbol_151 * OpenAD_Symbol_419)
-      OpenAD_Symbol_446 = (OpenAD_Symbol_148 * OpenAD_Symbol_419)
-      OpenAD_Symbol_447 = (OpenAD_Symbol_149 * OpenAD_Symbol_419)
-      OpenAD_Symbol_448 = (OpenAD_Symbol_146 * OpenAD_Symbol_419)
-      OpenAD_Symbol_449 = (OpenAD_Symbol_147 * OpenAD_Symbol_419)
-      OpenAD_Symbol_450 = (OpenAD_Symbol_138 * OpenAD_Symbol_155)
-      OpenAD_Symbol_451 = (OpenAD_Symbol_139 * OpenAD_Symbol_155)
-      OpenAD_Symbol_452 = (OpenAD_Symbol_136 * OpenAD_Symbol_155)
-      OpenAD_Symbol_453 = (OpenAD_Symbol_137 * OpenAD_Symbol_155)
-      OpenAD_Symbol_454 = (OpenAD_Symbol_134 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_455 = (OpenAD_Symbol_135 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_456 = (OpenAD_Symbol_132 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_457 = (OpenAD_Symbol_133 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_458 = (OpenAD_Symbol_130 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_459 = (OpenAD_Symbol_131 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_460 = (OpenAD_Symbol_128 * OpenAD_Symbol_423)
-      OpenAD_Symbol_461 = (OpenAD_Symbol_129 * OpenAD_Symbol_423)
-      OpenAD_Symbol_462 = (OpenAD_Symbol_126 * OpenAD_Symbol_423)
-      OpenAD_Symbol_463 = (OpenAD_Symbol_127 * OpenAD_Symbol_423)
-      OpenAD_Symbol_464 = (OpenAD_Symbol_164 * 5.0D-01)
-      OpenAD_Symbol_465 = (OpenAD_Symbol_165 * 5.0D-01)
-      OpenAD_Symbol_466 = (OpenAD_Symbol_162 * 5.0D-01)
-      OpenAD_Symbol_467 = (OpenAD_Symbol_163 * 5.0D-01)
-      OpenAD_Symbol_468 = (OpenAD_Symbol_160 * 5.0D-01)
-      OpenAD_Symbol_469 = (OpenAD_Symbol_161 * 5.0D-01)
-      OpenAD_Symbol_470 = (OpenAD_Symbol_164 *(-5.0D-01))
-      OpenAD_Symbol_471 = (OpenAD_Symbol_165 *(-5.0D-01))
-      OpenAD_Symbol_472 = (OpenAD_Symbol_162 *(-5.0D-01))
-      OpenAD_Symbol_473 = (OpenAD_Symbol_163 *(-5.0D-01))
-      OpenAD_Symbol_474 = (OpenAD_Symbol_160 *(-5.0D-01))
-      OpenAD_Symbol_475 = (OpenAD_Symbol_161 *(-5.0D-01))
-      OpenAD_Symbol_476 = (INT((-1_w2f__i8)) * OpenAD_Symbol_440)
-      OpenAD_Symbol_477 = (OpenAD_Symbol_144 * OpenAD_Symbol_444)
-      OpenAD_Symbol_478 = (OpenAD_Symbol_145 * OpenAD_Symbol_444)
-      OpenAD_Symbol_479 = (OpenAD_Symbol_454 * OpenAD_Symbol_444)
-      OpenAD_Symbol_480 = (OpenAD_Symbol_455 * OpenAD_Symbol_444)
-      OpenAD_Symbol_481 = (OpenAD_Symbol_142 * OpenAD_Symbol_446)
-      OpenAD_Symbol_482 = (OpenAD_Symbol_143 * OpenAD_Symbol_446)
-      OpenAD_Symbol_483 = (OpenAD_Symbol_456 * OpenAD_Symbol_446)
-      OpenAD_Symbol_484 = (OpenAD_Symbol_457 * OpenAD_Symbol_446)
-      OpenAD_Symbol_485 = (OpenAD_Symbol_140 * OpenAD_Symbol_448)
-      OpenAD_Symbol_486 = (OpenAD_Symbol_141 * OpenAD_Symbol_448)
-      OpenAD_Symbol_487 = (OpenAD_Symbol_458 * OpenAD_Symbol_448)
-      OpenAD_Symbol_488 = (OpenAD_Symbol_459 * OpenAD_Symbol_448)
-      OpenAD_Symbol_489 = (OpenAD_Symbol_441 * 5.0D-01)
-      OpenAD_Symbol_490 = (OpenAD_Symbol_442 * 5.0D-01)
-      OpenAD_Symbol_491 = (OpenAD_Symbol_443 * 5.0D-01)
-      OpenAD_Symbol_492 = (OpenAD_Symbol_445 * 5.0D-01)
-      OpenAD_Symbol_493 = (OpenAD_Symbol_447 * 5.0D-01)
-      OpenAD_Symbol_494 = (OpenAD_Symbol_449 * 5.0D-01)
-      OpenAD_Symbol_495 = (OpenAD_Symbol_450 * 5.0D-01)
-      OpenAD_Symbol_496 = (OpenAD_Symbol_451 * 5.0D-01)
-      OpenAD_Symbol_497 = (OpenAD_Symbol_452 * 5.0D-01)
-      OpenAD_Symbol_498 = (OpenAD_Symbol_453 * 5.0D-01)
-      OpenAD_Symbol_499 = (OpenAD_Symbol_460 * 5.0D-01)
-      OpenAD_Symbol_500 = (OpenAD_Symbol_461 * 5.0D-01)
-      OpenAD_Symbol_501 = (OpenAD_Symbol_462 * 5.0D-01)
-      OpenAD_Symbol_502 = (OpenAD_Symbol_463 * 5.0D-01)
-      OpenAD_Symbol_503 = (OpenAD_Symbol_424 + OpenAD_Symbol_440 *
-     >  5.0D-01)
-      OpenAD_Symbol_504 = (INT((-1_w2f__i8)) * OpenAD_Symbol_424 +
-     >  OpenAD_Symbol_476 * 5.0D-01)
-      OpenAD_Symbol_505 = (OpenAD_Symbol_144 * OpenAD_Symbol_464 +
-     >  OpenAD_Symbol_477 * 5.0D-01)
-      OpenAD_Symbol_506 = (OpenAD_Symbol_145 * OpenAD_Symbol_464 +
-     >  OpenAD_Symbol_478 * 5.0D-01)
-      OpenAD_Symbol_507 = (OpenAD_Symbol_454 * OpenAD_Symbol_464 +
-     >  OpenAD_Symbol_479 * 5.0D-01)
-      OpenAD_Symbol_508 = (OpenAD_Symbol_455 * OpenAD_Symbol_464 +
-     >  OpenAD_Symbol_480 * 5.0D-01)
-      OpenAD_Symbol_509 = (OpenAD_Symbol_142 * OpenAD_Symbol_466 +
-     >  OpenAD_Symbol_481 * 5.0D-01)
-      OpenAD_Symbol_510 = (OpenAD_Symbol_143 * OpenAD_Symbol_466 +
-     >  OpenAD_Symbol_482 * 5.0D-01)
-      OpenAD_Symbol_511 = (OpenAD_Symbol_456 * OpenAD_Symbol_466 +
-     >  OpenAD_Symbol_483 * 5.0D-01)
-      OpenAD_Symbol_512 = (OpenAD_Symbol_457 * OpenAD_Symbol_466 +
-     >  OpenAD_Symbol_484 * 5.0D-01)
-      OpenAD_Symbol_513 = (OpenAD_Symbol_140 * OpenAD_Symbol_468 +
-     >  OpenAD_Symbol_485 * 5.0D-01)
-      OpenAD_Symbol_514 = (OpenAD_Symbol_141 * OpenAD_Symbol_468 +
-     >  OpenAD_Symbol_486 * 5.0D-01)
-      OpenAD_Symbol_515 = (OpenAD_Symbol_458 * OpenAD_Symbol_468 +
-     >  OpenAD_Symbol_487 * 5.0D-01)
-      OpenAD_Symbol_516 = (OpenAD_Symbol_459 * OpenAD_Symbol_468 +
-     >  OpenAD_Symbol_488 * 5.0D-01)
-      OpenAD_Symbol_517 = (OpenAD_Symbol_441 * OpenAD_Symbol_202)
-      OpenAD_Symbol_518 = (OpenAD_Symbol_442 * OpenAD_Symbol_202)
-      OpenAD_Symbol_519 = (OpenAD_Symbol_443 * OpenAD_Symbol_202)
-      OpenAD_Symbol_520 = (OpenAD_Symbol_445 * OpenAD_Symbol_202)
-      OpenAD_Symbol_521 = (OpenAD_Symbol_447 * OpenAD_Symbol_202)
-      OpenAD_Symbol_522 = (OpenAD_Symbol_449 * OpenAD_Symbol_202)
-      OpenAD_Symbol_523 = (OpenAD_Symbol_450 * OpenAD_Symbol_202)
-      OpenAD_Symbol_524 = (OpenAD_Symbol_451 * OpenAD_Symbol_202)
-      OpenAD_Symbol_525 = (OpenAD_Symbol_452 * OpenAD_Symbol_202)
-      OpenAD_Symbol_526 = (OpenAD_Symbol_453 * OpenAD_Symbol_202)
-      OpenAD_Symbol_527 = (OpenAD_Symbol_460 * OpenAD_Symbol_202)
-      OpenAD_Symbol_528 = (OpenAD_Symbol_461 * OpenAD_Symbol_202)
-      OpenAD_Symbol_529 = (OpenAD_Symbol_462 * OpenAD_Symbol_202)
-      OpenAD_Symbol_530 = (OpenAD_Symbol_463 * OpenAD_Symbol_202)
-      OpenAD_Symbol_531 = (OpenAD_Symbol_197 + OpenAD_Symbol_440 *
-     >  OpenAD_Symbol_202)
-      OpenAD_Symbol_532 = (INT((-1_w2f__i8)) * OpenAD_Symbol_197 +
-     >  OpenAD_Symbol_476 * OpenAD_Symbol_202)
-      OpenAD_Symbol_533 = (OpenAD_Symbol_477 * OpenAD_Symbol_202)
-      OpenAD_Symbol_534 = (OpenAD_Symbol_478 * OpenAD_Symbol_202)
-      OpenAD_Symbol_535 = (OpenAD_Symbol_479 * OpenAD_Symbol_202)
-      OpenAD_Symbol_536 = (OpenAD_Symbol_480 * OpenAD_Symbol_202)
-      OpenAD_Symbol_537 = (OpenAD_Symbol_142 * OpenAD_Symbol_194 +
-     >  OpenAD_Symbol_481 * OpenAD_Symbol_202)
-      OpenAD_Symbol_538 = (OpenAD_Symbol_143 * OpenAD_Symbol_194 +
-     >  OpenAD_Symbol_482 * OpenAD_Symbol_202)
-      OpenAD_Symbol_539 = (OpenAD_Symbol_456 * OpenAD_Symbol_194 +
-     >  OpenAD_Symbol_483 * OpenAD_Symbol_202)
-      OpenAD_Symbol_540 = (OpenAD_Symbol_457 * OpenAD_Symbol_194 +
-     >  OpenAD_Symbol_484 * OpenAD_Symbol_202)
-      OpenAD_Symbol_541 = (OpenAD_Symbol_140 * OpenAD_Symbol_426 +
-     >  OpenAD_Symbol_485 * OpenAD_Symbol_202)
-      OpenAD_Symbol_542 = (OpenAD_Symbol_141 * OpenAD_Symbol_426 +
-     >  OpenAD_Symbol_486 * OpenAD_Symbol_202)
-      OpenAD_Symbol_543 = (OpenAD_Symbol_458 * OpenAD_Symbol_426 +
-     >  OpenAD_Symbol_487 * OpenAD_Symbol_202)
-      OpenAD_Symbol_544 = (OpenAD_Symbol_459 * OpenAD_Symbol_426 +
-     >  OpenAD_Symbol_488 * OpenAD_Symbol_202)
-      OpenAD_Symbol_545 = (OpenAD_Symbol_441 * OpenAD_Symbol_190)
-      OpenAD_Symbol_546 = (OpenAD_Symbol_442 * OpenAD_Symbol_190)
-      OpenAD_Symbol_547 = (OpenAD_Symbol_443 * OpenAD_Symbol_190)
-      OpenAD_Symbol_548 = (OpenAD_Symbol_445 * OpenAD_Symbol_190)
-      OpenAD_Symbol_549 = (OpenAD_Symbol_447 * OpenAD_Symbol_190)
-      OpenAD_Symbol_550 = (OpenAD_Symbol_449 * OpenAD_Symbol_190)
-      OpenAD_Symbol_551 = (OpenAD_Symbol_450 * OpenAD_Symbol_190)
-      OpenAD_Symbol_552 = (OpenAD_Symbol_451 * OpenAD_Symbol_190)
-      OpenAD_Symbol_553 = (OpenAD_Symbol_452 * OpenAD_Symbol_190)
-      OpenAD_Symbol_554 = (OpenAD_Symbol_453 * OpenAD_Symbol_190)
-      OpenAD_Symbol_555 = (OpenAD_Symbol_460 * OpenAD_Symbol_190)
-      OpenAD_Symbol_556 = (OpenAD_Symbol_461 * OpenAD_Symbol_190)
-      OpenAD_Symbol_557 = (OpenAD_Symbol_462 * OpenAD_Symbol_190)
-      OpenAD_Symbol_558 = (OpenAD_Symbol_463 * OpenAD_Symbol_190)
-      OpenAD_Symbol_559 = (OpenAD_Symbol_185 + OpenAD_Symbol_440 *
-     >  OpenAD_Symbol_190)
-      OpenAD_Symbol_560 = (INT((-1_w2f__i8)) * OpenAD_Symbol_185 +
-     >  OpenAD_Symbol_476 * OpenAD_Symbol_190)
-      OpenAD_Symbol_561 = (OpenAD_Symbol_144 * OpenAD_Symbol_430 +
-     >  OpenAD_Symbol_477 * OpenAD_Symbol_190)
-      OpenAD_Symbol_562 = (OpenAD_Symbol_145 * OpenAD_Symbol_430 +
-     >  OpenAD_Symbol_478 * OpenAD_Symbol_190)
-      OpenAD_Symbol_563 = (OpenAD_Symbol_454 * OpenAD_Symbol_430 +
-     >  OpenAD_Symbol_479 * OpenAD_Symbol_190)
-      OpenAD_Symbol_564 = (OpenAD_Symbol_455 * OpenAD_Symbol_430 +
-     >  OpenAD_Symbol_480 * OpenAD_Symbol_190)
-      OpenAD_Symbol_565 = (OpenAD_Symbol_481 * OpenAD_Symbol_190)
-      OpenAD_Symbol_566 = (OpenAD_Symbol_482 * OpenAD_Symbol_190)
-      OpenAD_Symbol_567 = (OpenAD_Symbol_483 * OpenAD_Symbol_190)
-      OpenAD_Symbol_568 = (OpenAD_Symbol_484 * OpenAD_Symbol_190)
-      OpenAD_Symbol_569 = (OpenAD_Symbol_140 * OpenAD_Symbol_182 +
-     >  OpenAD_Symbol_485 * OpenAD_Symbol_190)
-      OpenAD_Symbol_570 = (OpenAD_Symbol_141 * OpenAD_Symbol_182 +
-     >  OpenAD_Symbol_486 * OpenAD_Symbol_190)
-      OpenAD_Symbol_571 = (OpenAD_Symbol_458 * OpenAD_Symbol_182 +
-     >  OpenAD_Symbol_487 * OpenAD_Symbol_190)
-      OpenAD_Symbol_572 = (OpenAD_Symbol_459 * OpenAD_Symbol_182 +
-     >  OpenAD_Symbol_488 * OpenAD_Symbol_190)
-      OpenAD_Symbol_573 = (OpenAD_Symbol_441 * OpenAD_Symbol_178)
-      OpenAD_Symbol_574 = (OpenAD_Symbol_442 * OpenAD_Symbol_178)
-      OpenAD_Symbol_575 = (OpenAD_Symbol_443 * OpenAD_Symbol_178)
-      OpenAD_Symbol_576 = (OpenAD_Symbol_445 * OpenAD_Symbol_178)
-      OpenAD_Symbol_577 = (OpenAD_Symbol_447 * OpenAD_Symbol_178)
-      OpenAD_Symbol_578 = (OpenAD_Symbol_449 * OpenAD_Symbol_178)
-      OpenAD_Symbol_579 = (OpenAD_Symbol_450 * OpenAD_Symbol_178)
-      OpenAD_Symbol_580 = (OpenAD_Symbol_451 * OpenAD_Symbol_178)
-      OpenAD_Symbol_581 = (OpenAD_Symbol_452 * OpenAD_Symbol_178)
-      OpenAD_Symbol_582 = (OpenAD_Symbol_453 * OpenAD_Symbol_178)
-      OpenAD_Symbol_583 = (OpenAD_Symbol_460 * OpenAD_Symbol_178)
-      OpenAD_Symbol_584 = (OpenAD_Symbol_461 * OpenAD_Symbol_178)
-      OpenAD_Symbol_585 = (OpenAD_Symbol_462 * OpenAD_Symbol_178)
-      OpenAD_Symbol_586 = (OpenAD_Symbol_463 * OpenAD_Symbol_178)
-      OpenAD_Symbol_587 = (OpenAD_Symbol_173 + OpenAD_Symbol_440 *
-     >  OpenAD_Symbol_178)
-      OpenAD_Symbol_588 = (INT((-1_w2f__i8)) * OpenAD_Symbol_173 +
-     >  OpenAD_Symbol_476 * OpenAD_Symbol_178)
-      OpenAD_Symbol_589 = (OpenAD_Symbol_144 * OpenAD_Symbol_170 +
-     >  OpenAD_Symbol_477 * OpenAD_Symbol_178)
-      OpenAD_Symbol_590 = (OpenAD_Symbol_145 * OpenAD_Symbol_170 +
-     >  OpenAD_Symbol_478 * OpenAD_Symbol_178)
-      OpenAD_Symbol_591 = (OpenAD_Symbol_454 * OpenAD_Symbol_170 +
-     >  OpenAD_Symbol_479 * OpenAD_Symbol_178)
-      OpenAD_Symbol_592 = (OpenAD_Symbol_455 * OpenAD_Symbol_170 +
-     >  OpenAD_Symbol_480 * OpenAD_Symbol_178)
-      OpenAD_Symbol_593 = (OpenAD_Symbol_142 * OpenAD_Symbol_434 +
-     >  OpenAD_Symbol_481 * OpenAD_Symbol_178)
-      OpenAD_Symbol_594 = (OpenAD_Symbol_143 * OpenAD_Symbol_434 +
-     >  OpenAD_Symbol_482 * OpenAD_Symbol_178)
-      OpenAD_Symbol_595 = (OpenAD_Symbol_456 * OpenAD_Symbol_434 +
-     >  OpenAD_Symbol_483 * OpenAD_Symbol_178)
-      OpenAD_Symbol_596 = (OpenAD_Symbol_457 * OpenAD_Symbol_434 +
-     >  OpenAD_Symbol_484 * OpenAD_Symbol_178)
-      OpenAD_Symbol_597 = (OpenAD_Symbol_485 * OpenAD_Symbol_178)
-      OpenAD_Symbol_598 = (OpenAD_Symbol_486 * OpenAD_Symbol_178)
-      OpenAD_Symbol_599 = (OpenAD_Symbol_487 * OpenAD_Symbol_178)
-      OpenAD_Symbol_600 = (OpenAD_Symbol_488 * OpenAD_Symbol_178)
-      OpenAD_Symbol_601 = (OpenAD_Symbol_441 * 5.0D-01)
-      OpenAD_Symbol_602 = (OpenAD_Symbol_442 * 5.0D-01)
-      OpenAD_Symbol_603 = (OpenAD_Symbol_443 * 5.0D-01)
-      OpenAD_Symbol_604 = (OpenAD_Symbol_445 * 5.0D-01)
-      OpenAD_Symbol_605 = (OpenAD_Symbol_447 * 5.0D-01)
-      OpenAD_Symbol_606 = (OpenAD_Symbol_449 * 5.0D-01)
-      OpenAD_Symbol_607 = (OpenAD_Symbol_450 * 5.0D-01)
-      OpenAD_Symbol_608 = (OpenAD_Symbol_451 * 5.0D-01)
-      OpenAD_Symbol_609 = (OpenAD_Symbol_452 * 5.0D-01)
-      OpenAD_Symbol_610 = (OpenAD_Symbol_453 * 5.0D-01)
-      OpenAD_Symbol_611 = (OpenAD_Symbol_460 * 5.0D-01)
-      OpenAD_Symbol_612 = (OpenAD_Symbol_461 * 5.0D-01)
-      OpenAD_Symbol_613 = (OpenAD_Symbol_462 * 5.0D-01)
-      OpenAD_Symbol_614 = (OpenAD_Symbol_463 * 5.0D-01)
-      OpenAD_Symbol_615 = (OpenAD_Symbol_438 + OpenAD_Symbol_440 *
-     >  5.0D-01)
-      OpenAD_Symbol_616 = (INT((-1_w2f__i8)) * OpenAD_Symbol_438 +
-     >  OpenAD_Symbol_476 * 5.0D-01)
-      OpenAD_Symbol_617 = (OpenAD_Symbol_144 * OpenAD_Symbol_470 +
-     >  OpenAD_Symbol_477 * 5.0D-01)
-      OpenAD_Symbol_618 = (OpenAD_Symbol_145 * OpenAD_Symbol_470 +
-     >  OpenAD_Symbol_478 * 5.0D-01)
-      OpenAD_Symbol_619 = (OpenAD_Symbol_454 * OpenAD_Symbol_470 +
-     >  OpenAD_Symbol_479 * 5.0D-01)
-      OpenAD_Symbol_620 = (OpenAD_Symbol_455 * OpenAD_Symbol_470 +
-     >  OpenAD_Symbol_480 * 5.0D-01)
-      OpenAD_Symbol_621 = (OpenAD_Symbol_142 * OpenAD_Symbol_472 +
-     >  OpenAD_Symbol_481 * 5.0D-01)
-      OpenAD_Symbol_622 = (OpenAD_Symbol_143 * OpenAD_Symbol_472 +
-     >  OpenAD_Symbol_482 * 5.0D-01)
-      OpenAD_Symbol_623 = (OpenAD_Symbol_456 * OpenAD_Symbol_472 +
-     >  OpenAD_Symbol_483 * 5.0D-01)
-      OpenAD_Symbol_624 = (OpenAD_Symbol_457 * OpenAD_Symbol_472 +
-     >  OpenAD_Symbol_484 * 5.0D-01)
-      OpenAD_Symbol_625 = (OpenAD_Symbol_140 * OpenAD_Symbol_474 +
-     >  OpenAD_Symbol_485 * 5.0D-01)
-      OpenAD_Symbol_626 = (OpenAD_Symbol_141 * OpenAD_Symbol_474 +
-     >  OpenAD_Symbol_486 * 5.0D-01)
-      OpenAD_Symbol_627 = (OpenAD_Symbol_458 * OpenAD_Symbol_474 +
-     >  OpenAD_Symbol_487 * 5.0D-01)
-      OpenAD_Symbol_628 = (OpenAD_Symbol_459 * OpenAD_Symbol_474 +
-     >  OpenAD_Symbol_488 * 5.0D-01)
-      CALL setderiv(__deriv__(OpenAD_Symbol_629), __deriv__(ALAMCM))
-      CALL setderiv(__deriv__(OpenAD_Symbol_630), __deriv__(ALAMCP))
-      CALL setderiv(__deriv__(OpenAD_Symbol_631), __deriv__(ALAMU))
+      OpenAD_Symbol_363 = (OpenAD_Symbol_156 * OpenAD_Symbol_154)
+      OpenAD_Symbol_364 = (OpenAD_Symbol_157 * OpenAD_Symbol_154)
+      OpenAD_Symbol_365 = (OpenAD_Symbol_146 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_366 = (OpenAD_Symbol_147 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_367 = (OpenAD_Symbol_148 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_368 = (OpenAD_Symbol_149 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_369 = (OpenAD_Symbol_150 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_370 = (OpenAD_Symbol_151 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_371 = (INT((-1_w2f__i8)) * OpenAD_Symbol_179)
+      OpenAD_Symbol_372 = (OpenAD_Symbol_180 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_373 = (OpenAD_Symbol_181 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_374 = (INT((-1_w2f__i8)) * OpenAD_Symbol_191)
+      OpenAD_Symbol_375 = (OpenAD_Symbol_192 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_376 = (OpenAD_Symbol_193 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_377 = (INT((-1_w2f__i8)) * OpenAD_Symbol_203)
+      OpenAD_Symbol_378 = (OpenAD_Symbol_204 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_379 = (OpenAD_Symbol_205 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_380 = (OpenAD_Symbol_208 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_381 = (OpenAD_Symbol_209 * INT((-1_w2f__i8)))
+      CALL setderiv(__deriv__(OpenAD_Symbol_382), __deriv__(ALAMCM))
+      CALL setderiv(__deriv__(OpenAD_Symbol_383), __deriv__(ALAMCP))
+      CALL setderiv(__deriv__(OpenAD_Symbol_384), __deriv__(ALAMU))
+      CALL sax(1_w2f__i8, __deriv__(LAMCM), __deriv__(OpenAD_Symbol_385
+     > ))
+      CALL saxpy(-1_w2f__i8, __deriv__(OpenAD_Symbol_382), __deriv__(
+     > OpenAD_Symbol_385))
+      CALL sax(1_w2f__i8, __deriv__(LAMCP), __deriv__(OpenAD_Symbol_386
+     > ))
+      CALL saxpy(-1_w2f__i8, __deriv__(OpenAD_Symbol_383), __deriv__(
+     > OpenAD_Symbol_386))
+      CALL sax(1_w2f__i8, __deriv__(LAMU), __deriv__(OpenAD_Symbol_387)
+     > )
+      CALL saxpy(-1_w2f__i8, __deriv__(OpenAD_Symbol_384), __deriv__(
+     > OpenAD_Symbol_387))
       CALL sax(OpenAD_Symbol_130, __deriv__(PRIML(2)), __deriv__(RUL))
       CALL saxpy(OpenAD_Symbol_131, __deriv__(PRIML(3)), __deriv__(RUL)
      > )
@@ -1736,275 +1077,130 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_Symbol_134, __deriv__(PRIML(2)), __deriv__(RWL))
       CALL saxpy(OpenAD_Symbol_135, __deriv__(PRIML(5)), __deriv__(RWL)
      > )
-      CALL sax(5.0D-01, __deriv__(LAMCM), __deriv__(ALAMCM))
-      CALL saxpy(-5.0D-01, __deriv__(OpenAD_Symbol_629), __deriv__(
-     > ALAMCM))
-      CALL sax(5.0D-01, __deriv__(LAMCP), __deriv__(ALAMCP))
-      CALL saxpy(-5.0D-01, __deriv__(OpenAD_Symbol_630), __deriv__(
-     > ALAMCP))
-      CALL sax(5.0D-01, __deriv__(LAMU), __deriv__(ALAMU))
-      CALL saxpy(-5.0D-01, __deriv__(OpenAD_Symbol_631), __deriv__(
-     > ALAMU))
-      CALL sax(OpenAD_Symbol_128, __deriv__(PRIML(2)), __deriv__(EL))
-      CALL saxpy(OpenAD_Symbol_129, __deriv__(THETAL), __deriv__(EL))
-      CALL saxpy(OpenAD_Symbol_126, __deriv__(PRIML(1)), __deriv__(EL))
+      CALL sax(1_w2f__i8, __deriv__(PRIMR(2)), __deriv__(DR))
+      CALL saxpy(-1_w2f__i8, __deriv__(PRIML(2)), __deriv__(DR))
+      CALL sax(-1_w2f__i8, __deriv__(RUL), __deriv__(DRU))
+      CALL saxpy(OpenAD_Symbol_140, __deriv__(PRIMR(2)), __deriv__(DRU)
+     > )
+      CALL saxpy(OpenAD_Symbol_141, __deriv__(PRIMR(3)), __deriv__(DRU)
+     > )
+      CALL sax(-1_w2f__i8, __deriv__(RVL), __deriv__(DRV))
+      CALL saxpy(OpenAD_Symbol_142, __deriv__(PRIMR(2)), __deriv__(DRV)
+     > )
+      CALL saxpy(OpenAD_Symbol_143, __deriv__(PRIMR(4)), __deriv__(DRV)
+     > )
+      CALL sax(-1_w2f__i8, __deriv__(RWL), __deriv__(DRW))
+      CALL saxpy(OpenAD_Symbol_144, __deriv__(PRIMR(2)), __deriv__(DRW)
+     > )
+      CALL saxpy(OpenAD_Symbol_145, __deriv__(PRIMR(5)), __deriv__(DRW)
+     > )
+      CALL sax(5.0D-01, __deriv__(OpenAD_Symbol_385), __deriv__(ALAMCM)
+     > )
+      CALL sax(5.0D-01, __deriv__(OpenAD_Symbol_386), __deriv__(ALAMCP)
+     > )
+      CALL sax(5.0D-01, __deriv__(OpenAD_Symbol_387), __deriv__(ALAMU))
+      CALL sax(OpenAD_Symbol_126, __deriv__(PRIML(1)), __deriv__(EL))
       CALL saxpy(OpenAD_Symbol_127, __deriv__(GM1INV), __deriv__(EL))
-      CALL sax(OpenAD_Symbol_439, __deriv__(UHAT), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_471, __deriv__(NZHAT), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_473, __deriv__(NYHAT), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_475, __deriv__(NXHAT), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_601, __deriv__(THTAVE), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_602, __deriv__(GM1), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_603, __deriv__(CAVE), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_604, __deriv__(WAVE), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_605, __deriv__(VAVE), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_606, __deriv__(UAVE), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_607, __deriv__(PRIMR(2)), __deriv__(ALP1
+      CALL saxpy(OpenAD_Symbol_128, __deriv__(PRIML(2)), __deriv__(EL))
+      CALL saxpy(OpenAD_Symbol_129, __deriv__(THETAL), __deriv__(EL))
+      CALL sax(-1_w2f__i8, __deriv__(UTILDE), __deriv__(
+     > OpenAD_Symbol_388))
+      CALL saxpy(OpenAD_Symbol_175, __deriv__(CAVE), __deriv__(
+     > OpenAD_Symbol_388))
+      CALL saxpy(OpenAD_Symbol_176, __deriv__(NXHAT), __deriv__(
+     > OpenAD_Symbol_388))
+      CALL sax(-1_w2f__i8, __deriv__(VTILDE), __deriv__(
+     > OpenAD_Symbol_389))
+      CALL saxpy(OpenAD_Symbol_187, __deriv__(CAVE), __deriv__(
+     > OpenAD_Symbol_389))
+      CALL saxpy(OpenAD_Symbol_188, __deriv__(NYHAT), __deriv__(
+     > OpenAD_Symbol_389))
+      CALL sax(-1_w2f__i8, __deriv__(WTILDE), __deriv__(
+     > OpenAD_Symbol_390))
+      CALL saxpy(OpenAD_Symbol_199, __deriv__(CAVE), __deriv__(
+     > OpenAD_Symbol_390))
+      CALL saxpy(OpenAD_Symbol_200, __deriv__(NZHAT), __deriv__(
+     > OpenAD_Symbol_390))
+      CALL sax(-1_w2f__i8, __deriv__(EL), __deriv__(OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_136, __deriv__(PRIMR(1)), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_137, __deriv__(GM1INV), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_138, __deriv__(PRIMR(2)), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_139, __deriv__(THETAR), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_158, __deriv__(DR), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_159, __deriv__(THTAVE), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_365, __deriv__(DRU), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_366, __deriv__(UAVE), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_367, __deriv__(DRV), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_368, __deriv__(VAVE), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_369, __deriv__(DRW), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL saxpy(OpenAD_Symbol_370, __deriv__(WAVE), __deriv__(
+     > OpenAD_Symbol_391))
+      CALL sax(OpenAD_Symbol_160, __deriv__(DRU), __deriv__(NDDRU))
+      CALL saxpy(OpenAD_Symbol_161, __deriv__(NXHAT), __deriv__(NDDRU))
+      CALL saxpy(OpenAD_Symbol_162, __deriv__(DRV), __deriv__(NDDRU))
+      CALL saxpy(OpenAD_Symbol_163, __deriv__(NYHAT), __deriv__(NDDRU))
+      CALL saxpy(OpenAD_Symbol_164, __deriv__(DRW), __deriv__(NDDRU))
+      CALL saxpy(OpenAD_Symbol_165, __deriv__(NZHAT), __deriv__(NDDRU))
+      CALL sax(OpenAD_Symbol_155, __deriv__(OpenAD_Symbol_391),
+     >  __deriv__(OMEGA))
+      CALL saxpy(OpenAD_Symbol_363, __deriv__(GM1), __deriv__(OMEGA))
+      CALL saxpy(OpenAD_Symbol_364, __deriv__(CAVE), __deriv__(OMEGA))
+      CALL sax(-1_w2f__i8, __deriv__(NDDRU), __deriv__(
+     > OpenAD_Symbol_392))
+      CALL saxpy(1_w2f__i8, __deriv__(OMEGA), __deriv__(
+     > OpenAD_Symbol_392))
+      CALL saxpy(OpenAD_Symbol_168, __deriv__(DR), __deriv__(
+     > OpenAD_Symbol_392))
+      CALL saxpy(OpenAD_Symbol_169, __deriv__(UHAT), __deriv__(
+     > OpenAD_Symbol_392))
+      CALL sax(1_w2f__i8, __deriv__(NDDRU), __deriv__(OpenAD_Symbol_393
      > ))
-      CALL saxpy(OpenAD_Symbol_608, __deriv__(THETAR), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_609, __deriv__(PRIMR(1)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_610, __deriv__(GM1INV), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_611, __deriv__(PRIML(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_612, __deriv__(THETAL), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_613, __deriv__(PRIML(1)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_614, __deriv__(GM1INV), __deriv__(ALP1))
-      CALL saxpy(OpenAD_Symbol_615, __deriv__(PRIMR(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_616, __deriv__(PRIML(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_617, __deriv__(PRIMR(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_618, __deriv__(PRIMR(5)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_619, __deriv__(PRIML(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_620, __deriv__(PRIML(5)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_621, __deriv__(PRIMR(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_622, __deriv__(PRIMR(4)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_623, __deriv__(PRIML(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_624, __deriv__(PRIML(4)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_625, __deriv__(PRIMR(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_626, __deriv__(PRIMR(3)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_627, __deriv__(PRIML(2)), __deriv__(ALP1
-     > ))
-      CALL saxpy(OpenAD_Symbol_628, __deriv__(PRIML(3)), __deriv__(ALP1
-     > ))
-      CALL sax(OpenAD_Symbol_425, __deriv__(UHAT), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_465, __deriv__(NZHAT), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_467, __deriv__(NYHAT), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_469, __deriv__(NXHAT), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_489, __deriv__(THTAVE), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_490, __deriv__(GM1), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_491, __deriv__(CAVE), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_492, __deriv__(WAVE), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_493, __deriv__(VAVE), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_494, __deriv__(UAVE), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_495, __deriv__(PRIMR(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_496, __deriv__(THETAR), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_497, __deriv__(PRIMR(1)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_498, __deriv__(GM1INV), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_499, __deriv__(PRIML(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_500, __deriv__(THETAL), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_501, __deriv__(PRIML(1)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_502, __deriv__(GM1INV), __deriv__(ALP5))
-      CALL saxpy(OpenAD_Symbol_503, __deriv__(PRIMR(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_504, __deriv__(PRIML(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_505, __deriv__(PRIMR(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_506, __deriv__(PRIMR(5)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_507, __deriv__(PRIML(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_508, __deriv__(PRIML(5)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_509, __deriv__(PRIMR(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_510, __deriv__(PRIMR(4)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_511, __deriv__(PRIML(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_512, __deriv__(PRIML(4)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_513, __deriv__(PRIMR(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_514, __deriv__(PRIMR(3)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_515, __deriv__(PRIML(2)), __deriv__(ALP5
-     > ))
-      CALL saxpy(OpenAD_Symbol_516, __deriv__(PRIML(3)), __deriv__(ALP5
-     > ))
-      CALL sax(OpenAD_Symbol_418, __deriv__(NXHAT), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_422, __deriv__(UTILDE), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_435, __deriv__(NZHAT), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_436, __deriv__(CAVE), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_437, __deriv__(NXHAT), __deriv__(ALP2))
+      CALL saxpy(1_w2f__i8, __deriv__(OMEGA), __deriv__(
+     > OpenAD_Symbol_393))
+      CALL saxpy(OpenAD_Symbol_380, __deriv__(DR), __deriv__(
+     > OpenAD_Symbol_393))
+      CALL saxpy(OpenAD_Symbol_381, __deriv__(UHAT), __deriv__(
+     > OpenAD_Symbol_393))
+      CALL sax(5.0D-01, __deriv__(OpenAD_Symbol_392), __deriv__(ALP1))
+      CALL sax(5.0D-01, __deriv__(OpenAD_Symbol_393), __deriv__(ALP5))
+      CALL sax(OpenAD_Symbol_170, __deriv__(DRW), __deriv__(ALP2))
       CALL saxpy(OpenAD_Symbol_171, __deriv__(NYHAT), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_573, __deriv__(THTAVE), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_574, __deriv__(GM1), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_575, __deriv__(CAVE), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_576, __deriv__(WAVE), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_577, __deriv__(VAVE), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_578, __deriv__(UAVE), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_579, __deriv__(PRIMR(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_580, __deriv__(THETAR), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_581, __deriv__(PRIMR(1)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_582, __deriv__(GM1INV), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_583, __deriv__(PRIML(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_584, __deriv__(THETAL), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_585, __deriv__(PRIML(1)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_586, __deriv__(GM1INV), __deriv__(ALP2))
-      CALL saxpy(OpenAD_Symbol_587, __deriv__(PRIMR(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_588, __deriv__(PRIML(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_589, __deriv__(PRIMR(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_590, __deriv__(PRIMR(5)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_591, __deriv__(PRIML(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_592, __deriv__(PRIML(5)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_593, __deriv__(PRIMR(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_594, __deriv__(PRIMR(4)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_595, __deriv__(PRIML(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_596, __deriv__(PRIML(4)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_597, __deriv__(PRIMR(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_598, __deriv__(PRIMR(3)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_599, __deriv__(PRIML(2)), __deriv__(ALP2
-     > ))
-      CALL saxpy(OpenAD_Symbol_600, __deriv__(PRIML(3)), __deriv__(ALP2
-     > ))
-      CALL sax(OpenAD_Symbol_417, __deriv__(NYHAT), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_421, __deriv__(VTILDE), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_431, __deriv__(NXHAT), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_432, __deriv__(CAVE), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_433, __deriv__(NYHAT), __deriv__(ALP3))
+      CALL saxpy(OpenAD_Symbol_173, __deriv__(DR), __deriv__(ALP2))
+      CALL saxpy(OpenAD_Symbol_174, __deriv__(OpenAD_Symbol_388),
+     >  __deriv__(ALP2))
+      CALL saxpy(OpenAD_Symbol_178, __deriv__(OMEGA), __deriv__(ALP2))
+      CALL saxpy(OpenAD_Symbol_371, __deriv__(NXHAT), __deriv__(ALP2))
+      CALL saxpy(OpenAD_Symbol_372, __deriv__(DRV), __deriv__(ALP2))
+      CALL saxpy(OpenAD_Symbol_373, __deriv__(NZHAT), __deriv__(ALP2))
+      CALL sax(OpenAD_Symbol_182, __deriv__(DRU), __deriv__(ALP3))
       CALL saxpy(OpenAD_Symbol_183, __deriv__(NZHAT), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_545, __deriv__(THTAVE), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_546, __deriv__(GM1), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_547, __deriv__(CAVE), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_548, __deriv__(WAVE), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_549, __deriv__(VAVE), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_550, __deriv__(UAVE), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_551, __deriv__(PRIMR(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_552, __deriv__(THETAR), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_553, __deriv__(PRIMR(1)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_554, __deriv__(GM1INV), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_555, __deriv__(PRIML(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_556, __deriv__(THETAL), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_557, __deriv__(PRIML(1)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_558, __deriv__(GM1INV), __deriv__(ALP3))
-      CALL saxpy(OpenAD_Symbol_559, __deriv__(PRIMR(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_560, __deriv__(PRIML(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_561, __deriv__(PRIMR(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_562, __deriv__(PRIMR(5)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_563, __deriv__(PRIML(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_564, __deriv__(PRIML(5)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_565, __deriv__(PRIMR(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_566, __deriv__(PRIMR(4)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_567, __deriv__(PRIML(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_568, __deriv__(PRIML(4)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_569, __deriv__(PRIMR(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_570, __deriv__(PRIMR(3)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_571, __deriv__(PRIML(2)), __deriv__(ALP3
-     > ))
-      CALL saxpy(OpenAD_Symbol_572, __deriv__(PRIML(3)), __deriv__(ALP3
-     > ))
-      CALL sax(OpenAD_Symbol_416, __deriv__(NZHAT), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_420, __deriv__(WTILDE), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_427, __deriv__(NYHAT), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_428, __deriv__(CAVE), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_429, __deriv__(NZHAT), __deriv__(ALP4))
+      CALL saxpy(OpenAD_Symbol_185, __deriv__(DR), __deriv__(ALP3))
+      CALL saxpy(OpenAD_Symbol_186, __deriv__(OpenAD_Symbol_389),
+     >  __deriv__(ALP3))
+      CALL saxpy(OpenAD_Symbol_190, __deriv__(OMEGA), __deriv__(ALP3))
+      CALL saxpy(OpenAD_Symbol_374, __deriv__(NYHAT), __deriv__(ALP3))
+      CALL saxpy(OpenAD_Symbol_375, __deriv__(DRW), __deriv__(ALP3))
+      CALL saxpy(OpenAD_Symbol_376, __deriv__(NXHAT), __deriv__(ALP3))
+      CALL sax(OpenAD_Symbol_194, __deriv__(DRV), __deriv__(ALP4))
       CALL saxpy(OpenAD_Symbol_195, __deriv__(NXHAT), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_517, __deriv__(THTAVE), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_518, __deriv__(GM1), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_519, __deriv__(CAVE), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_520, __deriv__(WAVE), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_521, __deriv__(VAVE), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_522, __deriv__(UAVE), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_523, __deriv__(PRIMR(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_524, __deriv__(THETAR), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_525, __deriv__(PRIMR(1)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_526, __deriv__(GM1INV), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_527, __deriv__(PRIML(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_528, __deriv__(THETAL), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_529, __deriv__(PRIML(1)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_530, __deriv__(GM1INV), __deriv__(ALP4))
-      CALL saxpy(OpenAD_Symbol_531, __deriv__(PRIMR(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_532, __deriv__(PRIML(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_533, __deriv__(PRIMR(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_534, __deriv__(PRIMR(5)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_535, __deriv__(PRIML(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_536, __deriv__(PRIML(5)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_537, __deriv__(PRIMR(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_538, __deriv__(PRIMR(4)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_539, __deriv__(PRIML(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_540, __deriv__(PRIML(4)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_541, __deriv__(PRIMR(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_542, __deriv__(PRIMR(3)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_543, __deriv__(PRIML(2)), __deriv__(ALP4
-     > ))
-      CALL saxpy(OpenAD_Symbol_544, __deriv__(PRIML(3)), __deriv__(ALP4
-     > ))
+      CALL saxpy(OpenAD_Symbol_197, __deriv__(DR), __deriv__(ALP4))
+      CALL saxpy(OpenAD_Symbol_198, __deriv__(OpenAD_Symbol_390),
+     >  __deriv__(ALP4))
+      CALL saxpy(OpenAD_Symbol_202, __deriv__(OMEGA), __deriv__(ALP4))
+      CALL saxpy(OpenAD_Symbol_377, __deriv__(NZHAT), __deriv__(ALP4))
+      CALL saxpy(OpenAD_Symbol_378, __deriv__(DRU), __deriv__(ALP4))
+      CALL saxpy(OpenAD_Symbol_379, __deriv__(NYHAT), __deriv__(ALP4))
       OpenAD_Symbol_212 = (__value__(ALAMCM) * __value__(ALP1))
       OpenAD_Symbol_210 = __value__(ALP1)
       OpenAD_Symbol_211 = __value__(ALAMCM)
@@ -2109,262 +1305,136 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_282 = OpenAD_Symbol_281
       OpenAD_Symbol_283 = __value__(UHATL)
       OpenAD_Symbol_280 = __value__(NSIZE)
-      OpenAD_Symbol_632 = (OpenAD_Symbol_233 * OpenAD_Symbol_280)
-      OpenAD_Symbol_633 = (OpenAD_Symbol_234 * OpenAD_Symbol_280)
-      OpenAD_Symbol_634 = (OpenAD_Symbol_282 * OpenAD_Symbol_280)
-      OpenAD_Symbol_635 = (OpenAD_Symbol_283 * OpenAD_Symbol_280)
-      OpenAD_Symbol_636 = (INT((-1_w2f__i8)) * OpenAD_Symbol_280)
-      OpenAD_Symbol_637 = (OpenAD_Symbol_236 * OpenAD_Symbol_280)
-      OpenAD_Symbol_638 = (OpenAD_Symbol_237 * OpenAD_Symbol_280)
-      OpenAD_Symbol_639 = (OpenAD_Symbol_270 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_640 = (OpenAD_Symbol_271 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_641 = (OpenAD_Symbol_268 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_642 = (OpenAD_Symbol_269 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_643 = (OpenAD_Symbol_262 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_644 = (OpenAD_Symbol_263 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_645 = (OpenAD_Symbol_260 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_646 = (OpenAD_Symbol_261 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_647 = (OpenAD_Symbol_254 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_648 = (OpenAD_Symbol_255 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_649 = (OpenAD_Symbol_252 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_650 = (OpenAD_Symbol_253 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_651 = (OpenAD_Symbol_246 * OpenAD_Symbol_280)
-      OpenAD_Symbol_652 = (OpenAD_Symbol_247 * OpenAD_Symbol_280)
-      OpenAD_Symbol_653 = (OpenAD_Symbol_244 * OpenAD_Symbol_280)
-      OpenAD_Symbol_654 = (OpenAD_Symbol_245 * OpenAD_Symbol_280)
-      OpenAD_Symbol_655 = (OpenAD_Symbol_242 * OpenAD_Symbol_280)
-      OpenAD_Symbol_656 = (OpenAD_Symbol_243 * OpenAD_Symbol_280)
-      OpenAD_Symbol_657 = (OpenAD_Symbol_240 * OpenAD_Symbol_636)
-      OpenAD_Symbol_658 = (OpenAD_Symbol_241 * OpenAD_Symbol_636)
-      OpenAD_Symbol_659 = (OpenAD_Symbol_238 * OpenAD_Symbol_638)
-      OpenAD_Symbol_660 = (OpenAD_Symbol_239 * OpenAD_Symbol_638)
-      OpenAD_Symbol_661 = (OpenAD_Symbol_276 * OpenAD_Symbol_634)
-      OpenAD_Symbol_662 = (OpenAD_Symbol_277 * OpenAD_Symbol_634)
-      OpenAD_Symbol_663 = (OpenAD_Symbol_222 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_664 = (OpenAD_Symbol_222 * OpenAD_Symbol_225)
-      OpenAD_Symbol_665 = (OpenAD_Symbol_223 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_666 = (OpenAD_Symbol_223 * OpenAD_Symbol_225)
-      OpenAD_Symbol_667 = (OpenAD_Symbol_210 * OpenAD_Symbol_225)
-      OpenAD_Symbol_668 = (OpenAD_Symbol_211 * OpenAD_Symbol_225)
-      OpenAD_Symbol_669 = (OpenAD_Symbol_274 * OpenAD_Symbol_634)
-      OpenAD_Symbol_670 = (OpenAD_Symbol_275 * OpenAD_Symbol_634)
-      OpenAD_Symbol_671 = (OpenAD_Symbol_272 * OpenAD_Symbol_634)
-      OpenAD_Symbol_672 = (OpenAD_Symbol_273 * OpenAD_Symbol_634)
-      OpenAD_Symbol_673 = (OpenAD_Symbol_220 * OpenAD_Symbol_231)
-      OpenAD_Symbol_674 = (OpenAD_Symbol_217 * OpenAD_Symbol_229)
-      OpenAD_Symbol_675 = (OpenAD_Symbol_219 * OpenAD_Symbol_231 +
-     >  OpenAD_Symbol_216 * OpenAD_Symbol_229 + OpenAD_Symbol_213 *
-     >  OpenAD_Symbol_227)
-      OpenAD_Symbol_676 = (OpenAD_Symbol_214 * OpenAD_Symbol_227)
-      OpenAD_Symbol_677 = (OpenAD_Symbol_232 * OpenAD_Symbol_266)
-      OpenAD_Symbol_678 = (OpenAD_Symbol_230 * OpenAD_Symbol_266)
-      OpenAD_Symbol_679 = (OpenAD_Symbol_228 * OpenAD_Symbol_266)
-      OpenAD_Symbol_680 = (OpenAD_Symbol_226 * OpenAD_Symbol_266)
-      OpenAD_Symbol_681 = (OpenAD_Symbol_663 * OpenAD_Symbol_641 +
-     >  OpenAD_Symbol_664 * OpenAD_Symbol_266)
-      OpenAD_Symbol_682 = (OpenAD_Symbol_665 * OpenAD_Symbol_641 +
-     >  OpenAD_Symbol_666 * OpenAD_Symbol_266)
-      OpenAD_Symbol_683 = (OpenAD_Symbol_210 * OpenAD_Symbol_641 +
-     >  OpenAD_Symbol_667 * OpenAD_Symbol_266)
-      OpenAD_Symbol_684 = (OpenAD_Symbol_211 * OpenAD_Symbol_641 +
-     >  OpenAD_Symbol_668 * OpenAD_Symbol_266)
-      OpenAD_Symbol_685 = (OpenAD_Symbol_216 * OpenAD_Symbol_639 +
-     >  OpenAD_Symbol_213 * OpenAD_Symbol_264 + OpenAD_Symbol_675 *
-     >  OpenAD_Symbol_266)
-      OpenAD_Symbol_686 = (OpenAD_Symbol_673 * OpenAD_Symbol_266)
-      OpenAD_Symbol_687 = (OpenAD_Symbol_217 * OpenAD_Symbol_639 +
-     >  OpenAD_Symbol_674 * OpenAD_Symbol_266)
-      OpenAD_Symbol_688 = (OpenAD_Symbol_214 * OpenAD_Symbol_264 +
-     >  OpenAD_Symbol_676 * OpenAD_Symbol_266)
-      OpenAD_Symbol_689 = (OpenAD_Symbol_232 * OpenAD_Symbol_258)
-      OpenAD_Symbol_690 = (OpenAD_Symbol_230 * OpenAD_Symbol_258)
-      OpenAD_Symbol_691 = (OpenAD_Symbol_228 * OpenAD_Symbol_258)
-      OpenAD_Symbol_692 = (OpenAD_Symbol_226 * OpenAD_Symbol_258)
-      OpenAD_Symbol_693 = (OpenAD_Symbol_663 * OpenAD_Symbol_645 +
-     >  OpenAD_Symbol_664 * OpenAD_Symbol_258)
-      OpenAD_Symbol_694 = (OpenAD_Symbol_665 * OpenAD_Symbol_645 +
-     >  OpenAD_Symbol_666 * OpenAD_Symbol_258)
-      OpenAD_Symbol_695 = (OpenAD_Symbol_210 * OpenAD_Symbol_645 +
-     >  OpenAD_Symbol_667 * OpenAD_Symbol_258)
-      OpenAD_Symbol_696 = (OpenAD_Symbol_211 * OpenAD_Symbol_645 +
-     >  OpenAD_Symbol_668 * OpenAD_Symbol_258)
-      OpenAD_Symbol_697 = (OpenAD_Symbol_219 * OpenAD_Symbol_256 +
-     >  OpenAD_Symbol_213 * OpenAD_Symbol_643 + OpenAD_Symbol_675 *
-     >  OpenAD_Symbol_258)
-      OpenAD_Symbol_698 = (OpenAD_Symbol_220 * OpenAD_Symbol_256 +
-     >  OpenAD_Symbol_673 * OpenAD_Symbol_258)
-      OpenAD_Symbol_699 = (OpenAD_Symbol_674 * OpenAD_Symbol_258)
-      OpenAD_Symbol_700 = (OpenAD_Symbol_214 * OpenAD_Symbol_643 +
-     >  OpenAD_Symbol_676 * OpenAD_Symbol_258)
-      OpenAD_Symbol_701 = (OpenAD_Symbol_232 * OpenAD_Symbol_250)
-      OpenAD_Symbol_702 = (OpenAD_Symbol_230 * OpenAD_Symbol_250)
-      OpenAD_Symbol_703 = (OpenAD_Symbol_228 * OpenAD_Symbol_250)
-      OpenAD_Symbol_704 = (OpenAD_Symbol_226 * OpenAD_Symbol_250)
-      OpenAD_Symbol_705 = (OpenAD_Symbol_663 * OpenAD_Symbol_649 +
-     >  OpenAD_Symbol_664 * OpenAD_Symbol_250)
-      OpenAD_Symbol_706 = (OpenAD_Symbol_665 * OpenAD_Symbol_649 +
-     >  OpenAD_Symbol_666 * OpenAD_Symbol_250)
-      OpenAD_Symbol_707 = (OpenAD_Symbol_210 * OpenAD_Symbol_649 +
-     >  OpenAD_Symbol_667 * OpenAD_Symbol_250)
-      OpenAD_Symbol_708 = (OpenAD_Symbol_211 * OpenAD_Symbol_649 +
-     >  OpenAD_Symbol_668 * OpenAD_Symbol_250)
-      OpenAD_Symbol_709 = (OpenAD_Symbol_219 * OpenAD_Symbol_647 +
-     >  OpenAD_Symbol_216 * OpenAD_Symbol_248 + OpenAD_Symbol_675 *
-     >  OpenAD_Symbol_250)
-      OpenAD_Symbol_710 = (OpenAD_Symbol_220 * OpenAD_Symbol_647 +
-     >  OpenAD_Symbol_673 * OpenAD_Symbol_250)
-      OpenAD_Symbol_711 = (OpenAD_Symbol_217 * OpenAD_Symbol_248 +
-     >  OpenAD_Symbol_674 * OpenAD_Symbol_250)
-      OpenAD_Symbol_712 = (OpenAD_Symbol_676 * OpenAD_Symbol_250)
-      OpenAD_Symbol_713 = (OpenAD_Symbol_232 * OpenAD_Symbol_632)
-      OpenAD_Symbol_714 = (OpenAD_Symbol_230 * OpenAD_Symbol_632)
-      OpenAD_Symbol_715 = (OpenAD_Symbol_228 * OpenAD_Symbol_632)
-      OpenAD_Symbol_716 = (OpenAD_Symbol_226 * OpenAD_Symbol_632)
-      OpenAD_Symbol_717 = (OpenAD_Symbol_222 * OpenAD_Symbol_637 +
-     >  OpenAD_Symbol_663 * OpenAD_Symbol_657 + OpenAD_Symbol_664 *
-     >  OpenAD_Symbol_632)
-      OpenAD_Symbol_718 = (OpenAD_Symbol_223 * OpenAD_Symbol_637 +
-     >  OpenAD_Symbol_665 * OpenAD_Symbol_657 + OpenAD_Symbol_666 *
-     >  OpenAD_Symbol_632)
-      OpenAD_Symbol_719 = (OpenAD_Symbol_210 * OpenAD_Symbol_637 +
-     >  OpenAD_Symbol_210 * OpenAD_Symbol_657 + OpenAD_Symbol_667 *
-     >  OpenAD_Symbol_632)
-      OpenAD_Symbol_720 = (OpenAD_Symbol_211 * OpenAD_Symbol_637 +
-     >  OpenAD_Symbol_211 * OpenAD_Symbol_657 + OpenAD_Symbol_668 *
-     >  OpenAD_Symbol_632)
-      OpenAD_Symbol_721 = (OpenAD_Symbol_219 * OpenAD_Symbol_651 +
-     >  OpenAD_Symbol_216 * OpenAD_Symbol_653 + OpenAD_Symbol_213 *
-     >  OpenAD_Symbol_655 + OpenAD_Symbol_675 * OpenAD_Symbol_632)
-      OpenAD_Symbol_722 = (OpenAD_Symbol_220 * OpenAD_Symbol_651 +
-     >  OpenAD_Symbol_673 * OpenAD_Symbol_632)
-      OpenAD_Symbol_723 = (OpenAD_Symbol_217 * OpenAD_Symbol_653 +
-     >  OpenAD_Symbol_674 * OpenAD_Symbol_632)
-      OpenAD_Symbol_724 = (OpenAD_Symbol_214 * OpenAD_Symbol_655 +
-     >  OpenAD_Symbol_676 * OpenAD_Symbol_632)
-      CALL sax(OpenAD_Symbol_276, __deriv__(PRIML(5)), __deriv__(UHATL)
+      OpenAD_Symbol_394 = (OpenAD_Symbol_282 * OpenAD_Symbol_280)
+      OpenAD_Symbol_395 = (OpenAD_Symbol_283 * OpenAD_Symbol_280)
+      OpenAD_Symbol_396 = (OpenAD_Symbol_246 * OpenAD_Symbol_280)
+      OpenAD_Symbol_397 = (OpenAD_Symbol_247 * OpenAD_Symbol_280)
+      OpenAD_Symbol_398 = (OpenAD_Symbol_244 * OpenAD_Symbol_280)
+      OpenAD_Symbol_399 = (OpenAD_Symbol_245 * OpenAD_Symbol_280)
+      OpenAD_Symbol_400 = (OpenAD_Symbol_242 * OpenAD_Symbol_280)
+      OpenAD_Symbol_401 = (OpenAD_Symbol_243 * OpenAD_Symbol_280)
+      OpenAD_Symbol_402 = (OpenAD_Symbol_233 * OpenAD_Symbol_280)
+      OpenAD_Symbol_403 = (OpenAD_Symbol_234 * OpenAD_Symbol_280)
+      OpenAD_Symbol_404 = (OpenAD_Symbol_236 * OpenAD_Symbol_280)
+      OpenAD_Symbol_405 = (OpenAD_Symbol_238 * OpenAD_Symbol_237 *
+     >  OpenAD_Symbol_280)
+      OpenAD_Symbol_406 = (OpenAD_Symbol_239 * OpenAD_Symbol_237 *
+     >  OpenAD_Symbol_280)
+      OpenAD_Symbol_407 = (INT((-1_w2f__i8)) * OpenAD_Symbol_280)
+      OpenAD_Symbol_408 = (OpenAD_Symbol_240 * OpenAD_Symbol_407)
+      OpenAD_Symbol_409 = (OpenAD_Symbol_241 * OpenAD_Symbol_407)
+      OpenAD_Symbol_410 = (OpenAD_Symbol_254 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_411 = (OpenAD_Symbol_255 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_412 = (OpenAD_Symbol_262 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_413 = (OpenAD_Symbol_263 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_414 = (OpenAD_Symbol_270 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_415 = (OpenAD_Symbol_271 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_416 = (OpenAD_Symbol_268 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_417 = (OpenAD_Symbol_269 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_418 = (OpenAD_Symbol_260 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_419 = (OpenAD_Symbol_261 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_420 = (OpenAD_Symbol_252 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_421 = (OpenAD_Symbol_253 * INT((-1_w2f__i8)))
+      CALL setderiv(__deriv__(OpenAD_Symbol_422), __deriv__(ALP1))
+      CALL setderiv(__deriv__(OpenAD_Symbol_423), __deriv__(ALP2))
+      CALL setderiv(__deriv__(OpenAD_Symbol_424), __deriv__(ALP3))
+      CALL setderiv(__deriv__(OpenAD_Symbol_425), __deriv__(ALP4))
+      CALL setderiv(__deriv__(OpenAD_Symbol_426), __deriv__(ALP5))
+      CALL sax(OpenAD_Symbol_210, __deriv__(ALAMCM), __deriv__(ALP1))
+      CALL saxpy(OpenAD_Symbol_211, __deriv__(OpenAD_Symbol_422),
+     >  __deriv__(ALP1))
+      CALL sax(OpenAD_Symbol_213, __deriv__(ALAMU), __deriv__(ALP2))
+      CALL saxpy(OpenAD_Symbol_214, __deriv__(OpenAD_Symbol_423),
+     >  __deriv__(ALP2))
+      CALL sax(OpenAD_Symbol_216, __deriv__(ALAMU), __deriv__(ALP3))
+      CALL saxpy(OpenAD_Symbol_217, __deriv__(OpenAD_Symbol_424),
+     >  __deriv__(ALP3))
+      CALL sax(OpenAD_Symbol_219, __deriv__(ALAMU), __deriv__(ALP4))
+      CALL saxpy(OpenAD_Symbol_220, __deriv__(OpenAD_Symbol_425),
+     >  __deriv__(ALP4))
+      CALL sax(OpenAD_Symbol_222, __deriv__(ALAMCP), __deriv__(ALP5))
+      CALL saxpy(OpenAD_Symbol_223, __deriv__(OpenAD_Symbol_426),
+     >  __deriv__(ALP5))
+      CALL sax(1_w2f__i8, __deriv__(ALP1), __deriv__(ALP15P))
+      CALL saxpy(1_w2f__i8, __deriv__(ALP5), __deriv__(ALP15P))
+      CALL sax(1_w2f__i8, __deriv__(ALP1), __deriv__(ALP15M))
+      CALL saxpy(-1_w2f__i8, __deriv__(ALP5), __deriv__(ALP15M))
+      CALL sax(1_w2f__i8, __deriv__(PRIML(1)), __deriv__(
+     > OpenAD_Symbol_427))
+      CALL saxpy(1_w2f__i8, __deriv__(EL), __deriv__(OpenAD_Symbol_427)
      > )
-      CALL saxpy(OpenAD_Symbol_277, __deriv__(NZHAT), __deriv__(UHATL))
+      CALL sax(OpenAD_Symbol_272, __deriv__(PRIML(3)), __deriv__(UHATL)
+     > )
+      CALL saxpy(OpenAD_Symbol_273, __deriv__(NXHAT), __deriv__(UHATL))
       CALL saxpy(OpenAD_Symbol_274, __deriv__(PRIML(4)), __deriv__(
      > UHATL))
       CALL saxpy(OpenAD_Symbol_275, __deriv__(NYHAT), __deriv__(UHATL))
-      CALL saxpy(OpenAD_Symbol_272, __deriv__(PRIML(3)), __deriv__(
+      CALL saxpy(OpenAD_Symbol_276, __deriv__(PRIML(5)), __deriv__(
      > UHATL))
-      CALL saxpy(OpenAD_Symbol_273, __deriv__(NXHAT), __deriv__(UHATL))
-      CALL sax(OpenAD_Symbol_232, __deriv__(NZHAT), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_230, __deriv__(NYHAT), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_228, __deriv__(NXHAT), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_226, __deriv__(CAVE), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_664, __deriv__(ALAMCP), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_666, __deriv__(ALP5), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_667, __deriv__(ALAMCM), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_668, __deriv__(ALP1), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_675, __deriv__(ALAMU), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_673, __deriv__(ALP4), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_674, __deriv__(ALP3), __deriv__(DSS2))
-      CALL saxpy(OpenAD_Symbol_676, __deriv__(ALP2), __deriv__(DSS2))
-      CALL sax(OpenAD_Symbol_251, __deriv__(UAVE), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_648, __deriv__(NYHAT), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_650, __deriv__(NXHAT), __deriv__(DSS3))
+      CALL saxpy(OpenAD_Symbol_277, __deriv__(NZHAT), __deriv__(UHATL))
+      CALL sax(OpenAD_Symbol_225, __deriv__(ALP15P), __deriv__(MU))
+      CALL saxpy(OpenAD_Symbol_226, __deriv__(CAVE), __deriv__(MU))
+      CALL saxpy(OpenAD_Symbol_227, __deriv__(ALP2), __deriv__(MU))
+      CALL saxpy(OpenAD_Symbol_228, __deriv__(NXHAT), __deriv__(MU))
+      CALL saxpy(OpenAD_Symbol_229, __deriv__(ALP3), __deriv__(MU))
+      CALL saxpy(OpenAD_Symbol_230, __deriv__(NYHAT), __deriv__(MU))
+      CALL saxpy(OpenAD_Symbol_231, __deriv__(ALP4), __deriv__(MU))
+      CALL saxpy(OpenAD_Symbol_232, __deriv__(NZHAT), __deriv__(MU))
+      CALL setderiv(__deriv__(DSS2), __deriv__(MU))
+      CALL sax(OpenAD_Symbol_250, __deriv__(MU), __deriv__(DSS3))
+      CALL saxpy(OpenAD_Symbol_251, __deriv__(UAVE), __deriv__(DSS3))
+      CALL saxpy(OpenAD_Symbol_410, __deriv__(ALP4), __deriv__(DSS3))
+      CALL saxpy(OpenAD_Symbol_411, __deriv__(NYHAT), __deriv__(DSS3))
+      CALL saxpy(OpenAD_Symbol_248, __deriv__(ALP3), __deriv__(DSS3))
       CALL saxpy(OpenAD_Symbol_249, __deriv__(NZHAT), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_701, __deriv__(NZHAT), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_702, __deriv__(NYHAT), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_703, __deriv__(NXHAT), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_704, __deriv__(CAVE), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_705, __deriv__(ALAMCP), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_706, __deriv__(ALP5), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_707, __deriv__(ALAMCM), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_708, __deriv__(ALP1), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_709, __deriv__(ALAMU), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_710, __deriv__(ALP4), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_711, __deriv__(ALP3), __deriv__(DSS3))
-      CALL saxpy(OpenAD_Symbol_712, __deriv__(ALP2), __deriv__(DSS3))
-      CALL sax(OpenAD_Symbol_259, __deriv__(VAVE), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_644, __deriv__(NZHAT), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_646, __deriv__(NYHAT), __deriv__(DSS4))
+      CALL saxpy(OpenAD_Symbol_420, __deriv__(ALP15M), __deriv__(DSS3))
+      CALL saxpy(OpenAD_Symbol_421, __deriv__(NXHAT), __deriv__(DSS3))
+      CALL sax(OpenAD_Symbol_258, __deriv__(MU), __deriv__(DSS4))
+      CALL saxpy(OpenAD_Symbol_259, __deriv__(VAVE), __deriv__(DSS4))
+      CALL saxpy(OpenAD_Symbol_412, __deriv__(ALP2), __deriv__(DSS4))
+      CALL saxpy(OpenAD_Symbol_413, __deriv__(NZHAT), __deriv__(DSS4))
+      CALL saxpy(OpenAD_Symbol_256, __deriv__(ALP4), __deriv__(DSS4))
       CALL saxpy(OpenAD_Symbol_257, __deriv__(NXHAT), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_689, __deriv__(NZHAT), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_690, __deriv__(NYHAT), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_691, __deriv__(NXHAT), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_692, __deriv__(CAVE), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_693, __deriv__(ALAMCP), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_694, __deriv__(ALP5), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_695, __deriv__(ALAMCM), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_696, __deriv__(ALP1), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_697, __deriv__(ALAMU), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_698, __deriv__(ALP4), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_699, __deriv__(ALP3), __deriv__(DSS4))
-      CALL saxpy(OpenAD_Symbol_700, __deriv__(ALP2), __deriv__(DSS4))
-      CALL sax(OpenAD_Symbol_267, __deriv__(WAVE), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_640, __deriv__(NXHAT), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_642, __deriv__(NZHAT), __deriv__(DSS5))
+      CALL saxpy(OpenAD_Symbol_418, __deriv__(ALP15M), __deriv__(DSS4))
+      CALL saxpy(OpenAD_Symbol_419, __deriv__(NYHAT), __deriv__(DSS4))
+      CALL sax(OpenAD_Symbol_266, __deriv__(MU), __deriv__(DSS5))
+      CALL saxpy(OpenAD_Symbol_267, __deriv__(WAVE), __deriv__(DSS5))
+      CALL saxpy(OpenAD_Symbol_414, __deriv__(ALP3), __deriv__(DSS5))
+      CALL saxpy(OpenAD_Symbol_415, __deriv__(NXHAT), __deriv__(DSS5))
+      CALL saxpy(OpenAD_Symbol_264, __deriv__(ALP2), __deriv__(DSS5))
       CALL saxpy(OpenAD_Symbol_265, __deriv__(NYHAT), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_677, __deriv__(NZHAT), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_678, __deriv__(NYHAT), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_679, __deriv__(NXHAT), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_680, __deriv__(CAVE), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_681, __deriv__(ALAMCP), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_682, __deriv__(ALP5), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_683, __deriv__(ALAMCM), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_684, __deriv__(ALP1), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_685, __deriv__(ALAMU), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_686, __deriv__(ALP4), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_687, __deriv__(ALP3), __deriv__(DSS5))
-      CALL saxpy(OpenAD_Symbol_688, __deriv__(ALP2), __deriv__(DSS5))
-      CALL sax(OpenAD_Symbol_633, __deriv__(THTAVE), __deriv__(FLUX(1))
+      CALL saxpy(OpenAD_Symbol_416, __deriv__(ALP15M), __deriv__(DSS5))
+      CALL saxpy(OpenAD_Symbol_417, __deriv__(NZHAT), __deriv__(DSS5))
+      CALL sax(OpenAD_Symbol_279, __deriv__(NSIZE), __deriv__(FLUX(1)))
+      CALL saxpy(OpenAD_Symbol_394, __deriv__(UHATL), __deriv__(FLUX(1)
+     > ))
+      CALL saxpy(OpenAD_Symbol_395, __deriv__(OpenAD_Symbol_427),
+     >  __deriv__(FLUX(1)))
+      CALL saxpy(OpenAD_Symbol_396, __deriv__(ALP4), __deriv__(FLUX(1))
      > )
-      CALL saxpy(OpenAD_Symbol_635, __deriv__(PRIML(1)), __deriv__(FLUX
-     > (1)))
-      CALL saxpy(OpenAD_Symbol_635, __deriv__(EL), __deriv__(FLUX(1)))
-      CALL saxpy(OpenAD_Symbol_652, __deriv__(WTILDE), __deriv__(FLUX(1
+      CALL saxpy(OpenAD_Symbol_397, __deriv__(WTILDE), __deriv__(FLUX(1
      > )))
-      CALL saxpy(OpenAD_Symbol_654, __deriv__(VTILDE), __deriv__(FLUX(1
+      CALL saxpy(OpenAD_Symbol_398, __deriv__(ALP3), __deriv__(FLUX(1))
+     > )
+      CALL saxpy(OpenAD_Symbol_399, __deriv__(VTILDE), __deriv__(FLUX(1
      > )))
-      CALL saxpy(OpenAD_Symbol_656, __deriv__(UTILDE), __deriv__(FLUX(1
+      CALL saxpy(OpenAD_Symbol_400, __deriv__(ALP2), __deriv__(FLUX(1))
+     > )
+      CALL saxpy(OpenAD_Symbol_401, __deriv__(UTILDE), __deriv__(FLUX(1
      > )))
-      CALL saxpy(OpenAD_Symbol_658, __deriv__(UHAT), __deriv__(FLUX(1))
-     > )
-      CALL saxpy(OpenAD_Symbol_659, __deriv__(GM1INV), __deriv__(FLUX(1
+      CALL saxpy(OpenAD_Symbol_402, __deriv__(MU), __deriv__(FLUX(1)))
+      CALL saxpy(OpenAD_Symbol_403, __deriv__(THTAVE), __deriv__(FLUX(1
      > )))
-      CALL saxpy(OpenAD_Symbol_660, __deriv__(CAVE), __deriv__(FLUX(1))
-     > )
-      CALL saxpy(OpenAD_Symbol_661, __deriv__(PRIML(5)), __deriv__(FLUX
-     > (1)))
-      CALL saxpy(OpenAD_Symbol_662, __deriv__(NZHAT), __deriv__(FLUX(1)
-     > ))
-      CALL saxpy(OpenAD_Symbol_669, __deriv__(PRIML(4)), __deriv__(FLUX
-     > (1)))
-      CALL saxpy(OpenAD_Symbol_670, __deriv__(NYHAT), __deriv__(FLUX(1)
-     > ))
-      CALL saxpy(OpenAD_Symbol_671, __deriv__(PRIML(3)), __deriv__(FLUX
-     > (1)))
-      CALL saxpy(OpenAD_Symbol_672, __deriv__(NXHAT), __deriv__(FLUX(1)
-     > ))
-      CALL saxpy(OpenAD_Symbol_713, __deriv__(NZHAT), __deriv__(FLUX(1)
-     > ))
-      CALL saxpy(OpenAD_Symbol_714, __deriv__(NYHAT), __deriv__(FLUX(1)
-     > ))
-      CALL saxpy(OpenAD_Symbol_715, __deriv__(NXHAT), __deriv__(FLUX(1)
-     > ))
-      CALL saxpy(OpenAD_Symbol_716, __deriv__(CAVE), __deriv__(FLUX(1))
-     > )
-      CALL saxpy(OpenAD_Symbol_717, __deriv__(ALAMCP), __deriv__(FLUX(1
+      CALL saxpy(OpenAD_Symbol_404, __deriv__(ALP15P), __deriv__(FLUX(1
      > )))
-      CALL saxpy(OpenAD_Symbol_718, __deriv__(ALP5), __deriv__(FLUX(1))
-     > )
-      CALL saxpy(OpenAD_Symbol_719, __deriv__(ALAMCM), __deriv__(FLUX(1
+      CALL saxpy(OpenAD_Symbol_405, __deriv__(GM1INV), __deriv__(FLUX(1
      > )))
-      CALL saxpy(OpenAD_Symbol_720, __deriv__(ALP1), __deriv__(FLUX(1))
+      CALL saxpy(OpenAD_Symbol_406, __deriv__(CAVE), __deriv__(FLUX(1))
      > )
-      CALL saxpy(OpenAD_Symbol_721, __deriv__(ALAMU), __deriv__(FLUX(1)
-     > ))
-      CALL saxpy(OpenAD_Symbol_722, __deriv__(ALP4), __deriv__(FLUX(1))
+      CALL saxpy(OpenAD_Symbol_408, __deriv__(ALP15M), __deriv__(FLUX(1
+     > )))
+      CALL saxpy(OpenAD_Symbol_409, __deriv__(UHAT), __deriv__(FLUX(1))
      > )
-      CALL saxpy(OpenAD_Symbol_723, __deriv__(ALP3), __deriv__(FLUX(1))
-     > )
-      CALL saxpy(OpenAD_Symbol_724, __deriv__(ALP2), __deriv__(FLUX(1))
-     > )
-      CALL saxpy(OpenAD_Symbol_279, __deriv__(NSIZE), __deriv__(FLUX(1)
-     > ))
       OpenAD_Symbol_284 = (__value__(DSS2) + __value__(PRIML(2)) *
      >  __value__(UHATL))
       __value__(FLUX(2)) = (__value__(NSIZE) * OpenAD_Symbol_284)
@@ -2372,15 +1442,15 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_287 = __value__(UHATL)
       OpenAD_Symbol_288 = __value__(PRIML(2))
       OpenAD_Symbol_286 = __value__(NSIZE)
-      OpenAD_Symbol_725 = (OpenAD_Symbol_287 * OpenAD_Symbol_286)
-      OpenAD_Symbol_726 = (OpenAD_Symbol_288 * OpenAD_Symbol_286)
-      CALL sax(OpenAD_Symbol_286, __deriv__(DSS2), __deriv__(FLUX(2)))
-      CALL saxpy(OpenAD_Symbol_725, __deriv__(PRIML(2)), __deriv__(FLUX
-     > (2)))
-      CALL saxpy(OpenAD_Symbol_726, __deriv__(UHATL), __deriv__(FLUX(2)
-     > ))
-      CALL saxpy(OpenAD_Symbol_285, __deriv__(NSIZE), __deriv__(FLUX(2)
-     > ))
+      CALL sax(1_w2f__i8, __deriv__(DSS2), __deriv__(OpenAD_Symbol_428)
+     > )
+      CALL saxpy(OpenAD_Symbol_287, __deriv__(PRIML(2)), __deriv__(
+     > OpenAD_Symbol_428))
+      CALL saxpy(OpenAD_Symbol_288, __deriv__(UHATL), __deriv__(
+     > OpenAD_Symbol_428))
+      CALL sax(OpenAD_Symbol_285, __deriv__(NSIZE), __deriv__(FLUX(2)))
+      CALL saxpy(OpenAD_Symbol_286, __deriv__(OpenAD_Symbol_428),
+     >  __deriv__(FLUX(2)))
       OpenAD_Symbol_289 = (__value__(DSS3) + __value__(PRIML(1)) *
      >  __value__(NXHAT) + __value__(RUL) * __value__(UHATL))
       __value__(FLUX(3)) = (__value__(NSIZE) * OpenAD_Symbol_289)
@@ -2390,20 +1460,19 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_294 = __value__(UHATL)
       OpenAD_Symbol_295 = __value__(RUL)
       OpenAD_Symbol_291 = __value__(NSIZE)
-      OpenAD_Symbol_727 = (OpenAD_Symbol_294 * OpenAD_Symbol_291)
-      OpenAD_Symbol_728 = (OpenAD_Symbol_295 * OpenAD_Symbol_291)
-      OpenAD_Symbol_729 = (OpenAD_Symbol_292 * OpenAD_Symbol_291)
-      OpenAD_Symbol_730 = (OpenAD_Symbol_293 * OpenAD_Symbol_291)
-      CALL sax(OpenAD_Symbol_291, __deriv__(DSS3), __deriv__(FLUX(3)))
-      CALL saxpy(OpenAD_Symbol_727, __deriv__(RUL), __deriv__(FLUX(3)))
-      CALL saxpy(OpenAD_Symbol_728, __deriv__(UHATL), __deriv__(FLUX(3)
-     > ))
-      CALL saxpy(OpenAD_Symbol_729, __deriv__(PRIML(1)), __deriv__(FLUX
-     > (3)))
-      CALL saxpy(OpenAD_Symbol_730, __deriv__(NXHAT), __deriv__(FLUX(3)
-     > ))
-      CALL saxpy(OpenAD_Symbol_290, __deriv__(NSIZE), __deriv__(FLUX(3)
-     > ))
+      CALL sax(1_w2f__i8, __deriv__(DSS3), __deriv__(OpenAD_Symbol_429)
+     > )
+      CALL saxpy(OpenAD_Symbol_292, __deriv__(PRIML(1)), __deriv__(
+     > OpenAD_Symbol_429))
+      CALL saxpy(OpenAD_Symbol_293, __deriv__(NXHAT), __deriv__(
+     > OpenAD_Symbol_429))
+      CALL saxpy(OpenAD_Symbol_294, __deriv__(RUL), __deriv__(
+     > OpenAD_Symbol_429))
+      CALL saxpy(OpenAD_Symbol_295, __deriv__(UHATL), __deriv__(
+     > OpenAD_Symbol_429))
+      CALL sax(OpenAD_Symbol_290, __deriv__(NSIZE), __deriv__(FLUX(3)))
+      CALL saxpy(OpenAD_Symbol_291, __deriv__(OpenAD_Symbol_429),
+     >  __deriv__(FLUX(3)))
       OpenAD_Symbol_296 = (__value__(DSS4) + __value__(PRIML(1)) *
      >  __value__(NYHAT) + __value__(RVL) * __value__(UHATL))
       __value__(FLUX(4)) = (__value__(NSIZE) * OpenAD_Symbol_296)
@@ -2413,20 +1482,19 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_301 = __value__(UHATL)
       OpenAD_Symbol_302 = __value__(RVL)
       OpenAD_Symbol_298 = __value__(NSIZE)
-      OpenAD_Symbol_731 = (OpenAD_Symbol_301 * OpenAD_Symbol_298)
-      OpenAD_Symbol_732 = (OpenAD_Symbol_302 * OpenAD_Symbol_298)
-      OpenAD_Symbol_733 = (OpenAD_Symbol_299 * OpenAD_Symbol_298)
-      OpenAD_Symbol_734 = (OpenAD_Symbol_300 * OpenAD_Symbol_298)
-      CALL sax(OpenAD_Symbol_298, __deriv__(DSS4), __deriv__(FLUX(4)))
-      CALL saxpy(OpenAD_Symbol_731, __deriv__(RVL), __deriv__(FLUX(4)))
-      CALL saxpy(OpenAD_Symbol_732, __deriv__(UHATL), __deriv__(FLUX(4)
-     > ))
-      CALL saxpy(OpenAD_Symbol_733, __deriv__(PRIML(1)), __deriv__(FLUX
-     > (4)))
-      CALL saxpy(OpenAD_Symbol_734, __deriv__(NYHAT), __deriv__(FLUX(4)
-     > ))
-      CALL saxpy(OpenAD_Symbol_297, __deriv__(NSIZE), __deriv__(FLUX(4)
-     > ))
+      CALL sax(1_w2f__i8, __deriv__(DSS4), __deriv__(OpenAD_Symbol_430)
+     > )
+      CALL saxpy(OpenAD_Symbol_299, __deriv__(PRIML(1)), __deriv__(
+     > OpenAD_Symbol_430))
+      CALL saxpy(OpenAD_Symbol_300, __deriv__(NYHAT), __deriv__(
+     > OpenAD_Symbol_430))
+      CALL saxpy(OpenAD_Symbol_301, __deriv__(RVL), __deriv__(
+     > OpenAD_Symbol_430))
+      CALL saxpy(OpenAD_Symbol_302, __deriv__(UHATL), __deriv__(
+     > OpenAD_Symbol_430))
+      CALL sax(OpenAD_Symbol_297, __deriv__(NSIZE), __deriv__(FLUX(4)))
+      CALL saxpy(OpenAD_Symbol_298, __deriv__(OpenAD_Symbol_430),
+     >  __deriv__(FLUX(4)))
       OpenAD_Symbol_303 = (__value__(DSS5) + __value__(PRIML(1)) *
      >  __value__(NZHAT) + __value__(RWL) * __value__(UHATL))
       __value__(FLUX(5)) = (__value__(NSIZE) * OpenAD_Symbol_303)
@@ -2436,18 +1504,17 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_308 = __value__(UHATL)
       OpenAD_Symbol_309 = __value__(RWL)
       OpenAD_Symbol_305 = __value__(NSIZE)
-      OpenAD_Symbol_735 = (OpenAD_Symbol_308 * OpenAD_Symbol_305)
-      OpenAD_Symbol_736 = (OpenAD_Symbol_309 * OpenAD_Symbol_305)
-      OpenAD_Symbol_737 = (OpenAD_Symbol_306 * OpenAD_Symbol_305)
-      OpenAD_Symbol_738 = (OpenAD_Symbol_307 * OpenAD_Symbol_305)
-      CALL sax(OpenAD_Symbol_305, __deriv__(DSS5), __deriv__(FLUX(5)))
-      CALL saxpy(OpenAD_Symbol_735, __deriv__(RWL), __deriv__(FLUX(5)))
-      CALL saxpy(OpenAD_Symbol_736, __deriv__(UHATL), __deriv__(FLUX(5)
-     > ))
-      CALL saxpy(OpenAD_Symbol_737, __deriv__(PRIML(1)), __deriv__(FLUX
-     > (5)))
-      CALL saxpy(OpenAD_Symbol_738, __deriv__(NZHAT), __deriv__(FLUX(5)
-     > ))
-      CALL saxpy(OpenAD_Symbol_304, __deriv__(NSIZE), __deriv__(FLUX(5)
-     > ))
+      CALL sax(1_w2f__i8, __deriv__(DSS5), __deriv__(OpenAD_Symbol_431)
+     > )
+      CALL saxpy(OpenAD_Symbol_306, __deriv__(PRIML(1)), __deriv__(
+     > OpenAD_Symbol_431))
+      CALL saxpy(OpenAD_Symbol_307, __deriv__(NZHAT), __deriv__(
+     > OpenAD_Symbol_431))
+      CALL saxpy(OpenAD_Symbol_308, __deriv__(RWL), __deriv__(
+     > OpenAD_Symbol_431))
+      CALL saxpy(OpenAD_Symbol_309, __deriv__(UHATL), __deriv__(
+     > OpenAD_Symbol_431))
+      CALL sax(OpenAD_Symbol_304, __deriv__(NSIZE), __deriv__(FLUX(5)))
+      CALL saxpy(OpenAD_Symbol_305, __deriv__(OpenAD_Symbol_431),
+     >  __deriv__(FLUX(5)))
       END SUBROUTINE

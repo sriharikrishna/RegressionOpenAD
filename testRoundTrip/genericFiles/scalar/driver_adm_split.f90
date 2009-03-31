@@ -63,7 +63,7 @@ program driver
   double precision, dimension(:), allocatable :: x0
   double precision, dimension(:,:), allocatable :: res_adj
   type(active), dimension(:), allocatable :: x, y, y0
-  real h
+  double precision h
   integer n,m
   integer i,j,k
 

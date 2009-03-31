@@ -65,7 +65,7 @@ program driver
   double precision y_ph1, y_ph2
 
   double precision, dimension(2) :: x0
-  real :: h
+  double precision :: h
   integer:: n,m
   integer i
 

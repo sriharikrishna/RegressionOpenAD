@@ -106,6 +106,8 @@ endif
 
 ifeq ($(MAJOR_MODE),dd)
 MODULES+= all_globals_mod.o
+else ifeq ($(MAJOR_MODE),mf)
+MODULES+= all_globals_mod.pre.w2f.o
 else
 MODULES+= all_globals_mod.pre.xb.x2w.w2f.post.o 
 endif
@@ -130,6 +132,8 @@ endif
 DRIVER_PRE_REQ=$(MODULES)
 ifeq ($(MAJOR_MODE),dd)
 DRIVER_PRE_REQ+=head.o
+else ifeq ($(MAJOR_MODE),mf)
+DRIVER_PRE_REQ+=head.pre.w2f.o
 else
 DRIVER_PRE_REQ+=head.pre.xb.x2w.w2f.post.o
 endif 
@@ -218,6 +222,25 @@ all_globals_mod.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.post.f
 head.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.post.f
 	cat $< | sed '/MODULE all_globals_mod/,/END MODULE/d' > $@
 
+# targets for passing through Pre/PostProcessor and mfef90 exclusively ###################
+
+# WHIRL -> F
+head_sf.pre.w2f.f: head_sf.pre.B whirl2f whirl2f_be
+	$(COMPLAIN)
+	./whirl2f -openad $<
+
+# extract the transformed globals module so we the right order of 
+# compilation with respect to the globals checkpoint module
+all_globals_mod.pre.w2f.f: head_sf.pre.w2f.f
+	cat $< | sed -n '/MODULE all_globals_mod/,/END MODULE/p' > $@
+
+# remove the transformed globals module from the transformed head file
+head.pre.w2f.f: head_sf.pre.w2f.f
+	$(COMPLAIN)
+	cat $< | sed '/MODULE all_globals_mod/,/END MODULE/d' > $@
+
+##########################################################################################
+
 # setup some links
 %.xsd:
 	@$(LN) ${XAIFSCHEMAROOT}/schema/$@ .
@@ -285,5 +308,6 @@ clean: groupClean
 	$(RM) *.xsd 
 	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f *Process.py xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
 	$(RM) *.mod *.o
+	$(RM) plotOutput
 
 .PHONY: all minClean groupClean clean run
