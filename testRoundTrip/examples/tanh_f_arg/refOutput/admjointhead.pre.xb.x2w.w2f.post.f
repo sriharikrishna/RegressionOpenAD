@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -72,8 +73,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -86,6 +87,7 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -112,19 +114,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       Y(1)%v = TANH(X(1)%v)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -138,11 +143,12 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = TANH(X(1)%v)
-      OpenAD_Symbol_1 = (INT(1_w2f__i8) - OpenAD_Symbol_0 *  OpenAD_Symb
-     +ol_0)
+      OpenAD_Symbol_1 = (INT(1_w2f__i8) - OpenAD_Symbol_0 *
+     >  OpenAD_Symbol_0)
       Y(1)%v = OpenAD_Symbol_0
           double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -164,6 +170,7 @@ C adjoint
           Y(1)%d = 0.0d0
           X(1)%d = X(1)%d+OpenAD_Symbol_2%d
           OpenAD_Symbol_2%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

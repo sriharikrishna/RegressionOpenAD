@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -80,6 +81,7 @@ C
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -106,24 +108,28 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
           call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           X%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",X%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
           theArgFStackoffset = theArgFStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*2.0D00)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -135,8 +141,8 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*2.0D00)
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -154,6 +160,7 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
           X%d = X%d+Y%d*2.0D00
           Y%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -214,7 +221,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -236,7 +244,7 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       type(active) :: Y
 C
 C     **** Local Variables and Functions ****
@@ -245,15 +253,8 @@ C
       INTEGER(w2f__i4) K
       INTEGER(w2f__i4) L
       REAL(w2f__8) P(1 : 2)
-      type(active) :: Q(1 : 2)
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+      type(active) :: Q(1:2)
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -280,12 +281,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -303,6 +314,7 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL foo(OpenAD_Symbol_0,Q(L))
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(P(K),OpenAD_Symbol_0)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -332,6 +344,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
           integer_tape_pointer = integer_tape_pointer+1
           integer_tape(integer_tape_pointer) = L
           integer_tape_pointer = integer_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -363,6 +376,7 @@ C adjoint
           integer_tape_pointer = integer_tape_pointer-1
           K = integer_tape(integer_tape_pointer)
       CALL foo(X(K),Y)
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

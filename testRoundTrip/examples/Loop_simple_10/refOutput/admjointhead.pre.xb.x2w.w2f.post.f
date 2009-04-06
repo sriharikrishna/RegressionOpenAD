@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,Y,A,J)
+
+      SUBROUTINE foo(X, Y, A, J)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -83,8 +84,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
       INTEGER(w2f__i4) A(1 : 2, 1 : 2)
       INTEGER(w2f__i4) J
 C
@@ -100,6 +101,7 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -126,6 +128,7 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -138,7 +141,8 @@ C store arguments
           do cp_loop_variable_2 = lbound(A,2),ubound(A,2)
           call cp_store_int_vector(A(:,cp_loop_variable_2),size(A(:,cp_l
      +oop_variable_2)),theArgIStack,theArgIStackoffset,theArgIStackSize)
-          end do
+          enddo
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -147,29 +151,29 @@ C restore arguments
                 A(cp_loop_variable_1,cp_loop_variable_2) = theArgIStack(
      +theArgIStackoffset)
                 theArgIStackoffset = theArgIStackoffset-1
-             end do
-          end do
+             enddo
+          enddo
           do cp_loop_variable_1 = ubound(Y,1),lbound(Y,1),-1
              Y(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
              theArgFStackoffset = theArgFStackoffset-1
-C write(*,'(A,EN26.16E3)')"restore(v)  ",
-C+Y(cp_loop_variable_1)%v
-          end do
+C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
+C     +Y(cp_loop_variable_1)%v
+          enddo
           do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
              X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
              theArgFStackoffset = theArgFStackoffset-1
-C write(*,'(A,EN26.16E3)')"restore(v)  ",
-C+X(cp_loop_variable_1)%v
-          end do
+C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
+C     +X(cp_loop_variable_1)%v
+          enddo
           J = theArgIStack(theArgIStackoffset)
-C write(*,'(A,I5,I5)')"restore(s)  ",J,theArgIStackOffset
+C          write(*,'(A,I5,I5)') "restore(s)  ", J, theArgIStackOffset
           theArgIStackoffset = theArgIStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       Y(1)%v = X(1)%v
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
@@ -179,6 +183,7 @@ C$OPENAD XXX Simple loop
           Y(1)%v = 0.0
         ENDIF
       END DO
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -215,6 +220,7 @@ C$OPENAD XXX Simple loop
       END DO
           integer_tape(integer_tape_pointer) = J
           integer_tape_pointer = integer_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -239,9 +245,9 @@ C adjoint
         IF(A(I, J) .ne. 0) THEN
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_39 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_8%d = OpenAD_Symbol_8%d+Y(1)%d*OpenAD_Symbol_39
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_40 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_8%d = OpenAD_Symbol_8%d+Y(1)%d*OpenAD_Symbol_39
           X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_40
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_8%d
@@ -253,6 +259,7 @@ C adjoint
       END DO
           X(1)%d = X(1)%d+Y(1)%d
           Y(1)%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -313,7 +320,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -355,8 +363,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -365,14 +373,7 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       INTEGER(w2f__i4) OAD_CTMP0
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -399,12 +400,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -423,6 +434,7 @@ C$OPENAD XXX Template ad_template.f
           A(I, J) = 0
         END DO
       END DO
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -463,6 +475,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_25
           integer_tape_pointer = integer_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -503,6 +516,7 @@ C adjoint
         END DO
         OpenAD_Symbol_20 = INT(OpenAD_Symbol_20) + 1
       END DO
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

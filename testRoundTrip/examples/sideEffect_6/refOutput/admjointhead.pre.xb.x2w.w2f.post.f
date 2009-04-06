@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(A,X)
+
+      SUBROUTINE foo(A, X)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -87,9 +88,7 @@ C     **** Parameters and Result ****
 C
       CHARACTER(*) A
       type(active) :: X
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -116,6 +115,9 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -123,14 +125,16 @@ C store arguments
      +theArgSStackSize)
           call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           X%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",X%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
           theArgFStackoffset = theArgFStackoffset-1
           A = theArgSStack(theArgSStackoffset)
           theArgSStackoffset = theArgSStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -143,6 +147,7 @@ C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'three') THEN
         X%v = (X%v*3.0D00)
       ENDIF
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -177,6 +182,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
           integer_tape_pointer = integer_tape_pointer+1
       ENDIF
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -208,6 +214,7 @@ C adjoint
           X%d = X%d+OpenAD_Symbol_4%d
           OpenAD_Symbol_4%d = 0.0d0
       ENDIF
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -268,7 +275,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -283,21 +291,14 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
       CHARACTER(10) A
       EXTERNAL foo
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -324,12 +325,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -342,6 +353,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(A,X)
       A = 'four'
       Y(1)%v = X(1)%v
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -360,6 +372,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(A,X)
       A = 'four'
       Y(1)%v = X(1)%v
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -379,6 +392,7 @@ C adjoint
           Y(1)%d = 0.0d0
       CALL foo(A,X)
       CALL foo(A,X)
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

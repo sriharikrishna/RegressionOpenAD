@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,Y,A)
+
+      SUBROUTINE foo(X, Y, A)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -75,17 +76,17 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
       INTEGER(w2f__i4) A
 C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i8) OpenAD_Symbol_0
-      INTEGER(w2f__i8) OpenAD_Symbol_1
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -112,6 +113,8 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -119,25 +122,27 @@ C store arguments
      +ArgIStackSize)
           call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
              X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
              theArgFStackoffset = theArgFStackoffset-1
-C write(*,'(A,EN26.16E3)')"restore(v)  ",
-C+X(cp_loop_variable_1)%v
-          end do
+C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
+C     +X(cp_loop_variable_1)%v
+          enddo
           A = theArgIStack(theArgIStackoffset)
-C write(*,'(A,I5,I5)')"restore(s)  ",A,theArgIStackOffset
+C          write(*,'(A,I5,I5)') "restore(s)  ", A, theArgIStackOffset
           theArgIStackoffset = theArgIStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       Y(INT(A))%v = X(A)%v
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -149,12 +154,10 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
       Y(INT(A))%v = X(A)%v
           integer_tape(integer_tape_pointer) = A
           integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = A
-          integer_tape_pointer = integer_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -172,11 +175,10 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_1))%d = X(INT(OpenAD_Symbol_1))%d+Y(INT(Op
+          X(INT(OpenAD_Symbol_0))%d = X(INT(OpenAD_Symbol_0))%d+Y(INT(Op
      +enAD_Symbol_0))%d
           Y(INT(OpenAD_Symbol_0))%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -237,7 +239,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -252,21 +255,14 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) A
       EXTERNAL foo
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -293,12 +289,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -308,6 +314,7 @@ C$OPENAD XXX Template ad_template.f
       A = 1
       CALL foo(X,Y,A)
       A = 20000
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -323,6 +330,7 @@ C$OPENAD XXX Template ad_template.f
       A = 1
       CALL foo(X,Y,A)
       A = 20000
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -339,6 +347,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       CALL foo(X,Y,A)
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -83,14 +84,7 @@ C
       EXTERNAL barext
       REAL(w2f__8) T1
       REAL(w2f__8) T2
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -117,12 +111,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -130,8 +134,9 @@ C restore arguments
 C original function
 C$OPENAD XXX Template ad_template.f
       T1 = X
-      CALL barext(X, T2)
+      CALL barext(X,T2)
       Y = T2
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -145,8 +150,9 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       T1 = X
-      CALL barext(X, T2)
+      CALL barext(X,T2)
       Y = T2
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -162,6 +168,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

@@ -66,7 +66,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine bar(BARX,BARY)
+
+      SUBROUTINE bar(BARX, BARY)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -87,9 +88,7 @@ C
 C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) T
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -116,6 +115,9 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -123,15 +125,17 @@ C store arguments
      +,theArgFStackSize)
           call cp_store_real_scalar(BARY,theArgFStack,theArgFStackoffset
      +,theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           BARY = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",BARY
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", BARY
           theArgFStackoffset = theArgFStackoffset-1
           BARX = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",BARX
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", BARX
           theArgFStackoffset = theArgFStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -140,6 +144,7 @@ C original function
       T = BARX
       BARX = BARY
       BARY = T
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -154,6 +159,7 @@ C taping
       T = BARX
       BARX = BARY
       BARY = T
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -169,6 +175,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -229,7 +236,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo()
+
+      SUBROUTINE foo()
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -255,9 +263,7 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL bar
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -284,6 +290,9 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -291,15 +300,17 @@ C store arguments
      +,theArgFStackSize)
           call cp_store_real_scalar(GY%v,theArgFStack,theArgFStackoffset
      +,theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           GY%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",GY%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", GY%v
           theArgFStackoffset = theArgFStackoffset-1
           GX%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",GX%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", GX%v
           theArgFStackoffset = theArgFStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -309,11 +320,12 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(OpenAD_Symbol_0,GX)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(OpenAD_Symbol_1,GY)
-      CALL bar(OpenAD_Symbol_0, OpenAD_Symbol_1)
+      CALL bar(OpenAD_Symbol_0,OpenAD_Symbol_1)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -329,11 +341,12 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(OpenAD_Symbol_0,GX)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(OpenAD_Symbol_1,GY)
-      CALL bar(OpenAD_Symbol_0, OpenAD_Symbol_1)
+      CALL bar(OpenAD_Symbol_0,OpenAD_Symbol_1)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -349,7 +362,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-      CALL bar(OpenAD_Symbol_2, OpenAD_Symbol_3)
+      CALL bar(OpenAD_Symbol_2,OpenAD_Symbol_3)
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -410,7 +424,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -428,8 +443,8 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Top Level Pragmas ****
 C
@@ -438,6 +453,7 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -464,6 +480,8 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -471,24 +489,26 @@ C store arguments
      +,theArgFStackSize)
           call cp_store_real_scalar(GY%v,theArgFStack,theArgFStackoffset
      +,theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           GY%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",GY%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", GY%v
           theArgFStackoffset = theArgFStackoffset-1
           GX%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",GX%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", GX%v
           theArgFStackoffset = theArgFStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       GX%v = X(1)%v
       GY%v = GX%v
       Y(1)%v = GY%v
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -500,10 +520,10 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
       GX%v = X(1)%v
       GY%v = GX%v
       Y(1)%v = GY%v
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -519,12 +539,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          X(1)%d = X(1)%d+Y(1)%d
+          GY%d = GY%d+Y(1)%d
           Y(1)%d = 0.0d0
-          X(1)%d = X(1)%d+GY%d
+          GX%d = GX%d+GY%d
           GY%d = 0.0d0
           X(1)%d = X(1)%d+GX%d
           GX%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

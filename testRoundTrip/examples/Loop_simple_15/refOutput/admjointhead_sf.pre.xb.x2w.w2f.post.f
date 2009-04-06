@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -89,8 +90,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -98,16 +99,7 @@ C
       REAL(w2f__8) S
       INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -134,12 +126,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -159,6 +161,7 @@ C$OPENAD XXX Simple loop
         ENDIF
         Y(INT(I))%v = (X(I)%v+S)
       END DO
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -191,6 +194,7 @@ C$OPENAD XXX Simple loop
         ENDIF
         Y(INT(I))%v = (X(I)%v+S)
       END DO
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -222,6 +226,7 @@ C adjoint
       END DO
           Y(2)%d = 0.0d0
           Y(1)%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

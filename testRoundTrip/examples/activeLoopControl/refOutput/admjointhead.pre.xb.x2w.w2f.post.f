@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -79,8 +80,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -95,6 +96,7 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -121,22 +123,25 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       Y(1)%v = X(1)%v
       DO I = INT(X(1)%v),(INT(X(2)%v)+2),1
         Y(1)%v = (X(2)%v*Y(1)%v)
       END DO
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -164,6 +169,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
           integer_tape_pointer = integer_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -185,9 +191,9 @@ C adjoint
       DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_10 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_10
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_11 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_10
           X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_11
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
@@ -196,6 +202,7 @@ C adjoint
       END DO
           X(1)%d = X(1)%d+Y(1)%d
           Y(1)%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -66,8 +67,8 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -75,14 +76,7 @@ C
       REAL(w2f__8) P
       REAL(w2f__8) Q
       EXTERNAL sq
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -109,12 +103,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -124,6 +128,7 @@ C original function
       CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P * P)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -139,6 +144,7 @@ C taping
       CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P * P)
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -155,6 +161,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       CALL sq(OAD_CTMP0,X,Y)
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -215,7 +222,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine sq(N,U,V)
+
+      SUBROUTINE sq(N, U, V)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -251,8 +259,8 @@ C
 C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) N
-      type(active) :: U(1 : 2)
-      type(active) :: V(1 : 2)
+      type(active) :: U(1:2)
+      type(active) :: V(1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -269,6 +277,7 @@ C
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -300,15 +309,17 @@ C
 C store arguments
           call cp_store_real_vector(U,size(U),theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           do cp_loop_variable_1 = ubound(U,1),lbound(U,1),-1
              U(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
              theArgFStackoffset = theArgFStackoffset-1
-C write(*,'(A,EN26.16E3)')"restore(v)  ",
-C+U(cp_loop_variable_1)%v
-          end do
+C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
+C     +U(cp_loop_variable_1)%v
+          enddo
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -317,6 +328,7 @@ C original function
       V(1)%v = SQRT((U(1)%v**2)+(U(2)%v**2))
       V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
      +)%v**3)+U(2)%v*U(1)%v*2.0D00)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -329,12 +341,12 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
       OpenAD_Symbol_0 = SQRT((U(1)%v**2)+(U(2)%v**2))
-      OpenAD_Symbol_2 = (2*(U(1)%v**(2-INT(1 _w2f__i8))))
-      OpenAD_Symbol_4 = (2*(U(2)%v**(2-INT(1 _w2f__i8))))
+      OpenAD_Symbol_2 = (2*(U(1)%v**(2-INT(1_w2f__i8))))
+      OpenAD_Symbol_4 = (2*(U(2)%v**(2-INT(1_w2f__i8))))
       OpenAD_Symbol_1 = (5.0D-01 / OpenAD_Symbol_0)
       V(1)%v = OpenAD_Symbol_0
-      OpenAD_Symbol_18 = (OpenAD_Symbol_2 * OpenAD_Symbol_1)
-      OpenAD_Symbol_19 = (OpenAD_Symbol_4 * OpenAD_Symbol_1)
+      OpenAD_Symbol_18 = (OpenAD_Symbol_4 * OpenAD_Symbol_1)
+      OpenAD_Symbol_19 = (OpenAD_Symbol_2 * OpenAD_Symbol_1)
           double_tape(double_tape_pointer) = OpenAD_Symbol_18
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_19
@@ -342,32 +354,33 @@ C taping
       OpenAD_Symbol_14 = (U(1)%v*2.0D00)
       V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
      +)%v**3)+U(2)%v*OpenAD_Symbol_14)
-      OpenAD_Symbol_6 = (3*(U(1)%v**(3-INT(1 _w2f__i8))))
+      OpenAD_Symbol_6 = (3*(U(1)%v**(3-INT(1_w2f__i8))))
       OpenAD_Symbol_8 = COS(U(2)%v)
-      OpenAD_Symbol_9 = (INT(1 _w2f__i8)/U(1)%v)
+      OpenAD_Symbol_9 = (INT(1_w2f__i8)/U(1)%v)
       OpenAD_Symbol_10 = (-(U(2)%v/(U(1)%v*U(1)%v)))
       OpenAD_Symbol_11 = (-SIN(U(1)%v))
-      OpenAD_Symbol_12 = (3*(U(2)%v**(3-INT(1 _w2f__i8))))
+      OpenAD_Symbol_12 = (3*(U(2)%v**(3-INT(1_w2f__i8))))
       OpenAD_Symbol_15 = OpenAD_Symbol_14
       OpenAD_Symbol_16 = U(2)%v
-      OpenAD_Symbol_20 = (2.0D00 * OpenAD_Symbol_16)
-      OpenAD_Symbol_21 = (OpenAD_Symbol_11 * INT((-1_w2f__i8)))
-          double_tape(double_tape_pointer) = OpenAD_Symbol_15
+      OpenAD_Symbol_20 = (OpenAD_Symbol_11 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_21 = (2.0D00 * OpenAD_Symbol_16)
+          double_tape(double_tape_pointer) = OpenAD_Symbol_12
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_6
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_20
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_12
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_21
+          double_tape(double_tape_pointer) = OpenAD_Symbol_8
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_9
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_10
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_8
+          double_tape(double_tape_pointer) = OpenAD_Symbol_15
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_6
+          double_tape(double_tape_pointer) = OpenAD_Symbol_21
           double_tape_pointer = double_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -385,36 +398,37 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_22 = double_tape(double_tape_pointer)
-          U(1)%d = U(1)%d+V(2)%d*OpenAD_Symbol_22
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-          U(2)%d = U(2)%d+V(2)%d*OpenAD_Symbol_23
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-          U(1)%d = U(1)%d+V(2)%d*OpenAD_Symbol_24
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_25 = double_tape(double_tape_pointer)
-          U(2)%d = U(2)%d+V(2)%d*OpenAD_Symbol_25
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_26 = double_tape(double_tape_pointer)
-          U(1)%d = U(1)%d+V(2)%d*OpenAD_Symbol_26
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_27 = double_tape(double_tape_pointer)
-          U(2)%d = U(2)%d+V(2)%d*OpenAD_Symbol_27
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_28 = double_tape(double_tape_pointer)
-          U(1)%d = U(1)%d+V(2)%d*OpenAD_Symbol_28
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_29 = double_tape(double_tape_pointer)
+          U(1)%d = U(1)%d+V(2)%d*OpenAD_Symbol_22
+          U(2)%d = U(2)%d+V(2)%d*OpenAD_Symbol_23
+          U(1)%d = U(1)%d+V(2)%d*OpenAD_Symbol_24
+          U(2)%d = U(2)%d+V(2)%d*OpenAD_Symbol_25
+          U(2)%d = U(2)%d+V(2)%d*OpenAD_Symbol_26
+          U(1)%d = U(1)%d+V(2)%d*OpenAD_Symbol_27
+          U(1)%d = U(1)%d+V(2)%d*OpenAD_Symbol_28
           U(2)%d = U(2)%d+V(2)%d*OpenAD_Symbol_29
           V(2)%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_30 = double_tape(double_tape_pointer)
-          U(2)%d = U(2)%d+V(1)%d*OpenAD_Symbol_30
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_31 = double_tape(double_tape_pointer)
-          U(1)%d = U(1)%d+V(1)%d*OpenAD_Symbol_31
+          U(1)%d = U(1)%d+V(1)%d*OpenAD_Symbol_30
+          U(2)%d = U(2)%d+V(1)%d*OpenAD_Symbol_31
           V(1)%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

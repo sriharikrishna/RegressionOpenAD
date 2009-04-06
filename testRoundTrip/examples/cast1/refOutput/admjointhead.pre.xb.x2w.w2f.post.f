@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -66,8 +67,8 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Top Level Pragmas ****
 C
@@ -76,6 +77,7 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -102,19 +104,23 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       Y(1)%v = (INT(X(1)%v)*DBLE(2.5))
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -126,8 +132,8 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
       Y(1)%v = (INT(X(1)%v)*DBLE(2.5))
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -144,6 +150,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
           Y(1)%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

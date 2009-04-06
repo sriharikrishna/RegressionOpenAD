@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -81,7 +82,7 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       type(active) :: Y
 C
 C     **** Local Variables and Functions ****
@@ -93,6 +94,7 @@ C
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -119,26 +121,28 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
           call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
      +ffset,theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
              X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
              theArgFStackoffset = theArgFStackoffset-1
-C write(*,'(A,EN26.16E3)')"restore(v)  ",
-C+X(cp_loop_variable_1)%v
-          end do
+C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
+C     +X(cp_loop_variable_1)%v
+          enddo
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(OpenAD_Symbol_0,T)
@@ -146,6 +150,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(T,OpenAD_Symbol_0)
       Y%v = (X(2)%v*T%v)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -171,6 +176,7 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -188,13 +194,14 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-          T%d = T%d+Y%d*OpenAD_Symbol_3
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+          T%d = T%d+Y%d*OpenAD_Symbol_3
           X(2)%d = X(2)%d+Y%d*OpenAD_Symbol_4
           Y%d = 0.0d0
           X(1)%d = X(1)%d+T%d
           T%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -255,7 +262,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -270,8 +278,8 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -279,14 +287,7 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       REAL(w2f__8) T(1 : 2)
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -313,12 +314,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -329,6 +340,7 @@ C$OPENAD XXX Template ad_template.f
       CALL barext(T(I))
       I = 1
       CALL foo(X,Y(I))
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -347,6 +359,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(I))
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -365,6 +378,7 @@ C adjoint
           integer_tape_pointer = integer_tape_pointer-1
           I = integer_tape(integer_tape_pointer)
       CALL foo(X,Y(I))
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

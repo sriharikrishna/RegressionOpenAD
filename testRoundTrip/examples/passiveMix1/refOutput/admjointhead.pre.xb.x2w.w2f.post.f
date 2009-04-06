@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -75,8 +76,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -86,16 +87,9 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+      INTEGER(w2f__i8) OpenAD_Symbol_8
+      REAL(w2f__8) OpenAD_Symbol_9
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -122,12 +116,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -141,6 +145,7 @@ C$OPENAD XXX Template ad_template.f
       I = 3
       Y(1)%v = SIN(T%v)
       Y(2)%v = COS(T%v)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -164,10 +169,10 @@ C$OPENAD XXX Template ad_template.f
       T%v = OpenAD_Symbol_2
           double_tape(double_tape_pointer) = OpenAD_Symbol_0
           double_tape_pointer = double_tape_pointer+1
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
+          integer_tape(integer_tape_pointer) = I
+          integer_tape_pointer = integer_tape_pointer+1
       I = 3
       Y(1)%v = SIN(T%v)
       OpenAD_Symbol_3 = COS(T%v)
@@ -177,6 +182,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_4 = (-SIN(T%v))
           double_tape(double_tape_pointer) = OpenAD_Symbol_4
           double_tape_pointer = double_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -200,14 +206,14 @@ C adjoint
           OpenAD_Symbol_7 = double_tape(double_tape_pointer)
           T%d = T%d+Y(1)%d*OpenAD_Symbol_7
           Y(1)%d = 0.0d0
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+T%d*OpenAD_Symbol_8
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
+          OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_10 = double_tape(double_tape_pointer)
-          X(INT(OpenAD_Symbol_9))%d = X(INT(OpenAD_Symbol_9))%d+T%d*Open
+          OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+T%d*OpenAD_Symbol_9
+          X(INT(OpenAD_Symbol_8))%d = X(INT(OpenAD_Symbol_8))%d+T%d*Open
      +AD_Symbol_10
           T%d = 0.0d0
           T%d = T%d+OpenAD_Symbol_5%d
@@ -216,6 +222,7 @@ C adjoint
           OpenAD_Symbol_11 = integer_tape(integer_tape_pointer)
           X(INT(OpenAD_Symbol_11))%d = X(INT(OpenAD_Symbol_11))%d+T%d
           T%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

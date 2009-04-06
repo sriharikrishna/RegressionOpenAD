@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -71,12 +72,12 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
-      type(active) :: LOCALX(1 : 1)
+      type(active) :: LOCALX(1:1)
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
 C
@@ -87,6 +88,7 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -113,20 +115,24 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       LOCALX(1)%v = (X(1)%v*2.0D00)
       Y(1)%v = (LOCALX(1)%v*LOCALX(1)%v)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -138,7 +144,6 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
       LOCALX(1)%v = (X(1)%v*2.0D00)
       Y(1)%v = (LOCALX(1)%v*LOCALX(1)%v)
       OpenAD_Symbol_1 = LOCALX(1)%v
@@ -147,6 +152,7 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -164,13 +170,14 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-          LOCALX(1)%d = LOCALX(1)%d+Y(1)%d*OpenAD_Symbol_3
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+          LOCALX(1)%d = LOCALX(1)%d+Y(1)%d*OpenAD_Symbol_3
           LOCALX(1)%d = LOCALX(1)%d+Y(1)%d*OpenAD_Symbol_4
           Y(1)%d = 0.0d0
           X(1)%d = X(1)%d+LOCALX(1)%d*2.0D00
           LOCALX(1)%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

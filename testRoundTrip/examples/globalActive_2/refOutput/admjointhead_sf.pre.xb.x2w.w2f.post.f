@@ -75,7 +75,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -96,28 +97,18 @@ C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
+      REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_9
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -144,6 +135,14 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -151,15 +150,17 @@ C store arguments
      +ffset,theArgFStackSize)
           call cp_store_real_scalar(APASSIVEGLOBAL,theArgFStack,theArgFS
      +tackoffset,theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           APASSIVEGLOBAL = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",APASSIVEGLOBAL
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", APASSIVEGLOBAL
           theArgFStackoffset = theArgFStackoffset-1
           AGLOBAL%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",AGLOBAL%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", AGLOBAL%v
           theArgFStackoffset = theArgFStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -169,6 +170,7 @@ C$OPENAD XXX Template ad_template.f
       APASSIVEGLOBAL = 2.0D00
       AGLOBAL%v = (X(1)%v*X(2)%v)
       Y(1)%v = (AGLOBAL%v*APASSIVEGLOBAL)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -187,16 +189,13 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = X(1)%v
       Y(1)%v = (AGLOBAL%v*APASSIVEGLOBAL)
       OpenAD_Symbol_2 = APASSIVEGLOBAL
-      OpenAD_Symbol_4 = (OpenAD_Symbol_0 * OpenAD_Symbol_2)
-      OpenAD_Symbol_5 = (OpenAD_Symbol_1 * OpenAD_Symbol_2)
           double_tape(double_tape_pointer) = OpenAD_Symbol_0
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_4
+          double_tape(double_tape_pointer) = OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_5
-          double_tape_pointer = double_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -213,19 +212,17 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
           double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_6
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_7 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_7
+          AGLOBAL%d = AGLOBAL%d+Y(1)%d*OpenAD_Symbol_4
           Y(1)%d = 0.0d0
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+AGLOBAL%d*OpenAD_Symbol_8
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+AGLOBAL%d*OpenAD_Symbol_9
+          X(2)%d = X(2)%d+AGLOBAL%d*OpenAD_Symbol_5
+          X(1)%d = X(1)%d+AGLOBAL%d*OpenAD_Symbol_6
           AGLOBAL%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

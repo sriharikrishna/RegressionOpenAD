@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -68,13 +69,13 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_13
+      type(active) :: OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_2
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 4)
-      type(active) :: Y(1 : 4)
+      type(active) :: X(1:4)
+      type(active) :: Y(1:4)
 C
 C     **** Local Variables and Functions ****
 C
@@ -82,16 +83,9 @@ C
       type(active) :: D
       EXTERNAL foo
       REAL(w2f__8) P
-      REAL(w2f__8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_12
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+      REAL(w2f__8) OpenAD_Symbol_13
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -118,12 +112,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -141,6 +145,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       Y(4)%v = (C%v+D%v)
       Y(1)%v = X(3)%v
       Y(2)%v = X(4)%v
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -170,6 +175,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       Y(4)%v = (C%v+D%v)
       Y(1)%v = X(3)%v
       Y(2)%v = X(4)%v
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -189,18 +195,19 @@ C adjoint
           Y(2)%d = 0.0d0
           X(3)%d = X(3)%d+Y(1)%d
           Y(1)%d = 0.0d0
-          D%d = D%d+Y(4)%d*1 _w2f__i8
-          C%d = C%d+Y(4)%d*1 _w2f__i8
+          D%d = D%d+Y(4)%d*1_w2f__i8
+          C%d = C%d+Y(4)%d*1_w2f__i8
           Y(4)%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_11 = double_tape(double_tape_pointer)
-          D%d = D%d+Y(3)%d*OpenAD_Symbol_11
-          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-          C%d = C%d+Y(3)%d*OpenAD_Symbol_12
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_13 = double_tape(double_tape_pointer)
+          D%d = D%d+Y(3)%d*OpenAD_Symbol_12
+          C%d = C%d+Y(3)%d*OpenAD_Symbol_13
           Y(3)%d = 0.0d0
-      CALL foo(X(1),OpenAD_Symbol_13,C,D)
+      CALL foo(X(1),OpenAD_Symbol_14,C,D)
       CALL foo(X(1),X(2),C,D)
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -261,7 +268,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(A,B,C,D)
+
+      SUBROUTINE foo(A, B, C, D)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -277,6 +285,7 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_10
+      type(active) :: OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
@@ -294,13 +303,13 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_18
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -327,6 +336,7 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -334,23 +344,25 @@ C store arguments
      +theArgFStackSize)
           call cp_store_real_scalar(B%v,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           B%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",B%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", B%v
           theArgFStackoffset = theArgFStackoffset-1
           A%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",A%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
           theArgFStackoffset = theArgFStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       C%v = SIN(A%v*B%v)
       D%v = COS(A%v+B%v)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -379,8 +391,7 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_8
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_8
-          double_tape_pointer = double_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -397,19 +408,20 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-          B%d = B%d+D%d*OpenAD_Symbol_15
-          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_16 = double_tape(double_tape_pointer)
-          A%d = A%d+D%d*OpenAD_Symbol_16
-          D%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_17 = double_tape(double_tape_pointer)
-          B%d = B%d+C%d*OpenAD_Symbol_17
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_18 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_11%d = OpenAD_Symbol_11%d+D%d*OpenAD_Symbol_16
+          D%d = 0.0d0
+          B%d = B%d+C%d*OpenAD_Symbol_17
           A%d = A%d+C%d*OpenAD_Symbol_18
           C%d = 0.0d0
+          B%d = B%d+OpenAD_Symbol_11%d*1_w2f__i8
+          A%d = A%d+OpenAD_Symbol_11%d*1_w2f__i8
+          OpenAD_Symbol_11%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

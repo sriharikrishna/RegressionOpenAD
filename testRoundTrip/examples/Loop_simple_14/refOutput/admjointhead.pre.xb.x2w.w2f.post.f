@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -80,8 +81,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -90,17 +91,7 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_12
       INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
-      INTEGER(w2f__i8) OpenAD_Symbol_17
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -127,12 +118,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -145,13 +146,14 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         S%v = X(I)%v
-        IF (S%v .LT. 0.0D00) THEN
+        IF (S%v.LT.0.0D00) THEN
           X(INT(I))%v = (X(I)%v*2.0D00)
         ELSE
           S%v = 0.0D00
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
       END DO
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -170,7 +172,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         S%v = X(I)%v
-        IF (S%v .LT. 0.0D00) THEN
+        IF (S%v.LT.0.0D00) THEN
           OpenAD_Symbol_1 = (X(I)%v*2.0D00)
           X(INT(I))%v = OpenAD_Symbol_1
           OpenAD_Symbol_4 = 1_w2f__i8
@@ -184,6 +186,7 @@ C$OPENAD XXX Simple loop
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
       END DO
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -201,8 +204,8 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-          S%d = S%d+Y(I)%d*1 _w2f__i8
-          X(I)%d = X(I)%d+Y(I)%d*1 _w2f__i8
+          S%d = S%d+Y(I)%d*1_w2f__i8
+          X(I)%d = X(I)%d+Y(I)%d*1_w2f__i8
           Y(I)%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
@@ -220,6 +223,7 @@ C adjoint
       END DO
           Y(2)%d = 0.0d0
           Y(1)%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

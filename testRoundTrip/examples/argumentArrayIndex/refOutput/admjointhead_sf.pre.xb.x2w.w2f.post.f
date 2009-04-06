@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -85,6 +86,7 @@ C
 C
 C     **** Statements ****
 C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -111,6 +113,7 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
@@ -118,22 +121,24 @@ C store arguments
      +theArgFStackSize)
           call cp_store_real_scalar(Y%v,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
           Y%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",Y%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", Y%v
           theArgFStackoffset = theArgFStackoffset-1
           X%v = theArgFStack(theArgFStackoffset)
-C write(*,'(A,EN26.16E3)')"restore(s)  ",X%v
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
           theArgFStackoffset = theArgFStackoffset-1
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*2.0D00)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -148,6 +153,7 @@ C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = (X%v*2.0D00)
       Y%v = OpenAD_Symbol_1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -167,6 +173,7 @@ C adjoint
           Y%d = 0.0d0
           X%d = X%d+OpenAD_Symbol_2%d
           OpenAD_Symbol_2%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
@@ -227,7 +234,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -242,21 +250,14 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       type(active) :: Y
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       INTEGER(w2f__i4) K
-C
-C     **** Top Level Pragmas ****
-C
-C$OPENAD INDEPENDENT(X)
-C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
+
 
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
@@ -283,12 +284,22 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -298,6 +309,7 @@ C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(X(K),X(K+1))
       CALL foo(X(K),Y)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -317,6 +329,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X(K),Y)
           integer_tape(integer_tape_pointer) = K
           integer_tape_pointer = integer_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -338,6 +351,7 @@ C adjoint
           integer_tape_pointer = integer_tape_pointer-1
           K = integer_tape(integer_tape_pointer)
       CALL foo(X(K),X(K+1))
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.

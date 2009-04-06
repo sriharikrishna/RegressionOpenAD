@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine ad_reroute(X1,X2,Y1,Y2)
+
+      SUBROUTINE ad_reroute(X1, X2, Y1, Y2)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -107,6 +108,7 @@ C
 C     **** Statements ****
 C
 
+
           ! checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,
      +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
@@ -132,24 +134,28 @@ C
 ! external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
+
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
+
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C$OPENAD XXX Template ad_template.f
       T1%v = X1%v
       T2%v = X2%v
       T3%v = (T1%v/T2%v)
       T4%v = (T1%v*T2%v)
       Y1%v = (T3%v*T4%v)
       Y2%v = (T3%v/T4%v)
+
 C original function end
             our_rev_mode=our_orig_mode
           end if 
@@ -161,11 +167,10 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
       T1%v = X1%v
       T2%v = X2%v
       T3%v = (T1%v/T2%v)
-      OpenAD_Symbol_0 = (INT(1 _w2f__i8)/T2%v)
+      OpenAD_Symbol_0 = (INT(1_w2f__i8)/T2%v)
       OpenAD_Symbol_1 = (-(T1%v/(T2%v*T2%v)))
       T4%v = (T1%v*T2%v)
       OpenAD_Symbol_2 = T2%v
@@ -174,24 +179,25 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_4 = T4%v
       OpenAD_Symbol_5 = T3%v
       Y2%v = (T3%v/T4%v)
-      OpenAD_Symbol_6 = (INT(1 _w2f__i8)/T4%v)
+      OpenAD_Symbol_6 = (INT(1_w2f__i8)/T4%v)
       OpenAD_Symbol_7 = (-(T3%v/(T4%v*T4%v)))
-      OpenAD_Symbol_8 = (OpenAD_Symbol_0 * OpenAD_Symbol_4 +  OpenAD_Sym
-     +bol_2 * OpenAD_Symbol_5)
-      OpenAD_Symbol_9 = (OpenAD_Symbol_0 * OpenAD_Symbol_6 +  OpenAD_Sym
-     +bol_2 * OpenAD_Symbol_7)
-      OpenAD_Symbol_10 = (OpenAD_Symbol_1 * OpenAD_Symbol_4 +  OpenAD_Sy
-     +mbol_3 * OpenAD_Symbol_5)
-      OpenAD_Symbol_11 = (OpenAD_Symbol_1 * OpenAD_Symbol_6 +  OpenAD_Sy
-     +mbol_3 * OpenAD_Symbol_7)
+      OpenAD_Symbol_8 = (OpenAD_Symbol_3 * OpenAD_Symbol_5 +
+     >  OpenAD_Symbol_1 * OpenAD_Symbol_4)
+      OpenAD_Symbol_9 = (OpenAD_Symbol_3 * OpenAD_Symbol_7 +
+     >  OpenAD_Symbol_1 * OpenAD_Symbol_6)
+      OpenAD_Symbol_10 = (OpenAD_Symbol_2 * OpenAD_Symbol_7 +
+     >  OpenAD_Symbol_0 * OpenAD_Symbol_6)
+      OpenAD_Symbol_11 = (OpenAD_Symbol_2 * OpenAD_Symbol_5 +
+     >  OpenAD_Symbol_0 * OpenAD_Symbol_4)
           double_tape(double_tape_pointer) = OpenAD_Symbol_8
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_10
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_9
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_11
           double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_9
+          double_tape_pointer = double_tape_pointer+1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_10
+          double_tape_pointer = double_tape_pointer+1
+
 C taping end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.FALSE.
@@ -209,18 +215,19 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-          X2%d = X2%d+Y2%d*OpenAD_Symbol_12
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_13 = double_tape(double_tape_pointer)
-          X1%d = X1%d+Y2%d*OpenAD_Symbol_13
-          Y2%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_14 = double_tape(double_tape_pointer)
-          X2%d = X2%d+Y1%d*OpenAD_Symbol_14
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-          X1%d = X1%d+Y1%d*OpenAD_Symbol_15
+          X1%d = X1%d+Y2%d*OpenAD_Symbol_12
+          X2%d = X2%d+Y2%d*OpenAD_Symbol_13
+          Y2%d = 0.0d0
+          X1%d = X1%d+Y1%d*OpenAD_Symbol_14
+          X2%d = X2%d+Y1%d*OpenAD_Symbol_15
           Y1%d = 0.0d0
+
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
             our_rev_mode%arg_restore=.TRUE.
