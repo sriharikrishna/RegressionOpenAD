@@ -132,12 +132,12 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
           T(INT(OpenAD_Symbol_8))%d = T(INT(OpenAD_Symbol_8))%d+Y(INT(Op
-     +enAD_Symbol_8))%d*4.0D00
+     +enAD_Symbol_8))%d*(4.0D00)
           Y(INT(OpenAD_Symbol_8))%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
           X(INT(OpenAD_Symbol_9))%d = X(INT(OpenAD_Symbol_9))%d+T(INT(Op
-     +enAD_Symbol_9))%d*2.0D00
+     +enAD_Symbol_9))%d*(2.0D00)
           T(INT(OpenAD_Symbol_9))%d = 0.0d0
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3) + 1
       END DO

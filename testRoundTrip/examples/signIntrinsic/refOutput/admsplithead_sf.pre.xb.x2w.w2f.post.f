@@ -123,7 +123,7 @@ C$OPENAD XXX Template ad_template.f
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_5 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d*OpenAD_Symbol_5
+          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d*(OpenAD_Symbol_5)
           Y(1)%d = 0.0d0
           X(1)%d = X(1)%d+OpenAD_Symbol_4%d
           OpenAD_Symbol_4%d = 0.0d0

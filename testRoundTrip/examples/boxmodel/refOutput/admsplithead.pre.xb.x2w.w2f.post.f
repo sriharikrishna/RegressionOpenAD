@@ -601,14 +601,14 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_301 = integer_tape(integer_tape_pointer)
           XX(INT(OpenAD_Symbol_301))%d = XX(INT(OpenAD_Symbol_301))%d+S(
-     +INT(OpenAD_Symbol_300))%d*1_w2f__i8
+     +INT(OpenAD_Symbol_300))%d*(1_w2f__i8)
           OpenAD_Symbol_121%d = OpenAD_Symbol_121%d+S(INT(OpenAD_Symbol_
-     +300))%d*1_w2f__i8
+     +300))%d*(1_w2f__i8)
           S(INT(OpenAD_Symbol_300))%d = 0.0d0
           XX(INT(OpenAD_Symbol_300))%d = XX(INT(OpenAD_Symbol_300))%d+T(
-     +INT(OpenAD_Symbol_300))%d*1_w2f__i8
+     +INT(OpenAD_Symbol_300))%d*(1_w2f__i8)
           OpenAD_Symbol_120%d = OpenAD_Symbol_120%d+T(INT(OpenAD_Symbol_
-     +300))%d*1_w2f__i8
+     +300))%d*(1_w2f__i8)
           T(INT(OpenAD_Symbol_300))%d = 0.0d0
           S(INT(OpenAD_Symbol_300))%d = S(INT(OpenAD_Symbol_300))%d+Open
      +AD_Symbol_121%d
@@ -1409,9 +1409,9 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_276 = double_tape(double_tape_pointer)
           TLOC(INT(OpenAD_Symbol_274))%d = TLOC(INT(OpenAD_Symbol_274))%
-     +d+RHOLOC(INT(OpenAD_Symbol_274))%d*OpenAD_Symbol_275
+     +d+RHOLOC(INT(OpenAD_Symbol_274))%d*(OpenAD_Symbol_275)
           SLOC(INT(OpenAD_Symbol_274))%d = SLOC(INT(OpenAD_Symbol_274))%
-     +d+RHOLOC(INT(OpenAD_Symbol_274))%d*OpenAD_Symbol_276
+     +d+RHOLOC(INT(OpenAD_Symbol_274))%d*(OpenAD_Symbol_276)
           RHOLOC(INT(OpenAD_Symbol_274))%d = 0.0d0
         OpenAD_Symbol_135 = INT(OpenAD_Symbol_135) + 1
       END DO
@@ -1554,12 +1554,14 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_278 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_279 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_90%d = OpenAD_Symbol_90%d+UVELLOC%d*OpenAD_Symbo
-     +l_277
+          OpenAD_Symbol_90%d = OpenAD_Symbol_90%d+UVELLOC%d*(OpenAD_Symb
+     +ol_277)
           UVELLOC%d = 0.0d0
-          RHOLOC(3)%d = RHOLOC(3)%d+OpenAD_Symbol_90%d*OpenAD_Symbol_278
-          RHOLOC(1)%d = RHOLOC(1)%d+OpenAD_Symbol_90%d*OpenAD_Symbol_279
-          RHOLOC(2)%d = RHOLOC(2)%d+OpenAD_Symbol_90%d*-1_w2f__i8
+          RHOLOC(3)%d = RHOLOC(3)%d+OpenAD_Symbol_90%d*(OpenAD_Symbol_27
+     +8)
+          RHOLOC(1)%d = RHOLOC(1)%d+OpenAD_Symbol_90%d*(OpenAD_Symbol_27
+     +9)
+          RHOLOC(2)%d = RHOLOC(2)%d+OpenAD_Symbol_90%d*(-1_w2f__i8)
           OpenAD_Symbol_90%d = 0.0d0
 
           end if 
@@ -1712,16 +1714,16 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_297 = double_tape(double_tape_pointer)
           OpenAD_Symbol_117%d = OpenAD_Symbol_117%d+FLDNOW(INT(OpenAD_Sy
-     +mbol_296))%d*OpenAD_Symbol_297
+     +mbol_296))%d*(OpenAD_Symbol_297)
           OpenAD_Symbol_115%d = OpenAD_Symbol_115%d+FLDNOW(INT(OpenAD_Sy
-     +mbol_296))%d*1_w2f__i8
+     +mbol_296))%d*(1_w2f__i8)
           FLDNOW(INT(OpenAD_Symbol_296))%d = 0.0d0
           OpenAD_Symbol_116%d = OpenAD_Symbol_116%d+OpenAD_Symbol_117%d*
-     +-2.0D00
+     +(-2.0D00)
           FLDNEW(INT(OpenAD_Symbol_296))%d = FLDNEW(INT(OpenAD_Symbol_29
-     +6))%d+OpenAD_Symbol_117%d*1_w2f__i8
+     +6))%d+OpenAD_Symbol_117%d*(1_w2f__i8)
           FLDOLD(INT(OpenAD_Symbol_296))%d = FLDOLD(INT(OpenAD_Symbol_29
-     +6))%d+OpenAD_Symbol_117%d*1_w2f__i8
+     +6))%d+OpenAD_Symbol_117%d*(1_w2f__i8)
           OpenAD_Symbol_117%d = 0.0d0
           FLDNOW(INT(OpenAD_Symbol_296))%d = FLDNOW(INT(OpenAD_Symbol_29
      +6))%d+OpenAD_Symbol_116%d
@@ -2036,9 +2038,9 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_307 = double_tape(double_tape_pointer)
           DFLDDT(INT(OpenAD_Symbol_306))%d = DFLDDT(INT(OpenAD_Symbol_30
-     +6))%d+FLDNEW(INT(OpenAD_Symbol_306))%d*OpenAD_Symbol_307
+     +6))%d+FLDNEW(INT(OpenAD_Symbol_306))%d*(OpenAD_Symbol_307)
           FLDOLD(INT(OpenAD_Symbol_306))%d = FLDOLD(INT(OpenAD_Symbol_30
-     +6))%d+FLDNEW(INT(OpenAD_Symbol_306))%d*1_w2f__i8
+     +6))%d+FLDNEW(INT(OpenAD_Symbol_306))%d*(1_w2f__i8)
           FLDNEW(INT(OpenAD_Symbol_306))%d = 0.0d0
         OpenAD_Symbol_268 = INT(OpenAD_Symbol_268) + 1
       END DO
@@ -2393,12 +2395,12 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_280 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_281 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_101%d = OpenAD_Symbol_101%d+DFLDDT(3)%d*OpenAD_S
-     +ymbol_280
-          UVELLOC%d = UVELLOC%d+DFLDDT(3)%d*OpenAD_Symbol_281
+          OpenAD_Symbol_101%d = OpenAD_Symbol_101%d+DFLDDT(3)%d*(OpenAD_
+     +Symbol_280)
+          UVELLOC%d = UVELLOC%d+DFLDDT(3)%d*(OpenAD_Symbol_281)
           DFLDDT(3)%d = 0.0d0
-          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_101%d*-1_w2f__i8
-          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_101%d*1_w2f__i8
+          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_101%d*(-1_w2f__i8)
+          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_101%d*(1_w2f__i8)
           OpenAD_Symbol_101%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_282 = double_tape(double_tape_pointer)
@@ -2406,13 +2408,13 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_283 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_284 = double_tape(double_tape_pointer)
-          FLDNOW(2)%d = FLDNOW(2)%d+DFLDDT(2)%d*OpenAD_Symbol_282
-          OpenAD_Symbol_98%d = OpenAD_Symbol_98%d+DFLDDT(2)%d*OpenAD_Sym
-     +bol_283
-          UVELLOC%d = UVELLOC%d+DFLDDT(2)%d*OpenAD_Symbol_284
+          FLDNOW(2)%d = FLDNOW(2)%d+DFLDDT(2)%d*(OpenAD_Symbol_282)
+          OpenAD_Symbol_98%d = OpenAD_Symbol_98%d+DFLDDT(2)%d*(OpenAD_Sy
+     +mbol_283)
+          UVELLOC%d = UVELLOC%d+DFLDDT(2)%d*(OpenAD_Symbol_284)
           DFLDDT(2)%d = 0.0d0
-          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_98%d*-1_w2f__i8
-          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_98%d*1_w2f__i8
+          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_98%d*(-1_w2f__i8)
+          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_98%d*(1_w2f__i8)
           OpenAD_Symbol_98%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_285 = double_tape(double_tape_pointer)
@@ -2420,25 +2422,25 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_286 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_287 = double_tape(double_tape_pointer)
-          FLDNOW(1)%d = FLDNOW(1)%d+DFLDDT(1)%d*OpenAD_Symbol_285
-          OpenAD_Symbol_94%d = OpenAD_Symbol_94%d+DFLDDT(1)%d*OpenAD_Sym
-     +bol_286
-          UVELLOC%d = UVELLOC%d+DFLDDT(1)%d*OpenAD_Symbol_287
+          FLDNOW(1)%d = FLDNOW(1)%d+DFLDDT(1)%d*(OpenAD_Symbol_285)
+          OpenAD_Symbol_94%d = OpenAD_Symbol_94%d+DFLDDT(1)%d*(OpenAD_Sy
+     +mbol_286)
+          UVELLOC%d = UVELLOC%d+DFLDDT(1)%d*(OpenAD_Symbol_287)
           DFLDDT(1)%d = 0.0d0
-          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_94%d*-1_w2f__i8
-          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_94%d*1_w2f__i8
+          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_94%d*(-1_w2f__i8)
+          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_94%d*(1_w2f__i8)
           OpenAD_Symbol_94%d = 0.0d0
       ELSE
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_288 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_289 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_114%d = OpenAD_Symbol_114%d+DFLDDT(3)%d*OpenAD_S
-     +ymbol_288
-          UVELLOC%d = UVELLOC%d+DFLDDT(3)%d*OpenAD_Symbol_289
+          OpenAD_Symbol_114%d = OpenAD_Symbol_114%d+DFLDDT(3)%d*(OpenAD_
+     +Symbol_288)
+          UVELLOC%d = UVELLOC%d+DFLDDT(3)%d*(OpenAD_Symbol_289)
           DFLDDT(3)%d = 0.0d0
-          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_114%d*-1_w2f__i8
-          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_114%d*1_w2f__i8
+          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_114%d*(-1_w2f__i8)
+          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_114%d*(1_w2f__i8)
           OpenAD_Symbol_114%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_290 = double_tape(double_tape_pointer)
@@ -2446,13 +2448,13 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_291 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_292 = double_tape(double_tape_pointer)
-          FLDNOW(2)%d = FLDNOW(2)%d+DFLDDT(2)%d*OpenAD_Symbol_290
-          OpenAD_Symbol_111%d = OpenAD_Symbol_111%d+DFLDDT(2)%d*OpenAD_S
-     +ymbol_291
-          UVELLOC%d = UVELLOC%d+DFLDDT(2)%d*OpenAD_Symbol_292
+          FLDNOW(2)%d = FLDNOW(2)%d+DFLDDT(2)%d*(OpenAD_Symbol_290)
+          OpenAD_Symbol_111%d = OpenAD_Symbol_111%d+DFLDDT(2)%d*(OpenAD_
+     +Symbol_291)
+          UVELLOC%d = UVELLOC%d+DFLDDT(2)%d*(OpenAD_Symbol_292)
           DFLDDT(2)%d = 0.0d0
-          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_111%d*-1_w2f__i8
-          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_111%d*1_w2f__i8
+          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_111%d*(-1_w2f__i8)
+          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_111%d*(1_w2f__i8)
           OpenAD_Symbol_111%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_293 = double_tape(double_tape_pointer)
@@ -2460,13 +2462,13 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_294 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_295 = double_tape(double_tape_pointer)
-          FLDNOW(1)%d = FLDNOW(1)%d+DFLDDT(1)%d*OpenAD_Symbol_293
-          OpenAD_Symbol_106%d = OpenAD_Symbol_106%d+DFLDDT(1)%d*OpenAD_S
-     +ymbol_294
-          UVELLOC%d = UVELLOC%d+DFLDDT(1)%d*OpenAD_Symbol_295
+          FLDNOW(1)%d = FLDNOW(1)%d+DFLDDT(1)%d*(OpenAD_Symbol_293)
+          OpenAD_Symbol_106%d = OpenAD_Symbol_106%d+DFLDDT(1)%d*(OpenAD_
+     +Symbol_294)
+          UVELLOC%d = UVELLOC%d+DFLDDT(1)%d*(OpenAD_Symbol_295)
           DFLDDT(1)%d = 0.0d0
-          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_106%d*-1_w2f__i8
-          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_106%d*1_w2f__i8
+          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_106%d*(-1_w2f__i8)
+          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_106%d*(1_w2f__i8)
           OpenAD_Symbol_106%d = 0.0d0
       ENDIF
 

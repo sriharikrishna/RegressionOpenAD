@@ -286,13 +286,15 @@ C adjoint
           OpenAD_Symbol_26 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_27 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+FVEC(INT(OpenAD_Symbol_23))%d*OpenAD_Symbol_24
-          X(1)%d = X(1)%d+FVEC(INT(OpenAD_Symbol_23))%d*OpenAD_Symbol_25
-          TEMP2%d = TEMP2%d+FVEC(INT(OpenAD_Symbol_23))%d*OpenAD_Symbol_
-     +26
+          X(2)%d = X(2)%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol_2
+     +4)
+          X(1)%d = X(1)%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol_2
+     +5)
+          TEMP2%d = TEMP2%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol
+     +_26)
           FVEC(INT(OpenAD_Symbol_23))%d = 0.0d0
-          X(3)%d = X(3)%d+TEMP2%d*OpenAD_Symbol_27
-          X(4)%d = X(4)%d+TEMP2%d*1_w2f__i8
+          X(3)%d = X(3)%d+TEMP2%d*(OpenAD_Symbol_27)
+          X(4)%d = X(4)%d+TEMP2%d*(1_w2f__i8)
           TEMP2%d = 0.0d0
         OpenAD_Symbol_18 = INT(OpenAD_Symbol_18) + 1
       END DO

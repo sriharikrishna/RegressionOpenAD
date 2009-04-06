@@ -154,7 +154,7 @@ C$OPENAD XXX Simple loop\t
       ELSE
         I = 1 + 1 *((3 - 1) / 1)
         DO WHILE(I .GE. 1)
-          X(I)%d = X(I)%d+Y(I)%d*2.0D00
+          X(I)%d = X(I)%d+Y(I)%d*(2.0D00)
           Y(I)%d = 0.0d0
           I = I - 1
         END DO

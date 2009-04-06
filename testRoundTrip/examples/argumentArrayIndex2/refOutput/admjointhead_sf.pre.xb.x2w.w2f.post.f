@@ -158,7 +158,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          X%d = X%d+Y%d*2.0D00
+          X%d = X%d+Y%d*(2.0D00)
           Y%d = 0.0d0
 
 C adjoint end

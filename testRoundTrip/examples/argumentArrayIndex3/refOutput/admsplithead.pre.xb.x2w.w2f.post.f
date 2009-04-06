@@ -90,7 +90,7 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          X%d = X%d+Y%d*2.0D00
+          X%d = X%d+Y%d*(2.0D00)
           Y%d = 0.0d0
 
           end if 

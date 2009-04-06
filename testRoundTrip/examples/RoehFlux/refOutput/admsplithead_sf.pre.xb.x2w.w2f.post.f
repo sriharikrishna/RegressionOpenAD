@@ -1949,15 +1949,16 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_535 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_536 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_431%d = OpenAD_Symbol_431%d+FLUX(5)%d*OpenAD_Sym
-     +bol_531
-          NSIZE%d = NSIZE%d+FLUX(5)%d*OpenAD_Symbol_532
+          OpenAD_Symbol_431%d = OpenAD_Symbol_431%d+FLUX(5)%d*(OpenAD_Sy
+     +mbol_531)
+          NSIZE%d = NSIZE%d+FLUX(5)%d*(OpenAD_Symbol_532)
           FLUX(5)%d = 0.0d0
-          UHATL%d = UHATL%d+OpenAD_Symbol_431%d*OpenAD_Symbol_533
-          RWL%d = RWL%d+OpenAD_Symbol_431%d*OpenAD_Symbol_534
-          NZHAT%d = NZHAT%d+OpenAD_Symbol_431%d*OpenAD_Symbol_535
-          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_431%d*OpenAD_Symbol_536
-          DSS5%d = DSS5%d+OpenAD_Symbol_431%d*1_w2f__i8
+          UHATL%d = UHATL%d+OpenAD_Symbol_431%d*(OpenAD_Symbol_533)
+          RWL%d = RWL%d+OpenAD_Symbol_431%d*(OpenAD_Symbol_534)
+          NZHAT%d = NZHAT%d+OpenAD_Symbol_431%d*(OpenAD_Symbol_535)
+          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_431%d*(OpenAD_Symbol_536
+     +)
+          DSS5%d = DSS5%d+OpenAD_Symbol_431%d*(1_w2f__i8)
           OpenAD_Symbol_431%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_537 = double_tape(double_tape_pointer)
@@ -1971,15 +1972,16 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_541 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_542 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_430%d = OpenAD_Symbol_430%d+FLUX(4)%d*OpenAD_Sym
-     +bol_537
-          NSIZE%d = NSIZE%d+FLUX(4)%d*OpenAD_Symbol_538
+          OpenAD_Symbol_430%d = OpenAD_Symbol_430%d+FLUX(4)%d*(OpenAD_Sy
+     +mbol_537)
+          NSIZE%d = NSIZE%d+FLUX(4)%d*(OpenAD_Symbol_538)
           FLUX(4)%d = 0.0d0
-          UHATL%d = UHATL%d+OpenAD_Symbol_430%d*OpenAD_Symbol_539
-          RVL%d = RVL%d+OpenAD_Symbol_430%d*OpenAD_Symbol_540
-          NYHAT%d = NYHAT%d+OpenAD_Symbol_430%d*OpenAD_Symbol_541
-          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_430%d*OpenAD_Symbol_542
-          DSS4%d = DSS4%d+OpenAD_Symbol_430%d*1_w2f__i8
+          UHATL%d = UHATL%d+OpenAD_Symbol_430%d*(OpenAD_Symbol_539)
+          RVL%d = RVL%d+OpenAD_Symbol_430%d*(OpenAD_Symbol_540)
+          NYHAT%d = NYHAT%d+OpenAD_Symbol_430%d*(OpenAD_Symbol_541)
+          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_430%d*(OpenAD_Symbol_542
+     +)
+          DSS4%d = DSS4%d+OpenAD_Symbol_430%d*(1_w2f__i8)
           OpenAD_Symbol_430%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_543 = double_tape(double_tape_pointer)
@@ -1993,15 +1995,16 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_547 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_548 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_429%d = OpenAD_Symbol_429%d+FLUX(3)%d*OpenAD_Sym
-     +bol_543
-          NSIZE%d = NSIZE%d+FLUX(3)%d*OpenAD_Symbol_544
+          OpenAD_Symbol_429%d = OpenAD_Symbol_429%d+FLUX(3)%d*(OpenAD_Sy
+     +mbol_543)
+          NSIZE%d = NSIZE%d+FLUX(3)%d*(OpenAD_Symbol_544)
           FLUX(3)%d = 0.0d0
-          UHATL%d = UHATL%d+OpenAD_Symbol_429%d*OpenAD_Symbol_545
-          RUL%d = RUL%d+OpenAD_Symbol_429%d*OpenAD_Symbol_546
-          NXHAT%d = NXHAT%d+OpenAD_Symbol_429%d*OpenAD_Symbol_547
-          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_429%d*OpenAD_Symbol_548
-          DSS3%d = DSS3%d+OpenAD_Symbol_429%d*1_w2f__i8
+          UHATL%d = UHATL%d+OpenAD_Symbol_429%d*(OpenAD_Symbol_545)
+          RUL%d = RUL%d+OpenAD_Symbol_429%d*(OpenAD_Symbol_546)
+          NXHAT%d = NXHAT%d+OpenAD_Symbol_429%d*(OpenAD_Symbol_547)
+          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_429%d*(OpenAD_Symbol_548
+     +)
+          DSS3%d = DSS3%d+OpenAD_Symbol_429%d*(1_w2f__i8)
           OpenAD_Symbol_429%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_549 = double_tape(double_tape_pointer)
@@ -2011,13 +2014,14 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_551 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_552 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_428%d = OpenAD_Symbol_428%d+FLUX(2)%d*OpenAD_Sym
-     +bol_549
-          NSIZE%d = NSIZE%d+FLUX(2)%d*OpenAD_Symbol_550
+          OpenAD_Symbol_428%d = OpenAD_Symbol_428%d+FLUX(2)%d*(OpenAD_Sy
+     +mbol_549)
+          NSIZE%d = NSIZE%d+FLUX(2)%d*(OpenAD_Symbol_550)
           FLUX(2)%d = 0.0d0
-          UHATL%d = UHATL%d+OpenAD_Symbol_428%d*OpenAD_Symbol_551
-          PRIML(2)%d = PRIML(2)%d+OpenAD_Symbol_428%d*OpenAD_Symbol_552
-          DSS2%d = DSS2%d+OpenAD_Symbol_428%d*1_w2f__i8
+          UHATL%d = UHATL%d+OpenAD_Symbol_428%d*(OpenAD_Symbol_551)
+          PRIML(2)%d = PRIML(2)%d+OpenAD_Symbol_428%d*(OpenAD_Symbol_552
+     +)
+          DSS2%d = DSS2%d+OpenAD_Symbol_428%d*(1_w2f__i8)
           OpenAD_Symbol_428%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_553 = double_tape(double_tape_pointer)
@@ -2147,97 +2151,97 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_615 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_616 = double_tape(double_tape_pointer)
-          UHAT%d = UHAT%d+FLUX(1)%d*OpenAD_Symbol_553
-          ALP15M%d = ALP15M%d+FLUX(1)%d*OpenAD_Symbol_554
-          CAVE%d = CAVE%d+FLUX(1)%d*OpenAD_Symbol_555
-          GM1INV%d = GM1INV%d+FLUX(1)%d*OpenAD_Symbol_556
-          ALP15P%d = ALP15P%d+FLUX(1)%d*OpenAD_Symbol_557
-          THTAVE%d = THTAVE%d+FLUX(1)%d*OpenAD_Symbol_558
-          MU%d = MU%d+FLUX(1)%d*OpenAD_Symbol_559
-          UTILDE%d = UTILDE%d+FLUX(1)%d*OpenAD_Symbol_560
-          ALP2%d = ALP2%d+FLUX(1)%d*OpenAD_Symbol_561
-          VTILDE%d = VTILDE%d+FLUX(1)%d*OpenAD_Symbol_562
-          ALP3%d = ALP3%d+FLUX(1)%d*OpenAD_Symbol_563
-          WTILDE%d = WTILDE%d+FLUX(1)%d*OpenAD_Symbol_564
-          ALP4%d = ALP4%d+FLUX(1)%d*OpenAD_Symbol_565
-          OpenAD_Symbol_427%d = OpenAD_Symbol_427%d+FLUX(1)%d*OpenAD_Sym
-     +bol_566
-          UHATL%d = UHATL%d+FLUX(1)%d*OpenAD_Symbol_567
-          NSIZE%d = NSIZE%d+FLUX(1)%d*OpenAD_Symbol_568
+          UHAT%d = UHAT%d+FLUX(1)%d*(OpenAD_Symbol_553)
+          ALP15M%d = ALP15M%d+FLUX(1)%d*(OpenAD_Symbol_554)
+          CAVE%d = CAVE%d+FLUX(1)%d*(OpenAD_Symbol_555)
+          GM1INV%d = GM1INV%d+FLUX(1)%d*(OpenAD_Symbol_556)
+          ALP15P%d = ALP15P%d+FLUX(1)%d*(OpenAD_Symbol_557)
+          THTAVE%d = THTAVE%d+FLUX(1)%d*(OpenAD_Symbol_558)
+          MU%d = MU%d+FLUX(1)%d*(OpenAD_Symbol_559)
+          UTILDE%d = UTILDE%d+FLUX(1)%d*(OpenAD_Symbol_560)
+          ALP2%d = ALP2%d+FLUX(1)%d*(OpenAD_Symbol_561)
+          VTILDE%d = VTILDE%d+FLUX(1)%d*(OpenAD_Symbol_562)
+          ALP3%d = ALP3%d+FLUX(1)%d*(OpenAD_Symbol_563)
+          WTILDE%d = WTILDE%d+FLUX(1)%d*(OpenAD_Symbol_564)
+          ALP4%d = ALP4%d+FLUX(1)%d*(OpenAD_Symbol_565)
+          OpenAD_Symbol_427%d = OpenAD_Symbol_427%d+FLUX(1)%d*(OpenAD_Sy
+     +mbol_566)
+          UHATL%d = UHATL%d+FLUX(1)%d*(OpenAD_Symbol_567)
+          NSIZE%d = NSIZE%d+FLUX(1)%d*(OpenAD_Symbol_568)
           FLUX(1)%d = 0.0d0
-          NZHAT%d = NZHAT%d+DSS5%d*OpenAD_Symbol_569
-          ALP15M%d = ALP15M%d+DSS5%d*OpenAD_Symbol_570
-          NYHAT%d = NYHAT%d+DSS5%d*OpenAD_Symbol_571
-          ALP2%d = ALP2%d+DSS5%d*OpenAD_Symbol_572
-          NXHAT%d = NXHAT%d+DSS5%d*OpenAD_Symbol_573
-          ALP3%d = ALP3%d+DSS5%d*OpenAD_Symbol_574
-          WAVE%d = WAVE%d+DSS5%d*OpenAD_Symbol_575
-          MU%d = MU%d+DSS5%d*OpenAD_Symbol_576
+          NZHAT%d = NZHAT%d+DSS5%d*(OpenAD_Symbol_569)
+          ALP15M%d = ALP15M%d+DSS5%d*(OpenAD_Symbol_570)
+          NYHAT%d = NYHAT%d+DSS5%d*(OpenAD_Symbol_571)
+          ALP2%d = ALP2%d+DSS5%d*(OpenAD_Symbol_572)
+          NXHAT%d = NXHAT%d+DSS5%d*(OpenAD_Symbol_573)
+          ALP3%d = ALP3%d+DSS5%d*(OpenAD_Symbol_574)
+          WAVE%d = WAVE%d+DSS5%d*(OpenAD_Symbol_575)
+          MU%d = MU%d+DSS5%d*(OpenAD_Symbol_576)
           DSS5%d = 0.0d0
-          NYHAT%d = NYHAT%d+DSS4%d*OpenAD_Symbol_577
-          ALP15M%d = ALP15M%d+DSS4%d*OpenAD_Symbol_578
-          NXHAT%d = NXHAT%d+DSS4%d*OpenAD_Symbol_579
-          ALP4%d = ALP4%d+DSS4%d*OpenAD_Symbol_580
-          NZHAT%d = NZHAT%d+DSS4%d*OpenAD_Symbol_581
-          ALP2%d = ALP2%d+DSS4%d*OpenAD_Symbol_582
-          VAVE%d = VAVE%d+DSS4%d*OpenAD_Symbol_583
-          MU%d = MU%d+DSS4%d*OpenAD_Symbol_584
+          NYHAT%d = NYHAT%d+DSS4%d*(OpenAD_Symbol_577)
+          ALP15M%d = ALP15M%d+DSS4%d*(OpenAD_Symbol_578)
+          NXHAT%d = NXHAT%d+DSS4%d*(OpenAD_Symbol_579)
+          ALP4%d = ALP4%d+DSS4%d*(OpenAD_Symbol_580)
+          NZHAT%d = NZHAT%d+DSS4%d*(OpenAD_Symbol_581)
+          ALP2%d = ALP2%d+DSS4%d*(OpenAD_Symbol_582)
+          VAVE%d = VAVE%d+DSS4%d*(OpenAD_Symbol_583)
+          MU%d = MU%d+DSS4%d*(OpenAD_Symbol_584)
           DSS4%d = 0.0d0
-          NXHAT%d = NXHAT%d+DSS3%d*OpenAD_Symbol_585
-          ALP15M%d = ALP15M%d+DSS3%d*OpenAD_Symbol_586
-          NZHAT%d = NZHAT%d+DSS3%d*OpenAD_Symbol_587
-          ALP3%d = ALP3%d+DSS3%d*OpenAD_Symbol_588
-          NYHAT%d = NYHAT%d+DSS3%d*OpenAD_Symbol_589
-          ALP4%d = ALP4%d+DSS3%d*OpenAD_Symbol_590
-          UAVE%d = UAVE%d+DSS3%d*OpenAD_Symbol_591
-          MU%d = MU%d+DSS3%d*OpenAD_Symbol_592
+          NXHAT%d = NXHAT%d+DSS3%d*(OpenAD_Symbol_585)
+          ALP15M%d = ALP15M%d+DSS3%d*(OpenAD_Symbol_586)
+          NZHAT%d = NZHAT%d+DSS3%d*(OpenAD_Symbol_587)
+          ALP3%d = ALP3%d+DSS3%d*(OpenAD_Symbol_588)
+          NYHAT%d = NYHAT%d+DSS3%d*(OpenAD_Symbol_589)
+          ALP4%d = ALP4%d+DSS3%d*(OpenAD_Symbol_590)
+          UAVE%d = UAVE%d+DSS3%d*(OpenAD_Symbol_591)
+          MU%d = MU%d+DSS3%d*(OpenAD_Symbol_592)
           DSS3%d = 0.0d0
           MU%d = MU%d+DSS2%d
           DSS2%d = 0.0d0
-          NZHAT%d = NZHAT%d+MU%d*OpenAD_Symbol_593
-          ALP4%d = ALP4%d+MU%d*OpenAD_Symbol_594
-          NYHAT%d = NYHAT%d+MU%d*OpenAD_Symbol_595
-          ALP3%d = ALP3%d+MU%d*OpenAD_Symbol_596
-          NXHAT%d = NXHAT%d+MU%d*OpenAD_Symbol_597
-          ALP2%d = ALP2%d+MU%d*OpenAD_Symbol_598
-          CAVE%d = CAVE%d+MU%d*OpenAD_Symbol_599
-          ALP15P%d = ALP15P%d+MU%d*OpenAD_Symbol_600
+          NZHAT%d = NZHAT%d+MU%d*(OpenAD_Symbol_593)
+          ALP4%d = ALP4%d+MU%d*(OpenAD_Symbol_594)
+          NYHAT%d = NYHAT%d+MU%d*(OpenAD_Symbol_595)
+          ALP3%d = ALP3%d+MU%d*(OpenAD_Symbol_596)
+          NXHAT%d = NXHAT%d+MU%d*(OpenAD_Symbol_597)
+          ALP2%d = ALP2%d+MU%d*(OpenAD_Symbol_598)
+          CAVE%d = CAVE%d+MU%d*(OpenAD_Symbol_599)
+          ALP15P%d = ALP15P%d+MU%d*(OpenAD_Symbol_600)
           MU%d = 0.0d0
-          NZHAT%d = NZHAT%d+UHATL%d*OpenAD_Symbol_601
-          PRIML(5)%d = PRIML(5)%d+UHATL%d*OpenAD_Symbol_602
-          NYHAT%d = NYHAT%d+UHATL%d*OpenAD_Symbol_603
-          PRIML(4)%d = PRIML(4)%d+UHATL%d*OpenAD_Symbol_604
-          NXHAT%d = NXHAT%d+UHATL%d*OpenAD_Symbol_605
-          PRIML(3)%d = PRIML(3)%d+UHATL%d*OpenAD_Symbol_606
+          NZHAT%d = NZHAT%d+UHATL%d*(OpenAD_Symbol_601)
+          PRIML(5)%d = PRIML(5)%d+UHATL%d*(OpenAD_Symbol_602)
+          NYHAT%d = NYHAT%d+UHATL%d*(OpenAD_Symbol_603)
+          PRIML(4)%d = PRIML(4)%d+UHATL%d*(OpenAD_Symbol_604)
+          NXHAT%d = NXHAT%d+UHATL%d*(OpenAD_Symbol_605)
+          PRIML(3)%d = PRIML(3)%d+UHATL%d*(OpenAD_Symbol_606)
           UHATL%d = 0.0d0
-          EL%d = EL%d+OpenAD_Symbol_427%d*1_w2f__i8
-          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_427%d*1_w2f__i8
+          EL%d = EL%d+OpenAD_Symbol_427%d*(1_w2f__i8)
+          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_427%d*(1_w2f__i8)
           OpenAD_Symbol_427%d = 0.0d0
-          ALP5%d = ALP5%d+ALP15M%d*-1_w2f__i8
-          ALP1%d = ALP1%d+ALP15M%d*1_w2f__i8
+          ALP5%d = ALP5%d+ALP15M%d*(-1_w2f__i8)
+          ALP1%d = ALP1%d+ALP15M%d*(1_w2f__i8)
           ALP15M%d = 0.0d0
-          ALP5%d = ALP5%d+ALP15P%d*1_w2f__i8
-          ALP1%d = ALP1%d+ALP15P%d*1_w2f__i8
+          ALP5%d = ALP5%d+ALP15P%d*(1_w2f__i8)
+          ALP1%d = ALP1%d+ALP15P%d*(1_w2f__i8)
           ALP15P%d = 0.0d0
-          OpenAD_Symbol_426%d = OpenAD_Symbol_426%d+ALP5%d*OpenAD_Symbol
-     +_607
-          ALAMCP%d = ALAMCP%d+ALP5%d*OpenAD_Symbol_608
+          OpenAD_Symbol_426%d = OpenAD_Symbol_426%d+ALP5%d*(OpenAD_Symbo
+     +l_607)
+          ALAMCP%d = ALAMCP%d+ALP5%d*(OpenAD_Symbol_608)
           ALP5%d = 0.0d0
-          OpenAD_Symbol_425%d = OpenAD_Symbol_425%d+ALP4%d*OpenAD_Symbol
-     +_609
-          ALAMU%d = ALAMU%d+ALP4%d*OpenAD_Symbol_610
+          OpenAD_Symbol_425%d = OpenAD_Symbol_425%d+ALP4%d*(OpenAD_Symbo
+     +l_609)
+          ALAMU%d = ALAMU%d+ALP4%d*(OpenAD_Symbol_610)
           ALP4%d = 0.0d0
-          OpenAD_Symbol_424%d = OpenAD_Symbol_424%d+ALP3%d*OpenAD_Symbol
-     +_611
-          ALAMU%d = ALAMU%d+ALP3%d*OpenAD_Symbol_612
+          OpenAD_Symbol_424%d = OpenAD_Symbol_424%d+ALP3%d*(OpenAD_Symbo
+     +l_611)
+          ALAMU%d = ALAMU%d+ALP3%d*(OpenAD_Symbol_612)
           ALP3%d = 0.0d0
-          OpenAD_Symbol_423%d = OpenAD_Symbol_423%d+ALP2%d*OpenAD_Symbol
-     +_613
-          ALAMU%d = ALAMU%d+ALP2%d*OpenAD_Symbol_614
+          OpenAD_Symbol_423%d = OpenAD_Symbol_423%d+ALP2%d*(OpenAD_Symbo
+     +l_613)
+          ALAMU%d = ALAMU%d+ALP2%d*(OpenAD_Symbol_614)
           ALP2%d = 0.0d0
-          OpenAD_Symbol_422%d = OpenAD_Symbol_422%d+ALP1%d*OpenAD_Symbol
-     +_615
-          ALAMCM%d = ALAMCM%d+ALP1%d*OpenAD_Symbol_616
+          OpenAD_Symbol_422%d = OpenAD_Symbol_422%d+ALP1%d*(OpenAD_Symbo
+     +l_615)
+          ALAMCM%d = ALAMCM%d+ALP1%d*(OpenAD_Symbol_616)
           ALP1%d = 0.0d0
           ALP5%d = ALP5%d+OpenAD_Symbol_426%d
           OpenAD_Symbol_426%d = 0.0d0
@@ -2391,134 +2395,136 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_686 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_687 = double_tape(double_tape_pointer)
-          NYHAT%d = NYHAT%d+ALP4%d*OpenAD_Symbol_617
-          DRU%d = DRU%d+ALP4%d*OpenAD_Symbol_618
-          NZHAT%d = NZHAT%d+ALP4%d*OpenAD_Symbol_619
-          OMEGA%d = OMEGA%d+ALP4%d*OpenAD_Symbol_620
-          OpenAD_Symbol_390%d = OpenAD_Symbol_390%d+ALP4%d*OpenAD_Symbol
-     +_621
-          DR%d = DR%d+ALP4%d*OpenAD_Symbol_622
-          NXHAT%d = NXHAT%d+ALP4%d*OpenAD_Symbol_623
-          DRV%d = DRV%d+ALP4%d*OpenAD_Symbol_624
+          NYHAT%d = NYHAT%d+ALP4%d*(OpenAD_Symbol_617)
+          DRU%d = DRU%d+ALP4%d*(OpenAD_Symbol_618)
+          NZHAT%d = NZHAT%d+ALP4%d*(OpenAD_Symbol_619)
+          OMEGA%d = OMEGA%d+ALP4%d*(OpenAD_Symbol_620)
+          OpenAD_Symbol_390%d = OpenAD_Symbol_390%d+ALP4%d*(OpenAD_Symbo
+     +l_621)
+          DR%d = DR%d+ALP4%d*(OpenAD_Symbol_622)
+          NXHAT%d = NXHAT%d+ALP4%d*(OpenAD_Symbol_623)
+          DRV%d = DRV%d+ALP4%d*(OpenAD_Symbol_624)
           ALP4%d = 0.0d0
-          NXHAT%d = NXHAT%d+ALP3%d*OpenAD_Symbol_625
-          DRW%d = DRW%d+ALP3%d*OpenAD_Symbol_626
-          NYHAT%d = NYHAT%d+ALP3%d*OpenAD_Symbol_627
-          OMEGA%d = OMEGA%d+ALP3%d*OpenAD_Symbol_628
-          OpenAD_Symbol_389%d = OpenAD_Symbol_389%d+ALP3%d*OpenAD_Symbol
-     +_629
-          DR%d = DR%d+ALP3%d*OpenAD_Symbol_630
-          NZHAT%d = NZHAT%d+ALP3%d*OpenAD_Symbol_631
-          DRU%d = DRU%d+ALP3%d*OpenAD_Symbol_632
+          NXHAT%d = NXHAT%d+ALP3%d*(OpenAD_Symbol_625)
+          DRW%d = DRW%d+ALP3%d*(OpenAD_Symbol_626)
+          NYHAT%d = NYHAT%d+ALP3%d*(OpenAD_Symbol_627)
+          OMEGA%d = OMEGA%d+ALP3%d*(OpenAD_Symbol_628)
+          OpenAD_Symbol_389%d = OpenAD_Symbol_389%d+ALP3%d*(OpenAD_Symbo
+     +l_629)
+          DR%d = DR%d+ALP3%d*(OpenAD_Symbol_630)
+          NZHAT%d = NZHAT%d+ALP3%d*(OpenAD_Symbol_631)
+          DRU%d = DRU%d+ALP3%d*(OpenAD_Symbol_632)
           ALP3%d = 0.0d0
-          NZHAT%d = NZHAT%d+ALP2%d*OpenAD_Symbol_633
-          DRV%d = DRV%d+ALP2%d*OpenAD_Symbol_634
-          NXHAT%d = NXHAT%d+ALP2%d*OpenAD_Symbol_635
-          OMEGA%d = OMEGA%d+ALP2%d*OpenAD_Symbol_636
-          OpenAD_Symbol_388%d = OpenAD_Symbol_388%d+ALP2%d*OpenAD_Symbol
-     +_637
-          DR%d = DR%d+ALP2%d*OpenAD_Symbol_638
-          NYHAT%d = NYHAT%d+ALP2%d*OpenAD_Symbol_639
-          DRW%d = DRW%d+ALP2%d*OpenAD_Symbol_640
+          NZHAT%d = NZHAT%d+ALP2%d*(OpenAD_Symbol_633)
+          DRV%d = DRV%d+ALP2%d*(OpenAD_Symbol_634)
+          NXHAT%d = NXHAT%d+ALP2%d*(OpenAD_Symbol_635)
+          OMEGA%d = OMEGA%d+ALP2%d*(OpenAD_Symbol_636)
+          OpenAD_Symbol_388%d = OpenAD_Symbol_388%d+ALP2%d*(OpenAD_Symbo
+     +l_637)
+          DR%d = DR%d+ALP2%d*(OpenAD_Symbol_638)
+          NYHAT%d = NYHAT%d+ALP2%d*(OpenAD_Symbol_639)
+          DRW%d = DRW%d+ALP2%d*(OpenAD_Symbol_640)
           ALP2%d = 0.0d0
-          OpenAD_Symbol_393%d = OpenAD_Symbol_393%d+ALP5%d*5.0D-01
+          OpenAD_Symbol_393%d = OpenAD_Symbol_393%d+ALP5%d*(5.0D-01)
           ALP5%d = 0.0d0
-          OpenAD_Symbol_392%d = OpenAD_Symbol_392%d+ALP1%d*5.0D-01
+          OpenAD_Symbol_392%d = OpenAD_Symbol_392%d+ALP1%d*(5.0D-01)
           ALP1%d = 0.0d0
-          UHAT%d = UHAT%d+OpenAD_Symbol_393%d*OpenAD_Symbol_641
-          DR%d = DR%d+OpenAD_Symbol_393%d*OpenAD_Symbol_642
-          OMEGA%d = OMEGA%d+OpenAD_Symbol_393%d*1_w2f__i8
-          NDDRU%d = NDDRU%d+OpenAD_Symbol_393%d*1_w2f__i8
+          UHAT%d = UHAT%d+OpenAD_Symbol_393%d*(OpenAD_Symbol_641)
+          DR%d = DR%d+OpenAD_Symbol_393%d*(OpenAD_Symbol_642)
+          OMEGA%d = OMEGA%d+OpenAD_Symbol_393%d*(1_w2f__i8)
+          NDDRU%d = NDDRU%d+OpenAD_Symbol_393%d*(1_w2f__i8)
           OpenAD_Symbol_393%d = 0.0d0
-          UHAT%d = UHAT%d+OpenAD_Symbol_392%d*OpenAD_Symbol_643
-          DR%d = DR%d+OpenAD_Symbol_392%d*OpenAD_Symbol_644
-          OMEGA%d = OMEGA%d+OpenAD_Symbol_392%d*1_w2f__i8
-          NDDRU%d = NDDRU%d+OpenAD_Symbol_392%d*-1_w2f__i8
+          UHAT%d = UHAT%d+OpenAD_Symbol_392%d*(OpenAD_Symbol_643)
+          DR%d = DR%d+OpenAD_Symbol_392%d*(OpenAD_Symbol_644)
+          OMEGA%d = OMEGA%d+OpenAD_Symbol_392%d*(1_w2f__i8)
+          NDDRU%d = NDDRU%d+OpenAD_Symbol_392%d*(-1_w2f__i8)
           OpenAD_Symbol_392%d = 0.0d0
-          CAVE%d = CAVE%d+OMEGA%d*OpenAD_Symbol_645
-          GM1%d = GM1%d+OMEGA%d*OpenAD_Symbol_646
-          OpenAD_Symbol_391%d = OpenAD_Symbol_391%d+OMEGA%d*OpenAD_Symbo
-     +l_647
+          CAVE%d = CAVE%d+OMEGA%d*(OpenAD_Symbol_645)
+          GM1%d = GM1%d+OMEGA%d*(OpenAD_Symbol_646)
+          OpenAD_Symbol_391%d = OpenAD_Symbol_391%d+OMEGA%d*(OpenAD_Symb
+     +ol_647)
           OMEGA%d = 0.0d0
-          NZHAT%d = NZHAT%d+NDDRU%d*OpenAD_Symbol_648
-          DRW%d = DRW%d+NDDRU%d*OpenAD_Symbol_649
-          NYHAT%d = NYHAT%d+NDDRU%d*OpenAD_Symbol_650
-          DRV%d = DRV%d+NDDRU%d*OpenAD_Symbol_651
-          NXHAT%d = NXHAT%d+NDDRU%d*OpenAD_Symbol_652
-          DRU%d = DRU%d+NDDRU%d*OpenAD_Symbol_653
+          NZHAT%d = NZHAT%d+NDDRU%d*(OpenAD_Symbol_648)
+          DRW%d = DRW%d+NDDRU%d*(OpenAD_Symbol_649)
+          NYHAT%d = NYHAT%d+NDDRU%d*(OpenAD_Symbol_650)
+          DRV%d = DRV%d+NDDRU%d*(OpenAD_Symbol_651)
+          NXHAT%d = NXHAT%d+NDDRU%d*(OpenAD_Symbol_652)
+          DRU%d = DRU%d+NDDRU%d*(OpenAD_Symbol_653)
           NDDRU%d = 0.0d0
-          WAVE%d = WAVE%d+OpenAD_Symbol_391%d*OpenAD_Symbol_654
-          DRW%d = DRW%d+OpenAD_Symbol_391%d*OpenAD_Symbol_655
-          VAVE%d = VAVE%d+OpenAD_Symbol_391%d*OpenAD_Symbol_656
-          DRV%d = DRV%d+OpenAD_Symbol_391%d*OpenAD_Symbol_657
-          UAVE%d = UAVE%d+OpenAD_Symbol_391%d*OpenAD_Symbol_658
-          DRU%d = DRU%d+OpenAD_Symbol_391%d*OpenAD_Symbol_659
-          THTAVE%d = THTAVE%d+OpenAD_Symbol_391%d*OpenAD_Symbol_660
-          DR%d = DR%d+OpenAD_Symbol_391%d*OpenAD_Symbol_661
-          THETAR%d = THETAR%d+OpenAD_Symbol_391%d*OpenAD_Symbol_662
-          PRIMR(2)%d = PRIMR(2)%d+OpenAD_Symbol_391%d*OpenAD_Symbol_663
-          GM1INV%d = GM1INV%d+OpenAD_Symbol_391%d*OpenAD_Symbol_664
-          PRIMR(1)%d = PRIMR(1)%d+OpenAD_Symbol_391%d*OpenAD_Symbol_665
-          EL%d = EL%d+OpenAD_Symbol_391%d*-1_w2f__i8
+          WAVE%d = WAVE%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_654)
+          DRW%d = DRW%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_655)
+          VAVE%d = VAVE%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_656)
+          DRV%d = DRV%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_657)
+          UAVE%d = UAVE%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_658)
+          DRU%d = DRU%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_659)
+          THTAVE%d = THTAVE%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_660)
+          DR%d = DR%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_661)
+          THETAR%d = THETAR%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_662)
+          PRIMR(2)%d = PRIMR(2)%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_663
+     +)
+          GM1INV%d = GM1INV%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_664)
+          PRIMR(1)%d = PRIMR(1)%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_665
+     +)
+          EL%d = EL%d+OpenAD_Symbol_391%d*(-1_w2f__i8)
           OpenAD_Symbol_391%d = 0.0d0
-          NZHAT%d = NZHAT%d+OpenAD_Symbol_390%d*OpenAD_Symbol_666
-          CAVE%d = CAVE%d+OpenAD_Symbol_390%d*OpenAD_Symbol_667
-          WTILDE%d = WTILDE%d+OpenAD_Symbol_390%d*-1_w2f__i8
+          NZHAT%d = NZHAT%d+OpenAD_Symbol_390%d*(OpenAD_Symbol_666)
+          CAVE%d = CAVE%d+OpenAD_Symbol_390%d*(OpenAD_Symbol_667)
+          WTILDE%d = WTILDE%d+OpenAD_Symbol_390%d*(-1_w2f__i8)
           OpenAD_Symbol_390%d = 0.0d0
-          NYHAT%d = NYHAT%d+OpenAD_Symbol_389%d*OpenAD_Symbol_668
-          CAVE%d = CAVE%d+OpenAD_Symbol_389%d*OpenAD_Symbol_669
-          VTILDE%d = VTILDE%d+OpenAD_Symbol_389%d*-1_w2f__i8
+          NYHAT%d = NYHAT%d+OpenAD_Symbol_389%d*(OpenAD_Symbol_668)
+          CAVE%d = CAVE%d+OpenAD_Symbol_389%d*(OpenAD_Symbol_669)
+          VTILDE%d = VTILDE%d+OpenAD_Symbol_389%d*(-1_w2f__i8)
           OpenAD_Symbol_389%d = 0.0d0
-          NXHAT%d = NXHAT%d+OpenAD_Symbol_388%d*OpenAD_Symbol_670
-          CAVE%d = CAVE%d+OpenAD_Symbol_388%d*OpenAD_Symbol_671
-          UTILDE%d = UTILDE%d+OpenAD_Symbol_388%d*-1_w2f__i8
+          NXHAT%d = NXHAT%d+OpenAD_Symbol_388%d*(OpenAD_Symbol_670)
+          CAVE%d = CAVE%d+OpenAD_Symbol_388%d*(OpenAD_Symbol_671)
+          UTILDE%d = UTILDE%d+OpenAD_Symbol_388%d*(-1_w2f__i8)
           OpenAD_Symbol_388%d = 0.0d0
-          THETAL%d = THETAL%d+EL%d*OpenAD_Symbol_672
-          PRIML(2)%d = PRIML(2)%d+EL%d*OpenAD_Symbol_673
-          GM1INV%d = GM1INV%d+EL%d*OpenAD_Symbol_674
-          PRIML(1)%d = PRIML(1)%d+EL%d*OpenAD_Symbol_675
+          THETAL%d = THETAL%d+EL%d*(OpenAD_Symbol_672)
+          PRIML(2)%d = PRIML(2)%d+EL%d*(OpenAD_Symbol_673)
+          GM1INV%d = GM1INV%d+EL%d*(OpenAD_Symbol_674)
+          PRIML(1)%d = PRIML(1)%d+EL%d*(OpenAD_Symbol_675)
           EL%d = 0.0d0
-          OpenAD_Symbol_387%d = OpenAD_Symbol_387%d+ALAMU%d*5.0D-01
+          OpenAD_Symbol_387%d = OpenAD_Symbol_387%d+ALAMU%d*(5.0D-01)
           ALAMU%d = 0.0d0
-          OpenAD_Symbol_386%d = OpenAD_Symbol_386%d+ALAMCP%d*5.0D-01
+          OpenAD_Symbol_386%d = OpenAD_Symbol_386%d+ALAMCP%d*(5.0D-01)
           ALAMCP%d = 0.0d0
-          OpenAD_Symbol_385%d = OpenAD_Symbol_385%d+ALAMCM%d*5.0D-01
+          OpenAD_Symbol_385%d = OpenAD_Symbol_385%d+ALAMCM%d*(5.0D-01)
           ALAMCM%d = 0.0d0
-          PRIMR(5)%d = PRIMR(5)%d+DRW%d*OpenAD_Symbol_676
-          PRIMR(2)%d = PRIMR(2)%d+DRW%d*OpenAD_Symbol_677
-          RWL%d = RWL%d+DRW%d*-1_w2f__i8
+          PRIMR(5)%d = PRIMR(5)%d+DRW%d*(OpenAD_Symbol_676)
+          PRIMR(2)%d = PRIMR(2)%d+DRW%d*(OpenAD_Symbol_677)
+          RWL%d = RWL%d+DRW%d*(-1_w2f__i8)
           DRW%d = 0.0d0
-          PRIMR(4)%d = PRIMR(4)%d+DRV%d*OpenAD_Symbol_678
-          PRIMR(2)%d = PRIMR(2)%d+DRV%d*OpenAD_Symbol_679
-          RVL%d = RVL%d+DRV%d*-1_w2f__i8
+          PRIMR(4)%d = PRIMR(4)%d+DRV%d*(OpenAD_Symbol_678)
+          PRIMR(2)%d = PRIMR(2)%d+DRV%d*(OpenAD_Symbol_679)
+          RVL%d = RVL%d+DRV%d*(-1_w2f__i8)
           DRV%d = 0.0d0
-          PRIMR(3)%d = PRIMR(3)%d+DRU%d*OpenAD_Symbol_680
-          PRIMR(2)%d = PRIMR(2)%d+DRU%d*OpenAD_Symbol_681
-          RUL%d = RUL%d+DRU%d*-1_w2f__i8
+          PRIMR(3)%d = PRIMR(3)%d+DRU%d*(OpenAD_Symbol_680)
+          PRIMR(2)%d = PRIMR(2)%d+DRU%d*(OpenAD_Symbol_681)
+          RUL%d = RUL%d+DRU%d*(-1_w2f__i8)
           DRU%d = 0.0d0
-          PRIML(2)%d = PRIML(2)%d+DR%d*-1_w2f__i8
-          PRIMR(2)%d = PRIMR(2)%d+DR%d*1_w2f__i8
+          PRIML(2)%d = PRIML(2)%d+DR%d*(-1_w2f__i8)
+          PRIMR(2)%d = PRIMR(2)%d+DR%d*(1_w2f__i8)
           DR%d = 0.0d0
-          PRIML(5)%d = PRIML(5)%d+RWL%d*OpenAD_Symbol_682
-          PRIML(2)%d = PRIML(2)%d+RWL%d*OpenAD_Symbol_683
+          PRIML(5)%d = PRIML(5)%d+RWL%d*(OpenAD_Symbol_682)
+          PRIML(2)%d = PRIML(2)%d+RWL%d*(OpenAD_Symbol_683)
           RWL%d = 0.0d0
-          PRIML(4)%d = PRIML(4)%d+RVL%d*OpenAD_Symbol_684
-          PRIML(2)%d = PRIML(2)%d+RVL%d*OpenAD_Symbol_685
+          PRIML(4)%d = PRIML(4)%d+RVL%d*(OpenAD_Symbol_684)
+          PRIML(2)%d = PRIML(2)%d+RVL%d*(OpenAD_Symbol_685)
           RVL%d = 0.0d0
-          PRIML(3)%d = PRIML(3)%d+RUL%d*OpenAD_Symbol_686
-          PRIML(2)%d = PRIML(2)%d+RUL%d*OpenAD_Symbol_687
+          PRIML(3)%d = PRIML(3)%d+RUL%d*(OpenAD_Symbol_686)
+          PRIML(2)%d = PRIML(2)%d+RUL%d*(OpenAD_Symbol_687)
           RUL%d = 0.0d0
           OpenAD_Symbol_384%d = OpenAD_Symbol_384%d+OpenAD_Symbol_387%d*
-     +-1_w2f__i8
-          LAMU%d = LAMU%d+OpenAD_Symbol_387%d*1_w2f__i8
+     +(-1_w2f__i8)
+          LAMU%d = LAMU%d+OpenAD_Symbol_387%d*(1_w2f__i8)
           OpenAD_Symbol_387%d = 0.0d0
           OpenAD_Symbol_383%d = OpenAD_Symbol_383%d+OpenAD_Symbol_386%d*
-     +-1_w2f__i8
-          LAMCP%d = LAMCP%d+OpenAD_Symbol_386%d*1_w2f__i8
+     +(-1_w2f__i8)
+          LAMCP%d = LAMCP%d+OpenAD_Symbol_386%d*(1_w2f__i8)
           OpenAD_Symbol_386%d = 0.0d0
           OpenAD_Symbol_382%d = OpenAD_Symbol_382%d+OpenAD_Symbol_385%d*
-     +-1_w2f__i8
-          LAMCM%d = LAMCM%d+OpenAD_Symbol_385%d*1_w2f__i8
+     +(-1_w2f__i8)
+          LAMCM%d = LAMCM%d+OpenAD_Symbol_385%d*(1_w2f__i8)
           OpenAD_Symbol_385%d = 0.0d0
           ALAMU%d = ALAMU%d+OpenAD_Symbol_384%d
           OpenAD_Symbol_384%d = 0.0d0
@@ -2536,12 +2542,12 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_688 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_689 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_433%d = OpenAD_Symbol_433%d+ALAMU%d*OpenAD_Symbo
-     +l_688
-          DELTA2%d = DELTA2%d+ALAMU%d*OpenAD_Symbol_689
+          OpenAD_Symbol_433%d = OpenAD_Symbol_433%d+ALAMU%d*(OpenAD_Symb
+     +ol_688)
+          DELTA2%d = DELTA2%d+ALAMU%d*(OpenAD_Symbol_689)
           ALAMU%d = 0.0d0
-          LAM2%d = LAM2%d+OpenAD_Symbol_433%d*1_w2f__i8
-          DELTA2%d = DELTA2%d+OpenAD_Symbol_433%d*1_w2f__i8
+          LAM2%d = LAM2%d+OpenAD_Symbol_433%d*(1_w2f__i8)
+          DELTA2%d = DELTA2%d+OpenAD_Symbol_433%d*(1_w2f__i8)
           OpenAD_Symbol_433%d = 0.0d0
       ENDIF
           double_tape_pointer = double_tape_pointer-1
@@ -2550,14 +2556,14 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_529 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_530 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_362%d = OpenAD_Symbol_362%d+DELTA2%d*OpenAD_Symb
-     +ol_528
-          LEFIX%d = LEFIX%d+DELTA2%d*OpenAD_Symbol_529
+          OpenAD_Symbol_362%d = OpenAD_Symbol_362%d+DELTA2%d*(OpenAD_Sym
+     +bol_528)
+          LEFIX%d = LEFIX%d+DELTA2%d*(OpenAD_Symbol_529)
           DELTA2%d = 0.0d0
-          LAMU%d = LAMU%d+LAM2%d*OpenAD_Symbol_530
+          LAMU%d = LAMU%d+LAM2%d*(OpenAD_Symbol_530)
           LAM2%d = 0.0d0
-          UHAT%d = UHAT%d+OpenAD_Symbol_362%d*1_w2f__i8
-          CAVE%d = CAVE%d+OpenAD_Symbol_362%d*1_w2f__i8
+          UHAT%d = UHAT%d+OpenAD_Symbol_362%d*(1_w2f__i8)
+          CAVE%d = CAVE%d+OpenAD_Symbol_362%d*(1_w2f__i8)
           OpenAD_Symbol_362%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_439 = integer_tape(integer_tape_pointer)
@@ -2569,17 +2575,17 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_690 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_691 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_435%d = OpenAD_Symbol_435%d+ALAMCP%d*OpenAD_Symb
-     +ol_690
-          DELTA2%d = DELTA2%d+ALAMCP%d*OpenAD_Symbol_691
+          OpenAD_Symbol_435%d = OpenAD_Symbol_435%d+ALAMCP%d*(OpenAD_Sym
+     +bol_690)
+          DELTA2%d = DELTA2%d+ALAMCP%d*(OpenAD_Symbol_691)
           ALAMCP%d = 0.0d0
-          LAM2%d = LAM2%d+OpenAD_Symbol_435%d*1_w2f__i8
-          DELTA2%d = DELTA2%d+OpenAD_Symbol_435%d*1_w2f__i8
+          LAM2%d = LAM2%d+OpenAD_Symbol_435%d*(1_w2f__i8)
+          DELTA2%d = DELTA2%d+OpenAD_Symbol_435%d*(1_w2f__i8)
           OpenAD_Symbol_435%d = 0.0d0
       ENDIF
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_527 = double_tape(double_tape_pointer)
-          LAMCP%d = LAMCP%d+LAM2%d*OpenAD_Symbol_527
+          LAMCP%d = LAMCP%d+LAM2%d*(OpenAD_Symbol_527)
           LAM2%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_440 = integer_tape(integer_tape_pointer)
@@ -2591,12 +2597,12 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_692 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_693 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_437%d = OpenAD_Symbol_437%d+ALAMCM%d*OpenAD_Symb
-     +ol_692
-          DELTA2%d = DELTA2%d+ALAMCM%d*OpenAD_Symbol_693
+          OpenAD_Symbol_437%d = OpenAD_Symbol_437%d+ALAMCM%d*(OpenAD_Sym
+     +bol_692)
+          DELTA2%d = DELTA2%d+ALAMCM%d*(OpenAD_Symbol_693)
           ALAMCM%d = 0.0d0
-          LAM2%d = LAM2%d+OpenAD_Symbol_437%d*1_w2f__i8
-          DELTA2%d = DELTA2%d+OpenAD_Symbol_437%d*1_w2f__i8
+          LAM2%d = LAM2%d+OpenAD_Symbol_437%d*(1_w2f__i8)
+          DELTA2%d = DELTA2%d+OpenAD_Symbol_437%d*(1_w2f__i8)
           OpenAD_Symbol_437%d = 0.0d0
       ENDIF
           double_tape_pointer = double_tape_pointer-1
@@ -2643,47 +2649,47 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_486 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_487 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_358%d = OpenAD_Symbol_358%d+DELTA2%d*OpenAD_Symb
-     +ol_466
-          NLEFIX%d = NLEFIX%d+DELTA2%d*OpenAD_Symbol_467
+          OpenAD_Symbol_358%d = OpenAD_Symbol_358%d+DELTA2%d*(OpenAD_Sym
+     +bol_466)
+          NLEFIX%d = NLEFIX%d+DELTA2%d*(OpenAD_Symbol_467)
           DELTA2%d = 0.0d0
-          LAMCM%d = LAMCM%d+LAM2%d*OpenAD_Symbol_468
+          LAMCM%d = LAMCM%d+LAM2%d*(OpenAD_Symbol_468)
           LAM2%d = 0.0d0
-          UHAT%d = UHAT%d+OpenAD_Symbol_358%d*1_w2f__i8
-          CAVE%d = CAVE%d+OpenAD_Symbol_358%d*1_w2f__i8
+          UHAT%d = UHAT%d+OpenAD_Symbol_358%d*(1_w2f__i8)
+          CAVE%d = CAVE%d+OpenAD_Symbol_358%d*(1_w2f__i8)
           OpenAD_Symbol_358%d = 0.0d0
-          UHAT%d = UHAT%d+LAMCP%d*1_w2f__i8
-          CAVE%d = CAVE%d+LAMCP%d*1_w2f__i8
+          UHAT%d = UHAT%d+LAMCP%d*(1_w2f__i8)
+          CAVE%d = CAVE%d+LAMCP%d*(1_w2f__i8)
           LAMCP%d = 0.0d0
           UHAT%d = UHAT%d+LAMU%d
           LAMU%d = 0.0d0
-          CAVE%d = CAVE%d+LAMCM%d*-1_w2f__i8
-          UHAT%d = UHAT%d+LAMCM%d*1_w2f__i8
+          CAVE%d = CAVE%d+LAMCM%d*(-1_w2f__i8)
+          UHAT%d = UHAT%d+LAMCM%d*(1_w2f__i8)
           LAMCM%d = 0.0d0
-          WAVE%d = WAVE%d+UHAT%d*OpenAD_Symbol_469
-          NZHAT%d = NZHAT%d+UHAT%d*OpenAD_Symbol_470
-          VAVE%d = VAVE%d+UHAT%d*OpenAD_Symbol_471
-          NYHAT%d = NYHAT%d+UHAT%d*OpenAD_Symbol_472
-          UAVE%d = UAVE%d+UHAT%d*OpenAD_Symbol_473
-          NXHAT%d = NXHAT%d+UHAT%d*OpenAD_Symbol_474
+          WAVE%d = WAVE%d+UHAT%d*(OpenAD_Symbol_469)
+          NZHAT%d = NZHAT%d+UHAT%d*(OpenAD_Symbol_470)
+          VAVE%d = VAVE%d+UHAT%d*(OpenAD_Symbol_471)
+          NYHAT%d = NYHAT%d+UHAT%d*(OpenAD_Symbol_472)
+          UAVE%d = UAVE%d+UHAT%d*(OpenAD_Symbol_473)
+          NXHAT%d = NXHAT%d+UHAT%d*(OpenAD_Symbol_474)
           UHAT%d = 0.0d0
-          UAVE%d = UAVE%d+WTILDE%d*OpenAD_Symbol_475
-          NYHAT%d = NYHAT%d+WTILDE%d*OpenAD_Symbol_476
-          VAVE%d = VAVE%d+WTILDE%d*OpenAD_Symbol_477
-          NXHAT%d = NXHAT%d+WTILDE%d*OpenAD_Symbol_478
+          UAVE%d = UAVE%d+WTILDE%d*(OpenAD_Symbol_475)
+          NYHAT%d = NYHAT%d+WTILDE%d*(OpenAD_Symbol_476)
+          VAVE%d = VAVE%d+WTILDE%d*(OpenAD_Symbol_477)
+          NXHAT%d = NXHAT%d+WTILDE%d*(OpenAD_Symbol_478)
           WTILDE%d = 0.0d0
-          WAVE%d = WAVE%d+VTILDE%d*OpenAD_Symbol_479
-          NXHAT%d = NXHAT%d+VTILDE%d*OpenAD_Symbol_480
-          UAVE%d = UAVE%d+VTILDE%d*OpenAD_Symbol_481
-          NZHAT%d = NZHAT%d+VTILDE%d*OpenAD_Symbol_482
+          WAVE%d = WAVE%d+VTILDE%d*(OpenAD_Symbol_479)
+          NXHAT%d = NXHAT%d+VTILDE%d*(OpenAD_Symbol_480)
+          UAVE%d = UAVE%d+VTILDE%d*(OpenAD_Symbol_481)
+          NZHAT%d = NZHAT%d+VTILDE%d*(OpenAD_Symbol_482)
           VTILDE%d = 0.0d0
-          VAVE%d = VAVE%d+UTILDE%d*OpenAD_Symbol_483
-          NZHAT%d = NZHAT%d+UTILDE%d*OpenAD_Symbol_484
-          WAVE%d = WAVE%d+UTILDE%d*OpenAD_Symbol_485
-          NYHAT%d = NYHAT%d+UTILDE%d*OpenAD_Symbol_486
+          VAVE%d = VAVE%d+UTILDE%d*(OpenAD_Symbol_483)
+          NZHAT%d = NZHAT%d+UTILDE%d*(OpenAD_Symbol_484)
+          WAVE%d = WAVE%d+UTILDE%d*(OpenAD_Symbol_485)
+          NYHAT%d = NYHAT%d+UTILDE%d*(OpenAD_Symbol_486)
           UTILDE%d = 0.0d0
-          OpenAD_Symbol_357%d = OpenAD_Symbol_357%d+CAVE%d*OpenAD_Symbol
-     +_487
+          OpenAD_Symbol_357%d = OpenAD_Symbol_357%d+CAVE%d*(OpenAD_Symbo
+     +l_487)
           CAVE%d = 0.0d0
           CAVE%d = CAVE%d+OpenAD_Symbol_357%d
           OpenAD_Symbol_357%d = 0.0d0
@@ -2765,77 +2771,85 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_525 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_526 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_345%d = OpenAD_Symbol_345%d+CAVE%d*OpenAD_Symbol
-     +_488
-          HL%d = HL%d+CAVE%d*OpenAD_Symbol_489
-          HR%d = HR%d+CAVE%d*OpenAD_Symbol_490
-          OpenAD_Symbol_348%d = OpenAD_Symbol_348%d+CAVE%d*OpenAD_Symbol
-     +_491
-          GM1%d = GM1%d+CAVE%d*OpenAD_Symbol_492
+          OpenAD_Symbol_345%d = OpenAD_Symbol_345%d+CAVE%d*(OpenAD_Symbo
+     +l_488)
+          HL%d = HL%d+CAVE%d*(OpenAD_Symbol_489)
+          HR%d = HR%d+CAVE%d*(OpenAD_Symbol_490)
+          OpenAD_Symbol_348%d = OpenAD_Symbol_348%d+CAVE%d*(OpenAD_Symbo
+     +l_491)
+          GM1%d = GM1%d+CAVE%d*(OpenAD_Symbol_492)
           CAVE%d = 0.0d0
-          OpenAD_Symbol_348%d = OpenAD_Symbol_348%d+THTAVE%d*5.0D-01
+          OpenAD_Symbol_348%d = OpenAD_Symbol_348%d+THTAVE%d*(5.0D-01)
           THTAVE%d = 0.0d0
-          UAVE%d = UAVE%d+OpenAD_Symbol_348%d*OpenAD_Symbol_493
-          VAVE%d = VAVE%d+OpenAD_Symbol_348%d*OpenAD_Symbol_494
-          WAVE%d = WAVE%d+OpenAD_Symbol_348%d*OpenAD_Symbol_495
+          UAVE%d = UAVE%d+OpenAD_Symbol_348%d*(OpenAD_Symbol_493)
+          VAVE%d = VAVE%d+OpenAD_Symbol_348%d*(OpenAD_Symbol_494)
+          WAVE%d = WAVE%d+OpenAD_Symbol_348%d*(OpenAD_Symbol_495)
           OpenAD_Symbol_348%d = 0.0d0
-          OpenAD_Symbol_345%d = OpenAD_Symbol_345%d+WAVE%d*OpenAD_Symbol
-     +_496
-          PRIML(5)%d = PRIML(5)%d+WAVE%d*OpenAD_Symbol_497
-          PRIMR(5)%d = PRIMR(5)%d+WAVE%d*OpenAD_Symbol_498
+          OpenAD_Symbol_345%d = OpenAD_Symbol_345%d+WAVE%d*(OpenAD_Symbo
+     +l_496)
+          PRIML(5)%d = PRIML(5)%d+WAVE%d*(OpenAD_Symbol_497)
+          PRIMR(5)%d = PRIMR(5)%d+WAVE%d*(OpenAD_Symbol_498)
           WAVE%d = 0.0d0
-          OpenAD_Symbol_345%d = OpenAD_Symbol_345%d+VAVE%d*OpenAD_Symbol
-     +_499
-          PRIML(4)%d = PRIML(4)%d+VAVE%d*OpenAD_Symbol_500
-          PRIMR(4)%d = PRIMR(4)%d+VAVE%d*OpenAD_Symbol_501
+          OpenAD_Symbol_345%d = OpenAD_Symbol_345%d+VAVE%d*(OpenAD_Symbo
+     +l_499)
+          PRIML(4)%d = PRIML(4)%d+VAVE%d*(OpenAD_Symbol_500)
+          PRIMR(4)%d = PRIMR(4)%d+VAVE%d*(OpenAD_Symbol_501)
           VAVE%d = 0.0d0
-          PRIML(3)%d = PRIML(3)%d+UAVE%d*OpenAD_Symbol_502
-          OpenAD_Symbol_345%d = OpenAD_Symbol_345%d+UAVE%d*OpenAD_Symbol
-     +_503
-          PRIMR(3)%d = PRIMR(3)%d+UAVE%d*OpenAD_Symbol_504
+          PRIML(3)%d = PRIML(3)%d+UAVE%d*(OpenAD_Symbol_502)
+          OpenAD_Symbol_345%d = OpenAD_Symbol_345%d+UAVE%d*(OpenAD_Symbo
+     +l_503)
+          PRIMR(3)%d = PRIMR(3)%d+UAVE%d*(OpenAD_Symbol_504)
           UAVE%d = 0.0d0
-          GM1INV%d = GM1INV%d+HR%d*OpenAD_Symbol_505
-          GAMMA%d = GAMMA%d+HR%d*OpenAD_Symbol_506
-          PRIMR(1)%d = PRIMR(1)%d+HR%d*OpenAD_Symbol_507
-          PRIMR(2)%d = PRIMR(2)%d+HR%d*OpenAD_Symbol_508
-          THETAR%d = THETAR%d+HR%d*1_w2f__i8
+          GM1INV%d = GM1INV%d+HR%d*(OpenAD_Symbol_505)
+          GAMMA%d = GAMMA%d+HR%d*(OpenAD_Symbol_506)
+          PRIMR(1)%d = PRIMR(1)%d+HR%d*(OpenAD_Symbol_507)
+          PRIMR(2)%d = PRIMR(2)%d+HR%d*(OpenAD_Symbol_508)
+          THETAR%d = THETAR%d+HR%d*(1_w2f__i8)
           HR%d = 0.0d0
-          GM1INV%d = GM1INV%d+HL%d*OpenAD_Symbol_509
-          GAMMA%d = GAMMA%d+HL%d*OpenAD_Symbol_510
-          PRIML(1)%d = PRIML(1)%d+HL%d*OpenAD_Symbol_511
-          PRIML(2)%d = PRIML(2)%d+HL%d*OpenAD_Symbol_512
-          THETAL%d = THETAL%d+HL%d*1_w2f__i8
+          GM1INV%d = GM1INV%d+HL%d*(OpenAD_Symbol_509)
+          GAMMA%d = GAMMA%d+HL%d*(OpenAD_Symbol_510)
+          PRIML(1)%d = PRIML(1)%d+HL%d*(OpenAD_Symbol_511)
+          PRIML(2)%d = PRIML(2)%d+HL%d*(OpenAD_Symbol_512)
+          THETAL%d = THETAL%d+HL%d*(1_w2f__i8)
           HL%d = 0.0d0
-          OpenAD_Symbol_347%d = OpenAD_Symbol_347%d+THETAR%d*5.0D-01
+          OpenAD_Symbol_347%d = OpenAD_Symbol_347%d+THETAR%d*(5.0D-01)
           THETAR%d = 0.0d0
-          OpenAD_Symbol_346%d = OpenAD_Symbol_346%d+THETAL%d*5.0D-01
+          OpenAD_Symbol_346%d = OpenAD_Symbol_346%d+THETAL%d*(5.0D-01)
           THETAL%d = 0.0d0
-          PRIMR(4)%d = PRIMR(4)%d+OpenAD_Symbol_347%d*OpenAD_Symbol_513
-          PRIMR(3)%d = PRIMR(3)%d+OpenAD_Symbol_347%d*OpenAD_Symbol_514
-          PRIMR(5)%d = PRIMR(5)%d+OpenAD_Symbol_347%d*OpenAD_Symbol_515
+          PRIMR(4)%d = PRIMR(4)%d+OpenAD_Symbol_347%d*(OpenAD_Symbol_513
+     +)
+          PRIMR(3)%d = PRIMR(3)%d+OpenAD_Symbol_347%d*(OpenAD_Symbol_514
+     +)
+          PRIMR(5)%d = PRIMR(5)%d+OpenAD_Symbol_347%d*(OpenAD_Symbol_515
+     +)
           OpenAD_Symbol_347%d = 0.0d0
-          PRIML(4)%d = PRIML(4)%d+OpenAD_Symbol_346%d*OpenAD_Symbol_516
-          PRIML(3)%d = PRIML(3)%d+OpenAD_Symbol_346%d*OpenAD_Symbol_517
-          PRIML(5)%d = PRIML(5)%d+OpenAD_Symbol_346%d*OpenAD_Symbol_518
+          PRIML(4)%d = PRIML(4)%d+OpenAD_Symbol_346%d*(OpenAD_Symbol_516
+     +)
+          PRIML(3)%d = PRIML(3)%d+OpenAD_Symbol_346%d*(OpenAD_Symbol_517
+     +)
+          PRIML(5)%d = PRIML(5)%d+OpenAD_Symbol_346%d*(OpenAD_Symbol_518
+     +)
           OpenAD_Symbol_346%d = 0.0d0
-          PRIML(2)%d = PRIML(2)%d+OpenAD_Symbol_345%d*OpenAD_Symbol_519
-          PRIMR(2)%d = PRIMR(2)%d+OpenAD_Symbol_345%d*OpenAD_Symbol_520
+          PRIML(2)%d = PRIML(2)%d+OpenAD_Symbol_345%d*(OpenAD_Symbol_519
+     +)
+          PRIMR(2)%d = PRIMR(2)%d+OpenAD_Symbol_345%d*(OpenAD_Symbol_520
+     +)
           OpenAD_Symbol_345%d = 0.0d0
-          NSIZEI%d = NSIZEI%d+NZHAT%d*OpenAD_Symbol_521
-          NRM(3)%d = NRM(3)%d+NZHAT%d*OpenAD_Symbol_522
+          NSIZEI%d = NSIZEI%d+NZHAT%d*(OpenAD_Symbol_521)
+          NRM(3)%d = NRM(3)%d+NZHAT%d*(OpenAD_Symbol_522)
           NZHAT%d = 0.0d0
-          NSIZEI%d = NSIZEI%d+NYHAT%d*OpenAD_Symbol_523
-          NRM(2)%d = NRM(2)%d+NYHAT%d*OpenAD_Symbol_524
+          NSIZEI%d = NSIZEI%d+NYHAT%d*(OpenAD_Symbol_523)
+          NRM(2)%d = NRM(2)%d+NYHAT%d*(OpenAD_Symbol_524)
           NYHAT%d = 0.0d0
-          NSIZEI%d = NSIZEI%d+NXHAT%d*OpenAD_Symbol_525
-          NRM(1)%d = NRM(1)%d+NXHAT%d*OpenAD_Symbol_526
+          NSIZEI%d = NSIZEI%d+NXHAT%d*(OpenAD_Symbol_525)
+          NRM(1)%d = NRM(1)%d+NXHAT%d*(OpenAD_Symbol_526)
           NXHAT%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_441 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_441 .ne. 0) THEN
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_465 = double_tape(double_tape_pointer)
-          NSIZE%d = NSIZE%d+NSIZEI%d*OpenAD_Symbol_465
+          NSIZE%d = NSIZE%d+NSIZEI%d*(OpenAD_Symbol_465)
           NSIZEI%d = 0.0d0
       ELSE
           NSIZEI%d = 0.0d0
@@ -2846,9 +2860,9 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_463 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_464 = double_tape(double_tape_pointer)
-          NRM(1)%d = NRM(1)%d+NSIZE%d*OpenAD_Symbol_462
-          NRM(2)%d = NRM(2)%d+NSIZE%d*OpenAD_Symbol_463
-          NRM(3)%d = NRM(3)%d+NSIZE%d*OpenAD_Symbol_464
+          NRM(1)%d = NRM(1)%d+NSIZE%d*(OpenAD_Symbol_462)
+          NRM(2)%d = NRM(2)%d+NSIZE%d*(OpenAD_Symbol_463)
+          NRM(3)%d = NRM(3)%d+NSIZE%d*(OpenAD_Symbol_464)
           NSIZE%d = 0.0d0
 
           end if 

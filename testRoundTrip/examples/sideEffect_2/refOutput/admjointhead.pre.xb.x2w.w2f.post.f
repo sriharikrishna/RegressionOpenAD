@@ -169,8 +169,8 @@ C adjoint
           OpenAD_Symbol_2 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-          A%d = A%d+B%d*OpenAD_Symbol_2
-          A%d = A%d+B%d*OpenAD_Symbol_3
+          A%d = A%d+B%d*(OpenAD_Symbol_2)
+          A%d = A%d+B%d*(OpenAD_Symbol_3)
           B%d = 0.0d0
 
 C adjoint end

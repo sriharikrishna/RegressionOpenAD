@@ -232,9 +232,9 @@ C adjoint
           OpenAD_Symbol_18 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_19 = double_tape(double_tape_pointer)
-          GAMMA%d = GAMMA%d+Y(2)%d*OpenAD_Symbol_18
-          OpenAD_Symbol_17%d = OpenAD_Symbol_17%d+Y(2)%d*OpenAD_Symbol_1
-     +9
+          GAMMA%d = GAMMA%d+Y(2)%d*(OpenAD_Symbol_18)
+          OpenAD_Symbol_17%d = OpenAD_Symbol_17%d+Y(2)%d*(OpenAD_Symbol_
+     +19)
           Y(2)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_17%d
           OpenAD_Symbol_17%d = 0.0d0
@@ -246,10 +246,10 @@ C adjoint
           OpenAD_Symbol_22 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-          GAMMA%d = GAMMA%d+Y(1)%d*OpenAD_Symbol_20
-          X(4)%d = X(4)%d+Y(1)%d*OpenAD_Symbol_21
-          X(3)%d = X(3)%d+Y(1)%d*OpenAD_Symbol_22
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_23
+          GAMMA%d = GAMMA%d+Y(1)%d*(OpenAD_Symbol_20)
+          X(4)%d = X(4)%d+Y(1)%d*(OpenAD_Symbol_21)
+          X(3)%d = X(3)%d+Y(1)%d*(OpenAD_Symbol_22)
+          X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_23)
           Y(1)%d = 0.0d0
           X(2)%d = X(2)%d+GAMMA%d
           GAMMA%d = 0.0d0

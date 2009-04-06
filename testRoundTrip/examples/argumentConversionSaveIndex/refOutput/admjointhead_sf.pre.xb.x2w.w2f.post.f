@@ -185,7 +185,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+P%d*2.0D00
+          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+P%d*(2.0D00)
           P%d = 0.0d0
           P%d = P%d+OpenAD_Symbol_4%d
           OpenAD_Symbol_4%d = 0.0d0

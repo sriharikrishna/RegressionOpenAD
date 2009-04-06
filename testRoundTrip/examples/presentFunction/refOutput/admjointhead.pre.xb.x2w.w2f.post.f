@@ -242,10 +242,10 @@ C adjoint
           OpenAD_Symbol_23 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+OUTARG%d*OpenAD_Symbol_2
-     +2
-          OPTARG%d = OPTARG%d+OUTARG%d*OpenAD_Symbol_23
-          REQARG%d = REQARG%d+OUTARG%d*OpenAD_Symbol_24
+          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+OUTARG%d*(OpenAD_Symbol_
+     +22)
+          OPTARG%d = OPTARG%d+OUTARG%d*(OpenAD_Symbol_23)
+          REQARG%d = REQARG%d+OUTARG%d*(OpenAD_Symbol_24)
           OUTARG%d = 0.0d0
           OUTARG%d = OUTARG%d+OpenAD_Symbol_9%d
           OpenAD_Symbol_9%d = 0.0d0
@@ -426,7 +426,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       CALL opt(X(2),X(1),Y(1))
-          X(1)%d = X(1)%d+Y(1)%d*2.0D00
+          X(1)%d = X(1)%d+Y(1)%d*(2.0D00)
           Y(1)%d = 0.0d0
 
 C adjoint end

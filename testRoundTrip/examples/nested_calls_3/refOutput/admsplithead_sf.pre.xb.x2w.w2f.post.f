@@ -131,15 +131,15 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          D%d = D%d+Y(4)%d*1_w2f__i8
-          C%d = C%d+Y(4)%d*1_w2f__i8
+          D%d = D%d+Y(4)%d*(1_w2f__i8)
+          C%d = C%d+Y(4)%d*(1_w2f__i8)
           Y(4)%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_11 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-          D%d = D%d+Y(3)%d*OpenAD_Symbol_11
-          C%d = C%d+Y(3)%d*OpenAD_Symbol_12
+          D%d = D%d+Y(3)%d*(OpenAD_Symbol_11)
+          C%d = C%d+Y(3)%d*(OpenAD_Symbol_12)
           Y(3)%d = 0.0d0
       CALL foo(X(1),X(2),C,D)
           X(4)%d = X(4)%d+Y(2)%d
@@ -282,13 +282,13 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_14 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_10%d = OpenAD_Symbol_10%d+D%d*OpenAD_Symbol_13
+          OpenAD_Symbol_10%d = OpenAD_Symbol_10%d+D%d*(OpenAD_Symbol_13)
           D%d = 0.0d0
-          B%d = B%d+C%d*OpenAD_Symbol_14
-          A%d = A%d+C%d*OpenAD_Symbol_15
+          B%d = B%d+C%d*(OpenAD_Symbol_14)
+          A%d = A%d+C%d*(OpenAD_Symbol_15)
           C%d = 0.0d0
-          B%d = B%d+OpenAD_Symbol_10%d*1_w2f__i8
-          A%d = A%d+OpenAD_Symbol_10%d*1_w2f__i8
+          B%d = B%d+OpenAD_Symbol_10%d*(1_w2f__i8)
+          A%d = A%d+OpenAD_Symbol_10%d*(1_w2f__i8)
           OpenAD_Symbol_10%d = 0.0d0
 
           end if 

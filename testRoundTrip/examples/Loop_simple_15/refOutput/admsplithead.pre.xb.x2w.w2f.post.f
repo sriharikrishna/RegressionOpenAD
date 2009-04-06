@@ -154,7 +154,7 @@ C$OPENAD XXX Simple loop
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
         IF(OpenAD_Symbol_4 .ne. 0) THEN
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(I)%d*2.0D00
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(I)%d*(2.0D00)
           X(I)%d = 0.0d0
           X(I)%d = X(I)%d+OpenAD_Symbol_3%d
           OpenAD_Symbol_3%d = 0.0d0

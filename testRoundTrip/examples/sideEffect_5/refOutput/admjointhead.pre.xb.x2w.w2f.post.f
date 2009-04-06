@@ -199,7 +199,7 @@ C adjoint
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_16 = integer_tape(integer_tape_pointer)
           OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+A(INT(OpenAD_Symbol_16))
-     +%d*2.0D00
+     +%d*(2.0D00)
           A(INT(OpenAD_Symbol_16))%d = 0.0d0
           A(INT(OpenAD_Symbol_16))%d = A(INT(OpenAD_Symbol_16))%d+OpenAD
      +_Symbol_2%d
@@ -426,9 +426,9 @@ C adjoint
       DO WHILE(INT(OpenAD_Symbol_11) .LE. INT(OpenAD_Symbol_10))
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*1_w2f__i8
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(1_w2f__i8)
           X(INT(OpenAD_Symbol_17))%d = X(INT(OpenAD_Symbol_17))%d+Y(1)%d
-     +*1_w2f__i8
+     +*(1_w2f__i8)
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
           OpenAD_Symbol_3%d = 0.0d0

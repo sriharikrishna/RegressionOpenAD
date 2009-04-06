@@ -235,10 +235,10 @@ C adjoint
           OpenAD_Symbol_28 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_29 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_11%d = OpenAD_Symbol_11%d+Y(10)%d*OpenAD_Symbol_
-     +28
-          OpenAD_Symbol_10%d = OpenAD_Symbol_10%d+Y(10)%d*OpenAD_Symbol_
-     +29
+          OpenAD_Symbol_11%d = OpenAD_Symbol_11%d+Y(10)%d*(OpenAD_Symbol
+     +_28)
+          OpenAD_Symbol_10%d = OpenAD_Symbol_10%d+Y(10)%d*(OpenAD_Symbol
+     +_29)
           Y(10)%d = 0.0d0
           Y(9)%d = Y(9)%d+OpenAD_Symbol_11%d
           OpenAD_Symbol_11%d = 0.0d0
@@ -256,7 +256,7 @@ C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_25 = double_tape(double_tape_pointer)
           X(INT(OpenAD_Symbol_24))%d = X(INT(OpenAD_Symbol_24))%d+Y(INT(
-     +OpenAD_Symbol_24))%d*OpenAD_Symbol_25
+     +OpenAD_Symbol_24))%d*(OpenAD_Symbol_25)
           Y(INT(OpenAD_Symbol_24))%d = 0.0d0
         ELSE
           integer_tape_pointer = integer_tape_pointer-1
@@ -264,7 +264,7 @@ C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_27 = double_tape(double_tape_pointer)
           X(INT(OpenAD_Symbol_26))%d = X(INT(OpenAD_Symbol_26))%d+Y(INT(
-     +OpenAD_Symbol_26))%d*OpenAD_Symbol_27
+     +OpenAD_Symbol_26))%d*(OpenAD_Symbol_27)
           Y(INT(OpenAD_Symbol_26))%d = 0.0d0
         ENDIF
         OpenAD_Symbol_13 = INT(OpenAD_Symbol_13) + 1

@@ -729,54 +729,54 @@ C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_208 = double_tape(double_tape_pointer)
           T%d = T%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_185
+     +))%d*(OpenAD_Symbol_185)
           T4%d = T4%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_186
+     +83))%d*(OpenAD_Symbol_186)
           T3%d = T3%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_187
+     +83))%d*(OpenAD_Symbol_187)
           T2%d = T2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_188
+     +83))%d*(OpenAD_Symbol_188)
           T%d = T%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_189
+     +))%d*(OpenAD_Symbol_189)
           T%d = T%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_190
+     +))%d*(OpenAD_Symbol_190)
           T%d = T%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_191
+     +))%d*(OpenAD_Symbol_191)
           T%d = T%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_192
+     +))%d*(OpenAD_Symbol_192)
           S3O2%d = S3O2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symb
-     +ol_183))%d*OpenAD_Symbol_193
+     +ol_183))%d*(OpenAD_Symbol_193)
           T%d = T%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_194
+     +))%d*(OpenAD_Symbol_194)
           T%d = T%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_195
+     +))%d*(OpenAD_Symbol_195)
           T2%d = T2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_196
+     +83))%d*(OpenAD_Symbol_196)
           T2%d = T2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_197
+     +83))%d*(OpenAD_Symbol_197)
           T2%d = T2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_198
+     +83))%d*(OpenAD_Symbol_198)
           T2%d = T2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_199
+     +83))%d*(OpenAD_Symbol_199)
           T2%d = T2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_200
+     +83))%d*(OpenAD_Symbol_200)
           T2%d = T2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_201
+     +83))%d*(OpenAD_Symbol_201)
           T3%d = T3%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_202
+     +83))%d*(OpenAD_Symbol_202)
           S3O2%d = S3O2%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symb
-     +ol_183))%d*OpenAD_Symbol_203
+     +ol_183))%d*(OpenAD_Symbol_203)
           T3%d = T3%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_1
-     +83))%d*OpenAD_Symbol_204
+     +83))%d*(OpenAD_Symbol_204)
           S%d = S%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_205
+     +))%d*(OpenAD_Symbol_205)
           S%d = S%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_206
+     +))%d*(OpenAD_Symbol_206)
           S%d = S%d+BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183
-     +))%d*OpenAD_Symbol_207
+     +))%d*(OpenAD_Symbol_207)
           LOCPRES(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183))%d = LOC
      +PRES(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183))%d+BULKMOD(INT(
-     +OpenAD_Symbol_184),INT(OpenAD_Symbol_183))%d*OpenAD_Symbol_208
+     +OpenAD_Symbol_184),INT(OpenAD_Symbol_183))%d*(OpenAD_Symbol_208)
           BULKMOD(INT(OpenAD_Symbol_184),INT(OpenAD_Symbol_183))%d = 0.0
      +d0
           integer_tape_pointer = integer_tape_pointer-1
@@ -786,8 +786,8 @@ C adjoint
             OpenAD_Symbol_181 = double_tape(double_tape_pointer)
             double_tape_pointer = double_tape_pointer-1
             OpenAD_Symbol_182 = double_tape(double_tape_pointer)
-            S%d = S%d+S3O2%d*OpenAD_Symbol_181
-            S%d = S%d+S3O2%d*OpenAD_Symbol_182
+            S%d = S%d+S3O2%d*(OpenAD_Symbol_181)
+            S%d = S%d+S3O2%d*(OpenAD_Symbol_182)
             S3O2%d = 0.0d0
           ELSE
             S3O2%d = 0.0d0
@@ -814,11 +814,11 @@ C adjoint
      +D(INT(OpenAD_Symbol_177),INT(OpenAD_Symbol_176),INT(OpenAD_Symbol_
      +175),INT(OpenAD_Symbol_174),INT(OpenAD_Symbol_173))%d+S%d
           S%d = 0.0d0
-          T%d = T%d+T4%d*OpenAD_Symbol_178
+          T%d = T%d+T4%d*(OpenAD_Symbol_178)
           T4%d = 0.0d0
-          T%d = T%d+T3%d*OpenAD_Symbol_179
+          T%d = T%d+T3%d*(OpenAD_Symbol_179)
           T3%d = 0.0d0
-          T%d = T%d+T2%d*OpenAD_Symbol_180
+          T%d = T%d+T2%d*(OpenAD_Symbol_180)
           T2%d = 0.0d0
           TFLD(INT(OpenAD_Symbol_177),INT(OpenAD_Symbol_176),INT(OpenAD_
      +Symbol_175),INT(OpenAD_Symbol_174),INT(OpenAD_Symbol_173))%d = TFL
@@ -1219,13 +1219,15 @@ C adjoint
                 OpenAD_Symbol_217 = integer_tape(integer_tape_pointer)
                 X(INT(OpenAD_Symbol_217))%d = X(INT(OpenAD_Symbol_217))%
      +d+SFLD(INT(OpenAD_Symbol_216),INT(OpenAD_Symbol_215),INT(OpenAD_Sy
-     +mbol_214),INT(OpenAD_Symbol_213),INT(OpenAD_Symbol_212))%d*4.0D00
+     +mbol_214),INT(OpenAD_Symbol_213),INT(OpenAD_Symbol_212))%d*(4.0D00
+     +)
                 SFLD(INT(OpenAD_Symbol_216),INT(OpenAD_Symbol_215),INT(O
      +penAD_Symbol_214),INT(OpenAD_Symbol_213),INT(OpenAD_Symbol_212))%d
      + = 0.0d0
                 X(INT(OpenAD_Symbol_217))%d = X(INT(OpenAD_Symbol_217))%
      +d+TFLD(INT(OpenAD_Symbol_216),INT(OpenAD_Symbol_215),INT(OpenAD_Sy
-     +mbol_214),INT(OpenAD_Symbol_213),INT(OpenAD_Symbol_212))%d*3.0D00
+     +mbol_214),INT(OpenAD_Symbol_213),INT(OpenAD_Symbol_212))%d*(3.0D00
+     +)
                 TFLD(INT(OpenAD_Symbol_216),INT(OpenAD_Symbol_215),INT(O
      +penAD_Symbol_214),INT(OpenAD_Symbol_213),INT(OpenAD_Symbol_212))%d
      + = 0.0d0
@@ -1242,7 +1244,7 @@ C adjoint
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_211 = integer_tape(integer_tape_pointer)
           X(INT(OpenAD_Symbol_211))%d = X(INT(OpenAD_Symbol_211))%d+LOCP
-     +RES(INT(OpenAD_Symbol_210),INT(OpenAD_Symbol_209))%d*2.0D00
+     +RES(INT(OpenAD_Symbol_210),INT(OpenAD_Symbol_209))%d*(2.0D00)
           LOCPRES(INT(OpenAD_Symbol_210),INT(OpenAD_Symbol_209))%d = 0.0
      +d0
           OpenAD_Symbol_137 = INT(OpenAD_Symbol_137) + 1

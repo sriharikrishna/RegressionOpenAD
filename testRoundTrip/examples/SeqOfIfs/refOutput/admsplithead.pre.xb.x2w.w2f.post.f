@@ -155,12 +155,12 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_2 .ne. 0) THEN
-          X(1)%d = X(1)%d+Y(1)%d*-1_w2f__i8
-          X(2)%d = X(2)%d+Y(1)%d*1_w2f__i8
+          X(1)%d = X(1)%d+Y(1)%d*(-1_w2f__i8)
+          X(2)%d = X(2)%d+Y(1)%d*(1_w2f__i8)
           Y(1)%d = 0.0d0
       ELSE
-          X(2)%d = X(2)%d+Y(1)%d*-1_w2f__i8
-          X(1)%d = X(1)%d+Y(1)%d*1_w2f__i8
+          X(2)%d = X(2)%d+Y(1)%d*(-1_w2f__i8)
+          X(1)%d = X(1)%d+Y(1)%d*(1_w2f__i8)
           Y(1)%d = 0.0d0
       ENDIF
 

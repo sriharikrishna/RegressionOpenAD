@@ -170,8 +170,9 @@ C$OPENAD XXX Simple loop
           OpenAD_Symbol_39 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_40 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_8%d = OpenAD_Symbol_8%d+Y(1)%d*OpenAD_Symbol_39
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_40
+          OpenAD_Symbol_8%d = OpenAD_Symbol_8%d+Y(1)%d*(OpenAD_Symbol_39
+     +)
+          X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_40)
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_8%d
           OpenAD_Symbol_8%d = 0.0d0

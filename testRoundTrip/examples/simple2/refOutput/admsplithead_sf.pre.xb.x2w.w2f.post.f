@@ -176,14 +176,14 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_16 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_17 = double_tape(double_tape_pointer)
-          T2%d = T2%d+Y2%d*OpenAD_Symbol_12
-          X2%d = X2%d+Y2%d*OpenAD_Symbol_13
+          T2%d = T2%d+Y2%d*(OpenAD_Symbol_12)
+          X2%d = X2%d+Y2%d*(OpenAD_Symbol_13)
           Y2%d = 0.0d0
-          T2%d = T2%d+Y1%d*OpenAD_Symbol_14
+          T2%d = T2%d+Y1%d*(OpenAD_Symbol_14)
           Y1%d = 0.0d0
-          X2%d = X2%d+T2%d*OpenAD_Symbol_15
-          X1%d = X1%d+T2%d*OpenAD_Symbol_16
-          X1%d = X1%d+T2%d*OpenAD_Symbol_17
+          X2%d = X2%d+T2%d*(OpenAD_Symbol_15)
+          X1%d = X1%d+T2%d*(OpenAD_Symbol_16)
+          X1%d = X1%d+T2%d*(OpenAD_Symbol_17)
           T2%d = 0.0d0
 
           end if 

@@ -198,14 +198,14 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          T1%d = T1%d+Y%d*3.0D00
-          T%d = T%d+Y%d*2.0D00
+          T1%d = T1%d+Y%d*(3.0D00)
+          T%d = T%d+Y%d*(2.0D00)
           Y%d = 0.0d0
       CALL foo()
-          T%d = T%d+T1%d*2.0D00
+          T%d = T%d+T1%d*(2.0D00)
           T1%d = 0.0d0
-          X(2)%d = X(2)%d+T%d*1_w2f__i8
-          X(1)%d = X(1)%d+T%d*1_w2f__i8
+          X(2)%d = X(2)%d+T%d*(1_w2f__i8)
+          X(1)%d = X(1)%d+T%d*(1_w2f__i8)
           T%d = 0.0d0
 
           end if 

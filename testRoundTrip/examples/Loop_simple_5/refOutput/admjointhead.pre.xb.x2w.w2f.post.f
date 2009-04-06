@@ -184,7 +184,7 @@ C adjoint
           X(I)%d = X(I)%d+Y(I)%d
           Y(I)%d = 0.0d0
         ELSE
-          X(I)%d = X(I)%d+Y(I)%d*2.0D00
+          X(I)%d = X(I)%d+Y(I)%d*(2.0D00)
           Y(I)%d = 0.0d0
         ENDIF
         I = I - 1

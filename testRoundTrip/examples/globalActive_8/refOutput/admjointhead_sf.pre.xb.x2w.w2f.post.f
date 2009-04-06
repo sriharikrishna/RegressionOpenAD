@@ -207,8 +207,8 @@ C adjoint
           OpenAD_Symbol_5 = double_tape(double_tape_pointer)
           AGLOBAL%d = AGLOBAL%d+Y%d
           Y%d = 0.0d0
-          X(2)%d = X(2)%d+AGLOBAL%d*OpenAD_Symbol_4
-          X(1)%d = X(1)%d+AGLOBAL%d*OpenAD_Symbol_5
+          X(2)%d = X(2)%d+AGLOBAL%d*(OpenAD_Symbol_4)
+          X(1)%d = X(1)%d+AGLOBAL%d*(OpenAD_Symbol_5)
           AGLOBAL%d = 0.0d0
 
 C adjoint end
@@ -565,7 +565,7 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-          AGLOBAL%d = AGLOBAL%d+AP%d*OpenAD_Symbol_6
+          AGLOBAL%d = AGLOBAL%d+AP%d*(OpenAD_Symbol_6)
           AP%d = 0.0d0
 
 C adjoint end

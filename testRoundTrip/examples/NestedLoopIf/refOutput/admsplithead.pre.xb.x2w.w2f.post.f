@@ -174,17 +174,17 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_16 = double_tape(double_tape_pointer)
           X(INT(OpenAD_Symbol_14))%d = X(INT(OpenAD_Symbol_14))%d+Y(INT(
-     +OpenAD_Symbol_14))%d*OpenAD_Symbol_15
+     +OpenAD_Symbol_14))%d*(OpenAD_Symbol_15)
           X(INT(OpenAD_Symbol_14))%d = X(INT(OpenAD_Symbol_14))%d+Y(INT(
-     +OpenAD_Symbol_14))%d*OpenAD_Symbol_16
+     +OpenAD_Symbol_14))%d*(OpenAD_Symbol_16)
           Y(INT(OpenAD_Symbol_14))%d = 0.0d0
         ELSE
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_18 = integer_tape(integer_tape_pointer)
           X(INT(OpenAD_Symbol_18))%d = X(INT(OpenAD_Symbol_18))%d+Y(INT(
-     +OpenAD_Symbol_18))%d*1_w2f__i8
+     +OpenAD_Symbol_18))%d*(1_w2f__i8)
           X(INT(OpenAD_Symbol_18))%d = X(INT(OpenAD_Symbol_18))%d+Y(INT(
-     +OpenAD_Symbol_18))%d*1_w2f__i8
+     +OpenAD_Symbol_18))%d*(1_w2f__i8)
           Y(INT(OpenAD_Symbol_18))%d = 0.0d0
         ENDIF
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3) + 1
