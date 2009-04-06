@@ -37,7 +37,7 @@ C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
       T1%v = (T%v*2.0D00)
       CALL setderiv(T,X(1))
-      CALL sax(2.0D00,X(1),T1)
+      CALL sax(2.0D00,T,T1)
       CALL foo()
       Y(1)%v = (T%v*2.0D00+T1%v*3.0D00)
       CALL sax(2.0D00,T,Y(1))

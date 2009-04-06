@@ -43,6 +43,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (OpenAD_Symbol_2 * 3.141592653589793116D00)
       Y(1)%v = SIN(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_5 = (6.283185307179586232D00 * OpenAD_Symbol_1)
+      OpenAD_Symbol_5 = (2.0D00 * 3.141592653589793116D00 *
+     >  OpenAD_Symbol_1)
       CALL sax(OpenAD_Symbol_5,X(1),Y(1))
       END SUBROUTINE

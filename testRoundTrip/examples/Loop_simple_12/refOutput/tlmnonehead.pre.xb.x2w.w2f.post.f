@@ -42,9 +42,9 @@ C$OPENAD XXX Simple loop
           OpenAD_Symbol_0 = X(J)%v
           OpenAD_Symbol_1 = X(I)%v
           CALL setderiv(OpenAD_Symbol_2,Y(I))
-          CALL sax(OpenAD_Symbol_0,X(I),Y(I))
+          CALL sax(1_w2f__i8,OpenAD_Symbol_2,Y(I))
+          CALL saxpy(OpenAD_Symbol_0,X(I),Y(I))
           CALL saxpy(OpenAD_Symbol_1,X(J),Y(I))
-          CALL saxpy(1_w2f__i8,OpenAD_Symbol_2,Y(I))
           J = (J + 1)
         END DO
       END DO

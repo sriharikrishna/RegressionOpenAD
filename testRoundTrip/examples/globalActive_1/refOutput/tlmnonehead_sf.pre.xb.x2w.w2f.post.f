@@ -53,6 +53,5 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%v = AGLOBAL%v
       CALL sax(OpenAD_Symbol_0,X(1),AGLOBAL)
       CALL saxpy(OpenAD_Symbol_1,X(2),AGLOBAL)
-      CALL sax(OpenAD_Symbol_0,X(1),Y(1))
-      CALL saxpy(OpenAD_Symbol_1,X(2),Y(1))
+      CALL setderiv(Y(1),AGLOBAL)
       END SUBROUTINE
