@@ -15,7 +15,7 @@ c$openad XXX Template ad_template.f
 	end interface
 	double precision, dimension(2) :: x
 	double precision, dimension(2,2) :: ax,apx
-	double precision y,py
+	double precision y(1),py
 	integer i,j
 c$openad INDEPENDENT(x)
 c$openad xxx simple loop
@@ -27,7 +27,7 @@ c$openad xxx simple loop
 	end do
 c$openad xxx simple loop
 	do i=1,2
-	   call foo(ax(i,:),y)
+	   call foo(ax(i,:),y(1))
 	   call foo(apx(i,:),py)
 	end do
 c$openad DEPENDENT(y)
