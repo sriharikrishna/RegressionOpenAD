@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -77,17 +78,19 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       type(active) :: S
       INTEGER(w2f__i8) OpenAD_Symbol_10
-      INTEGER(w2f__i8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
       INTEGER(w2f__i8) OpenAD_Symbol_9
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -96,9 +99,6 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
-
-          integer iaddr
-          external iaddr
 
          if (our_rev_mode%plain) then
 ! original function
@@ -109,11 +109,12 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         S%v = X(I)%v
-        IF (S%v .GT. 0.0D00) THEN
+        IF (S%v.GT.0.0D00) THEN
           S%v = 0.0D00
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
       END DO
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -124,7 +125,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         S%v = X(I)%v
-        IF (S%v .GT. 0.0D00) THEN
+        IF (S%v.GT.0.0D00) THEN
           S%v = 0.0D00
           OpenAD_Symbol_1 = 1_w2f__i8
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
@@ -136,13 +137,14 @@ C$OPENAD XXX Simple loop
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
       END DO
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-          S%d = S%d+Y(I)%d*1 _w2f__i8
-          X(I)%d = X(I)%d+Y(I)%d*1 _w2f__i8
+          S%d = S%d+Y(I)%d*1_w2f__i8
+          X(I)%d = X(I)%d+Y(I)%d*1_w2f__i8
           Y(I)%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
@@ -155,5 +157,6 @@ C$OPENAD XXX Simple loop
       END DO
           Y(2)%d = 0.0d0
           Y(1)%d = 0.0d0
+
           end if 
         end subroutine head

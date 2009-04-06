@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -73,6 +74,10 @@ C
       EXTERNAL barext
       REAL(w2f__8) T1
       REAL(w2f__8) T2
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -82,24 +87,24 @@ C
 C     **** Statements ****
 C
 
-          integer iaddr
-          external iaddr
-
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
       T1 = X
-      CALL barext(X, T2)
+      CALL barext(X,T2)
       Y = T2
+
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       T1 = X
-      CALL barext(X, T2)
+      CALL barext(X,T2)
       Y = T2
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
+
           end if 
         end subroutine head

@@ -75,7 +75,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -95,20 +96,21 @@ C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
+      REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_9
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -118,15 +120,13 @@ C
 C     **** Statements ****
 C
 
-          integer iaddr
-          external iaddr
-
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
       APASSIVEGLOBAL = 2.0D00
       AGLOBAL%v = (X(1)%v*X(2)%v)
       Y(1)%v = (AGLOBAL%v*APASSIVEGLOBAL)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -137,32 +137,27 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = X(1)%v
       Y(1)%v = (AGLOBAL%v*APASSIVEGLOBAL)
       OpenAD_Symbol_2 = APASSIVEGLOBAL
-      OpenAD_Symbol_4 = (OpenAD_Symbol_0 * OpenAD_Symbol_2)
-      OpenAD_Symbol_5 = (OpenAD_Symbol_1 * OpenAD_Symbol_2)
           double_tape(double_tape_pointer) = OpenAD_Symbol_0
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_4
+          double_tape(double_tape_pointer) = OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_5
-          double_tape_pointer = double_tape_pointer+1
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+          double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y(1)%d*OpenAD_Symbol_6
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_7 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_7
+          AGLOBAL%d = AGLOBAL%d+Y(1)%d*OpenAD_Symbol_4
           Y(1)%d = 0.0d0
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+AGLOBAL%d*OpenAD_Symbol_8
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+AGLOBAL%d*OpenAD_Symbol_9
+          X(2)%d = X(2)%d+AGLOBAL%d*OpenAD_Symbol_5
+          X(1)%d = X(1)%d+AGLOBAL%d*OpenAD_Symbol_6
           AGLOBAL%d = 0.0d0
+
           end if 
         end subroutine head

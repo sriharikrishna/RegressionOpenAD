@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -80,16 +81,18 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 3)
-      type(active) :: Y(1 : 3)
+      type(active) :: X(1:3)
+      type(active) :: Y(1:3)
 C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -99,13 +102,10 @@ C
 C     **** Statements ****
 C
 
-          integer iaddr
-          external iaddr
-
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
-      IF (X(1)%v .LT. 4.0D00) THEN
+      IF (X(1)%v.LT.4.0D00) THEN
 C$OPENAD XXX Simple loop\t
         DO I = 1, 3, 1
           Y(INT(I))%v = X(I)%v
@@ -116,11 +116,12 @@ C$OPENAD XXX Simple loop\t
           Y(INT(I))%v = (X(I)%v*2.0D00)
         END DO
       ENDIF
+
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
-      IF (X(1)%v .LT. 4.0D00) THEN
+      IF (X(1)%v.LT.4.0D00) THEN
 C$OPENAD XXX Simple loop\t
         DO I = 1, 3, 1
           Y(INT(I))%v = X(I)%v
@@ -137,6 +138,7 @@ C$OPENAD XXX Simple loop\t
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
           integer_tape_pointer = integer_tape_pointer+1
       ENDIF
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -157,5 +159,6 @@ C$OPENAD XXX Simple loop\t
           I = I - 1
         END DO
       ENDIF
+
           end if 
         end subroutine head

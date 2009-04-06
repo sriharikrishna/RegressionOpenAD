@@ -74,7 +74,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -112,35 +113,26 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       CHARACTER(3) LOCALSTRING
       INTEGER(w2f__i8) OpenAD_Symbol_19
-      INTEGER(w2f__i8) OpenAD_Symbol_20
-      INTEGER(w2f__i8) OpenAD_Symbol_21
-      REAL(w2f__8) OpenAD_Symbol_22
-      INTEGER(w2f__i8) OpenAD_Symbol_23
-      INTEGER(w2f__i8) OpenAD_Symbol_24
-      REAL(w2f__8) OpenAD_Symbol_25
-      INTEGER(w2f__i8) OpenAD_Symbol_26
-      INTEGER(w2f__i8) OpenAD_Symbol_27
-      INTEGER(w2f__i8) OpenAD_Symbol_28
-      INTEGER(w2f__i8) OpenAD_Symbol_29
-      REAL(w2f__8) OpenAD_Symbol_30
-      INTEGER(w2f__i8) OpenAD_Symbol_31
-      INTEGER(w2f__i8) OpenAD_Symbol_32
-      REAL(w2f__8) OpenAD_Symbol_33
-      INTEGER(w2f__i8) OpenAD_Symbol_34
-C
-C     **** Statements ****
-C
+      REAL(w2f__8) OpenAD_Symbol_20
+      REAL(w2f__8) OpenAD_Symbol_21
+      INTEGER(w2f__i8) OpenAD_Symbol_22
+      REAL(w2f__8) OpenAD_Symbol_23
+      REAL(w2f__8) OpenAD_Symbol_24
+
 
           integer iaddr
           external iaddr
+C
+C     **** Statements ****
+C
 
          if (our_rev_mode%plain) then
 ! original function
@@ -156,6 +148,7 @@ C$OPENAD XXX Simple loop
       END DO
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -193,6 +186,7 @@ C$OPENAD XXX Simple loop
      +NG)
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -205,31 +199,32 @@ C$OPENAD XXX Simple loop
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
         IF(GLOBALSTRING .EQ. 'no') THEN
-          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_30 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_30
+          OpenAD_Symbol_23 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_33 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_33
+          OpenAD_Symbol_24 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_23
+          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_24
+          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d*1_w2f__i8
           Y(I)%d = 0.0d0
           Y(I)%d = Y(I)%d+OpenAD_Symbol_9%d
           OpenAD_Symbol_9%d = 0.0d0
         ENDIF
         IF(GLOBALSTRING .EQ. 'yes') THEN
-          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d*1 _w2f__i8
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_22 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_22
+          OpenAD_Symbol_20 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_25 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_25
+          OpenAD_Symbol_21 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_20
+          X(I)%d = X(I)%d+Y(I)%d*OpenAD_Symbol_21
+          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d*1_w2f__i8
           Y(I)%d = 0.0d0
           Y(I)%d = Y(I)%d+OpenAD_Symbol_6%d
           OpenAD_Symbol_6%d = 0.0d0
         ENDIF
         I = I - 1
       END DO
+
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -284,7 +279,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -301,8 +297,8 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
@@ -316,17 +312,19 @@ C
 C     **** Statements ****
 C
 
+
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 ! original function
-C$OPENAD XXX Template ad_template.f
       Y(1)%v = 1.0
       Y(2)%v = 1.0
       GLOBALSTRING = 'yes'
       CALL foo(X,Y)
       GLOBALSTRING = 'both'
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -336,11 +334,13 @@ C$OPENAD XXX Template ad_template.f
       GLOBALSTRING = 'yes'
       CALL foo(X,Y)
       GLOBALSTRING = 'both'
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL foo(X,Y)
           Y(2)%d = 0.0d0
           Y(1)%d = 0.0d0
+
           end if 
         end subroutine head

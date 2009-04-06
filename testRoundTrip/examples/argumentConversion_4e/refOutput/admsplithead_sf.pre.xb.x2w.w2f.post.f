@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -84,16 +85,19 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL barext
       INTEGER(w2f__i4) I
-      type(active) :: T(1 : 2, 1 : 3)
+      type(active) :: T(1:2,1:3)
       INTEGER(w2f__i8) OpenAD_Symbol_7
-      INTEGER(w2f__i8) OpenAD_Symbol_8
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -103,9 +107,6 @@ C
 C     **** Statements ****
 C
 
-          integer iaddr
-          external iaddr
-
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
@@ -114,10 +115,11 @@ C$OPENAD XXX Template ad_template.f
       END DO
 C!! requested inline of 'convert_a2p_matrix' has no defn
       CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
-      CALL barext(OpenAD_Symbol_0(1, 2))
+      CALL barext(OpenAD_Symbol_0(1,2))
 C!! requested inline of 'convert_p2a_matrix' has no defn
       CALL convert_p2a_matrix(T,OpenAD_Symbol_0)
       Y(1)%v = T(1,2)%v
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -127,18 +129,17 @@ C$OPENAD XXX Template ad_template.f
         T(INT(I),2)%v = X(I)%v
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3) + INT(1_w2f__i8))
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
           integer_tape_pointer = integer_tape_pointer+1
 C!! requested inline of 'convert_a2p_matrix' has no defn
       CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
-      CALL barext(OpenAD_Symbol_0(1, 2))
+      CALL barext(OpenAD_Symbol_0(1,2))
 C!! requested inline of 'convert_p2a_matrix' has no defn
       CALL convert_p2a_matrix(T,OpenAD_Symbol_0)
       Y(1)%v = T(1,2)%v
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -150,12 +151,11 @@ C!! requested inline of 'convert_p2a_matrix' has no defn
       DO WHILE(INT(OpenAD_Symbol_2) .LE. INT(OpenAD_Symbol_1))
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_8))%d = X(INT(OpenAD_Symbol_8))%d+T(INT(Op
+          X(INT(OpenAD_Symbol_7))%d = X(INT(OpenAD_Symbol_7))%d+T(INT(Op
      +enAD_Symbol_7),2)%d
           T(INT(OpenAD_Symbol_7),2)%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2) + 1
       END DO
+
           end if 
         end subroutine head

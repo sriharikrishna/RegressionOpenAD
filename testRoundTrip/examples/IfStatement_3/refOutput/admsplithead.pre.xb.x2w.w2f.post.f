@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,L)
+
+      SUBROUTINE foo(X, L)
           use OAD_tape
           use OAD_rev
 
@@ -67,25 +68,29 @@ C     **** Parameters and Result ****
 C
       REAL(w2f__8) X
       LOGICAL(w2f__i4) L
-C
-C     **** Statements ****
-C
+
 
           integer iaddr
           external iaddr
+C
+C     **** Statements ****
+C
 
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
       L = (X .ne. 0.0D00)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       L = (X .ne. 0.0D00)
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
+
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -140,7 +145,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -165,13 +171,17 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       LOGICAL(w2f__i4) L
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -181,27 +191,25 @@ C
 C     **** Statements ****
 C
 
-          integer iaddr
-          external iaddr
-
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(OpenAD_Symbol_0,X(1))
-      CALL foo(OpenAD_Symbol_0, L)
+      CALL foo(OpenAD_Symbol_0,L)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
       IF(L) THEN
         Y(1)%v = X(1)%v
       ENDIF
+
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(OpenAD_Symbol_0,X(1))
-      CALL foo(OpenAD_Symbol_0, L)
+      CALL foo(OpenAD_Symbol_0,L)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
       IF(L) THEN
@@ -214,6 +222,7 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
           integer_tape_pointer = integer_tape_pointer+1
       ENDIF
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -223,6 +232,7 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
           X(1)%d = X(1)%d+Y(1)%d
           Y(1)%d = 0.0d0
       ENDIF
-      CALL foo(OpenAD_Symbol_7, L)
+      CALL foo(OpenAD_Symbol_7,L)
+
           end if 
         end subroutine head

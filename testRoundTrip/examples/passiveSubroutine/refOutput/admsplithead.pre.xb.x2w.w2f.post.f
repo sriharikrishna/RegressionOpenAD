@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -65,8 +66,8 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -74,6 +75,10 @@ C
       EXTERNAL foo
       REAL(w2f__8) P
       REAL(w2f__8) Q
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -83,27 +88,27 @@ C
 C     **** Statements ****
 C
 
-          integer iaddr
-          external iaddr
-
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
       CALL foo(X(1),Y(1))
       P = 1.0D00
-      CALL bar(P, Q)
+      CALL bar(P,Q)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       CALL foo(X(1),Y(1))
       P = 1.0D00
-      CALL bar(P, Q)
+      CALL bar(P,Q)
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      CALL bar(P, Q)
+      CALL bar(P,Q)
       CALL foo(X(1),Y(1))
+
           end if 
         end subroutine head
 C ========== begin copyright notice ==============
@@ -158,7 +163,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(A,B)
+
+      SUBROUTINE foo(A, B)
           use OAD_tape
           use OAD_rev
 
@@ -188,17 +194,19 @@ C
 C     **** Statements ****
 C
 
+
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 ! original function
-C$OPENAD XXX Template ad_template.f
       B%v = (A%v*A%v)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
-C$OPENAD XXX Template ad_template.f
       B%v = (A%v*A%v)
       OpenAD_Symbol_0 = A%v
       OpenAD_Symbol_1 = A%v
@@ -206,16 +214,18 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_1
           double_tape_pointer = double_tape_pointer+1
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_2 = double_tape(double_tape_pointer)
-          A%d = A%d+B%d*OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+          A%d = A%d+B%d*OpenAD_Symbol_2
           A%d = A%d+B%d*OpenAD_Symbol_3
           B%d = 0.0d0
+
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -270,7 +280,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine bar(A,B)
+
+      SUBROUTINE bar(A, B)
           use OAD_tape
           use OAD_rev
 
@@ -286,24 +297,28 @@ C     **** Parameters and Result ****
 C
       REAL(w2f__8) A
       REAL(w2f__8) B
-C
-C     **** Statements ****
-C
+
 
           integer iaddr
           external iaddr
+C
+C     **** Statements ****
+C
 
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
       B = COS(A)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       B = COS(A)
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
+
           end if 
         end subroutine bar

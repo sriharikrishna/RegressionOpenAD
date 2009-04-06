@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -92,8 +93,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -110,12 +111,13 @@ C
 C     **** Statements ****
 C
 
+
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 ! original function
-C$OPENAD XXX Template ad_template.f
       Y(1)%v = X(1)%v
       ASTRING = 'blah'
 C$OPENAD XXX Simple loop
@@ -127,6 +129,7 @@ C$OPENAD XXX Simple loop
           Y(1)%v = (Y(1)%v-X(1)%v)
         ENDIF
       END DO
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -154,6 +157,7 @@ C$OPENAD XXX Simple loop
           character_tape(character_tape_pointer:character_tape_pointer+l
      +en(ASTRING)) = ASTRING(1:len(ASTRING))
           character_tape_pointer = character_tape_pointer+len(ASTRING)
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -170,8 +174,8 @@ C$OPENAD XXX Simple loop
       I = 1 + 1 *((3 - 1) / 1)
       DO WHILE(I .GE. 1)
         IF(ASTRING .EQ. 'bloh') THEN
-          X(1)%d = X(1)%d+Y(1)%d*-1 _w2f__i8
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d*1 _w2f__i8
+          X(1)%d = X(1)%d+Y(1)%d*-1_w2f__i8
+          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d*1_w2f__i8
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
           OpenAD_Symbol_4%d = 0.0d0
@@ -179,9 +183,9 @@ C$OPENAD XXX Simple loop
         IF(ASTRING .EQ. 'blah') THEN
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_15
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_16 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*OpenAD_Symbol_15
           X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_16
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
@@ -191,5 +195,6 @@ C$OPENAD XXX Simple loop
       END DO
           X(1)%d = X(1)%d+Y(1)%d
           Y(1)%d = 0.0d0
+
           end if 
         end subroutine head

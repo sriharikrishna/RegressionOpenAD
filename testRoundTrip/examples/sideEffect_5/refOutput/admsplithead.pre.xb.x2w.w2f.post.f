@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(A,N)
+
+      SUBROUTINE foo(A, N)
           use OAD_tape
           use OAD_rev
 
@@ -80,19 +81,19 @@ C
 C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) N
-      type(active) :: A(1 : INT((N + G)))
+      type(active) :: A(1:INT((N+G)))
 C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i8) OpenAD_Symbol_16
-      INTEGER(w2f__i8) OpenAD_Symbol_17
-C
-C     **** Statements ****
-C
+
 
           integer iaddr
           external iaddr
+C
+C     **** Statements ****
+C
 
          if (our_rev_mode%plain) then
 ! original function
@@ -100,6 +101,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, (N + 1), 1
         A(INT(I))%v = (A(I)%v*2.0D00)
       END DO
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -110,12 +112,11 @@ C$OPENAD XXX Template ad_template.f
         A(INT(I))%v = OpenAD_Symbol_1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6) + INT(1_w2f__i8))
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
           integer_tape_pointer = integer_tape_pointer+1
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -128,13 +129,12 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+A(INT(OpenAD_Symbol_16))
      +%d*2.0D00
           A(INT(OpenAD_Symbol_16))%d = 0.0d0
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
-          A(INT(OpenAD_Symbol_17))%d = A(INT(OpenAD_Symbol_17))%d+OpenAD
+          A(INT(OpenAD_Symbol_16))%d = A(INT(OpenAD_Symbol_16))%d+OpenAD
      +_Symbol_2%d
           OpenAD_Symbol_2%d = 0.0d0
         OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
       END DO
+
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -189,7 +189,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -216,15 +217,19 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 3)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:3)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) OAD_CTMP0
-      INTEGER(w2f__i8) OpenAD_Symbol_18
+      INTEGER(w2f__i8) OpenAD_Symbol_17
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -233,9 +238,6 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
-
-          integer iaddr
-          external iaddr
 
          if (our_rev_mode%plain) then
 ! original function
@@ -249,6 +251,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 3, 1
         Y(1)%v = (X(I)%v+Y(1)%v)
       END DO
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -276,6 +279,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_12
           integer_tape_pointer = integer_tape_pointer+1
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -283,11 +287,11 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_11 = 1
       DO WHILE(INT(OpenAD_Symbol_11) .LE. INT(OpenAD_Symbol_10))
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*1 _w2f__i8
           integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_18 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_18))%d = X(INT(OpenAD_Symbol_18))%d+Y(1)%d
-     +*1 _w2f__i8
+          OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*1_w2f__i8
+          X(INT(OpenAD_Symbol_17))%d = X(INT(OpenAD_Symbol_17))%d+Y(1)%d
+     +*1_w2f__i8
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
           OpenAD_Symbol_3%d = 0.0d0
@@ -304,5 +308,6 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer-1
           G = integer_tape(integer_tape_pointer)
       CALL foo(X,OAD_CTMP0)
+
           end if 
         end subroutine head

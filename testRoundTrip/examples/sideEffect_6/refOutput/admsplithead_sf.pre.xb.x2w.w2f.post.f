@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(A,X)
+
+      SUBROUTINE foo(A, X)
           use OAD_tape
           use OAD_rev
 
@@ -95,12 +96,13 @@ C     **** Parameters and Result ****
 C
       CHARACTER(*) A
       type(active) :: X
-C
-C     **** Statements ****
-C
+
 
           integer iaddr
           external iaddr
+C
+C     **** Statements ****
+C
 
          if (our_rev_mode%plain) then
 ! original function
@@ -111,6 +113,7 @@ C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'three') THEN
         X%v = (X%v*3.0D00)
       ENDIF
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -137,6 +140,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
           integer_tape_pointer = integer_tape_pointer+1
       ENDIF
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -156,6 +160,7 @@ C$OPENAD XXX Template ad_template.f
           X%d = X%d+OpenAD_Symbol_4%d
           OpenAD_Symbol_4%d = 0.0d0
       ENDIF
+
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -210,7 +215,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -224,13 +230,17 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
       CHARACTER(10) A
       EXTERNAL foo
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -239,9 +249,6 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
-
-          integer iaddr
-          external iaddr
 
          if (our_rev_mode%plain) then
 ! original function
@@ -252,6 +259,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(A,X)
       A = 'four'
       Y(1)%v = X(1)%v
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -262,6 +270,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(A,X)
       A = 'four'
       Y(1)%v = X(1)%v
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -269,5 +278,6 @@ C$OPENAD XXX Template ad_template.f
           Y(1)%d = 0.0d0
       CALL foo(A,X)
       CALL foo(A,X)
+
           end if 
         end subroutine head

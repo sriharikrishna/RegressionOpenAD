@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -65,8 +66,8 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -82,29 +83,35 @@ C
 C     **** Statements ****
 C
 
+
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 ! original function
-C$OPENAD XXX Template ad_template.f
       T1%v = (X(1)%v+X(1)%v)
       T2%v = (T1%v*2.0D00)
       Y1%v = T2%v
       Y(1)%v = Y1%v
+
           end if
           if (our_rev_mode%tape) then
 ! taping
-C$OPENAD XXX Template ad_template.f
       T1%v = (X(1)%v+X(1)%v)
       T2%v = (T1%v*2.0D00)
       Y1%v = T2%v
       Y(1)%v = Y1%v
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          X(1)%d = X(1)%d+Y(1)%d*2.0D00
-          X(1)%d = X(1)%d+Y(1)%d*2.0D00
+          T1%d = T1%d+Y(1)%d*2.0D00
           Y(1)%d = 0.0d0
+          X(1)%d = X(1)%d+T1%d*1_w2f__i8
+          X(1)%d = X(1)%d+T1%d*1_w2f__i8
+          T1%d = 0.0d0
+
           end if 
         end subroutine head

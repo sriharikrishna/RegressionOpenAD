@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -70,8 +71,8 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Local Variables and Functions ****
 C
@@ -85,13 +86,15 @@ C
 C     **** Statements ****
 C
 
+
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 ! original function
-C$OPENAD XXX Template ad_template.f
       Y(1)%v = (FLOAT(6)*X(1)%v)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -101,6 +104,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_2 = OpenAD_Symbol_0
           double_tape(double_tape_pointer) = OpenAD_Symbol_2
           double_tape_pointer = double_tape_pointer+1
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -108,5 +112,6 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_3 = double_tape(double_tape_pointer)
           X(1)%d = X(1)%d+Y(1)%d*OpenAD_Symbol_3
           Y(1)%d = 0.0d0
+
           end if 
         end subroutine head

@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -85,19 +86,22 @@ C
 C     **** Statements ****
 C
 
+
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 ! original function
-C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*2.0D00)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = (X%v*2.0D00)
       Y%v = OpenAD_Symbol_1
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -105,6 +109,7 @@ C$OPENAD XXX Template ad_template.f
           Y%d = 0.0d0
           X%d = X%d+OpenAD_Symbol_2%d
           OpenAD_Symbol_2%d = 0.0d0
+
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -159,7 +164,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -173,13 +179,17 @@ C ========== end copyright notice ==============
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
+      type(active) :: X(1:2)
       type(active) :: Y
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       INTEGER(w2f__i4) K
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -189,15 +199,13 @@ C
 C     **** Statements ****
 C
 
-          integer iaddr
-          external iaddr
-
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(X(K),X(K+1))
       CALL foo(X(K),Y)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -209,6 +217,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X(K),Y)
           integer_tape(integer_tape_pointer) = K
           integer_tape_pointer = integer_tape_pointer+1
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -218,5 +227,6 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer-1
           K = integer_tape(integer_tape_pointer)
       CALL foo(X(K),X(K+1))
+
           end if 
         end subroutine head

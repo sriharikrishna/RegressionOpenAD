@@ -60,7 +60,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -99,13 +100,15 @@ C
 C     **** Statements ****
 C
 
+
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 ! original function
-C$OPENAD XXX Template ad_template.f
       Y%v = SIN(X%v*X%v)
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -121,15 +124,17 @@ C$OPENAD XXX Template ad_template.f
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_Symbol_5
           double_tape_pointer = double_tape_pointer+1
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-          X%d = X%d+Y%d*OpenAD_Symbol_6
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_7 = double_tape(double_tape_pointer)
+          X%d = X%d+Y%d*OpenAD_Symbol_6
           X%d = X%d+Y%d*OpenAD_Symbol_7
           Y%d = 0.0d0
+
           end if 
         end subroutine head

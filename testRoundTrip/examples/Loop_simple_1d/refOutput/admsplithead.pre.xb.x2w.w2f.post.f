@@ -51,7 +51,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -71,21 +72,25 @@ C
 C     **** Statements ****
 C
 
+
           integer iaddr
           external iaddr
 
          if (our_rev_mode%plain) then
 ! original function
       Y%v = X%v
+
           end if
           if (our_rev_mode%tape) then
 ! taping
       Y%v = X%v
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
           X%d = X%d+Y%d
           Y%d = 0.0d0
+
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -140,7 +145,8 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-       subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
           use OAD_tape
           use OAD_rev
 
@@ -160,13 +166,17 @@ C
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 2)
-      type(active) :: Y(1 : 2)
+      type(active) :: X(1:2)
+      type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       INTEGER(w2f__i4) I
+
+
+          integer iaddr
+          external iaddr
 C
 C     **** Top Level Pragmas ****
 C
@@ -176,9 +186,6 @@ C
 C     **** Statements ****
 C
 
-          integer iaddr
-          external iaddr
-
          if (our_rev_mode%plain) then
 ! original function
 C$OPENAD XXX Template ad_template.f
@@ -186,6 +193,7 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(X(I),Y(I))
       END DO
+
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -194,6 +202,7 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(X(I),Y(I))
       END DO
+
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -202,5 +211,6 @@ C$OPENAD XXX Simple loop
         CALL foo(X(I),Y(I))
         I = I - 1
       END DO
+
           end if 
         end subroutine head
