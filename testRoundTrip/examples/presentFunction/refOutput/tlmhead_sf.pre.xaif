@@ -282,7 +282,6 @@
     <xaif:Entry vertex_id="13"/>
 
     <xaif:BasicBlock vertex_id="14" scope_id="4">
-      <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_INTERFACE]"/>
       <xaif:Marker statement_id="14" annotation="{WHIRL_Id#14} [passive: OPR_PRAGMA]"/>
       <xaif:Assignment statement_id="15" lineNumber="30" do_chain="3">
         <xaif:AssignmentLHS du_ud="3" alias="4">

@@ -50,9 +50,9 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_7 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
           OpenAD_Symbol_8 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
           CALL setderiv(OpenAD_Symbol_9,OUTARG)
-          CALL sax(OpenAD_Symbol_7,OPTARG,OUTARG)
+          CALL sax(OpenAD_Symbol_1,REQARG,OUTARG)
+          CALL saxpy(OpenAD_Symbol_7,OPTARG,OUTARG)
           CALL saxpy(OpenAD_Symbol_8,OpenAD_Symbol_9,OUTARG)
-          CALL saxpy(OpenAD_Symbol_1,REQARG,OUTARG)
         ENDIF
       ELSE
         OUTARG%v = REQARG%v
@@ -74,9 +74,6 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-C
-C     **** Statements ****
-C
       interface 
         SUBROUTINE opt(REQARG, OPTARG, OUTARG)
         use w2f__types
@@ -91,6 +88,9 @@ C
 
       end interface 
       
+C
+C     **** Statements ****
+C
       Y(1)%v = (X(1)%v*2.0D00)
       CALL sax(2.0D00,X(1),Y(1))
       CALL opt(X(2),X(1),Y(1))
