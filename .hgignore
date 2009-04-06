@@ -23,6 +23,7 @@ testRoundTrip/OAD_tape.f90
 testRoundTrip/params.conf
 testRoundTrip/plotOutput/*
 testRoundTrip/preProcess.py
+testRoundTrip/postProcess.py
 testRoundTrip/tmpOutput/*
 testRoundTrip/w2f__types.f90
 testRoundTrip/whirl2*

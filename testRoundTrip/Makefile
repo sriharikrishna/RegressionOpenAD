@@ -28,7 +28,7 @@ FREEFORMAT=-ffree-form
 ifdef OPTIMIZE
 F90FLAGS=-O3
 else
-F90FLAGS=-g -O0
+F90FLAGS=-g -O0 -pedantic -std=f2003 -Wall -W -fbounds-check
 endif 
 CC=gcc
 endif
@@ -109,18 +109,19 @@ MODULES+= all_globals_mod.o
 else ifeq ($(MAJOR_MODE),mf)
 MODULES+= all_globals_mod.pre.w2f.o
 else
-MODULES+= all_globals_mod.pre.xb.x2w.w2f.pp.o 
+MODULES+= all_globals_mod.pre.xb.x2w.w2f.post.o 
 endif
 
 PREPROCESS_FLAGS=
 POSTPROCESS_FLAGS=
 ifeq ($(MAJOR_MODE),tlm)
-PREPROCESS_FLAGS=-m f
-POSTPROCESS_FLAGS=-f
+PREPROCESS_FLAGS=--mode=f
+POSTPROCESS_FLAGS=--mode=f
 endif
 
 ifeq ($(MAJOR_MODE),adm)
-PREPROCESS_FLAGS=-m r
+PREPROCESS_FLAGS=--mode=r
+POSTPROCESS_FLAGS=--mode=r
 endif
 
 CP_FLAG=
@@ -134,7 +135,7 @@ DRIVER_PRE_REQ+=head.o
 else ifeq ($(MAJOR_MODE),mf)
 DRIVER_PRE_REQ+=head.pre.w2f.o
 else
-DRIVER_PRE_REQ+=head.pre.xb.x2w.w2f.pp.o
+DRIVER_PRE_REQ+=head.pre.xb.x2w.w2f.post.o
 endif 
 DRIVER_PRE_REQ+=driver.o
 
@@ -208,18 +209,17 @@ head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 	./whirl2f -openad $<
 
 # postprocess F'
-head_sf.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f multi-pp.pl
+head_sf.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
 	$(COMPLAIN)
-#	./postProcess.py $(POSTPROCESS_FLAGS) $< -o $@
-	perl multi-pp.pl $(POSTPROCESS_FLAGS) $<
+	./postProcess.py $(POSTPROCESS_FLAGS) $< -o $@
 
 # extract the transformed globals module so we the right order of 
 # compilation with respect to the globals checkpoint module
-all_globals_mod.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.pp.f
+all_globals_mod.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.post.f
 	cat $< | sed -n '/MODULE all_globals_mod/,/END MODULE/p' > $@
 
 # remove the transformed globals module from the transformed head file
-head.pre.xb.x2w.w2f.pp.f: head_sf.pre.xb.x2w.w2f.pp.f
+head.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.post.f
 	cat $< | sed '/MODULE all_globals_mod/,/END MODULE/d' > $@
 
 # targets for passing through Pre/PostProcessor and mfef90 exclusively ###################
@@ -252,9 +252,6 @@ whirl2xaif xaif2whirl whirl2sexp sexp2whirl:
 
 %.py:
 	@$(LN) ${OPENADFORTTK_BASE}/tools/SourceProcessing/$@ .
-
-multi-pp.pl:
-	@$(LN) ${OPENADFORTTKROOT}/bin/$@ .
 
 whirl2f whirl2f_be:
 	@$(LN) ${OPEN64ROOT}/whirl2f/$@ .
@@ -301,14 +298,14 @@ tmpOutput:
 	@mkdir -p $@
 
 minClean:
-	@$(RM) head_sf.* head.* driver* params.conf all_globals_* ad_template.f *mod-whirl tmpOutput data.tmp driver.o all_globals_mod.xb.x2w.w2f.pp.o head.xb.x2w.w2f.pp.o
+	@$(RM) head_sf.* head.* driver* params.conf all_globals_* ad_template.f *mod-whirl tmpOutput data.tmp driver.o all_globals_mod.xb.x2w.w2f.post.o head.xb.x2w.w2f.post.o
 
 groupClean: minClean
 	@$(RM) *.o
 
 clean: groupClean
 	$(RM) *.xsd 
-	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f multi-pp.pl *Process.py xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
+	$(RM) mfef90 whirl2xaif whirl2sexp sexp2whirl ir_b2a xaif2whirl whirl2f_be whirl2f *Process.py xaifBooster .lastRun w2f__types.f90 iaddr.c ad_inline.f OAD_active.f90 OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90 oad_tr_*.xml
 	$(RM) *.mod *.o
 	$(RM) plotOutput
 
