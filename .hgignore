@@ -21,7 +21,7 @@ testRoundTrip/OAD_cp.f90
 testRoundTrip/OAD_rev.f90
 testRoundTrip/OAD_tape.f90
 testRoundTrip/params.conf
-testRoundTrip/plotOutput/*
+testRoundTrip/plotOutput*
 testRoundTrip/preProcess.py
 testRoundTrip/postProcess.py
 testRoundTrip/tmpOutput/*
