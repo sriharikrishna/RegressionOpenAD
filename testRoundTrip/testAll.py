@@ -15,6 +15,7 @@ globalDeclineAll=False
 globalMakeSVG=False
 globalVerbose=False
 globalOkCount=0
+globalNumDiscCount=0
 globalKnownFailCount=0
 globalNewFailCount=0
 globalDiffCmd='diff'
@@ -580,8 +581,8 @@ def main():
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
                         globalNewFailCount+=1
 			return -1
-                global globalOkCount
-                globalOkCount+=1
+                global globalNumDiscCount
+                globalNumDiscCount += 1
 	    except NumericalError:
                 print "ERROR: numerical comparison failed in test %i of %i (%s)." % (j+1,len(examples),examples[j])
                 if not (globalBatchMode):
@@ -608,7 +609,13 @@ def main():
     except RuntimeError, errtxt:
 	print 'caught exception: ',errtxt
 	return -1
-    print "total test count: "+str(rangeEnd-rangeStart+1)+";  OK or accepted numerical discrepancy:"+str(globalOkCount)+"; known errors:"+str(globalKnownFailCount)+"; new errors:"+str(globalNewFailCount)
+    print '=============== Results ==============='
+    print globalOkCount,'\tOK'
+    print globalNumDiscCount,'\tNumerical discrepancy'
+    print globalKnownFailCount,'\tKnown errors'
+    print globalNewFailCount,'\tNew errors'
+    print '---------------------------------------'
+    print (rangeEnd-rangeStart+1),'\tTotal'
     return 0
 
 if __name__ == "__main__":
