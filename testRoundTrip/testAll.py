@@ -11,9 +11,11 @@ globalBatchMode=False
 globalIgnoreFailingCases=False
 globalOfferAcceptAsDefault=False
 globalAcceptAll=False
+globalDeclineAll=False
 globalMakeSVG=False
 globalVerbose=False
 globalOkCount=0
+globalNumDiscCount=0
 globalKnownFailCount=0
 globalNewFailCount=0
 globalDiffCmd='diff'
@@ -124,37 +126,51 @@ def overridableLink(exampleFile,defaultFile,targetFileName):
     if not (os.path.exists(targetFileName)):
 	raise ConfigError, "could not create %s" % targetFileName
 
+def refFileCopy(newFile,refFile):
+    if (os.path.exists(refFile)):
+        return 0
+    else:
+        sys.stdout.write(refFile+' not available')
+        sys.stdout.flush()
+        if (globalBatchMode):
+            sys.stdout.write("\n")
+            sys.stdout.flush()
+            return 1
+        else:
+            answer=''
+            if globalAcceptAll:
+                sys.stdout.write('\n')
+                sys.stdout.flush()
+                answer="y"
+            elif globalDeclineAll:
+                sys.stdout.write('\n')
+                sys.stdout.flush()
+                answer="n"
+            else:
+                if (globalOfferAcceptAsDefault) :
+                    answer = raw_input(", copy and hg add it? (y)/n: ")
+                    if (answer != "n"):
+                        answer="y"
+                else:
+                    answer = raw_input(", copy and hg add it? y/(n): ")
+                    if (answer != "y"):
+                        answer="n"
+            if (answer == "n"):
+                return 1
+            else:
+                shutil.copy(newFile,refFile)
+                cmd="hg add "+refFile
+                if (os.system(cmd)):
+                    raise RuntimeError, "\""+cmd+"\" not successful"
+                return 0
+
 
 def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
     referenceFile = os.path.join(fcexampleDir,'refOutput',fcmode + fcfileName)
-    if not (os.path.exists(referenceFile)):
-	sys.stdout.write(referenceFile+" not available")
-	if not (globalBatchMode):
-            answer=""
-            if globalAcceptAll:
-                answer="y"
-            else:    
-                if (globalOfferAcceptAsDefault) :
-                    answer = (raw_input(", copy and hg add it? (y)/n: "))
-                    if (answer != "n") :
-                        answer="y"
-                else:
-                    answer = (raw_input(", copy and hg add it? y/(n): "))
-                    if (answer != "y") :
-                        answer="n"
-            if (answer == "n"):
-		sys.stdout.write("cannot verify %s\n" % fcfileName)
-                sys.stdout.flush()
-                return 0
-	    else:
-		shutil.copy(fcfileName,referenceFile)
-                cmd="hg add "+referenceFile
-		if (os.system(cmd)):
-		    raise RuntimeError, "\""+cmd+"\" not successful"
-	else: # BATCHMODE
-	    sys.stdout.write("\n")
-            sys.stdout.flush()
-            return 0
+    if (refFileCopy(fcfileName,referenceFile) == 1):
+        sys.stdout.write("cannot verify %s\n" % fcfileName)
+        sys.stdout.flush()
+        return 0
     cmd="diff "
     if (ignoreString != '') : 
 	cmd+="-I '"+ignoreString+"' "
@@ -170,6 +186,8 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
             answer=""
             if globalAcceptAll:
                 answer="y"
+            elif globalDeclineAll:
+                answer="n"
             else:    
                 if (globalOfferAcceptAsDefault) :
                     answer = raw_input("   accept/copy new %s to %s? (y)/n: " % (fcfileName,referenceFile))
@@ -198,7 +216,7 @@ def printSep(sepChar,msg,sepLength):
 def numberedList(list):
     numberedList=[]
     digits=len(str(len(list)+1))
-    format='%'+str(digits)+'d:%s'
+    format='%'+str(digits)+'d %s'
     for (c,e) in enumerate(list):
         numberedName=format%(c+1,e)
         numberedList.append(numberedName)
@@ -251,9 +269,11 @@ def populateExamplesList(args):
 	    examples = allExamples
 	    try:
 		if (len(args) >= 2): # A range START is given
-		    rangeStart = int(args[1])
+		    rangeStart = (int(args[1]) < 1 and 1) \
+                                                     or int(args[1])
 		if (len(args) >= 3): # A range END is also given
-		    rangeEnd = int(args[2])
+		    rangeEnd = (int(args[2]) <= len(examples)) and int(args[2]) \
+                                                               or len(examples)
 	    except ValueError:
 		raise CommandLineError, "\"all\" must be followed by zero, one, or two integers which specify the start and end range, e.g. 'all [%i | %i %i]'"
 	else: # each argument is treated as a regex
@@ -367,6 +387,36 @@ def link_xaifBooster(majorMode):
 	sys.stdout.write("xaifBoosterAlgPath is %s\n" % xaifBoosterAlgPath)
 	sys.stdout.flush()
 
+def compareNumericalResults(exDir,exName,majorMode):
+    newDDout = os.path.join('tmpOutput','dd.out')
+    refDDout = os.path.join(exDir,'refOutput','dd.out')
+    if (refFileCopy(newDDout,refDDout) == 1):
+        sys.stdout.write('Could not find '+refDDout+' for numerical comparison\n')
+        sys.stdout.flush()
+        raise NumericalError
+    numFiles=newDDout+' '+refDDout
+    if (majorMode == "adm" or majorMode == "tlm"):
+        newADout = os.path.join('tmpOutput','ad.out')
+        refADout = os.path.join(exDir,'refOutput','ad.out')
+        if (refFileCopy(newADout,refADout) == 1):
+            sys.stdout.write('Could not find '+refADout+' for numerical comparison\n')
+            sys.stdout.flush()
+            raise NumericalError
+        numFiles+=' '+newADout+' '+refADout
+    if not (globalBatchMode):
+        testFlags = '-g -v -i'
+    else:
+        testFlags = '-b'
+    if globalMakeSVG:
+        testFlags += ' -s'
+    numCompareStr = './numericalComparison.py '+testFlags+' -n '+exName+' '+numFiles
+    sys.stdout.write(numCompareStr+'\n')
+    numCompareReturn = os.system(numCompareStr)
+    if (numCompareReturn == 65280):
+        raise NumericalDiscrepancy
+    elif (numCompareReturn):
+        raise NumericalError
+
 
 def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     exDir = "examples/" + exName
@@ -440,22 +490,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	raise MakeError, makeCmd + " run"
     if (majorMode != "trace"):
         # do numerical comparison
-        numFiles="tmpOutput/dd.out " + exDir + "/refOutput/dd.out"
-        if (majorMode == "adm" or majorMode == "tlm"):
-            numFiles+=" tmpOutput/ad.out " + exDir + "/refOutput/ad.out"
-        if not (globalBatchMode):
-            testFlags = '-g -v -i'
-        else:
-            testFlags = '-b'
-        if globalMakeSVG:
-            testFlags += ' -s'
-        numCompareStr = "./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles)
-        sys.stdout.write(numCompareStr+'\n')
-        numCompareReturn = os.system(numCompareStr)
-        if (numCompareReturn == 65280):
-            raise NumericalDiscrepancy
-        elif (numCompareReturn):
-            raise NumericalError
+        compareNumericalResults(exDir,exName,majorMode)
     printSep("*","",sepLength)
     global globalOkCount
     globalOkCount+=1
@@ -481,6 +516,9 @@ def main():
                    action='store_true',default=False)
     opt.add_option('-A','--acceptAll',dest='acceptAll',
                    help="accept all changes without confirmation",
+                   action='store_true',default=False)
+    opt.add_option('-D','--declineAll',dest='declineAll',
+                   help="decline all changes without confirmation",
                    action='store_true',default=False)
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
@@ -519,6 +557,9 @@ def main():
         if options.acceptAll :
             global globalAcceptAll
             globalAcceptAll=True
+        if options.declineAll:
+            global globalDeclineAll
+            globalDeclineAll = True
         if options.diff :
             global globalDiffCmd
             globalDiffCmd=options.diff 
@@ -569,8 +610,8 @@ def main():
 		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
                         globalNewFailCount+=1
 			return -1
-                global globalOkCount
-                globalOkCount+=1
+                global globalNumDiscCount
+                globalNumDiscCount += 1
 	    except NumericalError:
                 print "ERROR: numerical comparison failed in test %i of %i (%s)." % (j+1,len(examples),examples[j])
                 if not (globalBatchMode):
@@ -597,7 +638,13 @@ def main():
     except RuntimeError, errtxt:
 	print 'caught exception: ',errtxt
 	return -1
-    print "total test count: "+str(rangeEnd-rangeStart+1)+";  OK or accepted numerical discrepancy:"+str(globalOkCount)+"; known errors:"+str(globalKnownFailCount)+"; new errors:"+str(globalNewFailCount)
+    print '=============== Results ==============='
+    print globalOkCount,'\tOK'
+    print globalNumDiscCount,'\tNumerical discrepancy'
+    print globalKnownFailCount,'\tKnown errors'
+    print globalNewFailCount,'\tNew errors'
+    print '---------------------------------------'
+    print (rangeEnd-rangeStart+1),'\tTotal'
     return 0
 
 if __name__ == "__main__":
