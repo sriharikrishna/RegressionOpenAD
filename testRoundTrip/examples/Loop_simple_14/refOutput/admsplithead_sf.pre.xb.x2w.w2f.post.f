@@ -159,8 +159,8 @@ C$OPENAD XXX Simple loop
 ! adjoint
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-          S%d = S%d+Y(I)%d*(1_w2f__i8)
-          X(I)%d = X(I)%d+Y(I)%d*(1_w2f__i8)
+          S%d = S%d+Y(I)%d
+          X(I)%d = X(I)%d+Y(I)%d
           Y(I)%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)

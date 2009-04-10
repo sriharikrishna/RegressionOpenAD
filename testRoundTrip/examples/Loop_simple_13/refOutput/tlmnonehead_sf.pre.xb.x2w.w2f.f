@@ -44,7 +44,7 @@ C$OPENAD XXX Simple loop
           CALL zero_deriv(__deriv__(S))
         ENDIF
         __value__(Y(INT(I))) = (__value__(X(I)) + __value__(S))
-        CALL sax(1_w2f__i8, __deriv__(X(I)), __deriv__(Y(I)))
-        CALL saxpy(1_w2f__i8, __deriv__(S), __deriv__(Y(I)))
+        CALL setderiv(__deriv__(Y(I)), __deriv__(X(I)))
+        CALL inc_deriv(__deriv__(Y(I)), __deriv__(S))
       END DO
       END SUBROUTINE

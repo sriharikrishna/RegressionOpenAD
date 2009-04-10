@@ -78,8 +78,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 3, 1
         __value__(Y(1)) = (__value__(X(I)) + __value__(Y(1)))
         CALL setderiv(__deriv__(OpenAD_Symbol_3), __deriv__(Y(1)))
-        CALL sax(1_w2f__i8, __deriv__(X(I)), __deriv__(Y(1)))
-        CALL saxpy(1_w2f__i8, __deriv__(OpenAD_Symbol_3), __deriv__(Y(1
-     > )))
+        CALL setderiv(__deriv__(Y(1)), __deriv__(X(I)))
+        CALL inc_deriv(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_3))
       END DO
       END SUBROUTINE

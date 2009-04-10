@@ -1051,18 +1051,18 @@ C adjoint
      +220)
           FVEC(INT(OpenAD_Symbol_214))%d = 0.0d0
           PLAP%d = PLAP%d+OpenAD_Symbol_90%d*(-2.0D00)
-          PRLAP%d = PRLAP%d+OpenAD_Symbol_90%d*(1_w2f__i8)
-          PLLAP%d = PLLAP%d+OpenAD_Symbol_90%d*(1_w2f__i8)
+          PRLAP%d = PRLAP%d+OpenAD_Symbol_90%d
+          PLLAP%d = PLLAP%d+OpenAD_Symbol_90%d
           OpenAD_Symbol_90%d = 0.0d0
           PLAP%d = PLAP%d+OpenAD_Symbol_89%d*(-2.0D00)
-          PTLAP%d = PTLAP%d+OpenAD_Symbol_89%d*(1_w2f__i8)
-          PBLAP%d = PBLAP%d+OpenAD_Symbol_89%d*(1_w2f__i8)
+          PTLAP%d = PTLAP%d+OpenAD_Symbol_89%d
+          PBLAP%d = PBLAP%d+OpenAD_Symbol_89%d
           OpenAD_Symbol_89%d = 0.0d0
-          PBLAP%d = PBLAP%d+OpenAD_Symbol_88%d*(-1_w2f__i8)
-          PTLAP%d = PTLAP%d+OpenAD_Symbol_88%d*(1_w2f__i8)
+          PBLAP%d = PBLAP%d-OpenAD_Symbol_88%d
+          PTLAP%d = PTLAP%d+OpenAD_Symbol_88%d
           OpenAD_Symbol_88%d = 0.0d0
-          PLLAP%d = PLLAP%d+OpenAD_Symbol_87%d*(-1_w2f__i8)
-          PRLAP%d = PRLAP%d+OpenAD_Symbol_87%d*(1_w2f__i8)
+          PLLAP%d = PLLAP%d-OpenAD_Symbol_87%d
+          PRLAP%d = PRLAP%d+OpenAD_Symbol_87%d
           OpenAD_Symbol_87%d = 0.0d0
           CALL bar(PBB,PBL,PB,PBR,PLL,PL,P,PR,PRR,PTL,PT,PTR,PTT,HY2,HX2
      +,PLAP,PBLAP,PLLAP,PRLAP,PTLAP)
@@ -1076,11 +1076,11 @@ C adjoint
           OpenAD_Symbol_79%d = OpenAD_Symbol_79%d+DPDY%d*(OpenAD_Symbol_
      +222)
           DPDY%d = 0.0d0
-          PL%d = PL%d+OpenAD_Symbol_80%d*(-1_w2f__i8)
-          PR%d = PR%d+OpenAD_Symbol_80%d*(1_w2f__i8)
+          PL%d = PL%d-OpenAD_Symbol_80%d
+          PR%d = PR%d+OpenAD_Symbol_80%d
           OpenAD_Symbol_80%d = 0.0d0
-          PB%d = PB%d+OpenAD_Symbol_79%d*(-1_w2f__i8)
-          PT%d = PT%d+OpenAD_Symbol_79%d*(1_w2f__i8)
+          PB%d = PB%d-OpenAD_Symbol_79%d
+          PT%d = PT%d+OpenAD_Symbol_79%d
           OpenAD_Symbol_79%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_111 = integer_tape(integer_tape_pointer)
@@ -1665,44 +1665,44 @@ C adjoint
      +_248)
           PBLAP%d = 0.0d0
           PT%d = PT%d+OpenAD_Symbol_100%d*(-2.0D00)
-          PTR%d = PTR%d+OpenAD_Symbol_100%d*(1_w2f__i8)
-          PTL%d = PTL%d+OpenAD_Symbol_100%d*(1_w2f__i8)
+          PTR%d = PTR%d+OpenAD_Symbol_100%d
+          PTL%d = PTL%d+OpenAD_Symbol_100%d
           OpenAD_Symbol_100%d = 0.0d0
           PT%d = PT%d+OpenAD_Symbol_99%d*(-2.0D00)
-          PTT%d = PTT%d+OpenAD_Symbol_99%d*(1_w2f__i8)
-          P%d = P%d+OpenAD_Symbol_99%d*(1_w2f__i8)
+          PTT%d = PTT%d+OpenAD_Symbol_99%d
+          P%d = P%d+OpenAD_Symbol_99%d
           OpenAD_Symbol_99%d = 0.0d0
           PR%d = PR%d+OpenAD_Symbol_98%d*(-2.0D00)
-          PRR%d = PRR%d+OpenAD_Symbol_98%d*(1_w2f__i8)
-          P%d = P%d+OpenAD_Symbol_98%d*(1_w2f__i8)
+          PRR%d = PRR%d+OpenAD_Symbol_98%d
+          P%d = P%d+OpenAD_Symbol_98%d
           OpenAD_Symbol_98%d = 0.0d0
           PR%d = PR%d+OpenAD_Symbol_97%d*(-2.0D00)
-          PTR%d = PTR%d+OpenAD_Symbol_97%d*(1_w2f__i8)
-          PBR%d = PBR%d+OpenAD_Symbol_97%d*(1_w2f__i8)
+          PTR%d = PTR%d+OpenAD_Symbol_97%d
+          PBR%d = PBR%d+OpenAD_Symbol_97%d
           OpenAD_Symbol_97%d = 0.0d0
           P%d = P%d+OpenAD_Symbol_96%d*(-2.0D00)
-          PR%d = PR%d+OpenAD_Symbol_96%d*(1_w2f__i8)
-          PL%d = PL%d+OpenAD_Symbol_96%d*(1_w2f__i8)
+          PR%d = PR%d+OpenAD_Symbol_96%d
+          PL%d = PL%d+OpenAD_Symbol_96%d
           OpenAD_Symbol_96%d = 0.0d0
           P%d = P%d+OpenAD_Symbol_95%d*(-2.0D00)
-          PT%d = PT%d+OpenAD_Symbol_95%d*(1_w2f__i8)
-          PB%d = PB%d+OpenAD_Symbol_95%d*(1_w2f__i8)
+          PT%d = PT%d+OpenAD_Symbol_95%d
+          PB%d = PB%d+OpenAD_Symbol_95%d
           OpenAD_Symbol_95%d = 0.0d0
           PL%d = PL%d+OpenAD_Symbol_94%d*(-2.0D00)
-          P%d = P%d+OpenAD_Symbol_94%d*(1_w2f__i8)
-          PLL%d = PLL%d+OpenAD_Symbol_94%d*(1_w2f__i8)
+          P%d = P%d+OpenAD_Symbol_94%d
+          PLL%d = PLL%d+OpenAD_Symbol_94%d
           OpenAD_Symbol_94%d = 0.0d0
           PL%d = PL%d+OpenAD_Symbol_93%d*(-2.0D00)
-          PTL%d = PTL%d+OpenAD_Symbol_93%d*(1_w2f__i8)
-          PBL%d = PBL%d+OpenAD_Symbol_93%d*(1_w2f__i8)
+          PTL%d = PTL%d+OpenAD_Symbol_93%d
+          PBL%d = PBL%d+OpenAD_Symbol_93%d
           OpenAD_Symbol_93%d = 0.0d0
           PB%d = PB%d+OpenAD_Symbol_92%d*(-2.0D00)
-          PBR%d = PBR%d+OpenAD_Symbol_92%d*(1_w2f__i8)
-          PBL%d = PBL%d+OpenAD_Symbol_92%d*(1_w2f__i8)
+          PBR%d = PBR%d+OpenAD_Symbol_92%d
+          PBL%d = PBL%d+OpenAD_Symbol_92%d
           OpenAD_Symbol_92%d = 0.0d0
           PB%d = PB%d+OpenAD_Symbol_91%d*(-2.0D00)
-          P%d = P%d+OpenAD_Symbol_91%d*(1_w2f__i8)
-          PBB%d = PBB%d+OpenAD_Symbol_91%d*(1_w2f__i8)
+          P%d = P%d+OpenAD_Symbol_91%d
+          PBB%d = PBB%d+OpenAD_Symbol_91%d
           OpenAD_Symbol_91%d = 0.0d0
 
 C adjoint end

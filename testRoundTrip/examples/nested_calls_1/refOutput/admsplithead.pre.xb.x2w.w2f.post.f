@@ -284,7 +284,7 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_28 = double_tape(double_tape_pointer)
           A%d = A%d+C%d*(OpenAD_Symbol_27)
           A%d = A%d+C%d*(OpenAD_Symbol_28)
-          B%d = B%d+C%d*(1_w2f__i8)
+          B%d = B%d+C%d
           C%d = 0.0d0
       CALL bar(B)
 

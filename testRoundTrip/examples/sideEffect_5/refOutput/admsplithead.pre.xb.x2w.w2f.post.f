@@ -289,9 +289,8 @@ C$OPENAD XXX Template ad_template.f
       DO WHILE(INT(OpenAD_Symbol_11) .LE. INT(OpenAD_Symbol_10))
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(1_w2f__i8)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d
           X(INT(OpenAD_Symbol_17))%d = X(INT(OpenAD_Symbol_17))%d+Y(1)%d
-     +*(1_w2f__i8)
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
           OpenAD_Symbol_3%d = 0.0d0

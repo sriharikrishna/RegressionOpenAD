@@ -58,7 +58,7 @@ C$OPENAD XXX Template ad_template.f
       C%v = (B%v+A%v*A%v)
       OpenAD_Symbol_0 = A%v
       OpenAD_Symbol_1 = A%v
-      CALL sax(1_w2f__i8,B,C)
+      CALL setderiv(C,B)
       CALL saxpy(OpenAD_Symbol_0,A,C)
       CALL saxpy(OpenAD_Symbol_1,A,C)
       END SUBROUTINE

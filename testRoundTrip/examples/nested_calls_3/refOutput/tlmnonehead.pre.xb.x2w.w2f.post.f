@@ -40,8 +40,8 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_Symbol_0,C,Y(3))
       CALL saxpy(OpenAD_Symbol_1,D,Y(3))
       Y(4)%v = (C%v+D%v)
-      CALL sax(1_w2f__i8,C,Y(4))
-      CALL saxpy(1_w2f__i8,D,Y(4))
+      CALL setderiv(Y(4),C)
+      CALL inc_deriv(Y(4),D)
       END SUBROUTINE
 
       SUBROUTINE foo(A, B, C, D)
@@ -81,8 +81,8 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_7 = (- SIN(OpenAD_Symbol_6))
       OpenAD_Symbol_8 = (OpenAD_Symbol_4 * OpenAD_Symbol_3)
       OpenAD_Symbol_9 = (OpenAD_Symbol_5 * OpenAD_Symbol_3)
-      CALL sax(1_w2f__i8,A,OpenAD_Symbol_10)
-      CALL saxpy(1_w2f__i8,B,OpenAD_Symbol_10)
+      CALL setderiv(OpenAD_Symbol_10,A)
+      CALL inc_deriv(OpenAD_Symbol_10,B)
       CALL sax(OpenAD_Symbol_8,A,C)
       CALL saxpy(OpenAD_Symbol_9,B,C)
       CALL sax(OpenAD_Symbol_7,OpenAD_Symbol_10,D)

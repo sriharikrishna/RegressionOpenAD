@@ -256,15 +256,15 @@ C adjoint
           X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_31)
           X(3)%d = X(3)%d+Y(1)%d*(OpenAD_Symbol_32)
           Y(1)%d = 0.0d0
-          X(10)%d = X(10)%d+OpenAD_Symbol_24%d*(1_w2f__i8)
-          X(9)%d = X(9)%d+OpenAD_Symbol_24%d*(1_w2f__i8)
-          X(11)%d = X(11)%d+OpenAD_Symbol_24%d*(1_w2f__i8)
-          X(12)%d = X(12)%d+OpenAD_Symbol_24%d*(1_w2f__i8)
+          X(10)%d = X(10)%d+OpenAD_Symbol_24%d
+          X(9)%d = X(9)%d+OpenAD_Symbol_24%d
+          X(11)%d = X(11)%d+OpenAD_Symbol_24%d
+          X(12)%d = X(12)%d+OpenAD_Symbol_24%d
           OpenAD_Symbol_24%d = 0.0d0
-          X(6)%d = X(6)%d+OpenAD_Symbol_23%d*(1_w2f__i8)
-          X(5)%d = X(5)%d+OpenAD_Symbol_23%d*(1_w2f__i8)
-          X(7)%d = X(7)%d+OpenAD_Symbol_23%d*(1_w2f__i8)
-          X(8)%d = X(8)%d+OpenAD_Symbol_23%d*(1_w2f__i8)
+          X(6)%d = X(6)%d+OpenAD_Symbol_23%d
+          X(5)%d = X(5)%d+OpenAD_Symbol_23%d
+          X(7)%d = X(7)%d+OpenAD_Symbol_23%d
+          X(8)%d = X(8)%d+OpenAD_Symbol_23%d
           OpenAD_Symbol_23%d = 0.0d0
 
 C adjoint end

@@ -86,30 +86,26 @@ C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
       SQRT3 = 5.77350258827209472656D-01
       __value__(MATR(0)) = (__value__(X(2)) - __value__(X(1)))
-      CALL sax(1_w2f__i8, __deriv__(X(2)), __deriv__(MATR(0)))
-      CALL saxpy(-1_w2f__i8, __deriv__(X(1)), __deriv__(MATR(0)))
+      CALL setderiv(__deriv__(MATR(0)), __deriv__(X(2)))
+      CALL dec_deriv(__deriv__(MATR(0)), __deriv__(X(1)))
       OpenAD_Symbol_0 = (__value__(X(3)) * 2.0D00 - __value__(X(2)) -
      >  __value__(X(1)))
       __value__(MATR(1)) = (SQRT3 * OpenAD_Symbol_0)
       OpenAD_Symbol_2 = SQRT3
-      CALL sax(-1_w2f__i8, __deriv__(X(1)), __deriv__(OpenAD_Symbol_31)
-     > )
-      CALL saxpy(-1_w2f__i8, __deriv__(X(2)), __deriv__(
-     > OpenAD_Symbol_31))
+      CALL set_neg_deriv(__deriv__(OpenAD_Symbol_31), __deriv__(X(1)))
+      CALL dec_deriv(__deriv__(OpenAD_Symbol_31), __deriv__(X(2)))
       CALL saxpy(2.0D00, __deriv__(X(3)), __deriv__(OpenAD_Symbol_31))
       CALL sax(OpenAD_Symbol_2, __deriv__(OpenAD_Symbol_31), __deriv__(
      > MATR(1)))
       __value__(MATR(2)) = (__value__(X(5)) - __value__(X(4)))
-      CALL sax(1_w2f__i8, __deriv__(X(5)), __deriv__(MATR(2)))
-      CALL saxpy(-1_w2f__i8, __deriv__(X(4)), __deriv__(MATR(2)))
+      CALL setderiv(__deriv__(MATR(2)), __deriv__(X(5)))
+      CALL dec_deriv(__deriv__(MATR(2)), __deriv__(X(4)))
       OpenAD_Symbol_4 = (__value__(X(6)) * 2.0D00 - __value__(X(5)) -
      >  __value__(X(4)))
       __value__(MATR(3)) = (SQRT3 * OpenAD_Symbol_4)
       OpenAD_Symbol_6 = SQRT3
-      CALL sax(-1_w2f__i8, __deriv__(X(4)), __deriv__(OpenAD_Symbol_32)
-     > )
-      CALL saxpy(-1_w2f__i8, __deriv__(X(5)), __deriv__(
-     > OpenAD_Symbol_32))
+      CALL set_neg_deriv(__deriv__(OpenAD_Symbol_32), __deriv__(X(4)))
+      CALL dec_deriv(__deriv__(OpenAD_Symbol_32), __deriv__(X(5)))
       CALL saxpy(2.0D00, __deriv__(X(6)), __deriv__(OpenAD_Symbol_32))
       CALL sax(OpenAD_Symbol_6, __deriv__(OpenAD_Symbol_32), __deriv__(
      > MATR(3)))
@@ -170,8 +166,8 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_Symbol_9, __deriv__(MATR(3)), __deriv__(M03))
       CALL sax(OpenAD_Symbol_10, __deriv__(MATR(1)), __deriv__(M12))
       CALL saxpy(OpenAD_Symbol_11, __deriv__(MATR(2)), __deriv__(M12))
-      CALL sax(1_w2f__i8, __deriv__(M03), __deriv__(G))
-      CALL saxpy(-1_w2f__i8, __deriv__(M12), __deriv__(G))
+      CALL setderiv(__deriv__(G), __deriv__(M03))
+      CALL dec_deriv(__deriv__(G), __deriv__(M12))
       CALL sax(OpenAD_Symbol_33, __deriv__(G), __deriv__(OBJ(1)))
       CALL saxpy(OpenAD_Symbol_34, __deriv__(MATR(2)), __deriv__(OBJ(1)
      > ))

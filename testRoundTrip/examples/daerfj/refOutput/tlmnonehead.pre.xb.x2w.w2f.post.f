@@ -81,7 +81,7 @@ C$OPENAD XXX Template ad_template.f
      > -1_w2f__i8)))
         OpenAD_Symbol_16 = (OpenAD_Symbol_2 * OpenAD_Symbol_13 *
      >  OpenAD_Symbol_10 * INT((-1_w2f__i8)))
-        CALL sax(1_w2f__i8,X(4),TEMP2)
+        CALL setderiv(TEMP2,X(4))
         CALL saxpy(OpenAD_Symbol_6,X(3),TEMP2)
         CALL sax(OpenAD_Symbol_14,TEMP2,FVEC(I))
         CALL saxpy(OpenAD_Symbol_15,X(1),FVEC(I))

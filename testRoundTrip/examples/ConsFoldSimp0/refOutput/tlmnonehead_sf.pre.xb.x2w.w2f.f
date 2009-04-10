@@ -35,7 +35,7 @@ C$OPENAD XXX Template ad_template.f
       __value__(T2) = (__value__(T1) * 2.0D00)
       __value__(Y1) = __value__(T2)
       __value__(Y(1)) = __value__(Y1)
-      CALL sax(1_w2f__i8, __deriv__(X(1)), __deriv__(T1))
-      CALL saxpy(1_w2f__i8, __deriv__(X(1)), __deriv__(T1))
+      CALL setderiv(__deriv__(T1), __deriv__(X(1)))
+      CALL inc_deriv(__deriv__(T1), __deriv__(X(1)))
       CALL sax(2.0D00, __deriv__(T1), __deriv__(Y(1)))
       END SUBROUTINE

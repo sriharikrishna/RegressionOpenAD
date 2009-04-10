@@ -56,7 +56,7 @@ C$OPENAD XXX Simple loop
           CALL zero_deriv(S)
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
-        CALL sax(1_w2f__i8,X(I),Y(I))
-        CALL saxpy(1_w2f__i8,S,Y(I))
+        CALL setderiv(Y(I),X(I))
+        CALL inc_deriv(Y(I),S)
       END DO
       END SUBROUTINE

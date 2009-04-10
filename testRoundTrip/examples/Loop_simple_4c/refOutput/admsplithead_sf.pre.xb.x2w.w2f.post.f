@@ -205,7 +205,7 @@ C$OPENAD XXX Simple loop
           OpenAD_Symbol_24 = double_tape(double_tape_pointer)
           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_23)
           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_24)
-          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d*(1_w2f__i8)
+          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d
           Y(I)%d = 0.0d0
           Y(I)%d = Y(I)%d+OpenAD_Symbol_9%d
           OpenAD_Symbol_9%d = 0.0d0
@@ -217,7 +217,7 @@ C$OPENAD XXX Simple loop
           OpenAD_Symbol_21 = double_tape(double_tape_pointer)
           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_20)
           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_21)
-          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d*(1_w2f__i8)
+          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d
           Y(I)%d = 0.0d0
           Y(I)%d = Y(I)%d+OpenAD_Symbol_6%d
           OpenAD_Symbol_6%d = 0.0d0

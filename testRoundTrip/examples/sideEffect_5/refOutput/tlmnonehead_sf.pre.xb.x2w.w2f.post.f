@@ -81,7 +81,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 3, 1
         Y(1)%v = (X(I)%v+Y(1)%v)
         CALL setderiv(OpenAD_Symbol_3,Y(1))
-        CALL sax(1_w2f__i8,X(I),Y(1))
-        CALL saxpy(1_w2f__i8,OpenAD_Symbol_3,Y(1))
+        CALL setderiv(Y(1),X(I))
+        CALL inc_deriv(Y(1),OpenAD_Symbol_3)
       END DO
       END SUBROUTINE

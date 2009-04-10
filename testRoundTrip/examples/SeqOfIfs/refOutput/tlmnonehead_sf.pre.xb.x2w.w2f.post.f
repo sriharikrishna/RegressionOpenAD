@@ -35,12 +35,12 @@ C
 C$OPENAD XXX Template ad_template.f
       IF (X(1)%v.LE.X(2)%v) THEN
         Y(1)%v = (X(2)%v-X(1)%v)
-        CALL sax(1_w2f__i8,X(2),Y(1))
-        CALL saxpy(-1_w2f__i8,X(1),Y(1))
+        CALL setderiv(Y(1),X(2))
+        CALL dec_deriv(Y(1),X(1))
       ELSE
         Y(1)%v = (X(1)%v-X(2)%v)
-        CALL sax(1_w2f__i8,X(1),Y(1))
-        CALL saxpy(-1_w2f__i8,X(2),Y(1))
+        CALL setderiv(Y(1),X(1))
+        CALL dec_deriv(Y(1),X(2))
       ENDIF
       IF (Y(1)%v.eq.0.0D00) THEN
         Y(2)%v = X(1)%v

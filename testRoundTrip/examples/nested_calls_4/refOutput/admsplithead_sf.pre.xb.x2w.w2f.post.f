@@ -150,8 +150,8 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
           Y(2)%d = 0.0d0
           X(3)%d = X(3)%d+Y(1)%d
           Y(1)%d = 0.0d0
-          D%d = D%d+Y(4)%d*(1_w2f__i8)
-          C%d = C%d+Y(4)%d*(1_w2f__i8)
+          D%d = D%d+Y(4)%d
+          C%d = C%d+Y(4)%d
           Y(4)%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_12 = double_tape(double_tape_pointer)
@@ -303,8 +303,8 @@ C$OPENAD XXX Template ad_template.f
           B%d = B%d+C%d*(OpenAD_Symbol_17)
           A%d = A%d+C%d*(OpenAD_Symbol_18)
           C%d = 0.0d0
-          B%d = B%d+OpenAD_Symbol_11%d*(1_w2f__i8)
-          A%d = A%d+OpenAD_Symbol_11%d*(1_w2f__i8)
+          B%d = B%d+OpenAD_Symbol_11%d
+          A%d = A%d+OpenAD_Symbol_11%d
           OpenAD_Symbol_11%d = 0.0d0
 
           end if 

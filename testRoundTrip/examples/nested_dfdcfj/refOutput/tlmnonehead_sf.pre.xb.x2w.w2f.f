@@ -286,14 +286,10 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_Symbol_9 = (HX * 2.0D00)
           __value__(DPDX) = (OpenAD_Symbol_8 / OpenAD_Symbol_9)
           OpenAD_Symbol_10 = (INT(1_w2f__i8) / OpenAD_Symbol_9)
-          CALL sax(1_w2f__i8, __deriv__(PT), __deriv__(OpenAD_Symbol_79
-     > ))
-          CALL saxpy(-1_w2f__i8, __deriv__(PB), __deriv__(
-     > OpenAD_Symbol_79))
-          CALL sax(1_w2f__i8, __deriv__(PR), __deriv__(OpenAD_Symbol_80
-     > ))
-          CALL saxpy(-1_w2f__i8, __deriv__(PL), __deriv__(
-     > OpenAD_Symbol_80))
+          CALL setderiv(__deriv__(OpenAD_Symbol_79), __deriv__(PT))
+          CALL dec_deriv(__deriv__(OpenAD_Symbol_79), __deriv__(PB))
+          CALL setderiv(__deriv__(OpenAD_Symbol_80), __deriv__(PR))
+          CALL dec_deriv(__deriv__(OpenAD_Symbol_80), __deriv__(PL))
           CALL sax(OpenAD_Symbol_6, __deriv__(OpenAD_Symbol_79),
      >  __deriv__(DPDY))
           CALL sax(OpenAD_Symbol_10, __deriv__(OpenAD_Symbol_80),
@@ -337,24 +333,16 @@ C$OPENAD XXX Template ad_template.f
      >  OpenAD_Symbol_81)
           OpenAD_Symbol_86 = (OpenAD_Symbol_29 * OpenAD_Symbol_25 *
      >  OpenAD_Symbol_81)
-          CALL sax(1_w2f__i8, __deriv__(PRLAP), __deriv__(
-     > OpenAD_Symbol_87))
-          CALL saxpy(-1_w2f__i8, __deriv__(PLLAP), __deriv__(
-     > OpenAD_Symbol_87))
-          CALL sax(1_w2f__i8, __deriv__(PTLAP), __deriv__(
-     > OpenAD_Symbol_88))
-          CALL saxpy(-1_w2f__i8, __deriv__(PBLAP), __deriv__(
-     > OpenAD_Symbol_88))
-          CALL sax(1_w2f__i8, __deriv__(PBLAP), __deriv__(
-     > OpenAD_Symbol_89))
-          CALL saxpy(1_w2f__i8, __deriv__(PTLAP), __deriv__(
-     > OpenAD_Symbol_89))
+          CALL setderiv(__deriv__(OpenAD_Symbol_87), __deriv__(PRLAP))
+          CALL dec_deriv(__deriv__(OpenAD_Symbol_87), __deriv__(PLLAP))
+          CALL setderiv(__deriv__(OpenAD_Symbol_88), __deriv__(PTLAP))
+          CALL dec_deriv(__deriv__(OpenAD_Symbol_88), __deriv__(PBLAP))
+          CALL setderiv(__deriv__(OpenAD_Symbol_89), __deriv__(PBLAP))
+          CALL inc_deriv(__deriv__(OpenAD_Symbol_89), __deriv__(PTLAP))
           CALL saxpy(-2.0D00, __deriv__(PLAP), __deriv__(
      > OpenAD_Symbol_89))
-          CALL sax(1_w2f__i8, __deriv__(PLLAP), __deriv__(
-     > OpenAD_Symbol_90))
-          CALL saxpy(1_w2f__i8, __deriv__(PRLAP), __deriv__(
-     > OpenAD_Symbol_90))
+          CALL setderiv(__deriv__(OpenAD_Symbol_90), __deriv__(PLLAP))
+          CALL inc_deriv(__deriv__(OpenAD_Symbol_90), __deriv__(PRLAP))
           CALL saxpy(-2.0D00, __deriv__(PLAP), __deriv__(
      > OpenAD_Symbol_90))
           CALL sax(OpenAD_Symbol_83, __deriv__(DPDX), __deriv__(FVEC(K)
@@ -490,41 +478,35 @@ C$OPENAD XXX Template ad_template.f
      >  HX2))
       OpenAD_Symbol_71 = (INT(1_w2f__i8) / HY2)
       OpenAD_Symbol_75 = (INT(1_w2f__i8) / HX2)
-      CALL sax(1_w2f__i8, __deriv__(PBB), __deriv__(OpenAD_Symbol_91))
-      CALL saxpy(1_w2f__i8, __deriv__(P), __deriv__(OpenAD_Symbol_91))
+      CALL setderiv(__deriv__(OpenAD_Symbol_91), __deriv__(PBB))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_91), __deriv__(P))
       CALL saxpy(-2.0D00, __deriv__(PB), __deriv__(OpenAD_Symbol_91))
-      CALL sax(1_w2f__i8, __deriv__(PBL), __deriv__(OpenAD_Symbol_92))
-      CALL saxpy(1_w2f__i8, __deriv__(PBR), __deriv__(OpenAD_Symbol_92)
-     > )
+      CALL setderiv(__deriv__(OpenAD_Symbol_92), __deriv__(PBL))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_92), __deriv__(PBR))
       CALL saxpy(-2.0D00, __deriv__(PB), __deriv__(OpenAD_Symbol_92))
-      CALL sax(1_w2f__i8, __deriv__(PBL), __deriv__(OpenAD_Symbol_93))
-      CALL saxpy(1_w2f__i8, __deriv__(PTL), __deriv__(OpenAD_Symbol_93)
-     > )
+      CALL setderiv(__deriv__(OpenAD_Symbol_93), __deriv__(PBL))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_93), __deriv__(PTL))
       CALL saxpy(-2.0D00, __deriv__(PL), __deriv__(OpenAD_Symbol_93))
-      CALL sax(1_w2f__i8, __deriv__(PLL), __deriv__(OpenAD_Symbol_94))
-      CALL saxpy(1_w2f__i8, __deriv__(P), __deriv__(OpenAD_Symbol_94))
+      CALL setderiv(__deriv__(OpenAD_Symbol_94), __deriv__(PLL))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_94), __deriv__(P))
       CALL saxpy(-2.0D00, __deriv__(PL), __deriv__(OpenAD_Symbol_94))
-      CALL sax(1_w2f__i8, __deriv__(PB), __deriv__(OpenAD_Symbol_95))
-      CALL saxpy(1_w2f__i8, __deriv__(PT), __deriv__(OpenAD_Symbol_95))
+      CALL setderiv(__deriv__(OpenAD_Symbol_95), __deriv__(PB))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_95), __deriv__(PT))
       CALL saxpy(-2.0D00, __deriv__(P), __deriv__(OpenAD_Symbol_95))
-      CALL sax(1_w2f__i8, __deriv__(PL), __deriv__(OpenAD_Symbol_96))
-      CALL saxpy(1_w2f__i8, __deriv__(PR), __deriv__(OpenAD_Symbol_96))
+      CALL setderiv(__deriv__(OpenAD_Symbol_96), __deriv__(PL))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_96), __deriv__(PR))
       CALL saxpy(-2.0D00, __deriv__(P), __deriv__(OpenAD_Symbol_96))
-      CALL sax(1_w2f__i8, __deriv__(PBR), __deriv__(OpenAD_Symbol_97))
-      CALL saxpy(1_w2f__i8, __deriv__(PTR), __deriv__(OpenAD_Symbol_97)
-     > )
+      CALL setderiv(__deriv__(OpenAD_Symbol_97), __deriv__(PBR))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_97), __deriv__(PTR))
       CALL saxpy(-2.0D00, __deriv__(PR), __deriv__(OpenAD_Symbol_97))
-      CALL sax(1_w2f__i8, __deriv__(P), __deriv__(OpenAD_Symbol_98))
-      CALL saxpy(1_w2f__i8, __deriv__(PRR), __deriv__(OpenAD_Symbol_98)
-     > )
+      CALL setderiv(__deriv__(OpenAD_Symbol_98), __deriv__(P))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_98), __deriv__(PRR))
       CALL saxpy(-2.0D00, __deriv__(PR), __deriv__(OpenAD_Symbol_98))
-      CALL sax(1_w2f__i8, __deriv__(P), __deriv__(OpenAD_Symbol_99))
-      CALL saxpy(1_w2f__i8, __deriv__(PTT), __deriv__(OpenAD_Symbol_99)
-     > )
+      CALL setderiv(__deriv__(OpenAD_Symbol_99), __deriv__(P))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_99), __deriv__(PTT))
       CALL saxpy(-2.0D00, __deriv__(PT), __deriv__(OpenAD_Symbol_99))
-      CALL sax(1_w2f__i8, __deriv__(PTL), __deriv__(OpenAD_Symbol_100))
-      CALL saxpy(1_w2f__i8, __deriv__(PTR), __deriv__(OpenAD_Symbol_100
-     > ))
+      CALL setderiv(__deriv__(OpenAD_Symbol_100), __deriv__(PTL))
+      CALL inc_deriv(__deriv__(OpenAD_Symbol_100), __deriv__(PTR))
       CALL saxpy(-2.0D00, __deriv__(PT), __deriv__(OpenAD_Symbol_100))
       CALL sax(OpenAD_Symbol_39, __deriv__(OpenAD_Symbol_91), __deriv__
      > (PBLAP))

@@ -44,8 +44,8 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_Symbol_1, __deriv__(X(I)), __deriv__(Y(I)))
         ELSE
           __value__(Y(INT(I))) = (__value__(X(I)) + __value__(X(I)))
-          CALL sax(1_w2f__i8, __deriv__(X(I)), __deriv__(Y(I)))
-          CALL saxpy(1_w2f__i8, __deriv__(X(I)), __deriv__(Y(I)))
+          CALL setderiv(__deriv__(Y(I)), __deriv__(X(I)))
+          CALL inc_deriv(__deriv__(Y(I)), __deriv__(X(I)))
         ENDIF
         __value__(X(INT(I))) = 0.0
         CALL zero_deriv(__deriv__(X(INT(I))))

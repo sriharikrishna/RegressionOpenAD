@@ -53,7 +53,7 @@ C$OPENAD XXX Simple loop
           OpenAD_Symbol_0 = X(I)%v
           OpenAD_Symbol_1 = X(I)%v
           CALL setderiv(OpenAD_Symbol_6,Y(I))
-          CALL sax(1_w2f__i8,OpenAD_Symbol_6,Y(I))
+          CALL setderiv(Y(I),OpenAD_Symbol_6)
           CALL saxpy(OpenAD_Symbol_0,X(I),Y(I))
           CALL saxpy(OpenAD_Symbol_1,X(I),Y(I))
         ENDIF
@@ -65,7 +65,7 @@ C$OPENAD XXX Simple loop
           OpenAD_Symbol_7 = (OpenAD_Symbol_4 * 2.0D00)
           OpenAD_Symbol_8 = (OpenAD_Symbol_5 * 2.0D00)
           CALL setderiv(OpenAD_Symbol_9,Y(I))
-          CALL sax(1_w2f__i8,OpenAD_Symbol_9,Y(I))
+          CALL setderiv(Y(I),OpenAD_Symbol_9)
           CALL saxpy(OpenAD_Symbol_7,X(I),Y(I))
           CALL saxpy(OpenAD_Symbol_8,X(I),Y(I))
         ENDIF

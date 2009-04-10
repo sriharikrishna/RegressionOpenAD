@@ -59,9 +59,8 @@ C$OPENAD XXX Simple loop
         IF(ASTRING .EQ. 'bloh') THEN
           __value__(Y(1)) = (__value__(Y(1)) - __value__(X(1)))
           CALL setderiv(__deriv__(OpenAD_Symbol_4), __deriv__(Y(1)))
-          CALL sax(1_w2f__i8, __deriv__(OpenAD_Symbol_4), __deriv__(Y(1
-     > )))
-          CALL saxpy(-1_w2f__i8, __deriv__(X(1)), __deriv__(Y(1)))
+          CALL setderiv(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_4))
+          CALL dec_deriv(__deriv__(Y(1)), __deriv__(X(1)))
         ENDIF
       END DO
       CALL setderiv(__deriv__(OpenAD_Symbol_5), __deriv__(Y(1)))

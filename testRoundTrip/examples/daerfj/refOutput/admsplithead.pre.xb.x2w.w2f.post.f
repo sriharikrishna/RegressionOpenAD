@@ -231,7 +231,7 @@ C$OPENAD XXX Template ad_template.f
      +_26)
           FVEC(INT(OpenAD_Symbol_23))%d = 0.0d0
           X(3)%d = X(3)%d+TEMP2%d*(OpenAD_Symbol_27)
-          X(4)%d = X(4)%d+TEMP2%d*(1_w2f__i8)
+          X(4)%d = X(4)%d+TEMP2%d
           TEMP2%d = 0.0d0
         OpenAD_Symbol_18 = INT(OpenAD_Symbol_18) + 1
       END DO

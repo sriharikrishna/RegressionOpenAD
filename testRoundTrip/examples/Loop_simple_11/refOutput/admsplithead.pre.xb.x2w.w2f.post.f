@@ -170,8 +170,8 @@ C$OPENAD XXX Template ad_template.f
           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
           OpenAD_Symbol_3%d = 0.0d0
         ELSE
-          X(1)%d = X(1)%d+Y(1)%d*(-1_w2f__i8)
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d*(1_w2f__i8)
+          X(1)%d = X(1)%d-Y(1)%d
+          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d
           Y(1)%d = 0.0d0
           Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
           OpenAD_Symbol_4%d = 0.0d0

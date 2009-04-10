@@ -245,9 +245,9 @@ C adjoint
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_18 = integer_tape(integer_tape_pointer)
           X(INT(OpenAD_Symbol_18))%d = X(INT(OpenAD_Symbol_18))%d+Y(INT(
-     +OpenAD_Symbol_18))%d*(1_w2f__i8)
+     +OpenAD_Symbol_18))%d
           X(INT(OpenAD_Symbol_18))%d = X(INT(OpenAD_Symbol_18))%d+Y(INT(
-     +OpenAD_Symbol_18))%d*(1_w2f__i8)
+     +OpenAD_Symbol_18))%d
           Y(INT(OpenAD_Symbol_18))%d = 0.0d0
         ENDIF
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3) + 1

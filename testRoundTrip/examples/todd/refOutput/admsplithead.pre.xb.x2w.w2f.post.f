@@ -315,8 +315,8 @@ C$OPENAD XXX Template ad_template.f
           MATR(2)%d = MATR(2)%d+OBJ(1)%d*(OpenAD_Symbol_49)
           G%d = G%d+OBJ(1)%d*(OpenAD_Symbol_50)
           OBJ(1)%d = 0.0d0
-          M12%d = M12%d+G%d*(-1_w2f__i8)
-          M03%d = M03%d+G%d*(1_w2f__i8)
+          M12%d = M12%d-G%d
+          M03%d = M03%d+G%d
           G%d = 0.0d0
           MATR(2)%d = MATR(2)%d+M12%d*(OpenAD_Symbol_51)
           MATR(1)%d = MATR(1)%d+M12%d*(OpenAD_Symbol_52)
@@ -330,11 +330,11 @@ C$OPENAD XXX Template ad_template.f
      +ol_55)
           MATR(3)%d = 0.0d0
           X(6)%d = X(6)%d+OpenAD_Symbol_32%d*(2.0D00)
-          X(5)%d = X(5)%d+OpenAD_Symbol_32%d*(-1_w2f__i8)
-          X(4)%d = X(4)%d+OpenAD_Symbol_32%d*(-1_w2f__i8)
+          X(5)%d = X(5)%d-OpenAD_Symbol_32%d
+          X(4)%d = X(4)%d-OpenAD_Symbol_32%d
           OpenAD_Symbol_32%d = 0.0d0
-          X(4)%d = X(4)%d+MATR(2)%d*(-1_w2f__i8)
-          X(5)%d = X(5)%d+MATR(2)%d*(1_w2f__i8)
+          X(4)%d = X(4)%d-MATR(2)%d
+          X(5)%d = X(5)%d+MATR(2)%d
           MATR(2)%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_56 = double_tape(double_tape_pointer)
@@ -342,11 +342,11 @@ C$OPENAD XXX Template ad_template.f
      +ol_56)
           MATR(1)%d = 0.0d0
           X(3)%d = X(3)%d+OpenAD_Symbol_31%d*(2.0D00)
-          X(2)%d = X(2)%d+OpenAD_Symbol_31%d*(-1_w2f__i8)
-          X(1)%d = X(1)%d+OpenAD_Symbol_31%d*(-1_w2f__i8)
+          X(2)%d = X(2)%d-OpenAD_Symbol_31%d
+          X(1)%d = X(1)%d-OpenAD_Symbol_31%d
           OpenAD_Symbol_31%d = 0.0d0
-          X(1)%d = X(1)%d+MATR(0)%d*(-1_w2f__i8)
-          X(2)%d = X(2)%d+MATR(0)%d*(1_w2f__i8)
+          X(1)%d = X(1)%d-MATR(0)%d
+          X(2)%d = X(2)%d+MATR(0)%d
           MATR(0)%d = 0.0d0
 
           end if 

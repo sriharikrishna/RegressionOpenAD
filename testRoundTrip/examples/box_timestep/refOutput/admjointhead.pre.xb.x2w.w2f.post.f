@@ -399,8 +399,8 @@ C adjoint
           OpenAD_Symbol_79%d = OpenAD_Symbol_79%d+DFLDDT(3)%d*(OpenAD_Sy
      +mbol_100)
           DFLDDT(3)%d = 0.0d0
-          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_79%d*(-1_w2f__i8)
-          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_79%d*(1_w2f__i8)
+          FLDNOW(3)%d = FLDNOW(3)%d-OpenAD_Symbol_79%d
+          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_79%d
           OpenAD_Symbol_79%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_101 = double_tape(double_tape_pointer)
@@ -410,8 +410,8 @@ C adjoint
           OpenAD_Symbol_77%d = OpenAD_Symbol_77%d+DFLDDT(2)%d*(OpenAD_Sy
      +mbol_102)
           DFLDDT(2)%d = 0.0d0
-          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_77%d*(-1_w2f__i8)
-          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_77%d*(1_w2f__i8)
+          FLDNOW(2)%d = FLDNOW(2)%d-OpenAD_Symbol_77%d
+          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_77%d
           OpenAD_Symbol_77%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_103 = double_tape(double_tape_pointer)
@@ -421,8 +421,8 @@ C adjoint
           OpenAD_Symbol_74%d = OpenAD_Symbol_74%d+DFLDDT(1)%d*(OpenAD_Sy
      +mbol_104)
           DFLDDT(1)%d = 0.0d0
-          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_74%d*(-1_w2f__i8)
-          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_74%d*(1_w2f__i8)
+          FLDNOW(1)%d = FLDNOW(1)%d-OpenAD_Symbol_74%d
+          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_74%d
           OpenAD_Symbol_74%d = 0.0d0
       ELSE
           double_tape_pointer = double_tape_pointer-1
@@ -430,8 +430,8 @@ C adjoint
           OpenAD_Symbol_87%d = OpenAD_Symbol_87%d+DFLDDT(3)%d*(OpenAD_Sy
      +mbol_107)
           DFLDDT(3)%d = 0.0d0
-          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_87%d*(-1_w2f__i8)
-          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_87%d*(1_w2f__i8)
+          FLDNOW(3)%d = FLDNOW(3)%d-OpenAD_Symbol_87%d
+          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_87%d
           OpenAD_Symbol_87%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_108 = double_tape(double_tape_pointer)
@@ -441,8 +441,8 @@ C adjoint
           OpenAD_Symbol_85%d = OpenAD_Symbol_85%d+DFLDDT(2)%d*(OpenAD_Sy
      +mbol_109)
           DFLDDT(2)%d = 0.0d0
-          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_85%d*(-1_w2f__i8)
-          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_85%d*(1_w2f__i8)
+          FLDNOW(2)%d = FLDNOW(2)%d-OpenAD_Symbol_85%d
+          FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_85%d
           OpenAD_Symbol_85%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_110 = double_tape(double_tape_pointer)
@@ -452,8 +452,8 @@ C adjoint
           OpenAD_Symbol_82%d = OpenAD_Symbol_82%d+DFLDDT(1)%d*(OpenAD_Sy
      +mbol_111)
           DFLDDT(1)%d = 0.0d0
-          FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_82%d*(-1_w2f__i8)
-          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_82%d*(1_w2f__i8)
+          FLDNOW(1)%d = FLDNOW(1)%d-OpenAD_Symbol_82%d
+          FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_82%d
           OpenAD_Symbol_82%d = 0.0d0
       ENDIF
 

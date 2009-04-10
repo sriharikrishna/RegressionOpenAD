@@ -28,7 +28,7 @@ C$OPENAD XXX Template ad_template.f
       T2%v = (T1%v*2.0D00)
       Y1%v = T2%v
       Y(1)%v = Y1%v
-      CALL sax(1_w2f__i8,X(1),T1)
-      CALL saxpy(1_w2f__i8,X(1),T1)
+      CALL setderiv(T1,X(1))
+      CALL inc_deriv(T1,X(1))
       CALL sax(2.0D00,T1,Y(1))
       END SUBROUTINE

@@ -44,13 +44,13 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_Symbol_1,X(1),Y(1))
         ELSE
           Y(1)%v = (X(2)%v-X(1)%v)
-          CALL sax(1_w2f__i8,X(2),Y(1))
-          CALL saxpy(-1_w2f__i8,X(1),Y(1))
+          CALL setderiv(Y(1),X(2))
+          CALL dec_deriv(Y(1),X(1))
         ENDIF
       ELSE
         Y(1)%v = (X(1)%v-X(2)%v)
-        CALL sax(1_w2f__i8,X(1),Y(1))
-        CALL saxpy(-1_w2f__i8,X(2),Y(1))
+        CALL setderiv(Y(1),X(1))
+        CALL dec_deriv(Y(1),X(2))
       ENDIF
       Y(2)%v = Y(1)%v
       CALL setderiv(OpenAD_Symbol_2,Y(1))

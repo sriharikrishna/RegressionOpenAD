@@ -1949,7 +1949,7 @@ C$OPENAD XXX Template ad_template.f
           NZHAT%d = NZHAT%d+OpenAD_Symbol_431%d*(OpenAD_Symbol_535)
           PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_431%d*(OpenAD_Symbol_536
      +)
-          DSS5%d = DSS5%d+OpenAD_Symbol_431%d*(1_w2f__i8)
+          DSS5%d = DSS5%d+OpenAD_Symbol_431%d
           OpenAD_Symbol_431%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_537 = double_tape(double_tape_pointer)
@@ -1972,7 +1972,7 @@ C$OPENAD XXX Template ad_template.f
           NYHAT%d = NYHAT%d+OpenAD_Symbol_430%d*(OpenAD_Symbol_541)
           PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_430%d*(OpenAD_Symbol_542
      +)
-          DSS4%d = DSS4%d+OpenAD_Symbol_430%d*(1_w2f__i8)
+          DSS4%d = DSS4%d+OpenAD_Symbol_430%d
           OpenAD_Symbol_430%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_543 = double_tape(double_tape_pointer)
@@ -1995,7 +1995,7 @@ C$OPENAD XXX Template ad_template.f
           NXHAT%d = NXHAT%d+OpenAD_Symbol_429%d*(OpenAD_Symbol_547)
           PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_429%d*(OpenAD_Symbol_548
      +)
-          DSS3%d = DSS3%d+OpenAD_Symbol_429%d*(1_w2f__i8)
+          DSS3%d = DSS3%d+OpenAD_Symbol_429%d
           OpenAD_Symbol_429%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_549 = double_tape(double_tape_pointer)
@@ -2012,7 +2012,7 @@ C$OPENAD XXX Template ad_template.f
           UHATL%d = UHATL%d+OpenAD_Symbol_428%d*(OpenAD_Symbol_551)
           PRIML(2)%d = PRIML(2)%d+OpenAD_Symbol_428%d*(OpenAD_Symbol_552
      +)
-          DSS2%d = DSS2%d+OpenAD_Symbol_428%d*(1_w2f__i8)
+          DSS2%d = DSS2%d+OpenAD_Symbol_428%d
           OpenAD_Symbol_428%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_553 = double_tape(double_tape_pointer)
@@ -2205,14 +2205,14 @@ C$OPENAD XXX Template ad_template.f
           NXHAT%d = NXHAT%d+UHATL%d*(OpenAD_Symbol_605)
           PRIML(3)%d = PRIML(3)%d+UHATL%d*(OpenAD_Symbol_606)
           UHATL%d = 0.0d0
-          EL%d = EL%d+OpenAD_Symbol_427%d*(1_w2f__i8)
-          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_427%d*(1_w2f__i8)
+          EL%d = EL%d+OpenAD_Symbol_427%d
+          PRIML(1)%d = PRIML(1)%d+OpenAD_Symbol_427%d
           OpenAD_Symbol_427%d = 0.0d0
-          ALP5%d = ALP5%d+ALP15M%d*(-1_w2f__i8)
-          ALP1%d = ALP1%d+ALP15M%d*(1_w2f__i8)
+          ALP5%d = ALP5%d-ALP15M%d
+          ALP1%d = ALP1%d+ALP15M%d
           ALP15M%d = 0.0d0
-          ALP5%d = ALP5%d+ALP15P%d*(1_w2f__i8)
-          ALP1%d = ALP1%d+ALP15P%d*(1_w2f__i8)
+          ALP5%d = ALP5%d+ALP15P%d
+          ALP1%d = ALP1%d+ALP15P%d
           ALP15P%d = 0.0d0
           OpenAD_Symbol_426%d = OpenAD_Symbol_426%d+ALP5%d*(OpenAD_Symbo
      +l_607)
@@ -2422,13 +2422,13 @@ C$OPENAD XXX Template ad_template.f
           ALP1%d = 0.0d0
           UHAT%d = UHAT%d+OpenAD_Symbol_393%d*(OpenAD_Symbol_641)
           DR%d = DR%d+OpenAD_Symbol_393%d*(OpenAD_Symbol_642)
-          OMEGA%d = OMEGA%d+OpenAD_Symbol_393%d*(1_w2f__i8)
-          NDDRU%d = NDDRU%d+OpenAD_Symbol_393%d*(1_w2f__i8)
+          OMEGA%d = OMEGA%d+OpenAD_Symbol_393%d
+          NDDRU%d = NDDRU%d+OpenAD_Symbol_393%d
           OpenAD_Symbol_393%d = 0.0d0
           UHAT%d = UHAT%d+OpenAD_Symbol_392%d*(OpenAD_Symbol_643)
           DR%d = DR%d+OpenAD_Symbol_392%d*(OpenAD_Symbol_644)
-          OMEGA%d = OMEGA%d+OpenAD_Symbol_392%d*(1_w2f__i8)
-          NDDRU%d = NDDRU%d+OpenAD_Symbol_392%d*(-1_w2f__i8)
+          NDDRU%d = NDDRU%d-OpenAD_Symbol_392%d
+          OMEGA%d = OMEGA%d+OpenAD_Symbol_392%d
           OpenAD_Symbol_392%d = 0.0d0
           CAVE%d = CAVE%d+OMEGA%d*(OpenAD_Symbol_645)
           GM1%d = GM1%d+OMEGA%d*(OpenAD_Symbol_646)
@@ -2456,19 +2456,19 @@ C$OPENAD XXX Template ad_template.f
           GM1INV%d = GM1INV%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_664)
           PRIMR(1)%d = PRIMR(1)%d+OpenAD_Symbol_391%d*(OpenAD_Symbol_665
      +)
-          EL%d = EL%d+OpenAD_Symbol_391%d*(-1_w2f__i8)
+          EL%d = EL%d-OpenAD_Symbol_391%d
           OpenAD_Symbol_391%d = 0.0d0
           NZHAT%d = NZHAT%d+OpenAD_Symbol_390%d*(OpenAD_Symbol_666)
           CAVE%d = CAVE%d+OpenAD_Symbol_390%d*(OpenAD_Symbol_667)
-          WTILDE%d = WTILDE%d+OpenAD_Symbol_390%d*(-1_w2f__i8)
+          WTILDE%d = WTILDE%d-OpenAD_Symbol_390%d
           OpenAD_Symbol_390%d = 0.0d0
           NYHAT%d = NYHAT%d+OpenAD_Symbol_389%d*(OpenAD_Symbol_668)
           CAVE%d = CAVE%d+OpenAD_Symbol_389%d*(OpenAD_Symbol_669)
-          VTILDE%d = VTILDE%d+OpenAD_Symbol_389%d*(-1_w2f__i8)
+          VTILDE%d = VTILDE%d-OpenAD_Symbol_389%d
           OpenAD_Symbol_389%d = 0.0d0
           NXHAT%d = NXHAT%d+OpenAD_Symbol_388%d*(OpenAD_Symbol_670)
           CAVE%d = CAVE%d+OpenAD_Symbol_388%d*(OpenAD_Symbol_671)
-          UTILDE%d = UTILDE%d+OpenAD_Symbol_388%d*(-1_w2f__i8)
+          UTILDE%d = UTILDE%d-OpenAD_Symbol_388%d
           OpenAD_Symbol_388%d = 0.0d0
           THETAL%d = THETAL%d+EL%d*(OpenAD_Symbol_672)
           PRIML(2)%d = PRIML(2)%d+EL%d*(OpenAD_Symbol_673)
@@ -2483,18 +2483,18 @@ C$OPENAD XXX Template ad_template.f
           ALAMCM%d = 0.0d0
           PRIMR(5)%d = PRIMR(5)%d+DRW%d*(OpenAD_Symbol_676)
           PRIMR(2)%d = PRIMR(2)%d+DRW%d*(OpenAD_Symbol_677)
-          RWL%d = RWL%d+DRW%d*(-1_w2f__i8)
+          RWL%d = RWL%d-DRW%d
           DRW%d = 0.0d0
           PRIMR(4)%d = PRIMR(4)%d+DRV%d*(OpenAD_Symbol_678)
           PRIMR(2)%d = PRIMR(2)%d+DRV%d*(OpenAD_Symbol_679)
-          RVL%d = RVL%d+DRV%d*(-1_w2f__i8)
+          RVL%d = RVL%d-DRV%d
           DRV%d = 0.0d0
           PRIMR(3)%d = PRIMR(3)%d+DRU%d*(OpenAD_Symbol_680)
           PRIMR(2)%d = PRIMR(2)%d+DRU%d*(OpenAD_Symbol_681)
-          RUL%d = RUL%d+DRU%d*(-1_w2f__i8)
+          RUL%d = RUL%d-DRU%d
           DRU%d = 0.0d0
-          PRIML(2)%d = PRIML(2)%d+DR%d*(-1_w2f__i8)
-          PRIMR(2)%d = PRIMR(2)%d+DR%d*(1_w2f__i8)
+          PRIML(2)%d = PRIML(2)%d-DR%d
+          PRIMR(2)%d = PRIMR(2)%d+DR%d
           DR%d = 0.0d0
           PRIML(5)%d = PRIML(5)%d+RWL%d*(OpenAD_Symbol_682)
           PRIML(2)%d = PRIML(2)%d+RWL%d*(OpenAD_Symbol_683)
@@ -2505,17 +2505,14 @@ C$OPENAD XXX Template ad_template.f
           PRIML(3)%d = PRIML(3)%d+RUL%d*(OpenAD_Symbol_686)
           PRIML(2)%d = PRIML(2)%d+RUL%d*(OpenAD_Symbol_687)
           RUL%d = 0.0d0
-          OpenAD_Symbol_384%d = OpenAD_Symbol_384%d+OpenAD_Symbol_387%d*
-     +(-1_w2f__i8)
-          LAMU%d = LAMU%d+OpenAD_Symbol_387%d*(1_w2f__i8)
+          OpenAD_Symbol_384%d = OpenAD_Symbol_384%d-OpenAD_Symbol_387%d
+          LAMU%d = LAMU%d+OpenAD_Symbol_387%d
           OpenAD_Symbol_387%d = 0.0d0
-          OpenAD_Symbol_383%d = OpenAD_Symbol_383%d+OpenAD_Symbol_386%d*
-     +(-1_w2f__i8)
-          LAMCP%d = LAMCP%d+OpenAD_Symbol_386%d*(1_w2f__i8)
+          OpenAD_Symbol_383%d = OpenAD_Symbol_383%d-OpenAD_Symbol_386%d
+          LAMCP%d = LAMCP%d+OpenAD_Symbol_386%d
           OpenAD_Symbol_386%d = 0.0d0
-          OpenAD_Symbol_382%d = OpenAD_Symbol_382%d+OpenAD_Symbol_385%d*
-     +(-1_w2f__i8)
-          LAMCM%d = LAMCM%d+OpenAD_Symbol_385%d*(1_w2f__i8)
+          OpenAD_Symbol_382%d = OpenAD_Symbol_382%d-OpenAD_Symbol_385%d
+          LAMCM%d = LAMCM%d+OpenAD_Symbol_385%d
           OpenAD_Symbol_385%d = 0.0d0
           ALAMU%d = ALAMU%d+OpenAD_Symbol_384%d
           OpenAD_Symbol_384%d = 0.0d0
@@ -2537,8 +2534,8 @@ C$OPENAD XXX Template ad_template.f
      +ol_688)
           DELTA2%d = DELTA2%d+ALAMU%d*(OpenAD_Symbol_689)
           ALAMU%d = 0.0d0
-          LAM2%d = LAM2%d+OpenAD_Symbol_433%d*(1_w2f__i8)
-          DELTA2%d = DELTA2%d+OpenAD_Symbol_433%d*(1_w2f__i8)
+          LAM2%d = LAM2%d+OpenAD_Symbol_433%d
+          DELTA2%d = DELTA2%d+OpenAD_Symbol_433%d
           OpenAD_Symbol_433%d = 0.0d0
       ENDIF
           double_tape_pointer = double_tape_pointer-1
@@ -2553,8 +2550,8 @@ C$OPENAD XXX Template ad_template.f
           DELTA2%d = 0.0d0
           LAMU%d = LAMU%d+LAM2%d*(OpenAD_Symbol_530)
           LAM2%d = 0.0d0
-          UHAT%d = UHAT%d+OpenAD_Symbol_362%d*(1_w2f__i8)
-          CAVE%d = CAVE%d+OpenAD_Symbol_362%d*(1_w2f__i8)
+          UHAT%d = UHAT%d+OpenAD_Symbol_362%d
+          CAVE%d = CAVE%d+OpenAD_Symbol_362%d
           OpenAD_Symbol_362%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_439 = integer_tape(integer_tape_pointer)
@@ -2570,8 +2567,8 @@ C$OPENAD XXX Template ad_template.f
      +bol_690)
           DELTA2%d = DELTA2%d+ALAMCP%d*(OpenAD_Symbol_691)
           ALAMCP%d = 0.0d0
-          LAM2%d = LAM2%d+OpenAD_Symbol_435%d*(1_w2f__i8)
-          DELTA2%d = DELTA2%d+OpenAD_Symbol_435%d*(1_w2f__i8)
+          LAM2%d = LAM2%d+OpenAD_Symbol_435%d
+          DELTA2%d = DELTA2%d+OpenAD_Symbol_435%d
           OpenAD_Symbol_435%d = 0.0d0
       ENDIF
           double_tape_pointer = double_tape_pointer-1
@@ -2592,8 +2589,8 @@ C$OPENAD XXX Template ad_template.f
      +bol_692)
           DELTA2%d = DELTA2%d+ALAMCM%d*(OpenAD_Symbol_693)
           ALAMCM%d = 0.0d0
-          LAM2%d = LAM2%d+OpenAD_Symbol_437%d*(1_w2f__i8)
-          DELTA2%d = DELTA2%d+OpenAD_Symbol_437%d*(1_w2f__i8)
+          LAM2%d = LAM2%d+OpenAD_Symbol_437%d
+          DELTA2%d = DELTA2%d+OpenAD_Symbol_437%d
           OpenAD_Symbol_437%d = 0.0d0
       ENDIF
           double_tape_pointer = double_tape_pointer-1
@@ -2646,16 +2643,16 @@ C$OPENAD XXX Template ad_template.f
           DELTA2%d = 0.0d0
           LAMCM%d = LAMCM%d+LAM2%d*(OpenAD_Symbol_468)
           LAM2%d = 0.0d0
-          UHAT%d = UHAT%d+OpenAD_Symbol_358%d*(1_w2f__i8)
-          CAVE%d = CAVE%d+OpenAD_Symbol_358%d*(1_w2f__i8)
+          UHAT%d = UHAT%d+OpenAD_Symbol_358%d
+          CAVE%d = CAVE%d+OpenAD_Symbol_358%d
           OpenAD_Symbol_358%d = 0.0d0
-          UHAT%d = UHAT%d+LAMCP%d*(1_w2f__i8)
-          CAVE%d = CAVE%d+LAMCP%d*(1_w2f__i8)
+          UHAT%d = UHAT%d+LAMCP%d
+          CAVE%d = CAVE%d+LAMCP%d
           LAMCP%d = 0.0d0
           UHAT%d = UHAT%d+LAMU%d
           LAMU%d = 0.0d0
-          CAVE%d = CAVE%d+LAMCM%d*(-1_w2f__i8)
-          UHAT%d = UHAT%d+LAMCM%d*(1_w2f__i8)
+          CAVE%d = CAVE%d-LAMCM%d
+          UHAT%d = UHAT%d+LAMCM%d
           LAMCM%d = 0.0d0
           WAVE%d = WAVE%d+UHAT%d*(OpenAD_Symbol_469)
           NZHAT%d = NZHAT%d+UHAT%d*(OpenAD_Symbol_470)
@@ -2795,13 +2792,13 @@ C$OPENAD XXX Template ad_template.f
           GAMMA%d = GAMMA%d+HR%d*(OpenAD_Symbol_506)
           PRIMR(1)%d = PRIMR(1)%d+HR%d*(OpenAD_Symbol_507)
           PRIMR(2)%d = PRIMR(2)%d+HR%d*(OpenAD_Symbol_508)
-          THETAR%d = THETAR%d+HR%d*(1_w2f__i8)
+          THETAR%d = THETAR%d+HR%d
           HR%d = 0.0d0
           GM1INV%d = GM1INV%d+HL%d*(OpenAD_Symbol_509)
           GAMMA%d = GAMMA%d+HL%d*(OpenAD_Symbol_510)
           PRIML(1)%d = PRIML(1)%d+HL%d*(OpenAD_Symbol_511)
           PRIML(2)%d = PRIML(2)%d+HL%d*(OpenAD_Symbol_512)
-          THETAL%d = THETAL%d+HL%d*(1_w2f__i8)
+          THETAL%d = THETAL%d+HL%d
           HL%d = 0.0d0
           OpenAD_Symbol_347%d = OpenAD_Symbol_347%d+THETAR%d*(5.0D-01)
           THETAR%d = 0.0d0

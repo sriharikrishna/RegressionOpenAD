@@ -268,11 +268,11 @@ C adjoint
           OpenAD_Symbol_22%d = OpenAD_Symbol_22%d+Y%d*(OpenAD_Symbol_26)
           B%d = B%d+Y%d*(OpenAD_Symbol_27)
           Y%d = 0.0d0
-          A%d = A%d+OpenAD_Symbol_23%d*(-1_w2f__i8)
-          D%d = D%d+OpenAD_Symbol_23%d*(1_w2f__i8)
+          A%d = A%d-OpenAD_Symbol_23%d
+          D%d = D%d+OpenAD_Symbol_23%d
           OpenAD_Symbol_23%d = 0.0d0
-          A%d = A%d+OpenAD_Symbol_22%d*(-1_w2f__i8)
-          F%d = F%d+OpenAD_Symbol_22%d*(1_w2f__i8)
+          A%d = A%d-OpenAD_Symbol_22%d
+          F%d = F%d+OpenAD_Symbol_22%d
           OpenAD_Symbol_22%d = 0.0d0
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_28 = double_tape(double_tape_pointer)

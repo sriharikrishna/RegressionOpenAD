@@ -42,8 +42,8 @@ C
 C$OPENAD XXX Template ad_template.f
       __value__(T) = (__value__(X(1)) + __value__(X(2)))
       __value__(T1) = (__value__(T) * 2.0D00)
-      CALL sax(1_w2f__i8, __deriv__(X(1)), __deriv__(T))
-      CALL saxpy(1_w2f__i8, __deriv__(X(2)), __deriv__(T))
+      CALL setderiv(__deriv__(T), __deriv__(X(1)))
+      CALL inc_deriv(__deriv__(T), __deriv__(X(2)))
       CALL sax(2.0D00, __deriv__(T), __deriv__(T1))
       CALL foo()
       __value__(Y) = (__value__(T) * 2.0D00 + __value__(T1) * 3.0D00)

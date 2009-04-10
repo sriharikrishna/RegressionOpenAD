@@ -42,13 +42,13 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_Symbol_1, __deriv__(X(1)), __deriv__(Y(1)))
         ELSE
           __value__(Y(1)) = (__value__(X(2)) - __value__(X(1)))
-          CALL sax(1_w2f__i8, __deriv__(X(2)), __deriv__(Y(1)))
-          CALL saxpy(-1_w2f__i8, __deriv__(X(1)), __deriv__(Y(1)))
+          CALL setderiv(__deriv__(Y(1)), __deriv__(X(2)))
+          CALL dec_deriv(__deriv__(Y(1)), __deriv__(X(1)))
         ENDIF
       ELSE
         __value__(Y(1)) = (__value__(X(1)) - __value__(X(2)))
-        CALL sax(1_w2f__i8, __deriv__(X(1)), __deriv__(Y(1)))
-        CALL saxpy(-1_w2f__i8, __deriv__(X(2)), __deriv__(Y(1)))
+        CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
+        CALL dec_deriv(__deriv__(Y(1)), __deriv__(X(2)))
       ENDIF
       __value__(Y(2)) = __value__(Y(1))
       CALL setderiv(__deriv__(OpenAD_Symbol_2), __deriv__(Y(1)))

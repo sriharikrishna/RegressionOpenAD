@@ -33,12 +33,12 @@ C
 C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .LE. __value__(X(2))) THEN
         __value__(Y(1)) = (__value__(X(2)) - __value__(X(1)))
-        CALL sax(1_w2f__i8, __deriv__(X(2)), __deriv__(Y(1)))
-        CALL saxpy(-1_w2f__i8, __deriv__(X(1)), __deriv__(Y(1)))
+        CALL setderiv(__deriv__(Y(1)), __deriv__(X(2)))
+        CALL dec_deriv(__deriv__(Y(1)), __deriv__(X(1)))
       ELSE
         __value__(Y(1)) = (__value__(X(1)) - __value__(X(2)))
-        CALL sax(1_w2f__i8, __deriv__(X(1)), __deriv__(Y(1)))
-        CALL saxpy(-1_w2f__i8, __deriv__(X(2)), __deriv__(Y(1)))
+        CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
+        CALL dec_deriv(__deriv__(Y(1)), __deriv__(X(2)))
       ENDIF
       IF(__value__(Y(1)) .eq. 0.0D00) THEN
         __value__(Y(2)) = __value__(X(1))
