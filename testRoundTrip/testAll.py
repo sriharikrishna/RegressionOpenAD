@@ -11,6 +11,7 @@ globalBatchMode=False
 globalIgnoreFailingCases=False
 globalOfferAcceptAsDefault=False
 globalAcceptAll=False
+globalDeclineAll=False
 globalMakeSVG=False
 globalVerbose=False
 globalOkCount=0
@@ -170,6 +171,8 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
             answer=""
             if globalAcceptAll:
                 answer="y"
+            elif globalDeclineAll:
+                answer="n"
             else:    
                 if (globalOfferAcceptAsDefault) :
                     answer = raw_input("   accept/copy new %s to %s? (y)/n: " % (fcfileName,referenceFile))
@@ -198,7 +201,7 @@ def printSep(sepChar,msg,sepLength):
 def numberedList(list):
     numberedList=[]
     digits=len(str(len(list)+1))
-    format='%'+str(digits)+'d:%s'
+    format='%'+str(digits)+'d %s'
     for (c,e) in enumerate(list):
         numberedName=format%(c+1,e)
         numberedList.append(numberedName)
@@ -251,9 +254,11 @@ def populateExamplesList(args):
 	    examples = allExamples
 	    try:
 		if (len(args) >= 2): # A range START is given
-		    rangeStart = int(args[1])
+		    rangeStart = (int(args[1]) < 1 and 1) \
+                                                     or int(args[1])
 		if (len(args) >= 3): # A range END is also given
-		    rangeEnd = int(args[2])
+		    rangeEnd = (int(args[2]) <= len(examples)) and int(args[2]) \
+                                                               or len(examples)
 	    except ValueError:
 		raise CommandLineError, "\"all\" must be followed by zero, one, or two integers which specify the start and end range, e.g. 'all [%i | %i %i]'"
 	else: # each argument is treated as a regex
@@ -482,6 +487,9 @@ def main():
     opt.add_option('-A','--acceptAll',dest='acceptAll',
                    help="accept all changes without confirmation",
                    action='store_true',default=False)
+    opt.add_option('-D','--declineAll',dest='declineAll',
+                   help="decline all changes without confirmation",
+                   action='store_true',default=False)
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
                    action='store_true',default=False)
@@ -519,6 +527,9 @@ def main():
         if options.acceptAll :
             global globalAcceptAll
             globalAcceptAll=True
+        if options.declineAll:
+            global globalDeclineAll
+            globalDeclineAll = True
         if options.diff :
             global globalDiffCmd
             globalDiffCmd=options.diff 
