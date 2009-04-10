@@ -126,37 +126,51 @@ def overridableLink(exampleFile,defaultFile,targetFileName):
     if not (os.path.exists(targetFileName)):
 	raise ConfigError, "could not create %s" % targetFileName
 
+def refFileCopy(newFile,refFile):
+    if (os.path.exists(refFile)):
+        return 0
+    else:
+        sys.stdout.write(refFile+' not available')
+        sys.stdout.flush()
+        if (globalBatchMode):
+            sys.stdout.write("\n")
+            sys.stdout.flush()
+            return 1
+        else:
+            answer=''
+            if globalAcceptAll:
+                sys.stdout.write('\n')
+                sys.stdout.flush()
+                answer="y"
+            elif globalDeclineAll:
+                sys.stdout.write('\n')
+                sys.stdout.flush()
+                answer="n"
+            else:
+                if (globalOfferAcceptAsDefault) :
+                    answer = raw_input(", copy and hg add it? (y)/n: ")
+                    if (answer != "n"):
+                        answer="y"
+                else:
+                    answer = raw_input(", copy and hg add it? y/(n): ")
+                    if (answer != "y"):
+                        answer="n"
+            if (answer == "n"):
+                return 1
+            else:
+                shutil.copy(newFile,refFile)
+                cmd="hg add "+refFile
+                if (os.system(cmd)):
+                    raise RuntimeError, "\""+cmd+"\" not successful"
+                return 0
+
 
 def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
     referenceFile = os.path.join(fcexampleDir,'refOutput',fcmode + fcfileName)
-    if not (os.path.exists(referenceFile)):
-	sys.stdout.write(referenceFile+" not available")
-	if not (globalBatchMode):
-            answer=""
-            if globalAcceptAll:
-                answer="y"
-            else:    
-                if (globalOfferAcceptAsDefault) :
-                    answer = (raw_input(", copy and hg add it? (y)/n: "))
-                    if (answer != "n") :
-                        answer="y"
-                else:
-                    answer = (raw_input(", copy and hg add it? y/(n): "))
-                    if (answer != "y") :
-                        answer="n"
-            if (answer == "n"):
-		sys.stdout.write("cannot verify %s\n" % fcfileName)
-                sys.stdout.flush()
-                return 0
-	    else:
-		shutil.copy(fcfileName,referenceFile)
-                cmd="hg add "+referenceFile
-		if (os.system(cmd)):
-		    raise RuntimeError, "\""+cmd+"\" not successful"
-	else: # BATCHMODE
-	    sys.stdout.write("\n")
-            sys.stdout.flush()
-            return 0
+    if (refFileCopy(fcfileName,referenceFile) == 1):
+        sys.stdout.write("cannot verify %s\n" % fcfileName)
+        sys.stdout.flush()
+        return 0
     cmd="diff "
     if (ignoreString != '') : 
 	cmd+="-I '"+ignoreString+"' "
@@ -373,6 +387,36 @@ def link_xaifBooster(majorMode):
 	sys.stdout.write("xaifBoosterAlgPath is %s\n" % xaifBoosterAlgPath)
 	sys.stdout.flush()
 
+def compareNumericalResults(exDir,exName,majorMode):
+    newDDout = os.path.join('tmpOutput','dd.out')
+    refDDout = os.path.join(exDir,'refOutput','dd.out')
+    if (refFileCopy(newDDout,refDDout) == 1):
+        sys.stdout.write('Could not find '+refDDout+' for numerical comparison\n')
+        sys.stdout.flush()
+        raise NumericalError
+    numFiles=newDDout+' '+refDDout
+    if (majorMode == "adm" or majorMode == "tlm"):
+        newADout = os.path.join('tmpOutput','ad.out')
+        refADout = os.path.join(exDir,'refOutput','ad.out')
+        if (refFileCopy(newADout,refADout) == 1):
+            sys.stdout.write('Could not find '+refADout+' for numerical comparison\n')
+            sys.stdout.flush()
+            raise NumericalError
+        numFiles+=' '+newADout+' '+refADout
+    if not (globalBatchMode):
+        testFlags = '-g -v -i'
+    else:
+        testFlags = '-b'
+    if globalMakeSVG:
+        testFlags += ' -s'
+    numCompareStr = './numericalComparison.py '+testFlags+' -n '+exName+' '+numFiles
+    sys.stdout.write(numCompareStr+'\n')
+    numCompareReturn = os.system(numCompareStr)
+    if (numCompareReturn == 65280):
+        raise NumericalDiscrepancy
+    elif (numCompareReturn):
+        raise NumericalError
+
 
 def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     exDir = "examples/" + exName
@@ -446,22 +490,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	raise MakeError, makeCmd + " run"
     if (majorMode != "trace"):
         # do numerical comparison
-        numFiles="tmpOutput/dd.out " + exDir + "/refOutput/dd.out"
-        if (majorMode == "adm" or majorMode == "tlm"):
-            numFiles+=" tmpOutput/ad.out " + exDir + "/refOutput/ad.out"
-        if not (globalBatchMode):
-            testFlags = '-g -v -i'
-        else:
-            testFlags = '-b'
-        if globalMakeSVG:
-            testFlags += ' -s'
-        numCompareStr = "./numericalComparison.py %s -n %s %s" % (testFlags,exName,numFiles)
-        sys.stdout.write(numCompareStr+'\n')
-        numCompareReturn = os.system(numCompareStr)
-        if (numCompareReturn == 65280):
-            raise NumericalDiscrepancy
-        elif (numCompareReturn):
-            raise NumericalError
+        compareNumericalResults(exDir,exName,majorMode)
     printSep("*","",sepLength)
     global globalOkCount
     globalOkCount+=1
