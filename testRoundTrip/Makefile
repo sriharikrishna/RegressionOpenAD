@@ -202,16 +202,16 @@ head_sf.pre.xb.xaif : head_sf.pre.xaif xaif.xsd xaif_base.xsd xaif_inlinable_int
 
 # XAIF' -> WHIRL'
 head_sf.pre.xb.x2w.B : head_sf.pre.xb.xaif xaif2whirl
-	./xaif2whirl --structured head_sf.pre.B $<
+	./xaif2whirl -t OpenADTy_active --structured head_sf.pre.B $<
 
 # WHIRL' -> F'
 head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
-	./whirl2f -openad $<
+	./whirl2f -openad -openadType OpenADTy_active  $<
 
 # postprocess F'
 head_sf.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
 	$(COMPLAIN)
-	./postProcess.py $(POSTPROCESS_FLAGS) $< -o $@
+	./postProcess.py $(POSTPROCESS_FLAGS) --abstractType OpenADTy_active $< -o $@
 
 # extract the transformed globals module so we the right order of 
 # compilation with respect to the globals checkpoint module
