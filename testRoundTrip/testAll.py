@@ -15,7 +15,6 @@ globalDeclineAll=False
 globalMakeSVG=False
 globalVerbose=False
 globalOkCount=0
-globalNumDiscCount=0
 globalKnownFailCount=0
 globalNewFailCount=0
 globalDiffCmd='diff'
@@ -425,6 +424,8 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     failCountAdjusted=False
     failReasonFile = exDir + "/FAILREASON_" + majorMode + "_" + ctrMode
     if (os.path.exists(failReasonFile)):
+        global globalKnownFailCount
+        globalKnownFailCount+=1
 	if (globalBatchMode or globalIgnoreFailingCases):
             printSep("*","** skipping %i of %i (%s) -- fails for %s %s %s " % (exNum,totalNum,exName,scalarOrVector,majorMode,ctrMode),sepLength)
 	    return 0
@@ -434,8 +435,6 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	    printSep("*","",sepLength)
 	    if (raw_input("run it anyway? y/(n): ") != "y"):
 		return 0
-        global globalKnownFailCount
-        globalKnownFailCount+=1
         global globalNewFailCount
         globalNewFailCount-=1
         failCountAdjusted=True
@@ -488,9 +487,6 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     sys.stdout.flush()
     if(os.system(makeCmd + " run")):
 	raise MakeError, makeCmd + " run"
-    if (majorMode != "trace"):
-        # do numerical comparison
-        compareNumericalResults(exDir,exName,majorMode)
     printSep("*","",sepLength)
     global globalOkCount
     globalOkCount+=1
@@ -498,6 +494,9 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         globalKnownFailCount-=1
         globalNewFailCount+=1
         failCountAdjusted=True
+    # do numerical comparison
+    if (majorMode != "trace"):
+        compareNumericalResults(exDir,exName,majorMode)
 
 
 def main():
@@ -536,7 +535,7 @@ def main():
                    help="turn compiler optimization on (default off)",
                    action='store_true',default=False)
     opt.add_option('-s','--svg',dest='makeSVG',
-                   help="make svg output for numericalComparison and display with firefox",
+                   help="make svg output for numericalComparison plots (this disables prompting for numerical discrepancy)",
                    action='store_true',default=False)
     opt.add_option('-v','--verbose',dest='verbose',
                    help="let the pipeline components produce some extra output",
@@ -544,6 +543,8 @@ def main():
     (options, args) = opt.parse_args()
     global globalNewFailCount
     globalNewFailCount=0
+    global globalNumDiscCount
+    globalNumDiscCount=0
     try:
         if os.environ.has_key('BATCHMODE') or options.batchMode :
             global globalBatchMode
@@ -591,43 +592,28 @@ def main():
 	    except ConfigError, errtxt:
 		print "ERROR (environment configuration) in test %i of %i (%s): %s" % (j+1,len(examples),examples[j],errtxt)
 	        globalNewFailCount+=1
-		if not (globalBatchMode):
-		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
-			return -1
-		else:
-		    return -1
+                if (globalBatchMode) or (raw_input("Do you want to continue? (y)/n: ") == "n"):
+                    return -1
 	    except MakeError, errtxt:
 		print "ERROR in test %i of %i (%s) while executing \"%s\"." % (j+1,len(examples),examples[j],errtxt)
 	        globalNewFailCount+=1
-		if not (globalBatchMode):
-		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
-			return -1
-		else:
-		    return -1
-	    except NumericalDiscrepancy:
-		print "WARNING: numerical discrepancies in test %i of %i (%s)." % (j+1,len(examples),examples[j])
-		if not (globalBatchMode):
-		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
-                        globalNewFailCount+=1
-			return -1
-                global globalNumDiscCount
-                globalNumDiscCount += 1
+		if (globalBatchMode) or (raw_input("Do you want to continue? (y)/n: ") == "n"):
+                    return -1
 	    except NumericalError:
                 print "ERROR: numerical comparison failed in test %i of %i (%s)." % (j+1,len(examples),examples[j])
-                if not (globalBatchMode):
-                    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
-                        globalNewFailCount+=1
-                        return -1
-                else:
+                globalNewFailCount+=1
+                if (globalBatchMode) or (raw_input("Do you want to continue? (y)/n: ") == "n"):
                     return -1
 	    except RuntimeError, errtxt:
 		print "ERROR in test %i of %i (%s): %s." % (j+1,len(examples),examples[j],errtxt)
-	        globalNewFailCount+=1
-		if not (globalBatchMode):
-		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
-			return -1
-		else:
-			return -1
+                globalNewFailCount += 1
+		if (globalBatchMode) or (raw_input("Do you want to continue? (y)/n: ") == "n"):
+                    return -1
+	    except NumericalDiscrepancy:
+		print "WARNING: numerical discrepancies in test %i of %i (%s)." % (j+1,len(examples),examples[j])
+                globalNumDiscCount += 1
+                if (not globalBatchMode) and (not globalMakeSVG) and (raw_input("Do you want to continue? (y)/n: ") == "n"):
+                    return -1
 	    j = j + 1
     except ConfigError, errtxt:
 	print "ERROR (environment configuration):",errtxt
@@ -639,8 +625,7 @@ def main():
 	print 'caught exception: ',errtxt
 	return -1
     print '=============== Results ==============='
-    print globalOkCount,'\tOK'
-    print globalNumDiscCount,'\tNumerical discrepancy'
+    print globalOkCount,'\tOK ('+str(globalNumDiscCount)+' with numerical discrepancy)'
     print globalKnownFailCount,'\tKnown errors'
     print globalNewFailCount,'\tNew errors'
     print '---------------------------------------'
