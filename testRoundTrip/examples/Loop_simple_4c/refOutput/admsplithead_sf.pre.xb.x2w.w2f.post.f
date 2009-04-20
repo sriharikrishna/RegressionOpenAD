@@ -177,50 +177,48 @@ C$OPENAD XXX Simple loop
           double_tape_pointer = double_tape_pointer+1
         ENDIF
       END DO
-          stringlength_tape(stringlength_tape_pointer) = len(GLOBALSTRIN
-     +G)
-          stringlength_tape_pointer = stringlength_tape_pointer+1
-          character_tape(character_tape_pointer:character_tape_pointer+l
-     +en(GLOBALSTRING)) = GLOBALSTRING(1:len(GLOBALSTRING))
-          character_tape_pointer = character_tape_pointer+len(GLOBALSTRI
-     +NG)
+      stringlength_tape(stringlength_tape_pointer) = len(GLOBALSTRING)
+      stringlength_tape_pointer = stringlength_tape_pointer+1
+      character_tape(character_tape_pointer:character_tape_pointer+len(
+     +GLOBALSTRING)) = GLOBALSTRING(1:len(GLOBALSTRING))
+      character_tape_pointer = character_tape_pointer+len(GLOBALSTRING)
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          stringlength_tape_pointer = stringlength_tape_pointer-1
-          character_tape_pointer = character_tape_pointer-stringlength_t
-     +ape(stringlength_tape_pointer)
-          GLOBALSTRING(1:len(GLOBALSTRING)) = character_tape(character_t
-     +ape_pointer:character_tape_pointer+stringlength_tape(stringlength_
-     +tape_pointer))
+       stringlength_tape_pointer = stringlength_tape_pointer-1
+      character_tape_pointer = character_tape_pointer-stringlength_tape
+     +(stringlength_tape_pointer)
+      GLOBALSTRING(1:len(GLOBALSTRING)) = character_tape(character_tape
+     +_pointer:character_tape_pointer+stringlength_tape(stringlength_ta
+     +pe_pointer))
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
         IF(GLOBALSTRING .EQ. 'no') THEN
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_23)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_24)
-          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d
-          Y(I)%d = 0.0d0
-          Y(I)%d = Y(I)%d+OpenAD_Symbol_9%d
-          OpenAD_Symbol_9%d = 0.0d0
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_23 = double_tape(double_tape_pointer)
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_24 = double_tape(double_tape_pointer)
+           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_23)
+           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_24)
+           OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d
+           Y(I)%d = 0.0d0
+           Y(I)%d = Y(I)%d+OpenAD_Symbol_9%d
+           OpenAD_Symbol_9%d = 0.0d0
         ENDIF
         IF(GLOBALSTRING .EQ. 'yes') THEN
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_20 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_21 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_20)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_21)
-          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d
-          Y(I)%d = 0.0d0
-          Y(I)%d = Y(I)%d+OpenAD_Symbol_6%d
-          OpenAD_Symbol_6%d = 0.0d0
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_20 = double_tape(double_tape_pointer)
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_21 = double_tape(double_tape_pointer)
+           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_20)
+           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_21)
+           OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d
+           Y(I)%d = 0.0d0
+           Y(I)%d = Y(I)%d+OpenAD_Symbol_6%d
+           OpenAD_Symbol_6%d = 0.0d0
         ENDIF
         I = I - 1
       END DO
@@ -339,8 +337,8 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL foo(X,Y)
-          Y(2)%d = 0.0d0
-          Y(1)%d = 0.0d0
+       Y(2)%d = 0.0d0
+       Y(1)%d = 0.0d0
 
           end if 
         end subroutine head

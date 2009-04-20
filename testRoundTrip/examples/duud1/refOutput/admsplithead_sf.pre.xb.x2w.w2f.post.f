@@ -117,25 +117,25 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%v = (X(1)%v*X(2)%v)
       OpenAD_Symbol_2 = X(2)%v
       OpenAD_Symbol_3 = X(1)%v
-          double_tape(double_tape_pointer) = OpenAD_Symbol_2
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_3
-          double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_2
+      double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_3
+      double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_5 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y(1)%d*(OpenAD_Symbol_5)
-          X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_6)
-          Y(1)%d = 0.0d0
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+X(1)%d*(2.0D00)
-          X(1)%d = 0.0d0
-          X(1)%d = X(1)%d+OpenAD_Symbol_4%d
-          OpenAD_Symbol_4%d = 0.0d0
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_6 = double_tape(double_tape_pointer)
+       X(2)%d = X(2)%d+Y(1)%d*(OpenAD_Symbol_5)
+       X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_6)
+       Y(1)%d = 0.0d0
+       OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+X(1)%d*(2.0D00)
+       X(1)%d = 0.0d0
+       X(1)%d = X(1)%d+OpenAD_Symbol_4%d
+       OpenAD_Symbol_4%d = 0.0d0
 
           end if 
         end subroutine head

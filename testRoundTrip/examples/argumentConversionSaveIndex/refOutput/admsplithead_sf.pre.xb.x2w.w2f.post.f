@@ -121,10 +121,10 @@ C
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+P%d*(2.0D00)
-          P%d = 0.0d0
-          P%d = P%d+OpenAD_Symbol_4%d
-          OpenAD_Symbol_4%d = 0.0d0
+       OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+P%d*(2.0D00)
+       P%d = 0.0d0
+       P%d = P%d+OpenAD_Symbol_4%d
+       OpenAD_Symbol_4%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -250,19 +250,19 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL foo(OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(A(INT(OpenAD_Symbol_1)),OpenAD_Symbol_0)
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
+      integer_tape_pointer = integer_tape_pointer+1
       CALL foo(X(1))
       Y(1)%v = X(1)%v
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          X(1)%d = X(1)%d+Y(1)%d
-          Y(1)%d = 0.0d0
+       X(1)%d = X(1)%d+Y(1)%d
+       Y(1)%d = 0.0d0
       CALL foo(X(1))
-          integer_tape_pointer = integer_tape_pointer-1
-          I = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       I = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_5)
 
           end if 

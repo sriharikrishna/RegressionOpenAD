@@ -91,17 +91,17 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
       Y(INT(A))%v = X(A)%v
-          integer_tape(integer_tape_pointer) = A
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = A
+      integer_tape_pointer = integer_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_0))%d = X(INT(OpenAD_Symbol_0))%d+Y(INT(Op
-     +enAD_Symbol_0))%d
-          Y(INT(OpenAD_Symbol_0))%d = 0.0d0
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
+       X(INT(OpenAD_Symbol_0))%d = X(INT(OpenAD_Symbol_0))%d+Y(INT(OpenA
+     +D_Symbol_0))%d
+       Y(INT(OpenAD_Symbol_0))%d = 0.0d0
 
           end if 
         end subroutine foo

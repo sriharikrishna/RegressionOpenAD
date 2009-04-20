@@ -130,19 +130,19 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_string_scalar(A,theArgSStack,theArgSStackoffset,
-     +theArgSStackSize)
-          call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,
-     +theArgFStackSize)
+       call cp_store_string_scalar(A,theArgSStack,theArgSStackoffset,the
+     +ArgSStackSize)
+       call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          X%v = theArgFStack(theArgFStackoffset)
+       X%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
-          theArgFStackoffset = theArgFStackoffset-1
-          A = theArgSStack(theArgSStackoffset)
-          theArgSStackoffset = theArgSStackoffset-1
+      theArgFStackoffset = theArgFStackoffset-1
+        A = theArgSStack(theArgSStackoffset)
+      theArgSStackoffset = theArgSStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -173,23 +173,23 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_1 = (X%v*2.0D00)
         X%v = OpenAD_Symbol_1
         OpenAD_Symbol_8 = 1_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
+        integer_tape_pointer = integer_tape_pointer+1
       ELSE
         OpenAD_Symbol_9 = 0_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_9
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_9
+        integer_tape_pointer = integer_tape_pointer+1
       ENDIF
       IF(A(1 : LEN(A)) .EQ. 'three') THEN
         OpenAD_Symbol_3 = (X%v*3.0D00)
         X%v = OpenAD_Symbol_3
         OpenAD_Symbol_10 = 1_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_10
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_10
+        integer_tape_pointer = integer_tape_pointer+1
       ELSE
         OpenAD_Symbol_11 = 0_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
+        integer_tape_pointer = integer_tape_pointer+1
       ENDIF
 
 C taping end
@@ -207,21 +207,21 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_6 .ne. 0) THEN
-          OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+X%d*(3.0D00)
-          X%d = 0.0d0
-          X%d = X%d+OpenAD_Symbol_5%d
-          OpenAD_Symbol_5%d = 0.0d0
+         OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+X%d*(3.0D00)
+         X%d = 0.0d0
+         X%d = X%d+OpenAD_Symbol_5%d
+         OpenAD_Symbol_5%d = 0.0d0
       ENDIF
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_7 .ne. 0) THEN
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+X%d*(2.0D00)
-          X%d = 0.0d0
-          X%d = X%d+OpenAD_Symbol_4%d
-          OpenAD_Symbol_4%d = 0.0d0
+         OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+X%d*(2.0D00)
+         X%d = 0.0d0
+         X%d = X%d+OpenAD_Symbol_4%d
+         OpenAD_Symbol_4%d = 0.0d0
       ENDIF
 
 C adjoint end
@@ -397,8 +397,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          X(1)%d = X(1)%d+Y(1)%d
-          Y(1)%d = 0.0d0
+       X(1)%d = X(1)%d+Y(1)%d
+       Y(1)%d = 0.0d0
       CALL foo(A,X)
       CALL foo(A,X)
 

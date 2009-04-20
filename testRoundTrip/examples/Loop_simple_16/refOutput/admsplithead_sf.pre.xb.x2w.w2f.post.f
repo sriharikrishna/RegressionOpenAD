@@ -123,39 +123,39 @@ C$OPENAD XXX Simple loop
         OpenAD_Symbol_0 = Y%v
         OpenAD_Symbol_1 = X(I)%v
         Y%v = OpenAD_Symbol_2
-          double_tape(double_tape_pointer) = OpenAD_Symbol_0
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
-          double_tape_pointer = double_tape_pointer+1
+        double_tape(double_tape_pointer) = OpenAD_Symbol_0
+        double_tape_pointer = double_tape_pointer+1
+        double_tape(double_tape_pointer) = OpenAD_Symbol_1
+        double_tape_pointer = double_tape_pointer+1
       END DO
-          integer_tape(integer_tape_pointer) = L
-          integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = U
-          integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = S
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = L
+      integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = U
+      integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = S
+      integer_tape_pointer = integer_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          S = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          U = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          L = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       S = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       U = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       L = integer_tape(integer_tape_pointer)
       I = L + S * ABS((L - U) / S)
       DO WHILE(((S .GT. 0.0D00) .AND.(I .GE. L)) .OR.((S .LT. 0.0D00)
      >  .AND.(I .LE. L)))
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y%d*(OpenAD_Symbol_8)
-          X(I)%d = X(I)%d+Y%d*(OpenAD_Symbol_9)
-          Y%d = 0.0d0
-          Y%d = Y%d+OpenAD_Symbol_3%d
-          OpenAD_Symbol_3%d = 0.0d0
+         double_tape_pointer = double_tape_pointer-1
+         OpenAD_Symbol_8 = double_tape(double_tape_pointer)
+         double_tape_pointer = double_tape_pointer-1
+         OpenAD_Symbol_9 = double_tape(double_tape_pointer)
+         OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y%d*(OpenAD_Symbol_8)
+         X(I)%d = X(I)%d+Y%d*(OpenAD_Symbol_9)
+         Y%d = 0.0d0
+         Y%d = Y%d+OpenAD_Symbol_3%d
+         OpenAD_Symbol_3%d = 0.0d0
         I = I - S
       END DO
 
@@ -309,8 +309,8 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(3),OAD_CTMP6,OAD_CTMP7,OAD_CTMP8)
       CALL foo(X,Y(2),OAD_CTMP3,OAD_CTMP4,OAD_CTMP5)
       CALL foo(X,Y(1),OAD_CTMP0,OAD_CTMP1,OAD_CTMP2)
-          X(1:4)%d = X(1:4)%d+Y(1:4)%d
-          Y(1:4)%d = 0.0d0
+       X(1:4)%d = X(1:4)%d+Y(1:4)%d
+       Y(1:4)%d = 0.0d0
 
           end if 
         end subroutine head

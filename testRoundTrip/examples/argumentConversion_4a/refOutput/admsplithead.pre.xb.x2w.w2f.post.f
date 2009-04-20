@@ -98,21 +98,21 @@ C$OPENAD XXX Template ad_template.f
       Y%v = (X(1)%v*X(2)%v)
       OpenAD_Symbol_2 = X(2)%v
       OpenAD_Symbol_3 = X(1)%v
-          double_tape(double_tape_pointer) = OpenAD_Symbol_2
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_3
-          double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_2
+      double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_3
+      double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_10 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_11 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_10)
-          X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_11)
-          Y%d = 0.0d0
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_10 = double_tape(double_tape_pointer)
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_11 = double_tape(double_tape_pointer)
+       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_10)
+       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_11)
+       Y%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -244,12 +244,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_6 = 0_w2f__i8
       DO I = 1, 2, 1
         AX(INT(I),2)%v = X(I)%v
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = I
+        integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6) + INT(1_w2f__i8))
       END DO
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
+      integer_tape_pointer = integer_tape_pointer+1
       CALL foo(AX(1,2),Y)
 C!! requested inline of 'convert_p2a_matrix' has no defn
       CALL convert_p2a_matrix(OpenAD_Symbol_0,APX)
@@ -266,15 +266,15 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
 ! adjoint
       CALL foo(OpenAD_Symbol_13(1,2),OpenAD_Symbol_14)
       CALL foo(AX(1,2),Y)
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_5 = 1
       DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_12))%d = X(INT(OpenAD_Symbol_12))%d+AX(INT
-     +(OpenAD_Symbol_12),2)%d
-          AX(INT(OpenAD_Symbol_12),2)%d = 0.0d0
+         integer_tape_pointer = integer_tape_pointer-1
+         OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
+         X(INT(OpenAD_Symbol_12))%d = X(INT(OpenAD_Symbol_12))%d+AX(INT(
+     +OpenAD_Symbol_12),2)%d
+         AX(INT(OpenAD_Symbol_12),2)%d = 0.0d0
         OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
       END DO
 

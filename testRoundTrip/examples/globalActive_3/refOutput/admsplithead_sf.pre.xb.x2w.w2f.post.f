@@ -121,21 +121,21 @@ C$OPENAD XXX Template ad_template.f
       Y%v = (X(1)%v*X(2)%v)
       OpenAD_Symbol_0 = X(2)%v
       OpenAD_Symbol_1 = X(1)%v
-          double_tape(double_tape_pointer) = OpenAD_Symbol_0
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
-          double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_0
+      double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_1
+      double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_2 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-          X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_2)
-          X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_3)
-          Y%d = 0.0d0
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_2 = double_tape(double_tape_pointer)
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_2)
+       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_3)
+       Y%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -244,8 +244,8 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          AGLOBAL%d = AGLOBAL%d+Y(1)%d
-          Y(1)%d = 0.0d0
+       AGLOBAL%d = AGLOBAL%d+Y(1)%d
+       Y(1)%d = 0.0d0
       CALL foo(X,AGLOBAL)
 
           end if 

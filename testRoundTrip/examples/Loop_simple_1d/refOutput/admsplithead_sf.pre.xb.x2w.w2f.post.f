@@ -97,8 +97,8 @@ C
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          X%d = X%d+Y%d
-          Y%d = 0.0d0
+       X%d = X%d+Y%d
+       Y%d = 0.0d0
 
           end if 
         end subroutine foo

@@ -149,41 +149,41 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
         OpenAD_Symbol_15 = 1_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
+        integer_tape_pointer = integer_tape_pointer+1
       ELSE
         OUTARG%v = REQARG%v
         OpenAD_Symbol_14 = 0_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_14
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_14
+        integer_tape_pointer = integer_tape_pointer+1
       ENDIF
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_10 .ne. 0) THEN
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_11 = integer_tape(integer_tape_pointer)
+         integer_tape_pointer = integer_tape_pointer-1
+         OpenAD_Symbol_11 = integer_tape(integer_tape_pointer)
         IF(OpenAD_Symbol_11 .ne. 0) THEN
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_22 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+OUTARG%d*(OpenAD_Symbol_
-     +22)
-          OPTARG%d = OPTARG%d+OUTARG%d*(OpenAD_Symbol_23)
-          REQARG%d = REQARG%d+OUTARG%d*(OpenAD_Symbol_24)
-          OUTARG%d = 0.0d0
-          OUTARG%d = OUTARG%d+OpenAD_Symbol_9%d
-          OpenAD_Symbol_9%d = 0.0d0
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_22 = double_tape(double_tape_pointer)
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_23 = double_tape(double_tape_pointer)
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_24 = double_tape(double_tape_pointer)
+           OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+OUTARG%d*(OpenAD_Symbol
+     +_22)
+           OPTARG%d = OPTARG%d+OUTARG%d*(OpenAD_Symbol_23)
+           REQARG%d = REQARG%d+OUTARG%d*(OpenAD_Symbol_24)
+           OUTARG%d = 0.0d0
+           OUTARG%d = OUTARG%d+OpenAD_Symbol_9%d
+           OpenAD_Symbol_9%d = 0.0d0
         ENDIF
       ELSE
-          REQARG%d = REQARG%d+OUTARG%d
-          OUTARG%d = 0.0d0
+         REQARG%d = REQARG%d+OUTARG%d
+         OUTARG%d = 0.0d0
       ENDIF
 
           end if 
@@ -297,8 +297,8 @@ C
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL opt(X(2),X(1),Y(1))
-          X(1)%d = X(1)%d+Y(1)%d*(2.0D00)
-          Y(1)%d = 0.0d0
+       X(1)%d = X(1)%d+Y(1)%d*(2.0D00)
+       Y(1)%d = 0.0d0
 
           end if 
         end subroutine head

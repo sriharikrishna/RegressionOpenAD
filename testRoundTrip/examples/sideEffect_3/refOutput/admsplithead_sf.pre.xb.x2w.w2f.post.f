@@ -107,21 +107,21 @@ C$OPENAD XXX Template ad_template.f
       D%v = (C%v*C%v)
       OpenAD_Symbol_0 = C%v
       OpenAD_Symbol_1 = C%v
-          double_tape(double_tape_pointer) = OpenAD_Symbol_0
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
-          double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_0
+      double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_1
+      double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_2 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-          C%d = C%d+D%d*(OpenAD_Symbol_2)
-          C%d = C%d+D%d*(OpenAD_Symbol_3)
-          D%d = 0.0d0
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_2 = double_tape(double_tape_pointer)
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+       C%d = C%d+D%d*(OpenAD_Symbol_2)
+       C%d = C%d+D%d*(OpenAD_Symbol_3)
+       D%d = 0.0d0
 
           end if 
         end subroutine bar

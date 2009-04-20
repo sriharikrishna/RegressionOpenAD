@@ -90,8 +90,8 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          X%d = X%d+Y%d*(2.0D00)
-          Y%d = 0.0d0
+       X%d = X%d+Y%d*(2.0D00)
+       Y%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -215,8 +215,8 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
 C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(X(K),Y)
-          integer_tape(integer_tape_pointer) = K
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = K
+      integer_tape_pointer = integer_tape_pointer+1
       P(1) = 1.0
       L = 1
 C!! requested inline of 'convert_p2a_scalar' has no defn
@@ -228,21 +228,21 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(P(K),OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(Q(L),OpenAD_Symbol_1)
-          integer_tape(integer_tape_pointer) = K
-          integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = L
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = K
+      integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = L
+      integer_tape_pointer = integer_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          L = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          K = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       L = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       K = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_3,OpenAD_Symbol_4)
-          integer_tape_pointer = integer_tape_pointer-1
-          K = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       K = integer_tape(integer_tape_pointer)
       CALL foo(X(K),Y)
 
           end if 

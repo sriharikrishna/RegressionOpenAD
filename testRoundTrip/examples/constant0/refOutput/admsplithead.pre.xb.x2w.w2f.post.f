@@ -109,16 +109,16 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
       OpenAD_Symbol_5 = (2.0D00 * 3.141592653589793116D00 *
      >  OpenAD_Symbol_1)
-          double_tape(double_tape_pointer) = OpenAD_Symbol_5
-          double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_5
+      double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-          X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_6)
-          Y(1)%d = 0.0d0
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_6 = double_tape(double_tape_pointer)
+       X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_6)
+       Y(1)%d = 0.0d0
 
           end if 
         end subroutine head

@@ -114,31 +114,31 @@ C$OPENAD XXX Simple loop
         Y(INT(J))%v = (Y(J)%v+X(I)%v*X(I)%v)
         OpenAD_Symbol_0 = X(I)%v
         OpenAD_Symbol_1 = X(I)%v
-          double_tape(double_tape_pointer) = OpenAD_Symbol_0
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
-          double_tape_pointer = double_tape_pointer+1
+        double_tape(double_tape_pointer) = OpenAD_Symbol_0
+        double_tape_pointer = double_tape_pointer+1
+        double_tape(double_tape_pointer) = OpenAD_Symbol_1
+        double_tape_pointer = double_tape_pointer+1
       END DO
-          integer_tape(integer_tape_pointer) = J
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = J
+      integer_tape_pointer = integer_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          J = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       J = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(J)%d*(OpenAD_Symbol_8)
-          X(I)%d = X(I)%d+Y(J)%d*(OpenAD_Symbol_9)
-          OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Y(J)%d
-          Y(J)%d = 0.0d0
-          Y(J)%d = Y(J)%d+OpenAD_Symbol_2%d
-          OpenAD_Symbol_2%d = 0.0d0
+         double_tape_pointer = double_tape_pointer-1
+         OpenAD_Symbol_8 = double_tape(double_tape_pointer)
+         double_tape_pointer = double_tape_pointer-1
+         OpenAD_Symbol_9 = double_tape(double_tape_pointer)
+         X(I)%d = X(I)%d+Y(J)%d*(OpenAD_Symbol_8)
+         X(I)%d = X(I)%d+Y(J)%d*(OpenAD_Symbol_9)
+         OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Y(J)%d
+         Y(J)%d = 0.0d0
+         Y(J)%d = Y(J)%d+OpenAD_Symbol_2%d
+         OpenAD_Symbol_2%d = 0.0d0
         I = I - 1
       END DO
 
@@ -258,8 +258,8 @@ C$OPENAD XXX Template ad_template.f
 ! adjoint
       CALL foo(X,Y,OAD_CTMP1)
       CALL foo(X,Y,OAD_CTMP0)
-          Y(2)%d = 0.0d0
-          Y(1)%d = 0.0d0
+       Y(2)%d = 0.0d0
+       Y(1)%d = 0.0d0
 
           end if 
         end subroutine head

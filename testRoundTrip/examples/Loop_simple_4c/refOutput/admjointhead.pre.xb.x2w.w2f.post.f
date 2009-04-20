@@ -151,30 +151,30 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_string_scalar(GLOBALSTRING,theArgSStack,theArgSS
-     +tackoffset,theArgSStackSize)
-          call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
-     +ffset,theArgFStackSize)
-          call cp_store_real_vector(Y,size(Y),theArgFStack,theArgFStacko
-     +ffset,theArgFStackSize)
+       call cp_store_string_scalar(GLOBALSTRING,theArgSStack,theArgSStac
+     +koffset,theArgSStackSize)
+       call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffs
+     +et,theArgFStackSize)
+       call cp_store_real_vector(Y,size(Y),theArgFStack,theArgFStackoffs
+     +et,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          do cp_loop_variable_1 = ubound(Y,1),lbound(Y,1),-1
-             Y(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
-             theArgFStackoffset = theArgFStackoffset-1
+       do cp_loop_variable_1 = ubound(Y,1),lbound(Y,1),-1
+      Y(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
+      theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +Y(cp_loop_variable_1)%v
-          enddo
-          do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
-             X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
-             theArgFStackoffset = theArgFStackoffset-1
+      enddo
+       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
+      X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
+      theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-          enddo
-          GLOBALSTRING = theArgSStack(theArgSStackoffset)
-          theArgSStackoffset = theArgSStackoffset-1
+      enddo
+        GLOBALSTRING = theArgSStack(theArgSStackoffset)
+      theArgSStackoffset = theArgSStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -230,13 +230,11 @@ C$OPENAD XXX Simple loop
           double_tape_pointer = double_tape_pointer+1
         ENDIF
       END DO
-          stringlength_tape(stringlength_tape_pointer) = len(GLOBALSTRIN
-     +G)
-          stringlength_tape_pointer = stringlength_tape_pointer+1
-          character_tape(character_tape_pointer:character_tape_pointer+l
-     +en(GLOBALSTRING)) = GLOBALSTRING(1:len(GLOBALSTRING))
-          character_tape_pointer = character_tape_pointer+len(GLOBALSTRI
-     +NG)
+      stringlength_tape(stringlength_tape_pointer) = len(GLOBALSTRING)
+      stringlength_tape_pointer = stringlength_tape_pointer+1
+      character_tape(character_tape_pointer:character_tape_pointer+len(
+     +GLOBALSTRING)) = GLOBALSTRING(1:len(GLOBALSTRING))
+      character_tape_pointer = character_tape_pointer+len(GLOBALSTRING)
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
 
@@ -255,37 +253,37 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          stringlength_tape_pointer = stringlength_tape_pointer-1
-          character_tape_pointer = character_tape_pointer-stringlength_t
-     +ape(stringlength_tape_pointer)
-          GLOBALSTRING(1:len(GLOBALSTRING)) = character_tape(character_t
-     +ape_pointer:character_tape_pointer+stringlength_tape(stringlength_
-     +tape_pointer))
+       stringlength_tape_pointer = stringlength_tape_pointer-1
+      character_tape_pointer = character_tape_pointer-stringlength_tape
+     +(stringlength_tape_pointer)
+      GLOBALSTRING(1:len(GLOBALSTRING)) = character_tape(character_tape
+     +_pointer:character_tape_pointer+stringlength_tape(stringlength_ta
+     +pe_pointer))
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
         IF(GLOBALSTRING .EQ. 'no') THEN
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_23)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_24)
-          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d
-          Y(I)%d = 0.0d0
-          Y(I)%d = Y(I)%d+OpenAD_Symbol_9%d
-          OpenAD_Symbol_9%d = 0.0d0
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_23 = double_tape(double_tape_pointer)
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_24 = double_tape(double_tape_pointer)
+           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_23)
+           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_24)
+           OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+Y(I)%d
+           Y(I)%d = 0.0d0
+           Y(I)%d = Y(I)%d+OpenAD_Symbol_9%d
+           OpenAD_Symbol_9%d = 0.0d0
         ENDIF
         IF(GLOBALSTRING .EQ. 'yes') THEN
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_20 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_21 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_20)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_21)
-          OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d
-          Y(I)%d = 0.0d0
-          Y(I)%d = Y(I)%d+OpenAD_Symbol_6%d
-          OpenAD_Symbol_6%d = 0.0d0
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_20 = double_tape(double_tape_pointer)
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_21 = double_tape(double_tape_pointer)
+           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_20)
+           X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_21)
+           OpenAD_Symbol_6%d = OpenAD_Symbol_6%d+Y(I)%d
+           Y(I)%d = 0.0d0
+           Y(I)%d = Y(I)%d+OpenAD_Symbol_6%d
+           OpenAD_Symbol_6%d = 0.0d0
         ENDIF
         I = I - 1
       END DO
@@ -414,14 +412,14 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_string_scalar(GLOBALSTRING,theArgSStack,theArgSS
-     +tackoffset,theArgSStackSize)
+       call cp_store_string_scalar(GLOBALSTRING,theArgSStack,theArgSStac
+     +koffset,theArgSStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          GLOBALSTRING = theArgSStack(theArgSStackoffset)
-          theArgSStackoffset = theArgSStackoffset-1
+        GLOBALSTRING = theArgSStack(theArgSStackoffset)
+      theArgSStackoffset = theArgSStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -468,8 +466,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       CALL foo(X,Y)
-          Y(2)%d = 0.0d0
-          Y(1)%d = 0.0d0
+       Y(2)%d = 0.0d0
+       Y(1)%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
