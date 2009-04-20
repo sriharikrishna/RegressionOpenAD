@@ -169,24 +169,24 @@ C$OPENAD XXX Template ad_template.f
       IF (X(1)%v.LE.X(2)%v) THEN
         Y(1)%v = (X(2)%v-X(1)%v)
         OpenAD_Symbol_3 = 1_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
+        integer_tape_pointer = integer_tape_pointer+1
       ELSE
         Y(1)%v = (X(1)%v-X(2)%v)
         OpenAD_Symbol_4 = 0_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
+        integer_tape_pointer = integer_tape_pointer+1
       ENDIF
       IF (Y(1)%v.eq.0.0D00) THEN
         Y(2)%v = X(1)%v
         OpenAD_Symbol_5 = 1_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
+        integer_tape_pointer = integer_tape_pointer+1
       ELSE
         Y(2)%v = Y(1)%v
         OpenAD_Symbol_6 = 0_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
+        integer_tape_pointer = integer_tape_pointer+1
       ENDIF
 
 C taping end
@@ -204,27 +204,27 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_1 .ne. 0) THEN
-          X(1)%d = X(1)%d+Y(2)%d
-          Y(2)%d = 0.0d0
+         X(1)%d = X(1)%d+Y(2)%d
+         Y(2)%d = 0.0d0
       ELSE
-          OpenAD_Symbol_0%d = OpenAD_Symbol_0%d+Y(2)%d
-          Y(2)%d = 0.0d0
-          Y(1)%d = Y(1)%d+OpenAD_Symbol_0%d
-          OpenAD_Symbol_0%d = 0.0d0
+         OpenAD_Symbol_0%d = OpenAD_Symbol_0%d+Y(2)%d
+         Y(2)%d = 0.0d0
+         Y(1)%d = Y(1)%d+OpenAD_Symbol_0%d
+         OpenAD_Symbol_0%d = 0.0d0
       ENDIF
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_2 .ne. 0) THEN
-          X(1)%d = X(1)%d-Y(1)%d
-          X(2)%d = X(2)%d+Y(1)%d
-          Y(1)%d = 0.0d0
+         X(1)%d = X(1)%d-Y(1)%d
+         X(2)%d = X(2)%d+Y(1)%d
+         Y(1)%d = 0.0d0
       ELSE
-          X(2)%d = X(2)%d-Y(1)%d
-          X(1)%d = X(1)%d+Y(1)%d
-          Y(1)%d = 0.0d0
+         X(2)%d = X(2)%d-Y(1)%d
+         X(1)%d = X(1)%d+Y(1)%d
+         Y(1)%d = 0.0d0
       ENDIF
 
 C adjoint end

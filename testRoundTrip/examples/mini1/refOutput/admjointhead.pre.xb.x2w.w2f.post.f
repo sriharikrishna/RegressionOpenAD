@@ -153,10 +153,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
       OpenAD_Symbol_4 = (OpenAD_Symbol_2 * OpenAD_Symbol_1)
       OpenAD_Symbol_5 = (OpenAD_Symbol_3 * OpenAD_Symbol_1)
-          double_tape(double_tape_pointer) = OpenAD_Symbol_4
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_5
-          double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_4
+      double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_5
+      double_tape_pointer = double_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -173,13 +173,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_7 = double_tape(double_tape_pointer)
-          X%d = X%d+Y%d*(OpenAD_Symbol_6)
-          X%d = X%d+Y%d*(OpenAD_Symbol_7)
-          Y%d = 0.0d0
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_6 = double_tape(double_tape_pointer)
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_7 = double_tape(double_tape_pointer)
+       X%d = X%d+Y%d*(OpenAD_Symbol_6)
+       X%d = X%d+Y%d*(OpenAD_Symbol_7)
+       Y%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

@@ -111,15 +111,15 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,
-     +theArgFStackSize)
+       call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          X%v = theArgFStack(theArgFStackoffset)
+       X%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
-          theArgFStackoffset = theArgFStackoffset-1
+      theArgFStackoffset = theArgFStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -156,8 +156,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          X%d = X%d+Y%d
-          Y%d = 0.0d0
+       X%d = X%d+Y%d
+       Y%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -326,16 +326,16 @@ C$OPENAD XXX Simple loop
       OpenAD_Symbol_2 = 0_w2f__i8
       DO I = 1, 2, 1
         CALL foo(X(J),Y(J))
-          integer_tape(integer_tape_pointer) = J
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = J
+        integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2) + INT(1_w2f__i8))
       END DO
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
+      integer_tape_pointer = integer_tape_pointer+1
       J = 2
       CALL foo(X(J),Y(J))
-          integer_tape(integer_tape_pointer) = J
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = J
+      integer_tape_pointer = integer_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -352,15 +352,15 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          J = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       J = integer_tape(integer_tape_pointer)
       CALL foo(X(J),Y(J))
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_1 = 1
       DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
-          integer_tape_pointer = integer_tape_pointer-1
-          J = integer_tape(integer_tape_pointer)
+         integer_tape_pointer = integer_tape_pointer-1
+         J = integer_tape(integer_tape_pointer)
         CALL foo(X(J),Y(J))
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1) + 1
       END DO

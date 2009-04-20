@@ -116,18 +116,18 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
-     +ffset,theArgFStackSize)
+       call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffs
+     +et,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
-             X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
-             theArgFStackoffset = theArgFStackoffset-1
+       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
+      X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
+      theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-          enddo
+      enddo
 
           end if
           if (our_rev_mode%plain) then
@@ -163,10 +163,10 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       Y%v = (X(2)%v*T%v)
       OpenAD_Symbol_1 = T%v
       OpenAD_Symbol_2 = X(2)%v
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_2
-          double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_1
+      double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_2
+      double_tape_pointer = double_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -183,15 +183,15 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_4 = double_tape(double_tape_pointer)
-          T%d = T%d+Y%d*(OpenAD_Symbol_3)
-          X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_4)
-          Y%d = 0.0d0
-          X(1)%d = X(1)%d+T%d
-          T%d = 0.0d0
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+       T%d = T%d+Y%d*(OpenAD_Symbol_3)
+       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_4)
+       Y%d = 0.0d0
+       X(1)%d = X(1)%d+T%d
+       T%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -348,8 +348,8 @@ C$OPENAD XXX Template ad_template.f
       CALL barext(T(I))
       I = 1
       CALL foo(X,Y(I))
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = I
+      integer_tape_pointer = integer_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -366,8 +366,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          I = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       I = integer_tape(integer_tape_pointer)
       CALL foo(X,Y(I))
 
 C adjoint end

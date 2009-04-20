@@ -286,15 +286,15 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,
-     +theArgFStackSize)
+       call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          A%v = theArgFStack(theArgFStackoffset)
+       A%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
-          theArgFStackoffset = theArgFStackoffset-1
+      theArgFStackoffset = theArgFStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -317,10 +317,10 @@ C taping
       B%v = (A%v*A%v)
       OpenAD_Symbol_0 = A%v
       OpenAD_Symbol_1 = A%v
-          double_tape(double_tape_pointer) = OpenAD_Symbol_0
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
-          double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_0
+      double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_Symbol_1
+      double_tape_pointer = double_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -337,13 +337,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_2 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-          A%d = A%d+B%d*(OpenAD_Symbol_2)
-          A%d = A%d+B%d*(OpenAD_Symbol_3)
-          B%d = 0.0d0
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_2 = double_tape(double_tape_pointer)
+       double_tape_pointer = double_tape_pointer-1
+       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+       A%d = A%d+B%d*(OpenAD_Symbol_2)
+       A%d = A%d+B%d*(OpenAD_Symbol_3)
+       B%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -456,15 +456,15 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_real_scalar(A,theArgFStack,theArgFStackoffset,th
-     +eArgFStackSize)
+       call cp_store_real_scalar(A,theArgFStack,theArgFStackoffset,theAr
+     +gFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          A = theArgFStack(theArgFStackoffset)
+        A = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", A
-          theArgFStackoffset = theArgFStackoffset-1
+      theArgFStackoffset = theArgFStackoffset-1
 
           end if
           if (our_rev_mode%plain) then

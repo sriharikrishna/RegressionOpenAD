@@ -114,15 +114,15 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,
-     +theArgFStackSize)
+       call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          X%v = theArgFStack(theArgFStackoffset)
+       X%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
-          theArgFStackoffset = theArgFStackoffset-1
+      theArgFStackoffset = theArgFStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -159,10 +159,10 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+X%d
-          X%d = 0.0d0
-          X%d = X%d+OpenAD_Symbol_2%d
-          OpenAD_Symbol_2%d = 0.0d0
+       OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+X%d
+       X%d = 0.0d0
+       X%d = X%d+OpenAD_Symbol_2%d
+       OpenAD_Symbol_2%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -278,18 +278,18 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
-     +ffset,theArgFStackSize)
+       call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffs
+     +et,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
-             X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
-             theArgFStackoffset = theArgFStackoffset-1
+       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
+      X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
+      theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-          enddo
+      enddo
 
           end if
           if (our_rev_mode%plain) then
@@ -326,10 +326,10 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(1)%d
-          X(1)%d = 0.0d0
-          X(1)%d = X(1)%d+OpenAD_Symbol_3%d
-          OpenAD_Symbol_3%d = 0.0d0
+       OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(1)%d
+       X(1)%d = 0.0d0
+       X(1)%d = X(1)%d+OpenAD_Symbol_3%d
+       OpenAD_Symbol_3%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -506,8 +506,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       CALL bar(Y(2:2))
-          X(1:2)%d = X(1:2)%d+Y(1:2)%d
-          Y(1:2)%d = 0.0d0
+       X(1:2)%d = X(1:2)%d+Y(1:2)%d
+       Y(1:2)%d = 0.0d0
       CALL foo(X(1))
 
 C adjoint end

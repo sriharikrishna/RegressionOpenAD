@@ -121,31 +121,31 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_int_scalar(K,theArgIStack,theArgIStackoffset,the
-     +ArgIStackSize)
-          call cp_store_real_vector(X,size(X),theArgFStack,theArgFStacko
-     +ffset,theArgFStackSize)
-          call cp_store_real_vector(Y,size(Y),theArgFStack,theArgFStacko
-     +ffset,theArgFStackSize)
+       call cp_store_int_scalar(K,theArgIStack,theArgIStackoffset,theArg
+     +IStackSize)
+       call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffs
+     +et,theArgFStackSize)
+       call cp_store_real_vector(Y,size(Y),theArgFStack,theArgFStackoffs
+     +et,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          do cp_loop_variable_1 = ubound(Y,1),lbound(Y,1),-1
-             Y(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
-             theArgFStackoffset = theArgFStackoffset-1
+       do cp_loop_variable_1 = ubound(Y,1),lbound(Y,1),-1
+      Y(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
+      theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +Y(cp_loop_variable_1)%v
-          enddo
-          do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
-             X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
-             theArgFStackoffset = theArgFStackoffset-1
+      enddo
+       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
+      X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
+      theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-          enddo
-          K = theArgIStack(theArgIStackoffset)
+      enddo
+        K = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", K, theArgIStackOffset
-          theArgIStackoffset = theArgIStackoffset-1
+      theArgIStackoffset = theArgIStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -177,13 +177,13 @@ C$OPENAD XXX Simple loop
         Y(INT(J))%v = (Y(J)%v+X(I)%v*X(I)%v)
         OpenAD_Symbol_0 = X(I)%v
         OpenAD_Symbol_1 = X(I)%v
-          double_tape(double_tape_pointer) = OpenAD_Symbol_0
-          double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
-          double_tape_pointer = double_tape_pointer+1
+        double_tape(double_tape_pointer) = OpenAD_Symbol_0
+        double_tape_pointer = double_tape_pointer+1
+        double_tape(double_tape_pointer) = OpenAD_Symbol_1
+        double_tape_pointer = double_tape_pointer+1
       END DO
-          integer_tape(integer_tape_pointer) = J
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = J
+      integer_tape_pointer = integer_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -200,20 +200,20 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          J = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       J = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_9 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(J)%d*(OpenAD_Symbol_8)
-          X(I)%d = X(I)%d+Y(J)%d*(OpenAD_Symbol_9)
-          OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Y(J)%d
-          Y(J)%d = 0.0d0
-          Y(J)%d = Y(J)%d+OpenAD_Symbol_2%d
-          OpenAD_Symbol_2%d = 0.0d0
+         double_tape_pointer = double_tape_pointer-1
+         OpenAD_Symbol_8 = double_tape(double_tape_pointer)
+         double_tape_pointer = double_tape_pointer-1
+         OpenAD_Symbol_9 = double_tape(double_tape_pointer)
+         X(I)%d = X(I)%d+Y(J)%d*(OpenAD_Symbol_8)
+         X(I)%d = X(I)%d+Y(J)%d*(OpenAD_Symbol_9)
+         OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Y(J)%d
+         Y(J)%d = 0.0d0
+         Y(J)%d = Y(J)%d+OpenAD_Symbol_2%d
+         OpenAD_Symbol_2%d = 0.0d0
         I = I - 1
       END DO
 
@@ -393,8 +393,8 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       CALL foo(X,Y,OAD_CTMP1)
       CALL foo(X,Y,OAD_CTMP0)
-          Y(2)%d = 0.0d0
-          Y(1)%d = 0.0d0
+       Y(2)%d = 0.0d0
+       Y(1)%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

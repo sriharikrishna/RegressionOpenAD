@@ -161,11 +161,11 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          T1%d = T1%d+Y(1)%d*(2.0D00)
-          Y(1)%d = 0.0d0
-          X(1)%d = X(1)%d+T1%d
-          X(1)%d = X(1)%d+T1%d
-          T1%d = 0.0d0
+       T1%d = T1%d+Y(1)%d*(2.0D00)
+       Y(1)%d = 0.0d0
+       X(1)%d = X(1)%d+T1%d
+       X(1)%d = X(1)%d+T1%d
+       T1%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

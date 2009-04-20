@@ -123,20 +123,20 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_int_scalar(I,theArgIStack,theArgIStackoffset,the
-     +ArgIStackSize)
-          call cp_store_real_scalar(P%v,theArgFStack,theArgFStackoffset,
-     +theArgFStackSize)
+       call cp_store_int_scalar(I,theArgIStack,theArgIStackoffset,theArg
+     +IStackSize)
+       call cp_store_real_scalar(P%v,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          P%v = theArgFStack(theArgFStackoffset)
+       P%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", P%v
-          theArgFStackoffset = theArgFStackoffset-1
-          I = theArgIStack(theArgIStackoffset)
+      theArgFStackoffset = theArgFStackoffset-1
+        I = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", I, theArgIStackOffset
-          theArgIStackoffset = theArgIStackoffset-1
+      theArgIStackoffset = theArgIStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -176,10 +176,10 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+P%d*(2.0D00)
-          P%d = 0.0d0
-          P%d = P%d+OpenAD_Symbol_4%d
-          OpenAD_Symbol_4%d = 0.0d0
+       OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+P%d*(2.0D00)
+       P%d = 0.0d0
+       P%d = P%d+OpenAD_Symbol_4%d
+       OpenAD_Symbol_4%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -311,15 +311,15 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_int_scalar(I,theArgIStack,theArgIStackoffset,the
-     +ArgIStackSize)
+       call cp_store_int_scalar(I,theArgIStack,theArgIStackoffset,theArg
+     +IStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          I = theArgIStack(theArgIStackoffset)
+        I = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", I, theArgIStackOffset
-          theArgIStackoffset = theArgIStackoffset-1
+      theArgIStackoffset = theArgIStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -358,8 +358,8 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL foo(OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(A(INT(OpenAD_Symbol_1)),OpenAD_Symbol_0)
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
+      integer_tape_pointer = integer_tape_pointer+1
       CALL foo(X(1))
       Y(1)%v = X(1)%v
 
@@ -378,11 +378,11 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          X(1)%d = X(1)%d+Y(1)%d
-          Y(1)%d = 0.0d0
+       X(1)%d = X(1)%d+Y(1)%d
+       Y(1)%d = 0.0d0
       CALL foo(X(1))
-          integer_tape_pointer = integer_tape_pointer-1
-          I = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       I = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_5)
 
 C adjoint end

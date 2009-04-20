@@ -160,12 +160,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_3 = 0_w2f__i8
       DO I = 1, 2, 1
         T(INT(I),2)%v = X(I)%v
-          integer_tape(integer_tape_pointer) = I
-          integer_tape_pointer = integer_tape_pointer+1
+        integer_tape(integer_tape_pointer) = I
+        integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3) + INT(1_w2f__i8))
       END DO
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
+      integer_tape_pointer = integer_tape_pointer+1
 C!! requested inline of 'convert_a2p_matrix' has no defn
       CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0(1,2))
@@ -188,17 +188,17 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          T(1,2)%d = T(1,2)%d+Y(1)%d
-          Y(1)%d = 0.0d0
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
+       T(1,2)%d = T(1,2)%d+Y(1)%d
+       Y(1)%d = 0.0d0
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_2 = 1
       DO WHILE(INT(OpenAD_Symbol_2) .LE. INT(OpenAD_Symbol_1))
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_7))%d = X(INT(OpenAD_Symbol_7))%d+T(INT(Op
-     +enAD_Symbol_7),2)%d
-          T(INT(OpenAD_Symbol_7),2)%d = 0.0d0
+         integer_tape_pointer = integer_tape_pointer-1
+         OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
+         X(INT(OpenAD_Symbol_7))%d = X(INT(OpenAD_Symbol_7))%d+T(INT(Ope
+     +nAD_Symbol_7),2)%d
+         T(INT(OpenAD_Symbol_7),2)%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2) + 1
       END DO
 

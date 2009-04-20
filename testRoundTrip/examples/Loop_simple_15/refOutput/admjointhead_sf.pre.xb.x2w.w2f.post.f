@@ -212,20 +212,20 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-          X(I)%d = X(I)%d+Y(I)%d
-          Y(I)%d = 0.0d0
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
+         X(I)%d = X(I)%d+Y(I)%d
+         Y(I)%d = 0.0d0
+         integer_tape_pointer = integer_tape_pointer-1
+         OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
         IF(OpenAD_Symbol_4 .ne. 0) THEN
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(I)%d*(2.0D00)
-          X(I)%d = 0.0d0
-          X(I)%d = X(I)%d+OpenAD_Symbol_3%d
-          OpenAD_Symbol_3%d = 0.0d0
+           OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(I)%d*(2.0D00)
+           X(I)%d = 0.0d0
+           X(I)%d = X(I)%d+OpenAD_Symbol_3%d
+           OpenAD_Symbol_3%d = 0.0d0
         ENDIF
         I = I - 1
       END DO
-          Y(2)%d = 0.0d0
-          Y(1)%d = 0.0d0
+       Y(2)%d = 0.0d0
+       Y(1)%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

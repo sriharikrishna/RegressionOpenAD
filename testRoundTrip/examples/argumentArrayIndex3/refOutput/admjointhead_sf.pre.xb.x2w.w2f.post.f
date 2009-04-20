@@ -113,15 +113,15 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-          call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,
-     +theArgFStackSize)
+       call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-          X%v = theArgFStack(theArgFStackoffset)
+       X%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
-          theArgFStackoffset = theArgFStackoffset-1
+      theArgFStackoffset = theArgFStackoffset-1
 
           end if
           if (our_rev_mode%plain) then
@@ -158,8 +158,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          X%d = X%d+Y%d*(2.0D00)
-          Y%d = 0.0d0
+       X%d = X%d+Y%d*(2.0D00)
+       Y%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -329,8 +329,8 @@ C taping
 C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(X(K),Y)
-          integer_tape(integer_tape_pointer) = K
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = K
+      integer_tape_pointer = integer_tape_pointer+1
       Q(1)%v = Y%v
       Y%v = Q(1)%v
       P(1) = 1.0
@@ -340,10 +340,10 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL foo(OpenAD_Symbol_0,Q(L))
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(P(K),OpenAD_Symbol_0)
-          integer_tape(integer_tape_pointer) = K
-          integer_tape_pointer = integer_tape_pointer+1
-          integer_tape(integer_tape_pointer) = L
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = K
+      integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = L
+      integer_tape_pointer = integer_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -360,21 +360,21 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          L = integer_tape(integer_tape_pointer)
-          integer_tape_pointer = integer_tape_pointer-1
-          K = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       L = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       K = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_4,Q(L))
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y%d
-          Y%d = 0.0d0
-          Q(1)%d = Q(1)%d+OpenAD_Symbol_3%d
-          OpenAD_Symbol_3%d = 0.0d0
-          OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Q(1)%d
-          Q(1)%d = 0.0d0
-          Y%d = Y%d+OpenAD_Symbol_2%d
-          OpenAD_Symbol_2%d = 0.0d0
-          integer_tape_pointer = integer_tape_pointer-1
-          K = integer_tape(integer_tape_pointer)
+       OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y%d
+       Y%d = 0.0d0
+       Q(1)%d = Q(1)%d+OpenAD_Symbol_3%d
+       OpenAD_Symbol_3%d = 0.0d0
+       OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Q(1)%d
+       Q(1)%d = 0.0d0
+       Y%d = Y%d+OpenAD_Symbol_2%d
+       OpenAD_Symbol_2%d = 0.0d0
+       integer_tape_pointer = integer_tape_pointer-1
+       K = integer_tape(integer_tape_pointer)
       CALL foo(X(K),Y)
 
 C adjoint end

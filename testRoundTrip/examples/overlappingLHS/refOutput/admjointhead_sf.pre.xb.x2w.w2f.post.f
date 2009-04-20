@@ -181,10 +181,10 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       I = 1 + 1 *((5 - 1) / 1)
       DO WHILE(I .GE. 1)
-          X%d = X%d+Y(6-I)%d
-          Y(6-I)%d = 0.0d0
-          X%d = X%d+Y(I)%d
-          Y(I)%d = 0.0d0
+         X%d = X%d+Y(6-I)%d
+         Y(6-I)%d = 0.0d0
+         X%d = X%d+Y(I)%d
+         Y(I)%d = 0.0d0
         I = I - 1
       END DO
 

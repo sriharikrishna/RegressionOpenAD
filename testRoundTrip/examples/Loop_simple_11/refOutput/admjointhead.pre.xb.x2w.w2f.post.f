@@ -188,8 +188,8 @@ C$OPENAD XXX Template ad_template.f
         ENDIF
         OpenAD_Symbol_8 = (INT(OpenAD_Symbol_8) + INT(1_w2f__i8))
       END DO
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
-          integer_tape_pointer = integer_tape_pointer+1
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
+      integer_tape_pointer = integer_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -206,33 +206,33 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
+       integer_tape_pointer = integer_tape_pointer-1
+       OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_6 = 1
       DO WHILE(INT(OpenAD_Symbol_6) .LE. INT(OpenAD_Symbol_5))
-          integer_tape_pointer = integer_tape_pointer-1
-          OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
+         integer_tape_pointer = integer_tape_pointer-1
+         OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
         IF(OpenAD_Symbol_7 .ne. 0) THEN
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_17 = double_tape(double_tape_pointer)
-          double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_18 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(OpenAD_Symbol_17
-     +)
-          X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_18)
-          Y(1)%d = 0.0d0
-          Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
-          OpenAD_Symbol_3%d = 0.0d0
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_17 = double_tape(double_tape_pointer)
+           double_tape_pointer = double_tape_pointer-1
+           OpenAD_Symbol_18 = double_tape(double_tape_pointer)
+           OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(OpenAD_Symbol_1
+     +7)
+           X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_18)
+           Y(1)%d = 0.0d0
+           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
+           OpenAD_Symbol_3%d = 0.0d0
         ELSE
-          X(1)%d = X(1)%d-Y(1)%d
-          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d
-          Y(1)%d = 0.0d0
-          Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
-          OpenAD_Symbol_4%d = 0.0d0
+           X(1)%d = X(1)%d-Y(1)%d
+           OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d
+           Y(1)%d = 0.0d0
+           Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
+           OpenAD_Symbol_4%d = 0.0d0
         ENDIF
         OpenAD_Symbol_6 = INT(OpenAD_Symbol_6) + 1
       END DO
-          Y(1)%d = 0.0d0
+       Y(1)%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
