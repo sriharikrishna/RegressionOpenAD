@@ -8,6 +8,7 @@ syntax: glob
 *.MOD
 testRoundTrip/.lastRun
 testRoundTrip/active_variables.f
+testRoundTrip/activeVariableDefinitions.f
 testRoundTrip/ad_inline.f
 testRoundTrip/ad_template.f
 testRoundTrip/all_globals_*
