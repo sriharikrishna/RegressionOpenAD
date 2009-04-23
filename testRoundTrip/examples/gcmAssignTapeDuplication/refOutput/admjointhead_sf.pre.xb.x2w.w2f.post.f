@@ -166,8 +166,8 @@ C restore arguments
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-      Y(1)%v = (X(3)%v*((X(1)%v*(X(8)%v+X(7)%v+X(5)%v+X(6)%v)+X(2)%v*X(
-     +4)%v)/(X(2)%v+X(1)%v*(X(12)%v+X(11)%v+X(9)%v+X(10)%v))))
+      Y(1)%v = (X(3)%v*((X(1)%v*(X(8)%v+X(7)%v+X(5)%v+X(6)%v)+X(2)%v*X(4
+     +)%v)/(X(2)%v+X(1)%v*(X(12)%v+X(11)%v+X(9)%v+X(10)%v))))
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -238,41 +238,41 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_25 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_26 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_27 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_28 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_29 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_30 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_31 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_32 = double_tape(double_tape_pointer)
-       X(4)%d = X(4)%d+Y(1)%d*(OpenAD_Symbol_25)
-       X(2)%d = X(2)%d+Y(1)%d*(OpenAD_Symbol_26)
-       OpenAD_Symbol_23%d = OpenAD_Symbol_23%d+Y(1)%d*(OpenAD_Symbol_27)
-       X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_28)
-       X(2)%d = X(2)%d+Y(1)%d*(OpenAD_Symbol_29)
-       OpenAD_Symbol_24%d = OpenAD_Symbol_24%d+Y(1)%d*(OpenAD_Symbol_30)
-       X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_31)
-       X(3)%d = X(3)%d+Y(1)%d*(OpenAD_Symbol_32)
-       Y(1)%d = 0.0d0
-       X(10)%d = X(10)%d+OpenAD_Symbol_24%d
-       X(9)%d = X(9)%d+OpenAD_Symbol_24%d
-       X(11)%d = X(11)%d+OpenAD_Symbol_24%d
-       X(12)%d = X(12)%d+OpenAD_Symbol_24%d
-       OpenAD_Symbol_24%d = 0.0d0
-       X(6)%d = X(6)%d+OpenAD_Symbol_23%d
-       X(5)%d = X(5)%d+OpenAD_Symbol_23%d
-       X(7)%d = X(7)%d+OpenAD_Symbol_23%d
-       X(8)%d = X(8)%d+OpenAD_Symbol_23%d
-       OpenAD_Symbol_23%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_25 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_26 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_27 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_28 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_29 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_30 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_31 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_32 = double_tape(double_tape_pointer)
+      X(4)%d = X(4)%d+Y(1)%d*(OpenAD_Symbol_25)
+      X(2)%d = X(2)%d+Y(1)%d*(OpenAD_Symbol_26)
+      OpenAD_Symbol_23%d = OpenAD_Symbol_23%d+Y(1)%d*(OpenAD_Symbol_27)
+      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_28)
+      X(2)%d = X(2)%d+Y(1)%d*(OpenAD_Symbol_29)
+      OpenAD_Symbol_24%d = OpenAD_Symbol_24%d+Y(1)%d*(OpenAD_Symbol_30)
+      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_31)
+      X(3)%d = X(3)%d+Y(1)%d*(OpenAD_Symbol_32)
+      Y(1)%d = 0.0d0
+      X(10)%d = X(10)%d+OpenAD_Symbol_24%d
+      X(9)%d = X(9)%d+OpenAD_Symbol_24%d
+      X(11)%d = X(11)%d+OpenAD_Symbol_24%d
+      X(12)%d = X(12)%d+OpenAD_Symbol_24%d
+      OpenAD_Symbol_24%d = 0.0d0
+      X(6)%d = X(6)%d+OpenAD_Symbol_23%d
+      X(5)%d = X(5)%d+OpenAD_Symbol_23%d
+      X(7)%d = X(7)%d+OpenAD_Symbol_23%d
+      X(8)%d = X(8)%d+OpenAD_Symbol_23%d
+      OpenAD_Symbol_23%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

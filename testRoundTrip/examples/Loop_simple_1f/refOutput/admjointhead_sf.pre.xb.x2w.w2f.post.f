@@ -180,8 +180,8 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       I = 0 + 1 *((3 - 0) / 1)
       DO WHILE(I .GE. 0)
-         X(I+1)%d = X(I+1)%d+Y(I+1)%d
-         Y(I+1)%d = 0.0d0
+        X(I+1)%d = X(I+1)%d+Y(I+1)%d
+        Y(I+1)%d = 0.0d0
         I = I - 1
       END DO
 

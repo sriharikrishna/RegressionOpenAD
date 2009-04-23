@@ -145,48 +145,47 @@ C$OPENAD XXX Simple loop
       END DO
       stringlength_tape(stringlength_tape_pointer) = len(ASTRING)
       stringlength_tape_pointer = stringlength_tape_pointer+1
-      character_tape(character_tape_pointer:character_tape_pointer+len(
-     +ASTRING)) = ASTRING(1:len(ASTRING))
+      character_tape(character_tape_pointer:character_tape_pointer+len(A
+     +STRING)) = ASTRING(1:len(ASTRING))
       character_tape_pointer = character_tape_pointer+len(ASTRING)
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+Y(1)%d
-       Y(1)%d = 0.0d0
-       Y(1)%d = Y(1)%d+OpenAD_Symbol_5%d
-       OpenAD_Symbol_5%d = 0.0d0
-       stringlength_tape_pointer = stringlength_tape_pointer-1
-      character_tape_pointer = character_tape_pointer-stringlength_tape
-     +(stringlength_tape_pointer)
-      ASTRING(1:len(ASTRING)) = character_tape(character_tape_pointer:c
-     +haracter_tape_pointer+stringlength_tape(stringlength_tape_pointer
-     +))
+      OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+Y(1)%d
+      Y(1)%d = 0.0d0
+      Y(1)%d = Y(1)%d+OpenAD_Symbol_5%d
+      OpenAD_Symbol_5%d = 0.0d0
+      stringlength_tape_pointer = stringlength_tape_pointer-1
+      character_tape_pointer = character_tape_pointer-stringlength_tape(
+     +stringlength_tape_pointer)
+      ASTRING(1:len(ASTRING)) = character_tape(character_tape_pointer:ch
+     +aracter_tape_pointer+stringlength_tape(stringlength_tape_pointer))
       I = 1 + 1 *((3 - 1) / 1)
       DO WHILE(I .GE. 1)
         IF(ASTRING .EQ. 'bloh') THEN
-           X(1)%d = X(1)%d-Y(1)%d
-           OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d
-           Y(1)%d = 0.0d0
-           Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
-           OpenAD_Symbol_4%d = 0.0d0
+          X(1)%d = X(1)%d-Y(1)%d
+          OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d
+          Y(1)%d = 0.0d0
+          Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
+          OpenAD_Symbol_4%d = 0.0d0
         ENDIF
         IF(ASTRING .EQ. 'blah') THEN
-           double_tape_pointer = double_tape_pointer-1
-           OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-           double_tape_pointer = double_tape_pointer-1
-           OpenAD_Symbol_16 = double_tape(double_tape_pointer)
-           OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(OpenAD_Symbol_1
-     +5)
-           X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_16)
-           Y(1)%d = 0.0d0
-           Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
-           OpenAD_Symbol_3%d = 0.0d0
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_15 = double_tape(double_tape_pointer)
+          double_tape_pointer = double_tape_pointer-1
+          OpenAD_Symbol_16 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(OpenAD_Symbol_15
+     +)
+          X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_16)
+          Y(1)%d = 0.0d0
+          Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
+          OpenAD_Symbol_3%d = 0.0d0
         ENDIF
         I = I - 1
       END DO
-       X(1)%d = X(1)%d+Y(1)%d
-       Y(1)%d = 0.0d0
+      X(1)%d = X(1)%d+Y(1)%d
+      Y(1)%d = 0.0d0
 
           end if 
         end subroutine head

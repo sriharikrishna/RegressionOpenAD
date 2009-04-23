@@ -344,12 +344,12 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       GY%d = GY%d+Y(1)%d
-       Y(1)%d = 0.0d0
-       GX%d = GX%d+GY%d
-       GY%d = 0.0d0
-       X(1)%d = X(1)%d+GX%d
-       GX%d = 0.0d0
+      GY%d = GY%d+Y(1)%d
+      Y(1)%d = 0.0d0
+      GX%d = GX%d+GY%d
+      GY%d = 0.0d0
+      X(1)%d = X(1)%d+GX%d
+      GX%d = 0.0d0
 
           end if 
         end subroutine head

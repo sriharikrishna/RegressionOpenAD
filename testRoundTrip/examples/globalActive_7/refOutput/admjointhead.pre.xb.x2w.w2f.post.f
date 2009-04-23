@@ -128,13 +128,13 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
+      call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffse
+     +t,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
+      do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
@@ -182,13 +182,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_4 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_5 = double_tape(double_tape_pointer)
-       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_4)
-       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_5)
-       Y%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_4)
+      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_5)
+      Y%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -313,13 +313,13 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(AGLOBAL%v,theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
+      call cp_store_real_scalar(AGLOBAL%v,theArgFStack,theArgFStackoffse
+     +t,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       AGLOBAL%v = theArgFStack(theArgFStackoffset)
+      AGLOBAL%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", AGLOBAL%v
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -362,8 +362,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       AGLOBAL%d = AGLOBAL%d+Y(1)%d
-       Y(1)%d = 0.0d0
+      AGLOBAL%d = AGLOBAL%d+Y(1)%d
+      Y(1)%d = 0.0d0
       CALL foo(X,AGLOBAL)
 
 C adjoint end

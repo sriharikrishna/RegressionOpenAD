@@ -132,27 +132,27 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d
-       Y(1)%d = 0.0d0
-       Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
-       OpenAD_Symbol_4%d = 0.0d0
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
+      OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d
+      Y(1)%d = 0.0d0
+      Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
+      OpenAD_Symbol_4%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_6 = 1
       DO WHILE(INT(OpenAD_Symbol_6) .LE. INT(OpenAD_Symbol_5))
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_11 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-         OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(OpenAD_Symbol_11)
-         X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_12)
-         Y(1)%d = 0.0d0
-         Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
-         OpenAD_Symbol_3%d = 0.0d0
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_11 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_12 = double_tape(double_tape_pointer)
+        OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(OpenAD_Symbol_11)
+        X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_12)
+        Y(1)%d = 0.0d0
+        Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
+        OpenAD_Symbol_3%d = 0.0d0
         OpenAD_Symbol_6 = INT(OpenAD_Symbol_6) + 1
       END DO
-       X(1)%d = X(1)%d+Y(1)%d
-       Y(1)%d = 0.0d0
+      X(1)%d = X(1)%d+Y(1)%d
+      Y(1)%d = 0.0d0
 
           end if 
         end subroutine head

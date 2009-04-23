@@ -110,12 +110,12 @@ C$OPENAD XXX Simple loop\t
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       K = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      K = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((K - 1) / 1)
       DO WHILE(I .GE. 1)
-         X(I)%d = X(I)%d+Y(I)%d
-         Y(I)%d = 0.0d0
+        X(I)%d = X(I)%d+Y(I)%d
+        Y(I)%d = 0.0d0
         I = I - 1
       END DO
 

@@ -123,13 +123,13 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(C%v,theArgFStack,theArgFStackoffset,the
-     +ArgFStackSize)
+      call cp_store_real_scalar(C%v,theArgFStack,theArgFStackoffset,theA
+     +rgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       C%v = theArgFStack(theArgFStackoffset)
+      C%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", C%v
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -174,13 +174,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_2 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-       C%d = C%d+D%d*(OpenAD_Symbol_2)
-       C%d = C%d+D%d*(OpenAD_Symbol_3)
-       D%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_2 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+      C%d = C%d+D%d*(OpenAD_Symbol_2)
+      C%d = C%d+D%d*(OpenAD_Symbol_3)
+      D%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -297,18 +297,18 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,the
-     +ArgFStackSize)
-       call cp_store_real_scalar(B%v,theArgFStack,theArgFStackoffset,the
-     +ArgFStackSize)
+      call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,theA
+     +rgFStackSize)
+      call cp_store_real_scalar(B%v,theArgFStack,theArgFStackoffset,theA
+     +rgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       B%v = theArgFStack(theArgFStackoffset)
+      B%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", B%v
       theArgFStackoffset = theArgFStackoffset-1
-       A%v = theArgFStack(theArgFStackoffset)
+      A%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
       theArgFStackoffset = theArgFStackoffset-1
 

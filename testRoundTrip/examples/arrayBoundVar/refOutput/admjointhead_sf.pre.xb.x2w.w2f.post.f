@@ -180,15 +180,14 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
-       Z(1:INT(OpenAD_Symbol_2))%d = Z(1:INT(OpenAD_Symbol_2))%d+Y(1:2)%
-     +d
-       Y(1:2)%d = 0.0d0
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
-       X(1:2)%d = X(1:2)%d+Z(1:INT(OpenAD_Symbol_3))%d
-       Z(1:INT(OpenAD_Symbol_3))%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
+      Z(1:INT(OpenAD_Symbol_2))%d = Z(1:INT(OpenAD_Symbol_2))%d+Y(1:2)%d
+      Y(1:2)%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
+      X(1:2)%d = X(1:2)%d+Z(1:INT(OpenAD_Symbol_3))%d
+      Z(1:INT(OpenAD_Symbol_3))%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

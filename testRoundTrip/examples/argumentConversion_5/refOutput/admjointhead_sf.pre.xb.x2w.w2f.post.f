@@ -123,18 +123,18 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       do cp_loop_variable_1 = lbound(X,1),ubound(X,1)
-      call cp_store_real_vector(X(cp_loop_variable_1,:),size(X(cp_loop_
-     +variable_1,:)),theArgFStack,theArgFStackoffset,theArgFStackSize)
+      do cp_loop_variable_1 = lbound(X,1),ubound(X,1)
+      call cp_store_real_vector(X(cp_loop_variable_1,:),size(X(cp_loop_v
+     +ariable_1,:)),theArgFStack,theArgFStackoffset,theArgFStackSize)
       enddo
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
+      do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       do cp_loop_variable_2 = ubound(X,2),lbound(X,2),-1
-      X(cp_loop_variable_1,cp_loop_variable_2)%v = theArgFStack(theArgF
-     +Stackoffset)
+      X(cp_loop_variable_1,cp_loop_variable_2)%v = theArgFStack(theArgFS
+     +tackoffset)
       theArgFStackoffset = theArgFStackoffset-1
       enddo
       enddo
@@ -180,13 +180,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_4 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_5 = double_tape(double_tape_pointer)
-       X(2,1)%d = X(2,1)%d+Y%d*(OpenAD_Symbol_4)
-       X(1,1)%d = X(1,1)%d+Y%d*(OpenAD_Symbol_5)
-       Y%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+      X(2,1)%d = X(2,1)%d+Y%d*(OpenAD_Symbol_4)
+      X(1,1)%d = X(1,1)%d+Y%d*(OpenAD_Symbol_5)
+      Y%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

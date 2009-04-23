@@ -120,18 +120,18 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_5 = 1
       DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_16 = integer_tape(integer_tape_pointer)
-         OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+A(INT(OpenAD_Symbol_16))%
-     +d*(2.0D00)
-         A(INT(OpenAD_Symbol_16))%d = 0.0d0
-         A(INT(OpenAD_Symbol_16))%d = A(INT(OpenAD_Symbol_16))%d+OpenAD_
-     +Symbol_2%d
-         OpenAD_Symbol_2%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_16 = integer_tape(integer_tape_pointer)
+        OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+A(INT(OpenAD_Symbol_16))%d
+     +*(2.0D00)
+        A(INT(OpenAD_Symbol_16))%d = 0.0d0
+        A(INT(OpenAD_Symbol_16))%d = A(INT(OpenAD_Symbol_16))%d+OpenAD_S
+     +ymbol_2%d
+        OpenAD_Symbol_2%d = 0.0d0
         OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
       END DO
 
@@ -283,29 +283,29 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_11 = 1
       DO WHILE(INT(OpenAD_Symbol_11) .LE. INT(OpenAD_Symbol_10))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
-         OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d
-         X(INT(OpenAD_Symbol_17))%d = X(INT(OpenAD_Symbol_17))%d+Y(1)%d
-         Y(1)%d = 0.0d0
-         Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
-         OpenAD_Symbol_3%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
+        OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d
+        X(INT(OpenAD_Symbol_17))%d = X(INT(OpenAD_Symbol_17))%d+Y(1)%d
+        Y(1)%d = 0.0d0
+        Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
+        OpenAD_Symbol_3%d = 0.0d0
         OpenAD_Symbol_11 = INT(OpenAD_Symbol_11) + 1
       END DO
-       Y(1)%d = 0.0d0
-       integer_tape_pointer = integer_tape_pointer-1
-       I = integer_tape(integer_tape_pointer)
-       integer_tape_pointer = integer_tape_pointer-1
-       G = integer_tape(integer_tape_pointer)
+      Y(1)%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      I = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      G = integer_tape(integer_tape_pointer)
       CALL foo(X,I)
-       integer_tape_pointer = integer_tape_pointer-1
-       OAD_CTMP0 = integer_tape(integer_tape_pointer)
-       integer_tape_pointer = integer_tape_pointer-1
-       G = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OAD_CTMP0 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      G = integer_tape(integer_tape_pointer)
       CALL foo(X,OAD_CTMP0)
 
           end if 

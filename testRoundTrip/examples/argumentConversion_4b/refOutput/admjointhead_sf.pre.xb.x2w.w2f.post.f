@@ -123,13 +123,13 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
+      call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffse
+     +t,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
+      do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
@@ -177,13 +177,13 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_13 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_14 = double_tape(double_tape_pointer)
-       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_13)
-       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_14)
-       Y%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_13 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_14 = double_tape(double_tape_pointer)
+      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_13)
+      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_14)
+      Y%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -427,8 +427,8 @@ C adjoint
       DO WHILE(I .GE. 1)
         J = 1 + 1 *((2 - 1) / 1)
         DO WHILE(J .GE. 1)
-           X(I)%d = X(I)%d+AX(I,J)%d
-           AX(I,J)%d = 0.0d0
+          X(I)%d = X(I)%d+AX(I,J)%d
+          AX(I,J)%d = 0.0d0
           J = J - 1
         END DO
         I = I - 1

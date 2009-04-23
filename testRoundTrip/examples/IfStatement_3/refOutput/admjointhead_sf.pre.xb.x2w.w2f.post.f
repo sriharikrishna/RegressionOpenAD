@@ -111,13 +111,13 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(X,theArgFStack,theArgFStackoffset,theAr
-     +gFStackSize)
+      call cp_store_real_scalar(X,theArgFStack,theArgFStackoffset,theArg
+     +FStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-        X = theArgFStack(theArgFStackoffset)
+      X = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", X
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -354,11 +354,11 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_1 .ne. 0) THEN
-         X(1)%d = X(1)%d+Y(1)%d
-         Y(1)%d = 0.0d0
+        X(1)%d = X(1)%d+Y(1)%d
+        Y(1)%d = 0.0d0
       ENDIF
       CALL foo(OpenAD_Symbol_7,L)
 

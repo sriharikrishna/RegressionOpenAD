@@ -226,36 +226,36 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_13 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_14 = double_tape(double_tape_pointer)
-       OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d*(OpenAD_Symbol_13)
-       OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(OpenAD_Symbol_14)
-       Y(1)%d = 0.0d0
-       Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
-       OpenAD_Symbol_4%d = 0.0d0
-       Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
-       OpenAD_Symbol_3%d = 0.0d0
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_13 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_14 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+Y(1)%d*(OpenAD_Symbol_13)
+      OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(1)%d*(OpenAD_Symbol_14)
+      Y(1)%d = 0.0d0
+      Y(1)%d = Y(1)%d+OpenAD_Symbol_4%d
+      OpenAD_Symbol_4%d = 0.0d0
+      Y(1)%d = Y(1)%d+OpenAD_Symbol_3%d
+      OpenAD_Symbol_3%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
       IF ( OpenAD_Symbol_5  .EQ.  1)  GO TO  94
       IF ( OpenAD_Symbol_5  .EQ.  2)  GO TO  93
       IF ( OpenAD_Symbol_5  .EQ.  3)  GO TO  92
 94    CONTINUE
-       X(1)%d = X(1)%d+Y(1)%d
-       Y(1)%d = 0.0d0
+      X(1)%d = X(1)%d+Y(1)%d
+      Y(1)%d = 0.0d0
       GO TO 96
 93    CONTINUE
-       X(1)%d = X(1)%d+Y(1)%d
-       Y(1)%d = 0.0d0
+      X(1)%d = X(1)%d+Y(1)%d
+      Y(1)%d = 0.0d0
       GO TO 96
 92    CONTINUE
-       X(1)%d = X(1)%d+Y(1)%d
-       Y(1)%d = 0.0d0
+      X(1)%d = X(1)%d+Y(1)%d
+      Y(1)%d = 0.0d0
       GO TO 96
 96    CONTINUE
-       Y(1)%d = 0.0d0
+      Y(1)%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

@@ -222,20 +222,20 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_13 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_14 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-       X1%d = X1%d+Y2%d*(OpenAD_Symbol_12)
-       X2%d = X2%d+Y2%d*(OpenAD_Symbol_13)
-       Y2%d = 0.0d0
-       X1%d = X1%d+Y1%d*(OpenAD_Symbol_14)
-       X2%d = X2%d+Y1%d*(OpenAD_Symbol_15)
-       Y1%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_12 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_13 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_14 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_15 = double_tape(double_tape_pointer)
+      X1%d = X1%d+Y2%d*(OpenAD_Symbol_12)
+      X2%d = X2%d+Y2%d*(OpenAD_Symbol_13)
+      Y2%d = 0.0d0
+      X1%d = X1%d+Y1%d*(OpenAD_Symbol_14)
+      X2%d = X2%d+Y1%d*(OpenAD_Symbol_15)
+      Y1%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

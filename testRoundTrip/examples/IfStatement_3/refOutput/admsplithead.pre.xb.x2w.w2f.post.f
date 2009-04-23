@@ -226,11 +226,11 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_1 .ne. 0) THEN
-         X(1)%d = X(1)%d+Y(1)%d
-         Y(1)%d = 0.0d0
+        X(1)%d = X(1)%d+Y(1)%d
+        Y(1)%d = 0.0d0
       ENDIF
       CALL foo(OpenAD_Symbol_7,L)
 

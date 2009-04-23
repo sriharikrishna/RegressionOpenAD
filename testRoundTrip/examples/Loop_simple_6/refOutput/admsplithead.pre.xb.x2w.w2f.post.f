@@ -142,20 +142,20 @@ C$OPENAD XXX Simple loop\t
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_1 .ne. 0) THEN
         I = 1 + 1 *((3 - 1) / 1)
         DO WHILE(I .GE. 1)
-           X(I)%d = X(I)%d+Y(I)%d
-           Y(I)%d = 0.0d0
+          X(I)%d = X(I)%d+Y(I)%d
+          Y(I)%d = 0.0d0
           I = I - 1
         END DO
       ELSE
         I = 1 + 1 *((3 - 1) / 1)
         DO WHILE(I .GE. 1)
-           X(I)%d = X(I)%d+Y(I)%d*(2.0D00)
-           Y(I)%d = 0.0d0
+          X(I)%d = X(I)%d+Y(I)%d*(2.0D00)
+          Y(I)%d = 0.0d0
           I = I - 1
         END DO
       ENDIF

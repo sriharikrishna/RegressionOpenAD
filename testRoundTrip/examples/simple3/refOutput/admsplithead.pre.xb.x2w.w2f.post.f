@@ -165,30 +165,30 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_16 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_17 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_18 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_19 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_20 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_21 = double_tape(double_tape_pointer)
-       X1%d = X1%d+Y1%d*(OpenAD_Symbol_15)
-       V3%d = V3%d+Y1%d*(OpenAD_Symbol_16)
-       X2%d = X2%d+Y1%d*(OpenAD_Symbol_17)
-       Y1%d = 0.0d0
-       X1%d = X1%d+Y2%d*(OpenAD_Symbol_18)
-       V3%d = V3%d+Y2%d*(OpenAD_Symbol_19)
-       Y2%d = 0.0d0
-       X2%d = X2%d+V3%d*(OpenAD_Symbol_20)
-       X1%d = X1%d+V3%d*(OpenAD_Symbol_21)
-       V3%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_15 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_16 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_17 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_18 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_19 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_20 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_21 = double_tape(double_tape_pointer)
+      X1%d = X1%d+Y1%d*(OpenAD_Symbol_15)
+      V3%d = V3%d+Y1%d*(OpenAD_Symbol_16)
+      X2%d = X2%d+Y1%d*(OpenAD_Symbol_17)
+      Y1%d = 0.0d0
+      X1%d = X1%d+Y2%d*(OpenAD_Symbol_18)
+      V3%d = V3%d+Y2%d*(OpenAD_Symbol_19)
+      Y2%d = 0.0d0
+      X2%d = X2%d+V3%d*(OpenAD_Symbol_20)
+      X1%d = X1%d+V3%d*(OpenAD_Symbol_21)
+      V3%d = 0.0d0
 
           end if 
         end subroutine head

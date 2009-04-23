@@ -91,10 +91,10 @@ C
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+X%d
-       X%d = 0.0d0
-       X%d = X%d+OpenAD_Symbol_2%d
-       OpenAD_Symbol_2%d = 0.0d0
+      OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+X%d
+      X%d = 0.0d0
+      X%d = X%d+OpenAD_Symbol_2%d
+      OpenAD_Symbol_2%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -190,10 +190,10 @@ C
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(1)%d
-       X(1)%d = 0.0d0
-       X(1)%d = X(1)%d+OpenAD_Symbol_3%d
-       OpenAD_Symbol_3%d = 0.0d0
+      OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(1)%d
+      X(1)%d = 0.0d0
+      X(1)%d = X(1)%d+OpenAD_Symbol_3%d
+      OpenAD_Symbol_3%d = 0.0d0
 
           end if 
         end subroutine bar
@@ -310,8 +310,8 @@ C
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL bar(Y(2:2))
-       X(1:2)%d = X(1:2)%d+Y(1:2)%d
-       Y(1:2)%d = 0.0d0
+      X(1:2)%d = X(1:2)%d+Y(1:2)%d
+      Y(1:2)%d = 0.0d0
       CALL foo(X(1))
 
           end if 

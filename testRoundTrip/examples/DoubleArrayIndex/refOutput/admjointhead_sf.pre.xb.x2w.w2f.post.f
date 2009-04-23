@@ -116,13 +116,13 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,the
-     +ArgFStackSize)
+      call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,theA
+     +rgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       A%v = theArgFStack(theArgFStackoffset)
+      A%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -163,10 +163,10 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+A%d*(2.0D00)
-       A%d = 0.0d0
-       A%d = A%d+OpenAD_Symbol_4%d
-       OpenAD_Symbol_4%d = 0.0d0
+      OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+A%d*(2.0D00)
+      A%d = 0.0d0
+      A%d = A%d+OpenAD_Symbol_4%d
+      OpenAD_Symbol_4%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -354,18 +354,18 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_5 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_5)
-       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_6)
-       Y%d = 0.0d0
-       integer_tape_pointer = integer_tape_pointer-1
-       I = integer_tape(integer_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_6 = double_tape(double_tape_pointer)
+      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_5)
+      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_6)
+      Y%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      I = integer_tape(integer_tape_pointer)
       CALL foo(X(I))
-       integer_tape_pointer = integer_tape_pointer-1
-       I = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      I = integer_tape(integer_tape_pointer)
       CALL foo(X(I))
 
 C adjoint end

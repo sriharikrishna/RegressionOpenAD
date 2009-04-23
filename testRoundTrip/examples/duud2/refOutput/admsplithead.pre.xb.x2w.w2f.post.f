@@ -114,15 +114,15 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_4 = double_tape(double_tape_pointer)
-       LOCALX(1)%d = LOCALX(1)%d+Y(1)%d*(OpenAD_Symbol_3)
-       LOCALX(1)%d = LOCALX(1)%d+Y(1)%d*(OpenAD_Symbol_4)
-       Y(1)%d = 0.0d0
-       X(1)%d = X(1)%d+LOCALX(1)%d*(2.0D00)
-       LOCALX(1)%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+      LOCALX(1)%d = LOCALX(1)%d+Y(1)%d*(OpenAD_Symbol_3)
+      LOCALX(1)%d = LOCALX(1)%d+Y(1)%d*(OpenAD_Symbol_4)
+      Y(1)%d = 0.0d0
+      X(1)%d = X(1)%d+LOCALX(1)%d*(2.0D00)
+      LOCALX(1)%d = 0.0d0
 
           end if 
         end subroutine head

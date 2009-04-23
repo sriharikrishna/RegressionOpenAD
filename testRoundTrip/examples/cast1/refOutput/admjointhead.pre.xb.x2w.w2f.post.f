@@ -149,7 +149,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       Y(1)%d = 0.0d0
+      Y(1)%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

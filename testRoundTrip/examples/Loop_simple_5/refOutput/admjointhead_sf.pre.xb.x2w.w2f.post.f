@@ -190,11 +190,11 @@ C adjoint
       I = 1 + 1 *((3 - 1) / 1)
       DO WHILE(I .GE. 1)
         IF(I .eq. 2) THEN
-           X(I)%d = X(I)%d+Y(I)%d
-           Y(I)%d = 0.0d0
+          X(I)%d = X(I)%d+Y(I)%d
+          Y(I)%d = 0.0d0
         ELSE
-           X(I)%d = X(I)%d+Y(I)%d*(2.0D00)
-           Y(I)%d = 0.0d0
+          X(I)%d = X(I)%d+Y(I)%d*(2.0D00)
+          Y(I)%d = 0.0d0
         ENDIF
         I = I - 1
       END DO

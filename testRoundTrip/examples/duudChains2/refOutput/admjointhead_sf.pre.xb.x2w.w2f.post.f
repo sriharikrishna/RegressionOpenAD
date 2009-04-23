@@ -187,14 +187,14 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_2 .ne. 0) THEN
-         X(1)%d = X(1)%d+Y(1)%d*(4.0D00)
-         Y(1)%d = 0.0d0
+        X(1)%d = X(1)%d+Y(1)%d*(4.0D00)
+        Y(1)%d = 0.0d0
       ELSE
-         X(1)%d = X(1)%d+Y(1)%d*(2.0D00)
-         Y(1)%d = 0.0d0
+        X(1)%d = X(1)%d+Y(1)%d*(2.0D00)
+        Y(1)%d = 0.0d0
       ENDIF
 
 C adjoint end

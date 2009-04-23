@@ -97,8 +97,8 @@ C
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       X%d = X%d+Y%d
-       Y%d = 0.0d0
+      X%d = X%d+Y%d
+      Y%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -233,15 +233,15 @@ C$OPENAD XXX Simple loop
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       J = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      J = integer_tape(integer_tape_pointer)
       CALL foo(X(J),Y(J))
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_1 = 1
       DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
-         integer_tape_pointer = integer_tape_pointer-1
-         J = integer_tape(integer_tape_pointer)
+        integer_tape_pointer = integer_tape_pointer-1
+        J = integer_tape(integer_tape_pointer)
         CALL foo(X(J),Y(J))
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1) + 1
       END DO

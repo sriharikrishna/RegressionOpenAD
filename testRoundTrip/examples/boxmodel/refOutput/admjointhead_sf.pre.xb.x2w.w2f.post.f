@@ -210,155 +210,154 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,t
-     +heArgFStackSize)
-       call cp_store_real_scalar(BETA,theArgFStack,theArgFStackoffset,th
+      call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
-       call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,t
-     +heArgFStackSize)
-       call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_scalar(GAMMA_S,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_scalar(GAMMA_T,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_scalar(ROBERT_FILTER_COEFF,theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_scalar(U0,theArgFStack,theArgFStackoffset,theA
-     +rgFStackSize)
-       call cp_store_real_scalar(UVEL%v,theArgFStack,theArgFStackoffset,
+      call cp_store_real_scalar(BETA,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
+      call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,th
+     +eArgFStackSize)
+      call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
-       call cp_store_int_scalar(ILEV1,theArgIStack,theArgIStackoffset,th
-     +eArgIStackSize)
-       call cp_store_p_real_vector(FW,size(FW),theArgFStack,theArgFStack
-     +offset,theArgFStackSize)
-       call cp_store_p_real_vector(NULLFORCE,size(NULLFORCE),theArgFStac
-     +k,theArgFStackoffset,theArgFStackSize)
-       call cp_store_real_vector(RHO,size(RHO),theArgFStack,theArgFStack
-     +offset,theArgFStackSize)
-       call cp_store_real_vector(SNEW,size(SNEW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(SOLD,size(SOLD),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_p_real_vector(SSTAR,size(SSTAR),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_vector(TNEW,size(TNEW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(TOLD,size(TOLD),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_p_real_vector(TSTAR,size(TSTAR),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
+      call cp_store_real_scalar(GAMMA_S,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_real_scalar(GAMMA_T,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_real_scalar(ROBERT_FILTER_COEFF,theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_scalar(U0,theArgFStack,theArgFStackoffset,theAr
+     +gFStackSize)
+      call cp_store_real_scalar(UVEL%v,theArgFStack,theArgFStackoffset,t
+     +heArgFStackSize)
+      call cp_store_int_scalar(ILEV1,theArgIStack,theArgIStackoffset,the
+     +ArgIStackSize)
+      call cp_store_p_real_vector(FW,size(FW),theArgFStack,theArgFStacko
+     +ffset,theArgFStackSize)
+      call cp_store_p_real_vector(NULLFORCE,size(NULLFORCE),theArgFStack
+     +,theArgFStackoffset,theArgFStackSize)
+      call cp_store_real_vector(RHO,size(RHO),theArgFStack,theArgFStacko
+     +ffset,theArgFStackSize)
+      call cp_store_real_vector(SNEW,size(SNEW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(SOLD,size(SOLD),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_p_real_vector(SSTAR,size(SSTAR),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_vector(TNEW,size(TNEW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(TOLD,size(TOLD),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_p_real_vector(TSTAR,size(TSTAR),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
+      do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
       VOL(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +VOL(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(TSTAR,1),lbound(TSTAR,1),-1
+      do cp_loop_variable_1 = ubound(TSTAR,1),lbound(TSTAR,1),-1
       TSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TSTAR(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(TOLD,1),lbound(TOLD,1),-1
+      do cp_loop_variable_1 = ubound(TOLD,1),lbound(TOLD,1),-1
       TOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TOLD(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
+      do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
       TNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNOW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
+      do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
       TNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNEW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SSTAR,1),lbound(SSTAR,1),-1
+      do cp_loop_variable_1 = ubound(SSTAR,1),lbound(SSTAR,1),-1
       SSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SSTAR(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(SOLD,1),lbound(SOLD,1),-1
+      do cp_loop_variable_1 = ubound(SOLD,1),lbound(SOLD,1),-1
       SOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SOLD(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
+      do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
       SNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNOW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
+      do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
       SNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNEW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(RHO,1),lbound(RHO,1),-1
+      do cp_loop_variable_1 = ubound(RHO,1),lbound(RHO,1),-1
       RHO(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +RHO(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-
-     +1
+      do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-1
       NULLFORCE(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +NULLFORCE(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
+      do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
       FW(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FW(cp_loop_variable_1)
       enddo
-        ILEV1 = theArgIStack(theArgIStackoffset)
+      ILEV1 = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", ILEV1, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
-       UVEL%v = theArgFStack(theArgFStackoffset)
+      UVEL%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", UVEL%v
       theArgFStackoffset = theArgFStackoffset-1
-        U0 = theArgFStack(theArgFStackoffset)
+      U0 = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", U0
       theArgFStackoffset = theArgFStackoffset-1
-        ROBERT_FILTER_COEFF = theArgFStack(theArgFStackoffset)
+      ROBERT_FILTER_COEFF = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ROBERT_FILTER_COEFF
       theArgFStackoffset = theArgFStackoffset-1
-        GAMMA_T = theArgFStack(theArgFStackoffset)
+      GAMMA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", GAMMA_T
       theArgFStackoffset = theArgFStackoffset-1
-        GAMMA_S = theArgFStack(theArgFStackoffset)
+      GAMMA_S = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", GAMMA_S
       theArgFStackoffset = theArgFStackoffset-1
-        DELTA_T = theArgFStack(theArgFStackoffset)
+      DELTA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
       theArgFStackoffset = theArgFStackoffset-1
-        DELTA = theArgFStack(theArgFStackoffset)
+      DELTA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA
       theArgFStackoffset = theArgFStackoffset-1
-        BETA = theArgFStack(theArgFStackoffset)
+      BETA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       theArgFStackoffset = theArgFStackoffset-1
-        ALPHA = theArgFStack(theArgFStackoffset)
+      ALPHA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -436,16 +435,16 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_122 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_122 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_123 = 1
       DO WHILE(INT(OpenAD_Symbol_123) .LE. INT(OpenAD_Symbol_122))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_124 = integer_tape(integer_tape_pointer)
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_124 = integer_tape(integer_tape_pointer)
         IF(OpenAD_Symbol_124 .ne. 0) THEN
-           integer_tape_pointer = integer_tape_pointer-1
-           OpenAD_Symbol_273 = integer_tape(integer_tape_pointer)
-           TNOW(INT(OpenAD_Symbol_273))%d = 0.0d0
+          integer_tape_pointer = integer_tape_pointer-1
+          OpenAD_Symbol_273 = integer_tape(integer_tape_pointer)
+          TNOW(INT(OpenAD_Symbol_273))%d = 0.0d0
         ENDIF
         OpenAD_Symbol_123 = INT(OpenAD_Symbol_123) + 1
       END DO
@@ -591,21 +590,21 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
+      call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
+      do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
       TNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNOW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
+      do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
       SNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
@@ -669,14 +668,14 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_158 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_158 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_159 = 1
       DO WHILE(INT(OpenAD_Symbol_159) .LE. INT(OpenAD_Symbol_158))
         OpenAD_Symbol_159 = INT(OpenAD_Symbol_159) + 1
       END DO
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_160 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_160 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_161 = 1
       DO WHILE(INT(OpenAD_Symbol_161) .LE. INT(OpenAD_Symbol_160))
         OpenAD_Symbol_161 = INT(OpenAD_Symbol_161) + 1
@@ -831,77 +830,76 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(HUNDRED,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_scalar(SV,theArgFStack,theArgFStackoffset,theA
-     +rgFStackSize)
-       call cp_store_real_scalar(UBAR,theArgFStack,theArgFStackoffset,th
-     +eArgFStackSize)
-       call cp_store_real_scalar(YEAR,theArgFStack,theArgFStackoffset,th
-     +eArgFStackSize)
-       call cp_store_p_real_vector(AREA,size(AREA),theArgFStack,theArgFS
-     +tackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(FW,size(FW),theArgFStack,theArgFStack
-     +offset,theArgFStackSize)
-       call cp_store_p_real_vector(NULLFORCE,size(NULLFORCE),theArgFStac
-     +k,theArgFStackoffset,theArgFStackSize)
-       call cp_store_real_vector(S,size(S),theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
-       call cp_store_real_vector(T,size(T),theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
-       call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackof
-     +fset,theArgFStackSize)
+      call cp_store_real_scalar(HUNDRED,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_real_scalar(SV,theArgFStack,theArgFStackoffset,theAr
+     +gFStackSize)
+      call cp_store_real_scalar(UBAR,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
+      call cp_store_real_scalar(YEAR,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
+      call cp_store_p_real_vector(AREA,size(AREA),theArgFStack,theArgFSt
+     +ackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(FW,size(FW),theArgFStack,theArgFStacko
+     +ffset,theArgFStackSize)
+      call cp_store_p_real_vector(NULLFORCE,size(NULLFORCE),theArgFStack
+     +,theArgFStackoffset,theArgFStackSize)
+      call cp_store_real_vector(S,size(S),theArgFStack,theArgFStackoffse
+     +t,theArgFStackSize)
+      call cp_store_real_vector(T,size(T),theArgFStack,theArgFStackoffse
+     +t,theArgFStackSize)
+      call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackoff
+     +set,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(XX,1),lbound(XX,1),-1
+      do cp_loop_variable_1 = ubound(XX,1),lbound(XX,1),-1
       XX(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +XX(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(T,1),lbound(T,1),-1
+      do cp_loop_variable_1 = ubound(T,1),lbound(T,1),-1
       T(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +T(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(S,1),lbound(S,1),-1
+      do cp_loop_variable_1 = ubound(S,1),lbound(S,1),-1
       S(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +S(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-
-     +1
+      do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-1
       NULLFORCE(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +NULLFORCE(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
+      do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
       FW(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FW(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
+      do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
       AREA(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +AREA(cp_loop_variable_1)
       enddo
-        YEAR = theArgFStack(theArgFStackoffset)
+      YEAR = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", YEAR
       theArgFStackoffset = theArgFStackoffset-1
-        UBAR = theArgFStack(theArgFStackoffset)
+      UBAR = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", UBAR
       theArgFStackoffset = theArgFStackoffset-1
-        SV = theArgFStack(theArgFStackoffset)
+      SV = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", SV
       theArgFStackoffset = theArgFStackoffset-1
-        HUNDRED = theArgFStack(theArgFStackoffset)
+      HUNDRED = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", HUNDRED
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -1039,77 +1037,77 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       UVEL%d = 0.0d0
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_170 = integer_tape(integer_tape_pointer)
+      UVEL%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_170 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_171 = 1
       DO WHILE(INT(OpenAD_Symbol_171) .LE. INT(OpenAD_Symbol_170))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_302 = integer_tape(integer_tape_pointer)
-         S(INT(OpenAD_Symbol_302))%d = S(INT(OpenAD_Symbol_302))%d+SNOW(
-     +INT(OpenAD_Symbol_302))%d
-         SNOW(INT(OpenAD_Symbol_302))%d = 0.0d0
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_303 = integer_tape(integer_tape_pointer)
-         T(INT(OpenAD_Symbol_303))%d = T(INT(OpenAD_Symbol_303))%d+TNOW(
-     +INT(OpenAD_Symbol_303))%d
-         TNOW(INT(OpenAD_Symbol_303))%d = 0.0d0
-         S(INT(OpenAD_Symbol_303))%d = S(INT(OpenAD_Symbol_303))%d+SOLD(
-     +INT(OpenAD_Symbol_303))%d
-         SOLD(INT(OpenAD_Symbol_303))%d = 0.0d0
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_304 = integer_tape(integer_tape_pointer)
-         T(INT(OpenAD_Symbol_304))%d = T(INT(OpenAD_Symbol_304))%d+TOLD(
-     +INT(OpenAD_Symbol_304))%d
-         TOLD(INT(OpenAD_Symbol_304))%d = 0.0d0
-         S(INT(OpenAD_Symbol_304))%d = S(INT(OpenAD_Symbol_304))%d+SNEW(
-     +INT(OpenAD_Symbol_304))%d
-         SNEW(INT(OpenAD_Symbol_304))%d = 0.0d0
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_305 = integer_tape(integer_tape_pointer)
-         T(INT(OpenAD_Symbol_305))%d = T(INT(OpenAD_Symbol_305))%d+TNEW(
-     +INT(OpenAD_Symbol_305))%d
-         TNEW(INT(OpenAD_Symbol_305))%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_302 = integer_tape(integer_tape_pointer)
+        S(INT(OpenAD_Symbol_302))%d = S(INT(OpenAD_Symbol_302))%d+SNOW(I
+     +NT(OpenAD_Symbol_302))%d
+        SNOW(INT(OpenAD_Symbol_302))%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_303 = integer_tape(integer_tape_pointer)
+        T(INT(OpenAD_Symbol_303))%d = T(INT(OpenAD_Symbol_303))%d+TNOW(I
+     +NT(OpenAD_Symbol_303))%d
+        TNOW(INT(OpenAD_Symbol_303))%d = 0.0d0
+        S(INT(OpenAD_Symbol_303))%d = S(INT(OpenAD_Symbol_303))%d+SOLD(I
+     +NT(OpenAD_Symbol_303))%d
+        SOLD(INT(OpenAD_Symbol_303))%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_304 = integer_tape(integer_tape_pointer)
+        T(INT(OpenAD_Symbol_304))%d = T(INT(OpenAD_Symbol_304))%d+TOLD(I
+     +NT(OpenAD_Symbol_304))%d
+        TOLD(INT(OpenAD_Symbol_304))%d = 0.0d0
+        S(INT(OpenAD_Symbol_304))%d = S(INT(OpenAD_Symbol_304))%d+SNEW(I
+     +NT(OpenAD_Symbol_304))%d
+        SNEW(INT(OpenAD_Symbol_304))%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_305 = integer_tape(integer_tape_pointer)
+        T(INT(OpenAD_Symbol_305))%d = T(INT(OpenAD_Symbol_305))%d+TNEW(I
+     +NT(OpenAD_Symbol_305))%d
+        TNEW(INT(OpenAD_Symbol_305))%d = 0.0d0
         OpenAD_Symbol_171 = INT(OpenAD_Symbol_171) + 1
       END DO
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_172 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_172 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_173 = 1
       DO WHILE(INT(OpenAD_Symbol_173) .LE. INT(OpenAD_Symbol_172))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_300 = integer_tape(integer_tape_pointer)
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_301 = integer_tape(integer_tape_pointer)
-         XX(INT(OpenAD_Symbol_301))%d = XX(INT(OpenAD_Symbol_301))%d+S(I
-     +NT(OpenAD_Symbol_300))%d
-         OpenAD_Symbol_121%d = OpenAD_Symbol_121%d+S(INT(OpenAD_Symbol_3
-     +00))%d
-         S(INT(OpenAD_Symbol_300))%d = 0.0d0
-         XX(INT(OpenAD_Symbol_300))%d = XX(INT(OpenAD_Symbol_300))%d+T(I
-     +NT(OpenAD_Symbol_300))%d
-         OpenAD_Symbol_120%d = OpenAD_Symbol_120%d+T(INT(OpenAD_Symbol_3
-     +00))%d
-         T(INT(OpenAD_Symbol_300))%d = 0.0d0
-         S(INT(OpenAD_Symbol_300))%d = S(INT(OpenAD_Symbol_300))%d+OpenA
-     +D_Symbol_121%d
-         OpenAD_Symbol_121%d = 0.0d0
-         T(INT(OpenAD_Symbol_300))%d = T(INT(OpenAD_Symbol_300))%d+OpenA
-     +D_Symbol_120%d
-         OpenAD_Symbol_120%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_300 = integer_tape(integer_tape_pointer)
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_301 = integer_tape(integer_tape_pointer)
+        XX(INT(OpenAD_Symbol_301))%d = XX(INT(OpenAD_Symbol_301))%d+S(IN
+     +T(OpenAD_Symbol_300))%d
+        OpenAD_Symbol_121%d = OpenAD_Symbol_121%d+S(INT(OpenAD_Symbol_30
+     +0))%d
+        S(INT(OpenAD_Symbol_300))%d = 0.0d0
+        XX(INT(OpenAD_Symbol_300))%d = XX(INT(OpenAD_Symbol_300))%d+T(IN
+     +T(OpenAD_Symbol_300))%d
+        OpenAD_Symbol_120%d = OpenAD_Symbol_120%d+T(INT(OpenAD_Symbol_30
+     +0))%d
+        T(INT(OpenAD_Symbol_300))%d = 0.0d0
+        S(INT(OpenAD_Symbol_300))%d = S(INT(OpenAD_Symbol_300))%d+OpenAD
+     +_Symbol_121%d
+        OpenAD_Symbol_121%d = 0.0d0
+        T(INT(OpenAD_Symbol_300))%d = T(INT(OpenAD_Symbol_300))%d+OpenAD
+     +_Symbol_120%d
+        OpenAD_Symbol_120%d = 0.0d0
         OpenAD_Symbol_173 = INT(OpenAD_Symbol_173) + 1
       END DO
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_174 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_174 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_175 = 1
       DO WHILE(INT(OpenAD_Symbol_175) .LE. INT(OpenAD_Symbol_174))
         OpenAD_Symbol_175 = INT(OpenAD_Symbol_175) + 1
       END DO
-       S(3)%d = 0.0d0
-       S(2)%d = 0.0d0
-       S(1)%d = 0.0d0
-       T(3)%d = 0.0d0
-       T(2)%d = 0.0d0
-       T(1)%d = 0.0d0
+      S(3)%d = 0.0d0
+      S(2)%d = 0.0d0
+      S(1)%d = 0.0d0
+      T(3)%d = 0.0d0
+      T(2)%d = 0.0d0
+      T(1)%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -1283,133 +1281,132 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,t
-     +heArgFStackSize)
-       call cp_store_real_scalar(BETA,theArgFStack,theArgFStackoffset,th
+      call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
-       call cp_store_real_scalar(BWIDTH,theArgFStack,theArgFStackoffset,
-     +theArgFStackSize)
-       call cp_store_real_scalar(DAY,theArgFStack,theArgFStackoffset,the
+      call cp_store_real_scalar(BETA,theArgFStack,theArgFStackoffset,the
      +ArgFStackSize)
-       call cp_store_real_scalar(DAYS_PER_50M_MIXED_LAYER,theArgFStack,t
-     +heArgFStackoffset,theArgFStackSize)
-       call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,t
+      call cp_store_real_scalar(BWIDTH,theArgFStack,theArgFStackoffset,t
      +heArgFStackSize)
-       call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_scalar(EPSILON_REGULARIZE,theArgFStack,theArgF
-     +Stackoffset,theArgFStackSize)
-       call cp_store_real_scalar(INTEGRATION_TIME,theArgFStack,theArgFSt
-     +ackoffset,theArgFStackSize)
-       call cp_store_real_scalar(SV,theArgFStack,theArgFStackoffset,theA
+      call cp_store_real_scalar(DAY,theArgFStack,theArgFStackoffset,theA
      +rgFStackSize)
-       call cp_store_real_scalar(THOUSAND,theArgFStack,theArgFStackoffse
-     +t,theArgFStackSize)
-       call cp_store_real_scalar(U0,theArgFStack,theArgFStackoffset,theA
-     +rgFStackSize)
-       call cp_store_real_scalar(YEAR,theArgFStack,theArgFStackoffset,th
+      call cp_store_real_scalar(DAYS_PER_50M_MIXED_LAYER,theArgFStack,th
+     +eArgFStackoffset,theArgFStackSize)
+      call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
-       call cp_store_p_real_vector(AREA,size(AREA),theArgFStack,theArgFS
+      call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_real_scalar(EPSILON_REGULARIZE,theArgFStack,theArgFS
      +tackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(BHEIGHT,size(BHEIGHT),theArgFStack,th
-     +eArgFStackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(BLENGTH,size(BLENGTH),theArgFStack,th
-     +eArgFStackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(PROJ_S,size(PROJ_S),theArgFStack,theA
-     +rgFStackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(PROJ_T,size(PROJ_T),theArgFStack,theA
-     +rgFStackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(R,size(R),theArgFStack,theArgFStackof
-     +fset,theArgFStackSize)
-       do cp_loop_variable_2 = lbound(X,2),ubound(X,2)
-      call cp_store_p_real_vector(X(:,cp_loop_variable_2),size(X(:,cp_l
-     +oop_variable_2)),theArgFStack,theArgFStackoffset,theArgFStackSize
-     +)
+      call cp_store_real_scalar(INTEGRATION_TIME,theArgFStack,theArgFSta
+     +ckoffset,theArgFStackSize)
+      call cp_store_real_scalar(SV,theArgFStack,theArgFStackoffset,theAr
+     +gFStackSize)
+      call cp_store_real_scalar(THOUSAND,theArgFStack,theArgFStackoffset
+     +,theArgFStackSize)
+      call cp_store_real_scalar(U0,theArgFStack,theArgFStackoffset,theAr
+     +gFStackSize)
+      call cp_store_real_scalar(YEAR,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
+      call cp_store_p_real_vector(AREA,size(AREA),theArgFStack,theArgFSt
+     +ackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(BHEIGHT,size(BHEIGHT),theArgFStack,the
+     +ArgFStackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(BLENGTH,size(BLENGTH),theArgFStack,the
+     +ArgFStackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(PROJ_S,size(PROJ_S),theArgFStack,theAr
+     +gFStackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(PROJ_T,size(PROJ_T),theArgFStack,theAr
+     +gFStackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(R,size(R),theArgFStack,theArgFStackoff
+     +set,theArgFStackSize)
+      do cp_loop_variable_2 = lbound(X,2),ubound(X,2)
+      call cp_store_p_real_vector(X(:,cp_loop_variable_2),size(X(:,cp_lo
+     +op_variable_2)),theArgFStack,theArgFStackoffset,theArgFStackSize)
       enddo
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_2 = ubound(X,2),lbound(X,2),-1
+      do cp_loop_variable_2 = ubound(X,2),lbound(X,2),-1
       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
-      X(cp_loop_variable_1,cp_loop_variable_2) = theArgFStack(theArgFSt
-     +ackoffset)
+      X(cp_loop_variable_1,cp_loop_variable_2) = theArgFStack(theArgFSta
+     +ckoffset)
       theArgFStackoffset = theArgFStackoffset-1
       enddo
       enddo
-       do cp_loop_variable_1 = ubound(R,1),lbound(R,1),-1
+      do cp_loop_variable_1 = ubound(R,1),lbound(R,1),-1
       R(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +R(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(PROJ_T,1),lbound(PROJ_T,1),-1
+      do cp_loop_variable_1 = ubound(PROJ_T,1),lbound(PROJ_T,1),-1
       PROJ_T(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +PROJ_T(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(PROJ_S,1),lbound(PROJ_S,1),-1
+      do cp_loop_variable_1 = ubound(PROJ_S,1),lbound(PROJ_S,1),-1
       PROJ_S(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +PROJ_S(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(BLENGTH,1),lbound(BLENGTH,1),-1
+      do cp_loop_variable_1 = ubound(BLENGTH,1),lbound(BLENGTH,1),-1
       BLENGTH(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +BLENGTH(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(BHEIGHT,1),lbound(BHEIGHT,1),-1
+      do cp_loop_variable_1 = ubound(BHEIGHT,1),lbound(BHEIGHT,1),-1
       BHEIGHT(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +BHEIGHT(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
+      do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
       AREA(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +AREA(cp_loop_variable_1)
       enddo
-        YEAR = theArgFStack(theArgFStackoffset)
+      YEAR = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", YEAR
       theArgFStackoffset = theArgFStackoffset-1
-        U0 = theArgFStack(theArgFStackoffset)
+      U0 = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", U0
       theArgFStackoffset = theArgFStackoffset-1
-        THOUSAND = theArgFStack(theArgFStackoffset)
+      THOUSAND = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", THOUSAND
       theArgFStackoffset = theArgFStackoffset-1
-        SV = theArgFStack(theArgFStackoffset)
+      SV = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", SV
       theArgFStackoffset = theArgFStackoffset-1
-        INTEGRATION_TIME = theArgFStack(theArgFStackoffset)
+      INTEGRATION_TIME = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", INTEGRATION_TIME
       theArgFStackoffset = theArgFStackoffset-1
-        EPSILON_REGULARIZE = theArgFStack(theArgFStackoffset)
+      EPSILON_REGULARIZE = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", EPSILON_REGULARIZE
       theArgFStackoffset = theArgFStackoffset-1
-        DELTA_T = theArgFStack(theArgFStackoffset)
+      DELTA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
       theArgFStackoffset = theArgFStackoffset-1
-        DELTA = theArgFStack(theArgFStackoffset)
+      DELTA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA
       theArgFStackoffset = theArgFStackoffset-1
-        DAYS_PER_50M_MIXED_LAYER = theArgFStack(theArgFStackoffset)
+      DAYS_PER_50M_MIXED_LAYER = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DAYS_PER_50M_MIXED_LAYER
       theArgFStackoffset = theArgFStackoffset-1
-        DAY = theArgFStack(theArgFStackoffset)
+      DAY = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DAY
       theArgFStackoffset = theArgFStackoffset-1
-        BWIDTH = theArgFStack(theArgFStackoffset)
+      BWIDTH = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", BWIDTH
       theArgFStackoffset = theArgFStackoffset-1
-        BETA = theArgFStack(theArgFStackoffset)
+      BETA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       theArgFStackoffset = theArgFStackoffset-1
-        ALPHA = theArgFStack(theArgFStackoffset)
+      ALPHA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -1640,48 +1637,48 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_189 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_189 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_190 = 1
       DO WHILE(INT(OpenAD_Symbol_190) .LE. INT(OpenAD_Symbol_189))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_191 = integer_tape(integer_tape_pointer)
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_191 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_192 = 1
         DO WHILE(INT(OpenAD_Symbol_192) .LE. INT(OpenAD_Symbol_191))
           OpenAD_Symbol_192 = INT(OpenAD_Symbol_192) + 1
         END DO
         OpenAD_Symbol_190 = INT(OpenAD_Symbol_190) + 1
       END DO
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_193 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_193 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_194 = 1
       DO WHILE(INT(OpenAD_Symbol_194) .LE. INT(OpenAD_Symbol_193))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_195 = integer_tape(integer_tape_pointer)
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_195 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_196 = 1
         DO WHILE(INT(OpenAD_Symbol_196) .LE. INT(OpenAD_Symbol_195))
           OpenAD_Symbol_196 = INT(OpenAD_Symbol_196) + 1
         END DO
         OpenAD_Symbol_194 = INT(OpenAD_Symbol_194) + 1
       END DO
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_197 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_197 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_198 = 1
       DO WHILE(INT(OpenAD_Symbol_198) .LE. INT(OpenAD_Symbol_197))
         OpenAD_Symbol_198 = INT(OpenAD_Symbol_198) + 1
       END DO
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_199 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_199 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_200 = 1
       DO WHILE(INT(OpenAD_Symbol_200) .LE. INT(OpenAD_Symbol_199))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_201 = integer_tape(integer_tape_pointer)
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_201 = integer_tape(integer_tape_pointer)
         IF(OpenAD_Symbol_201 .ne. 0) THEN
         ENDIF
         OpenAD_Symbol_200 = INT(OpenAD_Symbol_200) + 1
       END DO
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_202 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_202 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_203 = 1
       DO WHILE(INT(OpenAD_Symbol_203) .LE. INT(OpenAD_Symbol_202))
         OpenAD_Symbol_203 = INT(OpenAD_Symbol_203) + 1
@@ -1851,207 +1848,206 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,t
-     +heArgFStackSize)
-       call cp_store_real_scalar(BETA,theArgFStack,theArgFStackoffset,th
+      call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
-       call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,t
-     +heArgFStackSize)
-       call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_scalar(GAMMA_S,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_scalar(GAMMA_T,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_scalar(HUNDRED,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_int_scalar(N_MAX,theArgIStack,theArgIStackoffset,th
-     +eArgIStackSize)
-       call cp_store_real_scalar(ROBERT_FILTER_COEFF,theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_scalar(SV,theArgFStack,theArgFStackoffset,theA
-     +rgFStackSize)
-       call cp_store_real_scalar(U0,theArgFStack,theArgFStackoffset,theA
-     +rgFStackSize)
-       call cp_store_real_scalar(UBAR,theArgFStack,theArgFStackoffset,th
+      call cp_store_real_scalar(BETA,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
+      call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
-       call cp_store_real_scalar(UVEL%v,theArgFStack,theArgFStackoffset,
+      call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
-       call cp_store_real_scalar(YEAR,theArgFStack,theArgFStackoffset,th
-     +eArgFStackSize)
-       call cp_store_p_real_vector(AREA,size(AREA),theArgFStack,theArgFS
-     +tackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(FW,size(FW),theArgFStack,theArgFStack
-     +offset,theArgFStackSize)
-       call cp_store_p_real_vector(NULLFORCE,size(NULLFORCE),theArgFStac
-     +k,theArgFStackoffset,theArgFStackSize)
-       call cp_store_real_vector(RHO,size(RHO),theArgFStack,theArgFStack
-     +offset,theArgFStackSize)
-       call cp_store_real_vector(S,size(S),theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
-       call cp_store_real_vector(SNEW,size(SNEW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(SOLD,size(SOLD),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_p_real_vector(SSTAR,size(SSTAR),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_vector(T,size(T),theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
-       call cp_store_real_vector(TNEW,size(TNEW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(TOLD,size(TOLD),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_p_real_vector(TSTAR,size(TSTAR),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackof
-     +fset,theArgFStackSize)
+      call cp_store_real_scalar(GAMMA_S,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_real_scalar(GAMMA_T,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_real_scalar(HUNDRED,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_int_scalar(N_MAX,theArgIStack,theArgIStackoffset,the
+     +ArgIStackSize)
+      call cp_store_real_scalar(ROBERT_FILTER_COEFF,theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_scalar(SV,theArgFStack,theArgFStackoffset,theAr
+     +gFStackSize)
+      call cp_store_real_scalar(U0,theArgFStack,theArgFStackoffset,theAr
+     +gFStackSize)
+      call cp_store_real_scalar(UBAR,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
+      call cp_store_real_scalar(UVEL%v,theArgFStack,theArgFStackoffset,t
+     +heArgFStackSize)
+      call cp_store_real_scalar(YEAR,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
+      call cp_store_p_real_vector(AREA,size(AREA),theArgFStack,theArgFSt
+     +ackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(FW,size(FW),theArgFStack,theArgFStacko
+     +ffset,theArgFStackSize)
+      call cp_store_p_real_vector(NULLFORCE,size(NULLFORCE),theArgFStack
+     +,theArgFStackoffset,theArgFStackSize)
+      call cp_store_real_vector(RHO,size(RHO),theArgFStack,theArgFStacko
+     +ffset,theArgFStackSize)
+      call cp_store_real_vector(S,size(S),theArgFStack,theArgFStackoffse
+     +t,theArgFStackSize)
+      call cp_store_real_vector(SNEW,size(SNEW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(SOLD,size(SOLD),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_p_real_vector(SSTAR,size(SSTAR),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_vector(T,size(T),theArgFStack,theArgFStackoffse
+     +t,theArgFStackSize)
+      call cp_store_real_vector(TNEW,size(TNEW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(TOLD,size(TOLD),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_p_real_vector(TSTAR,size(TSTAR),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackoff
+     +set,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(XX,1),lbound(XX,1),-1
+      do cp_loop_variable_1 = ubound(XX,1),lbound(XX,1),-1
       XX(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +XX(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
+      do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
       VOL(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +VOL(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(TSTAR,1),lbound(TSTAR,1),-1
+      do cp_loop_variable_1 = ubound(TSTAR,1),lbound(TSTAR,1),-1
       TSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TSTAR(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(TOLD,1),lbound(TOLD,1),-1
+      do cp_loop_variable_1 = ubound(TOLD,1),lbound(TOLD,1),-1
       TOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TOLD(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
+      do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
       TNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNOW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
+      do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
       TNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNEW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(T,1),lbound(T,1),-1
+      do cp_loop_variable_1 = ubound(T,1),lbound(T,1),-1
       T(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +T(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SSTAR,1),lbound(SSTAR,1),-1
+      do cp_loop_variable_1 = ubound(SSTAR,1),lbound(SSTAR,1),-1
       SSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SSTAR(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(SOLD,1),lbound(SOLD,1),-1
+      do cp_loop_variable_1 = ubound(SOLD,1),lbound(SOLD,1),-1
       SOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SOLD(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
+      do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
       SNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNOW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
+      do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
       SNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNEW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(S,1),lbound(S,1),-1
+      do cp_loop_variable_1 = ubound(S,1),lbound(S,1),-1
       S(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +S(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(RHO,1),lbound(RHO,1),-1
+      do cp_loop_variable_1 = ubound(RHO,1),lbound(RHO,1),-1
       RHO(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +RHO(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-
-     +1
+      do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-1
       NULLFORCE(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +NULLFORCE(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
+      do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
       FW(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FW(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
+      do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
       AREA(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +AREA(cp_loop_variable_1)
       enddo
-        YEAR = theArgFStack(theArgFStackoffset)
+      YEAR = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", YEAR
       theArgFStackoffset = theArgFStackoffset-1
-       UVEL%v = theArgFStack(theArgFStackoffset)
+      UVEL%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", UVEL%v
       theArgFStackoffset = theArgFStackoffset-1
-        UBAR = theArgFStack(theArgFStackoffset)
+      UBAR = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", UBAR
       theArgFStackoffset = theArgFStackoffset-1
-        U0 = theArgFStack(theArgFStackoffset)
+      U0 = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", U0
       theArgFStackoffset = theArgFStackoffset-1
-        SV = theArgFStack(theArgFStackoffset)
+      SV = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", SV
       theArgFStackoffset = theArgFStackoffset-1
-        ROBERT_FILTER_COEFF = theArgFStack(theArgFStackoffset)
+      ROBERT_FILTER_COEFF = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ROBERT_FILTER_COEFF
       theArgFStackoffset = theArgFStackoffset-1
-        N_MAX = theArgIStack(theArgIStackoffset)
+      N_MAX = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", N_MAX, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
-        HUNDRED = theArgFStack(theArgFStackoffset)
+      HUNDRED = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", HUNDRED
       theArgFStackoffset = theArgFStackoffset-1
-        GAMMA_T = theArgFStack(theArgFStackoffset)
+      GAMMA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", GAMMA_T
       theArgFStackoffset = theArgFStackoffset-1
-        GAMMA_S = theArgFStack(theArgFStackoffset)
+      GAMMA_S = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", GAMMA_S
       theArgFStackoffset = theArgFStackoffset-1
-        DELTA_T = theArgFStack(theArgFStackoffset)
+      DELTA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
       theArgFStackoffset = theArgFStackoffset-1
-        DELTA = theArgFStack(theArgFStackoffset)
+      DELTA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA
       theArgFStackoffset = theArgFStackoffset-1
-        BETA = theArgFStack(theArgFStackoffset)
+      BETA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       theArgFStackoffset = theArgFStackoffset-1
-        ALPHA = theArgFStack(theArgFStackoffset)
+      ALPHA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -2064,7 +2060,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_ini_fields()
       MAXLEV2 = ((N_MAX / 73) + 1)
       IF(N_MAX .GT. 3650) THEN
-        WRITE(*, *) 'NEED TO SET nlev1*nlev2 >= n_max '
+        WRITE (*,*)'NEED TO SET nlev1*nlev2 >= n_max '
       ELSE
         DO ILEV2 = 1, 50, 1
           IF(ILEV2 .LE. MAXLEV2) THEN
@@ -2094,7 +2090,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_ini_fields()
       MAXLEV2 = ((N_MAX / 73) + 1)
       IF(N_MAX .GT. 3650) THEN
-        WRITE(*, *) 'NEED TO SET nlev1*nlev2 >= n_max '
+        WRITE (*,*)'NEED TO SET nlev1*nlev2 >= n_max '
         OpenAD_Symbol_250 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_250
         integer_tape_pointer = integer_tape_pointer+1
@@ -2153,25 +2149,25 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_237 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_237 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_237 .ne. 0) THEN
       ELSE
         CALL box_final_state()
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_238 = integer_tape(integer_tape_pointer)
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_238 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_239 = 1
         DO WHILE(INT(OpenAD_Symbol_239) .LE. INT(OpenAD_Symbol_238))
-           integer_tape_pointer = integer_tape_pointer-1
-           OpenAD_Symbol_240 = integer_tape(integer_tape_pointer)
+          integer_tape_pointer = integer_tape_pointer-1
+          OpenAD_Symbol_240 = integer_tape(integer_tape_pointer)
           IF(OpenAD_Symbol_240 .ne. 0) THEN
-             integer_tape_pointer = integer_tape_pointer-1
-             OpenAD_Symbol_241 = integer_tape(integer_tape_pointer)
+            integer_tape_pointer = integer_tape_pointer-1
+            OpenAD_Symbol_241 = integer_tape(integer_tape_pointer)
             OpenAD_Symbol_242 = 1
             DO WHILE(INT(OpenAD_Symbol_242) .LE. INT(OpenAD_Symbol_241)
      > )
-               integer_tape_pointer = integer_tape_pointer-1
-               OpenAD_Symbol_243 = integer_tape(integer_tape_pointer)
+              integer_tape_pointer = integer_tape_pointer-1
+              OpenAD_Symbol_243 = integer_tape(integer_tape_pointer)
               IF(OpenAD_Symbol_243 .ne. 0) THEN
                 CALL box_forward(ILEV1)
               ENDIF
@@ -2323,34 +2319,34 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,t
-     +heArgFStackSize)
-       call cp_store_real_scalar(BETA,theArgFStack,theArgFStackoffset,th
+      call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
-       call cp_store_real_vector(TLOC,size(TLOC),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(SLOC,size(SLOC),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
+      call cp_store_real_scalar(BETA,theArgFStack,theArgFStackoffset,the
+     +ArgFStackSize)
+      call cp_store_real_vector(TLOC,size(TLOC),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(SLOC,size(SLOC),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(SLOC,1),lbound(SLOC,1),-1
+      do cp_loop_variable_1 = ubound(SLOC,1),lbound(SLOC,1),-1
       SLOC(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SLOC(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(TLOC,1),lbound(TLOC,1),-1
+      do cp_loop_variable_1 = ubound(TLOC,1),lbound(TLOC,1),-1
       TLOC(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TLOC(cp_loop_variable_1)%v
       enddo
-        BETA = theArgFStack(theArgFStackoffset)
+      BETA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       theArgFStackoffset = theArgFStackoffset-1
-        ALPHA = theArgFStack(theArgFStackoffset)
+      ALPHA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -2408,21 +2404,21 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_134 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_134 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_135 = 1
       DO WHILE(INT(OpenAD_Symbol_135) .LE. INT(OpenAD_Symbol_134))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_274 = integer_tape(integer_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_275 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_276 = double_tape(double_tape_pointer)
-         TLOC(INT(OpenAD_Symbol_274))%d = TLOC(INT(OpenAD_Symbol_274))%d
-     ++RHOLOC(INT(OpenAD_Symbol_274))%d*(OpenAD_Symbol_275)
-         SLOC(INT(OpenAD_Symbol_274))%d = SLOC(INT(OpenAD_Symbol_274))%d
-     ++RHOLOC(INT(OpenAD_Symbol_274))%d*(OpenAD_Symbol_276)
-         RHOLOC(INT(OpenAD_Symbol_274))%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_274 = integer_tape(integer_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_275 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_276 = double_tape(double_tape_pointer)
+        TLOC(INT(OpenAD_Symbol_274))%d = TLOC(INT(OpenAD_Symbol_274))%d+
+     +RHOLOC(INT(OpenAD_Symbol_274))%d*(OpenAD_Symbol_275)
+        SLOC(INT(OpenAD_Symbol_274))%d = SLOC(INT(OpenAD_Symbol_274))%d+
+     +RHOLOC(INT(OpenAD_Symbol_274))%d*(OpenAD_Symbol_276)
+        RHOLOC(INT(OpenAD_Symbol_274))%d = 0.0d0
         OpenAD_Symbol_135 = INT(OpenAD_Symbol_135) + 1
       END DO
 
@@ -2563,26 +2559,26 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,t
-     +heArgFStackSize)
-       call cp_store_real_scalar(U0,theArgFStack,theArgFStackoffset,theA
-     +rgFStackSize)
-       call cp_store_real_vector(RHOLOC,size(RHOLOC),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
+      call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,th
+     +eArgFStackSize)
+      call cp_store_real_scalar(U0,theArgFStack,theArgFStackoffset,theAr
+     +gFStackSize)
+      call cp_store_real_vector(RHOLOC,size(RHOLOC),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(RHOLOC,1),lbound(RHOLOC,1),-1
+      do cp_loop_variable_1 = ubound(RHOLOC,1),lbound(RHOLOC,1),-1
       RHOLOC(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +RHOLOC(cp_loop_variable_1)%v
       enddo
-        U0 = theArgFStack(theArgFStackoffset)
+      U0 = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", U0
       theArgFStackoffset = theArgFStackoffset-1
-        DELTA = theArgFStack(theArgFStackoffset)
+      DELTA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -2591,8 +2587,8 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-      UVELLOC%v = (-(U0*(RHOLOC(1)%v*DELTA+RHOLOC(3)%v*(1.0D00-DELTA)-R
-     +HOLOC(2)%v)))
+      UVELLOC%v = (-(U0*(RHOLOC(1)%v*DELTA+RHOLOC(3)%v*(1.0D00-DELTA)-RH
+     +OLOC(2)%v)))
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -2607,8 +2603,8 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_9 = (1.0D00 - DELTA)
-      OpenAD_Symbol_4 = (RHOLOC(1)%v*DELTA+RHOLOC(3)%v*OpenAD_Symbol_9-
-     +RHOLOC(2)%v)
+      OpenAD_Symbol_4 = (RHOLOC(1)%v*DELTA+RHOLOC(3)%v*OpenAD_Symbol_9-R
+     +HOLOC(2)%v)
       UVELLOC%v = (-(U0*OpenAD_Symbol_4))
       OpenAD_Symbol_7 = DELTA
       OpenAD_Symbol_10 = OpenAD_Symbol_9
@@ -2636,19 +2632,19 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_277 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_278 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_279 = double_tape(double_tape_pointer)
-       OpenAD_Symbol_90%d = OpenAD_Symbol_90%d+UVELLOC%d*(OpenAD_Symbol_
-     +277)
-       UVELLOC%d = 0.0d0
-       RHOLOC(3)%d = RHOLOC(3)%d+OpenAD_Symbol_90%d*(OpenAD_Symbol_278)
-       RHOLOC(1)%d = RHOLOC(1)%d+OpenAD_Symbol_90%d*(OpenAD_Symbol_279)
-       RHOLOC(2)%d = RHOLOC(2)%d-OpenAD_Symbol_90%d
-       OpenAD_Symbol_90%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_277 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_278 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_279 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_90%d = OpenAD_Symbol_90%d+UVELLOC%d*(OpenAD_Symbol_2
+     +77)
+      UVELLOC%d = 0.0d0
+      RHOLOC(3)%d = RHOLOC(3)%d+OpenAD_Symbol_90%d*(OpenAD_Symbol_278)
+      RHOLOC(1)%d = RHOLOC(1)%d+OpenAD_Symbol_90%d*(OpenAD_Symbol_279)
+      RHOLOC(2)%d = RHOLOC(2)%d-OpenAD_Symbol_90%d
+      OpenAD_Symbol_90%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -2792,37 +2788,37 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(ROBERT_FILTER_COEFF,theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_vector(FLDNOW,size(FLDNOW),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_vector(FLDOLD,size(FLDOLD),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_vector(FLDNEW,size(FLDNEW),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
+      call cp_store_real_scalar(ROBERT_FILTER_COEFF,theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_vector(FLDNOW,size(FLDNOW),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_vector(FLDOLD,size(FLDOLD),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_vector(FLDNEW,size(FLDNEW),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(FLDNEW,1),lbound(FLDNEW,1),-1
+      do cp_loop_variable_1 = ubound(FLDNEW,1),lbound(FLDNEW,1),-1
       FLDNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDNEW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
+      do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
       FLDOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDOLD(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(FLDNOW,1),lbound(FLDNOW,1),-1
+      do cp_loop_variable_1 = ubound(FLDNOW,1),lbound(FLDNOW,1),-1
       FLDNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDNOW(cp_loop_variable_1)%v
       enddo
-        ROBERT_FILTER_COEFF = theArgFStack(theArgFStackoffset)
+      ROBERT_FILTER_COEFF = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ROBERT_FILTER_COEFF
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -2833,8 +2829,8 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", ROBERT_FILTER_COEFF
 C original function
 C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
-        FLDNOW(INT(L))%v = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*(FLDOLD(L)%
-     +v+FLDNEW(L)%v-FLDNOW(L)%v*2.0D00))
+        FLDNOW(INT(L))%v = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*(FLDOLD(L)%v
+     ++FLDNEW(L)%v-FLDNOW(L)%v*2.0D00))
       END DO
 
 C original function end
@@ -2852,8 +2848,8 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_148 = 0_w2f__i8
       DO L = 1, 3, 1
         OpenAD_Symbol_80 = (FLDOLD(L)%v+FLDNEW(L)%v-FLDNOW(L)%v*2.0D00)
-        OpenAD_Symbol_84 = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*OpenAD_Symb
-     +ol_80)
+        OpenAD_Symbol_84 = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*OpenAD_Symbo
+     +l_80)
         OpenAD_Symbol_82 = ROBERT_FILTER_COEFF
         FLDNOW(INT(L))%v = OpenAD_Symbol_84
         double_tape(double_tape_pointer) = OpenAD_Symbol_82
@@ -2880,32 +2876,32 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_146 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_146 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_147 = 1
       DO WHILE(INT(OpenAD_Symbol_147) .LE. INT(OpenAD_Symbol_146))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_296 = integer_tape(integer_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_297 = double_tape(double_tape_pointer)
-         OpenAD_Symbol_117%d = OpenAD_Symbol_117%d+FLDNOW(INT(OpenAD_Sym
-     +bol_296))%d*(OpenAD_Symbol_297)
-         OpenAD_Symbol_115%d = OpenAD_Symbol_115%d+FLDNOW(INT(OpenAD_Sym
-     +bol_296))%d
-         FLDNOW(INT(OpenAD_Symbol_296))%d = 0.0d0
-         OpenAD_Symbol_116%d = OpenAD_Symbol_116%d+OpenAD_Symbol_117%d*(
-     +-2.0D00)
-         FLDNEW(INT(OpenAD_Symbol_296))%d = FLDNEW(INT(OpenAD_Symbol_296
-     +))%d+OpenAD_Symbol_117%d
-         FLDOLD(INT(OpenAD_Symbol_296))%d = FLDOLD(INT(OpenAD_Symbol_296
-     +))%d+OpenAD_Symbol_117%d
-         OpenAD_Symbol_117%d = 0.0d0
-         FLDNOW(INT(OpenAD_Symbol_296))%d = FLDNOW(INT(OpenAD_Symbol_296
-     +))%d+OpenAD_Symbol_116%d
-         OpenAD_Symbol_116%d = 0.0d0
-         FLDNOW(INT(OpenAD_Symbol_296))%d = FLDNOW(INT(OpenAD_Symbol_296
-     +))%d+OpenAD_Symbol_115%d
-         OpenAD_Symbol_115%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_296 = integer_tape(integer_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_297 = double_tape(double_tape_pointer)
+        OpenAD_Symbol_117%d = OpenAD_Symbol_117%d+FLDNOW(INT(OpenAD_Symb
+     +ol_296))%d*(OpenAD_Symbol_297)
+        OpenAD_Symbol_115%d = OpenAD_Symbol_115%d+FLDNOW(INT(OpenAD_Symb
+     +ol_296))%d
+        FLDNOW(INT(OpenAD_Symbol_296))%d = 0.0d0
+        OpenAD_Symbol_116%d = OpenAD_Symbol_116%d+OpenAD_Symbol_117%d*(-
+     +2.0D00)
+        FLDNEW(INT(OpenAD_Symbol_296))%d = FLDNEW(INT(OpenAD_Symbol_296)
+     +)%d+OpenAD_Symbol_117%d
+        FLDOLD(INT(OpenAD_Symbol_296))%d = FLDOLD(INT(OpenAD_Symbol_296)
+     +)%d+OpenAD_Symbol_117%d
+        OpenAD_Symbol_117%d = 0.0d0
+        FLDNOW(INT(OpenAD_Symbol_296))%d = FLDNOW(INT(OpenAD_Symbol_296)
+     +)%d+OpenAD_Symbol_116%d
+        OpenAD_Symbol_116%d = 0.0d0
+        FLDNOW(INT(OpenAD_Symbol_296))%d = FLDNOW(INT(OpenAD_Symbol_296)
+     +)%d+OpenAD_Symbol_115%d
+        OpenAD_Symbol_115%d = 0.0d0
         OpenAD_Symbol_147 = INT(OpenAD_Symbol_147) + 1
       END DO
 
@@ -3041,37 +3037,37 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_vector(SNEW,size(SNEW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(TNEW,size(TNEW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
+      call cp_store_real_vector(SNEW,size(SNEW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(TNEW,size(TNEW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
+      do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
       TNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNOW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
+      do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
       TNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNEW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
+      do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
       SNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNOW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
+      do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
       SNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
@@ -3133,32 +3129,32 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_152 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_152 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_153 = 1
       DO WHILE(INT(OpenAD_Symbol_153) .LE. INT(OpenAD_Symbol_152))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_298 = integer_tape(integer_tape_pointer)
-         SNEW(INT(OpenAD_Symbol_298))%d = SNEW(INT(OpenAD_Symbol_298))%d
-     ++SNOW(INT(OpenAD_Symbol_298))%d
-         SNOW(INT(OpenAD_Symbol_298))%d = 0.0d0
-         OpenAD_Symbol_119%d = OpenAD_Symbol_119%d+SOLD(INT(OpenAD_Symbo
-     +l_298))%d
-         SOLD(INT(OpenAD_Symbol_298))%d = 0.0d0
-         SNOW(INT(OpenAD_Symbol_298))%d = SNOW(INT(OpenAD_Symbol_298))%d
-     ++OpenAD_Symbol_119%d
-         OpenAD_Symbol_119%d = 0.0d0
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_299 = integer_tape(integer_tape_pointer)
-         TNEW(INT(OpenAD_Symbol_299))%d = TNEW(INT(OpenAD_Symbol_299))%d
-     ++TNOW(INT(OpenAD_Symbol_299))%d
-         TNOW(INT(OpenAD_Symbol_299))%d = 0.0d0
-         OpenAD_Symbol_118%d = OpenAD_Symbol_118%d+TOLD(INT(OpenAD_Symbo
-     +l_299))%d
-         TOLD(INT(OpenAD_Symbol_299))%d = 0.0d0
-         TNOW(INT(OpenAD_Symbol_299))%d = TNOW(INT(OpenAD_Symbol_299))%d
-     ++OpenAD_Symbol_118%d
-         OpenAD_Symbol_118%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_298 = integer_tape(integer_tape_pointer)
+        SNEW(INT(OpenAD_Symbol_298))%d = SNEW(INT(OpenAD_Symbol_298))%d+
+     +SNOW(INT(OpenAD_Symbol_298))%d
+        SNOW(INT(OpenAD_Symbol_298))%d = 0.0d0
+        OpenAD_Symbol_119%d = OpenAD_Symbol_119%d+SOLD(INT(OpenAD_Symbol
+     +_298))%d
+        SOLD(INT(OpenAD_Symbol_298))%d = 0.0d0
+        SNOW(INT(OpenAD_Symbol_298))%d = SNOW(INT(OpenAD_Symbol_298))%d+
+     +OpenAD_Symbol_119%d
+        OpenAD_Symbol_119%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_299 = integer_tape(integer_tape_pointer)
+        TNEW(INT(OpenAD_Symbol_299))%d = TNEW(INT(OpenAD_Symbol_299))%d+
+     +TNOW(INT(OpenAD_Symbol_299))%d
+        TNOW(INT(OpenAD_Symbol_299))%d = 0.0d0
+        OpenAD_Symbol_118%d = OpenAD_Symbol_118%d+TOLD(INT(OpenAD_Symbol
+     +_299))%d
+        TOLD(INT(OpenAD_Symbol_299))%d = 0.0d0
+        TNOW(INT(OpenAD_Symbol_299))%d = TNOW(INT(OpenAD_Symbol_299))%d+
+     +OpenAD_Symbol_118%d
+        OpenAD_Symbol_118%d = 0.0d0
         OpenAD_Symbol_153 = INT(OpenAD_Symbol_153) + 1
       END DO
 
@@ -3300,29 +3296,29 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset
-     +,theArgFStackSize)
-       call cp_store_real_vector(FLDOLD,size(FLDOLD),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_vector(DFLDDT,size(DFLDDT),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
+      call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_real_vector(FLDOLD,size(FLDOLD),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_vector(DFLDDT,size(DFLDDT),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(DFLDDT,1),lbound(DFLDDT,1),-1
+      do cp_loop_variable_1 = ubound(DFLDDT,1),lbound(DFLDDT,1),-1
       DFLDDT(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +DFLDDT(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
+      do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
       FLDOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDOLD(cp_loop_variable_1)%v
       enddo
-        DELTA_T = theArgFStack(theArgFStackoffset)
+      DELTA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -3377,19 +3373,19 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_267 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_267 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_268 = 1
       DO WHILE(INT(OpenAD_Symbol_268) .LE. INT(OpenAD_Symbol_267))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_306 = integer_tape(integer_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_307 = double_tape(double_tape_pointer)
-         DFLDDT(INT(OpenAD_Symbol_306))%d = DFLDDT(INT(OpenAD_Symbol_306
-     +))%d+FLDNEW(INT(OpenAD_Symbol_306))%d*(OpenAD_Symbol_307)
-         FLDOLD(INT(OpenAD_Symbol_306))%d = FLDOLD(INT(OpenAD_Symbol_306
-     +))%d+FLDNEW(INT(OpenAD_Symbol_306))%d
-         FLDNEW(INT(OpenAD_Symbol_306))%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_306 = integer_tape(integer_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_307 = double_tape(double_tape_pointer)
+        DFLDDT(INT(OpenAD_Symbol_306))%d = DFLDDT(INT(OpenAD_Symbol_306)
+     +)%d+FLDNEW(INT(OpenAD_Symbol_306))%d*(OpenAD_Symbol_307)
+        FLDOLD(INT(OpenAD_Symbol_306))%d = FLDOLD(INT(OpenAD_Symbol_306)
+     +)%d+FLDNEW(INT(OpenAD_Symbol_306))%d
+        FLDNEW(INT(OpenAD_Symbol_306))%d = 0.0d0
         OpenAD_Symbol_268 = INT(OpenAD_Symbol_268) + 1
       END DO
 
@@ -3619,69 +3615,68 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_vector(FLDOLD,size(FLDOLD),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_vector(FLDNEW,size(FLDNEW),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
-       call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset
+      call cp_store_real_vector(FLDOLD,size(FLDOLD),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_vector(FLDNEW,size(FLDNEW),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
+      call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset,
+     +theArgFStackSize)
+      call cp_store_real_scalar(GAMMALOC,theArgFStack,theArgFStackoffset
      +,theArgFStackSize)
-       call cp_store_real_scalar(GAMMALOC,theArgFStack,theArgFStackoffse
+      call cp_store_real_scalar(UVELLOC%v,theArgFStack,theArgFStackoffse
      +t,theArgFStackSize)
-       call cp_store_real_scalar(UVELLOC%v,theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
-       call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFSta
-     +ckoffset,theArgFStackSize)
-       call cp_store_p_real_vector(FLDSTAR,size(FLDSTAR),theArgFStack,th
-     +eArgFStackoffset,theArgFStackSize)
-       call cp_store_p_real_vector(EXTFORLOC,size(EXTFORLOC),theArgFStac
-     +k,theArgFStackoffset,theArgFStackSize)
-       call cp_store_real_vector(FLDNOW,size(FLDNOW),theArgFStack,theArg
-     +FStackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFStac
+     +koffset,theArgFStackSize)
+      call cp_store_p_real_vector(FLDSTAR,size(FLDSTAR),theArgFStack,the
+     +ArgFStackoffset,theArgFStackSize)
+      call cp_store_p_real_vector(EXTFORLOC,size(EXTFORLOC),theArgFStack
+     +,theArgFStackoffset,theArgFStackSize)
+      call cp_store_real_vector(FLDNOW,size(FLDNOW),theArgFStack,theArgF
+     +Stackoffset,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(FLDNOW,1),lbound(FLDNOW,1),-1
+      do cp_loop_variable_1 = ubound(FLDNOW,1),lbound(FLDNOW,1),-1
       FLDNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDNOW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(EXTFORLOC,1),lbound(EXTFORLOC,1),-
-     +1
+      do cp_loop_variable_1 = ubound(EXTFORLOC,1),lbound(EXTFORLOC,1),-1
       EXTFORLOC(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +EXTFORLOC(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(FLDSTAR,1),lbound(FLDSTAR,1),-1
+      do cp_loop_variable_1 = ubound(FLDSTAR,1),lbound(FLDSTAR,1),-1
       FLDSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDSTAR(cp_loop_variable_1)
       enddo
-       do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
+      do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
       VOL(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +VOL(cp_loop_variable_1)
       enddo
-       UVELLOC%v = theArgFStack(theArgFStackoffset)
+      UVELLOC%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", UVELLOC%v
       theArgFStackoffset = theArgFStackoffset-1
-        GAMMALOC = theArgFStack(theArgFStackoffset)
+      GAMMALOC = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", GAMMALOC
       theArgFStackoffset = theArgFStackoffset-1
-        DELTA_T = theArgFStack(theArgFStackoffset)
+      DELTA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
       theArgFStackoffset = theArgFStackoffset-1
-       do cp_loop_variable_1 = ubound(FLDNEW,1),lbound(FLDNEW,1),-1
+      do cp_loop_variable_1 = ubound(FLDNEW,1),lbound(FLDNEW,1),-1
       FLDNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDNEW(cp_loop_variable_1)%v
       enddo
-       do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
+      do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
       FLDOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
@@ -3695,16 +3690,16 @@ C     +FLDOLD(cp_loop_variable_1)%v
 C original function
 C$OPENAD XXX Template ad_template.f
       IF (UVELLOC%v.GE.0.0D00) THEN
-        DFLDDT(1)%v = ((EXTFORLOC(1)+VOL(1)*GAMMALOC*(FLDSTAR(1)-FLDNOW
-     +(1)%v)+UVELLOC%v*(FLDNOW(3)%v-FLDNOW(1)%v))/VOL(1))
-        DFLDDT(2)%v = ((EXTFORLOC(2)+VOL(2)*GAMMALOC*(FLDSTAR(2)-FLDNOW
-     +(2)%v)+UVELLOC%v*(FLDNOW(1)%v-FLDNOW(2)%v))/VOL(2))
+        DFLDDT(1)%v = ((EXTFORLOC(1)+VOL(1)*GAMMALOC*(FLDSTAR(1)-FLDNOW(
+     +1)%v)+UVELLOC%v*(FLDNOW(3)%v-FLDNOW(1)%v))/VOL(1))
+        DFLDDT(2)%v = ((EXTFORLOC(2)+VOL(2)*GAMMALOC*(FLDSTAR(2)-FLDNOW(
+     +2)%v)+UVELLOC%v*(FLDNOW(1)%v-FLDNOW(2)%v))/VOL(2))
         DFLDDT(3)%v = ((UVELLOC%v*(FLDNOW(2)%v-FLDNOW(3)%v))/VOL(3))
       ELSE
-        DFLDDT(1)%v = ((EXTFORLOC(1)+VOL(1)*GAMMALOC*(FLDSTAR(1)-FLDNOW
-     +(1)%v)-UVELLOC%v*(FLDNOW(2)%v-FLDNOW(1)%v))/VOL(1))
-        DFLDDT(2)%v = ((EXTFORLOC(2)+VOL(2)*GAMMALOC*(FLDSTAR(2)-FLDNOW
-     +(2)%v)-UVELLOC%v*(FLDNOW(3)%v-FLDNOW(2)%v))/VOL(2))
+        DFLDDT(1)%v = ((EXTFORLOC(1)+VOL(1)*GAMMALOC*(FLDSTAR(1)-FLDNOW(
+     +1)%v)-UVELLOC%v*(FLDNOW(2)%v-FLDNOW(1)%v))/VOL(1))
+        DFLDDT(2)%v = ((EXTFORLOC(2)+VOL(2)*GAMMALOC*(FLDSTAR(2)-FLDNOW(
+     +2)%v)-UVELLOC%v*(FLDNOW(3)%v-FLDNOW(2)%v))/VOL(2))
         DFLDDT(3)%v = (-((UVELLOC%v*(FLDNOW(1)%v-FLDNOW(3)%v))/VOL(3)))
       ENDIF
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
@@ -3725,8 +3720,8 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_19 = (FLDSTAR(1)-FLDNOW(1)%v)
         OpenAD_Symbol_16 = (GAMMALOC * OpenAD_Symbol_19)
         OpenAD_Symbol_23 = (FLDNOW(3)%v-FLDNOW(1)%v)
-        OpenAD_Symbol_12 = (EXTFORLOC(1)+VOL(1)*OpenAD_Symbol_16+UVELLO
-     +C%v*OpenAD_Symbol_23)
+        OpenAD_Symbol_12 = (EXTFORLOC(1)+VOL(1)*OpenAD_Symbol_16+UVELLOC
+     +%v*OpenAD_Symbol_23)
         DFLDDT(1)%v = (OpenAD_Symbol_12/VOL(1))
         OpenAD_Symbol_21 = GAMMALOC
         OpenAD_Symbol_18 = VOL(1)
@@ -3746,8 +3741,8 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_33 = (FLDSTAR(2)-FLDNOW(2)%v)
         OpenAD_Symbol_30 = (GAMMALOC * OpenAD_Symbol_33)
         OpenAD_Symbol_37 = (FLDNOW(1)%v-FLDNOW(2)%v)
-        OpenAD_Symbol_26 = (EXTFORLOC(2)+VOL(2)*OpenAD_Symbol_30+UVELLO
-     +C%v*OpenAD_Symbol_37)
+        OpenAD_Symbol_26 = (EXTFORLOC(2)+VOL(2)*OpenAD_Symbol_30+UVELLOC
+     +%v*OpenAD_Symbol_37)
         DFLDDT(2)%v = (OpenAD_Symbol_26/VOL(2))
         OpenAD_Symbol_35 = GAMMALOC
         OpenAD_Symbol_32 = VOL(2)
@@ -3783,8 +3778,8 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_53 = (FLDSTAR(1)-FLDNOW(1)%v)
         OpenAD_Symbol_50 = (GAMMALOC * OpenAD_Symbol_53)
         OpenAD_Symbol_57 = (FLDNOW(2)%v-FLDNOW(1)%v)
-        OpenAD_Symbol_46 = (EXTFORLOC(1)+VOL(1)*OpenAD_Symbol_50-UVELLO
-     +C%v*OpenAD_Symbol_57)
+        OpenAD_Symbol_46 = (EXTFORLOC(1)+VOL(1)*OpenAD_Symbol_50-UVELLOC
+     +%v*OpenAD_Symbol_57)
         DFLDDT(1)%v = (OpenAD_Symbol_46/VOL(1))
         OpenAD_Symbol_55 = GAMMALOC
         OpenAD_Symbol_52 = VOL(1)
@@ -3805,8 +3800,8 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_67 = (FLDSTAR(2)-FLDNOW(2)%v)
         OpenAD_Symbol_64 = (GAMMALOC * OpenAD_Symbol_67)
         OpenAD_Symbol_71 = (FLDNOW(3)%v-FLDNOW(2)%v)
-        OpenAD_Symbol_60 = (EXTFORLOC(2)+VOL(2)*OpenAD_Symbol_64-UVELLO
-     +C%v*OpenAD_Symbol_71)
+        OpenAD_Symbol_60 = (EXTFORLOC(2)+VOL(2)*OpenAD_Symbol_64-UVELLOC
+     +%v*OpenAD_Symbol_71)
         DFLDDT(2)%v = (OpenAD_Symbol_60/VOL(2))
         OpenAD_Symbol_69 = GAMMALOC
         OpenAD_Symbol_66 = VOL(2)
@@ -3860,88 +3855,88 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_140 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_140 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_140 .ne. 0) THEN
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_280 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_281 = double_tape(double_tape_pointer)
-         OpenAD_Symbol_101%d = OpenAD_Symbol_101%d+DFLDDT(3)%d*(OpenAD_S
-     +ymbol_280)
-         UVELLOC%d = UVELLOC%d+DFLDDT(3)%d*(OpenAD_Symbol_281)
-         DFLDDT(3)%d = 0.0d0
-         FLDNOW(3)%d = FLDNOW(3)%d-OpenAD_Symbol_101%d
-         FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_101%d
-         OpenAD_Symbol_101%d = 0.0d0
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_282 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_283 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_284 = double_tape(double_tape_pointer)
-         FLDNOW(2)%d = FLDNOW(2)%d+DFLDDT(2)%d*(OpenAD_Symbol_282)
-         OpenAD_Symbol_98%d = OpenAD_Symbol_98%d+DFLDDT(2)%d*(OpenAD_Sym
-     +bol_283)
-         UVELLOC%d = UVELLOC%d+DFLDDT(2)%d*(OpenAD_Symbol_284)
-         DFLDDT(2)%d = 0.0d0
-         FLDNOW(2)%d = FLDNOW(2)%d-OpenAD_Symbol_98%d
-         FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_98%d
-         OpenAD_Symbol_98%d = 0.0d0
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_285 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_286 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_287 = double_tape(double_tape_pointer)
-         FLDNOW(1)%d = FLDNOW(1)%d+DFLDDT(1)%d*(OpenAD_Symbol_285)
-         OpenAD_Symbol_94%d = OpenAD_Symbol_94%d+DFLDDT(1)%d*(OpenAD_Sym
-     +bol_286)
-         UVELLOC%d = UVELLOC%d+DFLDDT(1)%d*(OpenAD_Symbol_287)
-         DFLDDT(1)%d = 0.0d0
-         FLDNOW(1)%d = FLDNOW(1)%d-OpenAD_Symbol_94%d
-         FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_94%d
-         OpenAD_Symbol_94%d = 0.0d0
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_280 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_281 = double_tape(double_tape_pointer)
+        OpenAD_Symbol_101%d = OpenAD_Symbol_101%d+DFLDDT(3)%d*(OpenAD_Sy
+     +mbol_280)
+        UVELLOC%d = UVELLOC%d+DFLDDT(3)%d*(OpenAD_Symbol_281)
+        DFLDDT(3)%d = 0.0d0
+        FLDNOW(3)%d = FLDNOW(3)%d-OpenAD_Symbol_101%d
+        FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_101%d
+        OpenAD_Symbol_101%d = 0.0d0
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_282 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_283 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_284 = double_tape(double_tape_pointer)
+        FLDNOW(2)%d = FLDNOW(2)%d+DFLDDT(2)%d*(OpenAD_Symbol_282)
+        OpenAD_Symbol_98%d = OpenAD_Symbol_98%d+DFLDDT(2)%d*(OpenAD_Symb
+     +ol_283)
+        UVELLOC%d = UVELLOC%d+DFLDDT(2)%d*(OpenAD_Symbol_284)
+        DFLDDT(2)%d = 0.0d0
+        FLDNOW(2)%d = FLDNOW(2)%d-OpenAD_Symbol_98%d
+        FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_98%d
+        OpenAD_Symbol_98%d = 0.0d0
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_285 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_286 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_287 = double_tape(double_tape_pointer)
+        FLDNOW(1)%d = FLDNOW(1)%d+DFLDDT(1)%d*(OpenAD_Symbol_285)
+        OpenAD_Symbol_94%d = OpenAD_Symbol_94%d+DFLDDT(1)%d*(OpenAD_Symb
+     +ol_286)
+        UVELLOC%d = UVELLOC%d+DFLDDT(1)%d*(OpenAD_Symbol_287)
+        DFLDDT(1)%d = 0.0d0
+        FLDNOW(1)%d = FLDNOW(1)%d-OpenAD_Symbol_94%d
+        FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_94%d
+        OpenAD_Symbol_94%d = 0.0d0
       ELSE
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_288 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_289 = double_tape(double_tape_pointer)
-         OpenAD_Symbol_114%d = OpenAD_Symbol_114%d+DFLDDT(3)%d*(OpenAD_S
-     +ymbol_288)
-         UVELLOC%d = UVELLOC%d+DFLDDT(3)%d*(OpenAD_Symbol_289)
-         DFLDDT(3)%d = 0.0d0
-         FLDNOW(3)%d = FLDNOW(3)%d-OpenAD_Symbol_114%d
-         FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_114%d
-         OpenAD_Symbol_114%d = 0.0d0
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_290 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_291 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_292 = double_tape(double_tape_pointer)
-         FLDNOW(2)%d = FLDNOW(2)%d+DFLDDT(2)%d*(OpenAD_Symbol_290)
-         OpenAD_Symbol_111%d = OpenAD_Symbol_111%d+DFLDDT(2)%d*(OpenAD_S
-     +ymbol_291)
-         UVELLOC%d = UVELLOC%d+DFLDDT(2)%d*(OpenAD_Symbol_292)
-         DFLDDT(2)%d = 0.0d0
-         FLDNOW(2)%d = FLDNOW(2)%d-OpenAD_Symbol_111%d
-         FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_111%d
-         OpenAD_Symbol_111%d = 0.0d0
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_293 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_294 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_295 = double_tape(double_tape_pointer)
-         FLDNOW(1)%d = FLDNOW(1)%d+DFLDDT(1)%d*(OpenAD_Symbol_293)
-         OpenAD_Symbol_106%d = OpenAD_Symbol_106%d+DFLDDT(1)%d*(OpenAD_S
-     +ymbol_294)
-         UVELLOC%d = UVELLOC%d+DFLDDT(1)%d*(OpenAD_Symbol_295)
-         DFLDDT(1)%d = 0.0d0
-         FLDNOW(1)%d = FLDNOW(1)%d-OpenAD_Symbol_106%d
-         FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_106%d
-         OpenAD_Symbol_106%d = 0.0d0
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_288 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_289 = double_tape(double_tape_pointer)
+        OpenAD_Symbol_114%d = OpenAD_Symbol_114%d+DFLDDT(3)%d*(OpenAD_Sy
+     +mbol_288)
+        UVELLOC%d = UVELLOC%d+DFLDDT(3)%d*(OpenAD_Symbol_289)
+        DFLDDT(3)%d = 0.0d0
+        FLDNOW(3)%d = FLDNOW(3)%d-OpenAD_Symbol_114%d
+        FLDNOW(1)%d = FLDNOW(1)%d+OpenAD_Symbol_114%d
+        OpenAD_Symbol_114%d = 0.0d0
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_290 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_291 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_292 = double_tape(double_tape_pointer)
+        FLDNOW(2)%d = FLDNOW(2)%d+DFLDDT(2)%d*(OpenAD_Symbol_290)
+        OpenAD_Symbol_111%d = OpenAD_Symbol_111%d+DFLDDT(2)%d*(OpenAD_Sy
+     +mbol_291)
+        UVELLOC%d = UVELLOC%d+DFLDDT(2)%d*(OpenAD_Symbol_292)
+        DFLDDT(2)%d = 0.0d0
+        FLDNOW(2)%d = FLDNOW(2)%d-OpenAD_Symbol_111%d
+        FLDNOW(3)%d = FLDNOW(3)%d+OpenAD_Symbol_111%d
+        OpenAD_Symbol_111%d = 0.0d0
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_293 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_294 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_295 = double_tape(double_tape_pointer)
+        FLDNOW(1)%d = FLDNOW(1)%d+DFLDDT(1)%d*(OpenAD_Symbol_293)
+        OpenAD_Symbol_106%d = OpenAD_Symbol_106%d+DFLDDT(1)%d*(OpenAD_Sy
+     +mbol_294)
+        UVELLOC%d = UVELLOC%d+DFLDDT(1)%d*(OpenAD_Symbol_295)
+        DFLDDT(1)%d = 0.0d0
+        FLDNOW(1)%d = FLDNOW(1)%d-OpenAD_Symbol_106%d
+        FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_Symbol_106%d
+        OpenAD_Symbol_106%d = 0.0d0
       ENDIF
 
 C adjoint end

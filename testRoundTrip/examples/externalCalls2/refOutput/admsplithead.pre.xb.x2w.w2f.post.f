@@ -121,15 +121,15 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_4 = double_tape(double_tape_pointer)
-       T%d = T%d+Y%d*(OpenAD_Symbol_3)
-       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_4)
-       Y%d = 0.0d0
-       X(1)%d = X(1)%d+T%d
-       T%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+      T%d = T%d+Y%d*(OpenAD_Symbol_3)
+      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_4)
+      Y%d = 0.0d0
+      X(1)%d = X(1)%d+T%d
+      T%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -244,8 +244,8 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       I = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      I = integer_tape(integer_tape_pointer)
       CALL foo(X,Y(I))
 
           end if 

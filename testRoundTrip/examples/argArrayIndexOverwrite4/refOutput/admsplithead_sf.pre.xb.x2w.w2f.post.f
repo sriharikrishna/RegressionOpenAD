@@ -113,12 +113,12 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-       OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+A%d*(OpenAD_Symbol_6)
-       A%d = 0.0d0
-       A%d = A%d+OpenAD_Symbol_5%d
-       OpenAD_Symbol_5%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_6 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_5%d = OpenAD_Symbol_5%d+A%d*(OpenAD_Symbol_6)
+      A%d = 0.0d0
+      A%d = A%d+OpenAD_Symbol_5%d
+      OpenAD_Symbol_5%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -242,15 +242,15 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_7 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_8 = double_tape(double_tape_pointer)
-       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_7)
-       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_8)
-       Y%d = 0.0d0
-       integer_tape_pointer = integer_tape_pointer-1
-       K = integer_tape(integer_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_7 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_8 = double_tape(double_tape_pointer)
+      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_7)
+      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_8)
+      Y%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      K = integer_tape(integer_tape_pointer)
       CALL foo(X(K),K)
 
           end if 

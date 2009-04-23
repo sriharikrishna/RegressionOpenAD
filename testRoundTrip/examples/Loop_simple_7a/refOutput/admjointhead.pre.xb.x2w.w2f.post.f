@@ -114,21 +114,21 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_int_scalar(K,theArgIStack,theArgIStackoffset,theArg
-     +IStackSize)
-       call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffs
-     +et,theArgFStackSize)
+      call cp_store_int_scalar(K,theArgIStack,theArgIStackoffset,theArgI
+     +StackSize)
+      call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffse
+     +t,theArgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
+      do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
       enddo
-        K = theArgIStack(theArgIStackoffset)
+      K = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", K, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
 
@@ -177,12 +177,12 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       K = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      K = integer_tape(integer_tape_pointer)
       I = 1 + 1 *((MIN(K, 3) - 1) / 1)
       DO WHILE(I .GE. 1)
-         X(I)%d = X(I)%d+Y(I)%d
-         Y(I)%d = 0.0d0
+        X(I)%d = X(I)%d+Y(I)%d
+        Y(I)%d = 0.0d0
         I = I - 1
       END DO
 

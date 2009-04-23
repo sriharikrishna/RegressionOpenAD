@@ -214,35 +214,35 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_5 = 1
       DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_18 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_19 = double_tape(double_tape_pointer)
-         OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(INT(OpenAD_Symbol_17))%
-     +d*(OpenAD_Symbol_18)
-         X(INT(OpenAD_Symbol_17))%d = X(INT(OpenAD_Symbol_17))%d+Y(INT(O
-     +penAD_Symbol_17))%d*(OpenAD_Symbol_19)
-         Y(INT(OpenAD_Symbol_17))%d = 0.0d0
-         Y(INT(OpenAD_Symbol_17))%d = Y(INT(OpenAD_Symbol_17))%d+OpenAD_
-     +Symbol_3%d
-         OpenAD_Symbol_3%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_18 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_19 = double_tape(double_tape_pointer)
+        OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y(INT(OpenAD_Symbol_17))%d
+     +*(OpenAD_Symbol_18)
+        X(INT(OpenAD_Symbol_17))%d = X(INT(OpenAD_Symbol_17))%d+Y(INT(Op
+     +enAD_Symbol_17))%d*(OpenAD_Symbol_19)
+        Y(INT(OpenAD_Symbol_17))%d = 0.0d0
+        Y(INT(OpenAD_Symbol_17))%d = Y(INT(OpenAD_Symbol_17))%d+OpenAD_S
+     +ymbol_3%d
+        OpenAD_Symbol_3%d = 0.0d0
         OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
       END DO
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_7 = 1
       DO WHILE(INT(OpenAD_Symbol_7) .LE. INT(OpenAD_Symbol_6))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_16 = integer_tape(integer_tape_pointer)
-         X(INT(OpenAD_Symbol_16))%d = X(INT(OpenAD_Symbol_16))%d+Y(INT(O
-     +penAD_Symbol_16))%d
-         Y(INT(OpenAD_Symbol_16))%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_16 = integer_tape(integer_tape_pointer)
+        X(INT(OpenAD_Symbol_16))%d = X(INT(OpenAD_Symbol_16))%d+Y(INT(Op
+     +enAD_Symbol_16))%d
+        Y(INT(OpenAD_Symbol_16))%d = 0.0d0
         OpenAD_Symbol_7 = INT(OpenAD_Symbol_7) + 1
       END DO
 

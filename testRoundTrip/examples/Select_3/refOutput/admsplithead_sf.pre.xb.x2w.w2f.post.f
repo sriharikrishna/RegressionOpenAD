@@ -130,11 +130,11 @@ C$OPENAD XXX Template ad_template.f
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
       IF(OpenAD_Symbol_0 .ne. 0) THEN
-         X(1)%d = X(1)%d+Y(1)%d
-         Y(1)%d = 0.0d0
+        X(1)%d = X(1)%d+Y(1)%d
+        Y(1)%d = 0.0d0
       ENDIF
 
           end if 

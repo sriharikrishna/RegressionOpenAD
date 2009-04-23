@@ -134,17 +134,17 @@ C!! requested inline of 'convert_p2a_matrix' has no defn
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-       T(1,2)%d = T(1,2)%d+Y(1)%d
-       Y(1)%d = 0.0d0
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
+      T(1,2)%d = T(1,2)%d+Y(1)%d
+      Y(1)%d = 0.0d0
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_2 = 1
       DO WHILE(INT(OpenAD_Symbol_2) .LE. INT(OpenAD_Symbol_1))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
-         X(INT(OpenAD_Symbol_7))%d = X(INT(OpenAD_Symbol_7))%d+T(INT(Ope
-     +nAD_Symbol_7),2)%d
-         T(INT(OpenAD_Symbol_7),2)%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
+        X(INT(OpenAD_Symbol_7))%d = X(INT(OpenAD_Symbol_7))%d+T(INT(Open
+     +AD_Symbol_7),2)%d
+        T(INT(OpenAD_Symbol_7),2)%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2) + 1
       END DO
 

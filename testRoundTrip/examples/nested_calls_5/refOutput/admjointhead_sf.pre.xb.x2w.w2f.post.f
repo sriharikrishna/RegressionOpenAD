@@ -167,8 +167,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       I = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      I = integer_tape(integer_tape_pointer)
       CALL foo(X(I),X(I+1),Y(1))
 
 C adjoint end
@@ -295,18 +295,18 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-       call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,the
-     +ArgFStackSize)
-       call cp_store_real_scalar(B%v,theArgFStack,theArgFStackoffset,the
-     +ArgFStackSize)
+      call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,theA
+     +rgFStackSize)
+      call cp_store_real_scalar(B%v,theArgFStack,theArgFStackoffset,theA
+     +rgFStackSize)
 
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-       B%v = theArgFStack(theArgFStackoffset)
+      B%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", B%v
       theArgFStackoffset = theArgFStackoffset-1
-       A%v = theArgFStack(theArgFStackoffset)
+      A%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
       theArgFStackoffset = theArgFStackoffset-1
 
@@ -351,14 +351,14 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_2 = double_tape(double_tape_pointer)
-       double_tape_pointer = double_tape_pointer-1
-       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-       A%d = A%d+C%d*(OpenAD_Symbol_2)
-       A%d = A%d+C%d*(OpenAD_Symbol_3)
-       B%d = B%d+C%d
-       C%d = 0.0d0
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_2 = double_tape(double_tape_pointer)
+      double_tape_pointer = double_tape_pointer-1
+      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+      A%d = A%d+C%d*(OpenAD_Symbol_2)
+      A%d = A%d+C%d*(OpenAD_Symbol_3)
+      B%d = B%d+C%d
+      C%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

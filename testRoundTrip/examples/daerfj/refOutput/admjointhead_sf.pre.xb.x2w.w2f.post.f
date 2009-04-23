@@ -272,30 +272,28 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       integer_tape_pointer = integer_tape_pointer-1
-       OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_18 = 1
       DO WHILE(INT(OpenAD_Symbol_18) .LE. INT(OpenAD_Symbol_17))
-         integer_tape_pointer = integer_tape_pointer-1
-         OpenAD_Symbol_23 = integer_tape(integer_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_25 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_26 = double_tape(double_tape_pointer)
-         double_tape_pointer = double_tape_pointer-1
-         OpenAD_Symbol_27 = double_tape(double_tape_pointer)
-         X(2)%d = X(2)%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol_24
-     +)
-         X(1)%d = X(1)%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol_25
-     +)
-         TEMP2%d = TEMP2%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol_
-     +26)
-         FVEC(INT(OpenAD_Symbol_23))%d = 0.0d0
-         X(3)%d = X(3)%d+TEMP2%d*(OpenAD_Symbol_27)
-         X(4)%d = X(4)%d+TEMP2%d
-         TEMP2%d = 0.0d0
+        integer_tape_pointer = integer_tape_pointer-1
+        OpenAD_Symbol_23 = integer_tape(integer_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_24 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_25 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_26 = double_tape(double_tape_pointer)
+        double_tape_pointer = double_tape_pointer-1
+        OpenAD_Symbol_27 = double_tape(double_tape_pointer)
+        X(2)%d = X(2)%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol_24)
+        X(1)%d = X(1)%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol_25)
+        TEMP2%d = TEMP2%d+FVEC(INT(OpenAD_Symbol_23))%d*(OpenAD_Symbol_2
+     +6)
+        FVEC(INT(OpenAD_Symbol_23))%d = 0.0d0
+        X(3)%d = X(3)%d+TEMP2%d*(OpenAD_Symbol_27)
+        X(4)%d = X(4)%d+TEMP2%d
+        TEMP2%d = 0.0d0
         OpenAD_Symbol_18 = INT(OpenAD_Symbol_18) + 1
       END DO
 

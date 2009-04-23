@@ -312,15 +312,15 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-       T1%d = T1%d+Y%d*(3.0D00)
-       T%d = T%d+Y%d*(2.0D00)
-       Y%d = 0.0d0
+      T1%d = T1%d+Y%d*(3.0D00)
+      T%d = T%d+Y%d*(2.0D00)
+      Y%d = 0.0d0
       CALL foo()
-       T%d = T%d+T1%d*(2.0D00)
-       T1%d = 0.0d0
-       X(2)%d = X(2)%d+T%d
-       X(1)%d = X(1)%d+T%d
-       T%d = 0.0d0
+      T%d = T%d+T1%d*(2.0D00)
+      T1%d = 0.0d0
+      X(2)%d = X(2)%d+T%d
+      X(1)%d = X(1)%d+T%d
+      T%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
