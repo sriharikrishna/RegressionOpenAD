@@ -66,8 +66,8 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_0
+      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -90,16 +90,16 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_1 = (X%v*2.0D00)
-      Y%v = OpenAD_Symbol_1
+      OpenAD_Symbol_0 = (X%v*2.0D00)
+      Y%v = OpenAD_Symbol_0
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Y%d*(2.0D00)
+      OpenAD_prop_0%d = OpenAD_prop_0%d+Y%d*(2.0D00)
       Y%d = 0.0d0
-      X%d = X%d+OpenAD_Symbol_2%d
-      OpenAD_Symbol_2%d = 0.0d0
+      X%d = X%d+OpenAD_prop_0%d
+      OpenAD_prop_0%d = 0.0d0
 
           end if 
         end subroutine foo

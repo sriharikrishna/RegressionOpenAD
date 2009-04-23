@@ -67,10 +67,10 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
+      INTEGER(w2f__i8) OpenAD_Symbol_0
       INTEGER(w2f__i8) OpenAD_Symbol_1
       INTEGER(w2f__i8) OpenAD_Symbol_10
       INTEGER(w2f__i8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
       INTEGER(w2f__i8) OpenAD_Symbol_2
       INTEGER(w2f__i8) OpenAD_Symbol_3
       INTEGER(w2f__i8) OpenAD_Symbol_4
@@ -88,8 +88,8 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      INTEGER(w2f__i8) OpenAD_Symbol_12
       INTEGER(w2f__i8) OpenAD_Symbol_13
-      INTEGER(w2f__i8) OpenAD_Symbol_14
 
 
           ! checkpointing stacks and offsets
@@ -168,16 +168,16 @@ C$OPENAD XXX Simple loop\t
         DO I = 1, 3, 1
           Y(INT(I))%v = X(I)%v
         END DO
-        OpenAD_Symbol_2 = 1_w2f__i8
-        integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
+        OpenAD_Symbol_1 = 1_w2f__i8
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
         integer_tape_pointer = integer_tape_pointer+1
       ELSE
 C$OPENAD XXX Simple loop\t
         DO I = 1, 3, 1
           Y(INT(I))%v = (X(I)%v*2.0D00)
         END DO
-        OpenAD_Symbol_3 = 0_w2f__i8
-        integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
+        OpenAD_Symbol_2 = 0_w2f__i8
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
 
@@ -197,8 +197,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
-      OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
-      IF(OpenAD_Symbol_1 .ne. 0) THEN
+      OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
+      IF(OpenAD_Symbol_0 .ne. 0) THEN
         I = 1 + 1 *((3 - 1) / 1)
         DO WHILE(I .GE. 1)
           X(I)%d = X(I)%d+Y(I)%d

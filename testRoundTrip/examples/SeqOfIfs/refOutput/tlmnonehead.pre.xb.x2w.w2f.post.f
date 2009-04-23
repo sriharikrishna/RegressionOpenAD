@@ -7,7 +7,7 @@
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_0
+      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -38,7 +38,7 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(Y(2),X(1))
       ELSE
         Y(2)%v = Y(1)%v
-        CALL setderiv(OpenAD_Symbol_0,Y(1))
-        CALL setderiv(Y(2),OpenAD_Symbol_0)
+        CALL setderiv(OpenAD_prop_0,Y(1))
+        CALL setderiv(Y(2),OpenAD_prop_0)
       ENDIF
       END SUBROUTINE

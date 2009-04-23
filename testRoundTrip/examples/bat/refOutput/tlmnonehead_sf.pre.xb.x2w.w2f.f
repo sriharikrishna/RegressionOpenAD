@@ -14,18 +14,18 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_10
-      REAL(w2f__8) OpenAD_Symbol_11
-      REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_10
+      REAL(w2f__8) OpenAD_lin_11
+      REAL(w2f__8) OpenAD_lin_12
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_9
 C
 C     **** Parameters and Result ****
 C
@@ -47,35 +47,35 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(T1) = (__value__(X(1)) / __value__(X(2)))
-      OpenAD_Symbol_0 = (INT(1_w2f__i8) / __value__(X(2)))
-      OpenAD_Symbol_1 = (-(__value__(X(1)) /(__value__(X(2)) *
-     >  __value__(X(2)))))
+      OpenAD_lin_0 = (INT(1_w2f__i8) / __value__(X(2)))
+      OpenAD_lin_1 = (-(__value__(X(1)) /(__value__(X(2)) * __value__(X
+     > (2)))))
       __value__(T2) = (__value__(X(3)) * __value__(X(4)))
-      OpenAD_Symbol_2 = __value__(X(4))
-      OpenAD_Symbol_3 = __value__(X(3))
+      OpenAD_lin_2 = __value__(X(4))
+      OpenAD_lin_3 = __value__(X(3))
       __value__(T3) = (__value__(T1) * __value__(T2))
-      OpenAD_Symbol_4 = __value__(T2)
-      OpenAD_Symbol_5 = __value__(T1)
+      OpenAD_lin_4 = __value__(T2)
+      OpenAD_lin_5 = __value__(T1)
       __value__(Y(1)) = (__value__(T1) * __value__(T3))
-      OpenAD_Symbol_6 = __value__(T3)
-      OpenAD_Symbol_7 = __value__(T1)
-      CALL sax(OpenAD_Symbol_0, __deriv__(X(1)), __deriv__(T1))
-      CALL saxpy(OpenAD_Symbol_1, __deriv__(X(2)), __deriv__(T1))
-      CALL sax(OpenAD_Symbol_2, __deriv__(X(3)), __deriv__(T2))
-      CALL saxpy(OpenAD_Symbol_3, __deriv__(X(4)), __deriv__(T2))
-      CALL sax(OpenAD_Symbol_4, __deriv__(T1), __deriv__(T3))
-      CALL saxpy(OpenAD_Symbol_5, __deriv__(T2), __deriv__(T3))
-      CALL sax(OpenAD_Symbol_6, __deriv__(T1), __deriv__(Y(1)))
-      CALL saxpy(OpenAD_Symbol_7, __deriv__(T3), __deriv__(Y(1)))
+      OpenAD_lin_6 = __value__(T3)
+      OpenAD_lin_7 = __value__(T1)
+      CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(T1))
+      CALL saxpy(OpenAD_lin_1, __deriv__(X(2)), __deriv__(T1))
+      CALL sax(OpenAD_lin_2, __deriv__(X(3)), __deriv__(T2))
+      CALL saxpy(OpenAD_lin_3, __deriv__(X(4)), __deriv__(T2))
+      CALL sax(OpenAD_lin_4, __deriv__(T1), __deriv__(T3))
+      CALL saxpy(OpenAD_lin_5, __deriv__(T2), __deriv__(T3))
+      CALL sax(OpenAD_lin_6, __deriv__(T1), __deriv__(Y(1)))
+      CALL saxpy(OpenAD_lin_7, __deriv__(T3), __deriv__(Y(1)))
       __value__(Y(2)) = (1.0D00 / __value__(T3))
-      OpenAD_Symbol_9 = (-(1.0D00 /(__value__(T3) * __value__(T3))))
-      CALL sax(OpenAD_Symbol_9, __deriv__(T3), __deriv__(Y(2)))
+      OpenAD_lin_9 = (-(1.0D00 /(__value__(T3) * __value__(T3))))
+      CALL sax(OpenAD_lin_9, __deriv__(T3), __deriv__(Y(2)))
       __value__(Y(3)) = SIN(__value__(T3))
-      OpenAD_Symbol_10 = COS(__value__(T3))
-      CALL sax(OpenAD_Symbol_10, __deriv__(T3), __deriv__(Y(3)))
+      OpenAD_lin_10 = COS(__value__(T3))
+      CALL sax(OpenAD_lin_10, __deriv__(T3), __deriv__(Y(3)))
       __value__(Y(4)) = (__value__(T2) * __value__(T3))
-      OpenAD_Symbol_11 = __value__(T3)
-      OpenAD_Symbol_12 = __value__(T2)
-      CALL sax(OpenAD_Symbol_11, __deriv__(T2), __deriv__(Y(4)))
-      CALL saxpy(OpenAD_Symbol_12, __deriv__(T3), __deriv__(Y(4)))
+      OpenAD_lin_11 = __value__(T3)
+      OpenAD_lin_12 = __value__(T2)
+      CALL sax(OpenAD_lin_11, __deriv__(T2), __deriv__(Y(4)))
+      CALL saxpy(OpenAD_lin_12, __deriv__(T3), __deriv__(Y(4)))
       END SUBROUTINE

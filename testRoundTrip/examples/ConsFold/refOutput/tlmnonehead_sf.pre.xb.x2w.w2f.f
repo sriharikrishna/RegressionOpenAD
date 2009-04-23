@@ -14,8 +14,8 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_lin_6
 C
 C     **** Parameters and Result ****
 C
@@ -49,8 +49,8 @@ C$OPENAD XXX Template ad_template.f
       __value__(T6) = (__value__(T5) + 3.0D00)
       __value__(T7) = (__value__(T6) +(-9.0D00))
       __value__(Y1) = EXP(__value__(T7))
-      OpenAD_Symbol_6 = EXP(__value__(T7))
+      OpenAD_lin_6 = EXP(__value__(T7))
       __value__(Y(1)) = __value__(Y1)
-      OpenAD_Symbol_7 = (1.0D00 * OpenAD_Symbol_6)
-      CALL sax(OpenAD_Symbol_7, __deriv__(X(1)), __deriv__(Y(1)))
+      OpenAD_acc_0 = (1.0D00 * OpenAD_lin_6)
+      CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE

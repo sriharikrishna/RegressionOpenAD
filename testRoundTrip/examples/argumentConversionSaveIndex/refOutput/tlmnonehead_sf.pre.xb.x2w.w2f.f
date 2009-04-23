@@ -28,8 +28,8 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_3
-      TYPE (OpenADTy_active) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_2
+      TYPE (OpenADTy_active) OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -37,11 +37,11 @@ C
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_3 = (__value__(P) * 2.0D00)
-      __value__(P) = OpenAD_Symbol_3
+      OpenAD_Symbol_2 = (__value__(P) * 2.0D00)
+      __value__(P) = OpenAD_Symbol_2
       I = (I + 1)
-      CALL setderiv(__deriv__(OpenAD_Symbol_4), __deriv__(P))
-      CALL sax(2.0D00, __deriv__(OpenAD_Symbol_4), __deriv__(P))
+      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(P))
+      CALL sax(2.0D00, __deriv__(OpenAD_prop_0), __deriv__(P))
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

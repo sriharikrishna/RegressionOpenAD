@@ -14,7 +14,7 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      TYPE (OpenADTy_active) OpenAD_Symbol_2
+      TYPE (OpenADTy_active) OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -23,8 +23,8 @@ C
 C     **** Statements ****
 C
       __value__(X) = (__value__(X) + 1.0D00)
-      CALL setderiv(__deriv__(OpenAD_Symbol_2), __deriv__(X))
-      CALL setderiv(__deriv__(X), __deriv__(OpenAD_Symbol_2))
+      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(X))
+      CALL setderiv(__deriv__(X), __deriv__(OpenAD_prop_0))
       END SUBROUTINE
 
       SUBROUTINE bar(X)
@@ -33,7 +33,7 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      TYPE (OpenADTy_active) OpenAD_Symbol_3
+      TYPE (OpenADTy_active) OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -42,8 +42,8 @@ C
 C     **** Statements ****
 C
       __value__(X(1)) = (__value__(X(1)) + 1.0D00)
-      CALL setderiv(__deriv__(OpenAD_Symbol_3), __deriv__(X(1)))
-      CALL setderiv(__deriv__(X(1)), __deriv__(OpenAD_Symbol_3))
+      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(X(1)))
+      CALL setderiv(__deriv__(X(1)), __deriv__(OpenAD_prop_1))
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

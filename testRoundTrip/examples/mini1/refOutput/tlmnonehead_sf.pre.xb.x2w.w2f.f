@@ -14,12 +14,12 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -36,13 +36,13 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_0 = (__value__(X) * __value__(X))
-      __value__(Y) = SIN(OpenAD_Symbol_0)
-      OpenAD_Symbol_2 = __value__(X)
-      OpenAD_Symbol_3 = __value__(X)
-      OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_4 = (OpenAD_Symbol_2 * OpenAD_Symbol_1)
-      OpenAD_Symbol_5 = (OpenAD_Symbol_3 * OpenAD_Symbol_1)
-      CALL sax(OpenAD_Symbol_4, __deriv__(X), __deriv__(Y))
-      CALL saxpy(OpenAD_Symbol_5, __deriv__(X), __deriv__(Y))
+      OpenAD_tmp_0 = (__value__(X) * __value__(X))
+      __value__(Y) = SIN(OpenAD_tmp_0)
+      OpenAD_lin_1 = __value__(X)
+      OpenAD_lin_2 = __value__(X)
+      OpenAD_lin_0 = COS(OpenAD_tmp_0)
+      OpenAD_acc_0 = (OpenAD_lin_1 * OpenAD_lin_0)
+      OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_0)
+      CALL sax(OpenAD_acc_0, __deriv__(X), __deriv__(Y))
+      CALL saxpy(OpenAD_acc_1, __deriv__(X), __deriv__(Y))
       END SUBROUTINE

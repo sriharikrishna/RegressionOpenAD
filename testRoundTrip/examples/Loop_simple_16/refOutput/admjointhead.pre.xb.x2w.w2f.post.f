@@ -68,12 +68,12 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      type(active) :: OpenAD_Symbol_3
-      INTEGER(w2f__i8) OpenAD_Symbol_4
-      INTEGER(w2f__i8) OpenAD_Symbol_5
-      INTEGER(w2f__i8) OpenAD_Symbol_6
+      INTEGER(w2f__i8) OpenAD_Symbol_1
+      INTEGER(w2f__i8) OpenAD_Symbol_2
+      INTEGER(w2f__i8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -86,9 +86,9 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      INTEGER(w2f__i8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_9
+      INTEGER(w2f__i8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_6
 
 
           ! checkpointing stacks and offsets
@@ -180,13 +180,13 @@ C taping
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = L, U, S
-        OpenAD_Symbol_2 = (X(I)%v*Y%v)
-        OpenAD_Symbol_0 = Y%v
-        OpenAD_Symbol_1 = X(I)%v
-        Y%v = OpenAD_Symbol_2
-        double_tape(double_tape_pointer) = OpenAD_Symbol_0
+        OpenAD_Symbol_0 = (X(I)%v*Y%v)
+        OpenAD_lin_0 = Y%v
+        OpenAD_lin_1 = X(I)%v
+        Y%v = OpenAD_Symbol_0
+        double_tape(double_tape_pointer) = OpenAD_lin_0
         double_tape_pointer = double_tape_pointer+1
-        double_tape(double_tape_pointer) = OpenAD_Symbol_1
+        double_tape(double_tape_pointer) = OpenAD_lin_1
         double_tape_pointer = double_tape_pointer+1
       END DO
       integer_tape(integer_tape_pointer) = L
@@ -221,14 +221,14 @@ C adjoint
       DO WHILE(((S .GT. 0.0D00) .AND.(I .GE. L)) .OR.((S .LT. 0.0D00)
      >  .AND.(I .LE. L)))
         double_tape_pointer = double_tape_pointer-1
-        OpenAD_Symbol_8 = double_tape(double_tape_pointer)
+        OpenAD_Symbol_5 = double_tape(double_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
-        OpenAD_Symbol_9 = double_tape(double_tape_pointer)
-        OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+Y%d*(OpenAD_Symbol_8)
-        X(I)%d = X(I)%d+Y%d*(OpenAD_Symbol_9)
+        OpenAD_Symbol_6 = double_tape(double_tape_pointer)
+        OpenAD_prop_0%d = OpenAD_prop_0%d+Y%d*(OpenAD_Symbol_5)
+        X(I)%d = X(I)%d+Y%d*(OpenAD_Symbol_6)
         Y%d = 0.0d0
-        Y%d = Y%d+OpenAD_Symbol_3%d
-        OpenAD_Symbol_3%d = 0.0d0
+        Y%d = Y%d+OpenAD_prop_0%d
+        OpenAD_prop_0%d = 0.0d0
         I = I - S
       END DO
 

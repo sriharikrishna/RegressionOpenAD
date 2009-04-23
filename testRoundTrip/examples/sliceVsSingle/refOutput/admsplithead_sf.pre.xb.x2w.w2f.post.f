@@ -75,7 +75,7 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_2
+      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -100,10 +100,10 @@ C
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+X%d
+      OpenAD_prop_0%d = OpenAD_prop_0%d+X%d
       X%d = 0.0d0
-      X%d = X%d+OpenAD_Symbol_2%d
-      OpenAD_Symbol_2%d = 0.0d0
+      X%d = X%d+OpenAD_prop_0%d
+      OpenAD_prop_0%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -174,7 +174,7 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_3
+      type(active) :: OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -199,10 +199,10 @@ C
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      OpenAD_Symbol_3%d = OpenAD_Symbol_3%d+X(1)%d
+      OpenAD_prop_1%d = OpenAD_prop_1%d+X(1)%d
       X(1)%d = 0.0d0
-      X(1)%d = X(1)%d+OpenAD_Symbol_3%d
-      OpenAD_Symbol_3%d = 0.0d0
+      X(1)%d = X(1)%d+OpenAD_prop_1%d
+      OpenAD_prop_1%d = 0.0d0
 
           end if 
         end subroutine bar

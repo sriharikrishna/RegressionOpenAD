@@ -66,8 +66,8 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_Symbol_0
+      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -89,16 +89,16 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_1 = (A%v*2.0D00)
-      A%v = OpenAD_Symbol_1
+      OpenAD_Symbol_0 = (A%v*2.0D00)
+      A%v = OpenAD_Symbol_0
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      OpenAD_Symbol_7%d = OpenAD_Symbol_7%d+A%d*(2.0D00)
+      OpenAD_prop_0%d = OpenAD_prop_0%d+A%d*(2.0D00)
       A%d = 0.0d0
-      A%d = A%d+OpenAD_Symbol_7%d
-      OpenAD_Symbol_7%d = 0.0d0
+      A%d = A%d+OpenAD_prop_0%d
+      OpenAD_prop_0%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -169,9 +169,9 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      type(active) :: OpenAD_Symbol_8
+      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_lin_2
+      type(active) :: OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -180,7 +180,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_15
+      REAL(w2f__8) OpenAD_Symbol_8
 
 
           integer iaddr
@@ -200,21 +200,21 @@ C$OPENAD XXX Template ad_template.f
 ! taping
 C$OPENAD XXX Template ad_template.f
       K = (K * 2)
-      OpenAD_Symbol_4 = (K*A%v)
-      OpenAD_Symbol_3 = K
-      A%v = OpenAD_Symbol_4
-      double_tape(double_tape_pointer) = OpenAD_Symbol_3
+      OpenAD_Symbol_1 = (K*A%v)
+      OpenAD_lin_2 = K
+      A%v = OpenAD_Symbol_1
+      double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-      OpenAD_Symbol_8%d = OpenAD_Symbol_8%d+A%d*(OpenAD_Symbol_15)
+      OpenAD_Symbol_8 = double_tape(double_tape_pointer)
+      OpenAD_prop_1%d = OpenAD_prop_1%d+A%d*(OpenAD_Symbol_8)
       A%d = 0.0d0
-      A%d = A%d+OpenAD_Symbol_8%d
-      OpenAD_Symbol_8%d = 0.0d0
+      A%d = A%d+OpenAD_prop_1%d
+      OpenAD_prop_1%d = 0.0d0
 
           end if 
         end subroutine bar
@@ -285,14 +285,14 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_10
-      INTEGER(w2f__i8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_13
-      INTEGER(w2f__i8) OpenAD_Symbol_14
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
-      INTEGER(w2f__i8) OpenAD_Symbol_9
+      INTEGER(w2f__i8) OpenAD_Symbol_2
+      INTEGER(w2f__i8) OpenAD_Symbol_3
+      INTEGER(w2f__i8) OpenAD_Symbol_4
+      INTEGER(w2f__i8) OpenAD_Symbol_5
+      INTEGER(w2f__i8) OpenAD_Symbol_6
+      INTEGER(w2f__i8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
 C
 C     **** Parameters and Result ****
 C
@@ -305,8 +305,8 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
-      REAL(w2f__8) OpenAD_Symbol_16
-      REAL(w2f__8) OpenAD_Symbol_17
+      REAL(w2f__8) OpenAD_Symbol_10
+      REAL(w2f__8) OpenAD_Symbol_9
 
 
           integer iaddr
@@ -335,7 +335,7 @@ C$OPENAD XXX Template ad_template.f
 ! taping
 C$OPENAD XXX Template ad_template.f
       I = 1
-      OpenAD_Symbol_11 = 0_w2f__i8
+      OpenAD_Symbol_4 = 0_w2f__i8
       DO J = 1, 2, 1
         CALL foo(X(J))
         integer_tape(integer_tape_pointer) = J
@@ -343,39 +343,39 @@ C$OPENAD XXX Template ad_template.f
         CALL bar(X(J),I)
         integer_tape(integer_tape_pointer) = J
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_11 = (INT(OpenAD_Symbol_11) + INT(1_w2f__i8))
+        OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4) + INT(1_w2f__i8))
       END DO
-      integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
       Y%v = (X(1)%v*X(2)%v)
-      OpenAD_Symbol_5 = X(2)%v
-      OpenAD_Symbol_6 = X(1)%v
-      double_tape(double_tape_pointer) = OpenAD_Symbol_5
+      OpenAD_lin_3 = X(2)%v
+      OpenAD_lin_4 = X(1)%v
+      double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_6
+      double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_16 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_9 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_17 = double_tape(double_tape_pointer)
-      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_16)
-      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_17)
+      OpenAD_Symbol_10 = double_tape(double_tape_pointer)
+      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_9)
+      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_10)
       Y%d = 0.0d0
       integer_tape_pointer = integer_tape_pointer-1
-      OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
-      OpenAD_Symbol_10 = 1
-      DO WHILE(INT(OpenAD_Symbol_10) .LE. INT(OpenAD_Symbol_9))
+      OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
+      OpenAD_Symbol_3 = 1
+      DO WHILE(INT(OpenAD_Symbol_3) .LE. INT(OpenAD_Symbol_2))
         integer_tape_pointer = integer_tape_pointer-1
         J = integer_tape(integer_tape_pointer)
         CALL bar(X(J),I)
         integer_tape_pointer = integer_tape_pointer-1
         J = integer_tape(integer_tape_pointer)
         CALL foo(X(J))
-        OpenAD_Symbol_10 = INT(OpenAD_Symbol_10) + 1
+        OpenAD_Symbol_3 = INT(OpenAD_Symbol_3) + 1
       END DO
 
           end if 

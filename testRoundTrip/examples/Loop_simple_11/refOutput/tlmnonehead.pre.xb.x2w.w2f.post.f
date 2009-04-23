@@ -8,10 +8,10 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      type(active) :: OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      type(active) :: OpenAD_prop_0
+      type(active) :: OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -36,17 +36,17 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(Y(1))
       DO I = 1, 2, 1
         IF (X(1)%v.GE.1.0D00) THEN
-          OpenAD_Symbol_2 = (X(1)%v*Y(1)%v)
-          OpenAD_Symbol_0 = Y(1)%v
-          OpenAD_Symbol_1 = X(1)%v
-          Y(1)%v = OpenAD_Symbol_2
-          CALL setderiv(OpenAD_Symbol_3,Y(1))
-          CALL sax(OpenAD_Symbol_0,X(1),Y(1))
-          CALL saxpy(OpenAD_Symbol_1,OpenAD_Symbol_3,Y(1))
+          OpenAD_Symbol_0 = (X(1)%v*Y(1)%v)
+          OpenAD_lin_0 = Y(1)%v
+          OpenAD_lin_1 = X(1)%v
+          Y(1)%v = OpenAD_Symbol_0
+          CALL setderiv(OpenAD_prop_0,Y(1))
+          CALL sax(OpenAD_lin_0,X(1),Y(1))
+          CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y(1))
         ELSE
           Y(1)%v = (Y(1)%v-X(1)%v)
-          CALL setderiv(OpenAD_Symbol_4,Y(1))
-          CALL setderiv(Y(1),OpenAD_Symbol_4)
+          CALL setderiv(OpenAD_prop_1,Y(1))
+          CALL setderiv(Y(1),OpenAD_prop_1)
           CALL dec_deriv(Y(1),X(1))
         ENDIF
       END DO

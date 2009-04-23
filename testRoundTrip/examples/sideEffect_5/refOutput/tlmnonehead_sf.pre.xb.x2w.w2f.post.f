@@ -21,8 +21,8 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_0
+      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -37,10 +37,10 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, (N + 1), 1
-        OpenAD_Symbol_1 = (A(I)%v*2.0D00)
-        A(INT(I))%v = OpenAD_Symbol_1
-        CALL setderiv(OpenAD_Symbol_2,A(I))
-        CALL sax(2.0D00,OpenAD_Symbol_2,A(I))
+        OpenAD_Symbol_0 = (A(I)%v*2.0D00)
+        A(INT(I))%v = OpenAD_Symbol_0
+        CALL setderiv(OpenAD_prop_0,A(I))
+        CALL sax(2.0D00,OpenAD_prop_0,A(I))
       END DO
       END SUBROUTINE
 
@@ -52,7 +52,7 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      type(active) :: OpenAD_Symbol_3
+      type(active) :: OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -80,8 +80,8 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(Y(1))
       DO I = 1, 3, 1
         Y(1)%v = (X(I)%v+Y(1)%v)
-        CALL setderiv(OpenAD_Symbol_3,Y(1))
+        CALL setderiv(OpenAD_prop_1,Y(1))
         CALL setderiv(Y(1),X(I))
-        CALL inc_deriv(Y(1),OpenAD_Symbol_3)
+        CALL inc_deriv(Y(1),OpenAD_prop_1)
       END DO
       END SUBROUTINE

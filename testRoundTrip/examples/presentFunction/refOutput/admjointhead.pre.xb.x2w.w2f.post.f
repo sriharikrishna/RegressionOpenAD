@@ -68,26 +68,26 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
+      INTEGER(w2f__i8) OpenAD_Symbol_1
       INTEGER(w2f__i8) OpenAD_Symbol_10
       INTEGER(w2f__i8) OpenAD_Symbol_11
       INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_13
-      INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
-      INTEGER(w2f__i8) OpenAD_Symbol_17
-      INTEGER(w2f__i8) OpenAD_Symbol_18
-      INTEGER(w2f__i8) OpenAD_Symbol_19
-      REAL(w2f__8) OpenAD_Symbol_2
-      INTEGER(w2f__i8) OpenAD_Symbol_20
-      INTEGER(w2f__i8) OpenAD_Symbol_21
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      type(active) :: OpenAD_Symbol_9
+      INTEGER(w2f__i8) OpenAD_Symbol_2
+      INTEGER(w2f__i8) OpenAD_Symbol_3
+      INTEGER(w2f__i8) OpenAD_Symbol_4
+      INTEGER(w2f__i8) OpenAD_Symbol_5
+      INTEGER(w2f__i8) OpenAD_Symbol_6
+      INTEGER(w2f__i8) OpenAD_Symbol_7
+      INTEGER(w2f__i8) OpenAD_Symbol_8
+      INTEGER(w2f__i8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      type(active) :: OpenAD_prop_0
+      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -98,9 +98,9 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_22
-      REAL(w2f__8) OpenAD_Symbol_23
-      REAL(w2f__8) OpenAD_Symbol_24
+      REAL(w2f__8) OpenAD_Symbol_13
+      REAL(w2f__8) OpenAD_Symbol_14
+      REAL(w2f__8) OpenAD_Symbol_15
 
 
           ! checkpointing stacks and offsets
@@ -182,36 +182,36 @@ C taping
 C$OPENAD XXX Template ad_template.f
       IF (PRESENT(OPTARG)) THEN
         IF (OPTARG%v.LE.2.0D00) THEN
-          OpenAD_Symbol_0 = (OPTARG%v*OUTARG%v)
-          OpenAD_Symbol_5 = (REQARG%v*OpenAD_Symbol_0)
-          OpenAD_Symbol_1 = OpenAD_Symbol_0
-          OpenAD_Symbol_3 = OUTARG%v
-          OpenAD_Symbol_4 = OPTARG%v
-          OpenAD_Symbol_2 = REQARG%v
-          OUTARG%v = OpenAD_Symbol_5
-          OpenAD_Symbol_7 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
-          OpenAD_Symbol_8 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
-          double_tape(double_tape_pointer) = OpenAD_Symbol_1
+          OpenAD_tmp_0 = (OPTARG%v*OUTARG%v)
+          OpenAD_Symbol_0 = (REQARG%v*OpenAD_tmp_0)
+          OpenAD_lin_0 = OpenAD_tmp_0
+          OpenAD_lin_2 = OUTARG%v
+          OpenAD_lin_3 = OPTARG%v
+          OpenAD_lin_1 = REQARG%v
+          OUTARG%v = OpenAD_Symbol_0
+          OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
+          OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
+          double_tape(double_tape_pointer) = OpenAD_lin_0
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_7
+          double_tape(double_tape_pointer) = OpenAD_acc_0
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_Symbol_8
+          double_tape(double_tape_pointer) = OpenAD_acc_1
           double_tape_pointer = double_tape_pointer+1
-          OpenAD_Symbol_12 = 1_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_12
+          OpenAD_Symbol_3 = 1_w2f__i8
+          integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
           integer_tape_pointer = integer_tape_pointer+1
         ELSE
-          OpenAD_Symbol_13 = 0_w2f__i8
-          integer_tape(integer_tape_pointer) = OpenAD_Symbol_13
+          OpenAD_Symbol_4 = 0_w2f__i8
+          integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
-        OpenAD_Symbol_15 = 1_w2f__i8
-        integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
+        OpenAD_Symbol_6 = 1_w2f__i8
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
         integer_tape_pointer = integer_tape_pointer+1
       ELSE
         OUTARG%v = REQARG%v
-        OpenAD_Symbol_14 = 0_w2f__i8
-        integer_tape(integer_tape_pointer) = OpenAD_Symbol_14
+        OpenAD_Symbol_5 = 0_w2f__i8
+        integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
 
@@ -231,24 +231,23 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
-      OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
-      IF(OpenAD_Symbol_10 .ne. 0) THEN
+      OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
+      IF(OpenAD_Symbol_1 .ne. 0) THEN
         integer_tape_pointer = integer_tape_pointer-1
-        OpenAD_Symbol_11 = integer_tape(integer_tape_pointer)
-        IF(OpenAD_Symbol_11 .ne. 0) THEN
+        OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
+        IF(OpenAD_Symbol_2 .ne. 0) THEN
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_22 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_13 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_23 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_14 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-          OpenAD_Symbol_9%d = OpenAD_Symbol_9%d+OUTARG%d*(OpenAD_Symbol_
-     +22)
-          OPTARG%d = OPTARG%d+OUTARG%d*(OpenAD_Symbol_23)
-          REQARG%d = REQARG%d+OUTARG%d*(OpenAD_Symbol_24)
+          OpenAD_Symbol_15 = double_tape(double_tape_pointer)
+          OpenAD_prop_0%d = OpenAD_prop_0%d+OUTARG%d*(OpenAD_Symbol_13)
+          OPTARG%d = OPTARG%d+OUTARG%d*(OpenAD_Symbol_14)
+          REQARG%d = REQARG%d+OUTARG%d*(OpenAD_Symbol_15)
           OUTARG%d = 0.0d0
-          OUTARG%d = OUTARG%d+OpenAD_Symbol_9%d
-          OpenAD_Symbol_9%d = 0.0d0
+          OUTARG%d = OUTARG%d+OpenAD_prop_0%d
+          OpenAD_prop_0%d = 0.0d0
         ENDIF
       ELSE
         REQARG%d = REQARG%d+OUTARG%d

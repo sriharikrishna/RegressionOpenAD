@@ -14,7 +14,7 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
+      TYPE (OpenADTy_active) OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -45,7 +45,7 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(__deriv__(Y(2)), __deriv__(X(1)))
       ELSE
         __value__(Y(2)) = __value__(Y(1))
-        CALL setderiv(__deriv__(OpenAD_Symbol_0), __deriv__(Y(1)))
-        CALL setderiv(__deriv__(Y(2)), __deriv__(OpenAD_Symbol_0))
+        CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y(1)))
+        CALL setderiv(__deriv__(Y(2)), __deriv__(OpenAD_prop_0))
       ENDIF
       END SUBROUTINE

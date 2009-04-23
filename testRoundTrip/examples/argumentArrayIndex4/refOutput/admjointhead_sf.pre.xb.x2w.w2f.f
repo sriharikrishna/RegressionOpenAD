@@ -77,10 +77,10 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       TYPE (OpenADTy_active) OpenAD_Symbol_0
       TYPE (OpenADTy_active) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_Symbol_3
+      TYPE (OpenADTy_active) OpenAD_Symbol_2
       TYPE (OpenADTy_active) OpenAD_Symbol_4
-      TYPE (OpenADTy_active) OpenAD_Symbol_5
-      TYPE (OpenADTy_active) OpenAD_Symbol_7
+      TYPE (OpenADTy_active) OpenAD_prop_0
+      TYPE (OpenADTy_active) OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -154,28 +154,28 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(L)
-      CALL foo(__deriv__(OpenAD_Symbol_5), __deriv__(Q(L)))
+      CALL foo(__deriv__(OpenAD_Symbol_2), __deriv__(Q(L)))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(L)
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(K)
-      CALL foo(__deriv__(OpenAD_Symbol_7), __deriv__(Q(L)))
+      CALL foo(__deriv__(OpenAD_Symbol_4), __deriv__(Q(L)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Y), __deriv__(OpenAD_Symbol_4))
+      CALL IncDeriv(__deriv__(Y), __deriv__(OpenAD_prop_1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(OpenAD_Symbol_4), __deriv__(Q(1)))
+      CALL IncDeriv(__deriv__(OpenAD_prop_1), __deriv__(Q(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(OpenAD_Symbol_4))
+      CALL ZeroDeriv(__deriv__(OpenAD_prop_1))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Q(1)), __deriv__(OpenAD_Symbol_3))
+      CALL IncDeriv(__deriv__(Q(1)), __deriv__(OpenAD_prop_0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Q(1)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(OpenAD_Symbol_3), __deriv__(Y))
+      CALL IncDeriv(__deriv__(OpenAD_prop_0), __deriv__(Y))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(OpenAD_Symbol_3))
+      CALL ZeroDeriv(__deriv__(OpenAD_prop_0))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(K)
       CALL foo(__deriv__(X(K)), __deriv__(Y))
@@ -223,28 +223,28 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(L)
-      CALL foo(__deriv__(OpenAD_Symbol_5), __deriv__(Q(L)))
+      CALL foo(__deriv__(OpenAD_Symbol_2), __deriv__(Q(L)))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(L)
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(K)
-      CALL foo(__deriv__(OpenAD_Symbol_7), __deriv__(Q(L)))
+      CALL foo(__deriv__(OpenAD_Symbol_4), __deriv__(Q(L)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Y), __deriv__(OpenAD_Symbol_4))
+      CALL IncDeriv(__deriv__(Y), __deriv__(OpenAD_prop_1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(OpenAD_Symbol_4), __deriv__(Q(1)))
+      CALL IncDeriv(__deriv__(OpenAD_prop_1), __deriv__(Q(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(OpenAD_Symbol_4))
+      CALL ZeroDeriv(__deriv__(OpenAD_prop_1))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Q(1)), __deriv__(OpenAD_Symbol_3))
+      CALL IncDeriv(__deriv__(Q(1)), __deriv__(OpenAD_prop_0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Q(1)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(OpenAD_Symbol_3), __deriv__(Y))
+      CALL IncDeriv(__deriv__(OpenAD_prop_0), __deriv__(Y))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(OpenAD_Symbol_3))
+      CALL ZeroDeriv(__deriv__(OpenAD_prop_0))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(K)
       CALL foo(__deriv__(X(K)), __deriv__(Y))

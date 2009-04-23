@@ -83,8 +83,8 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_2
+      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -105,17 +105,17 @@ C
           end if
           if (our_rev_mode%tape) then
 ! taping
-      OpenAD_Symbol_3 = (P%v*2.0D00)
-      P%v = OpenAD_Symbol_3
+      OpenAD_Symbol_2 = (P%v*2.0D00)
+      P%v = OpenAD_Symbol_2
       I = (I + 1)
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      OpenAD_Symbol_4%d = OpenAD_Symbol_4%d+P%d*(2.0D00)
+      OpenAD_prop_0%d = OpenAD_prop_0%d+P%d*(2.0D00)
       P%d = 0.0d0
-      P%d = P%d+OpenAD_Symbol_4%d
-      OpenAD_Symbol_4%d = 0.0d0
+      P%d = P%d+OpenAD_prop_0%d
+      OpenAD_prop_0%d = 0.0d0
 
           end if 
         end subroutine foo
@@ -190,7 +190,7 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
-      type(active) :: OpenAD_Symbol_5
+      type(active) :: OpenAD_Symbol_3
 C
 C     **** Parameters and Result ****
 C
@@ -254,7 +254,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL foo(X(1))
       integer_tape_pointer = integer_tape_pointer-1
       I = integer_tape(integer_tape_pointer)
-      CALL foo(OpenAD_Symbol_5)
+      CALL foo(OpenAD_Symbol_3)
 
           end if 
         end subroutine head

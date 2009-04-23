@@ -239,8 +239,8 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
       type(active) :: OpenAD_Symbol_1
+      type(active) :: OpenAD_Symbol_2
       type(active) :: OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_4
 C
 C     **** Parameters and Result ****
 C
@@ -368,7 +368,7 @@ C adjoint
       L = integer_tape(integer_tape_pointer)
       integer_tape_pointer = integer_tape_pointer-1
       K = integer_tape(integer_tape_pointer)
-      CALL foo(OpenAD_Symbol_3,OpenAD_Symbol_4)
+      CALL foo(OpenAD_Symbol_2,OpenAD_Symbol_3)
       integer_tape_pointer = integer_tape_pointer-1
       K = integer_tape(integer_tape_pointer)
       CALL foo(X(K),Y)

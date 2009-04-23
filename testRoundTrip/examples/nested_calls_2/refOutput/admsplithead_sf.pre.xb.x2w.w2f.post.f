@@ -77,16 +77,16 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_15
-      REAL(w2f__8) OpenAD_Symbol_16
-      type(active) :: OpenAD_Symbol_17
-      type(active) :: OpenAD_Symbol_18
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      type(active) :: OpenAD_prop_0
+      type(active) :: OpenAD_prop_1
+      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -96,10 +96,10 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
-      REAL(w2f__8) OpenAD_Symbol_23
-      REAL(w2f__8) OpenAD_Symbol_24
-      REAL(w2f__8) OpenAD_Symbol_25
-      REAL(w2f__8) OpenAD_Symbol_26
+      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_6
 
 
           integer iaddr
@@ -128,49 +128,49 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Template ad_template.f
       CALL foo(X(1),X(2),Y(1))
       CALL foo(X(1),X(2),Y(1))
-      OpenAD_Symbol_0 = (X(1)%v*X(2)%v)
-      Y(2)%v = SIN(OpenAD_Symbol_0)
-      OpenAD_Symbol_2 = X(2)%v
-      OpenAD_Symbol_3 = X(1)%v
-      OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_15 = (OpenAD_Symbol_2 * OpenAD_Symbol_1)
-      OpenAD_Symbol_16 = (OpenAD_Symbol_3 * OpenAD_Symbol_1)
-      double_tape(double_tape_pointer) = OpenAD_Symbol_15
+      OpenAD_tmp_0 = (X(1)%v*X(2)%v)
+      Y(2)%v = SIN(OpenAD_tmp_0)
+      OpenAD_lin_1 = X(2)%v
+      OpenAD_lin_2 = X(1)%v
+      OpenAD_lin_0 = COS(OpenAD_tmp_0)
+      OpenAD_acc_0 = (OpenAD_lin_1 * OpenAD_lin_0)
+      OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_0)
+      double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_16
+      double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_Symbol_5 = SIN(X(3)%v)
-      OpenAD_Symbol_4 = COS(X(3)%v)
-      Y(3)%v = OpenAD_Symbol_5
-      double_tape(double_tape_pointer) = OpenAD_Symbol_4
+      OpenAD_Symbol_0 = SIN(X(3)%v)
+      OpenAD_lin_3 = COS(X(3)%v)
+      Y(3)%v = OpenAD_Symbol_0
+      double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_Symbol_7 = COS(X(4)%v)
-      OpenAD_Symbol_6 = (-SIN(X(4)%v))
-      Y(4)%v = OpenAD_Symbol_7
-      double_tape(double_tape_pointer) = OpenAD_Symbol_6
+      OpenAD_Symbol_1 = COS(X(4)%v)
+      OpenAD_lin_4 = (-SIN(X(4)%v))
+      Y(4)%v = OpenAD_Symbol_1
+      double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-      OpenAD_Symbol_18%d = OpenAD_Symbol_18%d+Y(4)%d*(OpenAD_Symbol_23)
+      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+      OpenAD_prop_1%d = OpenAD_prop_1%d+Y(4)%d*(OpenAD_Symbol_3)
       Y(4)%d = 0.0d0
-      X(4)%d = X(4)%d+OpenAD_Symbol_18%d
-      OpenAD_Symbol_18%d = 0.0d0
+      X(4)%d = X(4)%d+OpenAD_prop_1%d
+      OpenAD_prop_1%d = 0.0d0
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_24 = double_tape(double_tape_pointer)
-      OpenAD_Symbol_17%d = OpenAD_Symbol_17%d+Y(3)%d*(OpenAD_Symbol_24)
+      OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+      OpenAD_prop_0%d = OpenAD_prop_0%d+Y(3)%d*(OpenAD_Symbol_4)
       Y(3)%d = 0.0d0
-      X(3)%d = X(3)%d+OpenAD_Symbol_17%d
-      OpenAD_Symbol_17%d = 0.0d0
+      X(3)%d = X(3)%d+OpenAD_prop_0%d
+      OpenAD_prop_0%d = 0.0d0
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_25 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_5 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_26 = double_tape(double_tape_pointer)
-      X(2)%d = X(2)%d+Y(2)%d*(OpenAD_Symbol_25)
-      X(1)%d = X(1)%d+Y(2)%d*(OpenAD_Symbol_26)
+      OpenAD_Symbol_6 = double_tape(double_tape_pointer)
+      X(2)%d = X(2)%d+Y(2)%d*(OpenAD_Symbol_5)
+      X(1)%d = X(1)%d+Y(2)%d*(OpenAD_Symbol_6)
       Y(2)%d = 0.0d0
       CALL foo(X(1),X(2),Y(1))
       CALL foo(X(1),X(2),Y(1))
@@ -244,8 +244,8 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
 C
 C     **** Parameters and Result ****
 C
@@ -256,8 +256,8 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL bar
-      REAL(w2f__8) OpenAD_Symbol_27
-      REAL(w2f__8) OpenAD_Symbol_28
+      REAL(w2f__8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_Symbol_8
 
 
           integer iaddr
@@ -278,22 +278,22 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Template ad_template.f
       CALL bar(B)
       C%v = (B%v+A%v*A%v)
-      OpenAD_Symbol_8 = A%v
-      OpenAD_Symbol_9 = A%v
-      double_tape(double_tape_pointer) = OpenAD_Symbol_8
+      OpenAD_lin_5 = A%v
+      OpenAD_lin_6 = A%v
+      double_tape(double_tape_pointer) = OpenAD_lin_5
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_9
+      double_tape(double_tape_pointer) = OpenAD_lin_6
       double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_27 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_7 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_28 = double_tape(double_tape_pointer)
-      A%d = A%d+C%d*(OpenAD_Symbol_27)
-      A%d = A%d+C%d*(OpenAD_Symbol_28)
+      OpenAD_Symbol_8 = double_tape(double_tape_pointer)
+      A%d = A%d+C%d*(OpenAD_Symbol_7)
+      A%d = A%d+C%d*(OpenAD_Symbol_8)
       B%d = B%d+C%d
       C%d = 0.0d0
       CALL bar(B)
@@ -367,15 +367,15 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_10
-      REAL(w2f__8) OpenAD_Symbol_11
-      REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_Symbol_13
-      REAL(w2f__8) OpenAD_Symbol_14
-      REAL(w2f__8) OpenAD_Symbol_19
-      REAL(w2f__8) OpenAD_Symbol_20
-      type(active) :: OpenAD_Symbol_21
-      type(active) :: OpenAD_Symbol_22
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
+      REAL(w2f__8) OpenAD_lin_9
+      type(active) :: OpenAD_prop_2
+      type(active) :: OpenAD_prop_3
+      REAL(w2f__8) OpenAD_tmp_1
 C
 C     **** Parameters and Result ****
 C
@@ -383,8 +383,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_29
-      REAL(w2f__8) OpenAD_Symbol_30
+      REAL(w2f__8) OpenAD_Symbol_10
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Statements ****
 C
@@ -402,33 +402,33 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_10 = (A%v*A%v)
-      OpenAD_Symbol_14 = COS(OpenAD_Symbol_10)
-      OpenAD_Symbol_12 = A%v
-      OpenAD_Symbol_13 = A%v
-      OpenAD_Symbol_11 = (- SIN(OpenAD_Symbol_10))
-      A%v = OpenAD_Symbol_14
-      OpenAD_Symbol_19 = (OpenAD_Symbol_12 * OpenAD_Symbol_11)
-      OpenAD_Symbol_20 = (OpenAD_Symbol_13 * OpenAD_Symbol_11)
-      double_tape(double_tape_pointer) = OpenAD_Symbol_19
+      OpenAD_tmp_1 = (A%v*A%v)
+      OpenAD_Symbol_2 = COS(OpenAD_tmp_1)
+      OpenAD_lin_8 = A%v
+      OpenAD_lin_9 = A%v
+      OpenAD_lin_7 = (- SIN(OpenAD_tmp_1))
+      A%v = OpenAD_Symbol_2
+      OpenAD_acc_2 = (OpenAD_lin_8 * OpenAD_lin_7)
+      OpenAD_acc_3 = (OpenAD_lin_9 * OpenAD_lin_7)
+      double_tape(double_tape_pointer) = OpenAD_acc_2
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_20
+      double_tape(double_tape_pointer) = OpenAD_acc_3
       double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_29 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_9 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_30 = double_tape(double_tape_pointer)
-      OpenAD_Symbol_22%d = OpenAD_Symbol_22%d+A%d*(OpenAD_Symbol_29)
-      OpenAD_Symbol_21%d = OpenAD_Symbol_21%d+A%d*(OpenAD_Symbol_30)
+      OpenAD_Symbol_10 = double_tape(double_tape_pointer)
+      OpenAD_prop_3%d = OpenAD_prop_3%d+A%d*(OpenAD_Symbol_9)
+      OpenAD_prop_2%d = OpenAD_prop_2%d+A%d*(OpenAD_Symbol_10)
       A%d = 0.0d0
-      A%d = A%d+OpenAD_Symbol_22%d
-      OpenAD_Symbol_22%d = 0.0d0
-      A%d = A%d+OpenAD_Symbol_21%d
-      OpenAD_Symbol_21%d = 0.0d0
+      A%d = A%d+OpenAD_prop_3%d
+      OpenAD_prop_3%d = 0.0d0
+      A%d = A%d+OpenAD_prop_2%d
+      OpenAD_prop_2%d = 0.0d0
 
           end if 
         end subroutine bar

@@ -80,8 +80,8 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -90,8 +90,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_3
 C
 C     **** Statements ****
 C
@@ -110,22 +110,22 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
       Y%v = (X(1)%v*X(2)%v)
-      OpenAD_Symbol_2 = X(2)%v
-      OpenAD_Symbol_3 = X(1)%v
-      double_tape(double_tape_pointer) = OpenAD_Symbol_2
+      OpenAD_lin_0 = X(2)%v
+      OpenAD_lin_1 = X(1)%v
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_3
+      double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_2 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_5 = double_tape(double_tape_pointer)
-      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_4)
-      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_5)
+      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_2)
+      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_3)
       Y%d = 0.0d0
 
           end if 
@@ -310,8 +310,8 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0(1:2)
       type(active) :: OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_6(1:2)
-      type(active) :: OpenAD_Symbol_7
+      type(active) :: OpenAD_Symbol_4(1:2)
+      type(active) :: OpenAD_Symbol_5
 C
 C     **** Parameters and Result ****
 C
@@ -359,7 +359,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-      CALL foo(OpenAD_Symbol_6,OpenAD_Symbol_7)
+      CALL foo(OpenAD_Symbol_4,OpenAD_Symbol_5)
 
           end if 
         end subroutine bar

@@ -25,8 +25,8 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
-      type(active) :: OpenAD_Symbol_2
-      type(active) :: OpenAD_Symbol_3
+      type(active) :: OpenAD_prop_0
+      type(active) :: OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -52,13 +52,13 @@ C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(X(K),Y)
       Q(1)%v = Y%v
-      CALL setderiv(OpenAD_Symbol_2,Y)
-      CALL setderiv(Q(1),OpenAD_Symbol_2)
+      CALL setderiv(OpenAD_prop_0,Y)
+      CALL setderiv(Q(1),OpenAD_prop_0)
       Y%v = Q(1)%v
       P(1) = 1.0
       L = 1
-      CALL setderiv(OpenAD_Symbol_3,Q(1))
-      CALL setderiv(Y,OpenAD_Symbol_3)
+      CALL setderiv(OpenAD_prop_1,Q(1))
+      CALL setderiv(Y,OpenAD_prop_1)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(OpenAD_Symbol_0,P(K))
       CALL foo(OpenAD_Symbol_0,Q(L))

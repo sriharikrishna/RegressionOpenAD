@@ -15,11 +15,11 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      TYPE (OpenADTy_active) OpenAD_Symbol_3
-      TYPE (OpenADTy_active) OpenAD_Symbol_4
-      TYPE (OpenADTy_active) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      TYPE (OpenADTy_active) OpenAD_prop_0
+      TYPE (OpenADTy_active) OpenAD_prop_1
+      TYPE (OpenADTy_active) OpenAD_prop_2
 C
 C     **** Parameters and Result ****
 C
@@ -42,8 +42,8 @@ C$OPENAD XXX Template ad_template.f
         __value__(Y(1)) = __value__(X(1))
         CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
         IF(__value__(X(1)) .GT. 1.0D00) THEN
-          CALL setderiv(__deriv__(OpenAD_Symbol_3), __deriv__(Y(1)))
-          CALL setderiv(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_3))
+          CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y(1)))
+          CALL setderiv(__deriv__(Y(1)), __deriv__(OpenAD_prop_0))
         ELSE
           IF(__value__(X(1)) .GT. 0.0D00) THEN
             __value__(Y(1)) = __value__(X(1))
@@ -51,14 +51,13 @@ C$OPENAD XXX Template ad_template.f
           ENDIF
         ENDIF
       ENDIF
-      OpenAD_Symbol_2 = (__value__(Y(1)) * __value__(Y(1)))
-      OpenAD_Symbol_0 = __value__(Y(1))
-      OpenAD_Symbol_1 = __value__(Y(1))
-      __value__(Y(1)) = OpenAD_Symbol_2
-      CALL setderiv(__deriv__(OpenAD_Symbol_4), __deriv__(Y(1)))
-      CALL setderiv(__deriv__(OpenAD_Symbol_5), __deriv__(Y(1)))
-      CALL sax(OpenAD_Symbol_0, __deriv__(OpenAD_Symbol_4), __deriv__(Y
-     > (1)))
-      CALL saxpy(OpenAD_Symbol_1, __deriv__(OpenAD_Symbol_5), __deriv__
-     > (Y(1)))
+      OpenAD_Symbol_0 = (__value__(Y(1)) * __value__(Y(1)))
+      OpenAD_lin_0 = __value__(Y(1))
+      OpenAD_lin_1 = __value__(Y(1))
+      __value__(Y(1)) = OpenAD_Symbol_0
+      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(Y(1)))
+      CALL setderiv(__deriv__(OpenAD_prop_2), __deriv__(Y(1)))
+      CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prop_1), __deriv__(Y(1)))
+      CALL saxpy(OpenAD_lin_1, __deriv__(OpenAD_prop_2), __deriv__(Y(1)
+     > ))
       END SUBROUTINE

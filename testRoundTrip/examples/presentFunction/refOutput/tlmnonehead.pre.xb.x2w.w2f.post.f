@@ -8,14 +8,14 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      type(active) :: OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      type(active) :: OpenAD_prop_0
+      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -31,19 +31,19 @@ C
 C$OPENAD XXX Template ad_template.f
       IF (PRESENT(OPTARG)) THEN
         IF (OPTARG%v.LE.2.0D00) THEN
-          OpenAD_Symbol_0 = (OPTARG%v*OUTARG%v)
-          OpenAD_Symbol_5 = (REQARG%v*OpenAD_Symbol_0)
-          OpenAD_Symbol_1 = OpenAD_Symbol_0
-          OpenAD_Symbol_3 = OUTARG%v
-          OpenAD_Symbol_4 = OPTARG%v
-          OpenAD_Symbol_2 = REQARG%v
-          OUTARG%v = OpenAD_Symbol_5
-          OpenAD_Symbol_7 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
-          OpenAD_Symbol_8 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
-          CALL setderiv(OpenAD_Symbol_9,OUTARG)
-          CALL sax(OpenAD_Symbol_1,REQARG,OUTARG)
-          CALL saxpy(OpenAD_Symbol_7,OPTARG,OUTARG)
-          CALL saxpy(OpenAD_Symbol_8,OpenAD_Symbol_9,OUTARG)
+          OpenAD_tmp_0 = (OPTARG%v*OUTARG%v)
+          OpenAD_Symbol_0 = (REQARG%v*OpenAD_tmp_0)
+          OpenAD_lin_0 = OpenAD_tmp_0
+          OpenAD_lin_2 = OUTARG%v
+          OpenAD_lin_3 = OPTARG%v
+          OpenAD_lin_1 = REQARG%v
+          OUTARG%v = OpenAD_Symbol_0
+          OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
+          OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
+          CALL setderiv(OpenAD_prop_0,OUTARG)
+          CALL sax(OpenAD_lin_0,REQARG,OUTARG)
+          CALL saxpy(OpenAD_acc_0,OPTARG,OUTARG)
+          CALL saxpy(OpenAD_acc_1,OpenAD_prop_0,OUTARG)
         ENDIF
       ELSE
         OUTARG%v = REQARG%v

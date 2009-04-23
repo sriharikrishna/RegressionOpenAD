@@ -75,9 +75,9 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_lin_0
+      type(active) :: OpenAD_prop_0
+      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -86,7 +86,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -109,22 +109,21 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_0 = TANH(X(1)%v)
-      OpenAD_Symbol_1 = (INT(1_w2f__i8) - OpenAD_Symbol_0 *
-     >  OpenAD_Symbol_0)
-      Y(1)%v = OpenAD_Symbol_0
-      double_tape(double_tape_pointer) = OpenAD_Symbol_1
+      OpenAD_tmp_0 = TANH(X(1)%v)
+      OpenAD_lin_0 = (INT(1_w2f__i8) - OpenAD_tmp_0 * OpenAD_tmp_0)
+      Y(1)%v = OpenAD_tmp_0
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
 
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-      OpenAD_Symbol_2%d = OpenAD_Symbol_2%d+Y(1)%d*(OpenAD_Symbol_3)
+      OpenAD_Symbol_0 = double_tape(double_tape_pointer)
+      OpenAD_prop_0%d = OpenAD_prop_0%d+Y(1)%d*(OpenAD_Symbol_0)
       Y(1)%d = 0.0d0
-      X(1)%d = X(1)%d+OpenAD_Symbol_2%d
-      OpenAD_Symbol_2%d = 0.0d0
+      X(1)%d = X(1)%d+OpenAD_prop_0%d
+      OpenAD_prop_0%d = 0.0d0
 
           end if 
         end subroutine head

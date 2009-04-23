@@ -14,8 +14,8 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_0
+      TYPE (OpenADTy_active) OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -44,10 +44,10 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         IF(S .LT. 0.0D00) THEN
-          OpenAD_Symbol_1 = (__value__(X(I)) * 2.0D00)
-          __value__(X(INT(I))) = OpenAD_Symbol_1
-          CALL setderiv(__deriv__(OpenAD_Symbol_3), __deriv__(X(I)))
-          CALL sax(2.0D00, __deriv__(OpenAD_Symbol_3), __deriv__(X(I)))
+          OpenAD_Symbol_0 = (__value__(X(I)) * 2.0D00)
+          __value__(X(INT(I))) = OpenAD_Symbol_0
+          CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(X(I)))
+          CALL sax(2.0D00, __deriv__(OpenAD_prop_0), __deriv__(X(I)))
         ELSE
           S = 0.0D00
         ENDIF

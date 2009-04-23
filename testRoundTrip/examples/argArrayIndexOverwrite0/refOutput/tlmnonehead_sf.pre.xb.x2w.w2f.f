@@ -14,7 +14,7 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -26,9 +26,9 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(Y) = (K * __value__(X))
-      OpenAD_Symbol_1 = K
+      OpenAD_lin_1 = K
       K = (K + 2)
-      CALL sax(OpenAD_Symbol_1, __deriv__(X), __deriv__(Y))
+      CALL sax(OpenAD_lin_1, __deriv__(X), __deriv__(Y))
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

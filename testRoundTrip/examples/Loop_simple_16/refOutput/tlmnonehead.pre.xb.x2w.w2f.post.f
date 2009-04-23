@@ -8,9 +8,9 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      type(active) :: OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -30,13 +30,13 @@ C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = L, U, S
-        OpenAD_Symbol_2 = (X(I)%v*Y%v)
-        OpenAD_Symbol_0 = Y%v
-        OpenAD_Symbol_1 = X(I)%v
-        Y%v = OpenAD_Symbol_2
-        CALL setderiv(OpenAD_Symbol_3,Y)
-        CALL sax(OpenAD_Symbol_0,X(I),Y)
-        CALL saxpy(OpenAD_Symbol_1,OpenAD_Symbol_3,Y)
+        OpenAD_Symbol_0 = (X(I)%v*Y%v)
+        OpenAD_lin_0 = Y%v
+        OpenAD_lin_1 = X(I)%v
+        Y%v = OpenAD_Symbol_0
+        CALL setderiv(OpenAD_prop_0,Y)
+        CALL sax(OpenAD_lin_0,X(I),Y)
+        CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y)
       END DO
       END SUBROUTINE
 

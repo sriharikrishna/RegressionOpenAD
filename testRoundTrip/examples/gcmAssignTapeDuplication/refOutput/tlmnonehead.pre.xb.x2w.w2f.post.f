@@ -7,31 +7,31 @@
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_10
-      REAL(w2f__8) OpenAD_Symbol_11
-      REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_Symbol_13
-      REAL(w2f__8) OpenAD_Symbol_14
-      REAL(w2f__8) OpenAD_Symbol_15
-      REAL(w2f__8) OpenAD_Symbol_16
-      REAL(w2f__8) OpenAD_Symbol_17
-      REAL(w2f__8) OpenAD_Symbol_18
-      REAL(w2f__8) OpenAD_Symbol_19
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_20
-      REAL(w2f__8) OpenAD_Symbol_21
-      REAL(w2f__8) OpenAD_Symbol_22
-      type(active) :: OpenAD_Symbol_23
-      type(active) :: OpenAD_Symbol_24
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_acc_4
+      REAL(w2f__8) OpenAD_acc_5
+      REAL(w2f__8) OpenAD_acc_6
+      REAL(w2f__8) OpenAD_acc_7
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
+      REAL(w2f__8) OpenAD_lin_9
+      type(active) :: OpenAD_prop_0
+      type(active) :: OpenAD_prop_1
+      REAL(w2f__8) OpenAD_tmp_0
+      REAL(w2f__8) OpenAD_tmp_1
+      REAL(w2f__8) OpenAD_tmp_2
+      REAL(w2f__8) OpenAD_tmp_3
+      REAL(w2f__8) OpenAD_tmp_4
 C
 C     **** Parameters and Result ****
 C
@@ -48,45 +48,44 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_7 = (X(8)%v+X(7)%v+X(5)%v+X(6)%v)
-      OpenAD_Symbol_3 = (X(1)%v*OpenAD_Symbol_7+X(2)%v*X(4)%v)
-      OpenAD_Symbol_12 = (X(12)%v+X(11)%v+X(9)%v+X(10)%v)
-      OpenAD_Symbol_4 = (X(2)%v+X(1)%v*OpenAD_Symbol_12)
-      OpenAD_Symbol_0 = (OpenAD_Symbol_3 / OpenAD_Symbol_4)
-      Y(1)%v = (X(3)%v*OpenAD_Symbol_0)
-      OpenAD_Symbol_1 = OpenAD_Symbol_0
-      OpenAD_Symbol_8 = OpenAD_Symbol_7
-      OpenAD_Symbol_9 = X(1)%v
-      OpenAD_Symbol_10 = X(4)%v
-      OpenAD_Symbol_11 = X(2)%v
-      OpenAD_Symbol_5 = (INT(1_w2f__i8) / OpenAD_Symbol_4)
-      OpenAD_Symbol_13 = OpenAD_Symbol_12
-      OpenAD_Symbol_14 = X(1)%v
-      OpenAD_Symbol_6 = (-(OpenAD_Symbol_3 /(OpenAD_Symbol_4 *
-     >  OpenAD_Symbol_4)))
-      OpenAD_Symbol_2 = X(3)%v
-      OpenAD_Symbol_15 = (OpenAD_Symbol_5 * OpenAD_Symbol_2)
-      OpenAD_Symbol_16 = (OpenAD_Symbol_6 * OpenAD_Symbol_2)
-      OpenAD_Symbol_17 = (OpenAD_Symbol_13 * OpenAD_Symbol_16)
-      OpenAD_Symbol_18 = (OpenAD_Symbol_14 * OpenAD_Symbol_16)
-      OpenAD_Symbol_19 = (OpenAD_Symbol_8 * OpenAD_Symbol_15)
-      OpenAD_Symbol_20 = (OpenAD_Symbol_9 * OpenAD_Symbol_15)
-      OpenAD_Symbol_21 = (OpenAD_Symbol_10 * OpenAD_Symbol_15)
-      OpenAD_Symbol_22 = (OpenAD_Symbol_11 * OpenAD_Symbol_15)
-      CALL setderiv(OpenAD_Symbol_23,X(8))
-      CALL inc_deriv(OpenAD_Symbol_23,X(7))
-      CALL inc_deriv(OpenAD_Symbol_23,X(5))
-      CALL inc_deriv(OpenAD_Symbol_23,X(6))
-      CALL setderiv(OpenAD_Symbol_24,X(12))
-      CALL inc_deriv(OpenAD_Symbol_24,X(11))
-      CALL inc_deriv(OpenAD_Symbol_24,X(9))
-      CALL inc_deriv(OpenAD_Symbol_24,X(10))
-      CALL sax(OpenAD_Symbol_1,X(3),Y(1))
-      CALL saxpy(OpenAD_Symbol_17,X(1),Y(1))
-      CALL saxpy(OpenAD_Symbol_18,OpenAD_Symbol_24,Y(1))
-      CALL saxpy(OpenAD_Symbol_16,X(2),Y(1))
-      CALL saxpy(OpenAD_Symbol_19,X(1),Y(1))
-      CALL saxpy(OpenAD_Symbol_20,OpenAD_Symbol_23,Y(1))
-      CALL saxpy(OpenAD_Symbol_21,X(2),Y(1))
-      CALL saxpy(OpenAD_Symbol_22,X(4),Y(1))
+      OpenAD_tmp_3 = (X(8)%v+X(7)%v+X(5)%v+X(6)%v)
+      OpenAD_tmp_1 = (X(1)%v*OpenAD_tmp_3+X(2)%v*X(4)%v)
+      OpenAD_tmp_4 = (X(12)%v+X(11)%v+X(9)%v+X(10)%v)
+      OpenAD_tmp_2 = (X(2)%v+X(1)%v*OpenAD_tmp_4)
+      OpenAD_tmp_0 = (OpenAD_tmp_1 / OpenAD_tmp_2)
+      Y(1)%v = (X(3)%v*OpenAD_tmp_0)
+      OpenAD_lin_0 = OpenAD_tmp_0
+      OpenAD_lin_4 = OpenAD_tmp_3
+      OpenAD_lin_5 = X(1)%v
+      OpenAD_lin_6 = X(4)%v
+      OpenAD_lin_7 = X(2)%v
+      OpenAD_lin_2 = (INT(1_w2f__i8) / OpenAD_tmp_2)
+      OpenAD_lin_8 = OpenAD_tmp_4
+      OpenAD_lin_9 = X(1)%v
+      OpenAD_lin_3 = (-(OpenAD_tmp_1 /(OpenAD_tmp_2 * OpenAD_tmp_2)))
+      OpenAD_lin_1 = X(3)%v
+      OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
+      OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
+      OpenAD_acc_2 = (OpenAD_lin_8 * OpenAD_acc_1)
+      OpenAD_acc_3 = (OpenAD_lin_9 * OpenAD_acc_1)
+      OpenAD_acc_4 = (OpenAD_lin_4 * OpenAD_acc_0)
+      OpenAD_acc_5 = (OpenAD_lin_5 * OpenAD_acc_0)
+      OpenAD_acc_6 = (OpenAD_lin_6 * OpenAD_acc_0)
+      OpenAD_acc_7 = (OpenAD_lin_7 * OpenAD_acc_0)
+      CALL setderiv(OpenAD_prop_0,X(8))
+      CALL inc_deriv(OpenAD_prop_0,X(7))
+      CALL inc_deriv(OpenAD_prop_0,X(5))
+      CALL inc_deriv(OpenAD_prop_0,X(6))
+      CALL setderiv(OpenAD_prop_1,X(12))
+      CALL inc_deriv(OpenAD_prop_1,X(11))
+      CALL inc_deriv(OpenAD_prop_1,X(9))
+      CALL inc_deriv(OpenAD_prop_1,X(10))
+      CALL sax(OpenAD_lin_0,X(3),Y(1))
+      CALL saxpy(OpenAD_acc_2,X(1),Y(1))
+      CALL saxpy(OpenAD_acc_3,OpenAD_prop_1,Y(1))
+      CALL saxpy(OpenAD_acc_1,X(2),Y(1))
+      CALL saxpy(OpenAD_acc_4,X(1),Y(1))
+      CALL saxpy(OpenAD_acc_5,OpenAD_prop_0,Y(1))
+      CALL saxpy(OpenAD_acc_6,X(2),Y(1))
+      CALL saxpy(OpenAD_acc_7,X(4),Y(1))
       END SUBROUTINE

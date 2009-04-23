@@ -31,8 +31,8 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_Symbol_2
-      TYPE (OpenADTy_active) OpenAD_Symbol_3
+      TYPE (OpenADTy_active) OpenAD_prop_0
+      TYPE (OpenADTy_active) OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -58,13 +58,13 @@ C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(__deriv__(X(K)), __deriv__(Y))
       __value__(Q(1)) = __value__(Y)
-      CALL setderiv(__deriv__(OpenAD_Symbol_2), __deriv__(Y))
-      CALL setderiv(__deriv__(Q(1)), __deriv__(OpenAD_Symbol_2))
+      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y))
+      CALL setderiv(__deriv__(Q(1)), __deriv__(OpenAD_prop_0))
       __value__(Y) = __value__(Q(1))
       P(1) = 1.0
       L = 1
-      CALL setderiv(__deriv__(OpenAD_Symbol_3), __deriv__(Q(1)))
-      CALL setderiv(__deriv__(Y), __deriv__(OpenAD_Symbol_3))
+      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(Q(1)))
+      CALL setderiv(__deriv__(Y), __deriv__(OpenAD_prop_1))
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), P(K))
       CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(Q(L)))

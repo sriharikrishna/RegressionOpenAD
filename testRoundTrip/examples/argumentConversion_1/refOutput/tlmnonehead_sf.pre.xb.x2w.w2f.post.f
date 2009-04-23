@@ -16,8 +16,8 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -28,10 +28,10 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       Y%v = (X(1)%v*X(2)%v)
-      OpenAD_Symbol_4 = X(2)%v
-      OpenAD_Symbol_5 = X(1)%v
-      CALL sax(OpenAD_Symbol_4,X(1),Y)
-      CALL saxpy(OpenAD_Symbol_5,X(2),Y)
+      OpenAD_lin_0 = X(2)%v
+      OpenAD_lin_1 = X(1)%v
+      CALL sax(OpenAD_lin_0,X(1),Y)
+      CALL saxpy(OpenAD_lin_1,X(2),Y)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

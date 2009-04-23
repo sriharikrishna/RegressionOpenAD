@@ -35,23 +35,23 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_10
-      REAL(w2f__8) OpenAD_Symbol_11
-      REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_Symbol_14
-      REAL(w2f__8) OpenAD_Symbol_15
-      REAL(w2f__8) OpenAD_Symbol_16
-      REAL(w2f__8) OpenAD_Symbol_18
-      REAL(w2f__8) OpenAD_Symbol_19
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_20
-      REAL(w2f__8) OpenAD_Symbol_21
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_10
+      REAL(w2f__8) OpenAD_lin_11
+      REAL(w2f__8) OpenAD_lin_13
+      REAL(w2f__8) OpenAD_lin_14
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
+      REAL(w2f__8) OpenAD_lin_9
+      REAL(w2f__8) OpenAD_tmp_0
+      REAL(w2f__8) OpenAD_tmp_1
 C
 C     **** Parameters and Result ****
 C
@@ -61,34 +61,34 @@ C
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_0 = SQRT((U(1)%v**2)+(U(2)%v**2))
-      OpenAD_Symbol_2 = (2*(U(1)%v**(2-INT(1_w2f__i8))))
-      OpenAD_Symbol_4 = (2*(U(2)%v**(2-INT(1_w2f__i8))))
-      OpenAD_Symbol_1 = (5.0D-01 / OpenAD_Symbol_0)
-      V(1)%v = OpenAD_Symbol_0
-      OpenAD_Symbol_18 = (OpenAD_Symbol_4 * OpenAD_Symbol_1)
-      OpenAD_Symbol_19 = (OpenAD_Symbol_2 * OpenAD_Symbol_1)
-      CALL sax(OpenAD_Symbol_18,U(2),V(1))
-      CALL saxpy(OpenAD_Symbol_19,U(1),V(1))
-      OpenAD_Symbol_14 = (U(1)%v*2.0D00)
+      OpenAD_tmp_0 = SQRT((U(1)%v**2)+(U(2)%v**2))
+      OpenAD_lin_1 = (2*(U(1)%v**(2-INT(1_w2f__i8))))
+      OpenAD_lin_3 = (2*(U(2)%v**(2-INT(1_w2f__i8))))
+      OpenAD_lin_0 = (5.0D-01 / OpenAD_tmp_0)
+      V(1)%v = OpenAD_tmp_0
+      OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_0)
+      OpenAD_acc_1 = (OpenAD_lin_1 * OpenAD_lin_0)
+      CALL sax(OpenAD_acc_0,U(2),V(1))
+      CALL saxpy(OpenAD_acc_1,U(1),V(1))
+      OpenAD_tmp_1 = (U(1)%v*2.0D00)
       V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
-     +)%v**3)+U(2)%v*OpenAD_Symbol_14)
-      OpenAD_Symbol_6 = (3*(U(1)%v**(3-INT(1_w2f__i8))))
-      OpenAD_Symbol_8 = COS(U(2)%v)
-      OpenAD_Symbol_9 = (INT(1_w2f__i8)/U(1)%v)
-      OpenAD_Symbol_10 = (-(U(2)%v/(U(1)%v*U(1)%v)))
-      OpenAD_Symbol_11 = (-SIN(U(1)%v))
-      OpenAD_Symbol_12 = (3*(U(2)%v**(3-INT(1_w2f__i8))))
-      OpenAD_Symbol_15 = OpenAD_Symbol_14
-      OpenAD_Symbol_16 = U(2)%v
-      OpenAD_Symbol_20 = (OpenAD_Symbol_11 * INT((-1_w2f__i8)))
-      OpenAD_Symbol_21 = (2.0D00 * OpenAD_Symbol_16)
-      CALL sax(OpenAD_Symbol_12,U(2),V(2))
-      CALL saxpy(OpenAD_Symbol_6,U(1),V(2))
-      CALL saxpy(OpenAD_Symbol_20,U(1),V(2))
-      CALL saxpy(OpenAD_Symbol_8,U(2),V(2))
-      CALL saxpy(OpenAD_Symbol_9,U(2),V(2))
-      CALL saxpy(OpenAD_Symbol_10,U(1),V(2))
-      CALL saxpy(OpenAD_Symbol_15,U(2),V(2))
-      CALL saxpy(OpenAD_Symbol_21,U(1),V(2))
+     +)%v**3)+U(2)%v*OpenAD_tmp_1)
+      OpenAD_lin_5 = (3*(U(1)%v**(3-INT(1_w2f__i8))))
+      OpenAD_lin_7 = COS(U(2)%v)
+      OpenAD_lin_8 = (INT(1_w2f__i8)/U(1)%v)
+      OpenAD_lin_9 = (-(U(2)%v/(U(1)%v*U(1)%v)))
+      OpenAD_lin_10 = (-SIN(U(1)%v))
+      OpenAD_lin_11 = (3*(U(2)%v**(3-INT(1_w2f__i8))))
+      OpenAD_lin_13 = OpenAD_tmp_1
+      OpenAD_lin_14 = U(2)%v
+      OpenAD_acc_2 = (OpenAD_lin_10 * INT((-1_w2f__i8)))
+      OpenAD_acc_3 = (2.0D00 * OpenAD_lin_14)
+      CALL sax(OpenAD_lin_11,U(2),V(2))
+      CALL saxpy(OpenAD_lin_5,U(1),V(2))
+      CALL saxpy(OpenAD_acc_2,U(1),V(2))
+      CALL saxpy(OpenAD_lin_7,U(2),V(2))
+      CALL saxpy(OpenAD_lin_8,U(2),V(2))
+      CALL saxpy(OpenAD_lin_9,U(1),V(2))
+      CALL saxpy(OpenAD_lin_13,U(2),V(2))
+      CALL saxpy(OpenAD_acc_3,U(1),V(2))
       END SUBROUTINE

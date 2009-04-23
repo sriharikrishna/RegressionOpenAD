@@ -76,8 +76,8 @@ C ========== end copyright notice ==============
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -86,8 +86,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_10
-      REAL(w2f__8) OpenAD_Symbol_11
+      REAL(w2f__8) OpenAD_Symbol_8
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Statements ****
 C
@@ -155,11 +155,11 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
       Y%v = (X(1)%v*X(2)%v)
-      OpenAD_Symbol_2 = X(2)%v
-      OpenAD_Symbol_3 = X(1)%v
-      double_tape(double_tape_pointer) = OpenAD_Symbol_2
+      OpenAD_lin_0 = X(2)%v
+      OpenAD_lin_1 = X(1)%v
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_3
+      double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
 
 C taping end
@@ -178,11 +178,11 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_10 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_8 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_11 = double_tape(double_tape_pointer)
-      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_10)
-      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_11)
+      OpenAD_Symbol_9 = double_tape(double_tape_pointer)
+      X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_8)
+      X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_9)
       Y%d = 0.0d0
 
 C adjoint end
@@ -263,14 +263,14 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0(1:2,1:3)
       type(active) :: OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_13(1:2,1:3)
-      type(active) :: OpenAD_Symbol_14
+      type(active) :: OpenAD_Symbol_11(1:2,1:3)
+      type(active) :: OpenAD_Symbol_12
+      INTEGER(w2f__i8) OpenAD_Symbol_2
+      INTEGER(w2f__i8) OpenAD_Symbol_3
       INTEGER(w2f__i8) OpenAD_Symbol_4
       INTEGER(w2f__i8) OpenAD_Symbol_5
       INTEGER(w2f__i8) OpenAD_Symbol_6
       INTEGER(w2f__i8) OpenAD_Symbol_7
-      INTEGER(w2f__i8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
 C
 C     **** Parameters and Result ****
 C
@@ -284,7 +284,7 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       REAL(w2f__8) PY
-      INTEGER(w2f__i8) OpenAD_Symbol_12
+      INTEGER(w2f__i8) OpenAD_Symbol_10
 
 
           ! checkpointing stacks and offsets
@@ -360,14 +360,14 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_6 = 0_w2f__i8
+      OpenAD_Symbol_4 = 0_w2f__i8
       DO I = 1, 2, 1
         AX(INT(I),2)%v = X(I)%v
         integer_tape(integer_tape_pointer) = I
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6) + INT(1_w2f__i8))
+        OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4) + INT(1_w2f__i8))
       END DO
-      integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
       CALL foo(AX(1,2),Y)
 C!! requested inline of 'convert_p2a_matrix' has no defn
@@ -395,18 +395,18 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-      CALL foo(OpenAD_Symbol_13(1,2),OpenAD_Symbol_14)
+      CALL foo(OpenAD_Symbol_11(1,2),OpenAD_Symbol_12)
       CALL foo(AX(1,2),Y)
       integer_tape_pointer = integer_tape_pointer-1
-      OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
-      OpenAD_Symbol_5 = 1
-      DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
+      OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
+      OpenAD_Symbol_3 = 1
+      DO WHILE(INT(OpenAD_Symbol_3) .LE. INT(OpenAD_Symbol_2))
         integer_tape_pointer = integer_tape_pointer-1
-        OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
-        X(INT(OpenAD_Symbol_12))%d = X(INT(OpenAD_Symbol_12))%d+AX(INT(O
-     +penAD_Symbol_12),2)%d
-        AX(INT(OpenAD_Symbol_12),2)%d = 0.0d0
-        OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
+        OpenAD_Symbol_10 = integer_tape(integer_tape_pointer)
+        X(INT(OpenAD_Symbol_10))%d = X(INT(OpenAD_Symbol_10))%d+AX(INT(O
+     +penAD_Symbol_10),2)%d
+        AX(INT(OpenAD_Symbol_10),2)%d = 0.0d0
+        OpenAD_Symbol_3 = INT(OpenAD_Symbol_3) + 1
       END DO
 
 C adjoint end

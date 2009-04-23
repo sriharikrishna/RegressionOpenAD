@@ -9,10 +9,10 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_5
-      type(active) :: OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      type(active) :: OpenAD_prop_0
+      type(active) :: OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -42,18 +42,18 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(2.0D00,X(I),Y(I))
         GO TO 21
 19      CONTINUE
-        OpenAD_Symbol_1 = SIN(X(I)%v)
-        OpenAD_Symbol_0 = COS(X(I)%v)
-        Y(INT(I))%v = OpenAD_Symbol_1
-        CALL setderiv(OpenAD_Symbol_5,X(I))
-        CALL sax(OpenAD_Symbol_0,OpenAD_Symbol_5,Y(I))
+        OpenAD_Symbol_0 = SIN(X(I)%v)
+        OpenAD_lin_0 = COS(X(I)%v)
+        Y(INT(I))%v = OpenAD_Symbol_0
+        CALL setderiv(OpenAD_prop_0,X(I))
+        CALL sax(OpenAD_lin_0,OpenAD_prop_0,Y(I))
         GO TO 21
 23      CONTINUE
-        OpenAD_Symbol_3 = COS(X(I)%v)
-        OpenAD_Symbol_2 = (-SIN(X(I)%v))
-        Y(INT(I))%v = OpenAD_Symbol_3
-        CALL setderiv(OpenAD_Symbol_6,X(I))
-        CALL sax(OpenAD_Symbol_2,OpenAD_Symbol_6,Y(I))
+        OpenAD_Symbol_1 = COS(X(I)%v)
+        OpenAD_lin_1 = (-SIN(X(I)%v))
+        Y(INT(I))%v = OpenAD_Symbol_1
+        CALL setderiv(OpenAD_prop_1,X(I))
+        CALL sax(OpenAD_lin_1,OpenAD_prop_1,Y(I))
         GO TO 21
 21      CONTINUE
       END DO
