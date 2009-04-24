@@ -81,8 +81,10 @@ COMPLAIN=$(error "Error:  environment variable SCALAR_OR_VECTOR not defined (set
 endif
 
 ifdef VERBOSE
+preProcessVerbFlag=-v
 xaifBoosterVerbFlag=-g 1
 whirl2xaifVerbFlag=--debug 1
+postProcessVerbFlag=-v
 endif
 
 # need to put modules in specific order:
@@ -184,7 +186,7 @@ head_sf.f : all_globals_mod.f head.f
 
 # preprocess F
 head_sf.pre.f: head_sf.f preProcess.py
-	./preProcess.py $(PREPROCESS_FLAGS) $< -o $@
+	./preProcess.py $(PREPROCESS_FLAGS) $< -o $@ $(preProcessVerbFlag)
 
 # F -> WHIRL
 head_sf.pre.B: head_sf.pre.f mfef90
@@ -211,7 +213,7 @@ head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 # postprocess F'
 head_sf.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
 	$(COMPLAIN)
-	./postProcess.py $(POSTPROCESS_FLAGS) --abstractType OpenADTy_active $< -o $@
+	./postProcess.py $(POSTPROCESS_FLAGS) --abstractType OpenADTy_active $< -o $@ $(postProcessVerbFlag)
 
 # extract the transformed globals module so we the right order of 
 # compilation with respect to the globals checkpoint module
