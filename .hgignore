@@ -14,6 +14,7 @@ testRoundTrip/ad_template.f
 testRoundTrip/all_globals_*
 testRoundTrip/ALL_GLOBALS_MOD.mod-whirl
 testRoundTrip/driver*
+testRoundTrip/GLOBALS.mod-whirl
 testRoundTrip/head*
 testRoundTrip/iaddr.c
 testRoundTrip/mfef90
