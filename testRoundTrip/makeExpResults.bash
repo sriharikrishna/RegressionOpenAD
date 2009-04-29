@@ -2,7 +2,7 @@ if [ $# -eq 1 ]
 then 
   OFILE=$1
 else
-  OFILE=oadRegressExpResults.html
+  OFILE=expResults.html
 fi
 
 cat > ${OFILE} <<EOT
