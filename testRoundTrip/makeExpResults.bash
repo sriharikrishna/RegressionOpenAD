@@ -7,7 +7,7 @@ fi
 
 cat > ${OFILE} <<EOT
 
-<a name="test_results"></a>test results:<br>
+expected test results:<br>
 <font size=\"-1\">
 <table style="width: 100%; text-align: left;" border="1" cellpadding="2"
  cellspacing="2">
@@ -54,7 +54,7 @@ do
       cat examples/$i/FAILREASON_${j} >> ${OFILE}
       echo "</td>" >> ${OFILE}
     else
-      echo "<td style=\"vertical-align: top;\"><br></td> " >> ${OFILE}
+      echo "<td style=\"vertical-align: top; color: rgb(0, 255, 0);\">&#10004;</td> " >> ${OFILE}
     fi
   done
   echo "</tr>" >> ${OFILE}
