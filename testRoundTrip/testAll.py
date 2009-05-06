@@ -407,7 +407,7 @@ def compareNumericalResults(exDir,exName,majorMode):
     else:
         testFlags = '-b'
     if globalMakeSVG:
-        testFlags += ' -s'
+        testFlags += ' -t svg'
     numCompareStr = './numericalComparison.py '+testFlags+' -n '+exName+' '+numFiles
     sys.stdout.write(numCompareStr+'\n')
     numCompareReturn = os.system(numCompareStr)
@@ -516,9 +516,6 @@ def main():
     opt.add_option('-A','--acceptAll',dest='acceptAll',
                    help="accept all changes without confirmation",
                    action='store_true',default=False)
-    opt.add_option('-D','--declineAll',dest='declineAll',
-                   help="decline all changes without confirmation",
-                   action='store_true',default=False)
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
                    action='store_true',default=False)
@@ -528,6 +525,9 @@ def main():
                    default='ifort')
     opt.add_option('-d','--diff',dest='diff',
                    help="different diff command (e.g. kdiff3) to show differences in case the regular diff detects differences")
+    opt.add_option('-D','--declineAll',dest='declineAll',
+                   help="decline all changes without confirmation",
+                   action='store_true',default=False)
     opt.add_option('-i','--ignoreFailingCases',dest='ignoreFailingCases',
                    help="don't ask whether we should try to run the cases known to fail",
                    action='store_true',default=False)

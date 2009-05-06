@@ -4,15 +4,19 @@ import os
 import shutil
 import sys
 
-def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
+def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,term):
     import tempfile
     plotFileName=tempfile.mktemp(suffix='.gnu')
     plotFile=open(plotFileName,"w")
 
     # set output terminal
-    if makeSVG:
+    if term=="svg":
         outputName = 'numericalComparison-'+name+'.svg'
         plotFile.write('set term svg font \'arial,11\' size 900,690\n')
+        plotFile.write('set output "'+outputName+'"\n')
+    elif term=="postscript":
+        outputName = 'numericalComparison-'+name+'.ps'
+        plotFile.write('set term postscript font \'arial,11\'\n')
         plotFile.write('set output "'+outputName+'"\n')
     else:
         plotFile.write('set terminal x11 persist\n')
@@ -81,10 +85,12 @@ def showGraphs(errDict,errLimDict,withAD,name,n,m,impulse,makeSVG):
         os.remove(plotFileName)
         map(os.remove,datFileNames)
 
-    if makeSVG:
+    if term=="svg" or term=="postscript":
         plotDir = 'plotOutput'
         if not (os.path.exists(plotDir)):
             os.mkdir(plotDir)
+        if (os.path.exists(os.path.join(plotDir,outputName))):
+            os.remove(os.path.join(plotDir,outputName))
         shutil.move(outputName,plotDir)
 
 def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
@@ -169,6 +175,13 @@ def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
           
 def main():
     from optparse import OptionParser
+    terms=['X11','postscript','svg']
+    termOpts='[ '
+    for i in terms :
+        termOpts+=i
+        if  i != terms[-1]:
+            termOpts+=" | "
+    termOpts+=" ]"        
     opt = OptionParser(usage='%prog [options] <curDD_file> <refDD_file [ <curAD_file> <refAD_file ]')
     opt.add_option('-b','--batchMode',dest='batchMode',
                    help="run in batchMode suppressing output",
@@ -182,9 +195,10 @@ def main():
     opt.add_option('-i','--impulse',dest='impulse',
                    help="draw errors with impulses (bars)",
                    action='store_true',default=False)
-    opt.add_option('-s','--svg',dest='makeSVG',
-                   help="make svg output and place it into the directory 'plotOutput'",
-                   action='store_true',default=False)
+    opt.add_option('-t','--term',dest='term',
+                   type='choice', choices=terms,
+                   help="gnuplot terminal selection (defaults to X11), one from the following list: " +termOpts,
+                   default='X11')
     opt.add_option('-v','--verbose',dest='verbose',
                    help="if limits are exceeded show verbose output",
                    action='store_true',default=False)
@@ -203,7 +217,7 @@ def main():
         fileDict={}    
         for i in range(0,len(keyList)):
             fileDict[keyList[i]]=args[i]
-        returnValue=compareFiles(fileDict,withAD,options.batchMode,options.graphs,options.name,options.impulse,options.makeSVG,options.verbose)
+        returnValue=compareFiles(fileDict,withAD,options.batchMode,options.graphs,options.name,options.impulse,options.term,options.verbose)
     except RuntimeError, e:
         print 'caught exception: ',e
         return 1
