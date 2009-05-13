@@ -237,8 +237,7 @@ def populateExamplesList(args):
 		done = True
 		sys.stdout.write("pick from the following examples:\n")
 		sys.stdout.flush()
-                examples = allExamples
-                MultiColumnOutput(numberedList(examples)).printIt()    
+                MultiColumnOutput(numberedList(allExamples)).printIt()    
 		examplesInput = raw_input("enter one or more regular expressions here or '(all [%i | %i %i])': ").split()
 		if (len(examplesInput) == 0):			# no arguments
 		    examples = allExamples
