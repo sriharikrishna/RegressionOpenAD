@@ -142,7 +142,9 @@ c-- cycle fields
 CADJ STORE tNow = comlev1, key = ikey, byte = isbyte
 
             do l=1, ndim
-               if ( tNow(l) .LT. -2.D0 )  tNow(l) = 2.D0
+               if (tNow(l).LT.-2.D0) then
+                 tNow(l) = 2.D0
+               endif
             end do
 
       end
