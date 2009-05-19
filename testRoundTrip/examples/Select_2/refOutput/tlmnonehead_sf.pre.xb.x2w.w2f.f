@@ -31,6 +31,7 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) select_expr_temp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -41,8 +42,9 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, 3, 1
-        IF ( I  .EQ.  1)  GO TO  19
-        IF ( I  .EQ.  2)  GO TO  23
+        select_expr_temp_0 = I
+        IF ( select_expr_temp_0  .EQ.  1)  GO TO  19
+        IF ( select_expr_temp_0  .EQ.  2)  GO TO  23
         GO TO 24
 24      CONTINUE
         __value__(Y(INT(I))) = (__value__(X(I)) * 2.0D00)

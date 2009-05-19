@@ -30,6 +30,7 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) select_expr_temp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -42,8 +43,9 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       __value__(Y(1)) = 2.0
       CALL zero_deriv(__deriv__(Y(1)))
-      IF ( I  .EQ.  1)  GO TO  4
-      IF ( I  .EQ.  2)  GO TO  8
+      select_expr_temp_0 = I
+      IF ( select_expr_temp_0  .EQ.  1)  GO TO  4
+      IF ( select_expr_temp_0  .EQ.  2)  GO TO  8
       GO TO 9
 9     CONTINUE
       __value__(Y(1)) = __value__(X(1))

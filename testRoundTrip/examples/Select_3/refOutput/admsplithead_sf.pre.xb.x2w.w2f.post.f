@@ -90,6 +90,7 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) select_expr_temp_0
 
 
           integer iaddr
@@ -107,7 +108,8 @@ C
 ! original function
 C$OPENAD XXX Template ad_template.f
       I = 1
-      IF(I .ne. 0) THEN
+      select_expr_temp_0 = I
+      IF(select_expr_temp_0 .ne. 0) THEN
         Y(1)%v = X(1)%v
       ENDIF
 
@@ -116,7 +118,8 @@ C$OPENAD XXX Template ad_template.f
 ! taping
 C$OPENAD XXX Template ad_template.f
       I = 1
-      IF(I .ne. 0) THEN
+      select_expr_temp_0 = I
+      IF(select_expr_temp_0 .ne. 0) THEN
         Y(1)%v = X(1)%v
         OpenAD_Symbol_1 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_1

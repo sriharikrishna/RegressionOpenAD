@@ -82,6 +82,8 @@
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="4">
       <xaif:StatementId idRef="13"/>
+    </xaif:StmtIdSet>
+    <xaif:StmtIdSet key="5">
       <xaif:StatementId idRef="15"/>
     </xaif:StmtIdSet>
   </xaif:DUUDSetMap>
@@ -143,8 +145,8 @@
 
     <xaif:Branch vertex_id="23" lineNumber="12">
       <xaif:Condition>
-        <xaif:VariableReference vertex_id="1" du_ud="3" alias="2">
-          <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_3"/>
+        <xaif:VariableReference vertex_id="1" du_ud="4" alias="3">
+          <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="select_expr_temp_0_4"/>
         </xaif:VariableReference>
       </xaif:Condition>
     </xaif:Branch>

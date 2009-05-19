@@ -22,6 +22,7 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) select_expr_temp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -32,7 +33,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       I = 1
-      IF(I .ne. 0) THEN
+      select_expr_temp_0 = I
+      IF(select_expr_temp_0 .ne. 0) THEN
         __value__(Y(1)) = __value__(X(1))
         CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
       ENDIF

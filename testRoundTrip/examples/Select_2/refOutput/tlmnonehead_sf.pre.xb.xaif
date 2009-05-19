@@ -116,13 +116,18 @@
         <xaif:StatementId idRef="18"/>
       </xaif:StmtIdSet>
       <xaif:StmtIdSet key="4">
+        <xaif:StatementId idRef="23"/>
+      </xaif:StmtIdSet>
+      <xaif:StmtIdSet key="5">
         <xaif:StatementId idRef="11"/>
         <xaif:StatementId idRef="18"/>
         <xaif:StatementId idRef="23"/>
-        <xaif:StatementId idRef="25"/>
         <xaif:StatementId idRef="32"/>
         <xaif:StatementId idRef="45"/>
         <xaif:StatementId idRef="58"/>
+      </xaif:StmtIdSet>
+      <xaif:StmtIdSet key="6">
+        <xaif:StatementId idRef="25"/>
       </xaif:StmtIdSet>
     </xaif:DUUDSetMap>
     <xaif:DOSetMap>
@@ -179,7 +184,7 @@
       </xaif:BasicBlock>
       <xaif:ForLoop vertex_id="6" annotation="" reversal="anonymous">
         <xaif:Initialization statement_id="13">
-          <xaif:AssignmentLHS active="false" alias="2" du_ud="4" deriv="0" constant="0">
+          <xaif:AssignmentLHS active="false" alias="2" du_ud="5" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="3"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
@@ -196,7 +201,7 @@
           <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
         </xaif:Condition>
         <xaif:Update statement_id="18">
-          <xaif:AssignmentLHS active="false" alias="2" du_ud="4" deriv="0" constant="0">
+          <xaif:AssignmentLHS active="false" alias="2" du_ud="5" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="3"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
@@ -215,8 +220,8 @@
       </xaif:BasicBlock>
       <xaif:Branch vertex_id="35" annotation="">
         <xaif:Condition>
-          <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="3"/>
+          <xaif:VariableReference vertex_id="1" active="false" alias="3" du_ud="4" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="select_expr_temp_0_4" annotation="" scope_id="3"/>
           </xaif:VariableReference>
         </xaif:Condition>
       </xaif:Branch>
