@@ -1,7 +1,7 @@
 program driverAdm
- use OADactive
- use OADrev
- use OADtape
+ use OAD_active
+ use OAD_rev
+ use OAD_tape
 
  ! use mpi
  implicit none ! after 'use' before 'include'

@@ -21,8 +21,20 @@ driver: driver.o compute.o init.o
 %.f90 : %.F90 OADmpi.inc
 	$(FC) $(FFLAGS) -E $<  > $@
 
-driverAdm: w2f__types.o OADactive.o OADtape.o OADrev.o OADmpiBK.o driverAdm.o compute.xb.x2w.w2f.pp.o init.o iaddr.o
+driverAdm: w2f__types.o OAD_active.o OAD_tape.o OAD_rev.o OADmpiBK.o driverAdm.o compute.xb.x2w.w2f.pp.o init.o iaddr.o
 	$(FC) -o $@ $^ $(LDFLAGS) $(LIBS)
+
+%.f90: 
+	ln -sf ${OPENADROOT}/runTimeSupport/simple/$@ ./
+
+OAD_active.f90: 
+	ln -sf  ${OPENADROOT}/runTimeSupport/scalar/$@ ./
+
+iaddr.c: 
+	ln -sf  ${OPENADROOT}/runTimeSupport/all/$@ ./
+
+w2f__types.f90: 
+	ln -sf  ${OPENADROOT}/runTimeSupport/all/$@ ./
 
 # F -> WHIRL
 compute.B: compute.F90 OADmpi.inc
@@ -45,8 +57,10 @@ compute.xb.x2w.w2f.f: compute.xb.x2w.B
 	${OPEN64ROOT}/whirl2f/whirl2f -openad $<
 
 # postprocess F'
-compute.xb.x2w.w2f.pp.f: compute.xb.x2w.w2f.f
-	perl ${OPENADFORTTKROOT}/bin/multi-pp.pl $<
+compute.xb.x2w.w2f.pp.f: compute.xb.x2w.w2f.f 
+	${OPENADFORTTK_BASE}/tools/SourceProcessing/postProcess.py -t oad_t_split.f --mode=r $< -o $@ 
+
+.PHONY: all
 
 clean:
-	rm -f *.o driver driverAdm compute.x* compute.B compute.f90 *.mod *.mod-whirl
+	rm -f *.o driver driverAdm compute.x* compute.B compute.f90 *.mod *.mod-whirl OAD_* *.py w2f_* iaddr.c 

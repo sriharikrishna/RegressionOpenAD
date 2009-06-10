@@ -1,6 +1,6 @@
         subroutine template()
-          use OADtape
-          use OADrev
+          use OAD_tape
+          use OAD_rev
 
 !$TEMPLATE_PRAGMA_DECLARATIONS
 
