@@ -1984,7 +1984,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_ini_fields()
       MAXLEV2 = ((N_MAX / 73) + 1)
       IF(N_MAX .GT. 3650) THEN
-        WRITE (*,*)'NEED TO SET nlev1*nlev2 >= n_max '
+        WRITE(*,*) 'NEED TO SET nlev1*nlev2 >= n_max '
       ELSE
         DO ILEV2 = 1, 50, 1
           IF(ILEV2 .LE. MAXLEV2) THEN
@@ -2014,7 +2014,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_ini_fields()
       MAXLEV2 = ((N_MAX / 73) + 1)
       IF(N_MAX .GT. 3650) THEN
-        WRITE (*,*)'NEED TO SET nlev1*nlev2 >= n_max '
+        WRITE(*,*) 'NEED TO SET nlev1*nlev2 >= n_max '
         OpenAD_Symbol_129 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_129
         integer_tape_pointer = integer_tape_pointer+1
