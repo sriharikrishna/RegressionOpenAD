@@ -19,6 +19,9 @@ driver: driver.o compute.o init.o
 %.o : %.f90
 	$(F90C) $(FFLAGS) -c $<
 
+%.o : %.f
+	$(F90C) $(FFLAGS) -c $<
+
 %.o : %.c
 	$(CC) $(CFLAGS) -c $<
 
