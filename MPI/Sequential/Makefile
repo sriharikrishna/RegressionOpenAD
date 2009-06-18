@@ -37,4 +37,4 @@ clean:
 	rm -f $(TARGETS) *.o compute.x* compute.B *.mod *.mod-whirl *.log~
 	rm -f $(addsuffix .f90, $(RTSUPP)) iaddr.c ad_inline.f ad_template.f
 
-.PHONY: clean toolChain
+.PHONY: all clean toolChain
