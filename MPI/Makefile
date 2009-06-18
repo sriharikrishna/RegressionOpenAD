@@ -28,7 +28,8 @@ driver: driver.o compute.o init.o
 %.f90 : %.F90 OADmpi.inc
 	$(F90C) $(FFLAGS) -E $<  > $@
 
-driverAdm: w2f__types.o OAD_active.o OAD_tape.o OAD_rev.o OADmpiBK.o driverAdm.o compute.xb.x2w.w2f.pp.o init.o iaddr.o
+RTSUPP=w2f__types OAD_active OAD_cp OAD_tape OAD_rev 
+driverAdm: $(addsuffix .o, $(RTSUPP) iaddr OADmpiBK) driverAdm.o compute.xb.x2w.w2f.pp.o init.o
 	$(F90C) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 %.f90: 
@@ -65,9 +66,10 @@ compute.xb.x2w.w2f.f: compute.xb.x2w.B
 
 # postprocess F'
 compute.xb.x2w.w2f.pp.f: compute.xb.x2w.w2f.f 
-	${OPENADFORTTK_BASE}/tools/SourceProcessing/postProcess.py -t oad_t_split.f --mode=r $< -o $@ 
-
-.PHONY: all
+	${OPENADFORTTK_BASE}/tools/SourceProcessing/postProcess.py -t ${OPENADROOT}/runTimeSupport/simple/ad_template.split.f -i ${OPENADROOT}/runTimeSupport/simple/ad_inline.f --mode=r $< -o $@ 
 
 clean:
 	rm -f *.o driver driverAdm compute.x* compute.B compute.f90 *.mod *.mod-whirl OAD_* *.py w2f_* iaddr.c 
+
+.PHONY: all clean
+

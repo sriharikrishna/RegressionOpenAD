@@ -1,7 +1,6 @@
 #include "OADmpi.inc"
 
 subroutine ring(x)
-!$openad xxx template oad_t_split.f
 
  ! use mpi
  implicit none ! after 'use' before 'include'
@@ -40,7 +39,6 @@ subroutine ring(x)
 end
 
 subroutine compute(x,f)
-!$openad xxx template oad_t_split.f
 
  ! use mpi
  implicit none ! after 'use' before 'include'
