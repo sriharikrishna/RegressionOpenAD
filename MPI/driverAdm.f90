@@ -22,6 +22,7 @@ program driverAdm
  if (myid .eq. 0) then 
     print *, 'function value before starting adjoint: ', f%v
  end if
+ call MPI_BARRIER(MPI_COMM_WORLD,ierr)
  our_rev_mode%tape=.FALSE.
  our_rev_mode%adjoint=.TRUE.
  f%d=1.0

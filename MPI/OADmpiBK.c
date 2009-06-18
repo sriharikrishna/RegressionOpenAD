@@ -88,7 +88,7 @@ void oadtirecv_(void *buf,
 		       *tag, 
 		       (MPI_Comm)(*comm), 
 		       (MPI_Request *)(req));
-  printf("%i: irecv b:%x t:%x c:%i s:%i r:%i\n",myId, buf,(void*)tBuf,*count, *src, *req);
+  /* printf("%i: irecv b:%x t:%x c:%i s:%i r:%i\n",myId, buf,(void*)tBuf,*count, *src, *req);*/
   associateR(buf, tBuf,*count, *req);
 } 
 
@@ -113,7 +113,7 @@ void oadtisend_(void *buf,
 		       *tag, 
 		       (MPI_Comm)(*comm), 
 		       (MPI_Request *)(req));
-  printf("%i: isend b:%x c:%i d:%i r:%i\n",myId, buf,*count, *dest, *req);
+  /* printf("%i: isend b:%x c:%i d:%i r:%i\n",myId, buf,*count, *dest, *req); */
   associateS(buf,*count, *req);
 } 
 
@@ -126,7 +126,7 @@ void oadtsend_(void *buf,
 	       int *ierror) {
   int myId;
   *ierror = MPI_Comm_rank(MPI_COMM_WORLD, &myId);
-  printf("%i: send b:%x c:%i dt:%i d:%i \n",myId, buf,*count, *datatype, *dest);
+  /* printf("%i: send b:%x c:%i dt:%i d:%i \n",myId, buf,*count, *datatype, *dest); */
   *ierror = MPI_Send( buf, 
 		      *count, 
 		      (MPI_Datatype)(*datatype), 
@@ -153,7 +153,7 @@ void oadhandlerequest_ (int *r) {
 	       sAssoc->length*sizeof(double));
 	sAssoc->req=0; 
 	done=1;
-	printf("%i: handle S request r:%i\n",myId, *r);
+	/* printf("%i: handle S request r:%i\n",myId, *r); */
 	break; 
     }
     sAssoc=sAssoc->next;
@@ -169,12 +169,13 @@ void oadhandlerequest_ (int *r) {
       }
       free(tBuf);
       rAssoc->req=0;
-      printf("%i: handle R request r:%i\n",myId, *r);
+      /* printf("%i: handle R request r:%i\n",myId, *r); */
       done=1;
       break; 
     }
     rAssoc=rAssoc->next;
   }
-  if (!done)
-    printf("%i: cannot handle request r:%i\n",myId, *r);
+  if (!done) { 
+    /* printf("%i: cannot handle request r:%i\n",myId, *r); */
+  }
 }

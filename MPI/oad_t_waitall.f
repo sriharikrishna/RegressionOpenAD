@@ -9,6 +9,7 @@
 
          if (our_rev_mode%plain) then
 ! original function
+
             call mpi_waitall( 
      +      count, 
      +      requests, 
@@ -17,6 +18,7 @@
           end if
           if (our_rev_mode%tape) then
 ! taping
+
             call mpi_waitall( 
      +      count, 
      +      requests, 

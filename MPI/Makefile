@@ -2,7 +2,11 @@ ifndef MPIROOT
  $(error "Error:  environment variable MPIROOT not defined!")
 endif
 
-FC       = $(MPIROOT)/bin/mpif90
+ifndef OPENADROOT
+ $(error "Error:  environment variable OPENADROOT not defined!")
+endif
+
+F90C     = $(MPIROOT)/bin/mpif90
 CC       = $(MPIROOT)/bin/mpicc
 FFLAGS   = -g -O0
 CFLAGS   = -g -O0
@@ -10,19 +14,19 @@ CFLAGS   = -g -O0
 all: driver driverAdm
 
 driver: driver.o compute.o init.o
-	$(FC) -o $@ $^ $(LDFLAGS) $(LIBS)
+	$(F90C) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 %.o : %.f90
-	$(FC) $(FFLAGS) -c $<
+	$(F90C) $(FFLAGS) -c $<
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $<
 
 %.f90 : %.F90 OADmpi.inc
-	$(FC) $(FFLAGS) -E $<  > $@
+	$(F90C) $(FFLAGS) -E $<  > $@
 
 driverAdm: w2f__types.o OAD_active.o OAD_tape.o OAD_rev.o OADmpiBK.o driverAdm.o compute.xb.x2w.w2f.pp.o init.o iaddr.o
-	$(FC) -o $@ $^ $(LDFLAGS) $(LIBS)
+	$(F90C) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 %.f90: 
 	ln -sf ${OPENADROOT}/runTimeSupport/simple/$@ ./

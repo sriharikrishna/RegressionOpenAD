@@ -111,12 +111,12 @@ end
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! WAITALL
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!$openad xxx template oad_t_waitall.f
 subroutine  oad_mpi_waitall ( & 
      count, &
      requests, &
      statuses, &
      ierror)
-!$openad xxx template oad_t_waitall.f
   include 'mpif.h'
 
   integer count

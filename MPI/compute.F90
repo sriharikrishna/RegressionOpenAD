@@ -34,6 +34,7 @@ subroutine ring(x)
     ! wait for all non-blocking requests
     call OAD_MPI_WAITALL(4,req,MPI_STATUSES_IGNORE,ierr)
     ! add the neighbors contributions
+    ! print *,MYID, LX, X, RX
     x=x+rx+lx
  end do
 end
