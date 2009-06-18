@@ -1,7 +1,7 @@
 program driverAdm
- use OADactive
- use OADrev
- use OADtape
+ use OAD_active
+ use OAD_rev
+ use OAD_tape
 
  implicit none 
 
@@ -9,6 +9,7 @@ program driverAdm
  type(active) :: f
  integer numProcs
  integer i
+ write (*,'(A)',advance='NO') 'enter number of processors used in the parallel case: '
  read *, numProcs
 
  ! init x

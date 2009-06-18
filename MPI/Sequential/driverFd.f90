@@ -6,7 +6,8 @@ program driverFd
  double precision, dimension(:), allocatable :: x0,x
  integer numProcs
  integer i
-
+ 
+ write (*,'(A)',advance='NO') 'enter number of processors used in the parallel case: '
  read *, numProcs
  
  h=1.0e-6
@@ -21,6 +22,6 @@ program driverFd
     x=x0
     x(i)=x0(i)+h
     call compute(x,f,numProcs)
-    print *, ABS(f-f0)/h
+    print *, i-1, ":", (f-f0)/h
  end do
 end

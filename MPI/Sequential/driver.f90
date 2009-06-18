@@ -7,6 +7,7 @@ program driver
  integer numProcs
  integer i
 
+ write (*,'(A)',advance='NO') 'enter number of processors used in the parallel case: '
  read *, numProcs
 
  allocate (x(numProcs))
