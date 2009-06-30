@@ -54,6 +54,8 @@ program driver
 
   implicit none
 
+  external box_timestep
+
   integer, parameter :: kdim=3
   integer i,j,n,m
   double precision :: h
@@ -62,52 +64,44 @@ program driver
   double precision :: gamma_t
   double precision :: nullforce(1 : 2)
   double precision :: tstar(1 : 2)
-
-
   double precision :: told(1 : 3)
+  double precision :: tnow0(1 : 3)
   double precision :: tnow(1 : 3)
-  double precision :: tnow_ph(1 : 3)
   double precision :: uvel
-
+  double precision :: tnew0(1 : 3)
   double precision :: tnew(1 : 3)
-  double precision :: tnew_ph(1 : 3)
-
-  external box_timestep
 
   open(2,action='read',file='params.conf')
   read(2,'(I5,/,I5,/,F8.1)') n, m, h
   close(2)
 
+  gamma_t = 1.0D0
+  nullforce = (/1.0D0,1.0D0/)
+  tstar = (/1.0D0,1.0D0/)
+  told = (/1.0D0,1.0D0,1.0D0/)
+  uvel = 1.0D0
+
+  tnow0 = (/1.0D0,1.0D0,1.0D0/)
+
   open(2,file='tmpOutput/dd.out')
   write(2,*) "DD"
   do i=1,kdim
-     gamma_t=1.0D0
-     nullforce=(/1.0D0,1.0D0/)
-     tstar=(/1.0D0,1.0D0/)
-     told=(/1.0D0,1.0D0,1.0D0/)
-     tnow=(/1.0D0,1.0D0,1.0D0/)
-     tnow_ph=tnow
-     tnew=(/0.0D0,0.0D0,0.0D0/)
-     tnew_ph=tnew
-     uvel=1.0D0
-     do j=1,kdim
-        if (j==i) then
-           tnow_ph(i)=tnow_ph(i)+h
-        endif
-     end do
-     call box_timestep(gamma_t,tStar,nullforce,uvel, &
-& tnow,told,tnew)
-     call box_timestep(gamma_t,tStar,nullforce,uvel, &
-& tnow_ph,told,tnew_ph)
-     do j=1,kdim
-        jac(j,i)=(tnew_ph(j)-tnew(j))/h
-     end do
+    tnow(i) = tnow0(i)
   end do
+  call box_timestep(gamma_t,tStar,nullforce,uvel,tnow,told,tnew0)
   do i=1,kdim
      do j=1,kdim
-        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",i,",",j,")=",jac(i,j)
+        tnow(j) = tnow0(j)
+        if (i==j) then
+           tnow(j) = tnow0(j)+h
+        endif
+     end do
+     call box_timestep(gamma_t,tStar,nullforce,uvel,tnow,told,tnew)
+     do j=1,kdim
+        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",i,",",j,")=",(tnew(j)-tnew0(j))/h
      end do
   end do
   close(2)
 
 end program driver
+

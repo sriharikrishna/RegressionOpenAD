@@ -52,9 +52,10 @@
 ! ========== end copyright notice ==============
 program driver
 
+  implicit none
   use OAD_active
 
-  implicit none
+  external box_timestep
 
   integer, parameter :: kdim=3
   integer i,j,n,m
@@ -64,8 +65,6 @@ program driver
   double precision :: gamma_t
   double precision :: nullforce(1 : 2)
   double precision :: tstar(1 : 2)
-
-
   double precision :: told(1 : 3)
   double precision :: tnow0(1 : 3)
   type(active) :: tnow(1 : 3)
@@ -74,19 +73,17 @@ program driver
   type(active) :: tnew0(1 : 3)
   type(active) :: tnew(1 : 3)
 
-  external box_timestep
-
   open(2,action='read',file='params.conf')
   read(2,'(I5,/,I5,/,F8.1)') n, m, h
   close(2)
 
-  gamma_t=1.0D0
-  nullforce=(/1.0D0,1.0D0/)
-  tstar=(/1.0D0,1.0D0/)
-  told=(/1.0D0,1.0D0,1.0D0/)
-  uvel=1.0D0
+  gamma_t = 1.0D0
+  nullforce = (/1.0D0,1.0D0/)
+  tstar = (/1.0D0,1.0D0/)
+  told = (/1.0D0,1.0D0,1.0D0/)
+  uvel = 1.0D0
 
-  tnow0=(/1.0D0,1.0D0,1.0D0/)
+  tnow0 = (/1.0D0,1.0D0,1.0D0/)
 
   open(2,file='tmpOutput/dd.out')
   write(2,*) "DD"
@@ -127,3 +124,4 @@ program driver
   close(2)
 
 end program driver
+
