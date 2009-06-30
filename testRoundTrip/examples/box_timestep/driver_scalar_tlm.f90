@@ -52,8 +52,8 @@
 ! ========== end copyright notice ==============
 program driver
 
-  implicit none
   use OAD_active
+  implicit none
 
   external box_timestep
 
