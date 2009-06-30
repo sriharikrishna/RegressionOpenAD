@@ -56,22 +56,21 @@ program driver
 
   external head
 
-  double precision, dimension(:), allocatable :: x, x0, y, y0 
+  double precision,dimension(:),allocatable :: x,x0,y,y0 
   double precision h
   integer n,m
   integer i,j,k
 
   open(2,action='read',file='params.conf')
-  read(2,'(I5,/,I5,/,F8.1)') n, m, h
+  read(2,'(I5,/,I5,/,F8.1)') n,m,h
   close(2)
-
 
   allocate(x(n))
   allocate(x0(n))
   allocate(y(m))
   allocate(y0(m))
 
-  do i=1,n   
+  do i=1,n
      x0(i)=i/2.D0
   end do
 
@@ -81,8 +80,8 @@ program driver
      x(j)=x0(j)
   end do
   call head(x,y0)
-  do i=1,n   
-     do j=1,n   
+  do i=1,n
+     do j=1,n
         x(j)=x0(j)
         if (i==j) then 
            x(j)=x0(j)+h
@@ -90,7 +89,7 @@ program driver
      end do
      call head(x,y)
      do k=1,m
-        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",k,",",i,")=", (y(k)-y0(k))/h
+        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",k,",",i,")=",(y(k)-y0(k))/h
      end do
   end do
   close(2)
@@ -101,3 +100,4 @@ program driver
   deallocate(y0)
 
 end program driver
+
