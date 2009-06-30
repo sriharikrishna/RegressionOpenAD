@@ -58,6 +58,8 @@ program driver
 
   implicit none
 
+external box_timestep
+
   integer, parameter :: kdim=3
   integer i,j,n,m
   double precision :: h
@@ -66,21 +68,24 @@ program driver
   double precision :: gamma_t
   double precision :: nullforce(1 : 2)
   double precision :: tstar(1 : 2)
-
-
   double precision :: told(1 : 3)
+  type(active) :: tnow0(1 : 3)
   type(active) :: tnow(1 : 3)
-  type(active) :: tnow_ph(1 : 3)
   double precision :: uvel
-
+  type(active) :: tnew0(1 : 3)
   type(active) :: tnew(1 : 3)
-  type(active) :: tnew_ph(1 : 3)
-
-  external box_timestep
 
   open(2,action='read',file='params.conf')
   read(2,'(I5,/,I5,/,F8.1)') n, m, h
   close(2)
+
+  gamma_t=1.0D0
+  nullforce=(/1.0D0,1.0D0/)
+  tstar=(/1.0D0,1.0D0/)
+  told=(/1.0D0,1.0D0,1.0D0/)
+  uvel=1.0D0
+
+  tnow0=(/active(1.0D0,0.0D0),active(1.0D0,0.0D0),active(1.0D0,0.0D0)/)
 
   open(2,file='tmpOutput/dd.out')
   write(2,*) "DD"
@@ -92,32 +97,20 @@ program driver
   our_rev_mode%tape=.FALSE.
   our_rev_mode%adjoint=.FALSE.
   do i=1,kdim
-     gamma_t=1.0D0
-     nullforce=(/1.0D0,1.0D0/)
-     tstar=(/1.0D0,1.0D0/)
-     told=(/1.0D0,1.0D0,1.0D0/)
-     tnow=(/active(1.0D0,0.0D0),active(1.0D0,0.0D0),active(1.0D0,0.0D0)/)
-     tnow_ph=tnow
-     tnew=(/active(0.0D0,0.0D0),active(0.0D0,0.0D0),active(0.0D0,0.0D0)/)
-     tnew_ph=tnew
-     uvel=1.0D0
-     do j=1,kdim
-        if (j==i) then
-           tnow_ph(i)%v=tnow_ph(i)%v+h
-        endif
-     end do
-     call box_timestep(gamma_t,tStar,nullforce,uvel, &
-& tnow,told,tnew)
-     call box_timestep(gamma_t,tStar,nullforce,uvel, &
-& tnow_ph,told,tnew_ph)
-     do j=1,kdim
-        jac(j,i)=(tnew_ph(j)%v-tnew(j)%v)/h
-     end do
+    tnow(i)%v = tnow0(i)%v
   end do
+  call box_timestep(gamma_t,tStar,nullforce,uvel,tnow,told,tnew0)
   do i=1,kdim
-     do j=1,kdim
-        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",i,",",j,")=",jac(i,j)
-     end do
+    do j=1,kdim
+      tnow(j)%v = tnow0(j)%v
+      if (i==j) then
+        tnow(j)%v=tnow0(j)%v+h
+      endif
+    end do
+    call box_timestep(gamma_t,tStar,nullforce,uvel,tnow,told,tnew)
+    do j=1,kdim
+      write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",j,",",i,")=",(tnew(j)%v-tnew0(j)%v)/h
+    end do
   end do
   close(2)
 
@@ -126,19 +119,17 @@ program driver
   write(2,*) "AD"
   do i=1,kdim   
      do j=1,kdim   
-        tnew(j)%v=0.0
+        tnew(j)%v = 0.0D0
         if (i==j) then 
-           tnew(j)%d=1.0
+           tnew(j)%d = 1.0D0
         else
-           tnew(j)%d=0.0
+           tnew(j)%d = 0.0D0
         end if
      end do
-     gamma_t=1.0D0
-     nullforce=(/1.0D0,1.0D0/)
-     tstar=(/1.0D0,1.0D0/)
-     told=(/1.0D0,1.0D0,1.0D0/)
-     tnow=(/active(1.0D0,0.0D0),active(1.0D0,0.0D0),active(1.0D0,0.0D0)/)
-     uvel=1.0D0
+     do j=1,kdim
+        tnow(j)%d = 0.0D0
+        tnow(j)%v = tnow0(j)%v
+     end do
      our_rev_mode%arg_store=.FALSE.
      our_rev_mode%arg_restore=.FALSE.
      our_rev_mode%res_store=.FALSE.
@@ -148,14 +139,16 @@ program driver
      our_rev_mode%adjoint=.TRUE.
      call box_timestep(gamma_t,tStar,nullforce,uvel,tnow,told,tnew)
      do j=1,kdim
-        jac(i,j)=tnow(j)%d
+        jac(i,j) = tnow(j)%d
      end do
   end do
+
   do i=1,kdim
      do j=1,kdim
-        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",i,",",j,")=",jac(i,j)
+        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",j,",",i,")=",jac(j,i)
      end do
   end do
   close(2)
 
 end program driver
+
