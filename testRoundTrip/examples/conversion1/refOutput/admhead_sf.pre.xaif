@@ -25,7 +25,7 @@
         <xaif:Symbol symbol_id=".preg_return_val_19" kind="variable" type="opaque" shape="scalar" annotation="{Sym_Id#19}" active="0"/>
         <xaif:Symbol symbol_id="all_globals_mod__20" kind="subroutine" type="void" annotation="{Sym_Id#20}"/>
         <xaif:Symbol symbol_id="head__21" kind="subroutine" type="void" annotation="{Sym_Id#21}"/>
-        <xaif:Symbol symbol_id="FLOAT_23" kind="subroutine" type="void" annotation="{Sym_Id#23}"/>
+        <xaif:Symbol symbol_id="DBLE_23" kind="subroutine" type="void" annotation="{Sym_Id#23}"/>
       </xaif:SymbolTable>
     </xaif:Scope>
 
@@ -128,10 +128,8 @@
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
           <xaif:Intrinsic vertex_id="1" name="mul_scal_scal" type="***"/>
-          <xaif:Intrinsic vertex_id="2" name="real_scal" type="***" annotation="{IntrinsicKey#1_REAL}"/>
-          <xaif:Constant vertex_id="3" type="integer" feType="I4" value="6"/>
-          <xaif:ExpressionEdge edge_id="1" source="3" target="2" position="1"/>
-          <xaif:VariableReference vertex_id="4" du_ud="2" alias="3">
+          <xaif:Intrinsic vertex_id="2" name="real_scal" type="***" annotation="{IntrinsicKey#2_REAL}"/>
+          <xaif:VariableReference vertex_id="3" du_ud="2" alias="2">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="X_1"/>
             <xaif:ArrayElementReference vertex_id="2">
               <xaif:IndexTriplet>
@@ -142,8 +140,12 @@
             </xaif:ArrayElementReference>
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:VariableReference>
-          <xaif:ExpressionEdge edge_id="2" source="2" target="1" position="1"/>
-          <xaif:ExpressionEdge edge_id="3" source="4" target="1" position="2"/>
+          <xaif:ExpressionEdge edge_id="1" source="3" target="2" position="1"/>
+          <xaif:Intrinsic vertex_id="4" name="real_scal" type="***" annotation="{IntrinsicKey#2_REAL}"/>
+          <xaif:Constant vertex_id="5" type="integer" feType="I4" value="2"/>
+          <xaif:ExpressionEdge edge_id="2" source="5" target="4" position="1"/>
+          <xaif:ExpressionEdge edge_id="3" source="2" target="1" position="1"/>
+          <xaif:ExpressionEdge edge_id="4" source="4" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
     </xaif:BasicBlock>

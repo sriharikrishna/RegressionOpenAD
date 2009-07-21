@@ -112,7 +112,7 @@ c$openad INDEPENDENT(x5)
       h_obj4=loc1+f	
       h_obj5=four3rd*r11	
 
-      loc1= third*r00;
+      loc1 = third*r00
       f=twosqrt3*(d01+m01*gg) 
       g=loc1+r11
       h_obj16= loc1 - r11	
@@ -139,7 +139,7 @@ c$openad INDEPENDENT(x5)
       h_obj12=g-f 	
       h_obj13=g+f 	
       h_obj14=12.*r13
-      g=four3rd*r02;
+      g = four3rd*r02
       f=sqrt3*(r03+r12)
       h_obj10=g-f 
       h_obj6=g+f  
