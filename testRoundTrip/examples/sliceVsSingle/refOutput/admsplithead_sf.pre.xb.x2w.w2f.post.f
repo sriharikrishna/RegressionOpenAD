@@ -91,12 +91,10 @@ C
          if (our_rev_mode%plain) then
 ! original function
       X%v = (X%v+1.0D00)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       X%v = (X%v+1.0D00)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -104,7 +102,6 @@ C
       X%d = 0.0d0
       X%d = X%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -190,12 +187,10 @@ C
          if (our_rev_mode%plain) then
 ! original function
       X(1)%v = (X(1)%v+1.0D00)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       X(1)%v = (X(1)%v+1.0D00)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -203,7 +198,6 @@ C
       X(1)%d = 0.0d0
       X(1)%d = X(1)%d+OpenAD_prop_1%d
       OpenAD_prop_1%d = 0.0d0
-
           end if 
         end subroutine bar
 C ========== begin copyright notice ==============
@@ -307,14 +301,12 @@ C
       CALL foo(X(1))
       Y(1:2)%v = X(1:2)%v
       CALL bar(Y(2:2))
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       CALL foo(X(1))
       Y(1:2)%v = X(1:2)%v
       CALL bar(Y(2:2))
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -322,6 +314,5 @@ C
       X(1:2)%d = X(1:2)%d+Y(1:2)%d
       Y(1:2)%d = 0.0d0
       CALL foo(X(1))
-
           end if 
         end subroutine head

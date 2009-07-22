@@ -186,7 +186,6 @@ C$OPENAD XXX Template ad_template.f
       F%v = (D03%v+D12%v)
       LOC1%v = (A*(1.0D00/G%v))
       OBJ(1)%v = (F%v*LOC1%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -275,7 +274,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_8
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -346,6 +344,5 @@ C$OPENAD XXX Template ad_template.f
       X(1)%d = X(1)%d-MATR(0)%d
       X(2)%d = X(2)%d+MATR(0)%d
       MATR(0)%d = 0.0d0
-
           end if 
         end subroutine head

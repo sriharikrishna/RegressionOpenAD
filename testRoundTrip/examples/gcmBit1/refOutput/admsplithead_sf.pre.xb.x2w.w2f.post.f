@@ -310,7 +310,6 @@ C$OPENAD XXX Template ad_template.f
           BULKMOD(INT(I),INT(J))%v = (BMPRES%v+BMFRESH%v+BMSALT%v)
         END DO
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -545,7 +544,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -709,7 +707,6 @@ C$OPENAD XXX Template ad_template.f
         END DO
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1) + 1
       END DO
-
           end if 
         end subroutine find_bulkmod
 C ========== begin copyright notice ==============
@@ -892,7 +889,6 @@ C$OPENAD XXX Template ad_template.f
           Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
         END DO
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -975,7 +971,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_37
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1068,6 +1063,5 @@ C$OPENAD XXX Template ad_template.f
         END DO
         OpenAD_Symbol_23 = INT(OpenAD_Symbol_23) + 1
       END DO
-
           end if 
         end subroutine head

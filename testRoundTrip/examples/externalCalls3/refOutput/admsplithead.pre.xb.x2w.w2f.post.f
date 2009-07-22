@@ -93,7 +93,6 @@ C$OPENAD XXX Template ad_template.f
       T1 = X
       CALL barext(X,T2)
       Y = T2
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -101,10 +100,8 @@ C$OPENAD XXX Template ad_template.f
       T1 = X
       CALL barext(X,T2)
       Y = T2
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-
           end if 
         end subroutine head

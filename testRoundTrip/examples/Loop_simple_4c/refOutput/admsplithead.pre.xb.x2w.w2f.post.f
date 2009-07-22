@@ -139,7 +139,6 @@ C$OPENAD XXX Simple loop
       END DO
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -175,7 +174,6 @@ C$OPENAD XXX Simple loop
       character_tape_pointer = character_tape_pointer+len(GLOBALSTRING)
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -213,7 +211,6 @@ C$OPENAD XXX Simple loop
         ENDIF
         I = I - 1
       END DO
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -313,7 +310,6 @@ C$OPENAD XXX Template ad_template.f
       GLOBALSTRING = 'yes'
       CALL foo(X,Y)
       GLOBALSTRING = 'both'
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -323,13 +319,11 @@ C$OPENAD XXX Template ad_template.f
       GLOBALSTRING = 'yes'
       CALL foo(X,Y)
       GLOBALSTRING = 'both'
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL foo(X,Y)
       Y(2)%d = 0.0d0
       Y(1)%d = 0.0d0
-
           end if 
         end subroutine head

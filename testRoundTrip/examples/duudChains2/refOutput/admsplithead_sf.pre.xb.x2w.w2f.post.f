@@ -112,7 +112,6 @@ C$OPENAD XXX Template ad_template.f
       ELSE
         Y(1)%v = (X(1)%v*2.0D00)
       ENDIF
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -129,7 +128,6 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -142,6 +140,5 @@ C$OPENAD XXX Template ad_template.f
         X(1)%d = X(1)%d+Y(1)%d*(2.0D00)
         Y(1)%d = 0.0d0
       ENDIF
-
           end if 
         end subroutine head

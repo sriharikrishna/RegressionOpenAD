@@ -895,7 +895,6 @@ C$OPENAD XXX Template ad_template.f
       FLUX3%v = (NSIZE%v*(DSS3%v+PRIML1%v*NXHAT%v+RUL%v*UHATL%v))
       FLUX4%v = (NSIZE%v*(DSS4%v+PRIML1%v*NYHAT%v+RVL%v*UHATL%v))
       FLUX5%v = (NSIZE%v*(DSS5%v+PRIML1%v*NZHAT%v+RWL%v*UHATL%v))
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -1797,7 +1796,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_115
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -2550,6 +2548,5 @@ C$OPENAD XXX Template ad_template.f
       NRM1%d = NRM1%d+OpenAD_prop_0%d*(OpenAD_Symbol_213)
       NRM3%d = NRM3%d+OpenAD_prop_0%d*(OpenAD_Symbol_214)
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine ad_roehf5

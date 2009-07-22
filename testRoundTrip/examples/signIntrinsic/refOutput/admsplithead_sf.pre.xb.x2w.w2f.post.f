@@ -105,7 +105,6 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 ! original function
       Y(1)%v = DSIGN(X(1)%v,-X(2)%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -116,7 +115,6 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%v = OpenAD_Symbol_0
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -126,6 +124,5 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%d = 0.0d0
       X(1)%d = X(1)%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine head

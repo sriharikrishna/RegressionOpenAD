@@ -86,14 +86,12 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 ! original function
       Y(INT(A))%v = X(A)%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       Y(INT(A))%v = X(A)%v
       integer_tape(integer_tape_pointer) = A
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -102,7 +100,6 @@ C$OPENAD XXX Template ad_template.f
       X(INT(OpenAD_Symbol_0))%d = X(INT(OpenAD_Symbol_0))%d+Y(INT(OpenAD
      +_Symbol_0))%d
       Y(INT(OpenAD_Symbol_0))%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -198,7 +195,6 @@ C$OPENAD XXX Template ad_template.f
       A = 1
       CALL foo(X,Y,A)
       A = 20000
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -206,11 +202,9 @@ C$OPENAD XXX Template ad_template.f
       A = 1
       CALL foo(X,Y,A)
       A = 20000
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL foo(X,Y,A)
-
           end if 
         end subroutine head

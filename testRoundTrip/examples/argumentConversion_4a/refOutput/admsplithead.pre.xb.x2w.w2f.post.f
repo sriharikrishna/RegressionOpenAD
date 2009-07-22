@@ -91,7 +91,6 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 ! original function
       Y%v = (X(1)%v*X(2)%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -102,7 +101,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -113,7 +111,6 @@ C$OPENAD XXX Template ad_template.f
       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_8)
       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_9)
       Y%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -236,7 +233,6 @@ C!! requested inline of 'convert_a2p_matrix' has no defn
       CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -260,7 +256,6 @@ C!! requested inline of 'convert_a2p_matrix' has no defn
       CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -277,6 +272,5 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
         AX(INT(OpenAD_Symbol_10),2)%d = 0.0d0
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3) + 1
       END DO
-
           end if 
         end subroutine head

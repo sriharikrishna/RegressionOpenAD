@@ -139,7 +139,6 @@ C$OPENAD XXX Template ad_template.f
 C store arguments
       call cp_store_real_vector(X,size(X),theArgFStack,theArgFStackoffse
      +t,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -149,7 +148,6 @@ C restore arguments
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
       enddo
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -329,7 +327,6 @@ C store arguments
      +t,theArgFStackSize)
       call cp_store_real_scalar(X%v,theArgFStack,theArgFStackoffset,theA
      +rgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -339,7 +336,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
       AGLOBAL%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", AGLOBAL%v
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -520,14 +516,12 @@ C$OPENAD XXX Template ad_template.f
 C store arguments
       call cp_store_real_scalar(AGLOBAL%v,theArgFStack,theArgFStackoffse
      +t,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
       AGLOBAL%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", AGLOBAL%v
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode

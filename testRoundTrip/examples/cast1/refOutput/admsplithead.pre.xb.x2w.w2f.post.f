@@ -86,16 +86,13 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 ! original function
       Y(1)%v = (INT(X(1)%v)*DBLE(2.5))
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       Y(1)%v = (INT(X(1)%v)*DBLE(2.5))
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       Y(1)%d = 0.0d0
-
           end if 
         end subroutine head

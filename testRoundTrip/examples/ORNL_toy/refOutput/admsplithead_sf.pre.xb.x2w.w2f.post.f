@@ -103,7 +103,6 @@ C
       CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P * P)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -111,12 +110,10 @@ C
       CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P * P)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL sq(OAD_CTMP0,X,Y)
-
           end if 
         end subroutine head
 C ========== begin copyright notice ==============
@@ -235,7 +232,6 @@ C
       V(1)%v = SQRT((U(1)%v**2)+(U(2)%v**2))
       V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
      +)%v**3)+U(2)%v*U(1)%v*2.0D00)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -279,7 +275,6 @@ C
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_3
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -315,6 +310,5 @@ C
       U(1)%d = U(1)%d+V(1)%d*(OpenAD_Symbol_8)
       U(2)%d = U(2)%d+V(1)%d*(OpenAD_Symbol_9)
       V(1)%d = 0.0d0
-
           end if 
         end subroutine sq

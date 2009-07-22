@@ -202,7 +202,6 @@ C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
         FLDNEW(INT(L))%v = (FLDOLD(L)+DFLDDT(L)%v*DELTA_T*2.0D00)
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -320,7 +319,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -396,6 +394,5 @@ C$OPENAD XXX Template ad_template.f
         FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_prop_3%d
         OpenAD_prop_3%d = 0.0d0
       ENDIF
-
           end if 
         end subroutine box_timestep

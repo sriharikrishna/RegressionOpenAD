@@ -134,7 +134,6 @@ C store arguments
      +ArgFStackSize)
       call cp_store_real_scalar(BARY,theArgFStack,theArgFStackoffset,the
      +ArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -144,7 +143,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", BARY
       BARX = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", BARX
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -309,7 +307,6 @@ C store arguments
      +ArgFStackSize)
       call cp_store_real_scalar(GY%v,theArgFStack,theArgFStackoffset,the
      +ArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -319,7 +316,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", GY%v
       GX%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", GX%v
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -498,7 +494,6 @@ C store arguments
      +ArgFStackSize)
       call cp_store_real_scalar(GY%v,theArgFStack,theArgFStackoffset,the
      +ArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -508,7 +503,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", GY%v
       GX%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", GX%v
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode

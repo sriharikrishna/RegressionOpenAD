@@ -126,7 +126,6 @@ C$OPENAD XXX Template ad_template.f
           TNOW(INT(L))%v = 2.0D00
         ENDIF
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -157,7 +156,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -181,7 +179,6 @@ C$OPENAD XXX Template ad_template.f
       CALL box_timestep(GAMMA_T,TSTAR,NULLFORCE,UVEL,TNOW,TOLD,TNEW)
       CALL box_transport(RHO,UVEL)
       CALL box_density(TNOW,SNOW,RHO)
-
           end if 
         end subroutine box_forward
 C ========== begin copyright notice ==============
@@ -294,7 +291,6 @@ C$OPENAD XXX Template ad_template.f
         TSVEC(INT(L)) = TNOW(L)%v
         TSVEC(INT(L+3)) = SNOW(L)%v
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -314,7 +310,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_42
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -330,7 +325,6 @@ C$OPENAD XXX Template ad_template.f
       DO WHILE(INT(OpenAD_Symbol_40) .LE. INT(OpenAD_Symbol_39))
         OpenAD_Symbol_40 = INT(OpenAD_Symbol_40) + 1
       END DO
-
           end if 
         end subroutine box_final_state
 C ========== begin copyright notice ==============
@@ -488,7 +482,6 @@ C$OPENAD XXX Template ad_template.f
         SNOW(INT(L))%v = S(L)%v
       END DO
       UVEL%v = UBAR
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -555,7 +548,6 @@ C$OPENAD XXX Template ad_template.f
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_57
       integer_tape_pointer = integer_tape_pointer+1
       UVEL%v = UBAR
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -628,7 +620,6 @@ C$OPENAD XXX Template ad_template.f
       T(3)%d = 0.0d0
       T(2)%d = 0.0d0
       T(1)%d = 0.0d0
-
           end if 
         end subroutine box_ini_fields
 C ========== begin copyright notice ==============
@@ -851,7 +842,6 @@ C$OPENAD XXX Template ad_template.f
           X(INT(I), INT(J)) = (X(I, J) + EPSILON_REGULARIZE)
         END DO
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -969,7 +959,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_90
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1019,7 +1008,6 @@ C$OPENAD XXX Template ad_template.f
       DO WHILE(INT(OpenAD_Symbol_82) .LE. INT(OpenAD_Symbol_81))
         OpenAD_Symbol_82 = INT(OpenAD_Symbol_82) + 1
       END DO
-
           end if 
         end subroutine box_ini_params
 C ========== begin copyright notice ==============
@@ -1172,7 +1160,6 @@ C$OPENAD XXX Template ad_template.f
         END DO
         CALL box_final_state()
       ENDIF
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -1223,7 +1210,6 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_130
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1256,7 +1242,6 @@ C$OPENAD XXX Template ad_template.f
         END DO
       ENDIF
       CALL box_ini_fields()
-
           end if 
         end subroutine box_model_body
 C ========== begin copyright notice ==============
@@ -1371,7 +1356,6 @@ C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
         RHOLOC(INT(L))%v = (SLOC(L)%v*BETA-TLOC(L)%v*ALPHA)
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -1392,7 +1376,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1413,7 +1396,6 @@ C$OPENAD XXX Template ad_template.f
         RHOLOC(INT(OpenAD_Symbol_153))%d = 0.0d0
         OpenAD_Symbol_14 = INT(OpenAD_Symbol_14) + 1
       END DO
-
           end if 
         end subroutine box_density
 C ========== begin copyright notice ==============
@@ -1523,7 +1505,6 @@ C$OPENAD XXX Template ad_template.f
 ! original function
       UVELLOC%v = (-(U0*(RHOLOC(1)%v*DELTA+RHOLOC(3)%v*(1.0D00-DELTA)-RH
      +OLOC(2)%v)))
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -1542,7 +1523,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1558,7 +1538,6 @@ C$OPENAD XXX Template ad_template.f
       RHOLOC(1)%d = RHOLOC(1)%d+OpenAD_prop_0%d*(OpenAD_Symbol_158)
       RHOLOC(2)%d = RHOLOC(2)%d-OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine box_transport
 C ========== begin copyright notice ==============
@@ -1676,7 +1655,6 @@ C$OPENAD XXX Template ad_template.f
         FLDNOW(INT(L))%v = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*(FLDOLD(L)%v
      ++FLDNEW(L)%v-FLDNOW(L)%v*2.0D00))
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -1696,7 +1674,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_27
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1727,7 +1704,6 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_prop_7%d = 0.0d0
         OpenAD_Symbol_26 = INT(OpenAD_Symbol_26) + 1
       END DO
-
           end if 
         end subroutine box_robert_filter
 C ========== begin copyright notice ==============
@@ -1837,7 +1813,6 @@ C$OPENAD XXX Template ad_template.f
         SOLD(INT(L))%v = SNOW(L)%v
         SNOW(INT(L))%v = SNEW(L)%v
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -1856,7 +1831,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_33
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1888,7 +1862,6 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_prop_10%d = 0.0d0
         OpenAD_Symbol_32 = INT(OpenAD_Symbol_32) + 1
       END DO
-
           end if 
         end subroutine box_cycle_fields
 C ========== begin copyright notice ==============
@@ -2001,7 +1974,6 @@ C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
         FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*DELTA_T*2.0D00)
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -2019,7 +1991,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_148
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -2038,7 +2009,6 @@ C$OPENAD XXX Template ad_template.f
         FLDNEW(INT(OpenAD_Symbol_185))%d = 0.0d0
         OpenAD_Symbol_147 = INT(OpenAD_Symbol_147) + 1
       END DO
-
           end if 
         end subroutine box_update
 C ========== begin copyright notice ==============
@@ -2250,7 +2220,6 @@ C$OPENAD XXX Template ad_template.f
         DFLDDT(3)%v = (-((UVELLOC%v*(FLDNOW(1)%v-FLDNOW(3)%v))/VOL(3)))
       ENDIF
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -2377,7 +2346,6 @@ C$OPENAD XXX Template ad_template.f
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -2465,6 +2433,5 @@ C$OPENAD XXX Template ad_template.f
         FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_prop_4%d
         OpenAD_prop_4%d = 0.0d0
       ENDIF
-
           end if 
         end subroutine box_timestep

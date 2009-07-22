@@ -101,7 +101,6 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, (N + 1), 1
         A(INT(I))%v = (A(I)%v*2.0D00)
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -116,7 +115,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -134,7 +132,6 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_prop_0%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2) + 1
       END DO
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -251,7 +248,6 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 3, 1
         Y(1)%v = (X(I)%v+Y(1)%v)
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -279,7 +275,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_9
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -307,6 +302,5 @@ C$OPENAD XXX Template ad_template.f
       integer_tape_pointer = integer_tape_pointer-1
       G = integer_tape(integer_tape_pointer)
       CALL foo(X,OAD_CTMP0)
-
           end if 
         end subroutine head

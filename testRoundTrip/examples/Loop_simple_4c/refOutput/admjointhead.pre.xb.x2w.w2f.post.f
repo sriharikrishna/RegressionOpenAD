@@ -157,7 +157,6 @@ C store arguments
      +t,theArgFStackSize)
       call cp_store_real_vector(Y,size(Y),theArgFStack,theArgFStackoffse
      +t,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -175,7 +174,6 @@ C     +X(cp_loop_variable_1)%v
       enddo
       GLOBALSTRING = theArgSStack(theArgSStackoffset)
       theArgSStackoffset = theArgSStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -414,13 +412,11 @@ C$OPENAD XXX Template ad_template.f
 C store arguments
       call cp_store_string_scalar(GLOBALSTRING,theArgSStack,theArgSStack
      +offset,theArgSStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
       GLOBALSTRING = theArgSStack(theArgSStackoffset)
       theArgSStackoffset = theArgSStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode

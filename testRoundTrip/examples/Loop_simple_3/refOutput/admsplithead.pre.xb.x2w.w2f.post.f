@@ -120,7 +120,6 @@ C$OPENAD XXX Simple loop
           Y(1)%v = (Y(1)%v-X(1)%v)
         ENDIF
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -148,7 +147,6 @@ C$OPENAD XXX Simple loop
       character_tape(character_tape_pointer:character_tape_pointer+len(A
      +STRING)) = ASTRING(1:len(ASTRING))
       character_tape_pointer = character_tape_pointer+len(ASTRING)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -185,6 +183,5 @@ C$OPENAD XXX Simple loop
       END DO
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
-
           end if 
         end subroutine head

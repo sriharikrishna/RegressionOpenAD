@@ -90,18 +90,15 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 ! original function
       Y(1:)%v = X(1:)%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       Y(1:)%v = X(1:)%v
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       X(1:)%d = X(1:)%d+Y(1:)%d
       Y(1:)%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -198,17 +195,14 @@ C
 ! original function
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL foo(X,Y)
-
           end if 
         end subroutine head

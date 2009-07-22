@@ -254,7 +254,6 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -360,7 +359,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       ALPHA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -594,7 +592,6 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -610,7 +607,6 @@ C     +TNOW(cp_loop_variable_1)%v
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNOW(cp_loop_variable_1)%v
       enddo
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -850,7 +846,6 @@ C store arguments
      +t,theArgFStackSize)
       call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackoff
      +set,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -902,7 +897,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", SV
       HUNDRED = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", HUNDRED
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -1321,7 +1315,6 @@ C store arguments
       call cp_store_p_real_vector(X(:,cp_loop_variable_2),size(X(:,cp_lo
      +op_variable_2)),theArgFStack,theArgFStackoffset,theArgFStackSize)
       enddo
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -1407,7 +1400,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       ALPHA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -1906,7 +1898,6 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackoff
      +set,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -2048,7 +2039,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       ALPHA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -2325,7 +2315,6 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(SLOC,size(SLOC),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -2347,7 +2336,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       ALPHA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -2563,7 +2551,6 @@ C store arguments
      +gFStackSize)
       call cp_store_real_vector(RHOLOC,size(RHOLOC),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -2579,7 +2566,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", U0
       DELTA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -2793,7 +2779,6 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_real_vector(FLDNEW,size(FLDNEW),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -2818,7 +2803,6 @@ C     +FLDNOW(cp_loop_variable_1)%v
       ROBERT_FILTER_COEFF = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ROBERT_FILTER_COEFF
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -3041,7 +3025,6 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -3069,7 +3052,6 @@ C     +SNOW(cp_loop_variable_1)%v
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNEW(cp_loop_variable_1)%v
       enddo
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -3298,7 +3280,6 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_real_vector(DFLDDT,size(DFLDDT),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -3317,7 +3298,6 @@ C     +FLDOLD(cp_loop_variable_1)%v
       DELTA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -3629,7 +3609,6 @@ C store arguments
      +,theArgFStackoffset,theArgFStackSize)
       call cp_store_real_vector(FLDNOW,size(FLDNOW),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -3678,7 +3657,6 @@ C     +FLDNEW(cp_loop_variable_1)%v
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDOLD(cp_loop_variable_1)%v
       enddo
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode

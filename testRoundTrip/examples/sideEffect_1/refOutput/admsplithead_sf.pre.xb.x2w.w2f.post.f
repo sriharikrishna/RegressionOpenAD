@@ -114,7 +114,6 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 ! original function
       Y%v = (X(1)%v*X(1)%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -125,7 +124,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -136,7 +134,6 @@ C$OPENAD XXX Template ad_template.f
       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_1)
       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_2)
       Y%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -234,7 +231,6 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 ! original function
       X%v = (X%v*AGLOBAL%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -247,7 +243,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -260,7 +255,6 @@ C$OPENAD XXX Template ad_template.f
       X%d = 0.0d0
       X%d = X%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine bar
 C ========== begin copyright notice ==============
@@ -360,7 +354,6 @@ C$OPENAD XXX Template ad_template.f
       CALL bar(X(1))
       CALL foo(X,AGLOBAL)
       Y(1)%v = AGLOBAL%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -369,7 +362,6 @@ C$OPENAD XXX Template ad_template.f
       CALL bar(X(1))
       CALL foo(X,AGLOBAL)
       Y(1)%v = AGLOBAL%v
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -378,6 +370,5 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,AGLOBAL)
       CALL bar(X(1))
       AGLOBAL%d = 0.0d0
-
           end if 
         end subroutine head

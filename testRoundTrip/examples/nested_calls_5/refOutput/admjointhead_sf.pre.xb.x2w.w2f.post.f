@@ -121,11 +121,9 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -299,7 +297,6 @@ C store arguments
      +rgFStackSize)
       call cp_store_real_scalar(B%v,theArgFStack,theArgFStackoffset,theA
      +rgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -309,7 +306,6 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", B%v
       A%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
       theArgFStackoffset = theArgFStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode

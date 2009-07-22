@@ -104,7 +104,6 @@ C$OPENAD XXX Template ad_template.f
       T2%v = (T1%v*2.0D00)
       Y1%v = T2%v
       Y(1)%v = Y1%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -112,7 +111,6 @@ C$OPENAD XXX Template ad_template.f
       T2%v = (T1%v*2.0D00)
       Y1%v = T2%v
       Y(1)%v = Y1%v
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -121,6 +119,5 @@ C$OPENAD XXX Template ad_template.f
       X(1)%d = X(1)%d+T1%d
       X(1)%d = X(1)%d+T1%d
       T1%d = 0.0d0
-
           end if 
         end subroutine head

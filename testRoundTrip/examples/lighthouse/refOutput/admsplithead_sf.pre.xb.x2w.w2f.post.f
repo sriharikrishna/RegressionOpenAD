@@ -134,7 +134,6 @@ C
       V%v = TAN(OMEGA%v*T%v)
       Y(1)%v = ((NU%v*V%v)/(GAMMA%v-V%v))
       Y(2)%v = (Y(1)%v*GAMMA%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -175,7 +174,6 @@ C
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_8
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -203,6 +201,5 @@ C
       Y(1)%d = 0.0d0
       X(2)%d = X(2)%d+GAMMA%d
       GAMMA%d = 0.0d0
-
           end if 
         end subroutine head

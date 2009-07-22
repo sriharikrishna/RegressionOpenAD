@@ -94,11 +94,9 @@ C ========== end copyright notice ==============
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -256,11 +254,9 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode

@@ -100,7 +100,6 @@ C
          if (our_rev_mode%plain) then
 ! original function
       T%v = (X%v*T%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -112,7 +111,6 @@ C
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -125,7 +123,6 @@ C
       T%d = 0.0d0
       T%d = T%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -225,7 +222,6 @@ C$OPENAD XXX Template ad_template.f
       T%v = X(I)%v
       CALL foo(X(I),T)
       Y(INT(I))%v = T%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -240,7 +236,6 @@ C$OPENAD XXX Template ad_template.f
       Y(INT(I))%v = T%v
       integer_tape(integer_tape_pointer) = I
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -255,6 +250,5 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
       X(INT(OpenAD_Symbol_4))%d = X(INT(OpenAD_Symbol_4))%d+T%d
       T%d = 0.0d0
-
           end if 
         end subroutine head

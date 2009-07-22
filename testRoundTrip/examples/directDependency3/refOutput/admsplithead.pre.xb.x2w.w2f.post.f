@@ -70,15 +70,12 @@ C ========== end copyright notice ==============
 
          if (our_rev_mode%plain) then
 ! original function
-
           end if
           if (our_rev_mode%tape) then
 ! taping
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -174,7 +171,6 @@ C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
       CALL foo()
       Y%v = (T%v*2.0D00)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -182,7 +178,6 @@ C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
       CALL foo()
       Y%v = (T%v*2.0D00)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -191,6 +186,5 @@ C$OPENAD XXX Template ad_template.f
       CALL foo()
       X(1)%d = X(1)%d+T%d
       T%d = 0.0d0
-
           end if 
         end subroutine head

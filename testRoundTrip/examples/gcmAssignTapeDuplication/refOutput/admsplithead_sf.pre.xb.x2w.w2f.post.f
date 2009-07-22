@@ -134,7 +134,6 @@ C$OPENAD XXX Template ad_template.f
 ! original function
       Y(1)%v = (X(3)%v*((X(1)%v*(X(8)%v+X(7)%v+X(5)%v+X(6)%v)+X(2)%v*X(4
      +)%v)/(X(2)%v+X(1)%v*(X(12)%v+X(11)%v+X(9)%v+X(10)%v))))
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -179,7 +178,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_7
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -218,6 +216,5 @@ C$OPENAD XXX Template ad_template.f
       X(7)%d = X(7)%d+OpenAD_prop_0%d
       X(8)%d = X(8)%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine head

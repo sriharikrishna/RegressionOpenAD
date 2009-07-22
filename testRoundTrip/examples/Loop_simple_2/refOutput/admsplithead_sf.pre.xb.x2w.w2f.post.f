@@ -143,7 +143,6 @@ C$OPENAD XXX Simple loop\t
           END DO
         END DO
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -182,7 +181,6 @@ C$OPENAD XXX Simple loop\t
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -226,6 +224,5 @@ C$OPENAD XXX Simple loop\t
         Y(I)%d = 0.0d0
         I = I - 1
       END DO
-
           end if 
         end subroutine head

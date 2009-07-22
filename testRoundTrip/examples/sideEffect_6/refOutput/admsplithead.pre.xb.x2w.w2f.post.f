@@ -104,7 +104,6 @@ C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'three') THEN
         X%v = (X%v*3.0D00)
       ENDIF
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -131,7 +130,6 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -151,7 +149,6 @@ C$OPENAD XXX Template ad_template.f
         X%d = X%d+OpenAD_prop_0%d
         OpenAD_prop_0%d = 0.0d0
       ENDIF
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -250,7 +247,6 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(A,X)
       A = 'four'
       Y(1)%v = X(1)%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -261,7 +257,6 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(A,X)
       A = 'four'
       Y(1)%v = X(1)%v
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -269,6 +264,5 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%d = 0.0d0
       CALL foo(A,X)
       CALL foo(A,X)
-
           end if 
         end subroutine head

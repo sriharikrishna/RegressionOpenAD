@@ -103,7 +103,6 @@ C$OPENAD XXX Simple loop
       DO I = L, U, S
         Y%v = (X(I)%v*Y%v)
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -125,7 +124,6 @@ C$OPENAD XXX Simple loop
       integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = S
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -149,7 +147,6 @@ C$OPENAD XXX Simple loop
         OpenAD_prop_0%d = 0.0d0
         I = I - S
       END DO
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -270,7 +267,6 @@ C$OPENAD XXX Template ad_template.f
       OAD_CTMP10 = 1
       OAD_CTMP11 = (-2)
       CALL foo(X,Y(4),OAD_CTMP9,OAD_CTMP10,OAD_CTMP11)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -292,7 +288,6 @@ C$OPENAD XXX Template ad_template.f
       OAD_CTMP10 = 1
       OAD_CTMP11 = (-2)
       CALL foo(X,Y(4),OAD_CTMP9,OAD_CTMP10,OAD_CTMP11)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -302,6 +297,5 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(1),OAD_CTMP0,OAD_CTMP1,OAD_CTMP2)
       X(1:4)%d = X(1:4)%d+Y(1:4)%d
       Y(1:4)%d = 0.0d0
-
           end if 
         end subroutine head

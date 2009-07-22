@@ -104,7 +104,6 @@ C$OPENAD XXX Simple loop\t
       DO I = 1, MIN(K, 3), 1
         Y(INT(I))%v = X(I)%v
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -115,7 +114,6 @@ C$OPENAD XXX Simple loop\t
       END DO
       integer_tape(integer_tape_pointer) = K
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -127,7 +125,6 @@ C$OPENAD XXX Simple loop\t
         Y(I)%d = 0.0d0
         I = I - 1
       END DO
-
           end if 
         end subroutine bar
 C ========== begin copyright notice ==============
@@ -222,18 +219,15 @@ C
 C$OPENAD XXX Template ad_template.f
       K = 3
       CALL bar(X,Y,K)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
 C$OPENAD XXX Template ad_template.f
       K = 3
       CALL bar(X,Y,K)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL bar(X,Y,K)
-
           end if 
         end subroutine head

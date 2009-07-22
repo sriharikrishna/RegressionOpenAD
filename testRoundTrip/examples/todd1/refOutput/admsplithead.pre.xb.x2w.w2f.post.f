@@ -545,7 +545,6 @@ C$OPENAD XXX Template ad_template.f
       F%v = (SQRT3*(R03%v-R12%v))
       H_OBJ9%v = (G%v-F%v)
       H_OBJ7%v = (F%v+G%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -972,7 +971,6 @@ C$OPENAD XXX Template ad_template.f
       H_OBJ7%v = (F%v+G%v)
       double_tape(double_tape_pointer) = OpenAD_lin_138
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1431,6 +1429,5 @@ C$OPENAD XXX Template ad_template.f
       X0%d = X0%d-MATR0%d
       X1%d = X1%d+MATR0%d
       MATR0%d = 0.0d0
-
           end if 
         end subroutine head

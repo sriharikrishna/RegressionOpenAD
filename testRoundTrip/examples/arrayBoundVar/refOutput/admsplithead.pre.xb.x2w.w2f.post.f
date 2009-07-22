@@ -101,7 +101,6 @@ C$OPENAD XXX Template ad_template.f
 ! original function
       Z(1:INT(SIZE(X)))%v = X(1:2)%v
       Y(1:2)%v = Z(1:INT(SIZE(X)))%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -113,7 +112,6 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = SIZE(INT(X%v))
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -125,6 +123,5 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
       X(1:2)%d = X(1:2)%d+Z(1:INT(OpenAD_Symbol_3))%d
       Z(1:INT(OpenAD_Symbol_3))%d = 0.0d0
-
           end if 
         end subroutine head

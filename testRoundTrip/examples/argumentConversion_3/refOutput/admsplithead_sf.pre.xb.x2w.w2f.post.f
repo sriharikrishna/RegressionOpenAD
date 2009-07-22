@@ -109,18 +109,15 @@ C
       T = BARX
       BARX = BARY
       BARY = T
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       T = BARX
       BARX = BARY
       BARY = T
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
-
           end if 
         end subroutine bar
 C ========== begin copyright notice ==============
@@ -220,7 +217,6 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -233,12 +229,10 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       CALL bar(OpenAD_Symbol_2,OpenAD_Symbol_3)
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -333,14 +327,12 @@ C$OPENAD XXX Template ad_template.f
       GX%v = X(1)%v
       GY%v = GX%v
       Y(1)%v = GY%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       GX%v = X(1)%v
       GY%v = GX%v
       Y(1)%v = GY%v
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -350,6 +342,5 @@ C$OPENAD XXX Template ad_template.f
       GY%d = 0.0d0
       X(1)%d = X(1)%d+GX%d
       GX%d = 0.0d0
-
           end if 
         end subroutine head

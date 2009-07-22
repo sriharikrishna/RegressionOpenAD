@@ -144,7 +144,6 @@ C$OPENAD XXX Template ad_template.f
       DO K = 1, N, 1
         FVEC(INT(K))%v = (FVEC(K)%v*HX2*HY2)
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -175,7 +174,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -200,7 +198,6 @@ C$OPENAD XXX Template ad_template.f
       integer_tape_pointer = integer_tape_pointer-1
       NX = integer_tape(integer_tape_pointer)
       CALL foo(NX,NY,X,FVEC,R,N,HX,HY,HY2,HX2)
-
           end if 
         end subroutine head
 C ========== begin copyright notice ==============
@@ -578,7 +575,6 @@ C$OPENAD XXX Template ad_template.f
      +*2.0D00))-((DPDX%v*(PTLAP%v-PBLAP%v))/(HY*2.0D00))))
         END DO
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -850,7 +846,6 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_23
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1099,7 +1094,6 @@ C$OPENAD XXX Template ad_template.f
         END DO
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8) + 1
       END DO
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -1267,7 +1261,6 @@ C$OPENAD XXX Template ad_template.f
      +)/HX2))
       PTLAP%v = (((P%v+PTT%v-PT%v*2.0D00)/HY2)+((PTL%v+PTR%v-PT%v*2.0D00
      +)/HX2))
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -1317,7 +1310,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_50
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -1396,6 +1388,5 @@ C$OPENAD XXX Template ad_template.f
       P%d = P%d+OpenAD_prop_7%d
       PBB%d = PBB%d+OpenAD_prop_7%d
       OpenAD_prop_7%d = 0.0d0
-
           end if 
         end subroutine bar

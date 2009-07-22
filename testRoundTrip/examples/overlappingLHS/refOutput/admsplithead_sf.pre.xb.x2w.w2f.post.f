@@ -111,7 +111,6 @@ C$OPENAD XXX Simple loop
         Y(INT(I))%v = X%v
         Y(6-I)%v = X%v
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -121,7 +120,6 @@ C$OPENAD XXX Simple loop
         Y(INT(I))%v = X%v
         Y(6-I)%v = X%v
       END DO
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -133,6 +131,5 @@ C$OPENAD XXX Simple loop
         Y(I)%d = 0.0d0
         I = I - 1
       END DO
-
           end if 
         end subroutine head

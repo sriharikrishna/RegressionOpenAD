@@ -121,7 +121,6 @@ C$OPENAD XXX Template ad_template.f
       T4%v = (T1%v*T2%v)
       Y1%v = (T3%v*T4%v)
       Y2%v = (T3%v/T4%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -155,7 +154,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_2
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -173,6 +171,5 @@ C$OPENAD XXX Template ad_template.f
       X1%d = X1%d+Y1%d*(OpenAD_Symbol_2)
       X2%d = X2%d+Y1%d*(OpenAD_Symbol_3)
       Y1%d = 0.0d0
-
           end if 
         end subroutine ad_reroute

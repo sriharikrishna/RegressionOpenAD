@@ -120,7 +120,6 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       Y(4)%v = (C%v+D%v)
       Y(1)%v = X(3)%v
       Y(2)%v = X(4)%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -142,7 +141,6 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       Y(4)%v = (C%v+D%v)
       Y(1)%v = X(3)%v
       Y(2)%v = X(4)%v
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -162,7 +160,6 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       Y(3)%d = 0.0d0
       CALL foo(X(1),OpenAD_Symbol_3,C,D)
       CALL foo(X(1),X(2),C,D)
-
           end if 
         end subroutine head
 C ========== begin copyright notice ==============
@@ -267,7 +264,6 @@ C$OPENAD XXX Template ad_template.f
 ! original function
       C%v = SIN(A%v*B%v)
       D%v = COS(A%v+B%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -288,7 +284,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_5
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -306,6 +301,5 @@ C$OPENAD XXX Template ad_template.f
       B%d = B%d+OpenAD_prop_0%d
       A%d = A%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine foo

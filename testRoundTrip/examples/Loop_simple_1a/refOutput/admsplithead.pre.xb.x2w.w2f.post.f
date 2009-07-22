@@ -106,7 +106,6 @@ C$OPENAD XXX Simple loop
       DO I = 3, 1, (-1)
         Y(1)%v = (X(1)%v*Y(1)%v)
       END DO
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -123,7 +122,6 @@ C$OPENAD XXX Simple loop
         double_tape(double_tape_pointer) = OpenAD_lin_1
         double_tape_pointer = double_tape_pointer+1
       END DO
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -146,6 +144,5 @@ C$OPENAD XXX Simple loop
       END DO
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
-
           end if 
         end subroutine head

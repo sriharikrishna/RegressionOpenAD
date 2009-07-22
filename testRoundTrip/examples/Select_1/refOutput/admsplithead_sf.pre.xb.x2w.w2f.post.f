@@ -133,7 +133,6 @@ C$OPENAD XXX Template ad_template.f
       GO TO 6
 6     CONTINUE
       Y(1)%v = (Y(1)%v*Y(1)%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -171,7 +170,6 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -205,6 +203,5 @@ C$OPENAD XXX Template ad_template.f
       GO TO 96
 96    CONTINUE
       Y(1)%d = 0.0d0
-
           end if 
         end subroutine head

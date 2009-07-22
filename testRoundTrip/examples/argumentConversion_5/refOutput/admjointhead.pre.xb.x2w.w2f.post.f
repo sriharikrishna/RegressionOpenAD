@@ -118,7 +118,6 @@ C store arguments
       call cp_store_real_vector(X(cp_loop_variable_1,:),size(X(cp_loop_v
      +ariable_1,:)),theArgFStack,theArgFStackoffset,theArgFStackSize)
       enddo
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -129,7 +128,6 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
       enddo
       enddo
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -308,11 +306,9 @@ C
 
           if (our_rev_mode%arg_store) then 
 C store arguments
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode

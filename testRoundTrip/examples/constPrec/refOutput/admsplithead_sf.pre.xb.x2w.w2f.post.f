@@ -108,7 +108,6 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 ! original function
       Y(1)%v = COS(X(1)%v*1.74532925199432954744D-02)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -119,7 +118,6 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_acc_0 = (1.74532925199432954744D-02 * OpenAD_lin_0)
       double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -127,6 +125,5 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = double_tape(double_tape_pointer)
       X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_0)
       Y(1)%d = 0.0d0
-
           end if 
         end subroutine head

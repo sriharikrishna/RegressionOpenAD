@@ -99,7 +99,6 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(T,OpenAD_Symbol_0)
       Y%v = (X(2)%v*T%v)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -117,7 +116,6 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -130,7 +128,6 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       Y%d = 0.0d0
       X(1)%d = X(1)%d+T%d
       T%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -229,7 +226,6 @@ C$OPENAD XXX Template ad_template.f
       CALL barext(T(I))
       I = 1
       CALL foo(X,Y(I))
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -240,13 +236,11 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y(I))
       integer_tape(integer_tape_pointer) = I
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       integer_tape_pointer = integer_tape_pointer-1
       I = integer_tape(integer_tape_pointer)
       CALL foo(X,Y(I))
-
           end if 
         end subroutine head

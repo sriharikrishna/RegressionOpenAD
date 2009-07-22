@@ -101,14 +101,12 @@ C
 ! original function
       P%v = (P%v*2.0D00)
       I = (I + 1)
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       OpenAD_Symbol_2 = (P%v*2.0D00)
       P%v = OpenAD_Symbol_2
       I = (I + 1)
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -116,7 +114,6 @@ C
       P%d = 0.0d0
       P%d = P%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -230,7 +227,6 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(A(J+INT(OpenAD_Symbol_1)),OpenAD_Symbol_0)
       CALL foo(X(1))
       Y(1)%v = X(1)%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -250,7 +246,6 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       integer_tape_pointer = integer_tape_pointer+1
       CALL foo(X(1))
       Y(1)%v = X(1)%v
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -262,6 +257,5 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       integer_tape_pointer = integer_tape_pointer-1
       I = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_3)
-
           end if 
         end subroutine head

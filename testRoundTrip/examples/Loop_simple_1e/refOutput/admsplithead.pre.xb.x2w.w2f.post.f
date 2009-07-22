@@ -79,18 +79,15 @@ C
          if (our_rev_mode%plain) then
 ! original function
       Y%v = X%v
-
           end if
           if (our_rev_mode%tape) then
 ! taping
       Y%v = X%v
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
       X%d = X%d+Y%d
       Y%d = 0.0d0
-
           end if 
         end subroutine foo
 C ========== begin copyright notice ==============
@@ -200,7 +197,6 @@ C$OPENAD XXX Simple loop
       END DO
       J = 2
       CALL foo(X(J),Y(J))
-
           end if
           if (our_rev_mode%tape) then
 ! taping
@@ -220,7 +216,6 @@ C$OPENAD XXX Simple loop
       CALL foo(X(J),Y(J))
       integer_tape(integer_tape_pointer) = J
       integer_tape_pointer = integer_tape_pointer+1
-
           end if 
           if (our_rev_mode%adjoint) then
 ! adjoint
@@ -236,6 +231,5 @@ C$OPENAD XXX Simple loop
         CALL foo(X(J),Y(J))
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1) + 1
       END DO
-
           end if 
         end subroutine head

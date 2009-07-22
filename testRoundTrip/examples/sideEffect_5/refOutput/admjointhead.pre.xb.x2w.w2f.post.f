@@ -127,7 +127,6 @@ C store arguments
      +StackSize)
       call cp_store_real_vector(A,size(A),theArgFStack,theArgFStackoffse
      +t,theArgFStackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -143,7 +142,6 @@ C          write(*,'(A,I5,I5)') "restore(s)  ", N, theArgIStackOffset
       G = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", G, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -345,14 +343,12 @@ C
 C store arguments
       call cp_store_int_scalar(G,theArgIStack,theArgIStackoffset,theArgI
      +StackSize)
-
           end if 
           if (our_rev_mode%arg_restore) then
 C restore arguments
       G = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", G, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
-
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
