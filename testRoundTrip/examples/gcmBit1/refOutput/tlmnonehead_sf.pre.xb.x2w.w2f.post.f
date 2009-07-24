@@ -1,103 +1,101 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE find_bulkmod(LOCPRES, TFLD, SFLD, BULKMOD)
+      subroutine find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_10
-      REAL(w2f__8) OpenAD_acc_11
-      REAL(w2f__8) OpenAD_acc_12
-      REAL(w2f__8) OpenAD_acc_13
-      REAL(w2f__8) OpenAD_acc_14
-      REAL(w2f__8) OpenAD_acc_15
-      REAL(w2f__8) OpenAD_acc_16
-      REAL(w2f__8) OpenAD_acc_17
-      REAL(w2f__8) OpenAD_acc_18
-      REAL(w2f__8) OpenAD_acc_19
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_20
-      REAL(w2f__8) OpenAD_acc_21
-      REAL(w2f__8) OpenAD_acc_22
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_acc_4
-      REAL(w2f__8) OpenAD_acc_5
-      REAL(w2f__8) OpenAD_acc_6
-      REAL(w2f__8) OpenAD_acc_7
-      REAL(w2f__8) OpenAD_acc_8
-      REAL(w2f__8) OpenAD_acc_9
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
-      REAL(w2f__8) OpenAD_lin_15
-      REAL(w2f__8) OpenAD_lin_17
-      REAL(w2f__8) OpenAD_lin_19
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_21
-      REAL(w2f__8) OpenAD_lin_22
-      REAL(w2f__8) OpenAD_lin_23
-      REAL(w2f__8) OpenAD_lin_26
-      REAL(w2f__8) OpenAD_lin_28
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_30
-      REAL(w2f__8) OpenAD_lin_31
-      REAL(w2f__8) OpenAD_lin_32
-      REAL(w2f__8) OpenAD_lin_35
-      REAL(w2f__8) OpenAD_lin_37
-      REAL(w2f__8) OpenAD_lin_38
-      REAL(w2f__8) OpenAD_lin_39
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_42
-      REAL(w2f__8) OpenAD_lin_44
-      REAL(w2f__8) OpenAD_lin_46
-      REAL(w2f__8) OpenAD_lin_47
-      REAL(w2f__8) OpenAD_lin_48
-      REAL(w2f__8) OpenAD_lin_49
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_50
-      REAL(w2f__8) OpenAD_lin_53
-      REAL(w2f__8) OpenAD_lin_55
-      REAL(w2f__8) OpenAD_lin_57
-      REAL(w2f__8) OpenAD_lin_58
-      REAL(w2f__8) OpenAD_lin_59
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_60
-      REAL(w2f__8) OpenAD_lin_61
-      REAL(w2f__8) OpenAD_lin_64
-      REAL(w2f__8) OpenAD_lin_66
-      REAL(w2f__8) OpenAD_lin_67
-      REAL(w2f__8) OpenAD_lin_68
-      REAL(w2f__8) OpenAD_lin_69
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_70
-      REAL(w2f__8) OpenAD_lin_73
-      REAL(w2f__8) OpenAD_lin_75
-      REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
-      REAL(w2f__8) OpenAD_tmp_0
-      REAL(w2f__8) OpenAD_tmp_1
-      REAL(w2f__8) OpenAD_tmp_2
-      REAL(w2f__8) OpenAD_tmp_3
-      REAL(w2f__8) OpenAD_tmp_4
-      REAL(w2f__8) OpenAD_tmp_5
-      REAL(w2f__8) OpenAD_tmp_6
-      REAL(w2f__8) OpenAD_tmp_7
-      REAL(w2f__8) OpenAD_tmp_8
-      REAL(w2f__8) OpenAD_tmp_9
+      real(w2f__8) :: OpenAD_acc_0
+      real(w2f__8) :: OpenAD_acc_1
+      real(w2f__8) :: OpenAD_acc_10
+      real(w2f__8) :: OpenAD_acc_11
+      real(w2f__8) :: OpenAD_acc_12
+      real(w2f__8) :: OpenAD_acc_13
+      real(w2f__8) :: OpenAD_acc_14
+      real(w2f__8) :: OpenAD_acc_15
+      real(w2f__8) :: OpenAD_acc_16
+      real(w2f__8) :: OpenAD_acc_17
+      real(w2f__8) :: OpenAD_acc_18
+      real(w2f__8) :: OpenAD_acc_19
+      real(w2f__8) :: OpenAD_acc_2
+      real(w2f__8) :: OpenAD_acc_20
+      real(w2f__8) :: OpenAD_acc_21
+      real(w2f__8) :: OpenAD_acc_22
+      real(w2f__8) :: OpenAD_acc_3
+      real(w2f__8) :: OpenAD_acc_4
+      real(w2f__8) :: OpenAD_acc_5
+      real(w2f__8) :: OpenAD_acc_6
+      real(w2f__8) :: OpenAD_acc_7
+      real(w2f__8) :: OpenAD_acc_8
+      real(w2f__8) :: OpenAD_acc_9
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_11
+      real(w2f__8) :: OpenAD_lin_12
+      real(w2f__8) :: OpenAD_lin_15
+      real(w2f__8) :: OpenAD_lin_17
+      real(w2f__8) :: OpenAD_lin_19
+      real(w2f__8) :: OpenAD_lin_2
+      real(w2f__8) :: OpenAD_lin_21
+      real(w2f__8) :: OpenAD_lin_22
+      real(w2f__8) :: OpenAD_lin_23
+      real(w2f__8) :: OpenAD_lin_26
+      real(w2f__8) :: OpenAD_lin_28
+      real(w2f__8) :: OpenAD_lin_3
+      real(w2f__8) :: OpenAD_lin_30
+      real(w2f__8) :: OpenAD_lin_31
+      real(w2f__8) :: OpenAD_lin_32
+      real(w2f__8) :: OpenAD_lin_35
+      real(w2f__8) :: OpenAD_lin_37
+      real(w2f__8) :: OpenAD_lin_38
+      real(w2f__8) :: OpenAD_lin_39
+      real(w2f__8) :: OpenAD_lin_4
+      real(w2f__8) :: OpenAD_lin_42
+      real(w2f__8) :: OpenAD_lin_44
+      real(w2f__8) :: OpenAD_lin_46
+      real(w2f__8) :: OpenAD_lin_47
+      real(w2f__8) :: OpenAD_lin_48
+      real(w2f__8) :: OpenAD_lin_49
+      real(w2f__8) :: OpenAD_lin_5
+      real(w2f__8) :: OpenAD_lin_50
+      real(w2f__8) :: OpenAD_lin_53
+      real(w2f__8) :: OpenAD_lin_55
+      real(w2f__8) :: OpenAD_lin_57
+      real(w2f__8) :: OpenAD_lin_58
+      real(w2f__8) :: OpenAD_lin_59
+      real(w2f__8) :: OpenAD_lin_6
+      real(w2f__8) :: OpenAD_lin_60
+      real(w2f__8) :: OpenAD_lin_61
+      real(w2f__8) :: OpenAD_lin_64
+      real(w2f__8) :: OpenAD_lin_66
+      real(w2f__8) :: OpenAD_lin_67
+      real(w2f__8) :: OpenAD_lin_68
+      real(w2f__8) :: OpenAD_lin_69
+      real(w2f__8) :: OpenAD_lin_7
+      real(w2f__8) :: OpenAD_lin_70
+      real(w2f__8) :: OpenAD_lin_73
+      real(w2f__8) :: OpenAD_lin_75
+      real(w2f__8) :: OpenAD_lin_8
+      real(w2f__8) :: OpenAD_lin_9
+      real(w2f__8) :: OpenAD_tmp_0
+      real(w2f__8) :: OpenAD_tmp_1
+      real(w2f__8) :: OpenAD_tmp_2
+      real(w2f__8) :: OpenAD_tmp_3
+      real(w2f__8) :: OpenAD_tmp_4
+      real(w2f__8) :: OpenAD_tmp_5
+      real(w2f__8) :: OpenAD_tmp_6
+      real(w2f__8) :: OpenAD_tmp_7
+      real(w2f__8) :: OpenAD_tmp_8
+      real(w2f__8) :: OpenAD_tmp_9
 C
 C     **** Parameters and Result ****
 C
@@ -108,22 +106,22 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) BI
-      INTEGER(w2f__i4) BJ
+      integer(w2f__i4) :: BI
+      integer(w2f__i4) :: BJ
       type(active) :: BMFRESH
       type(active) :: BMPRES
       type(active) :: BMSALT
-      REAL(w2f__8) EOSJMDCKFW(1 : 5)
-      REAL(w2f__8) EOSJMDCKP(1 : 14)
-      REAL(w2f__8) EOSJMDCKSW(1 : 7)
-      INTEGER(w2f__i4) I
-      INTEGER(w2f__i4) J
-      INTEGER(w2f__i4) K
+      real(w2f__8) :: EOSJMDCKFW(1:5)
+      real(w2f__8) :: EOSJMDCKP(1:14)
+      real(w2f__8) :: EOSJMDCKSW(1:7)
+      integer(w2f__i4) :: I
+      integer(w2f__i4) :: J
+      integer(w2f__i4) :: K
       type(active) :: P
       type(active) :: P2
       type(active) :: S
       type(active) :: S3O2
-      REAL(w2f__8) SITOBAR
+      real(w2f__8) :: SITOBAR
       type(active) :: T
       type(active) :: T2
       type(active) :: T3
@@ -162,8 +160,8 @@ C$OPENAD XXX Template ad_template.f
       BI = 1
       BJ = 1
       SITOBAR = 1.0D00
-      DO J = 1, 2, 1
-        DO I = 1, 2, 1
+      DO J = 1,2,1
+        DO I = 1,2,1
           T%v = TFLD(I,J,K,BI,BJ)%v
           T2%v = (T%v*T%v)
           OpenAD_lin_0 = T%v
@@ -175,9 +173,9 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_4 = T3%v
           OpenAD_lin_5 = T%v
           S%v = SFLD(I,J,K,BI,BJ)%v
-          OpenAD_acc_0 = (OpenAD_lin_0 + OpenAD_lin_1)
-          OpenAD_acc_1 = (OpenAD_lin_2 + OpenAD_acc_0 * OpenAD_lin_3)
-          OpenAD_acc_2 = (OpenAD_lin_4 + OpenAD_acc_1 * OpenAD_lin_5)
+          OpenAD_acc_0 = (OpenAD_lin_0+OpenAD_lin_1)
+          OpenAD_acc_1 = (OpenAD_lin_2+OpenAD_acc_0*OpenAD_lin_3)
+          OpenAD_acc_2 = (OpenAD_lin_4+OpenAD_acc_1*OpenAD_lin_5)
           CALL setderiv(T,TFLD(I,J,K,BI,BJ))
           CALL sax(OpenAD_acc_0,T,T2)
           CALL sax(OpenAD_acc_1,T,T3)
@@ -187,9 +185,9 @@ C$OPENAD XXX Template ad_template.f
             OpenAD_tmp_0 = SQRT(S%v)
             S3O2%v = (S%v*OpenAD_tmp_0)
             OpenAD_lin_6 = OpenAD_tmp_0
-            OpenAD_lin_8 = (5.0D-01 / OpenAD_tmp_0)
+            OpenAD_lin_8 = (5.0D-01/OpenAD_tmp_0)
             OpenAD_lin_7 = S%v
-            OpenAD_acc_3 = (OpenAD_lin_8 * OpenAD_lin_7)
+            OpenAD_acc_3 = (OpenAD_lin_8*OpenAD_lin_7)
             CALL sax(OpenAD_lin_6,S,S3O2)
             CALL saxpy(OpenAD_acc_3,S,S3O2)
           ELSE
@@ -261,28 +259,28 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_75 = EOSJMDCKP(14)
           OpenAD_lin_68 = OpenAD_tmp_8
           BULKMOD(INT(I),INT(J))%v = (BMPRES%v+BMFRESH%v+BMSALT%v)
-          OpenAD_acc_4 = (OpenAD_lin_70 * OpenAD_lin_67)
-          OpenAD_acc_5 = (OpenAD_lin_50 * OpenAD_lin_47)
-          OpenAD_acc_6 = (OpenAD_lin_46 * OpenAD_lin_39)
-          OpenAD_acc_7 = (OpenAD_lin_30 * OpenAD_lin_23)
-          OpenAD_acc_8 = (OpenAD_lin_75 * OpenAD_lin_68)
-          OpenAD_acc_9 = (OpenAD_lin_66 * OpenAD_lin_61)
-          OpenAD_acc_10 = (OpenAD_lin_55 * OpenAD_lin_48)
-          OpenAD_acc_11 = (OpenAD_lin_44 * OpenAD_lin_39)
-          OpenAD_acc_12 = (OpenAD_lin_37 * OpenAD_lin_32)
-          OpenAD_acc_13 = (OpenAD_lin_28 * OpenAD_lin_23)
-          OpenAD_acc_14 = (OpenAD_lin_73 * OpenAD_lin_68)
-          OpenAD_acc_15 = (OpenAD_lin_64 * OpenAD_lin_61)
-          OpenAD_acc_16 = (OpenAD_lin_59 * OpenAD_lin_57)
-          OpenAD_acc_17 = (OpenAD_lin_53 * OpenAD_lin_48)
-          OpenAD_acc_18 = (OpenAD_lin_42 * OpenAD_lin_39)
-          OpenAD_acc_19 = (OpenAD_lin_35 * OpenAD_lin_32)
-          OpenAD_acc_20 = (OpenAD_lin_26 * OpenAD_lin_23)
-          OpenAD_acc_21 = (OpenAD_lin_11 + OpenAD_lin_12)
-          OpenAD_acc_22 = (OpenAD_lin_9 * OpenAD_lin_38 + OpenAD_lin_9
-     >  * OpenAD_acc_21 * OpenAD_lin_69 * OpenAD_lin_67 + OpenAD_lin_9
-     >  * OpenAD_acc_21 * OpenAD_lin_60 + OpenAD_lin_9 * OpenAD_lin_49
-     >  * OpenAD_lin_47 + OpenAD_lin_9 * OpenAD_lin_58 * OpenAD_lin_57)
+          OpenAD_acc_4 = (OpenAD_lin_70*OpenAD_lin_67)
+          OpenAD_acc_5 = (OpenAD_lin_50*OpenAD_lin_47)
+          OpenAD_acc_6 = (OpenAD_lin_46*OpenAD_lin_39)
+          OpenAD_acc_7 = (OpenAD_lin_30*OpenAD_lin_23)
+          OpenAD_acc_8 = (OpenAD_lin_75*OpenAD_lin_68)
+          OpenAD_acc_9 = (OpenAD_lin_66*OpenAD_lin_61)
+          OpenAD_acc_10 = (OpenAD_lin_55*OpenAD_lin_48)
+          OpenAD_acc_11 = (OpenAD_lin_44*OpenAD_lin_39)
+          OpenAD_acc_12 = (OpenAD_lin_37*OpenAD_lin_32)
+          OpenAD_acc_13 = (OpenAD_lin_28*OpenAD_lin_23)
+          OpenAD_acc_14 = (OpenAD_lin_73*OpenAD_lin_68)
+          OpenAD_acc_15 = (OpenAD_lin_64*OpenAD_lin_61)
+          OpenAD_acc_16 = (OpenAD_lin_59*OpenAD_lin_57)
+          OpenAD_acc_17 = (OpenAD_lin_53*OpenAD_lin_48)
+          OpenAD_acc_18 = (OpenAD_lin_42*OpenAD_lin_39)
+          OpenAD_acc_19 = (OpenAD_lin_35*OpenAD_lin_32)
+          OpenAD_acc_20 = (OpenAD_lin_26*OpenAD_lin_23)
+          OpenAD_acc_21 = (OpenAD_lin_11+OpenAD_lin_12)
+          OpenAD_acc_22 = (OpenAD_lin_9*OpenAD_lin_38+OpenAD_lin_9*OpenA
+     +D_acc_21*OpenAD_lin_69*OpenAD_lin_67+OpenAD_lin_9*OpenAD_acc_21*Op
+     +enAD_lin_60+OpenAD_lin_9*OpenAD_lin_49*OpenAD_lin_47+OpenAD_lin_9*
+     +OpenAD_lin_58*OpenAD_lin_57)
           CALL sax(OpenAD_acc_22,LOCPRES(I,J),BULKMOD(I,J))
           CALL saxpy(OpenAD_lin_22,S,BULKMOD(I,J))
           CALL saxpy(OpenAD_acc_4,S,BULKMOD(I,J))
@@ -310,11 +308,10 @@ C$OPENAD XXX Template ad_template.f
         END DO
       END DO
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -324,16 +321,16 @@ C
 C     **** Local Variables and Functions ****
 C
       type(active) :: BULKMOD(1:2,1:2)
-      EXTERNAL find_bulkmod
-      INTEGER(w2f__i4) I
-      INTEGER(w2f__i4) J
-      INTEGER(w2f__i4) K
-      INTEGER(w2f__i4) L
+      external find_bulkmod
+      integer(w2f__i4) :: I
+      integer(w2f__i4) :: J
+      integer(w2f__i4) :: K
+      integer(w2f__i4) :: L
       type(active) :: LOCPRES(1:2,1:2)
-      INTEGER(w2f__i4) M
+      integer(w2f__i4) :: M
       type(active) :: SFLD(1:2,1:2,1:2,1:2,1:2)
       type(active) :: TFLD(1:2,1:2,1:2,1:2,1:2)
-      INTEGER(w2f__i4) XCOUNT
+      integer(w2f__i4) :: XCOUNT
 C
 C     **** Top Level Pragmas ****
 C
@@ -344,28 +341,28 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       XCOUNT = 1
-      DO I = 1, 2, 1
-        DO J = 1, 2, 1
+      DO I = 1,2,1
+        DO J = 1,2,1
           LOCPRES(INT(I),INT(J))%v = (X(XCOUNT)%v*2.0D00)
           CALL sax(2.0D00,X(XCOUNT),LOCPRES(I,J))
-          DO K = 1, 2, 1
-            DO L = 1, 2, 1
-              DO M = 1, 2, 1
+          DO K = 1,2,1
+            DO L = 1,2,1
+              DO M = 1,2,1
                 TFLD(INT(I),INT(J),INT(K),INT(L),INT(M))%v = (X(XCOUNT)%
      +v*3.0D00)
                 SFLD(INT(I),INT(J),INT(K),INT(L),INT(M))%v = (X(XCOUNT)%
      +v*4.0D00)
                 CALL sax(3.0D00,X(XCOUNT),TFLD(I,J,K,L,M))
                 CALL sax(4.0D00,X(XCOUNT),SFLD(I,J,K,L,M))
-                XCOUNT = (XCOUNT + 1)
+                XCOUNT = (XCOUNT+1)
               END DO
             END DO
           END DO
         END DO
       END DO
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
-      DO I = 1, 2, 1
-        DO J = 1, 2, 1
+      DO I = 1,2,1
+        DO J = 1,2,1
           Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
           CALL setderiv(Y(J+I*2+(-2)),BULKMOD(I,J))
         END DO

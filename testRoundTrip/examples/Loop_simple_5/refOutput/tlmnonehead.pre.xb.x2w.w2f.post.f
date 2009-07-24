@@ -1,9 +1,16 @@
-
-
-      SUBROUTINE head(X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -14,7 +21,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
+      integer(w2f__i4) :: I
 C
 C     **** Top Level Pragmas ****
 C
@@ -25,8 +32,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop\t
-      DO I = 1, 3, 1
-        IF(I .eq. 2) THEN
+      DO I = 1,3,1
+        IF (I.eq.2) THEN
           Y(INT(I))%v = X(I)%v
           CALL setderiv(Y(I),X(I))
         ELSE

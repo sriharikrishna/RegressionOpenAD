@@ -1,13 +1,20 @@
-
-
-      SUBROUTINE head(X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
+      real(w2f__8) :: OpenAD_Symbol_0
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -17,7 +24,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
+      integer(w2f__i4) :: I
       type(active) :: S
 C
 C     **** Top Level Pragmas ****
@@ -34,7 +41,7 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(Y(1))
       CALL zero_deriv(Y(2))
 C$OPENAD XXX Simple loop
-      DO I = 1, 2, 1
+      DO I = 1,2,1
         S%v = X(I)%v
         CALL setderiv(S,X(I))
         IF (S%v.LT.0.0D00) THEN

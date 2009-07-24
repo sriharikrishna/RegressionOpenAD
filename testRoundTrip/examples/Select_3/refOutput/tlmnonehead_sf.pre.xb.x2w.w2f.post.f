@@ -1,18 +1,16 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -23,8 +21,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
-      INTEGER(w2f__i4) select_expr_temp_0
+      integer(w2f__i4) :: I
+      integer(w2f__i4) :: select_expr_temp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -36,7 +34,7 @@ C
 C$OPENAD XXX Template ad_template.f
       I = 1
       select_expr_temp_0 = I
-      IF(select_expr_temp_0 .ne. 0) THEN
+      IF (select_expr_temp_0.ne.0) THEN
         Y(1)%v = X(1)%v
         CALL setderiv(Y(1),X(1))
       ENDIF

@@ -1,14 +1,21 @@
-
-
-      SUBROUTINE foo(X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine foo(X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -24,11 +31,10 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_0,X,Y)
       CALL saxpy(OpenAD_lin_1,X,Y)
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
@@ -42,12 +48,12 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) APX(1 : 2, 1 : 2)
+      real(w2f__8) :: APX(1:2,1:2)
       type(active) :: AX(1:2,1:2)
-      EXTERNAL foo
-      INTEGER(w2f__i4) I
-      INTEGER(w2f__i4) J
-      REAL(w2f__8) PY
+      external foo
+      integer(w2f__i4) :: I
+      integer(w2f__i4) :: J
+      real(w2f__8) :: PY
 C
 C     **** Top Level Pragmas ****
 C
@@ -58,16 +64,16 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1, 2, 1
-        DO J = 1, 2, 1
+      DO I = 1,2,1
+        DO J = 1,2,1
           AX(INT(I),INT(J))%v = X(I)%v
-          APX(INT(I), INT(J)) = (I * DBLE(4.0))
+          APX(INT(I),INT(J)) = (I*DBLE(4.0))
           CALL setderiv(AX(I,J),X(I))
         END DO
       END DO
 C$OPENAD XXX Simple loop
-      DO I = 1, 2, 1
-        DO J = 1, 2, 1
+      DO I = 1,2,1
+        DO J = 1,2,1
           CALL foo(AX(I,J),Y)
 C         $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
           CALL convert_p2a_scalar(OpenAD_Symbol_0,APX(I,J))

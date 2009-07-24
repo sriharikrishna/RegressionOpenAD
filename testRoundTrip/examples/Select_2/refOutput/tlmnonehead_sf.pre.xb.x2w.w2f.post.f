@@ -1,25 +1,23 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
+      real(w2f__8) :: OpenAD_Symbol_0
+      real(w2f__8) :: OpenAD_Symbol_1
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
 C
@@ -32,8 +30,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
-      INTEGER(w2f__i4) select_expr_temp_0
+      integer(w2f__i4) :: I
+      integer(w2f__i4) :: select_expr_temp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -43,29 +41,29 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO I = 1, 3, 1
+      DO I = 1,3,1
         select_expr_temp_0 = I
-        IF ( select_expr_temp_0  .EQ.  1)  GO TO  19
-        IF ( select_expr_temp_0  .EQ.  2)  GO TO  23
-        GO TO 24
+        IF (select_expr_temp_0.EQ.1) goto 19
+        IF (select_expr_temp_0.EQ.2) goto 23
+        goto 24
 24      CONTINUE
         Y(INT(I))%v = (X(I)%v*2.0D00)
         CALL sax(2.0D00,X(I),Y(I))
-        GO TO 21
+        goto 21
 19      CONTINUE
         OpenAD_Symbol_0 = SIN(X(I)%v)
         OpenAD_lin_0 = COS(X(I)%v)
         Y(INT(I))%v = OpenAD_Symbol_0
         CALL setderiv(OpenAD_prop_0,X(I))
         CALL sax(OpenAD_lin_0,OpenAD_prop_0,Y(I))
-        GO TO 21
+        goto 21
 23      CONTINUE
         OpenAD_Symbol_1 = COS(X(I)%v)
         OpenAD_lin_1 = (-SIN(X(I)%v))
         Y(INT(I))%v = OpenAD_Symbol_1
         CALL setderiv(OpenAD_prop_1,X(I))
         CALL sax(OpenAD_lin_1,OpenAD_prop_1,Y(I))
-        GO TO 21
+        goto 21
 21      CONTINUE
       END DO
       END SUBROUTINE

@@ -1,24 +1,31 @@
-
-
-      SUBROUTINE head(X, FVEC)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(X,FVEC)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
-      REAL(w2f__8) OpenAD_tmp_0
-      REAL(w2f__8) OpenAD_tmp_1
-      REAL(w2f__8) OpenAD_tmp_2
+      real(w2f__8) :: OpenAD_acc_0
+      real(w2f__8) :: OpenAD_acc_1
+      real(w2f__8) :: OpenAD_acc_2
+      real(w2f__8) :: OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_10
+      real(w2f__8) :: OpenAD_lin_4
+      real(w2f__8) :: OpenAD_lin_7
+      real(w2f__8) :: OpenAD_lin_8
+      real(w2f__8) :: OpenAD_lin_9
+      real(w2f__8) :: OpenAD_tmp_0
+      real(w2f__8) :: OpenAD_tmp_1
+      real(w2f__8) :: OpenAD_tmp_2
 C
 C     **** Parameters and Result ****
 C
@@ -27,11 +34,11 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
+      integer(w2f__i4) :: I
       type(active) :: TEMP1
       type(active) :: TEMP2
-      REAL(w2f__8) V(1 : 11)
-      REAL(w2f__8) Y(1 : 11)
+      real(w2f__8) :: V(1:11)
+      real(w2f__8) :: Y(1:11)
 C
 C     **** Top Level Pragmas ****
 C
@@ -63,7 +70,7 @@ C$OPENAD XXX Template ad_template.f
       Y(9) = 3.23000000000000023204D-02
       Y(10) = 2.35000000000000000555D-02
       Y(11) = 2.46000000000000003386D-02
-      DO I = 1, 11, 1
+      DO I = 1,11,1
         OpenAD_tmp_0 = (X(2)%v+V(I))
         TEMP1%v = (V(I)*OpenAD_tmp_0)
         OpenAD_lin_1 = V(I)
@@ -76,11 +83,10 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_10 = X(1)%v
         OpenAD_lin_7 = (INT(1_w2f__i8)/TEMP2%v)
         OpenAD_lin_8 = (-(OpenAD_tmp_2/(TEMP2%v*TEMP2%v)))
-        OpenAD_acc_0 = (OpenAD_lin_8 * INT((-1_w2f__i8)))
-        OpenAD_acc_1 = (OpenAD_lin_9 * OpenAD_lin_7 * INT((-1_w2f__i8))
-     > )
-        OpenAD_acc_2 = (OpenAD_lin_1 * OpenAD_lin_10 * OpenAD_lin_7 *
-     >  INT((-1_w2f__i8)))
+        OpenAD_acc_0 = (OpenAD_lin_8*INT((-1_w2f__i8)))
+        OpenAD_acc_1 = (OpenAD_lin_9*OpenAD_lin_7*INT((-1_w2f__i8)))
+        OpenAD_acc_2 = (OpenAD_lin_1*OpenAD_lin_10*OpenAD_lin_7*INT((-1_
+     +w2f__i8)))
         CALL setderiv(TEMP2,X(4))
         CALL saxpy(OpenAD_lin_4,X(3),TEMP2)
         CALL sax(OpenAD_acc_0,TEMP2,FVEC(I))

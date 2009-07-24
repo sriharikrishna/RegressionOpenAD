@@ -1,29 +1,35 @@
-
-
-      SUBROUTINE foo(X, L)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine foo(X,L)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Parameters and Result ****
 C
-      REAL(w2f__8) X
-      LOGICAL(w2f__i4) L
+      real(w2f__8) :: X
+      logical(w2f__i4) :: L
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      L = (X .ne. 0.0D00)
+      L = (X.ne.0.0D00)
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
+      real(w2f__8) :: OpenAD_Symbol_0
 C
 C     **** Parameters and Result ****
 C
@@ -32,8 +38,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL foo
-      LOGICAL(w2f__i4) L
+      external foo
+      logical(w2f__i4) :: L
 C
 C     **** Top Level Pragmas ****
 C
@@ -48,7 +54,7 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL foo(OpenAD_Symbol_0,L)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
-      IF(L) THEN
+      IF (L) THEN
         Y(1)%v = X(1)%v
         CALL setderiv(Y(1),X(1))
       ENDIF

@@ -1,47 +1,44 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) PI
-      PARAMETER ( PI = 3.141592653589793116D00)
+      real(w2f__8) :: PI
+      parameter (PI=3.141592653589793116D00)
 C
 C     **** Statements ****
 C
       END MODULE
-
-      MODULE anothermodule
+      module anothermodule
       use w2f__types
       use OAD_active
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) PI2
-      PARAMETER ( PI2 = 3.141592653589793116D00)
+      real(w2f__8) :: PI2
+      parameter (PI2=3.141592653589793116D00)
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
       use anothermodule
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_tmp_0
-      REAL(w2f__8) OpenAD_tmp_1
+      real(w2f__8) :: OpenAD_acc_0
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_tmp_0
+      real(w2f__8) :: OpenAD_tmp_1
 C
 C     **** Parameters and Result ****
 C
@@ -57,9 +54,9 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       OpenAD_tmp_1 = (X(1)%v*3.141592653589793116D00)
-      OpenAD_tmp_0 = (OpenAD_tmp_1 * 2.0D00)
+      OpenAD_tmp_0 = (OpenAD_tmp_1*2.0D00)
       Y(1)%v = SIN(OpenAD_tmp_0)
       OpenAD_lin_0 = COS(OpenAD_tmp_0)
-      OpenAD_acc_0 = (3.141592653589793116D00 * 2.0D00 * OpenAD_lin_0)
+      OpenAD_acc_0 = (3.141592653589793116D00*2.0D00*OpenAD_lin_0)
       CALL sax(OpenAD_acc_0,X(1),Y(1))
       END SUBROUTINE

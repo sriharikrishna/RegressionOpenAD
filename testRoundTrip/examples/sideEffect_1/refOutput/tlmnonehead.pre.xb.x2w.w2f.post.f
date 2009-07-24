@@ -1,9 +1,16 @@
-
-
-      MODULE globals
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      module globals
+      use w2f__types
+      use OAD_active
+      implicit none
       SAVE
 C
 C     **** Global Variables & Derived Type Definitions ****
@@ -13,16 +20,15 @@ C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE foo(X, Y)
+      subroutine foo(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -38,18 +44,17 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_0,X(1),Y)
       CALL saxpy(OpenAD_lin_1,X(1),Y)
       END SUBROUTINE
-
-      SUBROUTINE bar(X)
+      subroutine bar(X)
       use w2f__types
       use OAD_active
       use globals
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
+      real(w2f__8) :: OpenAD_Symbol_0
+      real(w2f__8) :: OpenAD_lin_2
+      real(w2f__8) :: OpenAD_lin_3
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -67,12 +72,11 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_2,OpenAD_prop_0,X)
       CALL saxpy(OpenAD_lin_3,AGLOBAL,X)
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
       use globals
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -81,8 +85,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL bar
-      EXTERNAL foo
+      external bar
+      external foo
 C
 C     **** Top Level Pragmas ****
 C

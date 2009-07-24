@@ -1,33 +1,31 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE ad_reroute(X1, X2, Y1, Y2)
+      subroutine ad_reroute(X1,X2,Y1,Y2)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
+      real(w2f__8) :: OpenAD_acc_0
+      real(w2f__8) :: OpenAD_acc_1
+      real(w2f__8) :: OpenAD_acc_2
+      real(w2f__8) :: OpenAD_acc_3
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_2
+      real(w2f__8) :: OpenAD_lin_3
+      real(w2f__8) :: OpenAD_lin_4
+      real(w2f__8) :: OpenAD_lin_5
+      real(w2f__8) :: OpenAD_lin_6
+      real(w2f__8) :: OpenAD_lin_7
 C
 C     **** Parameters and Result ****
 C
@@ -69,14 +67,14 @@ C$OPENAD XXX Template ad_template.f
       Y2%v = (T3%v/T4%v)
       OpenAD_lin_6 = (INT(1_w2f__i8)/T4%v)
       OpenAD_lin_7 = (-(T3%v/(T4%v*T4%v)))
-      OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_5 + OpenAD_lin_1 *
-     >  OpenAD_lin_4)
-      OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_7 + OpenAD_lin_1 *
-     >  OpenAD_lin_6)
-      OpenAD_acc_2 = (OpenAD_lin_2 * OpenAD_lin_7 + OpenAD_lin_0 *
-     >  OpenAD_lin_6)
-      OpenAD_acc_3 = (OpenAD_lin_2 * OpenAD_lin_5 + OpenAD_lin_0 *
-     >  OpenAD_lin_4)
+      OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_5+OpenAD_lin_1*OpenAD_lin_
+     +4)
+      OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_7+OpenAD_lin_1*OpenAD_lin_
+     +6)
+      OpenAD_acc_2 = (OpenAD_lin_2*OpenAD_lin_7+OpenAD_lin_0*OpenAD_lin_
+     +6)
+      OpenAD_acc_3 = (OpenAD_lin_2*OpenAD_lin_5+OpenAD_lin_0*OpenAD_lin_
+     +4)
       CALL sax(OpenAD_acc_0,X2,Y1)
       CALL saxpy(OpenAD_acc_3,X1,Y1)
       CALL sax(OpenAD_acc_1,X2,Y2)

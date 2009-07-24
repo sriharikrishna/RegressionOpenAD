@@ -1,28 +1,34 @@
-
-
-      MODULE globals
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      INTEGER(w2f__i4) I
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE foo(P)
+      module globals
       use w2f__types
       use OAD_active
-      use globals
-      IMPLICIT NONE
+      implicit none
+      SAVE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_2
+      integer(w2f__i4) :: I
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine foo(P)
+      use w2f__types
+      use OAD_active
+      use globals
+      implicit none
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      real(w2f__8) :: OpenAD_Symbol_2
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -33,16 +39,15 @@ C     **** Statements ****
 C
       OpenAD_Symbol_2 = (P%v*2.0D00)
       P%v = OpenAD_Symbol_2
-      I = (I + 1)
+      I = (I+1)
       CALL setderiv(OpenAD_prop_0,P)
       CALL sax(2.0D00,OpenAD_prop_0,P)
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
       use globals
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
@@ -57,10 +62,10 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) A(1 : 1)
-      EXTERNAL foo
-      INTEGER(w2f__i4) J
-      INTEGER(w2f__i8) OpenAD_Symbol_1
+      real(w2f__8) :: A(1:1)
+      external foo
+      integer(w2f__i4) :: J
+      integer(w2f__i8) :: OpenAD_Symbol_1
 C
 C     **** Top Level Pragmas ****
 C
