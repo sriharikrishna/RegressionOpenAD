@@ -1,24 +1,31 @@
-
-
-      SUBROUTINE head(X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_9
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_10
+      real(w2f__8) :: OpenAD_lin_11
+      real(w2f__8) :: OpenAD_lin_12
+      real(w2f__8) :: OpenAD_lin_2
+      real(w2f__8) :: OpenAD_lin_3
+      real(w2f__8) :: OpenAD_lin_4
+      real(w2f__8) :: OpenAD_lin_5
+      real(w2f__8) :: OpenAD_lin_6
+      real(w2f__8) :: OpenAD_lin_7
+      real(w2f__8) :: OpenAD_lin_9
 C
 C     **** Parameters and Result ****
 C

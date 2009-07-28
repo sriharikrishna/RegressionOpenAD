@@ -1,33 +1,40 @@
-
-
-      SUBROUTINE head(X1, X2, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(X1,X2,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_9
+      real(w2f__8) :: OpenAD_Symbol_0
+      real(w2f__8) :: OpenAD_acc_0
+      real(w2f__8) :: OpenAD_acc_1
+      real(w2f__8) :: OpenAD_acc_2
+      real(w2f__8) :: OpenAD_acc_3
+      real(w2f__8) :: OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_10
+      real(w2f__8) :: OpenAD_lin_11
+      real(w2f__8) :: OpenAD_lin_12
+      real(w2f__8) :: OpenAD_lin_2
+      real(w2f__8) :: OpenAD_lin_3
+      real(w2f__8) :: OpenAD_lin_4
+      real(w2f__8) :: OpenAD_lin_5
+      real(w2f__8) :: OpenAD_lin_6
+      real(w2f__8) :: OpenAD_lin_9
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
       type(active) :: OpenAD_prop_2
-      REAL(w2f__8) OpenAD_tmp_0
-      REAL(w2f__8) OpenAD_tmp_1
-      REAL(w2f__8) OpenAD_tmp_2
+      real(w2f__8) :: OpenAD_tmp_0
+      real(w2f__8) :: OpenAD_tmp_1
+      real(w2f__8) :: OpenAD_tmp_2
 C
 C     **** Parameters and Result ****
 C
@@ -60,13 +67,13 @@ C$OPENAD XXX Template ad_template.f
       A%v = (1.0D00/OpenAD_tmp_0)
       OpenAD_lin_2 = (INT(1_w2f__i8)/X2%v)
       OpenAD_lin_3 = (-(X1%v/(X2%v*X2%v)))
-      OpenAD_lin_1 = (-(1.0D00 /(OpenAD_tmp_0 * OpenAD_tmp_0)))
+      OpenAD_lin_1 = (-(1.0D00/(OpenAD_tmp_0*OpenAD_tmp_0)))
       B%v = (X2%v*A%v)
       OpenAD_lin_4 = A%v
       OpenAD_lin_5 = X2%v
       C%v = X2%v
-      OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
-      OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
+      OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
+      OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
       CALL setderiv(C,X2)
       CALL sax(OpenAD_acc_0,X1,A)
       CALL saxpy(OpenAD_acc_1,X2,A)
@@ -90,8 +97,8 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_10 = B%v
       OpenAD_lin_11 = E%v
       OpenAD_lin_12 = C%v
-      OpenAD_acc_2 = (5.0D-01 * OpenAD_lin_10)
-      OpenAD_acc_3 = (5.0D-01 * OpenAD_lin_12)
+      OpenAD_acc_2 = (5.0D-01*OpenAD_lin_10)
+      OpenAD_acc_3 = (5.0D-01*OpenAD_lin_12)
       CALL setderiv(OpenAD_prop_1,F)
       CALL dec_deriv(OpenAD_prop_1,A)
       CALL setderiv(OpenAD_prop_2,D)

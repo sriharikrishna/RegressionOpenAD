@@ -1,46 +1,44 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_acc_4
-      REAL(w2f__8) OpenAD_acc_5
-      REAL(w2f__8) OpenAD_acc_6
-      REAL(w2f__8) OpenAD_acc_7
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
+      real(w2f__8) :: OpenAD_acc_0
+      real(w2f__8) :: OpenAD_acc_1
+      real(w2f__8) :: OpenAD_acc_2
+      real(w2f__8) :: OpenAD_acc_3
+      real(w2f__8) :: OpenAD_acc_4
+      real(w2f__8) :: OpenAD_acc_5
+      real(w2f__8) :: OpenAD_acc_6
+      real(w2f__8) :: OpenAD_acc_7
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_2
+      real(w2f__8) :: OpenAD_lin_3
+      real(w2f__8) :: OpenAD_lin_4
+      real(w2f__8) :: OpenAD_lin_5
+      real(w2f__8) :: OpenAD_lin_6
+      real(w2f__8) :: OpenAD_lin_7
+      real(w2f__8) :: OpenAD_lin_8
+      real(w2f__8) :: OpenAD_lin_9
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
-      REAL(w2f__8) OpenAD_tmp_0
-      REAL(w2f__8) OpenAD_tmp_1
-      REAL(w2f__8) OpenAD_tmp_2
-      REAL(w2f__8) OpenAD_tmp_3
-      REAL(w2f__8) OpenAD_tmp_4
+      real(w2f__8) :: OpenAD_tmp_0
+      real(w2f__8) :: OpenAD_tmp_1
+      real(w2f__8) :: OpenAD_tmp_2
+      real(w2f__8) :: OpenAD_tmp_3
+      real(w2f__8) :: OpenAD_tmp_4
 C
 C     **** Parameters and Result ****
 C
@@ -61,26 +59,26 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_tmp_1 = (X(1)%v*OpenAD_tmp_3+X(2)%v*X(4)%v)
       OpenAD_tmp_4 = (X(12)%v+X(11)%v+X(9)%v+X(10)%v)
       OpenAD_tmp_2 = (X(2)%v+X(1)%v*OpenAD_tmp_4)
-      OpenAD_tmp_0 = (OpenAD_tmp_1 / OpenAD_tmp_2)
+      OpenAD_tmp_0 = (OpenAD_tmp_1/OpenAD_tmp_2)
       Y(1)%v = (X(3)%v*OpenAD_tmp_0)
       OpenAD_lin_0 = OpenAD_tmp_0
       OpenAD_lin_4 = OpenAD_tmp_3
       OpenAD_lin_5 = X(1)%v
       OpenAD_lin_6 = X(4)%v
       OpenAD_lin_7 = X(2)%v
-      OpenAD_lin_2 = (INT(1_w2f__i8) / OpenAD_tmp_2)
+      OpenAD_lin_2 = (INT(1_w2f__i8)/OpenAD_tmp_2)
       OpenAD_lin_8 = OpenAD_tmp_4
       OpenAD_lin_9 = X(1)%v
-      OpenAD_lin_3 = (-(OpenAD_tmp_1 /(OpenAD_tmp_2 * OpenAD_tmp_2)))
+      OpenAD_lin_3 = (-(OpenAD_tmp_1/(OpenAD_tmp_2*OpenAD_tmp_2)))
       OpenAD_lin_1 = X(3)%v
-      OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
-      OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
-      OpenAD_acc_2 = (OpenAD_lin_8 * OpenAD_acc_1)
-      OpenAD_acc_3 = (OpenAD_lin_9 * OpenAD_acc_1)
-      OpenAD_acc_4 = (OpenAD_lin_4 * OpenAD_acc_0)
-      OpenAD_acc_5 = (OpenAD_lin_5 * OpenAD_acc_0)
-      OpenAD_acc_6 = (OpenAD_lin_6 * OpenAD_acc_0)
-      OpenAD_acc_7 = (OpenAD_lin_7 * OpenAD_acc_0)
+      OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
+      OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
+      OpenAD_acc_2 = (OpenAD_lin_8*OpenAD_acc_1)
+      OpenAD_acc_3 = (OpenAD_lin_9*OpenAD_acc_1)
+      OpenAD_acc_4 = (OpenAD_lin_4*OpenAD_acc_0)
+      OpenAD_acc_5 = (OpenAD_lin_5*OpenAD_acc_0)
+      OpenAD_acc_6 = (OpenAD_lin_6*OpenAD_acc_0)
+      OpenAD_acc_7 = (OpenAD_lin_7*OpenAD_acc_0)
       CALL setderiv(OpenAD_prop_0,X(8))
       CALL inc_deriv(OpenAD_prop_0,X(7))
       CALL inc_deriv(OpenAD_prop_0,X(5))

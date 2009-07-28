@@ -1,9 +1,16 @@
-
-
-      MODULE globals
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      module globals
+      use w2f__types
+      use OAD_active
+      implicit none
       SAVE
 C
 C     **** Global Variables & Derived Type Definitions ****
@@ -14,20 +21,19 @@ C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE bar(BARX, BARY)
+      subroutine bar(BARX,BARY)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
-      REAL(w2f__8) BARX
-      REAL(w2f__8) BARY
+      real(w2f__8) :: BARX
+      real(w2f__8) :: BARY
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) T
+      real(w2f__8) :: T
 C
 C     **** Statements ****
 C
@@ -35,21 +41,20 @@ C
       BARX = BARY
       BARY = T
       END SUBROUTINE
-
-      SUBROUTINE foo()
+      subroutine foo()
       use w2f__types
       use OAD_active
       use globals
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
+      real(w2f__8) :: OpenAD_Symbol_0
+      real(w2f__8) :: OpenAD_Symbol_1
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL bar
+      external bar
 C
 C     **** Statements ****
 C
@@ -63,12 +68,11 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
       use globals
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C

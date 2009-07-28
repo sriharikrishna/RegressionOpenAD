@@ -1,18 +1,16 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -23,7 +21,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
+      integer(w2f__i4) :: I
 C
 C     **** Top Level Pragmas ****
 C
@@ -35,13 +33,13 @@ C
 C$OPENAD XXX Template ad_template.f
       IF (X(1)%v.LT.4.0D00) THEN
 C$OPENAD XXX Simple loop\t
-        DO I = 1, 3, 1
+        DO I = 1,3,1
           Y(INT(I))%v = X(I)%v
           CALL setderiv(Y(I),X(I))
         END DO
       ELSE
 C$OPENAD XXX Simple loop\t
-        DO I = 1, 3, 1
+        DO I = 1,3,1
           Y(INT(I))%v = (X(I)%v*2.0D00)
           CALL sax(2.0D00,X(I),Y(I))
         END DO

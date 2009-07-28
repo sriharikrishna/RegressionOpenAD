@@ -1,25 +1,23 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_2
+      real(w2f__8) :: OpenAD_lin_3
 C
 C     **** Parameters and Result ****
 C
@@ -30,7 +28,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
+      integer(w2f__i4) :: I
 C
 C     **** Top Level Pragmas ****
 C
@@ -41,7 +39,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF (X(1)%v.LT.X(2)%v) THEN
-        DO I = 1, 2, 1
+        DO I = 1,2,1
           Y(INT(I))%v = (X(I)%v*X(I)%v)
           OpenAD_lin_0 = X(I)%v
           OpenAD_lin_1 = X(I)%v
@@ -49,7 +47,7 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_lin_1,X(I),Y(I))
         END DO
       ELSE
-        DO I = 1, 2, 1
+        DO I = 1,2,1
           Y(INT(I))%v = (X(I)%v*X(I)%v)
           OpenAD_lin_2 = X(I)%v
           OpenAD_lin_3 = X(I)%v

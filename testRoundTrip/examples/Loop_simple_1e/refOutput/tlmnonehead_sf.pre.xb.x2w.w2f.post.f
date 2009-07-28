@@ -1,18 +1,16 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE foo(X, Y)
+      subroutine foo(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -24,11 +22,10 @@ C
       Y%v = X%v
       CALL setderiv(Y,X)
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -39,9 +36,9 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL foo
-      INTEGER(w2f__i4) I
-      INTEGER(w2f__i4) J
+      external foo
+      integer(w2f__i4) :: I
+      integer(w2f__i4) :: J
 C
 C     **** Top Level Pragmas ****
 C
@@ -53,7 +50,7 @@ C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       J = 1
-      DO I = 1, 2, 1
+      DO I = 1,2,1
         CALL foo(X(J),Y(J))
       END DO
       J = 2

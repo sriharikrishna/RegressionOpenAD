@@ -1,13 +1,20 @@
-
-
-      SUBROUTINE head(J, X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(J,X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Parameters and Result ****
 C
-      INTEGER(w2f__i4) J
+      integer(w2f__i4) :: J
       type(active) :: X(1:1)
       INTENT(IN)  X
       type(active) :: Y(1:1)
@@ -15,7 +22,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
+      integer(w2f__i4) :: I
 C
 C     **** Top Level Pragmas ****
 C
@@ -26,7 +33,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1, 2, 1
+      DO I = 1,2,1
         Y(INT(J))%v = X(J)%v
         CALL setderiv(Y(J),X(J))
       END DO

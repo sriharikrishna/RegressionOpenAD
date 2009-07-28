@@ -1,74 +1,73 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) ALPHA
-      REAL(w2f__8) AREA(1 : 3)
-      REAL(w2f__8) BETA
-      REAL(w2f__8) BHEIGHT(1 : 3)
-      REAL(w2f__8) BLENGTH(1 : 3)
-      REAL(w2f__8) BWIDTH
-      REAL(w2f__8) DAY
-      REAL(w2f__8) DAYS_PER_50M_MIXED_LAYER
-      REAL(w2f__8) DELTA
-      REAL(w2f__8) DELTA_T
-      REAL(w2f__8) EPSILON_IC
-      REAL(w2f__8) EPSILON_REGULARIZE
-      REAL(w2f__8) FDEPS
-      REAL(w2f__8) FW(1 : 2)
-      REAL(w2f__8) GAMMA_S
-      REAL(w2f__8) GAMMA_T
-      REAL(w2f__8) HUNDRED
-      REAL(w2f__8) INTEGRATION_TIME
-      REAL(w2f__8) METRIC
-      REAL(w2f__8) METRIC1
-      REAL(w2f__8) METRIC2
-      REAL(w2f__8) NOISE_CORRELATION_TIME
-      REAL(w2f__8) NULLFORCE(1 : 2)
-      INTEGER(w2f__i4) N_MAX
-      REAL(w2f__8) PROJ_S(1 : 6)
-      REAL(w2f__8) PROJ_T(1 : 6)
-      REAL(w2f__8) R(1 : 6)
-      REAL(w2f__8) R1(1 : 6)
+      real(w2f__8) :: ALPHA
+      real(w2f__8) :: AREA(1:3)
+      real(w2f__8) :: BETA
+      real(w2f__8) :: BHEIGHT(1:3)
+      real(w2f__8) :: BLENGTH(1:3)
+      real(w2f__8) :: BWIDTH
+      real(w2f__8) :: DAY
+      real(w2f__8) :: DAYS_PER_50M_MIXED_LAYER
+      real(w2f__8) :: DELTA
+      real(w2f__8) :: DELTA_T
+      real(w2f__8) :: EPSILON_IC
+      real(w2f__8) :: EPSILON_REGULARIZE
+      real(w2f__8) :: FDEPS
+      real(w2f__8) :: FW(1:2)
+      real(w2f__8) :: GAMMA_S
+      real(w2f__8) :: GAMMA_T
+      real(w2f__8) :: HUNDRED
+      real(w2f__8) :: INTEGRATION_TIME
+      real(w2f__8) :: METRIC
+      real(w2f__8) :: METRIC1
+      real(w2f__8) :: METRIC2
+      real(w2f__8) :: NOISE_CORRELATION_TIME
+      real(w2f__8) :: NULLFORCE(1:2)
+      integer(w2f__i4) :: N_MAX
+      real(w2f__8) :: PROJ_S(1:6)
+      real(w2f__8) :: PROJ_T(1:6)
+      real(w2f__8) :: R(1:6)
+      real(w2f__8) :: R1(1:6)
       type(active) :: RHO(1:3)
-      REAL(w2f__8) ROBERT_FILTER_COEFF
-      REAL(w2f__8) R_S(1 : 6)
-      REAL(w2f__8) R_T(1 : 6)
+      real(w2f__8) :: ROBERT_FILTER_COEFF
+      real(w2f__8) :: R_S(1:6)
+      real(w2f__8) :: R_T(1:6)
       type(active) :: S(1:3)
       type(active) :: SNEW(1:3)
       type(active) :: SNOW(1:3)
       type(active) :: SOLD(1:3)
-      REAL(w2f__8) SSTAR(1 : 2)
-      REAL(w2f__8) SV
+      real(w2f__8) :: SSTAR(1:2)
+      real(w2f__8) :: SV
       type(active) :: T(1:3)
-      REAL(w2f__8) THC_S
-      REAL(w2f__8) THC_T
-      REAL(w2f__8) THC_TOT
-      REAL(w2f__8) THOUSAND
+      real(w2f__8) :: THC_S
+      real(w2f__8) :: THC_T
+      real(w2f__8) :: THC_TOT
+      real(w2f__8) :: THOUSAND
       type(active) :: TNEW(1:3)
       type(active) :: TNOW(1:3)
       type(active) :: TOLD(1:3)
-      REAL(w2f__8) TSTAR(1 : 2)
-      REAL(w2f__8) TSVEC(1 : 6)
-      REAL(w2f__8) U0
-      REAL(w2f__8) UBAR
+      real(w2f__8) :: TSTAR(1:2)
+      real(w2f__8) :: TSVEC(1:6)
+      real(w2f__8) :: U0
+      real(w2f__8) :: UBAR
       type(active) :: UVEL
-      LOGICAL(w2f__i4) VERBMODE
-      REAL(w2f__8) VOL(1 : 3)
-      REAL(w2f__8) X(1 : 6, 1 : 6)
+      logical(w2f__i4) :: VERBMODE
+      real(w2f__8) :: VOL(1:3)
+      real(w2f__8) :: X(1:6,1:6)
       type(active) :: XX(1:6)
-      REAL(w2f__8) Y(1 : 6)
-      REAL(w2f__8) YEAR
+      real(w2f__8) :: Y(1:6)
+      real(w2f__8) :: YEAR
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) NDIM
-      PARAMETER ( NDIM = 3)
+      integer(w2f__i4) :: NDIM
+      parameter (NDIM=3)
 C
 C     **** Statements ****
 C
@@ -83,25 +82,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -125,90 +138,78 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_forward(ILEV1)
+      subroutine box_forward(ILEV1)
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_1
-      INTEGER(w2f__i8) OpenAD_Symbol_10
-      INTEGER(w2f__i8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_2
-      INTEGER(w2f__i8) OpenAD_Symbol_3
-      INTEGER(w2f__i8) OpenAD_Symbol_4
-      INTEGER(w2f__i8) OpenAD_Symbol_5
-      INTEGER(w2f__i8) OpenAD_Symbol_6
-      INTEGER(w2f__i8) OpenAD_Symbol_7
-      INTEGER(w2f__i8) OpenAD_Symbol_8
-      INTEGER(w2f__i8) OpenAD_Symbol_9
+      integer(w2f__i8) :: OpenAD_Symbol_1
+      integer(w2f__i8) :: OpenAD_Symbol_10
+      integer(w2f__i8) :: OpenAD_Symbol_11
+      integer(w2f__i8) :: OpenAD_Symbol_12
+      integer(w2f__i8) :: OpenAD_Symbol_2
+      integer(w2f__i8) :: OpenAD_Symbol_3
+      integer(w2f__i8) :: OpenAD_Symbol_4
+      integer(w2f__i8) :: OpenAD_Symbol_5
+      integer(w2f__i8) :: OpenAD_Symbol_6
+      integer(w2f__i8) :: OpenAD_Symbol_7
+      integer(w2f__i8) :: OpenAD_Symbol_8
+      integer(w2f__i8) :: OpenAD_Symbol_9
 C
 C     **** Parameters and Result ****
 C
-      INTEGER(w2f__i4) ILEV1
+      integer(w2f__i4) :: ILEV1
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL box_cycle_fields
-      EXTERNAL box_density
-      EXTERNAL box_robert_filter
-      EXTERNAL box_timestep
-      EXTERNAL box_transport
-      INTEGER(w2f__i4) IKEY
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) L
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_152
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      external box_cycle_fields
+      external box_density
+      external box_robert_filter
+      external box_timestep
+      external box_transport
+      integer(w2f__i4) :: IKEY
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: L
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+      integer(w2f__i8) :: OpenAD_Symbol_152
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -254,7 +255,7 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
@@ -262,73 +263,73 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +VOL(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TSTAR,1),lbound(TSTAR,1),-1
       TSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TSTAR(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TOLD,1),lbound(TOLD,1),-1
       TOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TOLD(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
       TNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
       TNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNEW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SSTAR,1),lbound(SSTAR,1),-1
       SSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SSTAR(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SOLD,1),lbound(SOLD,1),-1
       SOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SOLD(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
       SNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
       SNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNEW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(RHO,1),lbound(RHO,1),-1
       RHO(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +RHO(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-1
       NULLFORCE(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +NULLFORCE(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
       FW(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FW(cp_loop_variable_1)
-      enddo
+      end do
       ILEV1 = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", ILEV1, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
@@ -361,8 +362,8 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
       IKEY = ILEV1
@@ -373,22 +374,21 @@ C$OPENAD XXX Template ad_template.f
       CALL box_robert_filter(TNOW,TOLD,TNEW)
       CALL box_robert_filter(SNOW,SOLD,SNEW)
       CALL box_cycle_fields()
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         IF (TNOW(L)%v.LT.(-2.0D00)) THEN
           TNOW(INT(L))%v = 2.0D00
         ENDIF
       END DO
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       IKEY = ILEV1
@@ -400,7 +400,7 @@ C$OPENAD XXX Template ad_template.f
       CALL box_robert_filter(SNOW,SOLD,SNEW)
       CALL box_cycle_fields()
       OpenAD_Symbol_4 = 0_w2f__i8
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         IF (TNOW(L)%v.LT.(-2.0D00)) THEN
           TNOW(INT(L))%v = 2.0D00
           integer_tape(integer_tape_pointer) = L
@@ -413,38 +413,37 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
-        OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4) + INT(1_w2f__i8))
+        OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_2 = 1
-      DO WHILE(INT(OpenAD_Symbol_2) .LE. INT(OpenAD_Symbol_1))
+      dowhile (INT(OpenAD_Symbol_2).LE.INT(OpenAD_Symbol_1))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
-        IF(OpenAD_Symbol_3 .ne. 0) THEN
+        IF (OpenAD_Symbol_3.ne.0) THEN
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_152 = integer_tape(integer_tape_pointer)
           TNOW(INT(OpenAD_Symbol_152))%d = 0.0d0
         ENDIF
-        OpenAD_Symbol_2 = INT(OpenAD_Symbol_2) + 1
+        OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
       END DO
       CALL box_cycle_fields()
       CALL box_robert_filter(SNOW,SOLD,SNEW)
@@ -453,14 +452,13 @@ C adjoint
       CALL box_timestep(GAMMA_T,TSTAR,NULLFORCE,UVEL,TNOW,TOLD,TNEW)
       CALL box_transport(RHO,UVEL)
       CALL box_density(TNOW,SNOW,RHO)
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_forward
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -472,25 +470,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -514,85 +526,73 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_final_state()
+      subroutine box_final_state()
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_37
-      INTEGER(w2f__i8) OpenAD_Symbol_38
-      INTEGER(w2f__i8) OpenAD_Symbol_39
-      INTEGER(w2f__i8) OpenAD_Symbol_40
-      INTEGER(w2f__i8) OpenAD_Symbol_41
-      INTEGER(w2f__i8) OpenAD_Symbol_42
-      INTEGER(w2f__i8) OpenAD_Symbol_43
-      INTEGER(w2f__i8) OpenAD_Symbol_44
-      INTEGER(w2f__i8) OpenAD_Symbol_45
-      INTEGER(w2f__i8) OpenAD_Symbol_46
-      INTEGER(w2f__i8) OpenAD_Symbol_47
-      INTEGER(w2f__i8) OpenAD_Symbol_48
+      integer(w2f__i8) :: OpenAD_Symbol_37
+      integer(w2f__i8) :: OpenAD_Symbol_38
+      integer(w2f__i8) :: OpenAD_Symbol_39
+      integer(w2f__i8) :: OpenAD_Symbol_40
+      integer(w2f__i8) :: OpenAD_Symbol_41
+      integer(w2f__i8) :: OpenAD_Symbol_42
+      integer(w2f__i8) :: OpenAD_Symbol_43
+      integer(w2f__i8) :: OpenAD_Symbol_44
+      integer(w2f__i8) :: OpenAD_Symbol_45
+      integer(w2f__i8) :: OpenAD_Symbol_46
+      integer(w2f__i8) :: OpenAD_Symbol_47
+      integer(w2f__i8) :: OpenAD_Symbol_48
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) L
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: L
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
@@ -600,90 +600,87 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
       SNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNOW(cp_loop_variable_1)%v
-      enddo
+      end do
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO L = 1, 6, 1
+      DO L = 1,6,1
         TSVEC(INT(L)) = 0.0
       END DO
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         TSVEC(INT(L)) = TNOW(L)%v
         TSVEC(INT(L+3)) = SNOW(L)%v
       END DO
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_41 = 0_w2f__i8
-      DO L = 1, 6, 1
+      DO L = 1,6,1
         TSVEC(INT(L)) = 0.0
-        OpenAD_Symbol_41 = (INT(OpenAD_Symbol_41) + INT(1_w2f__i8))
+        OpenAD_Symbol_41 = (INT(OpenAD_Symbol_41)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_41
       integer_tape_pointer = integer_tape_pointer+1
       OpenAD_Symbol_42 = 0_w2f__i8
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         TSVEC(INT(L)) = TNOW(L)%v
         TSVEC(INT(L+3)) = SNOW(L)%v
-        OpenAD_Symbol_42 = (INT(OpenAD_Symbol_42) + INT(1_w2f__i8))
+        OpenAD_Symbol_42 = (INT(OpenAD_Symbol_42)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_42
       integer_tape_pointer = integer_tape_pointer+1
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_37 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_38 = 1
-      DO WHILE(INT(OpenAD_Symbol_38) .LE. INT(OpenAD_Symbol_37))
-        OpenAD_Symbol_38 = INT(OpenAD_Symbol_38) + 1
+      dowhile (INT(OpenAD_Symbol_38).LE.INT(OpenAD_Symbol_37))
+        OpenAD_Symbol_38 = INT(OpenAD_Symbol_38)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_39 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_40 = 1
-      DO WHILE(INT(OpenAD_Symbol_40) .LE. INT(OpenAD_Symbol_39))
-        OpenAD_Symbol_40 = INT(OpenAD_Symbol_40) + 1
+      dowhile (INT(OpenAD_Symbol_40).LE.INT(OpenAD_Symbol_39))
+        OpenAD_Symbol_40 = INT(OpenAD_Symbol_40)+1
       END DO
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_final_state
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -695,25 +692,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -737,94 +748,82 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_ini_fields()
+      subroutine box_ini_fields()
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_49
-      INTEGER(w2f__i8) OpenAD_Symbol_50
-      INTEGER(w2f__i8) OpenAD_Symbol_51
-      INTEGER(w2f__i8) OpenAD_Symbol_52
-      INTEGER(w2f__i8) OpenAD_Symbol_53
-      INTEGER(w2f__i8) OpenAD_Symbol_54
-      INTEGER(w2f__i8) OpenAD_Symbol_55
-      INTEGER(w2f__i8) OpenAD_Symbol_56
-      INTEGER(w2f__i8) OpenAD_Symbol_57
-      INTEGER(w2f__i8) OpenAD_Symbol_58
-      INTEGER(w2f__i8) OpenAD_Symbol_59
-      INTEGER(w2f__i8) OpenAD_Symbol_60
-      INTEGER(w2f__i8) OpenAD_Symbol_61
-      INTEGER(w2f__i8) OpenAD_Symbol_62
-      INTEGER(w2f__i8) OpenAD_Symbol_63
-      INTEGER(w2f__i8) OpenAD_Symbol_64
-      INTEGER(w2f__i8) OpenAD_Symbol_65
-      INTEGER(w2f__i8) OpenAD_Symbol_66
+      integer(w2f__i8) :: OpenAD_Symbol_49
+      integer(w2f__i8) :: OpenAD_Symbol_50
+      integer(w2f__i8) :: OpenAD_Symbol_51
+      integer(w2f__i8) :: OpenAD_Symbol_52
+      integer(w2f__i8) :: OpenAD_Symbol_53
+      integer(w2f__i8) :: OpenAD_Symbol_54
+      integer(w2f__i8) :: OpenAD_Symbol_55
+      integer(w2f__i8) :: OpenAD_Symbol_56
+      integer(w2f__i8) :: OpenAD_Symbol_57
+      integer(w2f__i8) :: OpenAD_Symbol_58
+      integer(w2f__i8) :: OpenAD_Symbol_59
+      integer(w2f__i8) :: OpenAD_Symbol_60
+      integer(w2f__i8) :: OpenAD_Symbol_61
+      integer(w2f__i8) :: OpenAD_Symbol_62
+      integer(w2f__i8) :: OpenAD_Symbol_63
+      integer(w2f__i8) :: OpenAD_Symbol_64
+      integer(w2f__i8) :: OpenAD_Symbol_65
+      integer(w2f__i8) :: OpenAD_Symbol_66
       type(active) :: OpenAD_prop_12
       type(active) :: OpenAD_prop_13
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) L
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_179
-      INTEGER(w2f__i8) OpenAD_Symbol_180
-      INTEGER(w2f__i8) OpenAD_Symbol_181
-      INTEGER(w2f__i8) OpenAD_Symbol_182
-      INTEGER(w2f__i8) OpenAD_Symbol_183
-      INTEGER(w2f__i8) OpenAD_Symbol_184
-      INTEGER(w2f__i8) OpenAD_Symbol_67
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: L
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+      integer(w2f__i8) :: OpenAD_Symbol_179
+      integer(w2f__i8) :: OpenAD_Symbol_180
+      integer(w2f__i8) :: OpenAD_Symbol_181
+      integer(w2f__i8) :: OpenAD_Symbol_182
+      integer(w2f__i8) :: OpenAD_Symbol_183
+      integer(w2f__i8) :: OpenAD_Symbol_184
+      integer(w2f__i8) :: OpenAD_Symbol_67
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(HUNDRED,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
@@ -846,7 +845,7 @@ C store arguments
      +t,theArgFStackSize)
       call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackoff
      +set,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(XX,1),lbound(XX,1),-1
@@ -854,37 +853,37 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +XX(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(T,1),lbound(T,1),-1
       T(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +T(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(S,1),lbound(S,1),-1
       S(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +S(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-1
       NULLFORCE(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +NULLFORCE(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
       FW(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FW(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
       AREA(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +AREA(cp_loop_variable_1)
-      enddo
+      end do
       YEAR = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", YEAR
       theArgFStackoffset = theArgFStackoffset-1
@@ -899,8 +898,8 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", HUNDRED
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
       THC_TOT = 0.0D00
@@ -911,27 +910,27 @@ C$OPENAD XXX Template ad_template.f
       METRIC = 0.0D00
       NULLFORCE(1) = 0.0D00
       NULLFORCE(2) = 0.0D00
-      FW(1) = (AREA(1) *(HUNDRED / YEAR) * 3.5D+01)
-      FW(2) = (- FW(1))
+      FW(1) = (AREA(1)*(HUNDRED/YEAR)*3.5D+01)
+      FW(2) = (-FW(1))
       TSTAR(1) = 2.2D+01
       TSTAR(2) = 0.0D00
       SSTAR(1) = 3.6D+01
       SSTAR(2) = 3.4D+01
-      UBAR = (SV * 2.0D+01)
+      UBAR = (SV*2.0D+01)
       T(1)%v = 2.0D+01
       T(2)%v = 1.0D00
       T(3)%v = 1.0D00
       S(1)%v = 3.55D+01
       S(2)%v = 3.45D+01
       S(3)%v = 3.45D+01
-      DO L = 1, 6, 1
+      DO L = 1,6,1
         TSVEC(INT(L)) = 0.0
       END DO
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         T(INT(L))%v = (T(L)%v+XX(L)%v)
         S(INT(L))%v = (S(L)%v+XX(L+3)%v)
       END DO
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         TNEW(INT(L))%v = T(L)%v
         SNEW(INT(L))%v = S(L)%v
         TOLD(INT(L))%v = T(L)%v
@@ -940,17 +939,16 @@ C$OPENAD XXX Template ad_template.f
         SNOW(INT(L))%v = S(L)%v
       END DO
       UVEL%v = UBAR
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       THC_TOT = 0.0D00
@@ -961,13 +959,13 @@ C$OPENAD XXX Template ad_template.f
       METRIC = 0.0D00
       NULLFORCE(1) = 0.0D00
       NULLFORCE(2) = 0.0D00
-      FW(1) = (AREA(1) *(HUNDRED / YEAR) * 3.5D+01)
-      FW(2) = (- FW(1))
+      FW(1) = (AREA(1)*(HUNDRED/YEAR)*3.5D+01)
+      FW(2) = (-FW(1))
       TSTAR(1) = 2.2D+01
       TSTAR(2) = 0.0D00
       SSTAR(1) = 3.6D+01
       SSTAR(2) = 3.4D+01
-      UBAR = (SV * 2.0D+01)
+      UBAR = (SV*2.0D+01)
       T(1)%v = 2.0D+01
       T(2)%v = 1.0D00
       T(3)%v = 1.0D00
@@ -975,27 +973,27 @@ C$OPENAD XXX Template ad_template.f
       S(2)%v = 3.45D+01
       S(3)%v = 3.45D+01
       OpenAD_Symbol_55 = 0_w2f__i8
-      DO L = 1, 6, 1
+      DO L = 1,6,1
         TSVEC(INT(L)) = 0.0
-        OpenAD_Symbol_55 = (INT(OpenAD_Symbol_55) + INT(1_w2f__i8))
+        OpenAD_Symbol_55 = (INT(OpenAD_Symbol_55)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_55
       integer_tape_pointer = integer_tape_pointer+1
       OpenAD_Symbol_56 = 0_w2f__i8
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         T(INT(L))%v = (T(L)%v+XX(L)%v)
         S(INT(L))%v = (S(L)%v+XX(L+3)%v)
-        OpenAD_Symbol_67 = (L + 3)
+        OpenAD_Symbol_67 = (L+3)
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_67
         integer_tape_pointer = integer_tape_pointer+1
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_56 = (INT(OpenAD_Symbol_56) + INT(1_w2f__i8))
+        OpenAD_Symbol_56 = (INT(OpenAD_Symbol_56)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_56
       integer_tape_pointer = integer_tape_pointer+1
       OpenAD_Symbol_57 = 0_w2f__i8
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         TNEW(INT(L))%v = T(L)%v
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
@@ -1010,32 +1008,31 @@ C$OPENAD XXX Template ad_template.f
         SNOW(INT(L))%v = S(L)%v
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_57 = (INT(OpenAD_Symbol_57) + INT(1_w2f__i8))
+        OpenAD_Symbol_57 = (INT(OpenAD_Symbol_57)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_57
       integer_tape_pointer = integer_tape_pointer+1
       UVEL%v = UBAR
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       UVEL%d = 0.0d0
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_49 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_50 = 1
-      DO WHILE(INT(OpenAD_Symbol_50) .LE. INT(OpenAD_Symbol_49))
+      dowhile (INT(OpenAD_Symbol_50).LE.INT(OpenAD_Symbol_49))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_181 = integer_tape(integer_tape_pointer)
         S(INT(OpenAD_Symbol_181))%d = S(INT(OpenAD_Symbol_181))%d+SNOW(I
@@ -1062,12 +1059,12 @@ C adjoint
         T(INT(OpenAD_Symbol_184))%d = T(INT(OpenAD_Symbol_184))%d+TNEW(I
      +NT(OpenAD_Symbol_184))%d
         TNEW(INT(OpenAD_Symbol_184))%d = 0.0d0
-        OpenAD_Symbol_50 = INT(OpenAD_Symbol_50) + 1
+        OpenAD_Symbol_50 = INT(OpenAD_Symbol_50)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_51 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_52 = 1
-      DO WHILE(INT(OpenAD_Symbol_52) .LE. INT(OpenAD_Symbol_51))
+      dowhile (INT(OpenAD_Symbol_52).LE.INT(OpenAD_Symbol_51))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_179 = integer_tape(integer_tape_pointer)
         integer_tape_pointer = integer_tape_pointer-1
@@ -1086,13 +1083,13 @@ C adjoint
         T(INT(OpenAD_Symbol_179))%d = T(INT(OpenAD_Symbol_179))%d+OpenAD
      +_prop_12%d
         OpenAD_prop_12%d = 0.0d0
-        OpenAD_Symbol_52 = INT(OpenAD_Symbol_52) + 1
+        OpenAD_Symbol_52 = INT(OpenAD_Symbol_52)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_53 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_54 = 1
-      DO WHILE(INT(OpenAD_Symbol_54) .LE. INT(OpenAD_Symbol_53))
-        OpenAD_Symbol_54 = INT(OpenAD_Symbol_54) + 1
+      dowhile (INT(OpenAD_Symbol_54).LE.INT(OpenAD_Symbol_53))
+        OpenAD_Symbol_54 = INT(OpenAD_Symbol_54)+1
       END DO
       S(3)%d = 0.0d0
       S(2)%d = 0.0d0
@@ -1100,14 +1097,13 @@ C adjoint
       T(3)%d = 0.0d0
       T(2)%d = 0.0d0
       T(1)%d = 0.0d0
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_ini_fields
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -1119,25 +1115,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -1161,117 +1171,105 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_ini_params()
+      subroutine box_ini_params()
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_100
-      INTEGER(w2f__i8) OpenAD_Symbol_101
-      INTEGER(w2f__i8) OpenAD_Symbol_102
-      INTEGER(w2f__i8) OpenAD_Symbol_103
-      INTEGER(w2f__i8) OpenAD_Symbol_104
-      INTEGER(w2f__i8) OpenAD_Symbol_105
-      INTEGER(w2f__i8) OpenAD_Symbol_106
-      INTEGER(w2f__i8) OpenAD_Symbol_107
-      INTEGER(w2f__i8) OpenAD_Symbol_108
-      INTEGER(w2f__i8) OpenAD_Symbol_109
-      INTEGER(w2f__i8) OpenAD_Symbol_110
-      INTEGER(w2f__i8) OpenAD_Symbol_111
-      INTEGER(w2f__i8) OpenAD_Symbol_112
-      INTEGER(w2f__i8) OpenAD_Symbol_113
-      INTEGER(w2f__i8) OpenAD_Symbol_114
-      INTEGER(w2f__i8) OpenAD_Symbol_115
-      INTEGER(w2f__i8) OpenAD_Symbol_68
-      INTEGER(w2f__i8) OpenAD_Symbol_69
-      INTEGER(w2f__i8) OpenAD_Symbol_70
-      INTEGER(w2f__i8) OpenAD_Symbol_71
-      INTEGER(w2f__i8) OpenAD_Symbol_72
-      INTEGER(w2f__i8) OpenAD_Symbol_73
-      INTEGER(w2f__i8) OpenAD_Symbol_74
-      INTEGER(w2f__i8) OpenAD_Symbol_75
-      INTEGER(w2f__i8) OpenAD_Symbol_76
-      INTEGER(w2f__i8) OpenAD_Symbol_77
-      INTEGER(w2f__i8) OpenAD_Symbol_78
-      INTEGER(w2f__i8) OpenAD_Symbol_79
-      INTEGER(w2f__i8) OpenAD_Symbol_80
-      INTEGER(w2f__i8) OpenAD_Symbol_81
-      INTEGER(w2f__i8) OpenAD_Symbol_82
-      INTEGER(w2f__i8) OpenAD_Symbol_83
-      INTEGER(w2f__i8) OpenAD_Symbol_84
-      INTEGER(w2f__i8) OpenAD_Symbol_85
-      INTEGER(w2f__i8) OpenAD_Symbol_86
-      INTEGER(w2f__i8) OpenAD_Symbol_87
-      INTEGER(w2f__i8) OpenAD_Symbol_88
-      INTEGER(w2f__i8) OpenAD_Symbol_89
-      INTEGER(w2f__i8) OpenAD_Symbol_90
-      INTEGER(w2f__i8) OpenAD_Symbol_91
-      INTEGER(w2f__i8) OpenAD_Symbol_92
-      INTEGER(w2f__i8) OpenAD_Symbol_93
-      INTEGER(w2f__i8) OpenAD_Symbol_94
-      INTEGER(w2f__i8) OpenAD_Symbol_95
-      INTEGER(w2f__i8) OpenAD_Symbol_96
-      INTEGER(w2f__i8) OpenAD_Symbol_97
-      INTEGER(w2f__i8) OpenAD_Symbol_98
-      INTEGER(w2f__i8) OpenAD_Symbol_99
+      integer(w2f__i8) :: OpenAD_Symbol_100
+      integer(w2f__i8) :: OpenAD_Symbol_101
+      integer(w2f__i8) :: OpenAD_Symbol_102
+      integer(w2f__i8) :: OpenAD_Symbol_103
+      integer(w2f__i8) :: OpenAD_Symbol_104
+      integer(w2f__i8) :: OpenAD_Symbol_105
+      integer(w2f__i8) :: OpenAD_Symbol_106
+      integer(w2f__i8) :: OpenAD_Symbol_107
+      integer(w2f__i8) :: OpenAD_Symbol_108
+      integer(w2f__i8) :: OpenAD_Symbol_109
+      integer(w2f__i8) :: OpenAD_Symbol_110
+      integer(w2f__i8) :: OpenAD_Symbol_111
+      integer(w2f__i8) :: OpenAD_Symbol_112
+      integer(w2f__i8) :: OpenAD_Symbol_113
+      integer(w2f__i8) :: OpenAD_Symbol_114
+      integer(w2f__i8) :: OpenAD_Symbol_115
+      integer(w2f__i8) :: OpenAD_Symbol_68
+      integer(w2f__i8) :: OpenAD_Symbol_69
+      integer(w2f__i8) :: OpenAD_Symbol_70
+      integer(w2f__i8) :: OpenAD_Symbol_71
+      integer(w2f__i8) :: OpenAD_Symbol_72
+      integer(w2f__i8) :: OpenAD_Symbol_73
+      integer(w2f__i8) :: OpenAD_Symbol_74
+      integer(w2f__i8) :: OpenAD_Symbol_75
+      integer(w2f__i8) :: OpenAD_Symbol_76
+      integer(w2f__i8) :: OpenAD_Symbol_77
+      integer(w2f__i8) :: OpenAD_Symbol_78
+      integer(w2f__i8) :: OpenAD_Symbol_79
+      integer(w2f__i8) :: OpenAD_Symbol_80
+      integer(w2f__i8) :: OpenAD_Symbol_81
+      integer(w2f__i8) :: OpenAD_Symbol_82
+      integer(w2f__i8) :: OpenAD_Symbol_83
+      integer(w2f__i8) :: OpenAD_Symbol_84
+      integer(w2f__i8) :: OpenAD_Symbol_85
+      integer(w2f__i8) :: OpenAD_Symbol_86
+      integer(w2f__i8) :: OpenAD_Symbol_87
+      integer(w2f__i8) :: OpenAD_Symbol_88
+      integer(w2f__i8) :: OpenAD_Symbol_89
+      integer(w2f__i8) :: OpenAD_Symbol_90
+      integer(w2f__i8) :: OpenAD_Symbol_91
+      integer(w2f__i8) :: OpenAD_Symbol_92
+      integer(w2f__i8) :: OpenAD_Symbol_93
+      integer(w2f__i8) :: OpenAD_Symbol_94
+      integer(w2f__i8) :: OpenAD_Symbol_95
+      integer(w2f__i8) :: OpenAD_Symbol_96
+      integer(w2f__i8) :: OpenAD_Symbol_97
+      integer(w2f__i8) :: OpenAD_Symbol_98
+      integer(w2f__i8) :: OpenAD_Symbol_99
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) J
-      INTEGER(w2f__i4) L
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      integer(w2f__i4) :: I
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: J
+      integer(w2f__i4) :: L
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -1314,8 +1312,8 @@ C store arguments
       do cp_loop_variable_2 = lbound(X,2),ubound(X,2)
       call cp_store_p_real_vector(X(:,cp_loop_variable_2),size(X(:,cp_lo
      +op_variable_2)),theArgFStack,theArgFStackoffset,theArgFStackSize)
-      enddo
-          end if 
+      end do
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_2 = ubound(X,2),lbound(X,2),-1
@@ -1323,44 +1321,44 @@ C restore arguments
       X(cp_loop_variable_1,cp_loop_variable_2) = theArgFStack(theArgFSta
      +ckoffset)
       theArgFStackoffset = theArgFStackoffset-1
-      enddo
-      enddo
+      end do
+      end do
       do cp_loop_variable_1 = ubound(R,1),lbound(R,1),-1
       R(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +R(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(PROJ_T,1),lbound(PROJ_T,1),-1
       PROJ_T(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +PROJ_T(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(PROJ_S,1),lbound(PROJ_S,1),-1
       PROJ_S(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +PROJ_S(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(BLENGTH,1),lbound(BLENGTH,1),-1
       BLENGTH(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +BLENGTH(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(BHEIGHT,1),lbound(BHEIGHT,1),-1
       BHEIGHT(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +BHEIGHT(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
       AREA(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +AREA(cp_loop_variable_1)
-      enddo
+      end do
       YEAR = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", YEAR
       theArgFStackoffset = theArgFStackoffset-1
@@ -1386,7 +1384,8 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA
       theArgFStackoffset = theArgFStackoffset-1
       DAYS_PER_50M_MIXED_LAYER = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", DAYS_PER_50M_MIXED_LAYER
+C          write(*,'(A,EN26.16E3)') "restore(s)  ", DAYS_PER_50M_MIXED_LA
+C YER
       theArgFStackoffset = theArgFStackoffset-1
       DAY = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DAY
@@ -1402,61 +1401,61 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
-      VERBMODE = .FALSE.
+      VERBMODE = .false.
       BLENGTH(1) = 5.0D+08
       BLENGTH(2) = 1.0D+08
       BLENGTH(3) = BLENGTH(1)
       BHEIGHT(1) = 1.0D+05
       BHEIGHT(3) = 4.0D+05
-      BHEIGHT(2) = (BHEIGHT(1) + BHEIGHT(3))
-      DELTA = (BHEIGHT(1) /(BHEIGHT(1) + BHEIGHT(3)))
+      BHEIGHT(2) = (BHEIGHT(1)+BHEIGHT(3))
+      DELTA = (BHEIGHT(1)/(BHEIGHT(1)+BHEIGHT(3)))
       BWIDTH = 4.0D+08
-      AREA(1) = (BLENGTH(1) * BWIDTH)
-      AREA(2) = (BLENGTH(2) * BWIDTH)
-      AREA(3) = (BLENGTH(3) * BWIDTH)
-      VOL(1) = (AREA(1) * BHEIGHT(1))
-      VOL(2) = (AREA(2) *(BHEIGHT(1) + BHEIGHT(3)))
-      VOL(3) = (AREA(3) * BHEIGHT(3))
+      AREA(1) = (BLENGTH(1)*BWIDTH)
+      AREA(2) = (BLENGTH(2)*BWIDTH)
+      AREA(3) = (BLENGTH(3)*BWIDTH)
+      VOL(1) = (AREA(1)*BHEIGHT(1))
+      VOL(2) = (AREA(2)*(BHEIGHT(1)+BHEIGHT(3)))
+      VOL(3) = (AREA(3)*BHEIGHT(3))
       ROBERT_FILTER_COEFF = 2.5D-01
       HUNDRED = 1.0D+02
       THOUSAND = 1.0D+03
       DAY = 8.64D+04
-      YEAR = (DAY * 3.65D+02)
+      YEAR = (DAY*3.65D+02)
       SV = 1.0D+12
-      U0 = ((SV * 1.6D+01) / 4.00000000000000019169D-04)
+      U0 = ((SV*1.6D+01)/4.00000000000000019169D-04)
       ALPHA = 1.6679999999999998864D-04
       BETA = 7.81000000000000010186D-04
       DAYS_PER_50M_MIXED_LAYER = 5.0D+01
-      GAMMA_T = (1.0D00 /(DAY * 3.0D+02))
-      GAMMA_S = (0.0D00 /((BHEIGHT(1) / 5.0D+03) * DAY *
-     >  DAYS_PER_50M_MIXED_LAYER))
+      GAMMA_T = (1.0D00/(DAY*3.0D+02))
+      GAMMA_S = (0.0D00/((BHEIGHT(1)/5.0D+03)*DAY*DAYS_PER_50M_MIXED_LAY
+     +ER))
       EPSILON_IC = (-1.00000000000000004792D-04)
-      NOISE_CORRELATION_TIME = (DAY * 1.5D+01)
-      DELTA_T = (DAY * 5.0D00)
-      INTEGRATION_TIME = (YEAR * 5.0D+01)
-      N_MAX = INT(INTEGRATION_TIME / DELTA_T)
+      NOISE_CORRELATION_TIME = (DAY*1.5D+01)
+      DELTA_T = (DAY*5.0D00)
+      INTEGRATION_TIME = (YEAR*5.0D+01)
+      N_MAX = INT(INTEGRATION_TIME/DELTA_T)
       FDEPS = 9.99999999999999954748D-07
-      Y(1) = (THOUSAND / 3.2680000000000000715D-02)
-      Y(2) = (THOUSAND / 7.9399999999999991418D-03)
-      Y(3) = (THOUSAND / 1.39999999999999998578D-03)
-      Y(4) = (THOUSAND / 1.41699999999999992628D-01)
-      Y(5) = (THOUSAND / 1.28599999999999992095D-01)
-      Y(6) = (THOUSAND / 8.7800000000000003042D-02)
-      R(1) = (ALPHA * DELTA)
-      R(2) = (- ALPHA)
-      R(3) = (ALPHA *(1.0D00 - DELTA))
-      R(4) = (-(BETA * DELTA))
+      Y(1) = (THOUSAND/3.2680000000000000715D-02)
+      Y(2) = (THOUSAND/7.9399999999999991418D-03)
+      Y(3) = (THOUSAND/1.39999999999999998578D-03)
+      Y(4) = (THOUSAND/1.41699999999999992628D-01)
+      Y(5) = (THOUSAND/1.28599999999999992095D-01)
+      Y(6) = (THOUSAND/8.7800000000000003042D-02)
+      R(1) = (ALPHA*DELTA)
+      R(2) = (-ALPHA)
+      R(3) = (ALPHA*(1.0D00-DELTA))
+      R(4) = (-(BETA*DELTA))
       R(5) = BETA
-      R(6) = (-(BETA *(1.0D00 - DELTA)))
-      DO L = 1, 6, 1
-        R(INT(L)) = ((R(L) * U0) / SV)
+      R(6) = (-(BETA*(1.0D00-DELTA)))
+      DO L = 1,6,1
+        R(INT(L)) = ((R(L)*U0)/SV)
       END DO
-      DO L = 1, 6, 1
-        IF(L .LE. 3) THEN
+      DO L = 1,6,1
+        IF (L.LE.3) THEN
           PROJ_T(INT(L)) = 1.0D00
           PROJ_S(INT(L)) = 0.0D00
         ELSE
@@ -1464,9 +1463,9 @@ C$OPENAD XXX Template ad_template.f
           PROJ_S(INT(L)) = 1.0D00
         ENDIF
       END DO
-      DO L = 1, 6, 1
-        R_T(INT(L)) = (PROJ_T(L) * R(L))
-        R_S(INT(L)) = (PROJ_S(L) * R(L))
+      DO L = 1,6,1
+        R_T(INT(L)) = (PROJ_T(L)*R(L))
+        R_S(INT(L)) = (PROJ_S(L)*R(L))
       END DO
       R1(1) = 1.0D00
       R1(2) = (-1.0D00)
@@ -1474,86 +1473,85 @@ C$OPENAD XXX Template ad_template.f
       R1(4) = 0.0D00
       R1(5) = 0.0D00
       R1(6) = 0.0D00
-      DO J = 1, 6, 1
-        DO I = 1, 6, 1
-          X(INT(I), INT(J)) = (R(I) * R(J))
+      DO J = 1,6,1
+        DO I = 1,6,1
+          X(INT(I),INT(J)) = (R(I)*R(J))
         END DO
       END DO
       EPSILON_REGULARIZE = 1.00000000000000002092D-08
-      DO J = 1, 6, 1
-        DO I = 1, 6, 1
-          X(INT(I), INT(J)) = (X(I, J) + EPSILON_REGULARIZE)
+      DO J = 1,6,1
+        DO I = 1,6,1
+          X(INT(I),INT(J)) = (X(I,J)+EPSILON_REGULARIZE)
         END DO
       END DO
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
-      VERBMODE = .FALSE.
+      VERBMODE = .false.
       BLENGTH(1) = 5.0D+08
       BLENGTH(2) = 1.0D+08
       BLENGTH(3) = BLENGTH(1)
       BHEIGHT(1) = 1.0D+05
       BHEIGHT(3) = 4.0D+05
-      BHEIGHT(2) = (BHEIGHT(1) + BHEIGHT(3))
-      DELTA = (BHEIGHT(1) /(BHEIGHT(1) + BHEIGHT(3)))
+      BHEIGHT(2) = (BHEIGHT(1)+BHEIGHT(3))
+      DELTA = (BHEIGHT(1)/(BHEIGHT(1)+BHEIGHT(3)))
       BWIDTH = 4.0D+08
-      AREA(1) = (BLENGTH(1) * BWIDTH)
-      AREA(2) = (BLENGTH(2) * BWIDTH)
-      AREA(3) = (BLENGTH(3) * BWIDTH)
-      VOL(1) = (AREA(1) * BHEIGHT(1))
-      VOL(2) = (AREA(2) *(BHEIGHT(1) + BHEIGHT(3)))
-      VOL(3) = (AREA(3) * BHEIGHT(3))
+      AREA(1) = (BLENGTH(1)*BWIDTH)
+      AREA(2) = (BLENGTH(2)*BWIDTH)
+      AREA(3) = (BLENGTH(3)*BWIDTH)
+      VOL(1) = (AREA(1)*BHEIGHT(1))
+      VOL(2) = (AREA(2)*(BHEIGHT(1)+BHEIGHT(3)))
+      VOL(3) = (AREA(3)*BHEIGHT(3))
       ROBERT_FILTER_COEFF = 2.5D-01
       HUNDRED = 1.0D+02
       THOUSAND = 1.0D+03
       DAY = 8.64D+04
-      YEAR = (DAY * 3.65D+02)
+      YEAR = (DAY*3.65D+02)
       SV = 1.0D+12
-      U0 = ((SV * 1.6D+01) / 4.00000000000000019169D-04)
+      U0 = ((SV*1.6D+01)/4.00000000000000019169D-04)
       ALPHA = 1.6679999999999998864D-04
       BETA = 7.81000000000000010186D-04
       DAYS_PER_50M_MIXED_LAYER = 5.0D+01
-      GAMMA_T = (1.0D00 /(DAY * 3.0D+02))
-      GAMMA_S = (0.0D00 /((BHEIGHT(1) / 5.0D+03) * DAY *
-     >  DAYS_PER_50M_MIXED_LAYER))
+      GAMMA_T = (1.0D00/(DAY*3.0D+02))
+      GAMMA_S = (0.0D00/((BHEIGHT(1)/5.0D+03)*DAY*DAYS_PER_50M_MIXED_LAY
+     +ER))
       EPSILON_IC = (-1.00000000000000004792D-04)
-      NOISE_CORRELATION_TIME = (DAY * 1.5D+01)
-      DELTA_T = (DAY * 5.0D00)
-      INTEGRATION_TIME = (YEAR * 5.0D+01)
-      N_MAX = INT(INTEGRATION_TIME / DELTA_T)
+      NOISE_CORRELATION_TIME = (DAY*1.5D+01)
+      DELTA_T = (DAY*5.0D00)
+      INTEGRATION_TIME = (YEAR*5.0D+01)
+      N_MAX = INT(INTEGRATION_TIME/DELTA_T)
       FDEPS = 9.99999999999999954748D-07
-      Y(1) = (THOUSAND / 3.2680000000000000715D-02)
-      Y(2) = (THOUSAND / 7.9399999999999991418D-03)
-      Y(3) = (THOUSAND / 1.39999999999999998578D-03)
-      Y(4) = (THOUSAND / 1.41699999999999992628D-01)
-      Y(5) = (THOUSAND / 1.28599999999999992095D-01)
-      Y(6) = (THOUSAND / 8.7800000000000003042D-02)
-      R(1) = (ALPHA * DELTA)
-      R(2) = (- ALPHA)
-      R(3) = (ALPHA *(1.0D00 - DELTA))
-      R(4) = (-(BETA * DELTA))
+      Y(1) = (THOUSAND/3.2680000000000000715D-02)
+      Y(2) = (THOUSAND/7.9399999999999991418D-03)
+      Y(3) = (THOUSAND/1.39999999999999998578D-03)
+      Y(4) = (THOUSAND/1.41699999999999992628D-01)
+      Y(5) = (THOUSAND/1.28599999999999992095D-01)
+      Y(6) = (THOUSAND/8.7800000000000003042D-02)
+      R(1) = (ALPHA*DELTA)
+      R(2) = (-ALPHA)
+      R(3) = (ALPHA*(1.0D00-DELTA))
+      R(4) = (-(BETA*DELTA))
       R(5) = BETA
-      R(6) = (-(BETA *(1.0D00 - DELTA)))
+      R(6) = (-(BETA*(1.0D00-DELTA)))
       OpenAD_Symbol_83 = 0_w2f__i8
-      DO L = 1, 6, 1
-        R(INT(L)) = ((R(L) * U0) / SV)
-        OpenAD_Symbol_83 = (INT(OpenAD_Symbol_83) + INT(1_w2f__i8))
+      DO L = 1,6,1
+        R(INT(L)) = ((R(L)*U0)/SV)
+        OpenAD_Symbol_83 = (INT(OpenAD_Symbol_83)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_83
       integer_tape_pointer = integer_tape_pointer+1
       OpenAD_Symbol_84 = 0_w2f__i8
-      DO L = 1, 6, 1
-        IF(L .LE. 3) THEN
+      DO L = 1,6,1
+        IF (L.LE.3) THEN
           PROJ_T(INT(L)) = 1.0D00
           PROJ_S(INT(L)) = 0.0D00
           OpenAD_Symbol_85 = 1_w2f__i8
@@ -1566,15 +1564,15 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_86
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
-        OpenAD_Symbol_84 = (INT(OpenAD_Symbol_84) + INT(1_w2f__i8))
+        OpenAD_Symbol_84 = (INT(OpenAD_Symbol_84)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_84
       integer_tape_pointer = integer_tape_pointer+1
       OpenAD_Symbol_87 = 0_w2f__i8
-      DO L = 1, 6, 1
-        R_T(INT(L)) = (PROJ_T(L) * R(L))
-        R_S(INT(L)) = (PROJ_S(L) * R(L))
-        OpenAD_Symbol_87 = (INT(OpenAD_Symbol_87) + INT(1_w2f__i8))
+      DO L = 1,6,1
+        R_T(INT(L)) = (PROJ_T(L)*R(L))
+        R_S(INT(L)) = (PROJ_S(L)*R(L))
+        OpenAD_Symbol_87 = (INT(OpenAD_Symbol_87)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_87
       integer_tape_pointer = integer_tape_pointer+1
@@ -1585,102 +1583,100 @@ C$OPENAD XXX Template ad_template.f
       R1(5) = 0.0D00
       R1(6) = 0.0D00
       OpenAD_Symbol_88 = 0_w2f__i8
-      DO J = 1, 6, 1
+      DO J = 1,6,1
         OpenAD_Symbol_89 = 0_w2f__i8
-        DO I = 1, 6, 1
-          X(INT(I), INT(J)) = (R(I) * R(J))
-          OpenAD_Symbol_89 = (INT(OpenAD_Symbol_89) + INT(1_w2f__i8))
+        DO I = 1,6,1
+          X(INT(I),INT(J)) = (R(I)*R(J))
+          OpenAD_Symbol_89 = (INT(OpenAD_Symbol_89)+INT(1_w2f__i8))
         END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_89
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_88 = (INT(OpenAD_Symbol_88) + INT(1_w2f__i8))
+        OpenAD_Symbol_88 = (INT(OpenAD_Symbol_88)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_88
       integer_tape_pointer = integer_tape_pointer+1
       EPSILON_REGULARIZE = 1.00000000000000002092D-08
       OpenAD_Symbol_90 = 0_w2f__i8
-      DO J = 1, 6, 1
+      DO J = 1,6,1
         OpenAD_Symbol_91 = 0_w2f__i8
-        DO I = 1, 6, 1
-          X(INT(I), INT(J)) = (X(I, J) + EPSILON_REGULARIZE)
-          OpenAD_Symbol_91 = (INT(OpenAD_Symbol_91) + INT(1_w2f__i8))
+        DO I = 1,6,1
+          X(INT(I),INT(J)) = (X(I,J)+EPSILON_REGULARIZE)
+          OpenAD_Symbol_91 = (INT(OpenAD_Symbol_91)+INT(1_w2f__i8))
         END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_91
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_90 = (INT(OpenAD_Symbol_90) + INT(1_w2f__i8))
+        OpenAD_Symbol_90 = (INT(OpenAD_Symbol_90)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_90
       integer_tape_pointer = integer_tape_pointer+1
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_68 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_69 = 1
-      DO WHILE(INT(OpenAD_Symbol_69) .LE. INT(OpenAD_Symbol_68))
+      dowhile (INT(OpenAD_Symbol_69).LE.INT(OpenAD_Symbol_68))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_70 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_71 = 1
-        DO WHILE(INT(OpenAD_Symbol_71) .LE. INT(OpenAD_Symbol_70))
-          OpenAD_Symbol_71 = INT(OpenAD_Symbol_71) + 1
+        dowhile (INT(OpenAD_Symbol_71).LE.INT(OpenAD_Symbol_70))
+          OpenAD_Symbol_71 = INT(OpenAD_Symbol_71)+1
         END DO
-        OpenAD_Symbol_69 = INT(OpenAD_Symbol_69) + 1
+        OpenAD_Symbol_69 = INT(OpenAD_Symbol_69)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_72 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_73 = 1
-      DO WHILE(INT(OpenAD_Symbol_73) .LE. INT(OpenAD_Symbol_72))
+      dowhile (INT(OpenAD_Symbol_73).LE.INT(OpenAD_Symbol_72))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_74 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_75 = 1
-        DO WHILE(INT(OpenAD_Symbol_75) .LE. INT(OpenAD_Symbol_74))
-          OpenAD_Symbol_75 = INT(OpenAD_Symbol_75) + 1
+        dowhile (INT(OpenAD_Symbol_75).LE.INT(OpenAD_Symbol_74))
+          OpenAD_Symbol_75 = INT(OpenAD_Symbol_75)+1
         END DO
-        OpenAD_Symbol_73 = INT(OpenAD_Symbol_73) + 1
+        OpenAD_Symbol_73 = INT(OpenAD_Symbol_73)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_76 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_77 = 1
-      DO WHILE(INT(OpenAD_Symbol_77) .LE. INT(OpenAD_Symbol_76))
-        OpenAD_Symbol_77 = INT(OpenAD_Symbol_77) + 1
+      dowhile (INT(OpenAD_Symbol_77).LE.INT(OpenAD_Symbol_76))
+        OpenAD_Symbol_77 = INT(OpenAD_Symbol_77)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_78 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_79 = 1
-      DO WHILE(INT(OpenAD_Symbol_79) .LE. INT(OpenAD_Symbol_78))
+      dowhile (INT(OpenAD_Symbol_79).LE.INT(OpenAD_Symbol_78))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_80 = integer_tape(integer_tape_pointer)
-        IF(OpenAD_Symbol_80 .ne. 0) THEN
+        IF (OpenAD_Symbol_80.ne.0) THEN
         ENDIF
-        OpenAD_Symbol_79 = INT(OpenAD_Symbol_79) + 1
+        OpenAD_Symbol_79 = INT(OpenAD_Symbol_79)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_81 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_82 = 1
-      DO WHILE(INT(OpenAD_Symbol_82) .LE. INT(OpenAD_Symbol_81))
-        OpenAD_Symbol_82 = INT(OpenAD_Symbol_82) + 1
+      dowhile (INT(OpenAD_Symbol_82).LE.INT(OpenAD_Symbol_81))
+        OpenAD_Symbol_82 = INT(OpenAD_Symbol_82)+1
       END DO
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_ini_params
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -1692,25 +1688,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -1734,97 +1744,86 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_model_body()
+      subroutine box_model_body()
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_116
-      INTEGER(w2f__i8) OpenAD_Symbol_117
-      INTEGER(w2f__i8) OpenAD_Symbol_118
-      INTEGER(w2f__i8) OpenAD_Symbol_119
-      INTEGER(w2f__i8) OpenAD_Symbol_120
-      INTEGER(w2f__i8) OpenAD_Symbol_121
-      INTEGER(w2f__i8) OpenAD_Symbol_122
-      INTEGER(w2f__i8) OpenAD_Symbol_123
-      INTEGER(w2f__i8) OpenAD_Symbol_124
-      INTEGER(w2f__i8) OpenAD_Symbol_125
-      INTEGER(w2f__i8) OpenAD_Symbol_126
-      INTEGER(w2f__i8) OpenAD_Symbol_127
-      INTEGER(w2f__i8) OpenAD_Symbol_128
-      INTEGER(w2f__i8) OpenAD_Symbol_129
-      INTEGER(w2f__i8) OpenAD_Symbol_130
-      INTEGER(w2f__i8) OpenAD_Symbol_131
-      INTEGER(w2f__i8) OpenAD_Symbol_132
-      INTEGER(w2f__i8) OpenAD_Symbol_133
-      INTEGER(w2f__i8) OpenAD_Symbol_134
-      INTEGER(w2f__i8) OpenAD_Symbol_135
-      INTEGER(w2f__i8) OpenAD_Symbol_136
-      INTEGER(w2f__i8) OpenAD_Symbol_137
-      INTEGER(w2f__i8) OpenAD_Symbol_138
-      INTEGER(w2f__i8) OpenAD_Symbol_139
-      INTEGER(w2f__i8) OpenAD_Symbol_140
-      INTEGER(w2f__i8) OpenAD_Symbol_141
-      INTEGER(w2f__i8) OpenAD_Symbol_142
-      INTEGER(w2f__i8) OpenAD_Symbol_143
-      INTEGER(w2f__i8) OpenAD_Symbol_144
-      INTEGER(w2f__i8) OpenAD_Symbol_145
+      integer(w2f__i8) :: OpenAD_Symbol_116
+      integer(w2f__i8) :: OpenAD_Symbol_117
+      integer(w2f__i8) :: OpenAD_Symbol_118
+      integer(w2f__i8) :: OpenAD_Symbol_119
+      integer(w2f__i8) :: OpenAD_Symbol_120
+      integer(w2f__i8) :: OpenAD_Symbol_121
+      integer(w2f__i8) :: OpenAD_Symbol_122
+      integer(w2f__i8) :: OpenAD_Symbol_123
+      integer(w2f__i8) :: OpenAD_Symbol_124
+      integer(w2f__i8) :: OpenAD_Symbol_125
+      integer(w2f__i8) :: OpenAD_Symbol_126
+      integer(w2f__i8) :: OpenAD_Symbol_127
+      integer(w2f__i8) :: OpenAD_Symbol_128
+      integer(w2f__i8) :: OpenAD_Symbol_129
+      integer(w2f__i8) :: OpenAD_Symbol_130
+      integer(w2f__i8) :: OpenAD_Symbol_131
+      integer(w2f__i8) :: OpenAD_Symbol_132
+      integer(w2f__i8) :: OpenAD_Symbol_133
+      integer(w2f__i8) :: OpenAD_Symbol_134
+      integer(w2f__i8) :: OpenAD_Symbol_135
+      integer(w2f__i8) :: OpenAD_Symbol_136
+      integer(w2f__i8) :: OpenAD_Symbol_137
+      integer(w2f__i8) :: OpenAD_Symbol_138
+      integer(w2f__i8) :: OpenAD_Symbol_139
+      integer(w2f__i8) :: OpenAD_Symbol_140
+      integer(w2f__i8) :: OpenAD_Symbol_141
+      integer(w2f__i8) :: OpenAD_Symbol_142
+      integer(w2f__i8) :: OpenAD_Symbol_143
+      integer(w2f__i8) :: OpenAD_Symbol_144
+      integer(w2f__i8) :: OpenAD_Symbol_145
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL box_final_state
-      EXTERNAL box_forward
-      EXTERNAL box_ini_fields
-      INTEGER(w2f__i4) ILEV1
-      INTEGER(w2f__i4) ILEV2
-      INTEGER(w2f__i4) ILOOP
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) MAXLEV2
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      external box_final_state
+      external box_forward
+      external box_ini_fields
+      integer(w2f__i4) :: ILEV1
+      integer(w2f__i4) :: ILEV2
+      integer(w2f__i4) :: ILOOP
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: MAXLEV2
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Top Level Pragmas ****
@@ -1835,8 +1834,7 @@ C$OPENAD DEPENDENT(SNEW)
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -1898,7 +1896,7 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackoff
      +set,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(XX,1),lbound(XX,1),-1
@@ -1906,97 +1904,97 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +XX(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
       VOL(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +VOL(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TSTAR,1),lbound(TSTAR,1),-1
       TSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TSTAR(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TOLD,1),lbound(TOLD,1),-1
       TOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TOLD(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
       TNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
       TNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNEW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(T,1),lbound(T,1),-1
       T(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +T(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SSTAR,1),lbound(SSTAR,1),-1
       SSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SSTAR(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SOLD,1),lbound(SOLD,1),-1
       SOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SOLD(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
       SNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
       SNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNEW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(S,1),lbound(S,1),-1
       S(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +S(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(RHO,1),lbound(RHO,1),-1
       RHO(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +RHO(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(NULLFORCE,1),lbound(NULLFORCE,1),-1
       NULLFORCE(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +NULLFORCE(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(FW,1),lbound(FW,1),-1
       FW(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FW(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(AREA,1),lbound(AREA,1),-1
       AREA(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +AREA(cp_loop_variable_1)
-      enddo
+      end do
       YEAR = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", YEAR
       theArgFStackoffset = theArgFStackoffset-1
@@ -2041,20 +2039,20 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
       CALL box_ini_fields()
-      MAXLEV2 = ((N_MAX / 73) + 1)
-      IF(N_MAX .GT. 3650) THEN
+      MAXLEV2 = ((N_MAX/73)+1)
+      IF (N_MAX.GT.3650) THEN
         WRITE(*,*) 'NEED TO SET nlev1*nlev2 >= n_max '
       ELSE
-        DO ILEV2 = 1, 50, 1
-          IF(ILEV2 .LE. MAXLEV2) THEN
-            DO ILEV1 = 1, 73, 1
-              ILOOP = (ILEV1 + ILEV2 * 73 +(-73))
-              IF(ILOOP .LE. N_MAX) THEN
+        DO ILEV2 = 1,50,1
+          IF (ILEV2.LE.MAXLEV2) THEN
+            DO ILEV1 = 1,73,1
+              ILOOP = (ILEV1+ILEV2*73+(-73))
+              IF (ILOOP.LE.N_MAX) THEN
                 CALL box_forward(ILEV1)
               ENDIF
             END DO
@@ -2062,34 +2060,33 @@ C$OPENAD XXX Template ad_template.f
         END DO
         CALL box_final_state()
       ENDIF
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       CALL box_ini_fields()
-      MAXLEV2 = ((N_MAX / 73) + 1)
-      IF(N_MAX .GT. 3650) THEN
+      MAXLEV2 = ((N_MAX/73)+1)
+      IF (N_MAX.GT.3650) THEN
         WRITE(*,*) 'NEED TO SET nlev1*nlev2 >= n_max '
         OpenAD_Symbol_129 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_129
         integer_tape_pointer = integer_tape_pointer+1
       ELSE
         OpenAD_Symbol_123 = 0_w2f__i8
-        DO ILEV2 = 1, 50, 1
-          IF(ILEV2 .LE. MAXLEV2) THEN
+        DO ILEV2 = 1,50,1
+          IF (ILEV2.LE.MAXLEV2) THEN
             OpenAD_Symbol_124 = 0_w2f__i8
-            DO ILEV1 = 1, 73, 1
-              ILOOP = (ILEV1 + ILEV2 * 73 +(-73))
-              IF(ILOOP .LE. N_MAX) THEN
+            DO ILEV1 = 1,73,1
+              ILOOP = (ILEV1+ILEV2*73+(-73))
+              IF (ILOOP.LE.N_MAX) THEN
                 CALL box_forward(ILEV1)
                 OpenAD_Symbol_125 = 1_w2f__i8
                 integer_tape(integer_tape_pointer) = OpenAD_Symbol_125
@@ -2099,8 +2096,8 @@ C$OPENAD XXX Template ad_template.f
                 integer_tape(integer_tape_pointer) = OpenAD_Symbol_126
                 integer_tape_pointer = integer_tape_pointer+1
               ENDIF
-              OpenAD_Symbol_124 = (INT(OpenAD_Symbol_124) + INT(
-     > 1_w2f__i8))
+              OpenAD_Symbol_124 = (INT(OpenAD_Symbol_124)+INT(1_w2f__i8)
+     +)
             END DO
             integer_tape(integer_tape_pointer) = OpenAD_Symbol_124
             integer_tape_pointer = integer_tape_pointer+1
@@ -2112,7 +2109,7 @@ C$OPENAD XXX Template ad_template.f
             integer_tape(integer_tape_pointer) = OpenAD_Symbol_127
             integer_tape_pointer = integer_tape_pointer+1
           ENDIF
-          OpenAD_Symbol_123 = (INT(OpenAD_Symbol_123) + INT(1_w2f__i8))
+          OpenAD_Symbol_123 = (INT(OpenAD_Symbol_123)+INT(1_w2f__i8))
         END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_123
         integer_tape_pointer = integer_tape_pointer+1
@@ -2121,59 +2118,56 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_130
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_116 = integer_tape(integer_tape_pointer)
-      IF(OpenAD_Symbol_116 .ne. 0) THEN
+      IF (OpenAD_Symbol_116.ne.0) THEN
       ELSE
         CALL box_final_state()
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_117 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_118 = 1
-        DO WHILE(INT(OpenAD_Symbol_118) .LE. INT(OpenAD_Symbol_117))
+        dowhile (INT(OpenAD_Symbol_118).LE.INT(OpenAD_Symbol_117))
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_119 = integer_tape(integer_tape_pointer)
-          IF(OpenAD_Symbol_119 .ne. 0) THEN
+          IF (OpenAD_Symbol_119.ne.0) THEN
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_120 = integer_tape(integer_tape_pointer)
             OpenAD_Symbol_121 = 1
-            DO WHILE(INT(OpenAD_Symbol_121) .LE. INT(OpenAD_Symbol_120)
-     > )
+            dowhile (INT(OpenAD_Symbol_121).LE.INT(OpenAD_Symbol_120))
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_122 = integer_tape(integer_tape_pointer)
-              IF(OpenAD_Symbol_122 .ne. 0) THEN
+              IF (OpenAD_Symbol_122.ne.0) THEN
                 CALL box_forward(ILEV1)
               ENDIF
-              OpenAD_Symbol_121 = INT(OpenAD_Symbol_121) + 1
+              OpenAD_Symbol_121 = INT(OpenAD_Symbol_121)+1
             END DO
           ENDIF
-          OpenAD_Symbol_118 = INT(OpenAD_Symbol_118) + 1
+          OpenAD_Symbol_118 = INT(OpenAD_Symbol_118)+1
         END DO
       ENDIF
       CALL box_ini_fields()
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_model_body
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -2185,25 +2179,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -2227,34 +2235,31 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_density(TLOC, SLOC, RHOLOC)
+      subroutine box_density(TLOC,SLOC,RHOLOC)
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_13
-      INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
-      INTEGER(w2f__i8) OpenAD_Symbol_17
-      INTEGER(w2f__i8) OpenAD_Symbol_18
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_2
+      integer(w2f__i8) :: OpenAD_Symbol_13
+      integer(w2f__i8) :: OpenAD_Symbol_14
+      integer(w2f__i8) :: OpenAD_Symbol_15
+      integer(w2f__i8) :: OpenAD_Symbol_16
+      integer(w2f__i8) :: OpenAD_Symbol_17
+      integer(w2f__i8) :: OpenAD_Symbol_18
+      real(w2f__8) :: OpenAD_acc_0
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_2
 C
 C     **** Parameters and Result ****
 C
@@ -2264,48 +2269,39 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) L
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_153
-      REAL(w2f__8) OpenAD_Symbol_154
-      REAL(w2f__8) OpenAD_Symbol_155
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: L
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+      integer(w2f__i8) :: OpenAD_Symbol_153
+      real(w2f__8) :: OpenAD_Symbol_154
+      real(w2f__8) :: OpenAD_Symbol_155
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -2315,7 +2311,7 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(SLOC,size(SLOC),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(SLOC,1),lbound(SLOC,1),-1
@@ -2323,13 +2319,13 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SLOC(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TLOC,1),lbound(TLOC,1),-1
       TLOC(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TLOC(cp_loop_variable_1)%v
-      enddo
+      end do
       BETA = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", BETA
       theArgFStackoffset = theArgFStackoffset-1
@@ -2338,62 +2334,60 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", ALPHA
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         RHOLOC(INT(L))%v = (SLOC(L)%v*BETA-TLOC(L)%v*ALPHA)
       END DO
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_15 = 0_w2f__i8
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         RHOLOC(INT(L))%v = (SLOC(L)%v*BETA-TLOC(L)%v*ALPHA)
         OpenAD_lin_0 = BETA
         OpenAD_lin_2 = ALPHA
-        OpenAD_acc_0 = (OpenAD_lin_2 * INT((-1_w2f__i8)))
+        OpenAD_acc_0 = (OpenAD_lin_2*INT((-1_w2f__i8)))
         double_tape(double_tape_pointer) = OpenAD_lin_0
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_0
         double_tape_pointer = double_tape_pointer+1
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_15 = (INT(OpenAD_Symbol_15) + INT(1_w2f__i8))
+        OpenAD_Symbol_15 = (INT(OpenAD_Symbol_15)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
       integer_tape_pointer = integer_tape_pointer+1
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_13 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_14 = 1
-      DO WHILE(INT(OpenAD_Symbol_14) .LE. INT(OpenAD_Symbol_13))
+      dowhile (INT(OpenAD_Symbol_14).LE.INT(OpenAD_Symbol_13))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_153 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
@@ -2405,16 +2399,15 @@ C adjoint
         SLOC(INT(OpenAD_Symbol_153))%d = SLOC(INT(OpenAD_Symbol_153))%d+
      +RHOLOC(INT(OpenAD_Symbol_153))%d*(OpenAD_Symbol_155)
         RHOLOC(INT(OpenAD_Symbol_153))%d = 0.0d0
-        OpenAD_Symbol_14 = INT(OpenAD_Symbol_14) + 1
+        OpenAD_Symbol_14 = INT(OpenAD_Symbol_14)+1
       END DO
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_density
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -2426,25 +2419,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -2468,32 +2475,29 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_transport(RHOLOC, UVELLOC)
+      subroutine box_transport(RHOLOC,UVELLOC)
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_8
+      real(w2f__8) :: OpenAD_acc_1
+      real(w2f__8) :: OpenAD_lin_5
+      real(w2f__8) :: OpenAD_lin_6
+      real(w2f__8) :: OpenAD_lin_8
       type(active) :: OpenAD_prop_0
-      REAL(w2f__8) OpenAD_tmp_0
-      REAL(w2f__8) OpenAD_tmp_1
+      real(w2f__8) :: OpenAD_tmp_0
+      real(w2f__8) :: OpenAD_tmp_1
 C
 C     **** Parameters and Result ****
 C
@@ -2502,48 +2506,39 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-      REAL(w2f__8) OpenAD_Symbol_156
-      REAL(w2f__8) OpenAD_Symbol_157
-      REAL(w2f__8) OpenAD_Symbol_158
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+      real(w2f__8) :: OpenAD_Symbol_156
+      real(w2f__8) :: OpenAD_Symbol_157
+      real(w2f__8) :: OpenAD_Symbol_158
 C
 C     **** Statements ****
 C
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -2551,7 +2546,7 @@ C store arguments
      +gFStackSize)
       call cp_store_real_vector(RHOLOC,size(RHOLOC),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(RHOLOC,1),lbound(RHOLOC,1),-1
@@ -2559,7 +2554,7 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +RHOLOC(cp_loop_variable_1)%v
-      enddo
+      end do
       U0 = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", U0
       theArgFStackoffset = theArgFStackoffset-1
@@ -2568,53 +2563,51 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
       UVELLOC%v = (-(U0*(RHOLOC(1)%v*DELTA+RHOLOC(3)%v*(1.0D00-DELTA)-RH
      +OLOC(2)%v)))
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_tmp_1 = (1.0D00 - DELTA)
+      OpenAD_tmp_1 = (1.0D00-DELTA)
       OpenAD_tmp_0 = (RHOLOC(1)%v*DELTA+RHOLOC(3)%v*OpenAD_tmp_1-RHOLOC(
      +2)%v)
       UVELLOC%v = (-(U0*OpenAD_tmp_0))
       OpenAD_lin_6 = DELTA
       OpenAD_lin_8 = OpenAD_tmp_1
       OpenAD_lin_5 = U0
-      OpenAD_acc_1 = (OpenAD_lin_5 * INT((-1_w2f__i8)))
+      OpenAD_acc_1 = (OpenAD_lin_5*INT((-1_w2f__i8)))
       double_tape(double_tape_pointer) = OpenAD_lin_6
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_8
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_156 = double_tape(double_tape_pointer)
@@ -2628,14 +2621,13 @@ C adjoint
       RHOLOC(1)%d = RHOLOC(1)%d+OpenAD_prop_0%d*(OpenAD_Symbol_158)
       RHOLOC(2)%d = RHOLOC(2)%d-OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_transport
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -2647,25 +2639,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -2689,37 +2695,34 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_robert_filter(FLDNOW, FLDOLD, FLDNEW)
+      subroutine box_robert_filter(FLDNOW,FLDOLD,FLDNEW)
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      INTEGER(w2f__i8) OpenAD_Symbol_25
-      INTEGER(w2f__i8) OpenAD_Symbol_26
-      INTEGER(w2f__i8) OpenAD_Symbol_27
-      INTEGER(w2f__i8) OpenAD_Symbol_28
-      INTEGER(w2f__i8) OpenAD_Symbol_29
-      INTEGER(w2f__i8) OpenAD_Symbol_30
-      REAL(w2f__8) OpenAD_lin_59
+      real(w2f__8) :: OpenAD_Symbol_0
+      integer(w2f__i8) :: OpenAD_Symbol_25
+      integer(w2f__i8) :: OpenAD_Symbol_26
+      integer(w2f__i8) :: OpenAD_Symbol_27
+      integer(w2f__i8) :: OpenAD_Symbol_28
+      integer(w2f__i8) :: OpenAD_Symbol_29
+      integer(w2f__i8) :: OpenAD_Symbol_30
+      real(w2f__8) :: OpenAD_lin_59
       type(active) :: OpenAD_prop_7
       type(active) :: OpenAD_prop_8
       type(active) :: OpenAD_prop_9
-      REAL(w2f__8) OpenAD_tmp_22
+      real(w2f__8) :: OpenAD_tmp_22
 C
 C     **** Parameters and Result ****
 C
@@ -2729,47 +2732,38 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) L
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_175
-      REAL(w2f__8) OpenAD_Symbol_176
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: L
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+      integer(w2f__i8) :: OpenAD_Symbol_175
+      real(w2f__8) :: OpenAD_Symbol_176
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ROBERT_FILTER_COEFF,theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
@@ -2779,7 +2773,7 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_real_vector(FLDNEW,size(FLDNEW),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(FLDNEW,1),lbound(FLDNEW,1),-1
@@ -2787,47 +2781,46 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDNEW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
       FLDOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDOLD(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(FLDNOW,1),lbound(FLDNOW,1),-1
       FLDNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       ROBERT_FILTER_COEFF = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", ROBERT_FILTER_COEFF
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         FLDNOW(INT(L))%v = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*(FLDOLD(L)%v
      ++FLDNEW(L)%v-FLDNOW(L)%v*2.0D00))
       END DO
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_27 = 0_w2f__i8
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         OpenAD_tmp_22 = (FLDOLD(L)%v+FLDNEW(L)%v-FLDNOW(L)%v*2.0D00)
         OpenAD_Symbol_0 = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*OpenAD_tmp_22
      +)
@@ -2837,30 +2830,29 @@ C$OPENAD XXX Template ad_template.f
         double_tape_pointer = double_tape_pointer+1
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_27 = (INT(OpenAD_Symbol_27) + INT(1_w2f__i8))
+        OpenAD_Symbol_27 = (INT(OpenAD_Symbol_27)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_27
       integer_tape_pointer = integer_tape_pointer+1
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_25 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_26 = 1
-      DO WHILE(INT(OpenAD_Symbol_26) .LE. INT(OpenAD_Symbol_25))
+      dowhile (INT(OpenAD_Symbol_26).LE.INT(OpenAD_Symbol_25))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_175 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
@@ -2882,16 +2874,15 @@ C adjoint
         FLDNOW(INT(OpenAD_Symbol_175))%d = FLDNOW(INT(OpenAD_Symbol_175)
      +)%d+OpenAD_prop_7%d
         OpenAD_prop_7%d = 0.0d0
-        OpenAD_Symbol_26 = INT(OpenAD_Symbol_26) + 1
+        OpenAD_Symbol_26 = INT(OpenAD_Symbol_26)+1
       END DO
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_robert_filter
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -2903,25 +2894,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -2945,77 +2950,65 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_cycle_fields()
+      subroutine box_cycle_fields()
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_31
-      INTEGER(w2f__i8) OpenAD_Symbol_32
-      INTEGER(w2f__i8) OpenAD_Symbol_33
-      INTEGER(w2f__i8) OpenAD_Symbol_34
-      INTEGER(w2f__i8) OpenAD_Symbol_35
-      INTEGER(w2f__i8) OpenAD_Symbol_36
+      integer(w2f__i8) :: OpenAD_Symbol_31
+      integer(w2f__i8) :: OpenAD_Symbol_32
+      integer(w2f__i8) :: OpenAD_Symbol_33
+      integer(w2f__i8) :: OpenAD_Symbol_34
+      integer(w2f__i8) :: OpenAD_Symbol_35
+      integer(w2f__i8) :: OpenAD_Symbol_36
       type(active) :: OpenAD_prop_10
       type(active) :: OpenAD_prop_11
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) L
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_177
-      INTEGER(w2f__i8) OpenAD_Symbol_178
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: L
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+      integer(w2f__i8) :: OpenAD_Symbol_177
+      integer(w2f__i8) :: OpenAD_Symbol_178
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_vector(SNEW,size(SNEW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
@@ -3025,7 +3018,7 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
@@ -3033,52 +3026,51 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(TNEW,1),lbound(TNEW,1),-1
       TNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +TNEW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SNOW,1),lbound(SNOW,1),-1
       SNOW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(SNEW,1),lbound(SNEW,1),-1
       SNEW(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +SNEW(cp_loop_variable_1)%v
-      enddo
+      end do
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         TOLD(INT(L))%v = TNOW(L)%v
         TNOW(INT(L))%v = TNEW(L)%v
         SOLD(INT(L))%v = SNOW(L)%v
         SNOW(INT(L))%v = SNEW(L)%v
       END DO
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_33 = 0_w2f__i8
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         TOLD(INT(L))%v = TNOW(L)%v
         TNOW(INT(L))%v = TNEW(L)%v
         integer_tape(integer_tape_pointer) = L
@@ -3087,30 +3079,29 @@ C$OPENAD XXX Template ad_template.f
         SNOW(INT(L))%v = SNEW(L)%v
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_33 = (INT(OpenAD_Symbol_33) + INT(1_w2f__i8))
+        OpenAD_Symbol_33 = (INT(OpenAD_Symbol_33)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_33
       integer_tape_pointer = integer_tape_pointer+1
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_31 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_32 = 1
-      DO WHILE(INT(OpenAD_Symbol_32) .LE. INT(OpenAD_Symbol_31))
+      dowhile (INT(OpenAD_Symbol_32).LE.INT(OpenAD_Symbol_31))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_177 = integer_tape(integer_tape_pointer)
         SNEW(INT(OpenAD_Symbol_177))%d = SNEW(INT(OpenAD_Symbol_177))%d+
@@ -3133,16 +3124,15 @@ C adjoint
         TNOW(INT(OpenAD_Symbol_178))%d = TNOW(INT(OpenAD_Symbol_178))%d+
      +OpenAD_prop_10%d
         OpenAD_prop_10%d = 0.0d0
-        OpenAD_Symbol_32 = INT(OpenAD_Symbol_32) + 1
+        OpenAD_Symbol_32 = INT(OpenAD_Symbol_32)+1
       END DO
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_cycle_fields
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -3154,25 +3144,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -3196,33 +3200,30 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_update(FLDNEW, FLDOLD, DFLDDT)
+      subroutine box_update(FLDNEW,FLDOLD,DFLDDT)
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_146
-      INTEGER(w2f__i8) OpenAD_Symbol_147
-      INTEGER(w2f__i8) OpenAD_Symbol_148
-      INTEGER(w2f__i8) OpenAD_Symbol_149
-      INTEGER(w2f__i8) OpenAD_Symbol_150
-      INTEGER(w2f__i8) OpenAD_Symbol_151
-      REAL(w2f__8) OpenAD_lin_61
-      REAL(w2f__8) OpenAD_tmp_23
+      integer(w2f__i8) :: OpenAD_Symbol_146
+      integer(w2f__i8) :: OpenAD_Symbol_147
+      integer(w2f__i8) :: OpenAD_Symbol_148
+      integer(w2f__i8) :: OpenAD_Symbol_149
+      integer(w2f__i8) :: OpenAD_Symbol_150
+      integer(w2f__i8) :: OpenAD_Symbol_151
+      real(w2f__8) :: OpenAD_lin_61
+      real(w2f__8) :: OpenAD_tmp_23
 C
 C     **** Parameters and Result ****
 C
@@ -3232,47 +3233,38 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) L
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_185
-      REAL(w2f__8) OpenAD_Symbol_186
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: L
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+      integer(w2f__i8) :: OpenAD_Symbol_185
+      real(w2f__8) :: OpenAD_Symbol_186
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
@@ -3280,7 +3272,7 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_real_vector(DFLDDT,size(DFLDDT),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(DFLDDT,1),lbound(DFLDDT,1),-1
@@ -3288,71 +3280,69 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +DFLDDT(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
       FLDOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDOLD(cp_loop_variable_1)%v
-      enddo
+      end do
       DELTA_T = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO L = 1, 3, 1
+      DO L = 1,3,1
         FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*DELTA_T*2.0D00)
       END DO
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_148 = 0_w2f__i8
-      DO L = 1, 3, 1
-        OpenAD_tmp_23 = (DELTA_T * 2.0D00)
+      DO L = 1,3,1
+        OpenAD_tmp_23 = (DELTA_T*2.0D00)
         FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*OpenAD_tmp_23)
         OpenAD_lin_61 = OpenAD_tmp_23
         double_tape(double_tape_pointer) = OpenAD_lin_61
         double_tape_pointer = double_tape_pointer+1
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
-        OpenAD_Symbol_148 = (INT(OpenAD_Symbol_148) + INT(1_w2f__i8))
+        OpenAD_Symbol_148 = (INT(OpenAD_Symbol_148)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_148
       integer_tape_pointer = integer_tape_pointer+1
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_146 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_147 = 1
-      DO WHILE(INT(OpenAD_Symbol_147) .LE. INT(OpenAD_Symbol_146))
+      dowhile (INT(OpenAD_Symbol_147).LE.INT(OpenAD_Symbol_146))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_185 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
@@ -3362,16 +3352,15 @@ C adjoint
         FLDOLD(INT(OpenAD_Symbol_185))%d = FLDOLD(INT(OpenAD_Symbol_185)
      +)%d+FLDNEW(INT(OpenAD_Symbol_185))%d
         FLDNEW(INT(OpenAD_Symbol_185))%d = 0.0d0
-        OpenAD_Symbol_147 = INT(OpenAD_Symbol_147) + 1
+        OpenAD_Symbol_147 = INT(OpenAD_Symbol_147)+1
       END DO
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_update
 C ========== begin copyright notice ==============
 C This file is part of 
@@ -3383,25 +3372,39 @@ C Copyright (c) 2005, The University of Chicago
 C All rights reserved.
 C
 C Redistribution and use in source and binary forms, 
-C with or without modification, are permitted provided that the following conditions are met:
+C with or without modification, are permitted provided that the following
+C  conditions are met:
 C
-C    - Redistributions of source code must retain the above copyright notice, 
+C    - Redistributions of source code must retain the above copyright not
+C ice, 
 C      this list of conditions and the following disclaimer.
-C    - Redistributions in binary form must reproduce the above copyright notice, 
-C      this list of conditions and the following disclaimer in the documentation 
+C    - Redistributions in binary form must reproduce the above copyright 
+C notice, 
+C      this list of conditions and the following disclaimer in the docume
+C ntation 
 C      and/or other materials provided with the distribution.
-C    - Neither the name of The University of Chicago nor the names of its contributors 
-C      may be used to endorse or promote products derived from this software without 
+C    - Neither the name of The University of Chicago nor the names of its
+C  contributors 
+C      may be used to endorse or promote products derived from this softw
+C are without 
 C      specific prior written permission.
 C
-C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
-C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
-C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
-C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+C THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+C  IS" AND ANY 
+C EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLI
+C ED WARRANTIES 
+C OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+C  IN NO EVENT 
+C SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IND
+C IRECT, 
+C INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BU
+C T NOT LIMITED TO, 
+C PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROF
+C ITS; OR BUSINESS 
+C INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+C  CONTRACT, STRICT 
+C LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY W
+C AY OUT OF THE USE 
 C OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 C 
 C General Information:
@@ -3425,108 +3428,105 @@ C
 C This work is partially supported by:
 C 	NSF-ITR grant OCE-0205590
 C ========== end copyright notice ==============
-
-      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC,
-     >  FLDNOW, FLDOLD, FLDNEW)
+      subroutine box_timestep(GAMMALOC,FLDSTAR,EXTFORLOC,UVELLOC,FLDNOW,
+     +FLDOLD,FLDNEW)
           use OAD_tape
           use OAD_rev
           use OAD_cp
-
-          ! original arguments get inserted before version
-          ! and declared here together with all local variables
-          ! generated by xaifBooster
-
+C         ! original arguments get inserted before version
+C         ! and declared here together with all local variables
+C         ! generated by xaifBooster
       use w2f__types
       use OAD_active
       use all_globals_mod
       use all_globals_mod
       use all_globals_mod
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_19
-      INTEGER(w2f__i8) OpenAD_Symbol_20
-      INTEGER(w2f__i8) OpenAD_Symbol_21
-      INTEGER(w2f__i8) OpenAD_Symbol_22
-      INTEGER(w2f__i8) OpenAD_Symbol_23
-      INTEGER(w2f__i8) OpenAD_Symbol_24
-      REAL(w2f__8) OpenAD_acc_10
-      REAL(w2f__8) OpenAD_acc_11
-      REAL(w2f__8) OpenAD_acc_12
-      REAL(w2f__8) OpenAD_acc_13
-      REAL(w2f__8) OpenAD_acc_14
-      REAL(w2f__8) OpenAD_acc_15
-      REAL(w2f__8) OpenAD_acc_16
-      REAL(w2f__8) OpenAD_acc_17
-      REAL(w2f__8) OpenAD_acc_18
-      REAL(w2f__8) OpenAD_acc_19
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_acc_4
-      REAL(w2f__8) OpenAD_acc_5
-      REAL(w2f__8) OpenAD_acc_6
-      REAL(w2f__8) OpenAD_acc_7
-      REAL(w2f__8) OpenAD_acc_8
-      REAL(w2f__8) OpenAD_acc_9
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_14
-      REAL(w2f__8) OpenAD_lin_16
-      REAL(w2f__8) OpenAD_lin_18
-      REAL(w2f__8) OpenAD_lin_19
-      REAL(w2f__8) OpenAD_lin_20
-      REAL(w2f__8) OpenAD_lin_24
-      REAL(w2f__8) OpenAD_lin_26
-      REAL(w2f__8) OpenAD_lin_28
-      REAL(w2f__8) OpenAD_lin_29
-      REAL(w2f__8) OpenAD_lin_30
-      REAL(w2f__8) OpenAD_lin_32
-      REAL(w2f__8) OpenAD_lin_33
-      REAL(w2f__8) OpenAD_lin_34
-      REAL(w2f__8) OpenAD_lin_38
-      REAL(w2f__8) OpenAD_lin_40
-      REAL(w2f__8) OpenAD_lin_42
-      REAL(w2f__8) OpenAD_lin_43
-      REAL(w2f__8) OpenAD_lin_44
-      REAL(w2f__8) OpenAD_lin_48
-      REAL(w2f__8) OpenAD_lin_50
-      REAL(w2f__8) OpenAD_lin_52
-      REAL(w2f__8) OpenAD_lin_53
-      REAL(w2f__8) OpenAD_lin_54
-      REAL(w2f__8) OpenAD_lin_56
-      REAL(w2f__8) OpenAD_lin_57
+      integer(w2f__i8) :: OpenAD_Symbol_19
+      integer(w2f__i8) :: OpenAD_Symbol_20
+      integer(w2f__i8) :: OpenAD_Symbol_21
+      integer(w2f__i8) :: OpenAD_Symbol_22
+      integer(w2f__i8) :: OpenAD_Symbol_23
+      integer(w2f__i8) :: OpenAD_Symbol_24
+      real(w2f__8) :: OpenAD_acc_10
+      real(w2f__8) :: OpenAD_acc_11
+      real(w2f__8) :: OpenAD_acc_12
+      real(w2f__8) :: OpenAD_acc_13
+      real(w2f__8) :: OpenAD_acc_14
+      real(w2f__8) :: OpenAD_acc_15
+      real(w2f__8) :: OpenAD_acc_16
+      real(w2f__8) :: OpenAD_acc_17
+      real(w2f__8) :: OpenAD_acc_18
+      real(w2f__8) :: OpenAD_acc_19
+      real(w2f__8) :: OpenAD_acc_2
+      real(w2f__8) :: OpenAD_acc_3
+      real(w2f__8) :: OpenAD_acc_4
+      real(w2f__8) :: OpenAD_acc_5
+      real(w2f__8) :: OpenAD_acc_6
+      real(w2f__8) :: OpenAD_acc_7
+      real(w2f__8) :: OpenAD_acc_8
+      real(w2f__8) :: OpenAD_acc_9
+      real(w2f__8) :: OpenAD_lin_10
+      real(w2f__8) :: OpenAD_lin_14
+      real(w2f__8) :: OpenAD_lin_16
+      real(w2f__8) :: OpenAD_lin_18
+      real(w2f__8) :: OpenAD_lin_19
+      real(w2f__8) :: OpenAD_lin_20
+      real(w2f__8) :: OpenAD_lin_24
+      real(w2f__8) :: OpenAD_lin_26
+      real(w2f__8) :: OpenAD_lin_28
+      real(w2f__8) :: OpenAD_lin_29
+      real(w2f__8) :: OpenAD_lin_30
+      real(w2f__8) :: OpenAD_lin_32
+      real(w2f__8) :: OpenAD_lin_33
+      real(w2f__8) :: OpenAD_lin_34
+      real(w2f__8) :: OpenAD_lin_38
+      real(w2f__8) :: OpenAD_lin_40
+      real(w2f__8) :: OpenAD_lin_42
+      real(w2f__8) :: OpenAD_lin_43
+      real(w2f__8) :: OpenAD_lin_44
+      real(w2f__8) :: OpenAD_lin_48
+      real(w2f__8) :: OpenAD_lin_50
+      real(w2f__8) :: OpenAD_lin_52
+      real(w2f__8) :: OpenAD_lin_53
+      real(w2f__8) :: OpenAD_lin_54
+      real(w2f__8) :: OpenAD_lin_56
+      real(w2f__8) :: OpenAD_lin_57
       type(active) :: OpenAD_prop_1
       type(active) :: OpenAD_prop_2
       type(active) :: OpenAD_prop_3
       type(active) :: OpenAD_prop_4
       type(active) :: OpenAD_prop_5
       type(active) :: OpenAD_prop_6
-      REAL(w2f__8) OpenAD_tmp_10
-      REAL(w2f__8) OpenAD_tmp_11
-      REAL(w2f__8) OpenAD_tmp_12
-      REAL(w2f__8) OpenAD_tmp_13
-      REAL(w2f__8) OpenAD_tmp_14
-      REAL(w2f__8) OpenAD_tmp_15
-      REAL(w2f__8) OpenAD_tmp_16
-      REAL(w2f__8) OpenAD_tmp_17
-      REAL(w2f__8) OpenAD_tmp_18
-      REAL(w2f__8) OpenAD_tmp_19
-      REAL(w2f__8) OpenAD_tmp_2
-      REAL(w2f__8) OpenAD_tmp_20
-      REAL(w2f__8) OpenAD_tmp_21
-      REAL(w2f__8) OpenAD_tmp_3
-      REAL(w2f__8) OpenAD_tmp_4
-      REAL(w2f__8) OpenAD_tmp_5
-      REAL(w2f__8) OpenAD_tmp_6
-      REAL(w2f__8) OpenAD_tmp_7
-      REAL(w2f__8) OpenAD_tmp_8
-      REAL(w2f__8) OpenAD_tmp_9
+      real(w2f__8) :: OpenAD_tmp_10
+      real(w2f__8) :: OpenAD_tmp_11
+      real(w2f__8) :: OpenAD_tmp_12
+      real(w2f__8) :: OpenAD_tmp_13
+      real(w2f__8) :: OpenAD_tmp_14
+      real(w2f__8) :: OpenAD_tmp_15
+      real(w2f__8) :: OpenAD_tmp_16
+      real(w2f__8) :: OpenAD_tmp_17
+      real(w2f__8) :: OpenAD_tmp_18
+      real(w2f__8) :: OpenAD_tmp_19
+      real(w2f__8) :: OpenAD_tmp_2
+      real(w2f__8) :: OpenAD_tmp_20
+      real(w2f__8) :: OpenAD_tmp_21
+      real(w2f__8) :: OpenAD_tmp_3
+      real(w2f__8) :: OpenAD_tmp_4
+      real(w2f__8) :: OpenAD_tmp_5
+      real(w2f__8) :: OpenAD_tmp_6
+      real(w2f__8) :: OpenAD_tmp_7
+      real(w2f__8) :: OpenAD_tmp_8
+      real(w2f__8) :: OpenAD_tmp_9
 C
 C     **** Parameters and Result ****
 C
-      REAL(w2f__8) GAMMALOC
-      REAL(w2f__8) FLDSTAR(1 : 2)
-      REAL(w2f__8) EXTFORLOC(1 : 2)
+      real(w2f__8) :: GAMMALOC
+      real(w2f__8) :: FLDSTAR(1:2)
+      real(w2f__8) :: EXTFORLOC(1:2)
       type(active) :: UVELLOC
       type(active) :: FLDNOW(1:3)
       type(active) :: FLDOLD(1:3)
@@ -3534,62 +3534,53 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL box_update
+      external box_update
       type(active) :: DFLDDT(1:3)
-      INTEGER(w2f__i4) ISBYTE
-      PARAMETER ( ISBYTE = 8)
-      INTEGER(w2f__i4) NLEV1
-      PARAMETER ( NLEV1 = 73)
-      INTEGER(w2f__i4) NLEV2
-      PARAMETER ( NLEV2 = 50)
-      REAL(w2f__8) OpenAD_Symbol_159
-      REAL(w2f__8) OpenAD_Symbol_160
-      REAL(w2f__8) OpenAD_Symbol_161
-      REAL(w2f__8) OpenAD_Symbol_162
-      REAL(w2f__8) OpenAD_Symbol_163
-      REAL(w2f__8) OpenAD_Symbol_164
-      REAL(w2f__8) OpenAD_Symbol_165
-      REAL(w2f__8) OpenAD_Symbol_166
-      REAL(w2f__8) OpenAD_Symbol_167
-      REAL(w2f__8) OpenAD_Symbol_168
-      REAL(w2f__8) OpenAD_Symbol_169
-      REAL(w2f__8) OpenAD_Symbol_170
-      REAL(w2f__8) OpenAD_Symbol_171
-      REAL(w2f__8) OpenAD_Symbol_172
-      REAL(w2f__8) OpenAD_Symbol_173
-      REAL(w2f__8) OpenAD_Symbol_174
-
-
-          ! checkpointing stacks and offsets
-          integer :: cp_loop_variable_1,cp_loop_variable_2,
-     +cp_loop_variable_3,cp_loop_variable_4,cp_loop_variable_5
-          ! floats 'F'
-          double precision, dimension(:), allocatable, save :: 
-     +theArgFStack
-          integer, save :: theArgFStackoffset=0, theArgFStackSize=0
-          ! integers 'I'
-          integer, dimension(:), allocatable, save :: 
-     +theArgIStack
-          integer, save :: theArgIStackoffset=0, theArgIStackSize=0
-          ! booleans 'B'
-          logical, dimension(:), allocatable, save :: 
-     +theArgBStack
-          integer, save :: theArgBStackoffset=0, theArgBStackSize=0
-          ! strings 'S'
-          character*(80), dimension(:), allocatable, save :: 
-     +theArgSStack
-          integer, save :: theArgSStackoffset=0, theArgSStackSize=0
-
-          type(modeType) :: our_orig_mode
-
-! external C function used in inlined code
-          integer iaddr
+      integer(w2f__i4) :: ISBYTE
+      parameter (ISBYTE=8)
+      integer(w2f__i4) :: NLEV1
+      parameter (NLEV1=73)
+      integer(w2f__i4) :: NLEV2
+      parameter (NLEV2=50)
+      real(w2f__8) :: OpenAD_Symbol_159
+      real(w2f__8) :: OpenAD_Symbol_160
+      real(w2f__8) :: OpenAD_Symbol_161
+      real(w2f__8) :: OpenAD_Symbol_162
+      real(w2f__8) :: OpenAD_Symbol_163
+      real(w2f__8) :: OpenAD_Symbol_164
+      real(w2f__8) :: OpenAD_Symbol_165
+      real(w2f__8) :: OpenAD_Symbol_166
+      real(w2f__8) :: OpenAD_Symbol_167
+      real(w2f__8) :: OpenAD_Symbol_168
+      real(w2f__8) :: OpenAD_Symbol_169
+      real(w2f__8) :: OpenAD_Symbol_170
+      real(w2f__8) :: OpenAD_Symbol_171
+      real(w2f__8) :: OpenAD_Symbol_172
+      real(w2f__8) :: OpenAD_Symbol_173
+      real(w2f__8) :: OpenAD_Symbol_174
+C         ! checkpointing stacks and offsets
+          integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+C         ! floats 'F'
+          double precision,dimension(:),allocatable,save :: theArgFStack
+          integer,save :: theArgFStackoffset=0,theArgFStackSize=0
+C         ! integers 'I'
+          integer,dimension(:),allocatable,save :: theArgIStack
+          integer,save :: theArgIStackoffset=0,theArgIStackSize=0
+C         ! booleans 'B'
+          logical,dimension(:),allocatable,save :: theArgBStack
+          integer,save :: theArgBStackoffset=0,theArgBStackSize=0
+C         ! strings 'S'
+          character*(80),dimension(:),allocatable,save :: theArgSStack
+          integer,save :: theArgSStackoffset=0,theArgSStackSize=0
+           type(modeType) :: our_orig_mode
+C external C function used in inlined code
+          integer :: iaddr
           external iaddr
 C
 C     **** Statements ****
 C
-
-          if (our_rev_mode%arg_store) then 
+           if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_vector(FLDOLD,size(FLDOLD),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
@@ -3609,7 +3600,7 @@ C store arguments
      +,theArgFStackoffset,theArgFStackSize)
       call cp_store_real_vector(FLDNOW,size(FLDNOW),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(FLDNOW,1),lbound(FLDNOW,1),-1
@@ -3617,25 +3608,25 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDNOW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(EXTFORLOC,1),lbound(EXTFORLOC,1),-1
       EXTFORLOC(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +EXTFORLOC(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(FLDSTAR,1),lbound(FLDSTAR,1),-1
       FLDSTAR(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDSTAR(cp_loop_variable_1)
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
       VOL(cp_loop_variable_1) = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +VOL(cp_loop_variable_1)
-      enddo
+      end do
       UVELLOC%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", UVELLOC%v
       theArgFStackoffset = theArgFStackoffset-1
@@ -3650,17 +3641,17 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", DELTA_T
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDNEW(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(FLDOLD,1),lbound(FLDOLD,1),-1
       FLDOLD(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FLDOLD(cp_loop_variable_1)%v
-      enddo
+      end do
           end if
           if (our_rev_mode%plain) then
-            our_orig_mode=our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
+            our_orig_mode = our_rev_mode
+            our_rev_mode%arg_store = .false.
 C original function
 C$OPENAD XXX Template ad_template.f
       IF (UVELLOC%v.GE.0.0D00) THEN
@@ -3677,22 +3668,21 @@ C$OPENAD XXX Template ad_template.f
         DFLDDT(3)%v = (-((UVELLOC%v*(FLDNOW(1)%v-FLDNOW(3)%v))/VOL(3)))
       ENDIF
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
-
 C original function end
-            our_rev_mode=our_orig_mode
-          end if 
+            our_rev_mode = our_orig_mode
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
-            our_rev_mode%arg_store=.TRUE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.TRUE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .true.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .true.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .false.
 C taping
 C$OPENAD XXX Template ad_template.f
       IF (UVELLOC%v.GE.0.0D00) THEN
         OpenAD_tmp_4 = (FLDSTAR(1)-FLDNOW(1)%v)
-        OpenAD_tmp_3 = (GAMMALOC * OpenAD_tmp_4)
+        OpenAD_tmp_3 = (GAMMALOC*OpenAD_tmp_4)
         OpenAD_tmp_5 = (FLDNOW(3)%v-FLDNOW(1)%v)
         OpenAD_tmp_2 = (EXTFORLOC(1)+VOL(1)*OpenAD_tmp_3+UVELLOC%v*OpenA
      +D_tmp_5)
@@ -3701,11 +3691,11 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_14 = VOL(1)
         OpenAD_lin_18 = OpenAD_tmp_5
         OpenAD_lin_19 = UVELLOC%v
-        OpenAD_lin_10 = (INT(1_w2f__i8) / VOL(1))
-        OpenAD_acc_2 = (OpenAD_lin_18 * OpenAD_lin_10)
-        OpenAD_acc_3 = (OpenAD_lin_19 * OpenAD_lin_10)
-        OpenAD_acc_4 = (INT((-1_w2f__i8)) * OpenAD_lin_16 *
-     >  OpenAD_lin_14 * OpenAD_lin_10)
+        OpenAD_lin_10 = (INT(1_w2f__i8)/VOL(1))
+        OpenAD_acc_2 = (OpenAD_lin_18*OpenAD_lin_10)
+        OpenAD_acc_3 = (OpenAD_lin_19*OpenAD_lin_10)
+        OpenAD_acc_4 = (INT((-1_w2f__i8))*OpenAD_lin_16*OpenAD_lin_14*Op
+     +enAD_lin_10)
         double_tape(double_tape_pointer) = OpenAD_acc_2
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_3
@@ -3713,7 +3703,7 @@ C$OPENAD XXX Template ad_template.f
         double_tape(double_tape_pointer) = OpenAD_acc_4
         double_tape_pointer = double_tape_pointer+1
         OpenAD_tmp_8 = (FLDSTAR(2)-FLDNOW(2)%v)
-        OpenAD_tmp_7 = (GAMMALOC * OpenAD_tmp_8)
+        OpenAD_tmp_7 = (GAMMALOC*OpenAD_tmp_8)
         OpenAD_tmp_9 = (FLDNOW(1)%v-FLDNOW(2)%v)
         OpenAD_tmp_6 = (EXTFORLOC(2)+VOL(2)*OpenAD_tmp_7+UVELLOC%v*OpenA
      +D_tmp_9)
@@ -3722,11 +3712,11 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_24 = VOL(2)
         OpenAD_lin_28 = OpenAD_tmp_9
         OpenAD_lin_29 = UVELLOC%v
-        OpenAD_lin_20 = (INT(1_w2f__i8) / VOL(2))
-        OpenAD_acc_5 = (OpenAD_lin_28 * OpenAD_lin_20)
-        OpenAD_acc_6 = (OpenAD_lin_29 * OpenAD_lin_20)
-        OpenAD_acc_7 = (INT((-1_w2f__i8)) * OpenAD_lin_26 *
-     >  OpenAD_lin_24 * OpenAD_lin_20)
+        OpenAD_lin_20 = (INT(1_w2f__i8)/VOL(2))
+        OpenAD_acc_5 = (OpenAD_lin_28*OpenAD_lin_20)
+        OpenAD_acc_6 = (OpenAD_lin_29*OpenAD_lin_20)
+        OpenAD_acc_7 = (INT((-1_w2f__i8))*OpenAD_lin_26*OpenAD_lin_24*Op
+     +enAD_lin_20)
         double_tape(double_tape_pointer) = OpenAD_acc_5
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_6
@@ -3738,9 +3728,9 @@ C$OPENAD XXX Template ad_template.f
         DFLDDT(3)%v = (OpenAD_tmp_10/VOL(3))
         OpenAD_lin_32 = OpenAD_tmp_11
         OpenAD_lin_33 = UVELLOC%v
-        OpenAD_lin_30 = (INT(1_w2f__i8) / VOL(3))
-        OpenAD_acc_8 = (OpenAD_lin_32 * OpenAD_lin_30)
-        OpenAD_acc_9 = (OpenAD_lin_33 * OpenAD_lin_30)
+        OpenAD_lin_30 = (INT(1_w2f__i8)/VOL(3))
+        OpenAD_acc_8 = (OpenAD_lin_32*OpenAD_lin_30)
+        OpenAD_acc_9 = (OpenAD_lin_33*OpenAD_lin_30)
         double_tape(double_tape_pointer) = OpenAD_acc_8
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_9
@@ -3750,7 +3740,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape_pointer = integer_tape_pointer+1
       ELSE
         OpenAD_tmp_14 = (FLDSTAR(1)-FLDNOW(1)%v)
-        OpenAD_tmp_13 = (GAMMALOC * OpenAD_tmp_14)
+        OpenAD_tmp_13 = (GAMMALOC*OpenAD_tmp_14)
         OpenAD_tmp_15 = (FLDNOW(2)%v-FLDNOW(1)%v)
         OpenAD_tmp_12 = (EXTFORLOC(1)+VOL(1)*OpenAD_tmp_13-UVELLOC%v*Ope
      +nAD_tmp_15)
@@ -3759,12 +3749,12 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_38 = VOL(1)
         OpenAD_lin_42 = OpenAD_tmp_15
         OpenAD_lin_43 = UVELLOC%v
-        OpenAD_lin_34 = (INT(1_w2f__i8) / VOL(1))
-        OpenAD_acc_10 = (INT((-1_w2f__i8)) * OpenAD_lin_34)
-        OpenAD_acc_11 = (OpenAD_lin_42 * OpenAD_acc_10)
-        OpenAD_acc_12 = (OpenAD_lin_43 * OpenAD_acc_10)
-        OpenAD_acc_13 = (INT((-1_w2f__i8)) * OpenAD_lin_40 *
-     >  OpenAD_lin_38 * OpenAD_lin_34)
+        OpenAD_lin_34 = (INT(1_w2f__i8)/VOL(1))
+        OpenAD_acc_10 = (INT((-1_w2f__i8))*OpenAD_lin_34)
+        OpenAD_acc_11 = (OpenAD_lin_42*OpenAD_acc_10)
+        OpenAD_acc_12 = (OpenAD_lin_43*OpenAD_acc_10)
+        OpenAD_acc_13 = (INT((-1_w2f__i8))*OpenAD_lin_40*OpenAD_lin_38*O
+     +penAD_lin_34)
         double_tape(double_tape_pointer) = OpenAD_acc_11
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_12
@@ -3772,7 +3762,7 @@ C$OPENAD XXX Template ad_template.f
         double_tape(double_tape_pointer) = OpenAD_acc_13
         double_tape_pointer = double_tape_pointer+1
         OpenAD_tmp_18 = (FLDSTAR(2)-FLDNOW(2)%v)
-        OpenAD_tmp_17 = (GAMMALOC * OpenAD_tmp_18)
+        OpenAD_tmp_17 = (GAMMALOC*OpenAD_tmp_18)
         OpenAD_tmp_19 = (FLDNOW(3)%v-FLDNOW(2)%v)
         OpenAD_tmp_16 = (EXTFORLOC(2)+VOL(2)*OpenAD_tmp_17-UVELLOC%v*Ope
      +nAD_tmp_19)
@@ -3781,12 +3771,12 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_48 = VOL(2)
         OpenAD_lin_52 = OpenAD_tmp_19
         OpenAD_lin_53 = UVELLOC%v
-        OpenAD_lin_44 = (INT(1_w2f__i8) / VOL(2))
-        OpenAD_acc_14 = (INT((-1_w2f__i8)) * OpenAD_lin_44)
-        OpenAD_acc_15 = (OpenAD_lin_52 * OpenAD_acc_14)
-        OpenAD_acc_16 = (OpenAD_lin_53 * OpenAD_acc_14)
-        OpenAD_acc_17 = (INT((-1_w2f__i8)) * OpenAD_lin_50 *
-     >  OpenAD_lin_48 * OpenAD_lin_44)
+        OpenAD_lin_44 = (INT(1_w2f__i8)/VOL(2))
+        OpenAD_acc_14 = (INT((-1_w2f__i8))*OpenAD_lin_44)
+        OpenAD_acc_15 = (OpenAD_lin_52*OpenAD_acc_14)
+        OpenAD_acc_16 = (OpenAD_lin_53*OpenAD_acc_14)
+        OpenAD_acc_17 = (INT((-1_w2f__i8))*OpenAD_lin_50*OpenAD_lin_48*O
+     +penAD_lin_44)
         double_tape(double_tape_pointer) = OpenAD_acc_15
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_16
@@ -3798,11 +3788,9 @@ C$OPENAD XXX Template ad_template.f
         DFLDDT(3)%v = (-(OpenAD_tmp_20/VOL(3)))
         OpenAD_lin_56 = OpenAD_tmp_21
         OpenAD_lin_57 = UVELLOC%v
-        OpenAD_lin_54 = (INT(1_w2f__i8) / VOL(3))
-        OpenAD_acc_18 = (OpenAD_lin_56 * OpenAD_lin_54 * INT((
-     > -1_w2f__i8)))
-        OpenAD_acc_19 = (OpenAD_lin_57 * OpenAD_lin_54 * INT((
-     > -1_w2f__i8)))
+        OpenAD_lin_54 = (INT(1_w2f__i8)/VOL(3))
+        OpenAD_acc_18 = (OpenAD_lin_56*OpenAD_lin_54*INT((-1_w2f__i8)))
+        OpenAD_acc_19 = (OpenAD_lin_57*OpenAD_lin_54*INT((-1_w2f__i8)))
         double_tape(double_tape_pointer) = OpenAD_acc_18
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_19
@@ -3812,26 +3800,25 @@ C$OPENAD XXX Template ad_template.f
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
-
 C taping end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.FALSE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.FALSE.
-            our_rev_mode%adjoint=.TRUE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .false.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .false.
+            our_rev_mode%adjoint = .true.
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
 C adjoint
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_19 = integer_tape(integer_tape_pointer)
-      IF(OpenAD_Symbol_19 .ne. 0) THEN
+      IF (OpenAD_Symbol_19.ne.0) THEN
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_159 = double_tape(double_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
@@ -3912,12 +3899,11 @@ C adjoint
         FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_prop_4%d
         OpenAD_prop_4%d = 0.0d0
       ENDIF
-
 C adjoint end
-            our_rev_mode%arg_store=.FALSE.
-            our_rev_mode%arg_restore=.TRUE.
-            our_rev_mode%plain=.FALSE.
-            our_rev_mode%tape=.TRUE.
-            our_rev_mode%adjoint=.FALSE.
-          end if 
+            our_rev_mode%arg_store = .false.
+            our_rev_mode%arg_restore = .true.
+            our_rev_mode%plain = .false.
+            our_rev_mode%tape = .true.
+            our_rev_mode%adjoint = .false.
+          end if
         end subroutine box_timestep

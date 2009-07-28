@@ -1,29 +1,27 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
-      REAL(w2f__8) X
-      REAL(w2f__8) Y
+      real(w2f__8) :: X
+      real(w2f__8) :: Y
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL barext
-      REAL(w2f__8) T1
-      REAL(w2f__8) T2
+      external barext
+      real(w2f__8) :: T1
+      real(w2f__8) :: T2
 C
 C     **** Top Level Pragmas ****
 C

@@ -1,33 +1,31 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
+      real(w2f__8) :: OpenAD_Symbol_0
+      real(w2f__8) :: OpenAD_Symbol_1
+      real(w2f__8) :: OpenAD_acc_0
+      real(w2f__8) :: OpenAD_acc_1
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_2
+      real(w2f__8) :: OpenAD_lin_3
+      real(w2f__8) :: OpenAD_lin_4
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
-      REAL(w2f__8) OpenAD_tmp_0
+      real(w2f__8) :: OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -36,7 +34,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL foo
+      external foo
 C
 C     **** Top Level Pragmas ****
 C
@@ -53,8 +51,8 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_1 = X(2)%v
       OpenAD_lin_2 = X(1)%v
       OpenAD_lin_0 = COS(OpenAD_tmp_0)
-      OpenAD_acc_0 = (OpenAD_lin_1 * OpenAD_lin_0)
-      OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_0)
+      OpenAD_acc_0 = (OpenAD_lin_1*OpenAD_lin_0)
+      OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
       CALL sax(OpenAD_acc_0,X(1),Y(2))
       CALL saxpy(OpenAD_acc_1,X(2),Y(2))
       OpenAD_Symbol_0 = SIN(X(3)%v)
@@ -68,16 +66,15 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(OpenAD_prop_1,X(4))
       CALL sax(OpenAD_lin_4,OpenAD_prop_1,Y(4))
       END SUBROUTINE
-
-      SUBROUTINE foo(A, B, C)
+      subroutine foo(A,B,C)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
+      real(w2f__8) :: OpenAD_lin_5
+      real(w2f__8) :: OpenAD_lin_6
 C
 C     **** Parameters and Result ****
 C
@@ -87,7 +84,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL bar
+      external bar
 C
 C     **** Statements ****
 C
@@ -100,23 +97,22 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_lin_5,A,C)
       CALL saxpy(OpenAD_lin_6,A,C)
       END SUBROUTINE
-
-      SUBROUTINE bar(A)
+      subroutine bar(A)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
+      real(w2f__8) :: OpenAD_Symbol_2
+      real(w2f__8) :: OpenAD_acc_2
+      real(w2f__8) :: OpenAD_acc_3
+      real(w2f__8) :: OpenAD_lin_7
+      real(w2f__8) :: OpenAD_lin_8
+      real(w2f__8) :: OpenAD_lin_9
       type(active) :: OpenAD_prop_2
       type(active) :: OpenAD_prop_3
-      REAL(w2f__8) OpenAD_tmp_1
+      real(w2f__8) :: OpenAD_tmp_1
 C
 C     **** Parameters and Result ****
 C
@@ -129,10 +125,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_2 = COS(OpenAD_tmp_1)
       OpenAD_lin_8 = A%v
       OpenAD_lin_9 = A%v
-      OpenAD_lin_7 = (- SIN(OpenAD_tmp_1))
+      OpenAD_lin_7 = (-SIN(OpenAD_tmp_1))
       A%v = OpenAD_Symbol_2
-      OpenAD_acc_2 = (OpenAD_lin_8 * OpenAD_lin_7)
-      OpenAD_acc_3 = (OpenAD_lin_9 * OpenAD_lin_7)
+      OpenAD_acc_2 = (OpenAD_lin_8*OpenAD_lin_7)
+      OpenAD_acc_3 = (OpenAD_lin_9*OpenAD_lin_7)
       CALL setderiv(OpenAD_prop_2,A)
       CALL setderiv(OpenAD_prop_3,A)
       CALL sax(OpenAD_acc_2,OpenAD_prop_2,A)

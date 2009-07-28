@@ -1,9 +1,16 @@
-
-
-      SUBROUTINE head(X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -12,7 +19,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) N
+      integer(w2f__i4) :: N
       SAVE N
       type(active) :: Z(1:INT(SIZE(X)))
 C

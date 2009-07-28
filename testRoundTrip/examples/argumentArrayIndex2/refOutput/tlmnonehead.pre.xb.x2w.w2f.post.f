@@ -1,9 +1,16 @@
-
-
-      SUBROUTINE foo(X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine foo(X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -16,11 +23,10 @@ C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*2.0D00)
       CALL sax(2.0D00,X,Y)
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
@@ -34,11 +40,11 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL foo
-      INTEGER(w2f__i4) K
-      INTEGER(w2f__i4) L
-      REAL(w2f__8) P(1 : 2)
-      REAL(w2f__8) Q(1 : 2)
+      external foo
+      integer(w2f__i4) :: K
+      integer(w2f__i4) :: L
+      real(w2f__8) :: P(1:2)
+      real(w2f__8) :: Q(1:2)
 C
 C     **** Top Level Pragmas ****
 C

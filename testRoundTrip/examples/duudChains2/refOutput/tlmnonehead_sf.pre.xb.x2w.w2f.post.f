@@ -1,18 +1,16 @@
-
-      MODULE all_globals_mod
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -21,7 +19,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      LOGICAL(w2f__i4) L
+      logical(w2f__i4) :: L
 C
 C     **** Top Level Pragmas ****
 C
@@ -31,8 +29,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      L = .TRUE.
-      IF(L) THEN
+      L = .true.
+      IF (L) THEN
         Y(1)%v = (X(1)%v*4.0D00)
         CALL sax(4.0D00,X(1),Y(1))
       ELSE

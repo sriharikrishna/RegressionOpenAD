@@ -1,9 +1,16 @@
-
-
-      SUBROUTINE bar(X, Y, K)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine bar(X,Y,K)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -11,26 +18,25 @@ C
       INTENT(IN)  X
       type(active) :: Y(1:3)
       INTENT(OUT)  Y
-      INTEGER(w2f__i4) K
+      integer(w2f__i4) :: K
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i4) I
+      integer(w2f__i4) :: I
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop\t
-      DO I = 1, MIN(K, 3), 1
+      DO I = 1,MIN(K,3),1
         Y(INT(I))%v = X(I)%v
         CALL setderiv(Y(I),X(I))
       END DO
       END SUBROUTINE
-
-      SUBROUTINE head(X, Y)
+      subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -41,8 +47,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL bar
-      INTEGER(w2f__i4) K
+      external bar
+      integer(w2f__i4) :: K
 C
 C     **** Top Level Pragmas ****
 C

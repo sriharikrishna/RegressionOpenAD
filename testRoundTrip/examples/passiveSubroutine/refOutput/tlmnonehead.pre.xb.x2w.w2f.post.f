@@ -1,9 +1,16 @@
-
-
-      SUBROUTINE head(X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -12,10 +19,10 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL bar
-      EXTERNAL foo
-      REAL(w2f__8) P
-      REAL(w2f__8) Q
+      external bar
+      external foo
+      real(w2f__8) :: P
+      real(w2f__8) :: Q
 C
 C     **** Top Level Pragmas ****
 C
@@ -29,16 +36,15 @@ C$OPENAD XXX Template ad_template.f
       P = 1.0D00
       CALL bar(P,Q)
       END SUBROUTINE
-
-      SUBROUTINE foo(A, B)
+      subroutine foo(A,B)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
+      real(w2f__8) :: OpenAD_lin_0
+      real(w2f__8) :: OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -54,16 +60,15 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_0,A,B)
       CALL saxpy(OpenAD_lin_1,A,B)
       END SUBROUTINE
-
-      SUBROUTINE bar(A, B)
+      subroutine bar(A,B)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
-      REAL(w2f__8) A
-      REAL(w2f__8) B
+      real(w2f__8) :: A
+      real(w2f__8) :: B
 C
 C     **** Statements ****
 C
