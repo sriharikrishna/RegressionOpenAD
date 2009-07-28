@@ -205,7 +205,7 @@ head_sf.pre.xb.xaif : head_sf.pre.xaif xaif.xsd xaif_base.xsd xaif_inlinable_int
 
 # XAIF' -> WHIRL'
 head_sf.pre.xb.x2w.B : head_sf.pre.xb.xaif xaif2whirl
-	./xaif2whirl -t OpenADTy_active --structured head_sf.pre.B $<
+	./xaif2whirl -t OpenADTy_active head_sf.pre.B $<
 
 # WHIRL' -> F'
 head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
