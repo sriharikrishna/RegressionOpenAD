@@ -1,9 +1,16 @@
-
-
-      SUBROUTINE head(X, Y)
+      module all_globals_mod
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+      subroutine head(X,Y)
+      use w2f__types
+      use OAD_active
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -12,7 +19,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      EXTERNAL foo
+      external foo
 C
 C     **** Top Level Pragmas ****
 C
@@ -24,11 +31,10 @@ C
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
       END SUBROUTINE
-
-      SUBROUTINE foo(FX, FY)
+      subroutine foo(FX,FY)
       use w2f__types
       use OAD_active
-      IMPLICIT NONE
+      implicit none
 C
 C     **** Parameters and Result ****
 C
@@ -44,11 +50,10 @@ C
 C$OPENAD XXX Template ad_template.f
       CALL BAR(FX,FY)
       CONTAINS
-
-        SUBROUTINE BAR(BX, BY)
+        subroutine BAR(BX,BY)
         use w2f__types
         use OAD_active
-        IMPLICIT NONE
+        implicit none
 C
 C       **** Parameters and Result ****
 C
