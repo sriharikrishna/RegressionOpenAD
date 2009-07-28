@@ -49,7 +49,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL BAR(FX,FY)
-      CONTAINS
+      contains
         subroutine BAR(BX,BY)
         use w2f__types
         use OAD_active

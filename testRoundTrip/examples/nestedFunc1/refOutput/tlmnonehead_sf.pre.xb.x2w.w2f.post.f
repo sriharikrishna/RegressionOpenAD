@@ -36,7 +36,7 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%v = 1.0
       CALL zero_deriv(Y(1))
       CALL FOO()
-      CONTAINS
+      contains
         subroutine FOO()
         use w2f__types
         use OAD_active

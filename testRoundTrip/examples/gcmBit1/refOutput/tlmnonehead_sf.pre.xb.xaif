@@ -1025,9 +1025,9 @@
         <xaif:StatementId idRef="168"/>
       </xaif:StmtIdSet>
     </xaif:DOSetMap>
-    <xaif:ControlFlowGraph vertex_id="50" symbol_id="all_globals_mod__20" scope_id="1" controlflowgraph_scope_id="2" annotation="{PU_Id#1}" active="1">
+    <xaif:ControlFlowGraph vertex_id="50" symbol_id="all_globals_mod__20" scope_id="1" controlflowgraph_scope_id="2" annotation="{PU_Id#1}" active="1" structured="1">
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="51" symbol_id="find_bulkmod__21" scope_id="1" controlflowgraph_scope_id="3" annotation="{PU_Id#2}" active="1">
+    <xaif:ControlFlowGraph vertex_id="51" symbol_id="find_bulkmod__21" scope_id="1" controlflowgraph_scope_id="3" annotation="{PU_Id#2}" active="1" structured="1">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="LOCPRES_1" scope_id="3" annotation="{WHIRL_Id#2}" intent="inout"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="TFLD_2" scope_id="3" annotation="{WHIRL_Id#3}" intent="inout"/>
@@ -4610,7 +4610,7 @@
       <xaif:ControlFlowEdge edge_id="16" source="144" target="145" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="17" source="145" target="8" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="52" symbol_id="head__53" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" active="1">
+    <xaif:ControlFlowGraph vertex_id="52" symbol_id="head__53" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" active="1" structured="1">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="X_1" scope_id="4" annotation="{WHIRL_Id#2}" intent="inout"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="Y_2" scope_id="4" annotation="{WHIRL_Id#3}" intent="inout"/>

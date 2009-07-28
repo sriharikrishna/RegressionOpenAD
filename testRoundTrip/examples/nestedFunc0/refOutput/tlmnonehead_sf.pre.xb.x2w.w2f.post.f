@@ -26,7 +26,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL FOO()
-      CONTAINS
+      contains
         subroutine FOO()
         use w2f__types
         use OAD_active
