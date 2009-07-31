@@ -224,8 +224,8 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       L = integer_tape(integer_tape_pointer)
       I = L+S*ABS((L-U)/S)
-      dowhile (((S.GT.0.0D00).AND.(I.GE.L)).OR.((S.LT.0.0D00).AND.(I.LE.
-     +L)))
+      do while (((S.GT.0.0D00).AND.(I.GE.L)).OR.((S.LT.0.0D00).AND.(I.LE
+     +.L)))
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_5 = double_tape(double_tape_pointer)
         double_tape_pointer = double_tape_pointer-1

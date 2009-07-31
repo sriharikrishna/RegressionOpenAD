@@ -199,7 +199,7 @@ C adjoint
      +pointer:character_tape_pointer+stringlength_tape(stringlength_tape
      +_pointer))
       I = 1+1*((2-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         IF (GLOBALSTRING.EQ.'no') THEN
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_13 = double_tape(double_tape_pointer)

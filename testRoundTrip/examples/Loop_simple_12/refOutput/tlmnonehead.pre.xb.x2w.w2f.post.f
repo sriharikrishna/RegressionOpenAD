@@ -44,7 +44,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         J = 1
-        dowhile (J.LT.3)
+        do while (J.LT.3)
           Y(INT(I))%v = (Y(I)%v+X(I)%v*X(J)%v)
           OpenAD_lin_0 = X(J)%v
           OpenAD_lin_1 = X(I)%v

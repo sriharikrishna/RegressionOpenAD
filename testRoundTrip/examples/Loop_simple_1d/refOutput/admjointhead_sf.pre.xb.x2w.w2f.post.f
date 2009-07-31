@@ -329,7 +329,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint = .false.
 C adjoint
       I = 1+1*((2-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         CALL foo(X(I),Y(I))
         I = I-1
       END DO

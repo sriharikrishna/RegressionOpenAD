@@ -209,7 +209,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       J = integer_tape(integer_tape_pointer)
       I = 1+1*((2-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_5 = double_tape(double_tape_pointer)
         double_tape_pointer = double_tape_pointer-1

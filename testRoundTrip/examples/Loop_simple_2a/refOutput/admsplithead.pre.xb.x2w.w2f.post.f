@@ -176,11 +176,11 @@ C$OPENAD XXX Simple loop
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((3-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         J = 1+1*((3-1)/1)
-        dowhile (J.GE.1)
+        do while (J.GE.1)
           K = 1+1*((3-1)/1)
-          dowhile (K.GE.1)
+          do while (K.GE.1)
             double_tape_pointer = double_tape_pointer-1
             OpenAD_Symbol_19 = double_tape(double_tape_pointer)
             double_tape_pointer = double_tape_pointer-1
@@ -199,7 +199,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_2 = 1
-      dowhile (INT(OpenAD_Symbol_2).LE.INT(OpenAD_Symbol_1))
+      do while (INT(OpenAD_Symbol_2).LE.INT(OpenAD_Symbol_1))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_16 = integer_tape(integer_tape_pointer)
         X(INT(OpenAD_Symbol_16))%d = X(INT(OpenAD_Symbol_16))%d+Y(INT(Op

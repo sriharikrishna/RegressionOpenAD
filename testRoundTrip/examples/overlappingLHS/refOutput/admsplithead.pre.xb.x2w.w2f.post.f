@@ -131,7 +131,7 @@ C$OPENAD XXX Simple loop
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((5-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         X%d = X%d+Y(6-I)%d
         Y(6-I)%d = 0.0d0
         X%d = X%d+Y(I)%d

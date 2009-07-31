@@ -306,15 +306,15 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((2-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         CALL foo(OpenAD_Symbol_17(I,1:2),OpenAD_Symbol_18)
         CALL foo(AX(I,1:2),Y(1))
         I = I-1
       END DO
       I = 1+1*((2-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         J = 1+1*((2-1)/1)
-        dowhile (J.GE.1)
+        do while (J.GE.1)
           X(I)%d = X(I)%d+AX(I,J)%d
           AX(I,J)%d = 0.0d0
           J = J-1

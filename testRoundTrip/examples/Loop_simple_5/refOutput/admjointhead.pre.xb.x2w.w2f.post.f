@@ -185,7 +185,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint = .false.
 C adjoint
       I = 1+1*((3-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         IF (I.eq.2) THEN
           X(I)%d = X(I)%d+Y(I)%d
           Y(I)%d = 0.0d0

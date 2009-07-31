@@ -44,7 +44,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       I = 1
-      dowhile (I.LT.3)
+      do while (I.LT.3)
         IF (I.LT.2) THEN
           OpenAD_Symbol_0 = SIN(X(1)%v)
           OpenAD_lin_0 = COS(X(1)%v)

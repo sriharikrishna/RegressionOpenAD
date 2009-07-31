@@ -200,7 +200,7 @@ C adjoint
       Y(1)%d = Y(1)%d+OpenAD_prop_1%d
       OpenAD_prop_1%d = 0.0d0
       I = 2+1*((6-2)/1)
-      dowhile (I.GE.2)
+      do while (I.GE.2)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_4 = double_tape(double_tape_pointer)
         double_tape_pointer = double_tape_pointer-1

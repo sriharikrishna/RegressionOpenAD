@@ -228,18 +228,18 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_3 = 1
-      dowhile (INT(OpenAD_Symbol_3).LE.INT(OpenAD_Symbol_2))
+      do while (INT(OpenAD_Symbol_3).LE.INT(OpenAD_Symbol_2))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_4 = integer_tape(integer_tape_pointer)
         IF (OpenAD_Symbol_4.ne.0) THEN
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
           OpenAD_Symbol_6 = 1
-          dowhile (INT(OpenAD_Symbol_6).LE.INT(OpenAD_Symbol_5))
+          do while (INT(OpenAD_Symbol_6).LE.INT(OpenAD_Symbol_5))
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
             OpenAD_Symbol_8 = 1
-            dowhile (INT(OpenAD_Symbol_8).LE.INT(OpenAD_Symbol_7))
+            do while (INT(OpenAD_Symbol_8).LE.INT(OpenAD_Symbol_7))
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
               IF (OpenAD_Symbol_9.ne.0) THEN

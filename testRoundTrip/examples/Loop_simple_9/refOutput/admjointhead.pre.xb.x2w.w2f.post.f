@@ -201,7 +201,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       K = integer_tape(integer_tape_pointer)
       I = 1+1*((2-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         X(K)%d = X(K)%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1

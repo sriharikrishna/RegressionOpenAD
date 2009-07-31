@@ -162,7 +162,7 @@ C$OPENAD XXX Simple loop
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((2-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         X(I)%d = X(I)%d+Y(I)%d
         Y(I)%d = 0.0d0
         integer_tape_pointer = integer_tape_pointer-1

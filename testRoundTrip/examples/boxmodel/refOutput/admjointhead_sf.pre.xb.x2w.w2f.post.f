@@ -435,7 +435,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_2 = 1
-      dowhile (INT(OpenAD_Symbol_2).LE.INT(OpenAD_Symbol_1))
+      do while (INT(OpenAD_Symbol_2).LE.INT(OpenAD_Symbol_1))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
         IF (OpenAD_Symbol_3.ne.0) THEN
@@ -665,13 +665,13 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_37 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_38 = 1
-      dowhile (INT(OpenAD_Symbol_38).LE.INT(OpenAD_Symbol_37))
+      do while (INT(OpenAD_Symbol_38).LE.INT(OpenAD_Symbol_37))
         OpenAD_Symbol_38 = INT(OpenAD_Symbol_38)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_39 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_40 = 1
-      dowhile (INT(OpenAD_Symbol_40).LE.INT(OpenAD_Symbol_39))
+      do while (INT(OpenAD_Symbol_40).LE.INT(OpenAD_Symbol_39))
         OpenAD_Symbol_40 = INT(OpenAD_Symbol_40)+1
       END DO
 C adjoint end
@@ -1032,7 +1032,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_49 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_50 = 1
-      dowhile (INT(OpenAD_Symbol_50).LE.INT(OpenAD_Symbol_49))
+      do while (INT(OpenAD_Symbol_50).LE.INT(OpenAD_Symbol_49))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_181 = integer_tape(integer_tape_pointer)
         S(INT(OpenAD_Symbol_181))%d = S(INT(OpenAD_Symbol_181))%d+SNOW(I
@@ -1064,7 +1064,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_51 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_52 = 1
-      dowhile (INT(OpenAD_Symbol_52).LE.INT(OpenAD_Symbol_51))
+      do while (INT(OpenAD_Symbol_52).LE.INT(OpenAD_Symbol_51))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_179 = integer_tape(integer_tape_pointer)
         integer_tape_pointer = integer_tape_pointer-1
@@ -1088,7 +1088,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_53 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_54 = 1
-      dowhile (INT(OpenAD_Symbol_54).LE.INT(OpenAD_Symbol_53))
+      do while (INT(OpenAD_Symbol_54).LE.INT(OpenAD_Symbol_53))
         OpenAD_Symbol_54 = INT(OpenAD_Symbol_54)+1
       END DO
       S(3)%d = 0.0d0
@@ -1627,11 +1627,11 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_68 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_69 = 1
-      dowhile (INT(OpenAD_Symbol_69).LE.INT(OpenAD_Symbol_68))
+      do while (INT(OpenAD_Symbol_69).LE.INT(OpenAD_Symbol_68))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_70 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_71 = 1
-        dowhile (INT(OpenAD_Symbol_71).LE.INT(OpenAD_Symbol_70))
+        do while (INT(OpenAD_Symbol_71).LE.INT(OpenAD_Symbol_70))
           OpenAD_Symbol_71 = INT(OpenAD_Symbol_71)+1
         END DO
         OpenAD_Symbol_69 = INT(OpenAD_Symbol_69)+1
@@ -1639,11 +1639,11 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_72 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_73 = 1
-      dowhile (INT(OpenAD_Symbol_73).LE.INT(OpenAD_Symbol_72))
+      do while (INT(OpenAD_Symbol_73).LE.INT(OpenAD_Symbol_72))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_74 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_75 = 1
-        dowhile (INT(OpenAD_Symbol_75).LE.INT(OpenAD_Symbol_74))
+        do while (INT(OpenAD_Symbol_75).LE.INT(OpenAD_Symbol_74))
           OpenAD_Symbol_75 = INT(OpenAD_Symbol_75)+1
         END DO
         OpenAD_Symbol_73 = INT(OpenAD_Symbol_73)+1
@@ -1651,13 +1651,13 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_76 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_77 = 1
-      dowhile (INT(OpenAD_Symbol_77).LE.INT(OpenAD_Symbol_76))
+      do while (INT(OpenAD_Symbol_77).LE.INT(OpenAD_Symbol_76))
         OpenAD_Symbol_77 = INT(OpenAD_Symbol_77)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_78 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_79 = 1
-      dowhile (INT(OpenAD_Symbol_79).LE.INT(OpenAD_Symbol_78))
+      do while (INT(OpenAD_Symbol_79).LE.INT(OpenAD_Symbol_78))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_80 = integer_tape(integer_tape_pointer)
         IF (OpenAD_Symbol_80.ne.0) THEN
@@ -1667,7 +1667,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_81 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_82 = 1
-      dowhile (INT(OpenAD_Symbol_82).LE.INT(OpenAD_Symbol_81))
+      do while (INT(OpenAD_Symbol_82).LE.INT(OpenAD_Symbol_81))
         OpenAD_Symbol_82 = INT(OpenAD_Symbol_82)+1
       END DO
 C adjoint end
@@ -2141,14 +2141,14 @@ C adjoint
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_117 = integer_tape(integer_tape_pointer)
         OpenAD_Symbol_118 = 1
-        dowhile (INT(OpenAD_Symbol_118).LE.INT(OpenAD_Symbol_117))
+        do while (INT(OpenAD_Symbol_118).LE.INT(OpenAD_Symbol_117))
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_119 = integer_tape(integer_tape_pointer)
           IF (OpenAD_Symbol_119.ne.0) THEN
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_120 = integer_tape(integer_tape_pointer)
             OpenAD_Symbol_121 = 1
-            dowhile (INT(OpenAD_Symbol_121).LE.INT(OpenAD_Symbol_120))
+            do while (INT(OpenAD_Symbol_121).LE.INT(OpenAD_Symbol_120))
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_122 = integer_tape(integer_tape_pointer)
               IF (OpenAD_Symbol_122.ne.0) THEN
@@ -2387,7 +2387,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_13 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_14 = 1
-      dowhile (INT(OpenAD_Symbol_14).LE.INT(OpenAD_Symbol_13))
+      do while (INT(OpenAD_Symbol_14).LE.INT(OpenAD_Symbol_13))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_153 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
@@ -2852,7 +2852,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_25 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_26 = 1
-      dowhile (INT(OpenAD_Symbol_26).LE.INT(OpenAD_Symbol_25))
+      do while (INT(OpenAD_Symbol_26).LE.INT(OpenAD_Symbol_25))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_175 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
@@ -3101,7 +3101,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_31 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_32 = 1
-      dowhile (INT(OpenAD_Symbol_32).LE.INT(OpenAD_Symbol_31))
+      do while (INT(OpenAD_Symbol_32).LE.INT(OpenAD_Symbol_31))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_177 = integer_tape(integer_tape_pointer)
         SNEW(INT(OpenAD_Symbol_177))%d = SNEW(INT(OpenAD_Symbol_177))%d+
@@ -3342,7 +3342,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_146 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_147 = 1
-      dowhile (INT(OpenAD_Symbol_147).LE.INT(OpenAD_Symbol_146))
+      do while (INT(OpenAD_Symbol_147).LE.INT(OpenAD_Symbol_146))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_185 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1

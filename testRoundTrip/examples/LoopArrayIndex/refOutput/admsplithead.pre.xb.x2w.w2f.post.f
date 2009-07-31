@@ -392,7 +392,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_3 = 1
-      dowhile (INT(OpenAD_Symbol_3).LE.INT(OpenAD_Symbol_2))
+      do while (INT(OpenAD_Symbol_3).LE.INT(OpenAD_Symbol_2))
         integer_tape_pointer = integer_tape_pointer-1
         J = integer_tape(integer_tape_pointer)
         CALL bar(X(J),I)

@@ -161,7 +161,7 @@ C restore arguments
 C original function
 C$OPENAD XXX Template ad_template.f
       I = 1
-      dowhile (I.LT.3)
+      do while (I.LT.3)
         IF (I.LT.2) THEN
           Y(2)%v = SIN(X(1)%v)
         ELSE
@@ -184,7 +184,7 @@ C taping
 C$OPENAD XXX Template ad_template.f
       I = 1
       OpenAD_Symbol_6 = 0_w2f__i8
-      dowhile (I.LT.3)
+      do while (I.LT.3)
         IF (I.LT.2) THEN
           OpenAD_Symbol_0 = SIN(X(1)%v)
           OpenAD_lin_0 = COS(X(1)%v)
@@ -246,7 +246,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_4 = 1
-      dowhile (INT(OpenAD_Symbol_4).LE.INT(OpenAD_Symbol_3))
+      do while (INT(OpenAD_Symbol_4).LE.INT(OpenAD_Symbol_3))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
         IF (OpenAD_Symbol_5.ne.0) THEN

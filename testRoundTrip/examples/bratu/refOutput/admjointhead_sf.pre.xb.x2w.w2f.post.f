@@ -698,7 +698,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_1 = 1
-      dowhile (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
+      do while (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_26 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1

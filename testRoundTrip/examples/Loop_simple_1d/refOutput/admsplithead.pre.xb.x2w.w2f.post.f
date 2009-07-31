@@ -226,7 +226,7 @@ C$OPENAD XXX Simple loop
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((2-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         CALL foo(X(I),Y(I))
         I = I-1
       END DO

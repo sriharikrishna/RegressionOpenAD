@@ -176,7 +176,7 @@ C adjoint
       ASTRING(1:len(ASTRING)) = character_tape(character_tape_pointer:ch
      +aracter_tape_pointer+stringlength_tape(stringlength_tape_pointer))
       I = 1+1*((3-1)/1)
-      dowhile (I.GE.1)
+      do while (I.GE.1)
         IF (ASTRING.EQ.'bloh') THEN
           X(1)%d = X(1)%d-Y(1)%d
           OpenAD_prop_1%d = OpenAD_prop_1%d+Y(1)%d
