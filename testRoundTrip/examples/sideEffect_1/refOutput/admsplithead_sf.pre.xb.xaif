@@ -1249,7 +1249,7 @@
               <xaif:Constant vertex_id="1" type="real" feType="F8" value="2.00000000000000000000e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="14" symbol_id="bar__25" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="14" symbol_id="bar__25" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1264,7 +1264,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="20" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="20" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="7" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1313,7 +1313,7 @@
               <xaif:Constant vertex_id="1" type="real" feType="F8" value="2.00000000000000000000e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="14" symbol_id="bar__25" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="14" symbol_id="bar__25" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1328,7 +1328,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="20" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="20" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="7" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1401,7 +1401,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="7" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1413,7 +1413,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="bar__25" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="bar__25" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1544,7 +1544,7 @@
               <xaif:Constant vertex_id="1" type="real" feType="F8" value="2.00000000000000000000e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="14" symbol_id="bar__25" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="14" symbol_id="bar__25" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1559,7 +1559,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="20" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="20" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="7" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1632,7 +1632,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="7" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>
@@ -1644,7 +1644,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="bar__25" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="bar__25" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="6"/>

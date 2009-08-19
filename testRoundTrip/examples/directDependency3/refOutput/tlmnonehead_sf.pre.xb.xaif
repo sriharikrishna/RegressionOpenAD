@@ -193,7 +193,7 @@
             </xaif:Src>
           </xaif:SetDeriv>
         </xaif:DerivativePropagator>
-        <xaif:SubroutineCall statement_id="17" symbol_id="foo__21" scope_id="1" active="undefined">
+        <xaif:SubroutineCall statement_id="17" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="0">
         </xaif:SubroutineCall>
         <xaif:Assignment statement_id="18">
           <xaif:AssignmentLHS active="true" alias="4" du_ud="2" deriv="0" constant="0">

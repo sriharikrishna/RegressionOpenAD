@@ -495,7 +495,7 @@
               <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="13" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="13" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
@@ -599,7 +599,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="41" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="41" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -661,7 +661,7 @@
               <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="13" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="13" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
@@ -772,7 +772,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="41" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="41" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -852,7 +852,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -981,7 +981,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
@@ -1069,7 +1069,7 @@
               <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="13" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="13" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
@@ -1180,7 +1180,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="41" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="41" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -1260,7 +1260,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -1389,7 +1389,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>

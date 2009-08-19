@@ -2631,7 +2631,7 @@
     <xaif:EndLoop vertex_id="38"/>
 
     <xaif:BasicBlock vertex_id="40" scope_id="4">
-      <xaif:SubroutineCall statement_id="131" scope_id="1" lineNumber="135" symbol_id="find_bulkmod__21">
+      <xaif:SubroutineCall statement_id="131" scope_id="1" lineNumber="135" formalArgCount="4" symbol_id="find_bulkmod__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="LOCPRES_9"/>

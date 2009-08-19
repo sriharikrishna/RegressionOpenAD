@@ -873,7 +873,7 @@
           <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="58" scope_id="1" lineNumber="72" symbol_id="foo__22">
+      <xaif:SubroutineCall statement_id="58" scope_id="1" lineNumber="72" formalArgCount="10" symbol_id="foo__22">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="3">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="NX_1"/>
@@ -1657,7 +1657,7 @@
           <xaif:ExpressionEdge edge_id="6" source="5" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="484" scope_id="1" lineNumber="163" symbol_id="bar__29">
+      <xaif:SubroutineCall statement_id="484" scope_id="1" lineNumber="163" formalArgCount="20" symbol_id="bar__29">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="PBB_23"/>

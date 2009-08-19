@@ -317,7 +317,7 @@
           <xaif:Constant vertex_id="1" type="real" feType="F4" value="9.0858303010e-03"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="22" scope_id="1" lineNumber="29" symbol_id="foo__23">
+      <xaif:SubroutineCall statement_id="22" scope_id="1" lineNumber="29" formalArgCount="1" symbol_id="foo__23">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="A_3"/>
@@ -340,7 +340,7 @@
           </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>
-      <xaif:SubroutineCall statement_id="30" scope_id="1" lineNumber="30" symbol_id="foo__23">
+      <xaif:SubroutineCall statement_id="30" scope_id="1" lineNumber="30" formalArgCount="1" symbol_id="foo__23">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="X_1"/>

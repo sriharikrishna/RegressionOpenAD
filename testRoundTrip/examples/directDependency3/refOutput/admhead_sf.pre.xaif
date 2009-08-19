@@ -173,7 +173,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="17" scope_id="1" lineNumber="16" symbol_id="foo__21"/>
+      <xaif:SubroutineCall statement_id="17" scope_id="1" lineNumber="16" formalArgCount="0" symbol_id="foo__21"/>
       <xaif:Assignment statement_id="18" lineNumber="17" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="Y_2"/>

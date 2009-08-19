@@ -483,7 +483,7 @@
             <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
           </xaif:ZeroDeriv>
         </xaif:DerivativePropagator>
-        <xaif:SubroutineCall statement_id="32" symbol_id="foo__23" scope_id="1" active="undefined">
+        <xaif:SubroutineCall statement_id="32" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
           <xaif:Argument position="1">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="5"/>
@@ -511,7 +511,7 @@
             </xaif:VariableReference>
           </xaif:Argument>
         </xaif:SubroutineCall>
-        <xaif:SubroutineCall statement_id="43" symbol_id="foo__23" scope_id="1" active="undefined">
+        <xaif:SubroutineCall statement_id="43" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
           <xaif:Argument position="1">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="5"/>

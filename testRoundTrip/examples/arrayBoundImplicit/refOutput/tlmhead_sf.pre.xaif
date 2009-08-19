@@ -211,7 +211,7 @@
     <xaif:BasicBlock vertex_id="8" scope_id="4">
       <xaif:Marker statement_id="13" annotation="{WHIRL_Id#13} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="14" annotation="{WHIRL_Id#14} [passive: OPR_PRAGMA]"/>
-      <xaif:SubroutineCall statement_id="15" scope_id="1" lineNumber="23" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="15" scope_id="1" lineNumber="23" formalArgCount="2" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="4">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="X_1"/>

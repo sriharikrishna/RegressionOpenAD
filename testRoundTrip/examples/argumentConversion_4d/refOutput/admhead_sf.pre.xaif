@@ -291,7 +291,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="35" scope_id="1" lineNumber="20" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="35" scope_id="1" lineNumber="20" formalArgCount="2" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="T_6"/>
@@ -303,7 +303,7 @@
           </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>
-      <xaif:SubroutineCall statement_id="41" scope_id="1" lineNumber="21" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="41" scope_id="1" lineNumber="21" formalArgCount="2" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="P_4"/>

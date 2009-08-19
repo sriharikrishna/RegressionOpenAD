@@ -219,7 +219,7 @@
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="31" scope_id="1" lineNumber="12" symbol_id="foo__22">
+      <xaif:SubroutineCall statement_id="31" scope_id="1" lineNumber="12" formalArgCount="4" symbol_id="foo__22">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="X_1"/>

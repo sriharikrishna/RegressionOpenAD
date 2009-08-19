@@ -223,7 +223,7 @@
           <xaif:Constant vertex_id="1" type="real" feType="F4" value="1.0000000000e+00"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="28" scope_id="1" lineNumber="12" symbol_id="FOO_21"/>
+      <xaif:SubroutineCall statement_id="28" scope_id="1" lineNumber="12" formalArgCount="0" symbol_id="FOO_21"/>
     </xaif:BasicBlock>
 
     <xaif:Exit vertex_id="6"/>

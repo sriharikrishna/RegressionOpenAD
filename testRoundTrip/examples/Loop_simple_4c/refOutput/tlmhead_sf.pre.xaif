@@ -545,7 +545,7 @@
         </xaif:AssignmentRHS>
       </xaif:Assignment>
       <xaif:Marker statement_id="24" annotation="{WHIRL_Id#24} [cassignstmt]"/>
-      <xaif:SubroutineCall statement_id="36" scope_id="1" lineNumber="39" symbol_id="foo__23">
+      <xaif:SubroutineCall statement_id="36" scope_id="1" lineNumber="39" formalArgCount="2" symbol_id="foo__23">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="9">
             <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="X_1"/>

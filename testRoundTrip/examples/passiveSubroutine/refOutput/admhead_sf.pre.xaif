@@ -148,7 +148,7 @@
     <xaif:BasicBlock vertex_id="5" scope_id="3">
       <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_PRAGMA]"/>
-      <xaif:SubroutineCall statement_id="11" scope_id="1" lineNumber="10" symbol_id="foo__23">
+      <xaif:SubroutineCall statement_id="11" scope_id="1" lineNumber="10" formalArgCount="2" symbol_id="foo__23">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="X_1"/>
@@ -184,7 +184,7 @@
           <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.00000000000000000000e+00"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:SubroutineCall statement_id="24" scope_id="1" lineNumber="12" symbol_id="bar__22">
+      <xaif:SubroutineCall statement_id="24" scope_id="1" lineNumber="12" formalArgCount="2" symbol_id="bar__22">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="P_5"/>

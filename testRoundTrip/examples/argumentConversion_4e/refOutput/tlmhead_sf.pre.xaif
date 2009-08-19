@@ -226,7 +226,7 @@
     <xaif:EndLoop vertex_id="27"/>
 
     <xaif:BasicBlock vertex_id="9" scope_id="3">
-      <xaif:SubroutineCall statement_id="35" scope_id="1" lineNumber="14" symbol_id="barext__22">
+      <xaif:SubroutineCall statement_id="35" scope_id="1" lineNumber="14" formalArgCount="1" symbol_id="barext__22">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="T_5"/>

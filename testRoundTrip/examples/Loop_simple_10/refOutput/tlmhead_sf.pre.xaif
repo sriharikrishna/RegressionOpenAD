@@ -593,7 +593,7 @@
     <xaif:EndLoop vertex_id="21"/>
 
     <xaif:BasicBlock vertex_id="23" scope_id="4">
-      <xaif:SubroutineCall statement_id="45" scope_id="1" lineNumber="36" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="45" scope_id="1" lineNumber="36" formalArgCount="4" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="10">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="X_1"/>

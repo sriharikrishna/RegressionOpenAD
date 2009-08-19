@@ -12093,7 +12093,7 @@
         <xaif:EndLoop vertex_id="36" annotation=""/>
         <xaif:EndLoop vertex_id="38" annotation=""/>
         <xaif:BasicBlock vertex_id="40" annotation="" scope_id="4">
-          <xaif:SubroutineCall statement_id="131" symbol_id="find_bulkmod__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="131" symbol_id="find_bulkmod__21" scope_id="1" active="undefined" formalArgCount="4">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="LOCPRES_9" annotation="" scope_id="4"/>
@@ -12712,7 +12712,7 @@
         <xaif:EndLoop vertex_id="36" annotation=""/>
         <xaif:EndLoop vertex_id="38" annotation=""/>
         <xaif:BasicBlock vertex_id="40" annotation="" scope_id="4">
-          <xaif:SubroutineCall statement_id="131" symbol_id="find_bulkmod__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="131" symbol_id="find_bulkmod__21" scope_id="1" active="undefined" formalArgCount="4">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="LOCPRES_9" annotation="" scope_id="4"/>
@@ -13363,7 +13363,7 @@
         </xaif:BasicBlock>
         <xaif:EndLoop vertex_id="_adj__cfr_v_5" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="40" annotation="" scope_id="4">
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="find_bulkmod__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="find_bulkmod__21" scope_id="1" active="undefined" formalArgCount="4">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="LOCPRES_9" annotation="" scope_id="4"/>
@@ -14512,7 +14512,7 @@
         <xaif:EndLoop vertex_id="36" annotation=""/>
         <xaif:EndLoop vertex_id="38" annotation=""/>
         <xaif:BasicBlock vertex_id="40" annotation="" scope_id="4">
-          <xaif:SubroutineCall statement_id="131" symbol_id="find_bulkmod__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="131" symbol_id="find_bulkmod__21" scope_id="1" active="undefined" formalArgCount="4">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="LOCPRES_9" annotation="" scope_id="4"/>
@@ -15163,7 +15163,7 @@
         </xaif:BasicBlock>
         <xaif:EndLoop vertex_id="_adj__cfr_v_5" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="40" annotation="" scope_id="4">
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="find_bulkmod__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="find_bulkmod__21" scope_id="1" active="undefined" formalArgCount="4">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="LOCPRES_9" annotation="" scope_id="4"/>

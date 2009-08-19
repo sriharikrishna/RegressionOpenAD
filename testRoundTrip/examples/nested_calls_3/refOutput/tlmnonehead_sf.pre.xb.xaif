@@ -306,7 +306,7 @@
             </xaif:Src>
           </xaif:SetDeriv>
         </xaif:DerivativePropagator>
-        <xaif:SubroutineCall statement_id="31" symbol_id="foo__22" scope_id="1" active="undefined">
+        <xaif:SubroutineCall statement_id="31" symbol_id="foo__22" scope_id="1" active="undefined" formalArgCount="4">
           <xaif:Argument position="1">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="3"/>

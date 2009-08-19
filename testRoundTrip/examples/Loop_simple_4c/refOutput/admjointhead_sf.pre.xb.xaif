@@ -2561,7 +2561,7 @@
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Marker statement_id="24" annotation="{WHIRL_Id#24} [cassignstmt]"/>
-          <xaif:SubroutineCall statement_id="36" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="36" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="9" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="5"/>
@@ -2618,7 +2618,7 @@
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Marker statement_id="24" annotation="{WHIRL_Id#24} [cassignstmt]"/>
-          <xaif:SubroutineCall statement_id="36" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="36" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="9" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="5"/>
@@ -2639,7 +2639,7 @@
       <xaif:Replacement placeholder="3">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="21" annotation="" scope_id="5">
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="9" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="5"/>
@@ -2801,7 +2801,7 @@
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Marker statement_id="24" annotation="{WHIRL_Id#24} [cassignstmt]"/>
-          <xaif:SubroutineCall statement_id="36" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="36" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="9" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="5"/>
@@ -2822,7 +2822,7 @@
       <xaif:Replacement placeholder="11">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="21" annotation="" scope_id="5">
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="2">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="9" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="5"/>

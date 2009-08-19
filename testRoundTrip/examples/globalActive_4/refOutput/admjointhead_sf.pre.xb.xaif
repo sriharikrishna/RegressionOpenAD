@@ -728,7 +728,7 @@
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_USE]"/>
-          <xaif:SubroutineCall statement_id="10" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="10" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="9" annotation=""/>
@@ -741,7 +741,7 @@
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_USE]"/>
-          <xaif:SubroutineCall statement_id="10" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="10" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="9" annotation=""/>
@@ -751,7 +751,7 @@
       <xaif:Replacement placeholder="3">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="8" annotation="" scope_id="4">
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="_adj__cfr_v_2" annotation="_cfr_"/>
@@ -840,7 +840,7 @@
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_USE]"/>
-          <xaif:SubroutineCall statement_id="10" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="10" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="9" annotation=""/>
@@ -850,7 +850,7 @@
       <xaif:Replacement placeholder="11">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="8" annotation="" scope_id="4">
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__23" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="_adj__cfr_v_2" annotation="_cfr_"/>

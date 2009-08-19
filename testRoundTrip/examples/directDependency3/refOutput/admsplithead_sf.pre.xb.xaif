@@ -300,7 +300,7 @@
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="17" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="17" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:Assignment statement_id="18">
             <xaif:AssignmentLHS active="true" alias="4" du_ud="2" deriv="0" constant="0">
@@ -344,7 +344,7 @@
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="17" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="17" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:Assignment statement_id="18">
             <xaif:AssignmentLHS active="true" alias="4" du_ud="2" deriv="0" constant="0">
@@ -390,7 +390,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
@@ -495,7 +495,7 @@
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="17" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="17" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:Assignment statement_id="18">
             <xaif:AssignmentLHS active="true" alias="4" du_ud="2" deriv="0" constant="0">
@@ -541,7 +541,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">

@@ -374,7 +374,7 @@
     </xaif:ForLoop>
 
     <xaif:BasicBlock vertex_id="13" scope_id="5">
-      <xaif:SubroutineCall statement_id="25" scope_id="1" lineNumber="27" symbol_id="foo__21">
+      <xaif:SubroutineCall statement_id="25" scope_id="1" lineNumber="27" formalArgCount="1" symbol_id="foo__21">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="X_1"/>
@@ -391,7 +391,7 @@
           </xaif:VariableReference>
         </xaif:Argument>
       </xaif:SubroutineCall>
-      <xaif:SubroutineCall statement_id="31" scope_id="1" lineNumber="28" symbol_id="bar__24">
+      <xaif:SubroutineCall statement_id="31" scope_id="1" lineNumber="28" formalArgCount="2" symbol_id="bar__24">
         <xaif:Argument position="1">
           <xaif:VariableReference vertex_id="1" du_ud="0" alias="1">
             <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="X_1"/>
