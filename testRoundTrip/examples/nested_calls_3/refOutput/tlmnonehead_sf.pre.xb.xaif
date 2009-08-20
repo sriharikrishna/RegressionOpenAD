@@ -307,7 +307,7 @@
           </xaif:SetDeriv>
         </xaif:DerivativePropagator>
         <xaif:SubroutineCall statement_id="31" symbol_id="foo__22" scope_id="1" active="undefined" formalArgCount="4">
-          <xaif:Argument position="1">
+          <xaif:Argument position="1" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="3"/>
               <xaif:ArrayElementReference vertex_id="2">
@@ -320,7 +320,7 @@
               <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
             </xaif:VariableReference>
           </xaif:Argument>
-          <xaif:Argument position="2">
+          <xaif:Argument position="2" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="3"/>
               <xaif:ArrayElementReference vertex_id="2">
@@ -333,12 +333,12 @@
               <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
             </xaif:VariableReference>
           </xaif:Argument>
-          <xaif:Argument position="3">
+          <xaif:Argument position="3" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="C_3" annotation="" scope_id="3"/>
             </xaif:VariableReference>
           </xaif:Argument>
-          <xaif:Argument position="4">
+          <xaif:Argument position="4" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="D_4" annotation="" scope_id="3"/>
             </xaif:VariableReference>
