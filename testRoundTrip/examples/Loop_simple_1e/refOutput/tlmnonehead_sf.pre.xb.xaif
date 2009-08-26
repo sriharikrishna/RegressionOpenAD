@@ -265,7 +265,7 @@
       </xaif:ForLoop>
       <xaif:BasicBlock vertex_id="10" annotation="" scope_id="4">
         <xaif:SubroutineCall statement_id="26" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
-          <xaif:Argument position="1">
+          <xaif:Argument position="1" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
               <xaif:ArrayElementReference vertex_id="2">
@@ -280,7 +280,7 @@
               <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
             </xaif:VariableReference>
           </xaif:Argument>
-          <xaif:Argument position="2">
+          <xaif:Argument position="2" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
               <xaif:ArrayElementReference vertex_id="2">
@@ -308,7 +308,7 @@
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:SubroutineCall statement_id="39" symbol_id="foo__21" scope_id="1" active="undefined" formalArgCount="2">
-          <xaif:Argument position="1">
+          <xaif:Argument position="1" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
               <xaif:ArrayElementReference vertex_id="2">
@@ -323,7 +323,7 @@
               <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
             </xaif:VariableReference>
           </xaif:Argument>
-          <xaif:Argument position="2">
+          <xaif:Argument position="2" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
               <xaif:ArrayElementReference vertex_id="2">
