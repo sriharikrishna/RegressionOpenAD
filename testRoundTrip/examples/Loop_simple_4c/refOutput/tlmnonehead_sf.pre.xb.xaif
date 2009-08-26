@@ -210,11 +210,11 @@
         <xaif:StatementId idRef="43"/>
       </xaif:StmtIdSet>
     </xaif:DOSetMap>
-    <xaif:ControlFlowGraph vertex_id="23" symbol_id="all_globals_mod__20" scope_id="1" controlflowgraph_scope_id="2" annotation="{PU_Id#1}" active="1" structured="1">
+    <xaif:ControlFlowGraph vertex_id="23" symbol_id="all_globals_mod__20" scope_id="1" controlflowgraph_scope_id="2" annotation="{PU_Id#1}" active="1">
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="24" symbol_id="aglobalmodule__21" scope_id="1" controlflowgraph_scope_id="3" annotation="{PU_Id#2}" active="1" structured="1">
+    <xaif:ControlFlowGraph vertex_id="24" symbol_id="aglobalmodule__21" scope_id="1" controlflowgraph_scope_id="3" annotation="{PU_Id#2}" active="1">
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="25" symbol_id="foo__23" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" active="1" structured="1">
+    <xaif:ControlFlowGraph vertex_id="25" symbol_id="foo__23" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" active="1">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="X_1" scope_id="4" annotation="{WHIRL_Id#2}" intent="in"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="Y_2" scope_id="4" annotation="{WHIRL_Id#3}" intent="inout"/>
@@ -814,7 +814,7 @@
       <xaif:ControlFlowEdge edge_id="15" source="63" target="15" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="16" source="64" target="9" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="26" symbol_id="head__30" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1" structured="1">
+    <xaif:ControlFlowGraph vertex_id="26" symbol_id="head__30" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="X_1" scope_id="5" annotation="{WHIRL_Id#2}" intent="in"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="Y_2" scope_id="5" annotation="{WHIRL_Id#3}" intent="out"/>

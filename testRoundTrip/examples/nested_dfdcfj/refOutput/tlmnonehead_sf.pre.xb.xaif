@@ -912,9 +912,9 @@
         <xaif:StatementId idRef="525"/>
       </xaif:StmtIdSet>
     </xaif:DOSetMap>
-    <xaif:ControlFlowGraph vertex_id="66" symbol_id="all_globals_mod__20" scope_id="1" controlflowgraph_scope_id="2" annotation="{PU_Id#1}" active="1" structured="1">
+    <xaif:ControlFlowGraph vertex_id="66" symbol_id="all_globals_mod__20" scope_id="1" controlflowgraph_scope_id="2" annotation="{PU_Id#1}" active="1">
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="67" symbol_id="head__21" scope_id="1" controlflowgraph_scope_id="3" annotation="{PU_Id#2}" active="1" structured="1">
+    <xaif:ControlFlowGraph vertex_id="67" symbol_id="head__21" scope_id="1" controlflowgraph_scope_id="3" annotation="{PU_Id#2}" active="1">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="NX_1" scope_id="3" annotation="{WHIRL_Id#2}" intent="inout"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="NY_2" scope_id="3" annotation="{WHIRL_Id#3}" intent="inout"/>
@@ -1310,7 +1310,7 @@
       <xaif:ControlFlowEdge edge_id="7" source="10" target="12" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="8" source="222" target="6" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="68" symbol_id="foo__22" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" active="1" structured="1">
+    <xaif:ControlFlowGraph vertex_id="68" symbol_id="foo__22" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" active="1">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="NX_1" scope_id="4" annotation="{WHIRL_Id#2}" intent="inout"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="NY_2" scope_id="4" annotation="{WHIRL_Id#3}" intent="inout"/>
@@ -4009,7 +4009,7 @@
       <xaif:ControlFlowEdge edge_id="70" source="233" target="17" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="71" source="234" target="15" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
-    <xaif:ControlFlowGraph vertex_id="69" symbol_id="bar__29" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1" structured="1">
+    <xaif:ControlFlowGraph vertex_id="69" symbol_id="bar__29" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="PBB_1" scope_id="5" annotation="{WHIRL_Id#2}" intent="inout"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="PBL_2" scope_id="5" annotation="{WHIRL_Id#3}" intent="inout"/>
