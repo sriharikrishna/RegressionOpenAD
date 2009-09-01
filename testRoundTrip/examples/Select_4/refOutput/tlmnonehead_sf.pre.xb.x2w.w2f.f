@@ -44,38 +44,38 @@ C$OPENAD XXX Template ad_template.f
       GO TO 3
 3     CONTINUE
       IF(__value__(X(1)) .LT. 1.0D00) THEN
+        GO TO 7
+      ELSE
         GO TO 4
+      ENDIF
+4     CONTINUE
+      GO TO 5
+5     CONTINUE
+      GO TO 6
+6     CONTINUE
+      __value__(Y(1)) = (__value__(X(1)) * 3.0D00)
+      CALL sax(3.0D00, __deriv__(X(1)), __deriv__(Y(1)))
+      GO TO 11
+7     CONTINUE
+      select_expr_temp_0 = I
+      GO TO 8
+8     CONTINUE
+      IF(select_expr_temp_0 .ne. 0) THEN
+        GO TO 10
       ELSE
         GO TO 9
       ENDIF
-4     CONTINUE
-      select_expr_temp_0 = I
-      GO TO 5
-5     CONTINUE
-      IF(select_expr_temp_0 .ne. 0) THEN
-        GO TO 6
-      ELSE
-        GO TO 8
-      ENDIF
-6     CONTINUE
-      __value__(Y(1)) = (I * __value__(X(1)))
-      OpenAD_lin_1 = I
-      CALL sax(OpenAD_lin_1, __deriv__(X(1)), __deriv__(Y(1)))
-      RETURN
-      GO TO 7
-7     CONTINUE
-8     CONTINUE
+9     CONTINUE
       __value__(Y(1)) = (I * __value__(X(1)))
       OpenAD_lin_3 = I
       CALL sax(OpenAD_lin_3, __deriv__(X(1)), __deriv__(Y(1)))
       RETURN
-      GO TO 7
-9     CONTINUE
-      GO TO 10
+      GO TO 11
 10    CONTINUE
+      __value__(Y(1)) = (I * __value__(X(1)))
+      OpenAD_lin_1 = I
+      CALL sax(OpenAD_lin_1, __deriv__(X(1)), __deriv__(Y(1)))
+      RETURN
       GO TO 11
 11    CONTINUE
-      __value__(Y(1)) = (__value__(X(1)) * 3.0D00)
-      CALL sax(3.0D00, __deriv__(X(1)), __deriv__(Y(1)))
-      GO TO 7
       END SUBROUTINE

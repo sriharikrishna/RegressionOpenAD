@@ -44,38 +44,38 @@ C$OPENAD XXX Template ad_template.f
       goto 3
 3     CONTINUE
       IF (X(1)%v.LT.1.0D00) THEN
+        goto 7
+      ELSE
         goto 4
+      ENDIF
+4     CONTINUE
+      goto 5
+5     CONTINUE
+      goto 6
+6     CONTINUE
+      Y(1)%v = (X(1)%v*3.0D00)
+      CALL sax(3.0D00,X(1),Y(1))
+      goto 11
+7     CONTINUE
+      select_expr_temp_0 = I
+      goto 8
+8     CONTINUE
+      IF (select_expr_temp_0.ne.0) THEN
+        goto 10
       ELSE
         goto 9
       ENDIF
-4     CONTINUE
-      select_expr_temp_0 = I
-      goto 5
-5     CONTINUE
-      IF (select_expr_temp_0.ne.0) THEN
-        goto 6
-      ELSE
-        goto 8
-      ENDIF
-6     CONTINUE
-      Y(1)%v = (I*X(1)%v)
-      OpenAD_lin_1 = I
-      CALL sax(OpenAD_lin_1,X(1),Y(1))
-      RETURN
-      goto 7
-7     CONTINUE
-8     CONTINUE
+9     CONTINUE
       Y(1)%v = (I*X(1)%v)
       OpenAD_lin_3 = I
       CALL sax(OpenAD_lin_3,X(1),Y(1))
       RETURN
-      goto 7
-9     CONTINUE
-      goto 10
+      goto 11
 10    CONTINUE
+      Y(1)%v = (I*X(1)%v)
+      OpenAD_lin_1 = I
+      CALL sax(OpenAD_lin_1,X(1),Y(1))
+      RETURN
       goto 11
 11    CONTINUE
-      Y(1)%v = (X(1)%v*3.0D00)
-      CALL sax(3.0D00,X(1),Y(1))
-      goto 7
       END SUBROUTINE
