@@ -1,7 +1,7 @@
       module all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
@@ -10,7 +10,7 @@ C
       subroutine foo(X,Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -26,7 +26,7 @@ C$OPENAD XXX Template ad_template.f
       subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
@@ -42,12 +42,12 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      external foo
-      integer(w2f__i4) :: K
-      integer(w2f__i4) :: L
-      real(w2f__8) :: P(1:2)
+      EXTERNAL foo
+      INTEGER(w2f__i4) K
+      INTEGER(w2f__i4) L
+      REAL(w2f__8) P(1 : 2)
       type(active) :: Q(1:2)
-      real(w2f__8) :: R
+      REAL(w2f__8) R
 C
 C     **** Top Level Pragmas ****
 C

@@ -1,7 +1,7 @@
       module all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
@@ -11,85 +11,85 @@ C
      +FLDOLD,FLDNEW)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_acc_0
-      real(w2f__8) :: OpenAD_acc_1
-      real(w2f__8) :: OpenAD_acc_2
-      real(w2f__8) :: OpenAD_acc_3
-      real(w2f__8) :: OpenAD_acc_4
-      real(w2f__8) :: OpenAD_acc_5
-      real(w2f__8) :: OpenAD_acc_6
-      real(w2f__8) :: OpenAD_acc_7
-      real(w2f__8) :: OpenAD_acc_8
-      real(w2f__8) :: OpenAD_acc_9
-      real(w2f__8) :: OpenAD_lin_0
-      real(w2f__8) :: OpenAD_lin_10
-      real(w2f__8) :: OpenAD_lin_14
-      real(w2f__8) :: OpenAD_lin_16
-      real(w2f__8) :: OpenAD_lin_19
-      real(w2f__8) :: OpenAD_lin_20
-      real(w2f__8) :: OpenAD_lin_23
-      real(w2f__8) :: OpenAD_lin_25
-      real(w2f__8) :: OpenAD_lin_27
-      real(w2f__8) :: OpenAD_lin_31
-      real(w2f__8) :: OpenAD_lin_33
-      real(w2f__8) :: OpenAD_lin_36
-      real(w2f__8) :: OpenAD_lin_37
-      real(w2f__8) :: OpenAD_lin_4
-      real(w2f__8) :: OpenAD_lin_41
-      real(w2f__8) :: OpenAD_lin_43
-      real(w2f__8) :: OpenAD_lin_46
-      real(w2f__8) :: OpenAD_lin_47
-      real(w2f__8) :: OpenAD_lin_50
-      real(w2f__8) :: OpenAD_lin_6
-      real(w2f__8) :: OpenAD_lin_9
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_acc_4
+      REAL(w2f__8) OpenAD_acc_5
+      REAL(w2f__8) OpenAD_acc_6
+      REAL(w2f__8) OpenAD_acc_7
+      REAL(w2f__8) OpenAD_acc_8
+      REAL(w2f__8) OpenAD_acc_9
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_10
+      REAL(w2f__8) OpenAD_lin_14
+      REAL(w2f__8) OpenAD_lin_16
+      REAL(w2f__8) OpenAD_lin_19
+      REAL(w2f__8) OpenAD_lin_20
+      REAL(w2f__8) OpenAD_lin_23
+      REAL(w2f__8) OpenAD_lin_25
+      REAL(w2f__8) OpenAD_lin_27
+      REAL(w2f__8) OpenAD_lin_31
+      REAL(w2f__8) OpenAD_lin_33
+      REAL(w2f__8) OpenAD_lin_36
+      REAL(w2f__8) OpenAD_lin_37
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_41
+      REAL(w2f__8) OpenAD_lin_43
+      REAL(w2f__8) OpenAD_lin_46
+      REAL(w2f__8) OpenAD_lin_47
+      REAL(w2f__8) OpenAD_lin_50
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_9
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
       type(active) :: OpenAD_prop_2
       type(active) :: OpenAD_prop_3
       type(active) :: OpenAD_prop_4
       type(active) :: OpenAD_prop_5
-      real(w2f__8) :: OpenAD_tmp_0
-      real(w2f__8) :: OpenAD_tmp_1
-      real(w2f__8) :: OpenAD_tmp_10
-      real(w2f__8) :: OpenAD_tmp_11
-      real(w2f__8) :: OpenAD_tmp_12
-      real(w2f__8) :: OpenAD_tmp_13
-      real(w2f__8) :: OpenAD_tmp_14
-      real(w2f__8) :: OpenAD_tmp_15
-      real(w2f__8) :: OpenAD_tmp_16
-      real(w2f__8) :: OpenAD_tmp_17
-      real(w2f__8) :: OpenAD_tmp_18
-      real(w2f__8) :: OpenAD_tmp_19
-      real(w2f__8) :: OpenAD_tmp_2
-      real(w2f__8) :: OpenAD_tmp_20
-      real(w2f__8) :: OpenAD_tmp_3
-      real(w2f__8) :: OpenAD_tmp_4
-      real(w2f__8) :: OpenAD_tmp_5
-      real(w2f__8) :: OpenAD_tmp_6
-      real(w2f__8) :: OpenAD_tmp_7
-      real(w2f__8) :: OpenAD_tmp_8
-      real(w2f__8) :: OpenAD_tmp_9
+      REAL(w2f__8) OpenAD_tmp_0
+      REAL(w2f__8) OpenAD_tmp_1
+      REAL(w2f__8) OpenAD_tmp_10
+      REAL(w2f__8) OpenAD_tmp_11
+      REAL(w2f__8) OpenAD_tmp_12
+      REAL(w2f__8) OpenAD_tmp_13
+      REAL(w2f__8) OpenAD_tmp_14
+      REAL(w2f__8) OpenAD_tmp_15
+      REAL(w2f__8) OpenAD_tmp_16
+      REAL(w2f__8) OpenAD_tmp_17
+      REAL(w2f__8) OpenAD_tmp_18
+      REAL(w2f__8) OpenAD_tmp_19
+      REAL(w2f__8) OpenAD_tmp_2
+      REAL(w2f__8) OpenAD_tmp_20
+      REAL(w2f__8) OpenAD_tmp_3
+      REAL(w2f__8) OpenAD_tmp_4
+      REAL(w2f__8) OpenAD_tmp_5
+      REAL(w2f__8) OpenAD_tmp_6
+      REAL(w2f__8) OpenAD_tmp_7
+      REAL(w2f__8) OpenAD_tmp_8
+      REAL(w2f__8) OpenAD_tmp_9
 C
 C     **** Parameters and Result ****
 C
-      real(w2f__8) :: GAMMALOC
-      real(w2f__8) :: FLDSTAR(1:2)
-      real(w2f__8) :: EXTFORLOC(1:2)
-      real(w2f__8) :: UVELLOC
+      REAL(w2f__8) GAMMALOC
+      REAL(w2f__8) FLDSTAR(1 : 2)
+      REAL(w2f__8) EXTFORLOC(1 : 2)
+      REAL(w2f__8) UVELLOC
       type(active) :: FLDNOW(1:3)
-      real(w2f__8) :: FLDOLD(1:3)
+      REAL(w2f__8) FLDOLD(1 : 3)
       type(active) :: FLDNEW(1:3)
 C
 C     **** Local Variables and Functions ****
 C
-      real(w2f__8) :: DELTA_T
+      REAL(w2f__8) DELTA_T
       type(active) :: DFLDDT(1:3)
-      integer(w2f__i4) :: L
-      real(w2f__8) :: VOL(1:3)
+      INTEGER(w2f__i4) L
+      REAL(w2f__8) VOL(1 : 3)
 C
 C     **** Top Level Pragmas ****
 C

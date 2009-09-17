@@ -1,7 +1,7 @@
       module all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
@@ -10,11 +10,11 @@ C
       subroutine head(J,X,Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
-      integer(w2f__i4) :: J
+      INTEGER(w2f__i4) J
       type(active) :: X(1:1)
       INTENT(IN)  X
       type(active) :: Y(1:1)
@@ -22,7 +22,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      integer(w2f__i4) :: I
+      INTEGER(w2f__i4) I
 C
 C     **** Top Level Pragmas ****
 C

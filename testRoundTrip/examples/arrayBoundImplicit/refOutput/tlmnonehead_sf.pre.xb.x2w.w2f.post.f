@@ -1,7 +1,7 @@
       module all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
@@ -10,7 +10,7 @@ C
       subroutine foo(X,Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -26,7 +26,7 @@ C$OPENAD XXX Template ad_template.f
       subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -37,14 +37,14 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface
-        subroutine foo(X,Y)
+      interface 
+        SUBROUTINE foo(X, Y)
         use w2f__types
       use OAD_active
         type(active) :: X(1:)
         type(active) :: Y(1:)
         END SUBROUTINE
-       end interface
+       end interface 
 C
 C     **** Statements ****
 C

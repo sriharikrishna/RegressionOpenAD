@@ -1,7 +1,7 @@
       module all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
@@ -10,7 +10,7 @@ C
       subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -19,7 +19,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      external foo
+      EXTERNAL foo
 C
 C     **** Top Level Pragmas ****
 C
@@ -34,7 +34,7 @@ C$OPENAD XXX Template ad_template.f
       subroutine foo(FX,FY)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -53,7 +53,7 @@ C$OPENAD XXX Template ad_template.f
         subroutine BAR(BX,BY)
         use w2f__types
         use OAD_active
-        implicit none
+        IMPLICIT NONE
 C
 C       **** Parameters and Result ****
 C

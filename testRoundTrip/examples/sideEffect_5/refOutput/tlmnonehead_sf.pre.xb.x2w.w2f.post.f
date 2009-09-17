@@ -1,12 +1,12 @@
       module all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      integer(w2f__i4) :: G
+      INTEGER(w2f__i4) G
 C
 C     **** Statements ****
 C
@@ -15,21 +15,21 @@ C
       use w2f__types
       use OAD_active
       use all_globals_mod
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_0
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
-      integer(w2f__i4) :: N
+      INTEGER(w2f__i4) N
       type(active) :: A(1:INT((N+G)))
 C
 C     **** Local Variables and Functions ****
 C
-      integer(w2f__i4) :: I
+      INTEGER(w2f__i4) I
 C
 C     **** Statements ****
 C
@@ -45,7 +45,7 @@ C$OPENAD XXX Template ad_template.f
       use w2f__types
       use OAD_active
       use all_globals_mod
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
@@ -58,8 +58,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      external foo
-      integer(w2f__i4) :: I
+      EXTERNAL foo
+      INTEGER(w2f__i4) I
 C
 C     **** Top Level Pragmas ****
 C

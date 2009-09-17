@@ -1,7 +1,7 @@
       module all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
@@ -13,134 +13,134 @@ C
      +H_OBJ16,H_OBJ17,H_OBJ18,H_OBJ19,H_OBJ20)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_Symbol_0
-      real(w2f__8) :: OpenAD_acc_0
-      real(w2f__8) :: OpenAD_acc_1
-      real(w2f__8) :: OpenAD_acc_10
-      real(w2f__8) :: OpenAD_acc_11
-      real(w2f__8) :: OpenAD_acc_12
-      real(w2f__8) :: OpenAD_acc_13
-      real(w2f__8) :: OpenAD_acc_14
-      real(w2f__8) :: OpenAD_acc_15
-      real(w2f__8) :: OpenAD_acc_16
-      real(w2f__8) :: OpenAD_acc_17
-      real(w2f__8) :: OpenAD_acc_2
-      real(w2f__8) :: OpenAD_acc_3
-      real(w2f__8) :: OpenAD_acc_4
-      real(w2f__8) :: OpenAD_acc_5
-      real(w2f__8) :: OpenAD_acc_6
-      real(w2f__8) :: OpenAD_acc_7
-      real(w2f__8) :: OpenAD_acc_8
-      real(w2f__8) :: OpenAD_acc_9
-      real(w2f__8) :: OpenAD_lin_1
-      real(w2f__8) :: OpenAD_lin_100
-      real(w2f__8) :: OpenAD_lin_103
-      real(w2f__8) :: OpenAD_lin_104
-      real(w2f__8) :: OpenAD_lin_105
-      real(w2f__8) :: OpenAD_lin_106
-      real(w2f__8) :: OpenAD_lin_109
-      real(w2f__8) :: OpenAD_lin_110
-      real(w2f__8) :: OpenAD_lin_111
-      real(w2f__8) :: OpenAD_lin_112
-      real(w2f__8) :: OpenAD_lin_113
-      real(w2f__8) :: OpenAD_lin_114
-      real(w2f__8) :: OpenAD_lin_115
-      real(w2f__8) :: OpenAD_lin_116
-      real(w2f__8) :: OpenAD_lin_117
-      real(w2f__8) :: OpenAD_lin_118
-      real(w2f__8) :: OpenAD_lin_119
-      real(w2f__8) :: OpenAD_lin_12
-      real(w2f__8) :: OpenAD_lin_120
-      real(w2f__8) :: OpenAD_lin_121
-      real(w2f__8) :: OpenAD_lin_122
-      real(w2f__8) :: OpenAD_lin_123
-      real(w2f__8) :: OpenAD_lin_124
-      real(w2f__8) :: OpenAD_lin_126
-      real(w2f__8) :: OpenAD_lin_128
-      real(w2f__8) :: OpenAD_lin_13
-      real(w2f__8) :: OpenAD_lin_132
-      real(w2f__8) :: OpenAD_lin_134
-      real(w2f__8) :: OpenAD_lin_135
-      real(w2f__8) :: OpenAD_lin_138
-      real(w2f__8) :: OpenAD_lin_14
-      real(w2f__8) :: OpenAD_lin_15
-      real(w2f__8) :: OpenAD_lin_16
-      real(w2f__8) :: OpenAD_lin_17
-      real(w2f__8) :: OpenAD_lin_18
-      real(w2f__8) :: OpenAD_lin_19
-      real(w2f__8) :: OpenAD_lin_20
-      real(w2f__8) :: OpenAD_lin_21
-      real(w2f__8) :: OpenAD_lin_22
-      real(w2f__8) :: OpenAD_lin_23
-      real(w2f__8) :: OpenAD_lin_25
-      real(w2f__8) :: OpenAD_lin_27
-      real(w2f__8) :: OpenAD_lin_28
-      real(w2f__8) :: OpenAD_lin_29
-      real(w2f__8) :: OpenAD_lin_31
-      real(w2f__8) :: OpenAD_lin_33
-      real(w2f__8) :: OpenAD_lin_34
-      real(w2f__8) :: OpenAD_lin_35
-      real(w2f__8) :: OpenAD_lin_37
-      real(w2f__8) :: OpenAD_lin_39
-      real(w2f__8) :: OpenAD_lin_4
-      real(w2f__8) :: OpenAD_lin_40
-      real(w2f__8) :: OpenAD_lin_41
-      real(w2f__8) :: OpenAD_lin_42
-      real(w2f__8) :: OpenAD_lin_43
-      real(w2f__8) :: OpenAD_lin_44
-      real(w2f__8) :: OpenAD_lin_45
-      real(w2f__8) :: OpenAD_lin_47
-      real(w2f__8) :: OpenAD_lin_48
-      real(w2f__8) :: OpenAD_lin_49
-      real(w2f__8) :: OpenAD_lin_50
-      real(w2f__8) :: OpenAD_lin_51
-      real(w2f__8) :: OpenAD_lin_52
-      real(w2f__8) :: OpenAD_lin_53
-      real(w2f__8) :: OpenAD_lin_54
-      real(w2f__8) :: OpenAD_lin_55
-      real(w2f__8) :: OpenAD_lin_56
-      real(w2f__8) :: OpenAD_lin_57
-      real(w2f__8) :: OpenAD_lin_58
-      real(w2f__8) :: OpenAD_lin_59
-      real(w2f__8) :: OpenAD_lin_6
-      real(w2f__8) :: OpenAD_lin_60
-      real(w2f__8) :: OpenAD_lin_61
-      real(w2f__8) :: OpenAD_lin_62
-      real(w2f__8) :: OpenAD_lin_63
-      real(w2f__8) :: OpenAD_lin_66
-      real(w2f__8) :: OpenAD_lin_7
-      real(w2f__8) :: OpenAD_lin_70
-      real(w2f__8) :: OpenAD_lin_71
-      real(w2f__8) :: OpenAD_lin_72
-      real(w2f__8) :: OpenAD_lin_73
-      real(w2f__8) :: OpenAD_lin_74
-      real(w2f__8) :: OpenAD_lin_75
-      real(w2f__8) :: OpenAD_lin_76
-      real(w2f__8) :: OpenAD_lin_77
-      real(w2f__8) :: OpenAD_lin_78
-      real(w2f__8) :: OpenAD_lin_79
-      real(w2f__8) :: OpenAD_lin_8
-      real(w2f__8) :: OpenAD_lin_80
-      real(w2f__8) :: OpenAD_lin_81
-      real(w2f__8) :: OpenAD_lin_82
-      real(w2f__8) :: OpenAD_lin_83
-      real(w2f__8) :: OpenAD_lin_84
-      real(w2f__8) :: OpenAD_lin_85
-      real(w2f__8) :: OpenAD_lin_86
-      real(w2f__8) :: OpenAD_lin_87
-      real(w2f__8) :: OpenAD_lin_88
-      real(w2f__8) :: OpenAD_lin_89
-      real(w2f__8) :: OpenAD_lin_9
-      real(w2f__8) :: OpenAD_lin_90
-      real(w2f__8) :: OpenAD_lin_93
-      real(w2f__8) :: OpenAD_lin_94
-      real(w2f__8) :: OpenAD_lin_95
-      real(w2f__8) :: OpenAD_lin_96
-      real(w2f__8) :: OpenAD_lin_99
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_10
+      REAL(w2f__8) OpenAD_acc_11
+      REAL(w2f__8) OpenAD_acc_12
+      REAL(w2f__8) OpenAD_acc_13
+      REAL(w2f__8) OpenAD_acc_14
+      REAL(w2f__8) OpenAD_acc_15
+      REAL(w2f__8) OpenAD_acc_16
+      REAL(w2f__8) OpenAD_acc_17
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_acc_4
+      REAL(w2f__8) OpenAD_acc_5
+      REAL(w2f__8) OpenAD_acc_6
+      REAL(w2f__8) OpenAD_acc_7
+      REAL(w2f__8) OpenAD_acc_8
+      REAL(w2f__8) OpenAD_acc_9
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_100
+      REAL(w2f__8) OpenAD_lin_103
+      REAL(w2f__8) OpenAD_lin_104
+      REAL(w2f__8) OpenAD_lin_105
+      REAL(w2f__8) OpenAD_lin_106
+      REAL(w2f__8) OpenAD_lin_109
+      REAL(w2f__8) OpenAD_lin_110
+      REAL(w2f__8) OpenAD_lin_111
+      REAL(w2f__8) OpenAD_lin_112
+      REAL(w2f__8) OpenAD_lin_113
+      REAL(w2f__8) OpenAD_lin_114
+      REAL(w2f__8) OpenAD_lin_115
+      REAL(w2f__8) OpenAD_lin_116
+      REAL(w2f__8) OpenAD_lin_117
+      REAL(w2f__8) OpenAD_lin_118
+      REAL(w2f__8) OpenAD_lin_119
+      REAL(w2f__8) OpenAD_lin_12
+      REAL(w2f__8) OpenAD_lin_120
+      REAL(w2f__8) OpenAD_lin_121
+      REAL(w2f__8) OpenAD_lin_122
+      REAL(w2f__8) OpenAD_lin_123
+      REAL(w2f__8) OpenAD_lin_124
+      REAL(w2f__8) OpenAD_lin_126
+      REAL(w2f__8) OpenAD_lin_128
+      REAL(w2f__8) OpenAD_lin_13
+      REAL(w2f__8) OpenAD_lin_132
+      REAL(w2f__8) OpenAD_lin_134
+      REAL(w2f__8) OpenAD_lin_135
+      REAL(w2f__8) OpenAD_lin_138
+      REAL(w2f__8) OpenAD_lin_14
+      REAL(w2f__8) OpenAD_lin_15
+      REAL(w2f__8) OpenAD_lin_16
+      REAL(w2f__8) OpenAD_lin_17
+      REAL(w2f__8) OpenAD_lin_18
+      REAL(w2f__8) OpenAD_lin_19
+      REAL(w2f__8) OpenAD_lin_20
+      REAL(w2f__8) OpenAD_lin_21
+      REAL(w2f__8) OpenAD_lin_22
+      REAL(w2f__8) OpenAD_lin_23
+      REAL(w2f__8) OpenAD_lin_25
+      REAL(w2f__8) OpenAD_lin_27
+      REAL(w2f__8) OpenAD_lin_28
+      REAL(w2f__8) OpenAD_lin_29
+      REAL(w2f__8) OpenAD_lin_31
+      REAL(w2f__8) OpenAD_lin_33
+      REAL(w2f__8) OpenAD_lin_34
+      REAL(w2f__8) OpenAD_lin_35
+      REAL(w2f__8) OpenAD_lin_37
+      REAL(w2f__8) OpenAD_lin_39
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_40
+      REAL(w2f__8) OpenAD_lin_41
+      REAL(w2f__8) OpenAD_lin_42
+      REAL(w2f__8) OpenAD_lin_43
+      REAL(w2f__8) OpenAD_lin_44
+      REAL(w2f__8) OpenAD_lin_45
+      REAL(w2f__8) OpenAD_lin_47
+      REAL(w2f__8) OpenAD_lin_48
+      REAL(w2f__8) OpenAD_lin_49
+      REAL(w2f__8) OpenAD_lin_50
+      REAL(w2f__8) OpenAD_lin_51
+      REAL(w2f__8) OpenAD_lin_52
+      REAL(w2f__8) OpenAD_lin_53
+      REAL(w2f__8) OpenAD_lin_54
+      REAL(w2f__8) OpenAD_lin_55
+      REAL(w2f__8) OpenAD_lin_56
+      REAL(w2f__8) OpenAD_lin_57
+      REAL(w2f__8) OpenAD_lin_58
+      REAL(w2f__8) OpenAD_lin_59
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_60
+      REAL(w2f__8) OpenAD_lin_61
+      REAL(w2f__8) OpenAD_lin_62
+      REAL(w2f__8) OpenAD_lin_63
+      REAL(w2f__8) OpenAD_lin_66
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_70
+      REAL(w2f__8) OpenAD_lin_71
+      REAL(w2f__8) OpenAD_lin_72
+      REAL(w2f__8) OpenAD_lin_73
+      REAL(w2f__8) OpenAD_lin_74
+      REAL(w2f__8) OpenAD_lin_75
+      REAL(w2f__8) OpenAD_lin_76
+      REAL(w2f__8) OpenAD_lin_77
+      REAL(w2f__8) OpenAD_lin_78
+      REAL(w2f__8) OpenAD_lin_79
+      REAL(w2f__8) OpenAD_lin_8
+      REAL(w2f__8) OpenAD_lin_80
+      REAL(w2f__8) OpenAD_lin_81
+      REAL(w2f__8) OpenAD_lin_82
+      REAL(w2f__8) OpenAD_lin_83
+      REAL(w2f__8) OpenAD_lin_84
+      REAL(w2f__8) OpenAD_lin_85
+      REAL(w2f__8) OpenAD_lin_86
+      REAL(w2f__8) OpenAD_lin_87
+      REAL(w2f__8) OpenAD_lin_88
+      REAL(w2f__8) OpenAD_lin_89
+      REAL(w2f__8) OpenAD_lin_9
+      REAL(w2f__8) OpenAD_lin_90
+      REAL(w2f__8) OpenAD_lin_93
+      REAL(w2f__8) OpenAD_lin_94
+      REAL(w2f__8) OpenAD_lin_95
+      REAL(w2f__8) OpenAD_lin_96
+      REAL(w2f__8) OpenAD_lin_99
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
       type(active) :: OpenAD_prop_10
@@ -153,21 +153,21 @@ C
       type(active) :: OpenAD_prop_7
       type(active) :: OpenAD_prop_8
       type(active) :: OpenAD_prop_9
-      real(w2f__8) :: OpenAD_tmp_0
-      real(w2f__8) :: OpenAD_tmp_1
-      real(w2f__8) :: OpenAD_tmp_10
-      real(w2f__8) :: OpenAD_tmp_11
-      real(w2f__8) :: OpenAD_tmp_12
-      real(w2f__8) :: OpenAD_tmp_13
-      real(w2f__8) :: OpenAD_tmp_14
-      real(w2f__8) :: OpenAD_tmp_2
-      real(w2f__8) :: OpenAD_tmp_3
-      real(w2f__8) :: OpenAD_tmp_4
-      real(w2f__8) :: OpenAD_tmp_5
-      real(w2f__8) :: OpenAD_tmp_6
-      real(w2f__8) :: OpenAD_tmp_7
-      real(w2f__8) :: OpenAD_tmp_8
-      real(w2f__8) :: OpenAD_tmp_9
+      REAL(w2f__8) OpenAD_tmp_0
+      REAL(w2f__8) OpenAD_tmp_1
+      REAL(w2f__8) OpenAD_tmp_10
+      REAL(w2f__8) OpenAD_tmp_11
+      REAL(w2f__8) OpenAD_tmp_12
+      REAL(w2f__8) OpenAD_tmp_13
+      REAL(w2f__8) OpenAD_tmp_14
+      REAL(w2f__8) OpenAD_tmp_2
+      REAL(w2f__8) OpenAD_tmp_3
+      REAL(w2f__8) OpenAD_tmp_4
+      REAL(w2f__8) OpenAD_tmp_5
+      REAL(w2f__8) OpenAD_tmp_6
+      REAL(w2f__8) OpenAD_tmp_7
+      REAL(w2f__8) OpenAD_tmp_8
+      REAL(w2f__8) OpenAD_tmp_9
 C
 C     **** Parameters and Result ****
 C
@@ -208,21 +208,21 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      real(w2f__8) :: A
-      real(w2f__8) :: AB
+      REAL(w2f__8) A
+      REAL(w2f__8) AB
       type(active) :: ADJ_M0
       type(active) :: ADJ_M1
       type(active) :: ADJ_M2
       type(active) :: ADJ_M3
-      real(w2f__8) :: B
-      real(w2f__8) :: BM1
+      REAL(w2f__8) B
+      REAL(w2f__8) BM1
       type(active) :: D00
       type(active) :: D01
       type(active) :: D03
       type(active) :: D11
       type(active) :: D12
       type(active) :: F
-      real(w2f__8) :: FOUR3RD
+      REAL(w2f__8) FOUR3RD
       type(active) :: G
       type(active) :: GG
       type(active) :: LOC1
@@ -241,20 +241,20 @@ C
       type(active) :: MATR1
       type(active) :: MATR2
       type(active) :: MATR3
-      real(w2f__8) :: NORM
+      REAL(w2f__8) NORM
       type(active) :: R00
       type(active) :: R02
       type(active) :: R03
       type(active) :: R11
       type(active) :: R12
       type(active) :: R13
-      real(w2f__8) :: R22
-      real(w2f__8) :: R33
-      real(w2f__8) :: SQRT3
-      real(w2f__8) :: THIRD
-      real(w2f__8) :: TSQRT3
-      real(w2f__8) :: TWO3RD
-      real(w2f__8) :: TWOSQRT3
+      REAL(w2f__8) R22
+      REAL(w2f__8) R33
+      REAL(w2f__8) SQRT3
+      REAL(w2f__8) THIRD
+      REAL(w2f__8) TSQRT3
+      REAL(w2f__8) TWO3RD
+      REAL(w2f__8) TWOSQRT3
 C
 C     **** Top Level Pragmas ****
 C

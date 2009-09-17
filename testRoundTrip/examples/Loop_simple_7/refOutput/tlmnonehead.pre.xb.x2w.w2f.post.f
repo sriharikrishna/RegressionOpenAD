@@ -1,7 +1,7 @@
       module all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
@@ -10,7 +10,7 @@ C
       subroutine bar(X,Y,K)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -18,11 +18,11 @@ C
       INTENT(IN)  X
       type(active) :: Y(1:3)
       INTENT(OUT)  Y
-      integer(w2f__i4) :: K
+      INTEGER(w2f__i4) K
 C
 C     **** Local Variables and Functions ****
 C
-      integer(w2f__i4) :: I
+      INTEGER(w2f__i4) I
 C
 C     **** Statements ****
 C
@@ -36,7 +36,7 @@ C$OPENAD XXX Simple loop\t
       subroutine head(X,Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -47,7 +47,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      external bar
+      EXTERNAL bar
 C
 C     **** Top Level Pragmas ****
 C
