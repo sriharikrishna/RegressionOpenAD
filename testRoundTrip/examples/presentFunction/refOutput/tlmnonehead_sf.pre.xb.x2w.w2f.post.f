@@ -1,28 +1,30 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-      subroutine opt(REQARG,OPTARG,OUTARG)
+
+      SUBROUTINE opt(REQARG, OPTARG, OUTARG)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_Symbol_0
-      real(w2f__8) :: OpenAD_acc_0
-      real(w2f__8) :: OpenAD_acc_1
-      real(w2f__8) :: OpenAD_lin_0
-      real(w2f__8) :: OpenAD_lin_1
-      real(w2f__8) :: OpenAD_lin_2
-      real(w2f__8) :: OpenAD_lin_3
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
       type(active) :: OpenAD_prop_0
-      real(w2f__8) :: OpenAD_tmp_0
+      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -57,10 +59,11 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(OUTARG,REQARG)
       ENDIF
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -71,8 +74,8 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface
-        subroutine opt(REQARG,OPTARG,OUTARG)
+      interface 
+        SUBROUTINE opt(REQARG, OPTARG, OUTARG)
         use w2f__types
       use OAD_active
         type(active) :: REQARG
@@ -82,7 +85,9 @@ C$OPENAD DEPENDENT(Y)
         INTENT(in)  OPTARG
         type(active) :: OUTARG
         END SUBROUTINE
-       end interface
+
+      end interface 
+
 C
 C     **** Statements ****
 C

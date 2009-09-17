@@ -2696,7 +2696,7 @@
     <xaif:BasicBlock vertex_id="63" scope_id="5">
       <xaif:Marker statement_id="25" annotation="{WHIRL_Id#25} [passive: OPR_PRAGMA]"/>
       <xaif:Marker statement_id="26" annotation="{WHIRL_Id#26} [passive: OPR_PRAGMA]"/>
-      <xaif:Assignment statement_id="27" lineNumber="183" do_chain="1">
+      <xaif:Assignment statement_id="27" lineNumber="181" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="55">
           <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="PBLAP_17"/>
         </xaif:AssignmentLHS>
@@ -2756,7 +2756,7 @@
           <xaif:ExpressionEdge edge_id="18" source="11" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="49" lineNumber="184" do_chain="1">
+      <xaif:Assignment statement_id="49" lineNumber="182" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="63">
           <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="PLLAP_18"/>
         </xaif:AssignmentLHS>
@@ -2816,7 +2816,7 @@
           <xaif:ExpressionEdge edge_id="18" source="11" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="71" lineNumber="185" do_chain="1">
+      <xaif:Assignment statement_id="71" lineNumber="183" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="67">
           <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="PLAP_16"/>
         </xaif:AssignmentLHS>
@@ -2876,7 +2876,7 @@
           <xaif:ExpressionEdge edge_id="18" source="11" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="93" lineNumber="186" do_chain="1">
+      <xaif:Assignment statement_id="93" lineNumber="184" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="70">
           <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="PRLAP_19"/>
         </xaif:AssignmentLHS>
@@ -2936,7 +2936,7 @@
           <xaif:ExpressionEdge edge_id="18" source="11" target="1" position="2"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
-      <xaif:Assignment statement_id="115" lineNumber="187" do_chain="1">
+      <xaif:Assignment statement_id="115" lineNumber="185" do_chain="1">
         <xaif:AssignmentLHS du_ud="2" alias="73">
           <xaif:SymbolReference vertex_id="1" scope_id="5" symbol_id="PTLAP_20"/>
         </xaif:AssignmentLHS>

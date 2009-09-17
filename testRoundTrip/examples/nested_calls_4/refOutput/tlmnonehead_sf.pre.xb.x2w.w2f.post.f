@@ -1,22 +1,24 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
-      real(w2f__8) :: OpenAD_lin_0
-      real(w2f__8) :: OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -27,8 +29,8 @@ C     **** Local Variables and Functions ****
 C
       type(active) :: C
       type(active) :: D
-      external foo
-      real(w2f__8) :: P
+      EXTERNAL foo
+      REAL(w2f__8) P
 C
 C     **** Top Level Pragmas ****
 C
@@ -58,22 +60,23 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       Y(2)%v = X(4)%v
       CALL setderiv(Y(2),X(4))
       END SUBROUTINE
-      subroutine foo(A,B,C,D)
+
+      SUBROUTINE foo(A, B, C, D)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_acc_0
-      real(w2f__8) :: OpenAD_acc_1
-      real(w2f__8) :: OpenAD_lin_2
-      real(w2f__8) :: OpenAD_lin_3
-      real(w2f__8) :: OpenAD_lin_4
-      real(w2f__8) :: OpenAD_lin_5
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
       type(active) :: OpenAD_prop_0
-      real(w2f__8) :: OpenAD_tmp_0
-      real(w2f__8) :: OpenAD_tmp_1
+      REAL(w2f__8) OpenAD_tmp_0
+      REAL(w2f__8) OpenAD_tmp_1
 C
 C     **** Parameters and Result ****
 C

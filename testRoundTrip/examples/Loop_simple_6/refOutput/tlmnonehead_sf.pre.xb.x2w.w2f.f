@@ -32,13 +32,13 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .LT. 4.0D00) THEN
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         DO I = 1, 3, 1
           __value__(Y(INT(I))) = __value__(X(I))
           CALL setderiv(__deriv__(Y(I)), __deriv__(X(I)))
         END DO
       ELSE
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         DO I = 1, 3, 1
           __value__(Y(INT(I))) = (__value__(X(I)) * 2.0D00)
           CALL sax(2.0D00, __deriv__(X(I)), __deriv__(Y(I)))

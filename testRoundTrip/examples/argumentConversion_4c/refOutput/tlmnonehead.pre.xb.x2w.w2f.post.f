@@ -1,21 +1,14 @@
-      module all_globals_mod
+
+
+      SUBROUTINE foo(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine foo(X,Y)
-      use w2f__types
-      use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_lin_0
-      real(w2f__8) :: OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -31,10 +24,11 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_0,X,Y)
       CALL saxpy(OpenAD_lin_1,X,Y)
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
@@ -48,12 +42,12 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      real(w2f__8) :: APX(1:2,1:2)
+      REAL(w2f__8) APX(1 : 2, 1 : 2)
       type(active) :: AX(1:2,1:2)
-      external foo
-      integer(w2f__i4) :: I
-      integer(w2f__i4) :: J
-      real(w2f__8) :: PY
+      EXTERNAL foo
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
+      REAL(w2f__8) PY
 C
 C     **** Top Level Pragmas ****
 C

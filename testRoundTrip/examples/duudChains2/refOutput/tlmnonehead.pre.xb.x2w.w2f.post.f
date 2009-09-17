@@ -1,16 +1,9 @@
-      module all_globals_mod
+
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(X,Y)
-      use w2f__types
-      use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -19,7 +12,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      logical(w2f__i4) :: L
+      LOGICAL(w2f__i4) L
 C
 C     **** Top Level Pragmas ****
 C

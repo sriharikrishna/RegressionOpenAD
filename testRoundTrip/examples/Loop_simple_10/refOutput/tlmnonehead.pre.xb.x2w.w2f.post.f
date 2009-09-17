@@ -1,27 +1,20 @@
-      module all_globals_mod
+
+
+      SUBROUTINE foo(X, Y, A, J)
       use w2f__types
       use OAD_active
-      implicit none
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine foo(X,Y,A,J)
-      use w2f__types
-      use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_Symbol_0
-      real(w2f__8) :: OpenAD_acc_0
-      real(w2f__8) :: OpenAD_acc_1
-      real(w2f__8) :: OpenAD_lin_1
-      real(w2f__8) :: OpenAD_lin_2
-      real(w2f__8) :: OpenAD_lin_3
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
       type(active) :: OpenAD_prop_0
-      real(w2f__8) :: OpenAD_tmp_0
+      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -29,12 +22,12 @@ C
       INTENT(IN)  X
       type(active) :: Y(1:1)
       INTENT(OUT)  Y
-      integer(w2f__i4) :: A(1:2,1:2)
-      integer(w2f__i4) :: J
+      INTEGER(w2f__i4) A(1 : 2, 1 : 2)
+      INTEGER(w2f__i4) J
 C
 C     **** Local Variables and Functions ****
 C
-      integer(w2f__i4) :: I
+      INTEGER(w2f__i4) I
 C
 C     **** Top Level Pragmas ****
 C
@@ -65,10 +58,11 @@ C$OPENAD XXX Simple loop
         ENDIF
       END DO
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -79,10 +73,10 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      integer(w2f__i4) :: A(1:2,1:2)
-      external foo
-      integer(w2f__i4) :: I
-      integer(w2f__i4) :: J
+      INTEGER(w2f__i4) A(1 : 2, 1 : 2)
+      EXTERNAL foo
+      INTEGER(w2f__i4) I
+      INTEGER(w2f__i4) J
 C
 C     **** Top Level Pragmas ****
 C

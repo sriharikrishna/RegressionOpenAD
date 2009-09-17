@@ -2342,7 +2342,7 @@
       <xaif:Marker statement_id="679" annotation="{WHIRL_Id#679} [passive: OPR_STID]"/>
     </xaif:BasicBlock>
 
-    <xaif:ForLoop vertex_id="51" reversal="anonymous" lineNumber="156">
+    <xaif:ForLoop vertex_id="51" reversal="anonymous" lineNumber="154">
       <xaif:Initialization statement_id="683" do_chain="28">
         <xaif:AssignmentLHS du_ud="53" alias="17">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="K_17"/>
@@ -2379,7 +2379,7 @@
     </xaif:ForLoop>
 
     <xaif:BasicBlock vertex_id="52" scope_id="3">
-      <xaif:Assignment statement_id="693" lineNumber="157" do_chain="29">
+      <xaif:Assignment statement_id="693" lineNumber="155" do_chain="29">
         <xaif:AssignmentLHS du_ud="52" alias="39">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="FVEC_6"/>
           <xaif:ArrayElementReference vertex_id="2">

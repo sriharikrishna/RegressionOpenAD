@@ -1,28 +1,21 @@
-      module all_globals_mod
+
+
+      SUBROUTINE foo(X, Y, K)
       use w2f__types
       use OAD_active
-      implicit none
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine foo(X,Y,K)
-      use w2f__types
-      use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_Symbol_0
-      real(w2f__8) :: OpenAD_lin_1
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
       type(active) :: X
       type(active) :: Y
-      integer(w2f__i4) :: K
+      INTEGER(w2f__i4) K
 C
 C     **** Statements ****
 C
@@ -34,10 +27,11 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(OpenAD_prop_0,X)
       CALL sax(OpenAD_lin_1,OpenAD_prop_0,Y)
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -46,8 +40,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      external foo
-      integer(w2f__i4) :: K
+      EXTERNAL foo
+      INTEGER(w2f__i4) K
 C
 C     **** Top Level Pragmas ****
 C

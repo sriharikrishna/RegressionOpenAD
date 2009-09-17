@@ -33,14 +33,14 @@ C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
       DO I = 1, (K * 2), 1
         __value__(Y(INT(I))) = __value__(X(I))
       END DO
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
       DO I = 1, (K * 2), 1
         __value__(Y(INT(I))) = __value__(X(I))
       END DO
@@ -93,7 +93,7 @@ C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
       OpenAD_Symbol_2 = 0_w2f__i8
       DO I = 1, (K * 2), 1
         __value__(Y(INT(I))) = __value__(X(I))

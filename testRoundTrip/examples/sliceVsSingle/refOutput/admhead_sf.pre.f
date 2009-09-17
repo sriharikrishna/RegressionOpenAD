@@ -4,12 +4,12 @@
 
       subroutine foo(x)
         double precision :: x
-        x=x+1.0
+        x = x+1.0
       end subroutine
       
       subroutine bar(x)
         double precision :: x(1)
-        x(1)=x(1)+1.0
+        x(1) = x(1)+1.0
       end subroutine 
       
       subroutine head(x,y)
@@ -24,9 +24,9 @@
            end subroutine bar
         end interface
         double precision, dimension(2) :: x,y
-c$openad INDEPENDENT(x)
+C$openad INDEPENDENT(x)
         call foo(x(1))
-        y=x
+        y = x
         call bar(y(2:2))
-c$openad DEPENDENT(y)
+C$openad DEPENDENT(y)
       end subroutine

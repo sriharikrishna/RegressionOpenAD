@@ -1,16 +1,18 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -19,9 +21,9 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      real(w2f__8) :: P
-      real(w2f__8) :: Q
-      external sq
+      REAL(w2f__8) P
+      REAL(w2f__8) Q
+      EXTERNAL sq
 C
 C     **** Top Level Pragmas ****
 C
@@ -34,34 +36,35 @@ C
       P = 2.0D00
       Q = (P*P)
       END SUBROUTINE
-      subroutine sq(N,U,V)
+
+      SUBROUTINE sq(N, U, V)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_acc_0
-      real(w2f__8) :: OpenAD_acc_1
-      real(w2f__8) :: OpenAD_acc_2
-      real(w2f__8) :: OpenAD_acc_3
-      real(w2f__8) :: OpenAD_lin_0
-      real(w2f__8) :: OpenAD_lin_1
-      real(w2f__8) :: OpenAD_lin_10
-      real(w2f__8) :: OpenAD_lin_11
-      real(w2f__8) :: OpenAD_lin_13
-      real(w2f__8) :: OpenAD_lin_14
-      real(w2f__8) :: OpenAD_lin_3
-      real(w2f__8) :: OpenAD_lin_5
-      real(w2f__8) :: OpenAD_lin_7
-      real(w2f__8) :: OpenAD_lin_8
-      real(w2f__8) :: OpenAD_lin_9
-      real(w2f__8) :: OpenAD_tmp_0
-      real(w2f__8) :: OpenAD_tmp_1
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_10
+      REAL(w2f__8) OpenAD_lin_11
+      REAL(w2f__8) OpenAD_lin_13
+      REAL(w2f__8) OpenAD_lin_14
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
+      REAL(w2f__8) OpenAD_lin_9
+      REAL(w2f__8) OpenAD_tmp_0
+      REAL(w2f__8) OpenAD_tmp_1
 C
 C     **** Parameters and Result ****
 C
-      integer(w2f__i4) :: N
+      INTEGER(w2f__i4) N
       type(active) :: U(1:2)
       type(active) :: V(1:2)
 C

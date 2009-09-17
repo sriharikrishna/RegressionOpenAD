@@ -1,20 +1,13 @@
-      module all_globals_mod
+
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(X,Y)
-      use w2f__types
-      use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_0
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -24,8 +17,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      integer(w2f__i4) :: I
-      real(w2f__8) :: S
+      INTEGER(w2f__i4) I
+      REAL(w2f__8) S
 C
 C     **** Top Level Pragmas ****
 C

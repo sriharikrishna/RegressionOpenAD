@@ -1,22 +1,24 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
       SAVE
 C
 C     **** Statements ****
 C
       END MODULE
-      subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      real(w2f__8) :: OpenAD_Symbol_0
-      real(w2f__8) :: OpenAD_lin_0
-      real(w2f__8) :: OpenAD_lin_1
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -25,7 +27,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      external barext
+      EXTERNAL barext
       type(active) :: T
 C
 C     **** Statements ****
@@ -44,10 +46,11 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL sax(OpenAD_lin_0,X(2),Y)
       CALL saxpy(OpenAD_lin_1,T,Y)
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
-      implicit none
+      IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
@@ -56,9 +59,9 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      external barext
-      external foo
-      real(w2f__8) :: T
+      EXTERNAL barext
+      EXTERNAL foo
+      REAL(w2f__8) T
 C
 C     **** Top Level Pragmas ****
 C

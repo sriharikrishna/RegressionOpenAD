@@ -48,12 +48,12 @@ C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .LT. 4.0D00) THEN
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         DO I = 1, 3, 1
           __value__(Y(INT(I))) = __value__(X(I))
         END DO
       ELSE
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         DO I = 1, 3, 1
           __value__(Y(INT(I))) = (__value__(X(I)) * 2.0D00)
         END DO
@@ -62,7 +62,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .LT. 4.0D00) THEN
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         DO I = 1, 3, 1
           __value__(Y(INT(I))) = __value__(X(I))
         END DO
@@ -70,7 +70,7 @@ C$OPENAD XXX Simple loop\t
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_1)
       ELSE
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         DO I = 1, 3, 1
           __value__(Y(INT(I))) = (__value__(X(I)) * 2.0D00)
         END DO
@@ -117,7 +117,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .LT. 4.0D00) THEN
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         OpenAD_Symbol_8 = 0_w2f__i8
         DO I = 1, 3, 1
           __value__(Y(INT(I))) = __value__(X(I))
@@ -131,7 +131,7 @@ C       $OpenAD$ INLINE push_i(subst)
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_10)
       ELSE
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         OpenAD_Symbol_9 = 0_w2f__i8
         DO I = 1, 3, 1
           __value__(Y(INT(I))) = (__value__(X(I)) * 2.0D00)
