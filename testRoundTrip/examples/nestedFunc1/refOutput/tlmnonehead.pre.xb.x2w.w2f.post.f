@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(J,X,Y)
+
+
+      SUBROUTINE head(J, X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -36,8 +29,9 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%v = 1.0
       CALL zero_deriv(Y(1))
       CALL FOO()
-      contains
-        subroutine FOO()
+      CONTAINS
+
+        SUBROUTINE FOO()
         use w2f__types
         use OAD_active
         IMPLICIT NONE

@@ -31,7 +31,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
       DO I = 1, 3, 1
         IF(I .eq. 2) THEN
           __value__(Y(INT(I))) = __value__(X(I))

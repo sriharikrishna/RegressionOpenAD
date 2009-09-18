@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -72,7 +73,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine box_forward(ILEV1)
+
+      SUBROUTINE box_forward(ILEV1)
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -116,7 +118,8 @@ C$OPENAD XXX Template ad_template.f
         ENDIF
       END DO
       END SUBROUTINE
-      subroutine box_final_state()
+
+      SUBROUTINE box_final_state()
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -143,7 +146,8 @@ C$OPENAD XXX Template ad_template.f
         TSVEC(INT(L+3)) = SNOW(L)%v
       END DO
       END SUBROUTINE
-      subroutine box_ini_fields()
+
+      SUBROUTINE box_ini_fields()
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -224,7 +228,8 @@ C$OPENAD XXX Template ad_template.f
       UVEL%v = UBAR
       CALL zero_deriv(UVEL)
       END SUBROUTINE
-      subroutine box_ini_params()
+
+      SUBROUTINE box_ini_params()
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -325,7 +330,8 @@ C$OPENAD XXX Template ad_template.f
         END DO
       END DO
       END SUBROUTINE
-      subroutine box_model_body()
+
+      SUBROUTINE box_model_body()
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -374,7 +380,8 @@ C$OPENAD XXX Template ad_template.f
         CALL box_final_state()
       ENDIF
       END SUBROUTINE
-      subroutine box_density(TLOC,SLOC,RHOLOC)
+
+      SUBROUTINE box_density(TLOC, SLOC, RHOLOC)
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -414,7 +421,8 @@ C$OPENAD XXX Template ad_template.f
         CALL saxpy(OpenAD_acc_0,TLOC(L),RHOLOC(L))
       END DO
       END SUBROUTINE
-      subroutine box_transport(RHOLOC,UVELLOC)
+
+      SUBROUTINE box_transport(RHOLOC, UVELLOC)
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -460,7 +468,8 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_lin_8,RHOLOC(3),OpenAD_prop_0)
       CALL sax(OpenAD_acc_1,OpenAD_prop_0,UVELLOC)
       END SUBROUTINE
-      subroutine box_robert_filter(FLDNOW,FLDOLD,FLDNEW)
+
+      SUBROUTINE box_robert_filter(FLDNOW, FLDOLD, FLDNEW)
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -509,7 +518,8 @@ C$OPENAD XXX Template ad_template.f
         CALL saxpy(OpenAD_lin_59,OpenAD_prop_9,FLDNOW(L))
       END DO
       END SUBROUTINE
-      subroutine box_cycle_fields()
+
+      SUBROUTINE box_cycle_fields()
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -546,7 +556,8 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(SNOW(L),SNEW(L))
       END DO
       END SUBROUTINE
-      subroutine box_update(FLDNEW,FLDOLD,DFLDDT)
+
+      SUBROUTINE box_update(FLDNEW, FLDOLD, DFLDDT)
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -584,8 +595,9 @@ C$OPENAD XXX Template ad_template.f
         CALL saxpy(OpenAD_lin_61,DFLDDT(L),FLDNEW(L))
       END DO
       END SUBROUTINE
-      subroutine box_timestep(GAMMALOC,FLDSTAR,EXTFORLOC,UVELLOC,FLDNOW,
-     +FLDOLD,FLDNEW)
+
+      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC,  FL
+     +DNOW, FLDOLD, FLDNEW)
       use w2f__types
       use OAD_active
       use all_globals_mod

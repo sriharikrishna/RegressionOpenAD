@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine foo(X,Y,K)
+
+
+      SUBROUTINE foo(X, Y, K)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -34,7 +27,8 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(OpenAD_prop_0,X)
       CALL sax(OpenAD_lin_1,OpenAD_prop_0,Y)
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

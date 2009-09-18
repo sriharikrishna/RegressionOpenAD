@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,7 +8,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -31,7 +33,8 @@ C
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
       END SUBROUTINE
-      subroutine foo(FX,FY)
+
+      SUBROUTINE foo(FX, FY)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -49,8 +52,9 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL BAR(FX,FY)
-      contains
-        subroutine BAR(BX,BY)
+      CONTAINS
+
+        SUBROUTINE BAR(BX, BY)
         use w2f__types
         use OAD_active
         IMPLICIT NONE

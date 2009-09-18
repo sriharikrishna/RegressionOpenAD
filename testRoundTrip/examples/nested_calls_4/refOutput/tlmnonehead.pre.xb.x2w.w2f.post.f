@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(X,Y)
+
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -58,7 +51,8 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       Y(2)%v = X(4)%v
       CALL setderiv(Y(2),X(4))
       END SUBROUTINE
-      subroutine foo(A,B,C,D)
+
+      SUBROUTINE foo(A, B, C, D)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

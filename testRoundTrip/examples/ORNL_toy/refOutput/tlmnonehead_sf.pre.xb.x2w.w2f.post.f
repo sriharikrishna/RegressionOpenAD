@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,7 +8,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -34,7 +36,8 @@ C
       P = 2.0D00
       Q = (P*P)
       END SUBROUTINE
-      subroutine sq(N,U,V)
+
+      SUBROUTINE sq(N, U, V)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

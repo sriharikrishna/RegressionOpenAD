@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      module globals
+
+
+      MODULE globals
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -20,7 +13,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine foo(P)
+
+      SUBROUTINE foo(P)
       use w2f__types
       use OAD_active
       use globals
@@ -43,7 +37,8 @@ C
       CALL setderiv(OpenAD_prop_0,P)
       CALL sax(2.0D00,OpenAD_prop_0,P)
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       use globals

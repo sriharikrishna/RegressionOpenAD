@@ -2,7 +2,7 @@
 
       end module
 
-c$openad XXX Template ad_template.f
+C$openad XXX Template ad_template.f
         subroutine opt(reqarg,optarg,outarg) 
           double precision,intent(in) :: reqarg
           double precision,optional,intent(in) :: optarg
@@ -12,14 +12,14 @@ c$openad XXX Template ad_template.f
               outarg = outarg*optarg*reqarg
             end if
           else 
-	   outarg = reqarg
+         outarg = reqarg
           end if
         end subroutine opt
 
         subroutine head(x,y) 
           double precision,dimension(2) :: x
           double precision,dimension(1) :: y
-c$openad INDEPENDENT(x)
+C$openad INDEPENDENT(x)
           interface
             subroutine opt(reqarg,optarg,outarg)
               double precision,intent(in) :: reqarg
@@ -29,6 +29,6 @@ c$openad INDEPENDENT(x)
           end interface
           y(1) = x(1)*2.0
           call opt(x(2),x(1),y(1))
-c$openad DEPENDENT(y)
+C$openad DEPENDENT(y)
         end subroutine head
 

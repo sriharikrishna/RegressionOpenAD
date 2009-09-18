@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine foo(X,Y,L,U,S)
+
+
+      SUBROUTINE foo(X, Y, L, U, S)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -46,7 +39,8 @@ C$OPENAD XXX Simple loop
         CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y)
       END DO
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

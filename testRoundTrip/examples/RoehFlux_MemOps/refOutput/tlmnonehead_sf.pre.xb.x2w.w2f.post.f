@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,9 +8,11 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine ad_roehf5(NRM1,NRM2,NRM3,PRIML1,PRIML2,PRIML3,PRIML4,PR
-     +IML5,PRIMR1,PRIMR2,PRIMR3,PRIMR4,PRIMR5,GAMMA,GM1,GM1INV,NLEFIX,LE
-     +FIX,MCHEPS,FLUX1,FLUX2,FLUX3,FLUX4,FLUX5)
+
+      SUBROUTINE ad_roehf5(NRM1, NRM2, NRM3, PRIML1, PRIML2, PRIML3,  PR
+     +IML4, PRIML5, PRIMR1, PRIMR2, PRIMR3, PRIMR4, PRIMR5, GAMMA,  GM1,
+     + GM1INV, NLEFIX, LEFIX, MCHEPS, FLUX1, FLUX2, FLUX3, FLUX4,  FLUX5
+     +)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

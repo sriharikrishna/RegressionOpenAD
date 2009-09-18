@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(X,Y)
+
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -47,19 +40,19 @@ C$OPENAD XXX Template ad_template.f
       IF (select_expr_temp_0.EQ.1) goto 4
       IF (select_expr_temp_0.EQ.2) goto 8
       goto 9
-9     CONTINUE
+ 9    CONTINUE
       Y(1)%v = X(1)%v
       CALL setderiv(Y(1),X(1))
       goto 6
-4     CONTINUE
+ 4    CONTINUE
       Y(1)%v = X(1)%v
       CALL setderiv(Y(1),X(1))
       goto 6
-8     CONTINUE
+ 8    CONTINUE
       Y(1)%v = X(1)%v
       CALL setderiv(Y(1),X(1))
       goto 6
-6     CONTINUE
+ 6    CONTINUE
       OpenAD_Symbol_0 = (Y(1)%v*Y(1)%v)
       OpenAD_lin_0 = Y(1)%v
       OpenAD_lin_1 = Y(1)%v

@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,7 +8,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -31,7 +33,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
       DO I = 1,3,1
         IF (I.eq.2) THEN
           Y(INT(I))%v = X(I)%v

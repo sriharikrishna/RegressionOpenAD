@@ -27,7 +27,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
       DO I = 1, (K * 2), 1
         __value__(Y(INT(I))) = __value__(X(I))
         CALL setderiv(__deriv__(Y(I)), __deriv__(X(I)))

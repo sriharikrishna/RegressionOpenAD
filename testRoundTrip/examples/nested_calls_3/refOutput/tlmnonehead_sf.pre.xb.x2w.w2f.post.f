@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,7 +8,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -50,7 +52,8 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(Y(4),C)
       CALL inc_deriv(Y(4),D)
       END SUBROUTINE
-      subroutine foo(A,B,C,D)
+
+      SUBROUTINE foo(A, B, C, D)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(X,F)
+
+
+      SUBROUTINE head(X, F)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

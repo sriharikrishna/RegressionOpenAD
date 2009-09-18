@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      module globals
+
+
+      MODULE globals
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -20,7 +13,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -44,7 +38,8 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_0,X(1),Y)
       CALL saxpy(OpenAD_lin_1,X(2),Y)
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       use globals
@@ -71,7 +66,8 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%v = AGLOBAL%v
       CALL setderiv(Y(1),AGLOBAL)
       END SUBROUTINE
-      subroutine bar(X,Y)
+
+      SUBROUTINE bar(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

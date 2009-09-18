@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine bar(X,Y,K)
+
+
+      SUBROUTINE bar(X, Y, K)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -27,13 +20,14 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
       DO I = 1,K,1
         Y(INT(I))%v = X(I)%v
         CALL setderiv(Y(I),X(I))
       END DO
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

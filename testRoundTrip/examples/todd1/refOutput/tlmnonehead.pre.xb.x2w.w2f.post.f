@@ -1,16 +1,10 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(OBJ,G_OBJ0,G_OBJ1,G_OBJ2,G_OBJ3,G_OBJ4,G_OBJ5,X0,X
-     +1,X2,X3,X4,X5,H_OBJ0,H_OBJ1,H_OBJ2,H_OBJ3,H_OBJ4,H_OBJ5,H_OBJ6,H_O
-     +BJ7,H_OBJ8,H_OBJ9,H_OBJ10,H_OBJ11,H_OBJ12,H_OBJ13,H_OBJ14,H_OBJ15,
-     +H_OBJ16,H_OBJ17,H_OBJ18,H_OBJ19,H_OBJ20)
+
+
+      SUBROUTINE head(OBJ, G_OBJ0, G_OBJ1, G_OBJ2, G_OBJ3, G_OBJ4,  G_OB
+     +J5, X0, X1, X2, X3, X4, X5, H_OBJ0, H_OBJ1, H_OBJ2, H_OBJ3,  H_OBJ
+     +4, H_OBJ5, H_OBJ6, H_OBJ7, H_OBJ8, H_OBJ9, H_OBJ10,  H_OBJ11, H_OB
+     +J12, H_OBJ13, H_OBJ14, H_OBJ15, H_OBJ16, H_OBJ17,  H_OBJ18, H_OBJ1
+     +9, H_OBJ20)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

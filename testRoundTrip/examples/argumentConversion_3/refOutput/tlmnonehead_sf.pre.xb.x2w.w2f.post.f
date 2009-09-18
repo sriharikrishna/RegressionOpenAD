@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,7 +8,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      module globals
+
+      MODULE globals
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -21,7 +23,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine bar(BARX,BARY)
+
+      SUBROUTINE bar(BARX, BARY)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -41,7 +44,8 @@ C
       BARX = BARY
       BARY = T
       END SUBROUTINE
-      subroutine foo()
+
+      SUBROUTINE foo()
       use w2f__types
       use OAD_active
       use globals
@@ -68,7 +72,8 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       use globals

@@ -1,18 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Local Variables and Functions ****
-C
-      REAL(w2f__8) PI
-      PARAMETER ( PI = 3.141592653589793116D00)
-C
-C     **** Statements ****
-C
-      END MODULE
-      module anothermodule
+
+
+      MODULE anothermodule
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -27,7 +15,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       use anothermodule

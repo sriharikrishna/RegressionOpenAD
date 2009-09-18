@@ -1,14 +1,7 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine ad_roehf5(NRM,PRIML,PRIMR,GAMMA,GM1,GM1INV,NLEFIX,LEFIX
-     +,MCHEPS,FLUX)
+
+
+      SUBROUTINE ad_roehf5(NRM, PRIML, PRIMR, GAMMA, GM1, GM1INV,  NLEFI
+     +X, LEFIX, MCHEPS, FLUX)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

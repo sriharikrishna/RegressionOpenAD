@@ -6,7 +6,7 @@
         double precision, dimension(1), intent(inout) :: x
         double precision, dimension(1), intent(inout) :: y
         integer :: i,j,ii
-c$openad INDEPENDENT(x)
+C$openad INDEPENDENT(x)
         do j = 1, 5
           do ii = 1, 5
             exit
@@ -16,5 +16,5 @@ c$openad INDEPENDENT(x)
           end do
         end do
         return
-c$openad DEPENDENT(y)
+C$openad DEPENDENT(y)
       end subroutine head

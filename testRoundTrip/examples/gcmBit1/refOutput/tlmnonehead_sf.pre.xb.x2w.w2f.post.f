@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,7 +8,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
+
+      SUBROUTINE find_bulkmod(LOCPRES, TFLD, SFLD, BULKMOD)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -308,7 +310,8 @@ C$OPENAD XXX Template ad_template.f
         END DO
       END DO
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

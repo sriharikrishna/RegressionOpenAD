@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(X,Y)
+
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -32,13 +25,13 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF (X(1)%v.LT.4.0D00) THEN
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         DO I = 1,3,1
           Y(INT(I))%v = X(I)%v
           CALL setderiv(Y(I),X(I))
         END DO
       ELSE
-C$OPENAD XXX Simple loop\t
+C$OPENAD XXX Simple loop
         DO I = 1,3,1
           Y(INT(I))%v = (X(I)%v*2.0D00)
           CALL sax(2.0D00,X(I),Y(I))

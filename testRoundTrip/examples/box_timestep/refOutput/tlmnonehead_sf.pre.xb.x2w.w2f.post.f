@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,8 +8,9 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine box_timestep(GAMMALOC,FLDSTAR,EXTFORLOC,UVELLOC,FLDNOW,
-     +FLDOLD,FLDNEW)
+
+      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC,  FL
+     +DNOW, FLDOLD, FLDNEW)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

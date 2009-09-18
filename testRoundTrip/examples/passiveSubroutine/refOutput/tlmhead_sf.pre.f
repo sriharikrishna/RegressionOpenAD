@@ -2,25 +2,25 @@
 
       end module
 
-c$openad XXX Template ad_template.f
+C$openad XXX Template ad_template.f
       subroutine head(x,y)
       double precision x(1),y(1)
       double precision p,q
-c$openad INDEPENDENT(x)
+C$openad INDEPENDENT(x)
       call foo(x(1),y(1))
-      p=1.0
+      p = 1.0
       call bar(p,q)
-c$openad DEPENDENT(y)
+C$openad DEPENDENT(y)
       end subroutine head
 
-c$openad XXX Template ad_template.f
+C$openad XXX Template ad_template.f
       subroutine foo(a,b) 
       double precision a,b
-      b=a*a
+      b = a*a
       end subroutine
 
-c$openad XXX Template ad_template.f
+C$openad XXX Template ad_template.f
       subroutine bar(a,b)
       double precision a,b
-      b=cos(a)
+      b = cos(a)
       end subroutine

@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,7 +8,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine opt(REQARG,OPTARG,OUTARG)
+
+      SUBROUTINE opt(REQARG, OPTARG, OUTARG)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -57,7 +59,8 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(OUTARG,REQARG)
       ENDIF
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -82,7 +85,9 @@ C$OPENAD DEPENDENT(Y)
         INTENT(in)  OPTARG
         type(active) :: OUTARG
         END SUBROUTINE
-       end interface 
+
+      end interface 
+
 C
 C     **** Statements ****
 C

@@ -2,22 +2,22 @@
 
       end module
 
-c$openad XXX Template ad_template.f
-	subroutine head(x,y)
-	  double precision, dimension(3), intent(in) :: x
-	  double precision, dimension(3), intent(out) :: y
+C$openad XXX Template ad_template.f
+      subroutine head(x,y)
+        double precision, dimension(3), intent(in) :: x
+        double precision, dimension(3), intent(out) :: y
           integer i,j,k
-c$openad INDEPENDENT(x)
+C$openad INDEPENDENT(x)
           do i=1,3
-            y(i)=x(i) 
+            y(i) = x(i)
           end do
-c$openad xxx simple loop
+C$openad xxx simple loop
           do i=1,3
             do j=1,3
               do k=1,3
-                y(i)=y(i)*x(j)
+                y(i) = y(i)*x(j)
               end do
             end do
           end do
-c$openad DEPENDENT(y)
-	end subroutine
+C$openad DEPENDENT(y)
+      end subroutine

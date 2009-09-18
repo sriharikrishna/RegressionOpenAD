@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      module aglobalmodule
+
+
+      MODULE aglobalmodule
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -20,7 +13,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine foo(X,Y)
+
+      SUBROUTINE foo(X, Y)
       use w2f__types
       use OAD_active
       use aglobalmodule
@@ -79,7 +73,8 @@ C$OPENAD XXX Simple loop
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       use aglobalmodule

@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine head(NX,NY,X,FVEC,R)
+
+
+      SUBROUTINE head(NX, NY, X, FVEC, R)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -74,7 +67,8 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(OpenAD_lin_0,OpenAD_prop_0,FVEC(K))
       END DO
       END SUBROUTINE
-      subroutine foo(NX,NY,X,FVEC,R,N,HX,HY,HY2,HX2)
+
+      SUBROUTINE foo(NX, NY, X, FVEC, R, N, HX, HY, HY2, HX2)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -338,8 +332,9 @@ C$OPENAD XXX Template ad_template.f
         END DO
       END DO
       END SUBROUTINE
-      subroutine bar(PBB,PBL,PB,PBR,PLL,PL,P,PR,PRR,PTL,PT,PTR,PTT,HY2,H
-     +X2,PLAP,PBLAP,PLLAP,PRLAP,PTLAP)
+
+      SUBROUTINE bar(PBB, PBL, PB, PBR, PLL, PL, P, PR, PRR, PTL, PT,  P
+     +TR, PTT, HY2, HX2, PLAP, PBLAP, PLLAP, PRLAP, PTLAP)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

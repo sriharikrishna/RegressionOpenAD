@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -7,7 +8,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine foo(X)
+
+      SUBROUTINE foo(X)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -26,7 +28,8 @@ C
       CALL setderiv(OpenAD_prop_0,X)
       CALL setderiv(X,OpenAD_prop_0)
       END SUBROUTINE
-      subroutine bar(X)
+
+      SUBROUTINE bar(X)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -45,7 +48,8 @@ C
       CALL setderiv(OpenAD_prop_1,X(1))
       CALL setderiv(X(1),OpenAD_prop_1)
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -65,14 +69,18 @@ C$OPENAD DEPENDENT(Y)
       use OAD_active
         type(active) :: X
         END SUBROUTINE
-       end interface 
-       interface 
+
+      end interface 
+      
+      interface 
         SUBROUTINE bar(X)
         use w2f__types
       use OAD_active
         type(active) :: X(1:1)
         END SUBROUTINE
-       end interface 
+
+      end interface 
+
 C
 C     **** Statements ****
 C

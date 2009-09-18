@@ -1,13 +1,6 @@
-      module all_globals_mod
-      use w2f__types
-      use OAD_active
-      IMPLICIT NONE
-      SAVE
-C
-C     **** Statements ****
-C
-      END MODULE
-      subroutine foo(A,B,C,D)
+
+
+      SUBROUTINE foo(A, B, C, D)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -53,7 +46,8 @@ C
         CALL sax(3.0D00,OpenAD_prop_1,D)
       ENDIF
       END SUBROUTINE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -78,7 +72,9 @@ C$OPENAD DEPENDENT(Y)
         type(active) :: D
         OPTIONAL  D
         END SUBROUTINE
-       end interface 
+
+      end interface 
+
 C
 C     **** Statements ****
 C

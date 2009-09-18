@@ -1,4 +1,5 @@
-      module all_globals_mod
+
+      MODULE all_globals_mod
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -12,7 +13,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      module anothermodule
+
+      MODULE anothermodule
       use w2f__types
       use OAD_active
       use all_globals_mod
@@ -27,7 +29,8 @@ C
 C     **** Statements ****
 C
       END MODULE
-      subroutine head(X,Y)
+
+      SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
       use anothermodule
