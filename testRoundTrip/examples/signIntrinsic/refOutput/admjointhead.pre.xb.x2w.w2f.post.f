@@ -78,7 +78,7 @@ C restore arguments
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-      Y(1)%v = DSIGN(X(1)%v,-X(2)%v)
+      Y(1)%v = SIGN(X(1)%v,-X(2)%v)
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -93,7 +93,7 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_tmp_0 = (-X(2)%v)
-      OpenAD_Symbol_0 = DSIGN(X(1)%v,OpenAD_tmp_0)
+      OpenAD_Symbol_0 = SIGN(X(1)%v,OpenAD_tmp_0)
       OpenAD_lin_0 = (SIGN(1.0D00,X(1)%v)*SIGN(1.0D00,OpenAD_tmp_0))
       Y(1)%v = OpenAD_Symbol_0
       double_tape(double_tape_pointer) = OpenAD_lin_0

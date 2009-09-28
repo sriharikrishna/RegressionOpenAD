@@ -37,12 +37,12 @@ C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
-      __value__(Y(1)) = DSIGN(__value__(X(1)), - __value__(X(2)))
+      __value__(Y(1)) = SIGN(__value__(X(1)), - __value__(X(2)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       OpenAD_tmp_0 = (- __value__(X(2)))
-      OpenAD_Symbol_0 = DSIGN(__value__(X(1)), OpenAD_tmp_0)
+      OpenAD_Symbol_0 = SIGN(__value__(X(1)), OpenAD_tmp_0)
       OpenAD_lin_0 = (SIGN(1.0D00, __value__(X(1))) * SIGN(1.0D00,
      >  OpenAD_tmp_0))
       __value__(Y(1)) = OpenAD_Symbol_0
@@ -77,7 +77,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       OpenAD_tmp_0 = (- __value__(X(2)))
-      OpenAD_Symbol_0 = DSIGN(__value__(X(1)), OpenAD_tmp_0)
+      OpenAD_Symbol_0 = SIGN(__value__(X(1)), OpenAD_tmp_0)
       OpenAD_lin_0 = (SIGN(1.0D00, __value__(X(1))) * SIGN(1.0D00,
      >  OpenAD_tmp_0))
       __value__(Y(1)) = OpenAD_Symbol_0

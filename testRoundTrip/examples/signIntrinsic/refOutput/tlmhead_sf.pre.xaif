@@ -25,7 +25,7 @@
         <xaif:Symbol symbol_id=".preg_return_val_19" kind="variable" type="opaque" shape="scalar" annotation="{Sym_Id#19}" active="0"/>
         <xaif:Symbol symbol_id="all_globals_mod__20" kind="subroutine" type="void" annotation="{Sym_Id#20}"/>
         <xaif:Symbol symbol_id="head__21" kind="subroutine" type="void" annotation="{Sym_Id#21}"/>
-        <xaif:Symbol symbol_id="DSIGN_23" kind="subroutine" type="void" annotation="{Sym_Id#23}"/>
+        <xaif:Symbol symbol_id="SIGN_23" kind="subroutine" type="void" annotation="{Sym_Id#23}"/>
       </xaif:SymbolTable>
     </xaif:Scope>
 
@@ -127,7 +127,7 @@
           <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
-          <xaif:Intrinsic vertex_id="1" name="sign_scal_scal" type="***" annotation="{IntrinsicKey#1_SIGN}"/>
+          <xaif:Intrinsic vertex_id="1" name="sign_scal_scal" type="***" annotation="{IntrinsicKey#0_SIGN}"/>
           <xaif:VariableReference vertex_id="2" du_ud="2" alias="2">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="X_1"/>
             <xaif:ArrayElementReference vertex_id="2">

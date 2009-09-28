@@ -33,7 +33,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       OpenAD_tmp_0 = (- __value__(X(2)))
-      OpenAD_Symbol_0 = DSIGN(__value__(X(1)), OpenAD_tmp_0)
+      OpenAD_Symbol_0 = SIGN(__value__(X(1)), OpenAD_tmp_0)
       OpenAD_lin_0 = (SIGN(1.0D00, __value__(X(1))) * SIGN(1.0D00,
      >  OpenAD_tmp_0))
       __value__(Y(1)) = OpenAD_Symbol_0
