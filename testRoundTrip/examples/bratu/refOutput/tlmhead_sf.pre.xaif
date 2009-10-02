@@ -477,7 +477,7 @@
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_4"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
-          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***" rType="integer"/>
           <xaif:VariableReference vertex_id="2" du_ud="4" alias="5">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_4"/>
           </xaif:VariableReference>
@@ -495,7 +495,7 @@
           <xaif:ArrayElementReference vertex_id="2">
             <xaif:IndexTriplet>
               <xaif:Index>
-                <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+                <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***" rType="integer"/>
                 <xaif:VariableReference vertex_id="2" du_ud="4" alias="5">
                   <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_4"/>
                 </xaif:VariableReference>
@@ -528,7 +528,7 @@
             <xaif:ArrayElementReference vertex_id="2">
               <xaif:IndexTriplet>
                 <xaif:Index>
-                  <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+                  <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***" rType="integer"/>
                   <xaif:VariableReference vertex_id="2" du_ud="4" alias="5">
                     <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_4"/>
                   </xaif:VariableReference>
@@ -763,7 +763,7 @@
           <xaif:ArrayElementReference vertex_id="2">
             <xaif:IndexTriplet>
               <xaif:Index>
-                <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+                <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***" rType="integer"/>
                 <xaif:VariableReference vertex_id="2" du_ud="4" alias="5">
                   <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_4"/>
                 </xaif:VariableReference>

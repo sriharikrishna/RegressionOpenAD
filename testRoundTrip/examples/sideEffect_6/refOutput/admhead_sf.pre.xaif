@@ -199,7 +199,7 @@
 
     <xaif:Branch vertex_id="53" lineNumber="9">
       <xaif:Condition>
-        <xaif:Intrinsic vertex_id="1" name="string_eq_scal_scal" type="***"/>
+        <xaif:Intrinsic vertex_id="1" name="string_eq_scal_scal" type="***" rType="integer"/>
         <xaif:VariableReference vertex_id="2" du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -208,7 +208,7 @@
                 <xaif:Constant vertex_id="1" type="integer" feType="U8" value="0"/>
               </xaif:Index>
               <xaif:Bound>
-                <xaif:Intrinsic vertex_id="1" name="len" type="***" annotation="{IntrinsicKey#0_LEN_OP}"/>
+                <xaif:Intrinsic vertex_id="1" name="len" type="***" annotation="{IntrinsicKey#0_LEN_OP}" rType="integer"/>
                 <xaif:VariableReference vertex_id="2" du_ud="2" alias="4">
                   <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_2"/>
                 </xaif:VariableReference>
@@ -245,7 +245,7 @@
 
     <xaif:Branch vertex_id="54" lineNumber="12">
       <xaif:Condition>
-        <xaif:Intrinsic vertex_id="1" name="string_eq_scal_scal" type="***"/>
+        <xaif:Intrinsic vertex_id="1" name="string_eq_scal_scal" type="***" rType="integer"/>
         <xaif:VariableReference vertex_id="2" du_ud="2" alias="4">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_2"/>
           <xaif:ArrayElementReference vertex_id="2">
@@ -254,7 +254,7 @@
                 <xaif:Constant vertex_id="1" type="integer" feType="U8" value="0"/>
               </xaif:Index>
               <xaif:Bound>
-                <xaif:Intrinsic vertex_id="1" name="len" type="***" annotation="{IntrinsicKey#0_LEN_OP}"/>
+                <xaif:Intrinsic vertex_id="1" name="len" type="***" annotation="{IntrinsicKey#0_LEN_OP}" rType="integer"/>
                 <xaif:VariableReference vertex_id="2" du_ud="2" alias="4">
                   <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_2"/>
                 </xaif:VariableReference>

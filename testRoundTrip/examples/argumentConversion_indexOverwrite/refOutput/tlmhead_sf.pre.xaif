@@ -237,7 +237,7 @@
           <xaif:SymbolReference vertex_id="1" scope_id="1" symbol_id="I_22"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
-          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***" rType="integer"/>
           <xaif:VariableReference vertex_id="2" du_ud="2" alias="4">
             <xaif:SymbolReference vertex_id="1" scope_id="1" symbol_id="I_22"/>
           </xaif:VariableReference>

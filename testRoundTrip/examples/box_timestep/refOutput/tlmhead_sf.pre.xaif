@@ -665,7 +665,7 @@
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="L_10"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
-          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***" rType="integer"/>
           <xaif:VariableReference vertex_id="2" du_ud="4" alias="10">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="L_10"/>
           </xaif:VariableReference>

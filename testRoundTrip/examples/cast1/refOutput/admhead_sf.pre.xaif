@@ -128,7 +128,7 @@
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
           <xaif:Intrinsic vertex_id="1" name="mul_scal_scal" type="***"/>
-          <xaif:Intrinsic vertex_id="2" name="int_scal" type="***" annotation="{IntrinsicKey#1_INT}"/>
+          <xaif:Intrinsic vertex_id="2" name="int_scal" type="***" annotation="{IntrinsicKey#1_INT}" rType="integer"/>
           <xaif:VariableReference vertex_id="3" du_ud="2" alias="2">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="X_1"/>
             <xaif:ArrayElementReference vertex_id="2">

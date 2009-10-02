@@ -282,7 +282,7 @@
         <xaif:VariableReference vertex_id="2" du_ud="3" alias="7">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_5"/>
         </xaif:VariableReference>
-        <xaif:Intrinsic vertex_id="3" name="add_scal_scal" type="***"/>
+        <xaif:Intrinsic vertex_id="3" name="add_scal_scal" type="***" rType="integer"/>
         <xaif:VariableReference vertex_id="4" du_ud="2" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="N_4"/>
         </xaif:VariableReference>
@@ -297,7 +297,7 @@
           <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_5"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
-          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***" rType="integer"/>
           <xaif:VariableReference vertex_id="2" du_ud="3" alias="7">
             <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="I_5"/>
           </xaif:VariableReference>
@@ -500,7 +500,7 @@
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_4"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
-          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***"/>
+          <xaif:Intrinsic vertex_id="1" name="add_scal_scal" type="***" rType="integer"/>
           <xaif:VariableReference vertex_id="2" du_ud="6" alias="10">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_4"/>
           </xaif:VariableReference>
