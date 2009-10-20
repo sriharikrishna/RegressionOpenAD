@@ -13,7 +13,7 @@ C$openad INDEPENDENT(x)
 C$openad DEPENDENT(y)
       end subroutine
 
-      subroutine foo(fx,fy) 
+      subroutine foo(fx,fy)
 C$openad XXX Template ad_template.f
         double precision, dimension(1) :: fx
         double precision, dimension(1) :: fy

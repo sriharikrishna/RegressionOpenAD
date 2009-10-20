@@ -31,7 +31,7 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE foo(X, Y)
         use w2f__types
       use OAD_active
@@ -39,7 +39,7 @@ C$OPENAD DEPENDENT(Y)
         type(active) :: Y(1:)
         END SUBROUTINE
 
-      end interface 
+      end interface
 
 C
 C     **** Statements ****

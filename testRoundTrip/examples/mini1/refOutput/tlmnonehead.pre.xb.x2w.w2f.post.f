@@ -17,9 +17,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Top Level Pragmas ****
 C

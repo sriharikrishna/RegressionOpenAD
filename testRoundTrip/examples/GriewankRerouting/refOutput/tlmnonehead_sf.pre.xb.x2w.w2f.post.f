@@ -32,9 +32,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X1
-      INTENT(IN)  X1
+      INTENT(IN) X1
       type(active) :: X2
-      INTENT(IN)  X2
+      INTENT(IN) X2
       type(active) :: Y1
       type(active) :: Y2
 C

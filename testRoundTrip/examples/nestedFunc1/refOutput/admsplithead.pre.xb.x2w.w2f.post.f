@@ -51,12 +51,12 @@ C taping
 C$OPENAD XXX Template ad_template.f
       Y(1)%v = 1.0
       CALL FOO()
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL FOO()
       Y(1)%d = 0.0d0
-          end if 
+          end if
 C     $OpenAD$ END REPLACEMENT
       CONTAINS
 C#########################################################
@@ -128,7 +128,7 @@ C taping
         END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
         integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
         integer_tape_pointer = integer_tape_pointer-1
@@ -149,6 +149,6 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
           OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
         END DO
-          end if 
+          end if
         end subroutine FOO
         end subroutine head

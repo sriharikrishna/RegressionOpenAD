@@ -8,7 +8,7 @@ C$openad XXX Template ad_template.f
         double precision, dimension(3), intent(out) :: y
           integer i,j,k
 C$openad INDEPENDENT(x)
-        if (x(1).lt.4.0) then 
+        if (x(1).lt.4.0) then
 C$openad xxx simple loop
 
            do i=1,3

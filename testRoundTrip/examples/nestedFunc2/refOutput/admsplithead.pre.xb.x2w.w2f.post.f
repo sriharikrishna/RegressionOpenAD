@@ -47,11 +47,11 @@ C$OPENAD XXX Template ad_template.f
 C taping
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL foo(X,Y)
-          end if 
+          end if
         end subroutine head
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -96,11 +96,11 @@ C$OPENAD XXX Template ad_template.f
 C taping
 C$OPENAD XXX Template ad_template.f
       CALL BAR(FX,FY)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL BAR(FX,FY)
-          end if 
+          end if
 C     $OpenAD$ END REPLACEMENT
       CONTAINS
 C#########################################################
@@ -142,13 +142,13 @@ C original function
 C taping
         FVAR%v = BX(1)%v
         BY(1)%v = FVAR%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
         FVAR%d = FVAR%d+BY(1)%d
         BY(1)%d = 0.0d0
         BX(1)%d = BX(1)%d+FVAR%d
         FVAR%d = 0.0d0
-          end if 
+          end if
         end subroutine BAR
         end subroutine foo

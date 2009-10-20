@@ -9,13 +9,13 @@ C$openad XXX Template ad_template.f
           integer i
 C$openad INDEPENDENT(x)
           i = 2
-        if (x(1).lt.1.0) then 
+        if (x(1).lt.1.0) then
             y(1) = i*x(1)
           goto 2
-       endif 
+       endif
        y(1) = y(1)*2
-         goto 3  
+         goto 3
  2       y(1) = y(1)*3
- 3       return 
+ 3       return
 C$openad DEPENDENT(y)
       end subroutine

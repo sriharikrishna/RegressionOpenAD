@@ -63,7 +63,7 @@ C taping
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -73,7 +73,7 @@ C adjoint
       X(2)%d = X(2)%d+Y%d*(OpenAD_Symbol_11)
       X(1)%d = X(1)%d+Y%d*(OpenAD_Symbol_12)
       Y%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -130,14 +130,14 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE foo(X, Y)
         use w2f__types
       use OAD_active
         type(active) :: X(1:2)
         type(active) :: Y
         END SUBROUTINE
-      end interface 
+      end interface
 
 
           integer iaddr
@@ -193,7 +193,7 @@ C!! requested inline of 'convert_a2p_matrix' has no defn
 C!! requested inline of 'convert_a2p_scalar' has no defn
         CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
       END DO
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((2-1)/1)
@@ -212,5 +212,5 @@ C adjoint
         END DO
         I = I-1
       END DO
-          end if 
+          end if
         end subroutine head

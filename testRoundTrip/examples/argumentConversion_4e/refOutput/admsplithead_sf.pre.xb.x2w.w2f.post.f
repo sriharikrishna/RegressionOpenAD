@@ -91,7 +91,7 @@ C!! requested inline of 'convert_a2p_matrix' has no defn
 C!! requested inline of 'convert_p2a_matrix' has no defn
       CALL convert_p2a_matrix(T,OpenAD_Symbol_0)
       Y(1)%v = T(1,2)%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       T(1,2)%d = T(1,2)%d+Y(1)%d
@@ -107,5 +107,5 @@ C adjoint
         T(INT(OpenAD_Symbol_7),2)%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
       END DO
-          end if 
+          end if
         end subroutine head

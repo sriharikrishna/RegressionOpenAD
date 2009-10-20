@@ -72,7 +72,7 @@ C$OPENAD XXX Simple loop
           Y(INT(I))%v = (X(I)%v*2.0D00)
         ENDIF
       END DO
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((3-1)/1)
@@ -86,5 +86,5 @@ C adjoint
         ENDIF
         I = I-1
       END DO
-          end if 
+          end if
         end subroutine head

@@ -65,7 +65,7 @@ C taping
       OpenAD_Symbol_1 = SIZE(INT(X%v))
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -76,5 +76,5 @@ C adjoint
       OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
       X(1:2)%d = X(1:2)%d+Z(1:INT(OpenAD_Symbol_3))%d
       Z(1:INT(OpenAD_Symbol_3))%d = 0.0d0
-          end if 
+          end if
         end subroutine head

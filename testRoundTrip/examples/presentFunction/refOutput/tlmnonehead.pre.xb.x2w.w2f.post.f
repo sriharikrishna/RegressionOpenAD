@@ -20,10 +20,10 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: REQARG
-      INTENT(IN)  REQARG
+      INTENT(IN) REQARG
       type(active) :: OPTARG
-      OPTIONAL  OPTARG
-      INTENT(IN)  OPTARG
+      OPTIONAL OPTARG
+      INTENT(IN) OPTARG
       type(active) :: OUTARG
 C
 C     **** Statements ****
@@ -65,19 +65,19 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE opt(REQARG, OPTARG, OUTARG)
         use w2f__types
       use OAD_active
         type(active) :: REQARG
-        INTENT(in)  REQARG
+        INTENT(in) REQARG
         type(active) :: OPTARG
-        OPTIONAL  OPTARG
-        INTENT(in)  OPTARG
+        OPTIONAL OPTARG
+        INTENT(in) OPTARG
         type(active) :: OUTARG
         END SUBROUTINE
 
-      end interface 
+      end interface
 
 C
 C     **** Statements ****

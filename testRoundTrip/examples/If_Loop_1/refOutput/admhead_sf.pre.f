@@ -16,7 +16,7 @@ C$openad INDEPENDENT(x)
             end do
           else
             y(1) = y(1)/x(1)
-          end if 
+          end if
 C$openad DEPENDENT(y)
 
       end subroutine

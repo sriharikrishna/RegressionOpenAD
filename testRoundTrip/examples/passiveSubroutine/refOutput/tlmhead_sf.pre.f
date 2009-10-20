@@ -14,7 +14,7 @@ C$openad DEPENDENT(y)
       end subroutine head
 
 C$openad XXX Template ad_template.f
-      subroutine foo(a,b) 
+      subroutine foo(a,b)
       double precision a,b
       b = a*a
       end subroutine

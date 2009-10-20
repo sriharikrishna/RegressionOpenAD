@@ -10,7 +10,7 @@ C$openad XXX Template ad_template.f
 C$openad INDEPENDENT(x)
           i = 1
           y(1) = 2.
-          select case (i) 
+          select case (i)
           case (1)
             y(1) = x(1)
           case (2)

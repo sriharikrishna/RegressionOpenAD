@@ -14,7 +14,7 @@ C$openad INDEPENDENT(x)
 C$openad xxx simple loop
         do i=1,2
             s = x(i)
-          if (s.lt.0.D0) then 
+          if (s.lt.0.D0) then
              x(i) = x(i)*2
           else
              s = 0.D0

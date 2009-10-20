@@ -9,8 +9,8 @@ C$openad XXX Template ad_template.f
           integer i
 C$openad INDEPENDENT(x)
           i = 2
-        if (x(1).lt.1.0) then 
-          select case (i) 
+        if (x(1).lt.1.0) then
+          select case (i)
           case (2)
             y(1) = i*x(1)
           return
@@ -18,7 +18,7 @@ C$openad INDEPENDENT(x)
             y(1) = i*x(1)
           return
           end select
-        end if 
+        end if
         y(1) = x(1)*3
 C$openad DEPENDENT(y)
       end subroutine

@@ -47,12 +47,12 @@ C original function
           if (our_rev_mode%tape) then
 C taping
       Y(1:)%v = X(1:)%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       X(1:)%d = X(1:)%d+Y(1:)%d
       Y(1:)%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -81,14 +81,14 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE foo(X, Y)
         use w2f__types
       use OAD_active
         type(active) :: X(1:)
         type(active) :: Y(1:)
         END SUBROUTINE
-      end interface 
+      end interface
 
 
           integer iaddr
@@ -106,9 +106,9 @@ C$OPENAD XXX Template ad_template.f
 C taping
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL foo(X,Y)
-          end if 
+          end if
         end subroutine head

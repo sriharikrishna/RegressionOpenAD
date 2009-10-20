@@ -78,7 +78,7 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -90,7 +90,7 @@ C adjoint
       Y%d = 0.0d0
       X(1)%d = X(1)%d+T%d
       T%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -144,9 +144,9 @@ C taping
 C$OPENAD XXX Template ad_template.f
       CALL barext(T)
       CALL foo(X,Y)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL foo(X,Y)
-          end if 
+          end if
         end subroutine head

@@ -333,8 +333,8 @@ C$OPENAD XXX Template ad_template.f
       END DO
       END SUBROUTINE
 
-      SUBROUTINE bar(PBB, PBL, PB, PBR, PLL, PL, P, PR, PRR, PTL, PT,  P
-     +TR, PTT, HY2, HX2, PLAP, PBLAP, PLLAP, PRLAP, PTLAP)
+      SUBROUTINE bar(PBB, PBL, PB, PBR, PLL, PL, P, PR, PRR, PTL, PT, PT
+     +R, PTT, HY2, HX2, PLAP, PBLAP, PLLAP, PRLAP, PTLAP)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

@@ -54,11 +54,11 @@ C taping
       CALL sq(OAD_CTMP0,X,Y)
       P = 2.0D00
       Q = (P*P)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL sq(OAD_CTMP0,X,Y)
-          end if 
+          end if
         end subroutine head
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -172,7 +172,7 @@ C taping
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_3
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -207,5 +207,5 @@ C adjoint
       U(1)%d = U(1)%d+V(1)%d*(OpenAD_Symbol_8)
       U(2)%d = U(2)%d+V(1)%d*(OpenAD_Symbol_9)
       V(1)%d = 0.0d0
-          end if 
+          end if
         end subroutine sq

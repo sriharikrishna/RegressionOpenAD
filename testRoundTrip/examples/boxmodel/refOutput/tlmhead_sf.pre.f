@@ -10,13 +10,13 @@
         double precision area(ndim)
         double precision vol(ndim)
 
-        double precision y(2*ndim) 
-        double precision r(2*ndim) 
-        double precision r1(2*ndim) 
-        double precision r_t(2*ndim) 
-        double precision r_s(2*ndim) 
-        double precision proj_t(2*ndim) 
-        double precision proj_s(2*ndim) 
+        double precision y(2*ndim)
+        double precision r(2*ndim)
+        double precision r1(2*ndim)
+        double precision r_t(2*ndim)
+        double precision r_s(2*ndim)
+        double precision proj_t(2*ndim)
+        double precision proj_s(2*ndim)
         double precision x(2*ndim,2*ndim)
 
         double precision alpha
@@ -47,9 +47,8 @@
 
         double precision thc_tot, thc_t, thc_s
 
-        double precision                  told(ndim)               , tno
-     +w(ndim)               , tnew(ndim)               , sold(ndim)     
-     +          , snow(ndim)               , snew(ndim)
+        double precision told(ndim) , tnow(ndim) , tnew(ndim) , sold(ndi
+     +m) , snow(ndim) , snew(ndim)
 
         double precision uvel
 
@@ -93,9 +92,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -121,10 +120,10 @@ C-- calculate transport:
 CADJ STORE uvel = comlev1, key = ikey, byte = isbyte
 C
 C-- leap frog time stepping:
-            call box_timestep(           gamma_t, tStar, nullforce,     
-     +       uVel, tNow, tOld, tNew )
-            call box_timestep (           gamma_s, sStar,        FW,    
-     +        uVel, sNow, sOld, sNew )
+            call box_timestep( gamma_t, tStar, nullforce, uVel, tNow, tO
+     +ld, tNew )
+            call box_timestep ( gamma_s, sStar, FW, uVel, sNow, sOld, sN
+     +ew )
 
 C-- Robert filter:
             call box_robert_filter( tNow, tOld, tNew )
@@ -161,9 +160,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -212,9 +211,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -298,9 +297,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -407,7 +406,7 @@ C-- effects alone is given by R_S*P, R_T*P:
          endif
       enddo
 
-      do  l = 1, 2*ndim
+      do l = 1, 2*ndim
          R_T(l) = proj_t(l)*R(l)
          R_S(l) = proj_s(l)*R(l)
       enddo
@@ -464,9 +463,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -489,7 +488,7 @@ CADJ INIT comlevfinal = COMMON, 1
       call box_ini_fields
 
       maxlev2 = n_max/nlev1+1
-      if ( nlev1*nlev2 .LT. n_max ) then 
+      if ( nlev1*nlev2 .LT. n_max ) then
          print *, 'NEED TO SET nlev1*nlev2 >= n_max '
       else
 
@@ -536,7 +535,7 @@ Cph      print *, 'box_metric START'
 Cph      call box_metric
 Cph)
 
-      endif 
+      endif
 
 C$openad DEPENDENT(tnew)
 C$openad DEPENDENT(snew)
@@ -561,9 +560,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -600,9 +599,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -618,7 +617,7 @@ C-- local variables:
 
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
-      subroutine box_robert_filter (      fldNow, fldOld, fldNew )
+      subroutine box_robert_filter ( fldNow, fldOld, fldNew )
 C-----------------------------------------------------------------------
       use all_globals_mod
 
@@ -633,9 +632,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -672,9 +671,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -711,9 +710,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -735,8 +734,8 @@ C-- routine body
 
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
-      subroutine box_timestep (      gammaLoc, fldStar, extForLoc,      
-     +uVelLoc, fldNow, fldOld, fldNew )
+      subroutine box_timestep ( gammaLoc, fldStar, extForLoc, uVelLoc, f
+     +ldNow, fldOld, fldNew )
 C-----------------------------------------------------------------------
       use all_globals_mod
 
@@ -751,9 +750,9 @@ C-- declaring parameter and constants
       integer nlev1
       integer nlev2
       integer isbyte
-      parameter ( nlev1  =  73 )
-      parameter ( nlev2  =  50 )
-      parameter ( isbyte =   8 )
+      parameter ( nlev1 = 73 )
+      parameter ( nlev2 = 50 )
+      parameter ( isbyte = 8 )
 
       integer ikey
 
@@ -765,7 +764,7 @@ C -- routine arguments:
       double precision fldNow(ndim)
       double precision fldNew(ndim)
       double precision fldOld(ndim)
-      character        ytstype*1
+      character ytstype*1
 
 C-- local variables:
       double precision dFldDt(ndim)

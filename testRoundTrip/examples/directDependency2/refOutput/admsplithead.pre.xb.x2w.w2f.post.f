@@ -26,10 +26,10 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -87,7 +87,7 @@ C$OPENAD XXX Template ad_template.f
       T1%v = (T%v*2.0D00)
       CALL foo()
       Y%v = (T%v*2.0D00+T1%v*3.0D00)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       T1%d = T1%d+Y%d*(3.0D00)
@@ -99,5 +99,5 @@ C adjoint
       X(2)%d = X(2)%d+T%d
       X(1)%d = X(1)%d+T%d
       T%d = 0.0d0
-          end if 
+          end if
         end subroutine head

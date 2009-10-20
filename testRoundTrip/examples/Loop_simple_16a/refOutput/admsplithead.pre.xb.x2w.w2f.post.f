@@ -84,7 +84,7 @@ C$OPENAD XXX Simple loop
       integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = S
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -109,7 +109,7 @@ C adjoint
         ENDIF
         I = I-S
       END DO
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -203,7 +203,7 @@ C$OPENAD XXX Template ad_template.f
       OAD_CTMP10 = 1
       OAD_CTMP11 = (-2)
       CALL foo(X,Y(4),OAD_CTMP9,OAD_CTMP10,OAD_CTMP11)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL foo(X,Y(4),OAD_CTMP9,OAD_CTMP10,OAD_CTMP11)
@@ -212,5 +212,5 @@ C adjoint
       CALL foo(X,Y(1),OAD_CTMP0,OAD_CTMP1,OAD_CTMP2)
       X(1:4)%d = X(1:4)%d+Y(1:4)%d
       Y(1:4)%d = 0.0d0
-          end if 
+          end if
         end subroutine head

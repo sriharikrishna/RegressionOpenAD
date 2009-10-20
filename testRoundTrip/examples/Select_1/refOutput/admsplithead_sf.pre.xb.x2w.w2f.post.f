@@ -72,18 +72,18 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       Y(1)%v = 2.0
       select_expr_temp_0 = I
-      IF (select_expr_temp_0.EQ.1) goto 4
-      IF (select_expr_temp_0.EQ.2) goto 8
-      goto 9
+      IF (select_expr_temp_0.EQ.1) GO TO 4
+      IF (select_expr_temp_0.EQ.2) GO TO 8
+      GO TO 9
  9    CONTINUE
       Y(1)%v = X(1)%v
-      goto 6
+      GO TO 6
  4    CONTINUE
       Y(1)%v = X(1)%v
-      goto 6
+      GO TO 6
  8    CONTINUE
       Y(1)%v = X(1)%v
-      goto 6
+      GO TO 6
  6    CONTINUE
       Y(1)%v = (Y(1)%v*Y(1)%v)
           end if
@@ -93,27 +93,27 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       Y(1)%v = 2.0
       select_expr_temp_0 = I
-      IF (select_expr_temp_0.EQ.1) goto 40
-      IF (select_expr_temp_0.EQ.2) goto 44
-      goto 45
+      IF (select_expr_temp_0.EQ.1) GO TO 40
+      IF (select_expr_temp_0.EQ.2) GO TO 44
+      GO TO 45
  45   CONTINUE
       Y(1)%v = X(1)%v
       OpenAD_Symbol_4 = 3_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
-      goto 49
+      GO TO 49
  40   CONTINUE
       Y(1)%v = X(1)%v
       OpenAD_Symbol_2 = 1_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
-      goto 49
+      GO TO 49
  44   CONTINUE
       Y(1)%v = X(1)%v
       OpenAD_Symbol_3 = 2_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-      goto 49
+      GO TO 49
  49   CONTINUE
       OpenAD_Symbol_0 = (Y(1)%v*Y(1)%v)
       OpenAD_lin_0 = Y(1)%v
@@ -123,7 +123,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -139,22 +139,22 @@ C adjoint
       OpenAD_prop_0%d = 0.0d0
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
-      IF (OpenAD_Symbol_1.EQ.1) goto 94
-      IF (OpenAD_Symbol_1.EQ.2) goto 93
-      IF (OpenAD_Symbol_1.EQ.3) goto 92
+      IF (OpenAD_Symbol_1.EQ.1) GO TO 94
+      IF (OpenAD_Symbol_1.EQ.2) GO TO 93
+      IF (OpenAD_Symbol_1.EQ.3) GO TO 92
  94   CONTINUE
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
-      goto 96
+      GO TO 96
  93   CONTINUE
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
-      goto 96
+      GO TO 96
  92   CONTINUE
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
-      goto 96
+      GO TO 96
  96   CONTINUE
       Y(1)%d = 0.0d0
-          end if 
+          end if
         end subroutine head

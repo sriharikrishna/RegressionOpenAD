@@ -54,9 +54,9 @@ C     **********
       parameter(zero=0.0d0,one=1.0d0,two=2.0d0,three=3.0d0,four=4.0d0)
 
       integer i,j,k,n
-      double precision pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt,   
-     +    dpdy,dpdx,plap,pblap,pllap,prlap,ptlap,hy,hx,hy2,hx2,xx,yy,   
-     +    nxp1,nyp1
+      double precision pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt, dp
+     +dy,dpdx,plap,pblap,pllap,prlap,ptlap,hy,hx,hy2,hx2,xx,yy, nxp1,nyp
+     +1
 
 C$openad INDEPENDENT(x)
 
@@ -69,7 +69,7 @@ C$openad INDEPENDENT(x)
       hx2 = hx*hx
 
       do 60 i = 1, ny
-         do 50 j = 1, nx 
+         do 50 j = 1, nx
             k = (i-1)*nx+j
             if (i .eq. 1 .or. j .eq. 1) then
                pbl = zero
@@ -148,7 +148,7 @@ C           Laplacians at each point in the 5 point stencil.
             fvec(k) = (prlap-two*plap+pllap)/hx2+(ptlap-two*plap+pblap)/
      +hy2-r*(dpdy*(prlap-pllap)/(two*hx)-dpdx*(ptlap-pblap)/(two*hy))
  50      continue
- 60   continue      
+ 60   continue
 
 C     Scale the Result.  This is not desired if preconditioning.
 C

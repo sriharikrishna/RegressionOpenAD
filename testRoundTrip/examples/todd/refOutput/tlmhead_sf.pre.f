@@ -12,7 +12,7 @@ C$openad XXX Template ad_template.f
         double precision, dimension(0:3) :: matr
         double precision m00,m03,m11,m12,m22,m33
 
-        double precision a,sqrt3 
+        double precision a,sqrt3
 C$openad INDEPENDENT(x)
         a = 5.00000000000000000000000000000e-01
         sqrt3 = 5.77350269189625797959429519858e-01

@@ -45,12 +45,12 @@ C original function
           if (our_rev_mode%tape) then
 C taping
       Y%v = X%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       X%d = X%d+Y%d
       Y%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -113,7 +113,7 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(X(I),Y(I))
       END DO
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((2-1)/1)
@@ -121,5 +121,5 @@ C adjoint
         CALL foo(X(I),Y(I))
         I = I-1
       END DO
-          end if 
+          end if
         end subroutine head

@@ -14,10 +14,9 @@ C The full COPYRIGHT notice can be found in the top      #
 C level directory of the OpenAD distribution             #
 C#########################################################
 
-      SUBROUTINE ad_roehf5(NRM1, NRM2, NRM3, PRIML1, PRIML2, PRIML3,  PR
-     +IML4, PRIML5, PRIMR1, PRIMR2, PRIMR3, PRIMR4, PRIMR5, GAMMA,  GM1,
-     + GM1INV, NLEFIX, LEFIX, MCHEPS, FLUX1, FLUX2, FLUX3, FLUX4,  FLUX5
-     +)
+      SUBROUTINE ad_roehf5(NRM1, NRM2, NRM3, PRIML1, PRIML2, PRIML3, PRI
+     +ML4, PRIML5, PRIMR1, PRIMR2, PRIMR3, PRIMR4, PRIMR5, GAMMA, GM1, G
+     +M1INV, NLEFIX, LEFIX, MCHEPS, FLUX1, FLUX2, FLUX3, FLUX4, FLUX5)
           use OAD_tape
           use OAD_rev
 
@@ -455,11 +454,11 @@ C
       type(active) :: GM1
       type(active) :: GM1INV
       REAL(w2f__8) NLEFIX
-      INTENT(IN)  NLEFIX
+      INTENT(IN) NLEFIX
       REAL(w2f__8) LEFIX
-      INTENT(IN)  LEFIX
+      INTENT(IN) LEFIX
       REAL(w2f__8) MCHEPS
-      INTENT(IN)  MCHEPS
+      INTENT(IN) MCHEPS
       type(active) :: FLUX1
       type(active) :: FLUX2
       type(active) :: FLUX3
@@ -1754,7 +1753,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_115
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -2506,5 +2505,5 @@ C adjoint
       NRM1%d = NRM1%d+OpenAD_prop_0%d*(OpenAD_Symbol_213)
       NRM3%d = NRM3%d+OpenAD_prop_0%d*(OpenAD_Symbol_214)
       OpenAD_prop_0%d = 0.0d0
-          end if 
+          end if
         end subroutine ad_roehf5

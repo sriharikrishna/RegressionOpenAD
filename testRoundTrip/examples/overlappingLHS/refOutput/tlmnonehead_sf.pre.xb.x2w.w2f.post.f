@@ -17,9 +17,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:5)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

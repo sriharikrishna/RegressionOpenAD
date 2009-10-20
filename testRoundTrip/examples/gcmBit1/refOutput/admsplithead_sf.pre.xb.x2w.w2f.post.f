@@ -497,7 +497,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -660,7 +660,7 @@ C adjoint
         END DO
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO
-          end if 
+          end if
         end subroutine find_bulkmod
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -876,7 +876,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_37
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -967,5 +967,5 @@ C adjoint
         END DO
         OpenAD_Symbol_23 = INT(OpenAD_Symbol_23)+1
       END DO
-          end if 
+          end if
         end subroutine head

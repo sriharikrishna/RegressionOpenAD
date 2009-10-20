@@ -122,7 +122,7 @@ C taping
       Y(2)%v = Y2%v
       Y(3)%v = Y3%v
       Y(4)%v = Y4%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       Y4%d = Y4%d+Y(4)%d
@@ -154,5 +154,5 @@ C adjoint
       X(2)%d = X(2)%d+T1%d*(OpenAD_Symbol_4)
       X(1)%d = X(1)%d+T1%d*(OpenAD_Symbol_5)
       T1%d = 0.0d0
-          end if 
+          end if
         end subroutine head

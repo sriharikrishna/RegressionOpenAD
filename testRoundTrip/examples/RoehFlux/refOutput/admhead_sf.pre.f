@@ -4,7 +4,7 @@
 
 C$openad XXX Template ad_template.f
       SUBROUTINE ad_roehf5 (nrm, priml, primr, gamma, gm1, gm1inv, nlefi
-     +x, lefix, mcheps, flux) 
+     +x, lefix, mcheps, flux)
 C     !*****************************************************************
 C     !  SUBROUTINE: AD_ROE_HARTEN_FLUX5_EXP                            
 C     !      AUTHOR: Shaun Forth                                        
@@ -18,15 +18,14 @@ C     !    MODIFIED: Uwe Naumann, Feb 04
 C       
 C     !                                                                 
 C     !*****************************************************************
-      IMPLICIT none               
+      IMPLICIT none
 C     AUGUMENTS(in):                                                    
 C     nrm    : cell face normal                                         
 C     priml  : primitive variables left of cell face                    
 C     primr  : primitive variables right of cell face
 
       double precision,intent(in):: nrm (3)
-      double precision,intent(in):: priml (5), primr (5)                
-     +      
+      double precision,intent(in):: priml (5), primr (5)
 C     gamma  : ratio of specific heats                                  
 C     gm1    : gamma - 1                                                
 C     gm1inv : 1/gm1                                                    
@@ -35,27 +34,25 @@ C     lefix  : linear entropy fix parameter
 C     mcheps : machine epsilon
 
       double precision,intent(in):: gamma, gm1, gm1inv, nlefix, lefix, m
-     +cheps 
+     +cheps
 
 
 C     AUGUMENTS(out):                                                   
 C     flux  : inviscid flux
 
-      double precision,intent(out):: flux (5)                           
-     +     
+      double precision,intent(out):: flux (5)
 
 C     PARAMETERS
 
-      real:: one, half, zero                                    
-      PARAMETER (one = 1.0d0, half = 0.5d0, zero = 0.0d0)       
+      real:: one, half, zero
+      PARAMETER (one = 1.0d0, half = 0.5d0, zero = 0.0d0)
 
 C     LOCAL VARIABLES                                                   
 C     independent of flow variables                                     
 C     nsize,nsizei      : size of normal and reciprocal                 
 C     nxhat,nyhat,nzhat : components of normalised normal
 
-      double precision:: nsize, nsizei, nxhat, nyhat, nzhat             
-     +    
+      double precision:: nsize, nsizei, nxhat, nyhat, nzhat
 
 C     dependent on flow variables                                       
 C     roel,roer  : Roe averaging weights                                
@@ -78,44 +75,25 @@ C     mu                       : used for dissipation vector
 C     dss1,dss2,dss3,dss4,dss5 : dissipation vector                     
 C     uhatl                    : u.nhat left side of face
 
-      double precision:: roel, roer                                     
-     +    
-      double precision:: thetal, thetar                                 
-     +    
-      double precision:: hl, hr                                         
-     +    
-      double precision:: uave, vave, wave, have, cave                   
-     +    
-      double precision:: uhat, thtave                                   
-     +    
-      double precision:: utilde, vtilde, wtilde                         
-     +    
-      double precision:: delta, delta2                                  
-     +    
-      double precision:: lamcm, lamcp, lamu                             
-     +    
-      double precision:: lam2                                           
-     +    
-      double precision:: alamcm, alamcp, alamu                          
-     +    
-      double precision:: el, rul, rvl, rwl                              
-     +    
-      double precision:: er, rur, rvr, rwr                              
-     +    
-      double precision:: de, dr, dru, drv, drw                          
-     +    
-      double precision:: uddru, omega, nddru                            
-     +    
-      double precision:: alp1, alp2, alp3, alp4, alp5                   
-     +    
-      double precision:: alp15p, alp15m                                 
-     +    
-      double precision:: mu                                             
-     +    
-      double precision:: dss1, dss2, dss3, dss4, dss5                   
-     +    
-      double precision:: uhatl                                          
-     +    
+      double precision:: roel, roer
+      double precision:: thetal, thetar
+      double precision:: hl, hr
+      double precision:: uave, vave, wave, have, cave
+      double precision:: uhat, thtave
+      double precision:: utilde, vtilde, wtilde
+      double precision:: delta, delta2
+      double precision:: lamcm, lamcp, lamu
+      double precision:: lam2
+      double precision:: alamcm, alamcp, alamu
+      double precision:: el, rul, rvl, rwl
+      double precision:: er, rur, rvr, rwr
+      double precision:: de, dr, dru, drv, drw
+      double precision:: uddru, omega, nddru
+      double precision:: alp1, alp2, alp3, alp4, alp5
+      double precision:: alp15p, alp15m
+      double precision:: mu
+      double precision:: dss1, dss2, dss3, dss4, dss5
+      double precision:: uhatl
 
 C$openad INDEPENDENT(nrm)
 C$openad INDEPENDENT(priml)
@@ -133,11 +111,11 @@ C     set normal quantities
 C UN changed      nsize = sqrt (nrm (1) **2 + nrm (2) **2 + nrm (3) **2)
 
       nsize = sin(nrm(1)**2+nrm(2)**2+nrm(3)**2)
-      IF (nsize.gt.mcheps) then                               
+      IF (nsize.gt.mcheps) then
                 nsizei = one/nsize
-      ELSE                                                  
+      ELSE
                 nsizei = zero
-      ENDIF                                               
+      ENDIF
       nxhat = nrm(1)*nsizei
       nyhat = nrm(2)*nsizei
       nzhat = nrm(3)*nsizei
@@ -187,22 +165,22 @@ C UN changed     delta = nlefix * (abs (uhat) + cave)
       delta2 = delta**2
                                                                         
       lam2 = lamcm**2
-      IF (lam2.gt.delta2) then                                 
+      IF (lam2.gt.delta2) then
 C UN changed                alamcm = abs (lamcm)
 
                 alamcm = lamcm
-      ELSE                                                     
+      ELSE
                 alamcm = half*(lam2+delta2)/delta2
-      ENDIF                                                    
+      ENDIF
                                                                         
       lam2 = lamcp**2
-      IF (lam2.gt.delta2) then                                
+      IF (lam2.gt.delta2) then
 C UN changed                alamcp = abs (lamcp)
 
                 alamcp = lamcp
-      ELSE                                                    
+      ELSE
                 alamcp = half*(lam2+delta2)/delta2
-      ENDIF                                                   
+      ENDIF
 
 C     linear waves                                                      
 C UN changed      delta = lefix * (abs (uhat) + cave)
@@ -211,13 +189,13 @@ C UN changed      delta = lefix * (abs (uhat) + cave)
       delta2 = delta*delta
                                                                         
       lam2 = lamu**2
-      IF (lam2.gt.delta2) then                           
+      IF (lam2.gt.delta2) then
 C UN changed                alamu = abs (lamu)
 
                 alamu = lamu
-      ELSE                                               
+      ELSE
                 alamu = half*(lam2+delta2)/delta2
-      ENDIF                                             
+      ENDIF
 
 C     form mlam=0.5*(lam-|lam|)
 

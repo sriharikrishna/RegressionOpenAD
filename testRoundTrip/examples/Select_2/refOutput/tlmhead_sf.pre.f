@@ -14,7 +14,7 @@ C$openad XXX Template ad_template.f
           integer i
 C$openad INDEPENDENT(x)
           do i=1,3
-          select case (i) 
+          select case (i)
           case (1)
             y(i) = sin(x(i))
           case (2)

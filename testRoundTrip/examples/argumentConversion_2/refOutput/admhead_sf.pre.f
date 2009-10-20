@@ -3,14 +3,14 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine foo(x,y) 
+      subroutine foo(x,y)
         double precision x
         double precision y
         y = x
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
+      subroutine head(x,y)
         double precision x
         double precision y, py
         real :: oad_ctmp0

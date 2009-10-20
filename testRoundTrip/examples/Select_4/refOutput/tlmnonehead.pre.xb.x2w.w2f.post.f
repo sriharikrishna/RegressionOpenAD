@@ -13,9 +13,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:1)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:1)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C
@@ -30,45 +30,45 @@ C
 C     **** Statements ****
 C
  1    CONTINUE
-      goto 2
+      GO TO 2
  2    CONTINUE
 C$OPENAD XXX Template ad_template.f
       I = 2
-      goto 3
+      GO TO 3
  3    CONTINUE
       IF (X(1)%v.LT.1.0D00) THEN
-        goto 7
+        GO TO 7
       ELSE
-        goto 4
+        GO TO 4
       ENDIF
  4    CONTINUE
-      goto 5
+      GO TO 5
  5    CONTINUE
-      goto 6
+      GO TO 6
  6    CONTINUE
       Y(1)%v = (X(1)%v*3.0D00)
       CALL sax(3.0D00,X(1),Y(1))
-      goto 11
+      GO TO 11
  7    CONTINUE
       select_expr_temp_0 = I
-      goto 8
+      GO TO 8
  8    CONTINUE
       IF (select_expr_temp_0.ne.0) THEN
-        goto 10
+        GO TO 10
       ELSE
-        goto 9
+        GO TO 9
       ENDIF
  9    CONTINUE
       Y(1)%v = (I*X(1)%v)
       OpenAD_lin_3 = I
       CALL sax(OpenAD_lin_3,X(1),Y(1))
       RETURN
-      goto 11
+      GO TO 11
  10   CONTINUE
       Y(1)%v = (I*X(1)%v)
       OpenAD_lin_1 = I
       CALL sax(OpenAD_lin_1,X(1),Y(1))
       RETURN
-      goto 11
+      GO TO 11
  11   CONTINUE
       END SUBROUTINE

@@ -9,8 +9,8 @@ C     **** Statements ****
 C
       END MODULE
 
-      SUBROUTINE ad_roehf5(NRM, PRIML, PRIMR, GAMMA, GM1, GM1INV,  NLEFI
-     +X, LEFIX, MCHEPS, FLUX)
+      SUBROUTINE ad_roehf5(NRM, PRIML, PRIMR, GAMMA, GM1, GM1INV, NLEFIX
+     +, LEFIX, MCHEPS, FLUX)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -428,25 +428,25 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: NRM(1:3)
-      INTENT(IN)  NRM
+      INTENT(IN) NRM
       type(active) :: PRIML(1:5)
-      INTENT(IN)  PRIML
+      INTENT(IN) PRIML
       type(active) :: PRIMR(1:5)
-      INTENT(IN)  PRIMR
+      INTENT(IN) PRIMR
       type(active) :: GAMMA
-      INTENT(IN)  GAMMA
+      INTENT(IN) GAMMA
       type(active) :: GM1
-      INTENT(IN)  GM1
+      INTENT(IN) GM1
       type(active) :: GM1INV
-      INTENT(IN)  GM1INV
+      INTENT(IN) GM1INV
       type(active) :: NLEFIX
-      INTENT(IN)  NLEFIX
+      INTENT(IN) NLEFIX
       type(active) :: LEFIX
-      INTENT(IN)  LEFIX
+      INTENT(IN) LEFIX
       REAL(w2f__8) MCHEPS
-      INTENT(IN)  MCHEPS
+      INTENT(IN) MCHEPS
       type(active) :: FLUX(1:5)
-      INTENT(OUT)  FLUX
+      INTENT(OUT) FLUX
 C
 C     **** Local Variables and Functions ****
 C

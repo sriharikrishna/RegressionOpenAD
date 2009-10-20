@@ -3,15 +3,15 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine foo(x,y) 
+      subroutine foo(x,y)
       double precision, dimension(:) :: x
       double precision, dimension(:) :: y
         y = x
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
-      interface 
+      subroutine head(x,y)
+      interface
         subroutine foo(x,y)
         double precision, dimension(:) :: x
         double precision, dimension(:) :: y

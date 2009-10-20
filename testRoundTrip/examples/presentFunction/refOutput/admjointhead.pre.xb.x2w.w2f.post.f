@@ -46,7 +46,7 @@ C     **** Parameters and Result ****
 C
       type(active) :: REQARG
       type(active) :: OPTARG
-      OPTIONAL  OPTARG
+      OPTIONAL OPTARG
       type(active) :: OUTARG
 C
 C     **** Local Variables and Functions ****
@@ -83,7 +83,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(REQARG%v,theArgFStack,theArgFStackoffset
      +,theArgFStackSize)
@@ -91,7 +91,7 @@ C store arguments
      +,theArgFStackSize)
       call cp_store_real_scalar(OUTARG%v,theArgFStack,theArgFStackoffset
      +,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       OUTARG%v = theArgFStack(theArgFStackoffset)
@@ -119,7 +119,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -170,7 +170,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -209,7 +209,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine opt
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -239,18 +239,18 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE opt(REQARG, OPTARG, OUTARG)
         use w2f__types
       use OAD_active
         type(active) :: REQARG
-        INTENT(in)  REQARG
+        INTENT(in) REQARG
         type(active) :: OPTARG
-        OPTIONAL  OPTARG
-        INTENT(in)  OPTARG
+        OPTIONAL OPTARG
+        INTENT(in) OPTARG
         type(active) :: OUTARG
         END SUBROUTINE
-      end interface 
+      end interface
 C
 C     **** Statements ****
 C
@@ -280,9 +280,9 @@ C external C function used in inlined code
           integer iaddr
           external iaddr
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
           end if
@@ -295,7 +295,7 @@ C original function
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -313,7 +313,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -332,5 +332,5 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine head

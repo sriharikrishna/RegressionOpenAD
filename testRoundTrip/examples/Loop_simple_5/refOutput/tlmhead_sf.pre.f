@@ -11,7 +11,7 @@ C$openad INDEPENDENT(x)
 C$openad xxx simple loop
 
           do i=1,3
-          if (i.eq.2) then 
+          if (i.eq.2) then
              y(i) = x(i)
           else
              y(i) = 2*x(i)

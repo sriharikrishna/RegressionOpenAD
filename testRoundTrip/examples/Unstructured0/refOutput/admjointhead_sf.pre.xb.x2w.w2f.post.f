@@ -96,9 +96,9 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
           end if
@@ -107,27 +107,27 @@ C restore arguments
             our_rev_mode%arg_store=.FALSE.
 C original function
  1    CONTINUE
-      goto 2
+      GO TO 2
  2    CONTINUE
 C$OPENAD XXX Template ad_template.f
-      goto 3
+      GO TO 3
  3    CONTINUE
       X(1)%v = (X(1)%v*X(1)%v)
-      goto 4
+      GO TO 4
  4    CONTINUE
       X(1)%v = (X(1)%v*3.0D00)
-      goto 5
+      GO TO 5
  5    CONTINUE
       X(1)%v = (X(1)%v*2.0D00)
-      goto 6
+      GO TO 6
  6    CONTINUE
       Y(1)%v = X(1)%v
-      goto 7
+      GO TO 7
  7    CONTINUE
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -137,20 +137,20 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
  8    CONTINUE
-      goto 9
+      GO TO 9
  9    CONTINUE
       OpenAD_Symbol_3 = 0_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-      goto 10
+      GO TO 10
  10   CONTINUE
 C$OPENAD XXX Template ad_template.f
-      goto 11
+      GO TO 11
  11   CONTINUE
       OpenAD_Symbol_4 = 1_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
-      goto 12
+      GO TO 12
  12   CONTINUE
       OpenAD_Symbol_0 = (X(1)%v*X(1)%v)
       OpenAD_lin_0 = X(1)%v
@@ -160,38 +160,38 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-      goto 13
+      GO TO 13
  13   CONTINUE
       OpenAD_Symbol_5 = 2_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
-      goto 14
+      GO TO 14
  14   CONTINUE
       OpenAD_Symbol_1 = (X(1)%v*3.0D00)
       X(1)%v = OpenAD_Symbol_1
-      goto 15
+      GO TO 15
  15   CONTINUE
       OpenAD_Symbol_6 = 3_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
       integer_tape_pointer = integer_tape_pointer+1
-      goto 16
+      GO TO 16
  16   CONTINUE
       OpenAD_Symbol_2 = (X(1)%v*2.0D00)
       X(1)%v = OpenAD_Symbol_2
-      goto 17
+      GO TO 17
  17   CONTINUE
       OpenAD_Symbol_7 = 4_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
       integer_tape_pointer = integer_tape_pointer+1
-      goto 18
+      GO TO 18
  18   CONTINUE
       Y(1)%v = X(1)%v
-      goto 19
+      GO TO 19
  19   CONTINUE
       OpenAD_Symbol_8 = 5_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
       integer_tape_pointer = integer_tape_pointer+1
-      goto 20
+      GO TO 20
  20   CONTINUE
 
 C taping end
@@ -200,7 +200,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -212,13 +212,13 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
       do while (INT(OpenAD_Symbol_9).ne.INT(0_w2f__i8))
-        IF (OpenAD_Symbol_9.EQ.1) goto 42
-        IF (OpenAD_Symbol_9.EQ.2) goto 43
-        IF (OpenAD_Symbol_9.EQ.3) goto 44
-        IF (OpenAD_Symbol_9.EQ.4) goto 45
-        IF (OpenAD_Symbol_9.EQ.5) goto 46
+        IF (OpenAD_Symbol_9.EQ.1) GO TO 42
+        IF (OpenAD_Symbol_9.EQ.2) GO TO 43
+        IF (OpenAD_Symbol_9.EQ.3) GO TO 44
+        IF (OpenAD_Symbol_9.EQ.4) GO TO 45
+        IF (OpenAD_Symbol_9.EQ.5) GO TO 46
  42     CONTINUE
-        goto 39
+        GO TO 39
  43     CONTINUE
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_17 = double_tape(double_tape_pointer)
@@ -231,23 +231,23 @@ C adjoint
         OpenAD_prop_1%d = 0.0d0
         X(1)%d = X(1)%d+OpenAD_prop_0%d
         OpenAD_prop_0%d = 0.0d0
-        goto 39
+        GO TO 39
  44     CONTINUE
         OpenAD_prop_2%d = OpenAD_prop_2%d+X(1)%d*(3.0D00)
         X(1)%d = 0.0d0
         X(1)%d = X(1)%d+OpenAD_prop_2%d
         OpenAD_prop_2%d = 0.0d0
-        goto 39
+        GO TO 39
  45     CONTINUE
         OpenAD_prop_3%d = OpenAD_prop_3%d+X(1)%d*(2.0D00)
         X(1)%d = 0.0d0
         X(1)%d = X(1)%d+OpenAD_prop_3%d
         OpenAD_prop_3%d = 0.0d0
-        goto 39
+        GO TO 39
  46     CONTINUE
         X(1)%d = X(1)%d+Y(1)%d
         Y(1)%d = 0.0d0
-        goto 39
+        GO TO 39
  39     CONTINUE
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
@@ -259,5 +259,5 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine head

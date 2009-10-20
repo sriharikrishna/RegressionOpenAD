@@ -54,7 +54,7 @@ C taping
       Y(INT(A))%v = X(A)%v
       integer_tape(integer_tape_pointer) = A
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -62,7 +62,7 @@ C adjoint
       X(INT(OpenAD_Symbol_0))%d = X(INT(OpenAD_Symbol_0))%d+Y(INT(OpenAD
      +_Symbol_0))%d
       Y(INT(OpenAD_Symbol_0))%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -117,9 +117,9 @@ C$OPENAD XXX Template ad_template.f
       A = 1
       CALL foo(X,Y,A)
       A = 20000
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL foo(X,Y,A)
-          end if 
+          end if
         end subroutine head

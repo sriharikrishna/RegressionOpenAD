@@ -9,7 +9,7 @@
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-        use anotherModule 
+        use anotherModule
         double precision, dimension(1) :: x
         double precision, dimension(1) :: y
 C$openad INDEPENDENT(x)

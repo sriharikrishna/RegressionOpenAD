@@ -108,7 +108,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -142,5 +142,5 @@ C adjoint
         Y(INT(OpenAD_Symbol_13))%d = 0.0d0
         OpenAD_Symbol_4 = INT(OpenAD_Symbol_4)+1
       END DO
-          end if 
+          end if
         end subroutine head

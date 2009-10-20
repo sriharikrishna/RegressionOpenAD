@@ -5,7 +5,7 @@
 C$openad XXX Template ad_template.f
       subroutine foo(x,l)
         double precision:: x
-        logical :: l 
+        logical :: l
         l = (x.ne.0.0D0)
       end subroutine
 

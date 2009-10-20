@@ -3,7 +3,7 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine head(x1,x2,y1,y2) 
+      subroutine head(x1,x2,y1,y2)
         double precision t1,t2,x1,x2,y1,y2
 C$openad INDEPENDENT(x1)
 C$openad INDEPENDENT(x2)

@@ -3,7 +3,7 @@
       end module
 
 C$openad XXX Template ad_template.f
-      SUBROUTINE FIND_BULKMOD(      locPres, tFld, sFld,      bulkMod)
+      SUBROUTINE FIND_BULKMOD( locPres, tFld, sFld, bulkMod)
 
       Real*8 eosJMDCKFw(5), eosJMDCKSw(7), eosJMDCKP(14)
 
@@ -76,7 +76,7 @@ C$openad XXX Template ad_template.f
             bulkMod(i,j) = bMfresh+bMsalt+bMpres
          ENDDO
       ENDDO
-      RETURN 
+      RETURN
       END
 
 C$openad XXX Template ad_template.f
@@ -104,7 +104,7 @@ C$openad INDEPENDENT(x)
             end do
          end do
       end do
-      call FIND_BULKMOD(     locPres, tFld, sFld,     bulkMod)
+      call FIND_BULKMOD( locPres, tFld, sFld, bulkMod)
       DO i=1,2
          DO j=1,2
             y((i-1)*2+j) = bulkmod(i,j)

@@ -6,18 +6,18 @@
       double precision :: a,c
       double precision, optional :: b,d
       c = 2*a
-      if (present(b).and.present(d)) then 
+      if (present(b).and.present(d)) then
       d = 3*b
       end if
       end subroutine
 
       subroutine head(x,y)
-      interface 
+      interface
        subroutine foo(a,b,c,d)
        double precision :: a,c
        double precision, optional :: b,d
        end subroutine
-      end interface 
+      end interface
       double precision :: x(3),y(3),u,v
 C$openad INDEPENDENT(x)
 C$openad DEPENDENT(y)

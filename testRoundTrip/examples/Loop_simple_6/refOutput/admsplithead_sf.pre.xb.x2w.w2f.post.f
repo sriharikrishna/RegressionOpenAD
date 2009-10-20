@@ -99,7 +99,7 @@ C$OPENAD XXX Simple loop
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -119,5 +119,5 @@ C adjoint
           I = I-1
         END DO
       ENDIF
-          end if 
+          end if
         end subroutine head

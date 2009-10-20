@@ -17,9 +17,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:1)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:1)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
       INTEGER(w2f__i4) A
 C
 C     **** Statements ****
@@ -37,9 +37,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:1)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:1)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

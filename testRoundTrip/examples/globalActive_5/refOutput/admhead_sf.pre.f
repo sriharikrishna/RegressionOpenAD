@@ -4,7 +4,7 @@
       end module
 
 C$openad XXX Template ad_template.f
-       subroutine head() 
+       subroutine head()
 
          use all_globals_mod
 

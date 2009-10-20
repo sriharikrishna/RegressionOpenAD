@@ -69,14 +69,14 @@ C taping
       OpenAD_Symbol_2 = (P%v*2.0D00)
       P%v = OpenAD_Symbol_2
       I = (I+1)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       OpenAD_prop_0%d = OpenAD_prop_0%d+P%d*(2.0D00)
       P%d = 0.0d0
       P%d = P%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -161,7 +161,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       integer_tape_pointer = integer_tape_pointer+1
       CALL foo(X(1))
       Y(1)%v = X(1)%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       X(1)%d = X(1)%d+Y(1)%d
@@ -172,5 +172,5 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       I = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_3)
-          end if 
+          end if
         end subroutine head

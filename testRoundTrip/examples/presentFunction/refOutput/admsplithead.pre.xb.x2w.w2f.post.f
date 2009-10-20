@@ -45,7 +45,7 @@ C     **** Parameters and Result ****
 C
       type(active) :: REQARG
       type(active) :: OPTARG
-      OPTIONAL  OPTARG
+      OPTIONAL OPTARG
       type(active) :: OUTARG
 C
 C     **** Local Variables and Functions ****
@@ -109,7 +109,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -135,7 +135,7 @@ C adjoint
         REQARG%d = REQARG%d+OUTARG%d
         OUTARG%d = 0.0d0
       ENDIF
-          end if 
+          end if
         end subroutine opt
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -164,18 +164,18 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE opt(REQARG, OPTARG, OUTARG)
         use w2f__types
       use OAD_active
         type(active) :: REQARG
-        INTENT(in)  REQARG
+        INTENT(in) REQARG
         type(active) :: OPTARG
-        OPTIONAL  OPTARG
-        INTENT(in)  OPTARG
+        OPTIONAL OPTARG
+        INTENT(in) OPTARG
         type(active) :: OUTARG
         END SUBROUTINE
-      end interface 
+      end interface
 C
 C     **** Statements ****
 C
@@ -193,11 +193,11 @@ C original function
 C taping
       Y(1)%v = (X(1)%v*2.0D00)
       CALL opt(X(2),X(1),Y(1))
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL opt(X(2),X(1),Y(1))
       X(1)%d = X(1)%d+Y(1)%d*(2.0D00)
       Y(1)%d = 0.0d0
-          end if 
+          end if
         end subroutine head

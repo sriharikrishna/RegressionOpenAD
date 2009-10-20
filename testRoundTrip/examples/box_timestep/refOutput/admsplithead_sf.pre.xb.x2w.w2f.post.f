@@ -14,8 +14,8 @@ C The full COPYRIGHT notice can be found in the top      #
 C level directory of the OpenAD distribution             #
 C#########################################################
 
-      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC,  FL
-     +DNOW, FLDOLD, FLDNEW)
+      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC, FLD
+     +NOW, FLDOLD, FLDNEW)
           use OAD_tape
           use OAD_rev
 
@@ -278,7 +278,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -353,5 +353,5 @@ C adjoint
         FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_prop_3%d
         OpenAD_prop_3%d = 0.0d0
       ENDIF
-          end if 
+          end if
         end subroutine box_timestep

@@ -89,9 +89,9 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
           end if
@@ -100,62 +100,62 @@ C restore arguments
             our_rev_mode%arg_store=.FALSE.
 C original function
  1    CONTINUE
-      goto 2
+      GO TO 2
  2    CONTINUE
-      goto 3
+      GO TO 3
  3    CONTINUE
       J = 1
-      goto 17
+      GO TO 17
  4    CONTINUE
       J = J+1
  17   CONTINUE
       IF (J.LE.5) THEN
-        goto 5
+        GO TO 5
       ELSE
-        goto 15
+        GO TO 15
       ENDIF
  5    CONTINUE
-      goto 6
+      GO TO 6
  6    CONTINUE
       II = 1
-      goto 18
+      GO TO 18
  7    CONTINUE
       II = II+1
  18   CONTINUE
       IF (II.LE.5) THEN
-        goto 8
+        GO TO 8
       ELSE
-        goto 9
+        GO TO 9
       ENDIF
  8    CONTINUE
-      goto 9
+      GO TO 9
  9    CONTINUE
-      goto 10
+      GO TO 10
  10   CONTINUE
       II = 1
-      goto 19
+      GO TO 19
  11   CONTINUE
       II = II+1
  19   CONTINUE
       IF (II.LE.5) THEN
-        goto 12
+        GO TO 12
       ELSE
-        goto 14
+        GO TO 14
       ENDIF
  12   CONTINUE
       Y(1)%v = X(1)%v
-      goto 13
+      GO TO 13
  13   CONTINUE
-      goto 11
+      GO TO 11
  14   CONTINUE
-      goto 4
+      GO TO 4
  15   CONTINUE
-      goto 16
+      GO TO 16
  16   CONTINUE
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -165,92 +165,92 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
  20   CONTINUE
-      goto 21
+      GO TO 21
  21   CONTINUE
       OpenAD_Symbol_0 = 0_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_0
       integer_tape_pointer = integer_tape_pointer+1
-      goto 22
+      GO TO 22
  22   CONTINUE
-      goto 23
+      GO TO 23
  23   CONTINUE
       OpenAD_Symbol_1 = 1_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
-      goto 24
+      GO TO 24
  24   CONTINUE
       J = 1
-      goto 43
+      GO TO 43
  25   CONTINUE
       J = J+1
  43   CONTINUE
       IF (J.LE.5) THEN
-        goto 26
+        GO TO 26
       ELSE
-        goto 40
+        GO TO 40
       ENDIF
  26   CONTINUE
-      goto 27
+      GO TO 27
  27   CONTINUE
       OpenAD_Symbol_2 = 2_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
-      goto 28
+      GO TO 28
  28   CONTINUE
       II = 1
-      goto 44
+      GO TO 44
  29   CONTINUE
       II = II+1
  44   CONTINUE
       IF (II.LE.5) THEN
-        goto 30
+        GO TO 30
       ELSE
-        goto 32
+        GO TO 32
       ENDIF
  30   CONTINUE
-      goto 31
+      GO TO 31
  31   CONTINUE
       OpenAD_Symbol_3 = 3_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-      goto 32
+      GO TO 32
  32   CONTINUE
-      goto 33
+      GO TO 33
  33   CONTINUE
       OpenAD_Symbol_4 = 4_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
-      goto 34
+      GO TO 34
  34   CONTINUE
       II = 1
-      goto 45
+      GO TO 45
  35   CONTINUE
       II = II+1
  45   CONTINUE
       IF (II.LE.5) THEN
-        goto 36
+        GO TO 36
       ELSE
-        goto 39
+        GO TO 39
       ENDIF
  36   CONTINUE
       Y(1)%v = X(1)%v
-      goto 37
+      GO TO 37
  37   CONTINUE
       OpenAD_Symbol_5 = 5_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
-      goto 38
+      GO TO 38
  38   CONTINUE
-      goto 35
+      GO TO 35
  39   CONTINUE
-      goto 25
+      GO TO 25
  40   CONTINUE
-      goto 41
+      GO TO 41
  41   CONTINUE
       OpenAD_Symbol_6 = 6_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
       integer_tape_pointer = integer_tape_pointer+1
-      goto 42
+      GO TO 42
  42   CONTINUE
 
 C taping end
@@ -259,7 +259,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -271,26 +271,26 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
       do while (INT(OpenAD_Symbol_7).ne.INT(0_w2f__i8))
-        IF (OpenAD_Symbol_7.EQ.1) goto 68
-        IF (OpenAD_Symbol_7.EQ.2) goto 69
-        IF (OpenAD_Symbol_7.EQ.3) goto 70
-        IF (OpenAD_Symbol_7.EQ.4) goto 71
-        IF (OpenAD_Symbol_7.EQ.5) goto 72
-        IF (OpenAD_Symbol_7.EQ.6) goto 73
+        IF (OpenAD_Symbol_7.EQ.1) GO TO 68
+        IF (OpenAD_Symbol_7.EQ.2) GO TO 69
+        IF (OpenAD_Symbol_7.EQ.3) GO TO 70
+        IF (OpenAD_Symbol_7.EQ.4) GO TO 71
+        IF (OpenAD_Symbol_7.EQ.5) GO TO 72
+        IF (OpenAD_Symbol_7.EQ.6) GO TO 73
  68     CONTINUE
-        goto 65
+        GO TO 65
  69     CONTINUE
-        goto 65
+        GO TO 65
  70     CONTINUE
-        goto 65
+        GO TO 65
  71     CONTINUE
-        goto 65
+        GO TO 65
  72     CONTINUE
         X(1)%d = X(1)%d+Y(1)%d
         Y(1)%d = 0.0d0
-        goto 65
+        GO TO 65
  73     CONTINUE
-        goto 65
+        GO TO 65
  65     CONTINUE
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
@@ -302,5 +302,5 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine head

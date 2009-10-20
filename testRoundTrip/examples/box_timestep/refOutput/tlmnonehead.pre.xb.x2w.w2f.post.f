@@ -1,7 +1,7 @@
 
 
-      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC,  FL
-     +DNOW, FLDOLD, FLDNEW)
+      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC, FLD
+     +NOW, FLDOLD, FLDNEW)
       use w2f__types
       use OAD_active
       IMPLICIT NONE

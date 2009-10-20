@@ -109,7 +109,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -132,7 +132,7 @@ C adjoint
       CALL box_timestep(GAMMA_T,TSTAR,NULLFORCE,UVEL,TNOW,TOLD,TNEW)
       CALL box_transport(RHO,UVEL)
       CALL box_density(TNOW,SNOW,RHO)
-          end if 
+          end if
         end subroutine box_forward
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -216,7 +216,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_42
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -231,7 +231,7 @@ C adjoint
       do while (INT(OpenAD_Symbol_40).LE.INT(OpenAD_Symbol_39))
         OpenAD_Symbol_40 = INT(OpenAD_Symbol_40)+1
       END DO
-          end if 
+          end if
         end subroutine box_final_state
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -407,7 +407,7 @@ C$OPENAD XXX Template ad_template.f
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_57
       integer_tape_pointer = integer_tape_pointer+1
       UVEL%v = UBAR
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       UVEL%d = 0.0d0
@@ -479,7 +479,7 @@ C adjoint
       T(3)%d = 0.0d0
       T(2)%d = 0.0d0
       T(1)%d = 0.0d0
-          end if 
+          end if
         end subroutine box_ini_fields
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -771,7 +771,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_90
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -820,7 +820,7 @@ C adjoint
       do while (INT(OpenAD_Symbol_82).LE.INT(OpenAD_Symbol_81))
         OpenAD_Symbol_82 = INT(OpenAD_Symbol_82)+1
       END DO
-          end if 
+          end if
         end subroutine box_ini_params
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -975,7 +975,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_130
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -1006,7 +1006,7 @@ C adjoint
         END DO
       ENDIF
       CALL box_ini_fields()
-          end if 
+          end if
         end subroutine box_model_body
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1093,7 +1093,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -1113,7 +1113,7 @@ C adjoint
         RHOLOC(INT(OpenAD_Symbol_153))%d = 0.0d0
         OpenAD_Symbol_14 = INT(OpenAD_Symbol_14)+1
       END DO
-          end if 
+          end if
         end subroutine box_density
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1193,7 +1193,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -1208,7 +1208,7 @@ C adjoint
       RHOLOC(1)%d = RHOLOC(1)%d+OpenAD_prop_0%d*(OpenAD_Symbol_158)
       RHOLOC(2)%d = RHOLOC(2)%d-OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-          end if 
+          end if
         end subroutine box_transport
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1297,7 +1297,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_27
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -1327,7 +1327,7 @@ C adjoint
         OpenAD_prop_7%d = 0.0d0
         OpenAD_Symbol_26 = INT(OpenAD_Symbol_26)+1
       END DO
-          end if 
+          end if
         end subroutine box_robert_filter
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1407,7 +1407,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_33
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -1438,7 +1438,7 @@ C adjoint
         OpenAD_prop_10%d = 0.0d0
         OpenAD_Symbol_32 = INT(OpenAD_Symbol_32)+1
       END DO
-          end if 
+          end if
         end subroutine box_cycle_fields
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1520,7 +1520,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_148
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -1538,7 +1538,7 @@ C adjoint
         FLDNEW(INT(OpenAD_Symbol_185))%d = 0.0d0
         OpenAD_Symbol_147 = INT(OpenAD_Symbol_147)+1
       END DO
-          end if 
+          end if
         end subroutine box_update
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1546,8 +1546,8 @@ C The full COPYRIGHT notice can be found in the top      #
 C level directory of the OpenAD distribution             #
 C#########################################################
 
-      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC,  FL
-     +DNOW, FLDOLD, FLDNEW)
+      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC, FLD
+     +NOW, FLDOLD, FLDNEW)
           use OAD_tape
           use OAD_rev
 
@@ -1826,7 +1826,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL box_update(FLDNEW,FLDOLD,DFLDDT)
@@ -1913,5 +1913,5 @@ C adjoint
         FLDNOW(2)%d = FLDNOW(2)%d+OpenAD_prop_4%d
         OpenAD_prop_4%d = 0.0d0
       ENDIF
-          end if 
+          end if
         end subroutine box_timestep

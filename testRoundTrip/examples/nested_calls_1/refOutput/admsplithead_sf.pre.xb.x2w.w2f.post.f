@@ -99,7 +99,7 @@ C$OPENAD XXX Template ad_template.f
       Y(4)%v = OpenAD_Symbol_1
       double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -122,7 +122,7 @@ C adjoint
       X(1)%d = X(1)%d+Y(2)%d*(OpenAD_Symbol_6)
       Y(2)%d = 0.0d0
       CALL foo(X(1),X(2),Y(1))
-          end if 
+          end if
         end subroutine head
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -183,7 +183,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_6
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -195,7 +195,7 @@ C adjoint
       B%d = B%d+C%d
       C%d = 0.0d0
       CALL bar(B)
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -263,7 +263,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_3
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -277,5 +277,5 @@ C adjoint
       OpenAD_prop_3%d = 0.0d0
       A%d = A%d+OpenAD_prop_2%d
       OpenAD_prop_2%d = 0.0d0
-          end if 
+          end if
         end subroutine bar

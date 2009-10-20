@@ -53,8 +53,8 @@ C$OPENAD XXX Template ad_template.f
       T1 = X
       CALL barext(X,T2)
       Y = T2
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
-          end if 
+          end if
         end subroutine head

@@ -3,16 +3,16 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine foo(x,y) 
+      subroutine foo(x,y)
         double precision x(2)
         double precision y
         y = x(1)*x(2)
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
-      interface 
-         subroutine foo(x,y) 
+      subroutine head(x,y)
+      interface
+         subroutine foo(x,y)
          double precision x(2)
          double precision y
          end subroutine

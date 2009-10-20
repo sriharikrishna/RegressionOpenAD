@@ -30,7 +30,7 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: P
-      INTENT(IN)  P
+      INTENT(IN) P
       type(active) :: Q
 C
 C     **** Statements ****
@@ -62,9 +62,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:1)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

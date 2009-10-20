@@ -159,7 +159,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -205,7 +205,7 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_p_real_vector(VOL,size(VOL),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(VOL,1),lbound(VOL,1),-1
@@ -332,7 +332,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -375,7 +375,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -411,7 +411,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_forward
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -488,13 +488,13 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_vector(SNOW,size(SNOW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
@@ -525,7 +525,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -557,7 +557,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -585,7 +585,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_final_state
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -677,7 +677,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(HUNDRED,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
@@ -699,7 +699,7 @@ C store arguments
      +t,theArgFStackSize)
       call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackoff
      +set,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(XX,1),lbound(XX,1),-1
@@ -796,7 +796,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -875,7 +875,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -960,7 +960,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_ini_fields
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1075,7 +1075,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -1119,7 +1119,7 @@ C store arguments
       call cp_store_p_real_vector(X(:,cp_loop_variable_2),size(X(:,cp_lo
      +op_variable_2)),theArgFStack,theArgFStackoffset,theArgFStackSize)
       end do
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_2 = ubound(X,2),lbound(X,2),-1
@@ -1293,7 +1293,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -1423,7 +1423,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -1485,7 +1485,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_ini_params
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1592,7 +1592,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -1654,7 +1654,7 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(XX,size(XX),theArgFStack,theArgFStackoff
      +set,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(XX,1),lbound(XX,1),-1
@@ -1821,7 +1821,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -1884,7 +1884,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -1928,7 +1928,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_model_body
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -2011,7 +2011,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ALPHA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -2021,7 +2021,7 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(SLOC,size(SLOC),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(SLOC,1),lbound(SLOC,1),-1
@@ -2054,7 +2054,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -2087,7 +2087,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -2120,7 +2120,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_density
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -2200,7 +2200,7 @@ C external C function used in inlined code
           external iaddr
 C$OPENAD XXX Template ad_template.f
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(DELTA,theArgFStack,theArgFStackoffset,th
      +eArgFStackSize)
@@ -2208,7 +2208,7 @@ C store arguments
      +gFStackSize)
       call cp_store_real_vector(RHOLOC,size(RHOLOC),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(RHOLOC,1),lbound(RHOLOC,1),-1
@@ -2233,7 +2233,7 @@ C original function
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -2264,7 +2264,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -2292,7 +2292,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_transport
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -2377,7 +2377,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(ROBERT_FILTER_COEFF,theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
@@ -2387,7 +2387,7 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_real_vector(FLDNEW,size(FLDNEW),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(FLDNEW,1),lbound(FLDNEW,1),-1
@@ -2424,7 +2424,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -2456,7 +2456,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -2499,7 +2499,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_robert_filter
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -2574,7 +2574,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_vector(SNEW,size(SNEW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
@@ -2584,7 +2584,7 @@ C store arguments
      +koffset,theArgFStackSize)
       call cp_store_real_vector(TNOW,size(TNOW),theArgFStack,theArgFStac
      +koffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(TNOW,1),lbound(TNOW,1),-1
@@ -2626,7 +2626,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -2657,7 +2657,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -2701,7 +2701,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_cycle_fields
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -2782,7 +2782,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_scalar(DELTA_T,theArgFStack,theArgFStackoffset,
      +theArgFStackSize)
@@ -2790,7 +2790,7 @@ C store arguments
      +Stackoffset,theArgFStackSize)
       call cp_store_real_vector(DFLDDT,size(DFLDDT),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(DFLDDT,1),lbound(DFLDDT,1),-1
@@ -2820,7 +2820,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -2850,7 +2850,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -2881,7 +2881,7 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_update
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -2889,8 +2889,8 @@ C The full COPYRIGHT notice can be found in the top      #
 C level directory of the OpenAD distribution             #
 C#########################################################
 
-      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC,  FL
-     +DNOW, FLDOLD, FLDNEW)
+      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC, FLD
+     +NOW, FLDOLD, FLDNEW)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -3050,7 +3050,7 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
       call cp_store_real_vector(FLDOLD,size(FLDOLD),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
@@ -3070,7 +3070,7 @@ C store arguments
      +,theArgFStackoffset,theArgFStackSize)
       call cp_store_real_vector(FLDNOW,size(FLDNOW),theArgFStack,theArgF
      +Stackoffset,theArgFStackSize)
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
       do cp_loop_variable_1 = ubound(FLDNOW,1),lbound(FLDNOW,1),-1
@@ -3141,7 +3141,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -3278,7 +3278,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -3378,5 +3378,5 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine box_timestep

@@ -11,11 +11,11 @@ C$openad INDEPENDENT(x)
         y(1) = 1.0
         call foo()
 C$openad DEPENDENT(y)
-      contains 
+      contains
       subroutine foo()
       integer i
       do i=1,j
          y(1) = y(1)*x(j)
-      end do 
+      end do
       end subroutine
       end subroutine

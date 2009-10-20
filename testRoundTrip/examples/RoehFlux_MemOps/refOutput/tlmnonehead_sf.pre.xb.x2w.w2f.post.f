@@ -9,10 +9,9 @@ C     **** Statements ****
 C
       END MODULE
 
-      SUBROUTINE ad_roehf5(NRM1, NRM2, NRM3, PRIML1, PRIML2, PRIML3,  PR
-     +IML4, PRIML5, PRIMR1, PRIMR2, PRIMR3, PRIMR4, PRIMR5, GAMMA,  GM1,
-     + GM1INV, NLEFIX, LEFIX, MCHEPS, FLUX1, FLUX2, FLUX3, FLUX4,  FLUX5
-     +)
+      SUBROUTINE ad_roehf5(NRM1, NRM2, NRM3, PRIML1, PRIML2, PRIML3, PRI
+     +ML4, PRIML5, PRIMR1, PRIMR2, PRIMR3, PRIMR4, PRIMR5, GAMMA, GM1, G
+     +M1INV, NLEFIX, LEFIX, MCHEPS, FLUX1, FLUX2, FLUX3, FLUX4, FLUX5)
       use w2f__types
       use OAD_active
       IMPLICIT NONE
@@ -427,53 +426,53 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: NRM1
-      INTENT(IN)  NRM1
+      INTENT(IN) NRM1
       type(active) :: NRM2
-      INTENT(IN)  NRM2
+      INTENT(IN) NRM2
       type(active) :: NRM3
-      INTENT(IN)  NRM3
+      INTENT(IN) NRM3
       type(active) :: PRIML1
-      INTENT(IN)  PRIML1
+      INTENT(IN) PRIML1
       type(active) :: PRIML2
-      INTENT(IN)  PRIML2
+      INTENT(IN) PRIML2
       type(active) :: PRIML3
-      INTENT(IN)  PRIML3
+      INTENT(IN) PRIML3
       type(active) :: PRIML4
-      INTENT(IN)  PRIML4
+      INTENT(IN) PRIML4
       type(active) :: PRIML5
-      INTENT(IN)  PRIML5
+      INTENT(IN) PRIML5
       type(active) :: PRIMR1
-      INTENT(IN)  PRIMR1
+      INTENT(IN) PRIMR1
       type(active) :: PRIMR2
-      INTENT(IN)  PRIMR2
+      INTENT(IN) PRIMR2
       type(active) :: PRIMR3
-      INTENT(IN)  PRIMR3
+      INTENT(IN) PRIMR3
       type(active) :: PRIMR4
-      INTENT(IN)  PRIMR4
+      INTENT(IN) PRIMR4
       type(active) :: PRIMR5
-      INTENT(IN)  PRIMR5
+      INTENT(IN) PRIMR5
       type(active) :: GAMMA
-      INTENT(IN)  GAMMA
+      INTENT(IN) GAMMA
       type(active) :: GM1
-      INTENT(IN)  GM1
+      INTENT(IN) GM1
       type(active) :: GM1INV
-      INTENT(IN)  GM1INV
+      INTENT(IN) GM1INV
       REAL(w2f__8) NLEFIX
-      INTENT(IN)  NLEFIX
+      INTENT(IN) NLEFIX
       REAL(w2f__8) LEFIX
-      INTENT(IN)  LEFIX
+      INTENT(IN) LEFIX
       REAL(w2f__8) MCHEPS
-      INTENT(IN)  MCHEPS
+      INTENT(IN) MCHEPS
       type(active) :: FLUX1
-      INTENT(OUT)  FLUX1
+      INTENT(OUT) FLUX1
       type(active) :: FLUX2
-      INTENT(OUT)  FLUX2
+      INTENT(OUT) FLUX2
       type(active) :: FLUX3
-      INTENT(OUT)  FLUX3
+      INTENT(OUT) FLUX3
       type(active) :: FLUX4
-      INTENT(OUT)  FLUX4
+      INTENT(OUT) FLUX4
       type(active) :: FLUX5
-      INTENT(OUT)  FLUX5
+      INTENT(OUT) FLUX5
 C
 C     **** Local Variables and Functions ****
 C

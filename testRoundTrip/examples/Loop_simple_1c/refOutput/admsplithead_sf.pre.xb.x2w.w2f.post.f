@@ -69,7 +69,7 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         Y(INT(I))%v = X(I)%v
       END DO
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((2-1)/1)
@@ -78,5 +78,5 @@ C adjoint
         Y(I)%d = 0.0d0
         I = I-1
       END DO
-          end if 
+          end if
         end subroutine head

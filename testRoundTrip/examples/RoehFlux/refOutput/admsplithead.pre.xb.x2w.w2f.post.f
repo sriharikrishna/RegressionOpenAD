@@ -5,8 +5,8 @@ C The full COPYRIGHT notice can be found in the top      #
 C level directory of the OpenAD distribution             #
 C#########################################################
 
-      SUBROUTINE ad_roehf5(NRM, PRIML, PRIMR, GAMMA, GM1, GM1INV,  NLEFI
-     +X, LEFIX, MCHEPS, FLUX)
+      SUBROUTINE ad_roehf5(NRM, PRIML, PRIMR, GAMMA, GM1, GM1INV, NLEFIX
+     +, LEFIX, MCHEPS, FLUX)
           use OAD_tape
           use OAD_rev
 
@@ -463,7 +463,7 @@ C
       type(active) :: NLEFIX
       type(active) :: LEFIX
       REAL(w2f__8) MCHEPS
-      INTENT(IN)  MCHEPS
+      INTENT(IN) MCHEPS
       type(active) :: FLUX(1:5)
 C
 C     **** Local Variables and Functions ****
@@ -1869,7 +1869,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_266
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -2757,5 +2757,5 @@ C adjoint
       NRM(2)%d = NRM(2)%d+NSIZE%d*(OpenAD_Symbol_31)
       NRM(3)%d = NRM(3)%d+NSIZE%d*(OpenAD_Symbol_32)
       NSIZE%d = 0.0d0
-          end if 
+          end if
         end subroutine ad_roehf5

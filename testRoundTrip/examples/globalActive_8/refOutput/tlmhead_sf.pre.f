@@ -9,9 +9,9 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine foo(x,y) 
+      subroutine foo(x,y)
 
-          use globals 
+          use globals
 
         double precision, dimension(2) :: x
         double precision y
@@ -20,13 +20,13 @@ C$openad XXX Template ad_template.f
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
+      subroutine head(x,y)
 
           use globals
 
         double precision, dimension(2) :: x
         double precision, dimension(2) :: y
-        double precision :: p 
+        double precision :: p
 C$openad INDEPENDENT(x)
         call foo(x,y(1))
           call bar(p)
@@ -35,7 +35,7 @@ C$openad DEPENDENT(y)
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine bar(aP) 
+      subroutine bar(aP)
           use globals
         double precision :: aP
         aP = aGlobal**3

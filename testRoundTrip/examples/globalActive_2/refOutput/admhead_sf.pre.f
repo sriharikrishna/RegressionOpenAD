@@ -10,7 +10,7 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
+      subroutine head(x,y)
 
           use globals
 

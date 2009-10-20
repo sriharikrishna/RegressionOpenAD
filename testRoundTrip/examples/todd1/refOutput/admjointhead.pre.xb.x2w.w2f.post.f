@@ -5,11 +5,11 @@ C The full COPYRIGHT notice can be found in the top      #
 C level directory of the OpenAD distribution             #
 C#########################################################
 
-      SUBROUTINE head(OBJ, G_OBJ0, G_OBJ1, G_OBJ2, G_OBJ3, G_OBJ4,  G_OB
-     +J5, X0, X1, X2, X3, X4, X5, H_OBJ0, H_OBJ1, H_OBJ2, H_OBJ3,  H_OBJ
-     +4, H_OBJ5, H_OBJ6, H_OBJ7, H_OBJ8, H_OBJ9, H_OBJ10,  H_OBJ11, H_OB
-     +J12, H_OBJ13, H_OBJ14, H_OBJ15, H_OBJ16, H_OBJ17,  H_OBJ18, H_OBJ1
-     +9, H_OBJ20)
+      SUBROUTINE head(OBJ, G_OBJ0, G_OBJ1, G_OBJ2, G_OBJ3, G_OBJ4, G_OBJ
+     +5, X0, X1, X2, X3, X4, X5, H_OBJ0, H_OBJ1, H_OBJ2, H_OBJ3, H_OBJ4,
+     + H_OBJ5, H_OBJ6, H_OBJ7, H_OBJ8, H_OBJ9, H_OBJ10, H_OBJ11, H_OBJ12
+     +, H_OBJ13, H_OBJ14, H_OBJ15, H_OBJ16, H_OBJ17, H_OBJ18, H_OBJ19, H
+     +_OBJ20)
           use OAD_tape
           use OAD_rev
           use OAD_cp
@@ -420,9 +420,9 @@ C
 C     **** Statements ****
 C
 
-          if (our_rev_mode%arg_store) then 
+          if (our_rev_mode%arg_store) then
 C store arguments
-          end if 
+          end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
           end if
@@ -531,7 +531,7 @@ C$OPENAD XXX Template ad_template.f
 
 C original function end
             our_rev_mode=our_orig_mode
-          end if 
+          end if
           if (our_rev_mode%tape) then
 C            print*, " tape       ", our_rev_mode
             our_rev_mode%arg_store=.TRUE.
@@ -970,7 +970,7 @@ C taping end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.TRUE.
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%arg_store=.FALSE.
@@ -1441,5 +1441,5 @@ C adjoint end
             our_rev_mode%plain=.FALSE.
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
-          end if 
+          end if
         end subroutine head

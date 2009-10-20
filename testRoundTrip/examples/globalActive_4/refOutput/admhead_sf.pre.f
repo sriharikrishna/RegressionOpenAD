@@ -4,16 +4,16 @@
       end module
 
 C$openad XXX Template ad_template.f
-       subroutine foo() 
+       subroutine foo()
 
-         use all_globals_mod 
+         use all_globals_mod
 
          y(1) = x(1)*x(2)
 
        end subroutine
 
 C$openad XXX Template ad_template.f
-       subroutine head() 
+       subroutine head()
 
          use all_globals_mod
 

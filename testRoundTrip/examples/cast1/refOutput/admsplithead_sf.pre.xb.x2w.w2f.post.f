@@ -52,9 +52,9 @@ C original function
           if (our_rev_mode%tape) then
 C taping
       Y(1)%v = (INT(X(1)%v)*DBLE(2.5))
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       Y(1)%d = 0.0d0
-          end if 
+          end if
         end subroutine head

@@ -68,10 +68,10 @@ C taping
       T = BARX
       BARX = BARY
       BARY = T
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
-          end if 
+          end if
         end subroutine bar
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -135,11 +135,11 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL bar(OpenAD_Symbol_2,OpenAD_Symbol_3)
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -192,7 +192,7 @@ C taping
       GX%v = X(1)%v
       GY%v = GX%v
       Y(1)%v = GY%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       GY%d = GY%d+Y(1)%d
@@ -201,5 +201,5 @@ C adjoint
       GY%d = 0.0d0
       X(1)%d = X(1)%d+GX%d
       GX%d = 0.0d0
-          end if 
+          end if
         end subroutine head

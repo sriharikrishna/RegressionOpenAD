@@ -16,10 +16,10 @@ C$openad XXX Template ad_template.f
           integer i
 C$openad xxx simple loop
           do i=1,2
-          if (globalString .eq. 'yes') then 
+          if (globalString .eq. 'yes') then
               y(i) = y(i)+x(i)*x(i)
             end if
-          if (globalString .eq. 'no') then 
+          if (globalString .eq. 'no') then
               y(i) = y(i)+x(i)*x(i)*2
             end if
           end do

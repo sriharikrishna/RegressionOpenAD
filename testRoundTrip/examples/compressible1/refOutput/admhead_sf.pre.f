@@ -3,7 +3,7 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
+      subroutine head(x,y)
         double precision, dimension(2), intent(inout) :: x
         double precision, dimension(4), intent(inout) :: y
         double precision t1,t2,y1,y2,y3,y4

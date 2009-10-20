@@ -23,7 +23,7 @@ C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
       type(active) :: Y(1:2)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

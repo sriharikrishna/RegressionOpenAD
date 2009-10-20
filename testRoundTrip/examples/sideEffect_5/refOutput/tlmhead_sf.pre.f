@@ -2,12 +2,12 @@
       
         public :: g
         
-        integer g 
+        integer g
         
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine foo(a,n) 
+      subroutine foo(a,n)
         use all_globals_mod
         double precision :: a(n+g)
         integer n
@@ -18,7 +18,7 @@ C$openad XXX Template ad_template.f
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
+      subroutine head(x,y)
         use all_globals_mod
         double precision, dimension(3) :: x
         double precision, dimension(1) :: y

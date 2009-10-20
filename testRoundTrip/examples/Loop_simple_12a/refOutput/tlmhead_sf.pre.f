@@ -13,7 +13,7 @@ C$openad INDEPENDENT(x)
 C$openad xxx simple loop
         do i=1,2
             j = 1
-            if (j<2) then 
+            if (j<2) then
               y(i) = y(i)+x(i)*x(j)
               j = j+1
             end if

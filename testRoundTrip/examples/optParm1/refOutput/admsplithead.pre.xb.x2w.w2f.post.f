@@ -46,10 +46,10 @@ C     **** Parameters and Result ****
 C
       type(active) :: A
       type(active) :: B
-      OPTIONAL  B
+      OPTIONAL B
       type(active) :: C
       type(active) :: D
-      OPTIONAL  D
+      OPTIONAL D
 C
 C     **** Local Variables and Functions ****
 C
@@ -113,7 +113,7 @@ C taping
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_10
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -137,7 +137,7 @@ C adjoint
       C%d = 0.0d0
       A%d = A%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -166,18 +166,18 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE foo(A, B, C, D)
         use w2f__types
       use OAD_active
         type(active) :: A
         type(active) :: B
-        OPTIONAL  B
+        OPTIONAL B
         type(active) :: C
         type(active) :: D
-        OPTIONAL  D
+        OPTIONAL D
         END SUBROUTINE
-      end interface 
+      end interface
 
 
           integer iaddr
@@ -195,10 +195,10 @@ C original function
 C taping
       CALL foo(A=X(1),C=Y(1))
       CALL foo(X(2),X(3),Y(2),Y(3))
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL foo(X(2),X(3),Y(2),Y(3))
       CALL foo(A=X(1),C=Y(1))
-          end if 
+          end if
         end subroutine head

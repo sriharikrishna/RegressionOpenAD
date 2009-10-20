@@ -38,12 +38,12 @@ C original function
           if (our_rev_mode%tape) then
 C taping
       Y%v = X%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       X%d = X%d+Y%d
       Y%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -122,10 +122,10 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(OAD_CTMP0,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL foo(OpenAD_Symbol_2,OpenAD_Symbol_3)
       CALL foo(X,Y)
-          end if 
+          end if
         end subroutine head

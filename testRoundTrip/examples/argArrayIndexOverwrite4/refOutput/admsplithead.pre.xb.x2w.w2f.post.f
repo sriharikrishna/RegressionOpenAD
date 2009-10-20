@@ -52,7 +52,7 @@ C$OPENAD XXX Template ad_template.f
       A%v = OpenAD_Symbol_0
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -61,7 +61,7 @@ C adjoint
       A%d = 0.0d0
       A%d = A%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -131,7 +131,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -144,5 +144,5 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       K = integer_tape(integer_tape_pointer)
       CALL foo(X(K),K)
-          end if 
+          end if
         end subroutine head

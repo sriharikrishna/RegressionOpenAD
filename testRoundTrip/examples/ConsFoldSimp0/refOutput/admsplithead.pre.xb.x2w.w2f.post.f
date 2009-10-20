@@ -55,7 +55,7 @@ C taping
       T2%v = (T1%v*2.0D00)
       Y1%v = T2%v
       Y(1)%v = Y1%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       T1%d = T1%d+Y(1)%d*(2.0D00)
@@ -63,5 +63,5 @@ C adjoint
       X(1)%d = X(1)%d+T1%d
       X(1)%d = X(1)%d+T1%d
       T1%d = 0.0d0
-          end if 
+          end if
         end subroutine head

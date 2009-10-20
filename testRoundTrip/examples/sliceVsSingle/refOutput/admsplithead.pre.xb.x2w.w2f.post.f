@@ -39,14 +39,14 @@ C original function
           if (our_rev_mode%tape) then
 C taping
       X%v = (X%v+1.0D00)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       OpenAD_prop_0%d = OpenAD_prop_0%d+X%d
       X%d = 0.0d0
       X%d = X%d+OpenAD_prop_0%d
       OpenAD_prop_0%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -88,14 +88,14 @@ C original function
           if (our_rev_mode%tape) then
 C taping
       X(1)%v = (X(1)%v+1.0D00)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       OpenAD_prop_1%d = OpenAD_prop_1%d+X(1)%d
       X(1)%d = 0.0d0
       X(1)%d = X(1)%d+OpenAD_prop_1%d
       OpenAD_prop_1%d = 0.0d0
-          end if 
+          end if
         end subroutine bar
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -124,20 +124,20 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE foo(X)
         use w2f__types
       use OAD_active
         type(active) :: X
         END SUBROUTINE
-      end interface 
-      interface 
+      end interface
+      interface
         SUBROUTINE bar(X)
         use w2f__types
       use OAD_active
         type(active) :: X(1:1)
         END SUBROUTINE
-      end interface 
+      end interface
 
 
           integer iaddr
@@ -157,12 +157,12 @@ C taping
       CALL foo(X(1))
       Y(1:2)%v = X(1:2)%v
       CALL bar(Y(2:2))
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL bar(Y(2:2))
       X(1:2)%d = X(1:2)%d+Y(1:2)%d
       Y(1:2)%d = 0.0d0
       CALL foo(X(1))
-          end if 
+          end if
         end subroutine head

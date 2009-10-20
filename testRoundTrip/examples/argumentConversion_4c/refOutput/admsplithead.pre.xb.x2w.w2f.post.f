@@ -54,7 +54,7 @@ C taping
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -64,7 +64,7 @@ C adjoint
       X%d = X%d+Y%d*(OpenAD_Symbol_14)
       X%d = X%d+Y%d*(OpenAD_Symbol_15)
       Y%d = 0.0d0
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -184,7 +184,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
           CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
         END DO
       END DO
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((2-1)/1)
@@ -207,5 +207,5 @@ C adjoint
         END DO
         I = I-1
       END DO
-          end if 
+          end if
         end subroutine head

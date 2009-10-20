@@ -24,7 +24,7 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: T
 C
 C     **** Statements ****
@@ -46,9 +46,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:1)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:1)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

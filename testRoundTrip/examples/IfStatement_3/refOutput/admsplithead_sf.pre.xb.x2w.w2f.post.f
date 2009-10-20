@@ -47,10 +47,10 @@ C$OPENAD XXX Template ad_template.f
 C taping
 C$OPENAD XXX Template ad_template.f
       L = (X.ne.0.0D00)
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -133,7 +133,7 @@ C!! requested inline of 'convert_p2a_scalar' has no defn
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -143,5 +143,5 @@ C adjoint
         Y(1)%d = 0.0d0
       ENDIF
       CALL foo(OpenAD_Symbol_7,L)
-          end if 
+          end if
         end subroutine head

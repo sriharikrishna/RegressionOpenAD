@@ -3,19 +3,19 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine bar(c,d) 
+      subroutine bar(c,d)
         double precision c,d
         d = c*c
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine foo(a,b) 
+      subroutine foo(a,b)
         double precision a,b
         call bar(a,b)
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
+      subroutine head(x,y)
         double precision, dimension(1) :: x
         double precision, dimension(1) :: y
 C$openad INDEPENDENT(x)

@@ -14,11 +14,11 @@ C The full COPYRIGHT notice can be found in the top      #
 C level directory of the OpenAD distribution             #
 C#########################################################
 
-      SUBROUTINE head(OBJ, G_OBJ0, G_OBJ1, G_OBJ2, G_OBJ3, G_OBJ4,  G_OB
-     +J5, X0, X1, X2, X3, X4, X5, H_OBJ0, H_OBJ1, H_OBJ2, H_OBJ3,  H_OBJ
-     +4, H_OBJ5, H_OBJ6, H_OBJ7, H_OBJ8, H_OBJ9, H_OBJ10,  H_OBJ11, H_OB
-     +J12, H_OBJ13, H_OBJ14, H_OBJ15, H_OBJ16, H_OBJ17,  H_OBJ18, H_OBJ1
-     +9, H_OBJ20)
+      SUBROUTINE head(OBJ, G_OBJ0, G_OBJ1, G_OBJ2, G_OBJ3, G_OBJ4, G_OBJ
+     +5, X0, X1, X2, X3, X4, X5, H_OBJ0, H_OBJ1, H_OBJ2, H_OBJ3, H_OBJ4,
+     + H_OBJ5, H_OBJ6, H_OBJ7, H_OBJ8, H_OBJ9, H_OBJ10, H_OBJ11, H_OBJ12
+     +, H_OBJ13, H_OBJ14, H_OBJ15, H_OBJ16, H_OBJ17, H_OBJ18, H_OBJ19, H
+     +_OBJ20)
           use OAD_tape
           use OAD_rev
 
@@ -933,7 +933,7 @@ C$OPENAD XXX Template ad_template.f
       H_OBJ7%v = (F%v+G%v)
       double_tape(double_tape_pointer) = OpenAD_lin_138
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -1391,5 +1391,5 @@ C adjoint
       X0%d = X0%d-MATR0%d
       X1%d = X1%d+MATR0%d
       MATR0%d = 0.0d0
-          end if 
+          end if
         end subroutine head

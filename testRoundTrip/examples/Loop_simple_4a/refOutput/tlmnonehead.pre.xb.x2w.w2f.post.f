@@ -9,9 +9,9 @@ C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) J
       type(active) :: X(1:1)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:1)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

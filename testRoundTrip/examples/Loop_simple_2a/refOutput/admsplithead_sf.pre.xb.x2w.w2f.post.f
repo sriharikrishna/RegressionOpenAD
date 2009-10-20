@@ -118,7 +118,7 @@ C$OPENAD XXX Simple loop
           END DO
         END DO
       END DO
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       I = 1+1*((3-1)/1)
@@ -153,5 +153,5 @@ C adjoint
         Y(INT(OpenAD_Symbol_16))%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
       END DO
-          end if 
+          end if
         end subroutine head

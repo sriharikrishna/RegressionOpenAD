@@ -3,19 +3,19 @@
       end module
 
 C$openad XXX Template ad_template.f
-      subroutine foo(a,x) 
+      subroutine foo(a,x)
         character (*) a
         double precision x
-        if (a=='two') then 
+        if (a=='two') then
         x = x*2
-        endif 
-        if (a=='three') then 
+        endif
+        if (a=='three') then
         x = x*3
-        end if 
+        end if
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
+      subroutine head(x,y)
         double precision, dimension(1) :: x
         double precision, dimension(1) :: y
         character (10) a

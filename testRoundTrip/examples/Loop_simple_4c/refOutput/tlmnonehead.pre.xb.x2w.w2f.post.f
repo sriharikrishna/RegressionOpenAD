@@ -35,7 +35,7 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:2)
 C
 C     **** Local Variables and Functions ****
@@ -83,9 +83,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:2)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

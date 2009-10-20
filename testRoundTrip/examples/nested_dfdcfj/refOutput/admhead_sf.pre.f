@@ -86,12 +86,12 @@ C$openad XXX Template ad_template.f
       integer nx,ny
       double precision r
       double precision x(nx*ny),fvec(nx*ny)
-      double precision pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt,   
-     +    dpdy,dpdx,plap,pblap,pllap,prlap,ptlap,hy,hx,hy2,hx2
+      double precision pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt, dp
+     +dy,dpdx,plap,pblap,pllap,prlap,ptlap,hy,hx,hy2,hx2
       double precision zero,one,two,three,four
       parameter(zero=0.0d0,one=1.0d0,two=2.0d0,three=3.0d0,four=4.0d0)
       do 60 i = 1, ny
-         do 50 j = 1, nx 
+         do 50 j = 1, nx
             k = (i-1)*nx+j
             if (i .eq. 1 .or. j .eq. 1) then
                pbl = zero
@@ -166,7 +166,7 @@ C           Laplacians at each point in the 5 point stencil.
             fvec(k) = (prlap-two*plap+pllap)/hx2+(ptlap-two*plap+pblap)/
      +hy2-r*(dpdy*(prlap-pllap)/(two*hx)-dpdx*(ptlap-pblap)/(two*hy))
  50      continue
- 60   continue      
+ 60   continue
       return
       end
 
@@ -174,8 +174,8 @@ C           Laplacians at each point in the 5 point stencil.
 C$openad XXX Template ad_template.f
       subroutine bar(pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt,hy2,h
      +x2,plap,pblap,pllap,prlap,ptlap)
-      double precision pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt,   
-     +              plap,pblap,pllap,prlap,ptlap,hy2,hx2
+      double precision pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt, pl
+     +ap,pblap,pllap,prlap,ptlap,hy2,hx2
       double precision zero,one,two,three,four
       parameter(zero=0.0d0,one=1.0d0,two=2.0d0,three=3.0d0,four=4.0d0)
       pblap = (pbr-two*pb+pbl)/hx2+(p-two*pb+pbb)/hy2
@@ -183,5 +183,5 @@ C$openad XXX Template ad_template.f
       plap = (pr-two*p+pl)/hx2+(pt-two*p+pb)/hy2
       prlap = (prr-two*pr+p)/hx2+(ptr-two*pr+pbr)/hy2
       ptlap = (ptr-two*pt+ptl)/hx2+(ptt-two*pt+p)/hy2
-      return 
-      end 
+      return
+      end

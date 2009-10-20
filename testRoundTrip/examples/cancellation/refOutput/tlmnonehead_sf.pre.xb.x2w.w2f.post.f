@@ -41,11 +41,11 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X1
-      INTENT(IN)  X1
+      INTENT(IN) X1
       type(active) :: X2
-      INTENT(IN)  X2
+      INTENT(IN) X2
       type(active) :: Y
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

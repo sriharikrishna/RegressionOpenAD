@@ -111,7 +111,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
       Y(2)%v = Y(1)%v
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       OpenAD_prop_0%d = OpenAD_prop_0%d+Y(2)%d
@@ -141,5 +141,5 @@ C adjoint
         X(1)%d = X(1)%d+Y(1)%d
         Y(1)%d = 0.0d0
       ENDIF
-          end if 
+          end if
         end subroutine head

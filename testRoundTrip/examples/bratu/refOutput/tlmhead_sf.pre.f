@@ -7,7 +7,7 @@ C$openad XXX Template ad_template.f
           double precision :: x(9)
           double precision :: F(7)
           integer i
-          double precision h 
+          double precision h
 
 C$openad INDEPENDENT(x)
 

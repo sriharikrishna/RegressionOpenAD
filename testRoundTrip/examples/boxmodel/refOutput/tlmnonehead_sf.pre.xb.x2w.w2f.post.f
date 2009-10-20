@@ -596,8 +596,8 @@ C$OPENAD XXX Template ad_template.f
       END DO
       END SUBROUTINE
 
-      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC,  FL
-     +DNOW, FLDOLD, FLDNEW)
+      SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC, FLD
+     +NOW, FLDOLD, FLDNEW)
       use w2f__types
       use OAD_active
       use all_globals_mod

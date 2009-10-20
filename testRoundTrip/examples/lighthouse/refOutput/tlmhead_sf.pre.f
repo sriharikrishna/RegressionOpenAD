@@ -2,7 +2,7 @@
 
       end module
 
-      subroutine head(x,y) 
+      subroutine head(x,y)
         double precision, dimension(4) :: x
         double precision, dimension(2) :: y
           double precision :: nu, gamma, omega, t, v

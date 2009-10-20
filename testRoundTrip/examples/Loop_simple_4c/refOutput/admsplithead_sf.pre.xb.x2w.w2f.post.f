@@ -136,7 +136,7 @@ C$OPENAD XXX Simple loop
       character_tape_pointer = character_tape_pointer+len(GLOBALSTRING)
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       stringlength_tape_pointer = stringlength_tape_pointer-1
@@ -173,7 +173,7 @@ C adjoint
         ENDIF
         I = I-1
       END DO
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -234,11 +234,11 @@ C$OPENAD XXX Template ad_template.f
       GLOBALSTRING = 'yes'
       CALL foo(X,Y)
       GLOBALSTRING = 'both'
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL foo(X,Y)
       Y(2)%d = 0.0d0
       Y(1)%d = 0.0d0
-          end if 
+          end if
         end subroutine head

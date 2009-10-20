@@ -10,7 +10,7 @@
 
 
 C$openad XXX Template ad_template.f
-      subroutine foo(x,y) 
+      subroutine foo(x,y)
 
         double precision, dimension(1) :: x
         double precision y
@@ -18,14 +18,14 @@ C$openad XXX Template ad_template.f
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine bar(x) 
+      subroutine bar(x)
           use globals
         double precision :: x
         x = x*aGlobal
       end subroutine
 
 C$openad XXX Template ad_template.f
-      subroutine head(x,y) 
+      subroutine head(x,y)
           use globals
         double precision, dimension(1) :: x
         double precision, dimension(1) :: y

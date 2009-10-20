@@ -25,10 +25,10 @@ C     **** Parameters and Result ****
 C
       type(active) :: A
       type(active) :: B
-      OPTIONAL  B
+      OPTIONAL B
       type(active) :: C
       type(active) :: D
-      OPTIONAL  D
+      OPTIONAL D
 C
 C     **** Local Variables and Functions ****
 C
@@ -70,19 +70,19 @@ C     **** Top Level Pragmas ****
 C
 C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
-      interface 
+      interface
         SUBROUTINE foo(A, B, C, D)
         use w2f__types
       use OAD_active
         type(active) :: A
         type(active) :: B
-        OPTIONAL  B
+        OPTIONAL B
         type(active) :: C
         type(active) :: D
-        OPTIONAL  D
+        OPTIONAL D
         END SUBROUTINE
 
-      end interface 
+      end interface
 
 C
 C     **** Statements ****

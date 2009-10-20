@@ -17,7 +17,7 @@ C	      print *, 'x(',i,')=',x(i)
 C	      print *, 'y(',i,')=',y(i)
             else
               y(i) = pi+cos(x(i))
-            end if 
+            end if
           end do
           y(10) = y(1)*y(9)
 C$openad DEPENDENT(y)

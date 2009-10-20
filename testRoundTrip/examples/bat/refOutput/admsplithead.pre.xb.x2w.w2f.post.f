@@ -124,7 +124,7 @@ C taping
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_12
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -170,5 +170,5 @@ C adjoint
       X(2)%d = X(2)%d+T1%d*(OpenAD_Symbol_10)
       X(1)%d = X(1)%d+T1%d*(OpenAD_Symbol_11)
       T1%d = 0.0d0
-          end if 
+          end if
         end subroutine head

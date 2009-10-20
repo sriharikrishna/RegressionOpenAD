@@ -76,7 +76,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -86,5 +86,5 @@ C adjoint
       X%d = X%d+Y%d*(OpenAD_Symbol_0)
       X%d = X%d+Y%d*(OpenAD_Symbol_1)
       Y%d = 0.0d0
-          end if 
+          end if
         end subroutine head

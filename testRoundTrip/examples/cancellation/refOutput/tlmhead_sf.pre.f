@@ -3,8 +3,8 @@
       end module
 
 C$openad XXX Template ad_template.f
-      SUBROUTINE head (x1, x2, y) 
-      IMPLICIT none               
+      SUBROUTINE head (x1, x2, y)
+      IMPLICIT none
       double precision,intent(in):: x1, x2
       double precision,intent(out):: y
       double precision:: a, b, c, d, e, f

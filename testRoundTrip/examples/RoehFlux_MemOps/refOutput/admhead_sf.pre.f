@@ -5,7 +5,7 @@
 C$openad XXX Template ad_template.f
       SUBROUTINE ad_roehf5 (nrm1, nrm2, nrm3, priml1, priml2, priml3,pri
      +ml4, priml5, primr1, primr2, primr3, primr4, primr5, gamma,gm1, gm
-     +1inv, nlefix, lefix, mcheps, flux1, flux2, flux3, flux4,flux5) 
+     +1inv, nlefix, lefix, mcheps, flux1, flux2, flux3, flux4,flux5)
 C     !*****************************************************************
 C     !  SUBROUTINE: AD_ROE_HARTEN_FLUX5_EXP                            
 C     !      AUTHOR: Shaun Forth                                        
@@ -19,7 +19,7 @@ C     !    MODIFIED: Uwe Naumann, Feb 04
 C       
 C     !                                                                 
 C     !*****************************************************************
-      IMPLICIT none               
+      IMPLICIT none
 C     AUGUMENTS(in):                                                    
 C     nrm    : cell face normal                                         
 C     priml  : primitive variables left of cell face                    
@@ -36,7 +36,7 @@ C     lefix  : linear entropy fix parameter
 C     mcheps : machine epsilon
 
       double precision,intent(in):: gamma, gm1, gm1inv, nlefix, lefix, m
-     +cheps 
+     +cheps
 
 
 C     AUGUMENTS(out):                                                   
@@ -46,7 +46,7 @@ C     flux  : inviscid flux
 
 C     PARAMETERS
 
-      real:: one, half, zero                                    
+      real:: one, half, zero
       PARAMETER (one = 1.0d0, half = 0.5d0, zero = 0.0d0)
 
 C     LOCAL VARIABLES                                                   
@@ -54,8 +54,7 @@ C     independent of flow variables
 C     nsize,nsizei      : size of normal and reciprocal                 
 C     nxhat,nyhat,nzhat : components of normalised normal
 
-      double precision:: nsize, nsizei, nxhat, nyhat, nzhat             
-     +    
+      double precision:: nsize, nsizei, nxhat, nyhat, nzhat
 
 C     dependent on flow variables                                       
 C     roel,roer  : Roe averaging weights                                
@@ -78,44 +77,27 @@ C     mu                       : used for dissipation vector
 C     dss1,dss2,dss3,dss4,dss5 : dissipation vector                     
 C     uhatl                    : u.nhat left side of face
 
-      double precision:: roel, roer                                     
-     +    
-      double precision:: thetal, thetar                                 
-     +    
-      double precision:: hl, hr                                         
-     +    
-      double precision:: uave, vave, wave, have, cave                   
-     +    
-      double precision:: uhat, thtave                                   
-     +    
-      double precision:: utilde, vtilde, wtilde                         
-     +    
+      double precision:: roel, roer
+      double precision:: thetal, thetar
+      double precision:: hl, hr
+      double precision:: uave, vave, wave, have, cave
+      double precision:: uhat, thtave
+      double precision:: utilde, vtilde, wtilde
 C      double precision:: delta, delta2
 
-      double precision:: lamcm, lamcp, lamu                             
-     +    
+      double precision:: lamcm, lamcp, lamu
 C      double precision:: lam2
 
-      double precision:: alamcm, alamcp, alamu                          
-     +    
-      double precision:: el, rul, rvl, rwl                              
-     +    
-      double precision:: er, rur, rvr, rwr                              
-     +    
-      double precision:: de, dr, dru, drv, drw                          
-     +    
-      double precision:: uddru, omega, nddru                            
-     +    
-      double precision:: alp1, alp2, alp3, alp4, alp5                   
-     +    
-      double precision:: alp15p, alp15m                                 
-     +    
-      double precision:: mu                                             
-     +    
-      double precision:: dss1, dss2, dss3, dss4, dss5                   
-     +    
-      double precision:: uhatl                                          
-     +    
+      double precision:: alamcm, alamcp, alamu
+      double precision:: el, rul, rvl, rwl
+      double precision:: er, rur, rvr, rwr
+      double precision:: de, dr, dru, drv, drw
+      double precision:: uddru, omega, nddru
+      double precision:: alp1, alp2, alp3, alp4, alp5
+      double precision:: alp15p, alp15m
+      double precision:: mu
+      double precision:: dss1, dss2, dss3, dss4, dss5
+      double precision:: uhatl
 
 C$openad INDEPENDENT(nrm1)
 C$openad INDEPENDENT(nrm2)

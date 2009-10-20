@@ -10,15 +10,15 @@
       subroutine bar(x)
         double precision :: x(1)
         x(1) = x(1)+1.0
-      end subroutine 
+      end subroutine
       
       subroutine head(x,y)
-        interface 
+        interface
            subroutine foo(x)
              double precision :: x
            end subroutine foo
         end interface
-        interface 
+        interface
            subroutine bar(x)
              double precision :: x(1)
            end subroutine bar

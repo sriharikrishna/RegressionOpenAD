@@ -127,7 +127,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -151,7 +151,7 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       NX = integer_tape(integer_tape_pointer)
       CALL foo(NX,NY,X,FVEC,R,N,HX,HY,HY2,HX2)
-          end if 
+          end if
         end subroutine head
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -752,7 +752,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_23
       integer_tape_pointer = integer_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
@@ -1000,7 +1000,7 @@ C adjoint
         END DO
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8)+1
       END DO
-          end if 
+          end if
         end subroutine foo
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -1008,8 +1008,8 @@ C The full COPYRIGHT notice can be found in the top      #
 C level directory of the OpenAD distribution             #
 C#########################################################
 
-      SUBROUTINE bar(PBB, PBL, PB, PBR, PLL, PL, P, PR, PRR, PTL, PT,  P
-     +TR, PTT, HY2, HX2, PLAP, PBLAP, PLLAP, PRLAP, PTLAP)
+      SUBROUTINE bar(PBB, PBL, PB, PBR, PLL, PL, P, PR, PRR, PTL, PT, PT
+     +R, PTT, HY2, HX2, PLAP, PBLAP, PLLAP, PRLAP, PTLAP)
           use OAD_tape
           use OAD_rev
 
@@ -1169,7 +1169,7 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_50
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -1247,5 +1247,5 @@ C adjoint
       P%d = P%d+OpenAD_prop_7%d
       PBB%d = PBB%d+OpenAD_prop_7%d
       OpenAD_prop_7%d = 0.0d0
-          end if 
+          end if
         end subroutine bar
