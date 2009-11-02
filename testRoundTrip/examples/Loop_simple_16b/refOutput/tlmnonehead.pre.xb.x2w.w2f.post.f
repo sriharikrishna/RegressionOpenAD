@@ -29,7 +29,7 @@ C
       type(active) :: A(1:4)
       INTEGER(w2f__i4) SP
       type(active) :: LAG
-      INTENT(OUT)  LAG
+      INTENT(OUT) LAG
 C
 C     **** Local Variables and Functions ****
 C
@@ -83,9 +83,9 @@ C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:4)
-      INTENT(IN)  X
+      INTENT(IN) X
       type(active) :: Y(1:1)
-      INTENT(OUT)  Y
+      INTENT(OUT) Y
 C
 C     **** Local Variables and Functions ****
 C

@@ -123,7 +123,7 @@ C$OPENAD XXX Simple loop
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_6
       double_tape_pointer = double_tape_pointer+1
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
@@ -166,7 +166,7 @@ C adjoint
       END DO
       DENOM%d = 0.0d0
       NUMER%d = 0.0d0
-          end if 
+          end if
         end subroutine lagran
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #
@@ -225,9 +225,9 @@ C$OPENAD XXX Template ad_template.f
       OAD_CTMP1 = 2.0D00
       OAD_CTMP2 = 4
       CALL lagran(OAD_CTMP0,OAD_CTMP1,X,OAD_CTMP2,Y(1))
-          end if 
+          end if
           if (our_rev_mode%adjoint) then
 C adjoint
       CALL lagran(OAD_CTMP0,OAD_CTMP1,X,OAD_CTMP2,Y(1))
-          end if 
+          end if
         end subroutine head
