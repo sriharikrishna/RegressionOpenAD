@@ -210,13 +210,13 @@ C restore arguments
         theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +Y(cp_loop_variable_1)%v
-        end do
+        enddo
         do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
         X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
         theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-        end do
+        enddo
         J = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", J, theArgIStackOffset
         theArgIStackoffset = theArgIStackoffset-1
@@ -227,7 +227,7 @@ C          write(*,'(A,I5,I5)') "restore(s)  ", J, theArgIStackOffset
 C original function
         DO I = 1,J,1
           Y(1)%v = (X(J)%v*Y(1)%v)
-        END DO
+        enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -253,7 +253,7 @@ C taping
           integer_tape(integer_tape_pointer) = J
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
         integer_tape_pointer = integer_tape_pointer+1
 
@@ -289,7 +289,7 @@ C adjoint
           Y(1)%d = Y(1)%d+OpenAD_prop_0%d
           OpenAD_prop_0%d = 0.0d0
           OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-        END DO
+        enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

@@ -67,7 +67,7 @@ C original function
 C$OPENAD XXX Simple loop
       DO I = 3,1,(-1)
         Y(1)%v = (X(1)%v*Y(1)%v)
-      END DO
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -83,7 +83,7 @@ C$OPENAD XXX Simple loop
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_lin_1
         double_tape_pointer = double_tape_pointer+1
-      END DO
+      enddo
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -103,7 +103,7 @@ C adjoint
         Y(1)%d = Y(1)%d+OpenAD_prop_0%d
         OpenAD_prop_0%d = 0.0d0
         I = I-(-1)
-      END DO
+      enddo
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
           end if

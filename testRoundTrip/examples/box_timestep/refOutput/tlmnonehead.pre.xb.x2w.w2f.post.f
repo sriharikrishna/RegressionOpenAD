@@ -190,5 +190,5 @@ C$OPENAD XXX Template ad_template.f
         FLDNEW(INT(L))%v = (FLDOLD(L)+DFLDDT(L)%v*OpenAD_tmp_10)
         OpenAD_lin_25 = OpenAD_tmp_10
         CALL sax(OpenAD_lin_25,DFLDDT(L),FLDNEW(L))
-      END DO
+      enddo
       END SUBROUTINE

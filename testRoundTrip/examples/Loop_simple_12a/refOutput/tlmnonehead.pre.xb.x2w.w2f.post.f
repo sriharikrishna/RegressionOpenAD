@@ -47,5 +47,5 @@ C$OPENAD XXX Simple loop
           CALL saxpy(OpenAD_lin_1,X(J),Y(I))
           J = (J+1)
         ENDIF
-      END DO
+      enddo
       END SUBROUTINE

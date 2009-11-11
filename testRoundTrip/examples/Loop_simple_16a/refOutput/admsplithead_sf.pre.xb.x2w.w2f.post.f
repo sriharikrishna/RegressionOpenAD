@@ -69,7 +69,7 @@ C$OPENAD XXX Simple loop
         IF (I.LT.5) THEN
           Y%v = (X(I)%v*Y%v)
         ENDIF
-      END DO
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -86,7 +86,7 @@ C$OPENAD XXX Simple loop
           double_tape(double_tape_pointer) = OpenAD_lin_1
           double_tape_pointer = double_tape_pointer+1
         ENDIF
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = L
       integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = U
@@ -117,7 +117,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         I = I-S
-      END DO
+      enddo
           end if
         end subroutine foo
 C#########################################################

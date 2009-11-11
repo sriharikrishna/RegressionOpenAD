@@ -78,7 +78,7 @@ C$OPENAD XXX Simple loop
         ELSE
           Y(1)%v = 0.0
         ENDIF
-      END DO
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -104,7 +104,7 @@ C$OPENAD XXX Simple loop
         ENDIF
         integer_tape(integer_tape_pointer) = A(I,J)
         integer_tape_pointer = integer_tape_pointer+1
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = J
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -130,7 +130,7 @@ C adjoint
           Y(1)%d = 0.0d0
         ENDIF
         I = I-1
-      END DO
+      enddo
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
           end if
@@ -211,15 +211,15 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1,2,1
         DO J = 1,2,1
           A(I,J) = (I+J)
-        END DO
-      END DO
+        enddo
+      enddo
       OAD_CTMP0 = 2
       CALL foo(X,Y,A,OAD_CTMP0)
       DO I = 1,2,1
         DO J = 1,2,1
           A(I,J) = 0
-        END DO
-      END DO
+        enddo
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -230,11 +230,11 @@ C$OPENAD XXX Template ad_template.f
         DO J = 1,2,1
           A(I,J) = (I+J)
           OpenAD_Symbol_16 = (INT(OpenAD_Symbol_16)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_16
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_15 = (INT(OpenAD_Symbol_15)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
       integer_tape_pointer = integer_tape_pointer+1
       OAD_CTMP0 = 2
@@ -245,11 +245,11 @@ C$OPENAD XXX Template ad_template.f
         DO J = 1,2,1
           A(I,J) = 0
           OpenAD_Symbol_18 = (INT(OpenAD_Symbol_18)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_18
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_17 = (INT(OpenAD_Symbol_17)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_17
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -264,9 +264,9 @@ C adjoint
         OpenAD_Symbol_10 = 1
         do while (INT(OpenAD_Symbol_10).LE.INT(OpenAD_Symbol_9))
           OpenAD_Symbol_10 = INT(OpenAD_Symbol_10)+1
-        END DO
+        enddo
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8)+1
-      END DO
+      enddo
       CALL foo(X,Y,A,OAD_CTMP0)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_11 = integer_tape(integer_tape_pointer)
@@ -277,8 +277,8 @@ C adjoint
         OpenAD_Symbol_14 = 1
         do while (INT(OpenAD_Symbol_14).LE.INT(OpenAD_Symbol_13))
           OpenAD_Symbol_14 = INT(OpenAD_Symbol_14)+1
-        END DO
+        enddo
         OpenAD_Symbol_12 = INT(OpenAD_Symbol_12)+1
-      END DO
+      enddo
           end if
         end subroutine head

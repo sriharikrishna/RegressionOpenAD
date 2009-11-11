@@ -85,5 +85,5 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(OpenAD_acc_0,TEMP2,FVEC(I))
         CALL saxpy(OpenAD_acc_1,X(1),FVEC(I))
         CALL saxpy(OpenAD_acc_2,X(2),FVEC(I))
-      END DO
+      enddo
       END SUBROUTINE

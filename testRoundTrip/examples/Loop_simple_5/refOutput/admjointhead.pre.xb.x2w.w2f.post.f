@@ -89,7 +89,7 @@ C$OPENAD XXX Simple loop
         ELSE
           Y(INT(I))%v = (X(I)%v*2.0D00)
         ENDIF
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -110,7 +110,7 @@ C$OPENAD XXX Simple loop
         ELSE
           Y(INT(I))%v = (X(I)%v*2.0D00)
         ENDIF
-      END DO
+      enddo
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -137,7 +137,7 @@ C adjoint
           Y(I)%d = 0.0d0
         ENDIF
         I = I-1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

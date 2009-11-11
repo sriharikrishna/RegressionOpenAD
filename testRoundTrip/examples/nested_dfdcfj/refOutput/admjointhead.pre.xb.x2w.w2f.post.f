@@ -117,7 +117,7 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(NX,NY,X,FVEC,R,N,HX,HY,HY2,HX2)
       DO K = 1,N,1
         FVEC(INT(K))%v = (FVEC(K)%v*HX2*HY2)
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -154,7 +154,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = K
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -188,7 +188,7 @@ C adjoint
      +OpenAD_prop_0%d
         OpenAD_prop_0%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      END DO
+      enddo
       integer_tape_pointer = integer_tape_pointer-1
       NY = integer_tape(integer_tape_pointer)
       integer_tape_pointer = integer_tape_pointer-1
@@ -495,7 +495,7 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-      end do
+      enddo
       HY = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", HY
       theArgFStackoffset = theArgFStackoffset-1
@@ -602,8 +602,8 @@ C$OPENAD XXX Template ad_template.f
           FVEC(INT(K))%v = (((PBLAP%v+PTLAP%v-PLAP%v*2.0D00)/HY2)+((PLLA
      +P%v+PRLAP%v-PLAP%v*2.0D00)/HX2)-R*(((DPDY%v*(PRLAP%v-PLLAP%v))/(HX
      +*2.0D00))-((DPDX%v*(PTLAP%v-PBLAP%v))/(HY*2.0D00))))
-        END DO
-      END DO
+        enddo
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -877,11 +877,11 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = K
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_24 = (INT(OpenAD_Symbol_24)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_24
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_23 = (INT(OpenAD_Symbol_23)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_23
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -1142,9 +1142,9 @@ C adjoint
             PBL%d = 0.0d0
           ENDIF
           OpenAD_Symbol_10 = INT(OpenAD_Symbol_10)+1
-        END DO
+        enddo
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

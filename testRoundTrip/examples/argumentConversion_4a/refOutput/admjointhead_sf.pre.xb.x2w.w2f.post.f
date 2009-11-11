@@ -84,7 +84,7 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-      end do
+      enddo
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -234,7 +234,7 @@ C original function
 C$OPENAD XXX Template ad_template.f
       DO I = 1,2,1
         AX(INT(I),2)%v = X(I)%v
-      END DO
+      enddo
       CALL foo(AX(1,2),Y)
 C!! requested inline of 'convert_p2a_matrix' has no defn
       CALL convert_p2a_matrix(OpenAD_Symbol_0,APX)
@@ -264,7 +264,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = I
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
       CALL foo(AX(1,2),Y)
@@ -305,7 +305,7 @@ C adjoint
      +penAD_Symbol_10),2)%d
         AX(INT(OpenAD_Symbol_10),2)%d = 0.0d0
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

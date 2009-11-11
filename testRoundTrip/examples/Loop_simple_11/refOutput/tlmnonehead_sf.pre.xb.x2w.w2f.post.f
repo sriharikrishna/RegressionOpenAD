@@ -58,5 +58,5 @@ C$OPENAD XXX Template ad_template.f
           CALL setderiv(Y(1),OpenAD_prop_1)
           CALL dec_deriv(Y(1),X(1))
         ENDIF
-      END DO
+      enddo
       END SUBROUTINE

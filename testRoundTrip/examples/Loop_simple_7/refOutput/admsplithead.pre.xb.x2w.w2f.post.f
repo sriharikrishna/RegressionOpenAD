@@ -47,7 +47,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,K,1
         Y(INT(I))%v = X(I)%v
-      END DO
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -55,7 +55,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,K,1
         Y(INT(I))%v = X(I)%v
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = K
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -68,7 +68,7 @@ C adjoint
         X(I)%d = X(I)%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1
-      END DO
+      enddo
           end if
         end subroutine bar
 C#########################################################

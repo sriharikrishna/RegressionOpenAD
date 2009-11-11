@@ -38,12 +38,12 @@ C$OPENAD XXX Simple loop
         DO I = 1,3,1
           Y(INT(I))%v = X(I)%v
           CALL setderiv(Y(I),X(I))
-        END DO
+        enddo
       ELSE
 C$OPENAD XXX Simple loop
         DO I = 1,3,1
           Y(INT(I))%v = (X(I)%v*2.0D00)
           CALL sax(2.0D00,X(I),Y(I))
-        END DO
+        enddo
       ENDIF
       END SUBROUTINE

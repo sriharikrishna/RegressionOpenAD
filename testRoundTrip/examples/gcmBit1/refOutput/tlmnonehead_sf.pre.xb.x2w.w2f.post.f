@@ -307,8 +307,8 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_lin_19,T3,BULKMOD(I,J))
           CALL saxpy(OpenAD_lin_21,T4,BULKMOD(I,J))
           CALL saxpy(OpenAD_lin_15,T,BULKMOD(I,J))
-        END DO
-      END DO
+        enddo
+      enddo
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -358,16 +358,16 @@ C$OPENAD XXX Template ad_template.f
                 CALL sax(3.0D00,X(XCOUNT),TFLD(I,J,K,L,M))
                 CALL sax(4.0D00,X(XCOUNT),SFLD(I,J,K,L,M))
                 XCOUNT = (XCOUNT+1)
-              END DO
-            END DO
-          END DO
-        END DO
-      END DO
+              enddo
+            enddo
+          enddo
+        enddo
+      enddo
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       DO I = 1,2,1
         DO J = 1,2,1
           Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
           CALL setderiv(Y(J+I*2+(-2)),BULKMOD(I,J))
-        END DO
-      END DO
+        enddo
+      enddo
       END SUBROUTINE

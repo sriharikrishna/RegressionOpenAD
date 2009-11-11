@@ -93,7 +93,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 0,3,1
         Y(INT(I+1))%v = X(I+1)%v
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -110,7 +110,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 0,3,1
         Y(INT(I+1))%v = X(I+1)%v
-      END DO
+      enddo
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -132,7 +132,7 @@ C adjoint
         X(I+1)%d = X(I+1)%d+Y(I+1)%d
         Y(I+1)%d = 0.0d0
         I = I-1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

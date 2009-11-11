@@ -323,7 +323,7 @@ C$OPENAD XXX Template ad_template.f
         CALL saxpy(OpenAD_acc_26,X(I),F(I+1))
         CALL saxpy(OpenAD_acc_28,X(I),F(I+1))
         CALL saxpy(OpenAD_acc_29,X(9),F(I+1))
-      END DO
+      enddo
       OpenAD_tmp_34 = (X(7)%v*X(9)%v+1.0D00)
       OpenAD_tmp_33 = (X(7)%v/OpenAD_tmp_34)
       OpenAD_tmp_31 = EXP(OpenAD_tmp_33)

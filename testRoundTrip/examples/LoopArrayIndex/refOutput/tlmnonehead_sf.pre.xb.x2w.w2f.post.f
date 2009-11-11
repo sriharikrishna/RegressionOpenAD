@@ -93,7 +93,7 @@ C$OPENAD XXX Template ad_template.f
       DO J = 1,2,1
         CALL foo(X(J))
         CALL bar(X(J),I)
-      END DO
+      enddo
       Y%v = (X(1)%v*X(2)%v)
       OpenAD_lin_3 = X(2)%v
       OpenAD_lin_4 = X(1)%v

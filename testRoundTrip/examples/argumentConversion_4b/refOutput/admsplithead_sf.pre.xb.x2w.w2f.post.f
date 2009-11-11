@@ -154,8 +154,8 @@ C$OPENAD XXX Simple loop
         DO J = 1,2,1
           AX(INT(I),INT(J))%v = X(I)%v
           APX(INT(I),INT(J)) = (I*DBLE(4.0))
-        END DO
-      END DO
+        enddo
+      enddo
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(AX(I,1:2),Y(1))
@@ -168,7 +168,7 @@ C!! requested inline of 'convert_a2p_matrix' has no defn
         CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
         CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-      END DO
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -178,8 +178,8 @@ C$OPENAD XXX Simple loop
         DO J = 1,2,1
           AX(INT(I),INT(J))%v = X(I)%v
           APX(INT(I),INT(J)) = (I*DBLE(4.0))
-        END DO
-      END DO
+        enddo
+      enddo
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(AX(I,1:2),Y(1))
@@ -192,7 +192,7 @@ C!! requested inline of 'convert_a2p_matrix' has no defn
         CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
 C!! requested inline of 'convert_a2p_scalar' has no defn
         CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-      END DO
+      enddo
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -201,7 +201,7 @@ C adjoint
         CALL foo(OpenAD_Symbol_17(I,1:2),OpenAD_Symbol_18)
         CALL foo(AX(I,1:2),Y(1))
         I = I-1
-      END DO
+      enddo
       I = 1+1*((2-1)/1)
       do while (I.GE.1)
         J = 1+1*((2-1)/1)
@@ -209,8 +209,8 @@ C adjoint
           X(I)%d = X(I)%d+AX(I,J)%d
           AX(I,J)%d = 0.0d0
           J = J-1
-        END DO
+        enddo
         I = I-1
-      END DO
+      enddo
           end if
         end subroutine head

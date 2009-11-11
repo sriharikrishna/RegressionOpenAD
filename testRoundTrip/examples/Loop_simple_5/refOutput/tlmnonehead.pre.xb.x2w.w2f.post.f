@@ -33,5 +33,5 @@ C$OPENAD XXX Simple loop
           Y(INT(I))%v = (X(I)%v*2.0D00)
           CALL sax(2.0D00,X(I),Y(I))
         ENDIF
-      END DO
+      enddo
       END SUBROUTINE

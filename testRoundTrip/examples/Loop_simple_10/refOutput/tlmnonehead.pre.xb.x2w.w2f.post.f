@@ -56,7 +56,7 @@ C$OPENAD XXX Simple loop
           Y(1)%v = 0.0
           CALL zero_deriv(Y(1))
         ENDIF
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -89,12 +89,12 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1,2,1
         DO J = 1,2,1
           A(I,J) = (I+J)
-        END DO
-      END DO
+        enddo
+      enddo
       CALL foo(X,Y,A,2)
       DO I = 1,2,1
         DO J = 1,2,1
           A(I,J) = 0
-        END DO
-      END DO
+        enddo
+      enddo
       END SUBROUTINE

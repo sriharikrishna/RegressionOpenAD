@@ -352,7 +352,7 @@ C$OPENAD XXX Template ad_template.f
       DO J = 1,2,1
         CALL foo(X(J))
         CALL bar(X(J),I)
-      END DO
+      enddo
       Y%v = (X(1)%v*X(2)%v)
 
 C original function end
@@ -377,7 +377,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = J
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
       Y%v = (X(1)%v*X(2)%v)
@@ -421,7 +421,7 @@ C adjoint
         J = integer_tape(integer_tape_pointer)
         CALL foo(X(J))
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

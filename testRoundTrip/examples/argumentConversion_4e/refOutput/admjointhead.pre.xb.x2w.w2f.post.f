@@ -86,7 +86,7 @@ C original function
 C$OPENAD XXX Template ad_template.f
       DO I = 1,2,1
         T(INT(I),2)%v = X(I)%v
-      END DO
+      enddo
 C!! requested inline of 'convert_a2p_matrix' has no defn
       CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0(1,2))
@@ -112,7 +112,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = I
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
 C!! requested inline of 'convert_a2p_matrix' has no defn
@@ -149,7 +149,7 @@ C adjoint
      +AD_Symbol_7),2)%d
         T(INT(OpenAD_Symbol_7),2)%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

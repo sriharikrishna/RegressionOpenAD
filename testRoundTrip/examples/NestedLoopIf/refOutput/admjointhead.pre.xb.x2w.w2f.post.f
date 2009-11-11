@@ -100,7 +100,7 @@ C$OPENAD XXX Template ad_template.f
           Y(INT(I))%v = (X(I)%v+X(I)%v)
         ENDIF
         X(INT(I))%v = 0.0
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -141,7 +141,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = I
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -191,7 +191,7 @@ C adjoint
           Y(INT(OpenAD_Symbol_16))%d = 0.0d0
         ENDIF
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

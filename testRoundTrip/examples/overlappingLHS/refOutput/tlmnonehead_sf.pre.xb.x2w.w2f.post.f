@@ -39,5 +39,5 @@ C$OPENAD XXX Simple loop
         CALL setderiv(Y(I),X)
         Y(6-I)%v = X%v
         CALL setderiv(Y(6-I),X)
-      END DO
+      enddo
       END SUBROUTINE

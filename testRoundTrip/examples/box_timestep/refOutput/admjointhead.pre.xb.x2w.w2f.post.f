@@ -184,7 +184,7 @@ C$OPENAD XXX Template ad_template.f
       ENDIF
       DO L = 1,3,1
         FLDNEW(INT(L))%v = (FLDOLD(L)+DFLDDT(L)%v*DELTA_T*2.0D00)
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -305,7 +305,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_5 = (INT(OpenAD_Symbol_5)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -336,7 +336,7 @@ C adjoint
      +d+FLDNEW(INT(OpenAD_Symbol_17))%d*(OpenAD_Symbol_18)
         FLDNEW(INT(OpenAD_Symbol_17))%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      END DO
+      enddo
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
       IF (OpenAD_Symbol_2.ne.0) THEN

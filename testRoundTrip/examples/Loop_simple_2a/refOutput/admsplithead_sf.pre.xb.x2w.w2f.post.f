@@ -81,15 +81,15 @@ C original function
 C$OPENAD XXX Template ad_template.f
       DO I = 1,3,1
         Y(INT(I))%v = X(I)%v
-      END DO
+      enddo
 C$OPENAD XXX Simple loop
       DO I = 1,3,1
         DO J = 1,3,1
           DO K = 1,3,1
             Y(INT(I))%v = (X(J)%v*Y(I)%v)
-          END DO
-        END DO
-      END DO
+          enddo
+        enddo
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -100,7 +100,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = I
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
 C$OPENAD XXX Simple loop
@@ -115,9 +115,9 @@ C$OPENAD XXX Simple loop
             double_tape_pointer = double_tape_pointer+1
             double_tape(double_tape_pointer) = OpenAD_lin_1
             double_tape_pointer = double_tape_pointer+1
-          END DO
-        END DO
-      END DO
+          enddo
+        enddo
+      enddo
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -137,11 +137,11 @@ C adjoint
             Y(I)%d = Y(I)%d+OpenAD_prop_0%d
             OpenAD_prop_0%d = 0.0d0
             K = K-1
-          END DO
+          enddo
           J = J-1
-        END DO
+        enddo
         I = I-1
-      END DO
+      enddo
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_2 = 1
@@ -152,6 +152,6 @@ C adjoint
      +enAD_Symbol_16))%d
         Y(INT(OpenAD_Symbol_16))%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      END DO
+      enddo
           end if
         end subroutine head

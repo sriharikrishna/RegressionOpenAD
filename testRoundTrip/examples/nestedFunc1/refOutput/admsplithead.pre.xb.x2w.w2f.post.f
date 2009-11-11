@@ -108,7 +108,7 @@ C
 C original function
         DO I = 1,J,1
           Y(1)%v = (X(J)%v*Y(1)%v)
-        END DO
+        enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -125,7 +125,7 @@ C taping
           integer_tape(integer_tape_pointer) = J
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
         integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -148,7 +148,7 @@ C adjoint
           Y(1)%d = Y(1)%d+OpenAD_prop_0%d
           OpenAD_prop_0%d = 0.0d0
           OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-        END DO
+        enddo
           end if
         end subroutine FOO
         end subroutine head

@@ -40,7 +40,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1,2,1
         T(INT(I),2)%v = X(I)%v
         CALL setderiv(T(I,2),X(I))
-      END DO
+      enddo
 C     $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
       CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0(1,2))

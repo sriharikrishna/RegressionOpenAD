@@ -46,7 +46,7 @@ C$OPENAD XXX Simple loop
         CALL setderiv(OpenAD_prop_0,Y)
         CALL sax(OpenAD_lin_0,X(I),Y)
         CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y)
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

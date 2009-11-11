@@ -138,12 +138,12 @@ C$OPENAD XXX Template ad_template.f
               IF (X(1)%v.GT.0.0D00) THEN
                 Y(1)%v = (X(1)%v*Y(1)%v)
               ENDIF
-            END DO
-          END DO
+            enddo
+          enddo
         ELSE
           Y(1)%v = (Y(1)%v/X(1)%v)
         ENDIF
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -186,11 +186,11 @@ C$OPENAD XXX Template ad_template.f
                 integer_tape_pointer = integer_tape_pointer+1
               ENDIF
               OpenAD_Symbol_12 = (INT(OpenAD_Symbol_12)+INT(1_w2f__i8))
-            END DO
+            enddo
             integer_tape(integer_tape_pointer) = OpenAD_Symbol_12
             integer_tape_pointer = integer_tape_pointer+1
             OpenAD_Symbol_11 = (INT(OpenAD_Symbol_11)+INT(1_w2f__i8))
-          END DO
+          enddo
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_16 = 1_w2f__i8
@@ -210,7 +210,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
         OpenAD_Symbol_10 = (INT(OpenAD_Symbol_10)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_10
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -261,11 +261,11 @@ C adjoint
               X(1)%d = X(1)%d+Y(1)%d
               Y(1)%d = 0.0d0
               OpenAD_Symbol_8 = INT(OpenAD_Symbol_8)+1
-            END DO
+            enddo
             X(1)%d = X(1)%d+Y(1)%d
             Y(1)%d = 0.0d0
             OpenAD_Symbol_6 = INT(OpenAD_Symbol_6)+1
-          END DO
+          enddo
           X(1)%d = X(1)%d+Y(1)%d
           Y(1)%d = 0.0d0
         ELSE
@@ -282,7 +282,7 @@ C adjoint
         X(1)%d = X(1)%d+Y(1)%d
         Y(1)%d = 0.0d0
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

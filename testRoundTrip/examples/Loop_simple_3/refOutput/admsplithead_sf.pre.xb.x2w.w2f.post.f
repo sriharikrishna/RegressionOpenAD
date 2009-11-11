@@ -81,7 +81,7 @@ C$OPENAD XXX Simple loop
         IF (ASTRING.EQ.'bloh') THEN
           Y(1)%v = (Y(1)%v-X(1)%v)
         ENDIF
-      END DO
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -103,7 +103,7 @@ C$OPENAD XXX Simple loop
         IF (ASTRING.EQ.'bloh') THEN
           Y(1)%v = (Y(1)%v-X(1)%v)
         ENDIF
-      END DO
+      enddo
       stringlength_tape(stringlength_tape_pointer) = len(ASTRING)
       stringlength_tape_pointer = stringlength_tape_pointer+1
       character_tape(character_tape_pointer:character_tape_pointer+len(A
@@ -142,7 +142,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         I = I-1
-      END DO
+      enddo
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
           end if

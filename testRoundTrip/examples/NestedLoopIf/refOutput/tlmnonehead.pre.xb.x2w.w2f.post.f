@@ -42,5 +42,5 @@ C$OPENAD XXX Template ad_template.f
         ENDIF
         X(INT(I))%v = 0.0
         CALL zero_deriv(X(INT(I)))
-      END DO
+      enddo
       END SUBROUTINE

@@ -400,8 +400,8 @@ C$OPENAD XXX Template ad_template.f
           FVEC(INT(K))%v = (((PBLAP%v+PTLAP%v-PLAP%v*2.0D00)/HY2)+((PLLA
      +P%v+PRLAP%v-PLAP%v*2.0D00)/HX2)-R*(((DPDY%v*(PRLAP%v-PLLAP%v))/(HX
      +*2.0D00))-((DPDX%v*(PTLAP%v-PBLAP%v))/(HY*2.0D00))))
-        END DO
-      END DO
+        enddo
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -722,11 +722,11 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = K
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_17 = (INT(OpenAD_Symbol_17)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_17
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_16 = (INT(OpenAD_Symbol_16)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_16
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -1014,8 +1014,8 @@ C adjoint
             PBL%d = 0.0d0
           ENDIF
           OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
-        END DO
+        enddo
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      END DO
+      enddo
           end if
         end subroutine head

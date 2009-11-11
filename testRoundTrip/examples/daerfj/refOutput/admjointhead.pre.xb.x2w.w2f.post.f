@@ -127,7 +127,7 @@ C$OPENAD XXX Template ad_template.f
         TEMP1%v = (V(I)*(X(2)%v+V(I)))
         TEMP2%v = (X(4)%v+V(I)*(X(3)%v+V(I)))
         FVEC(INT(I))%v = (Y(I)-((X(1)%v*TEMP1%v)/TEMP2%v))
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -192,7 +192,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = I
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -233,7 +233,7 @@ C adjoint
         X(4)%d = X(4)%d+TEMP2%d
         TEMP2%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

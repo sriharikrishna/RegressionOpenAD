@@ -53,5 +53,5 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(X(I),Y(I))
-      END DO
+      enddo
       END SUBROUTINE

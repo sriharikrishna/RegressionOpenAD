@@ -116,7 +116,7 @@ C$OPENAD XXX Template ad_template.f
           TNOW(INT(L))%v = 2.0D00
           CALL zero_deriv(TNOW(INT(L)))
         ENDIF
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE box_final_state()
@@ -140,11 +140,11 @@ C
 C$OPENAD XXX Template ad_template.f
       DO L = 1,6,1
         TSVEC(INT(L)) = 0.0
-      END DO
+      enddo
       DO L = 1,3,1
         TSVEC(INT(L)) = TNOW(L)%v
         TSVEC(INT(L+3)) = SNOW(L)%v
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE box_ini_fields()
@@ -200,7 +200,7 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(S(3))
       DO L = 1,6,1
         TSVEC(INT(L)) = 0.0
-      END DO
+      enddo
       DO L = 1,3,1
         T(INT(L))%v = (T(L)%v+XX(L)%v)
         S(INT(L))%v = (S(L)%v+XX(L+3)%v)
@@ -210,7 +210,7 @@ C$OPENAD XXX Template ad_template.f
         CALL inc_deriv(T(L),XX(L))
         CALL setderiv(S(L),OpenAD_prop_13)
         CALL inc_deriv(S(L),XX(L+3))
-      END DO
+      enddo
       DO L = 1,3,1
         TNEW(INT(L))%v = T(L)%v
         CALL setderiv(TNEW(L),T(L))
@@ -224,7 +224,7 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(TNOW(L),T(L))
         SNOW(INT(L))%v = S(L)%v
         CALL setderiv(SNOW(L),S(L))
-      END DO
+      enddo
       UVEL%v = UBAR
       CALL zero_deriv(UVEL)
       END SUBROUTINE
@@ -298,7 +298,7 @@ C$OPENAD XXX Template ad_template.f
       R(6) = (-(BETA*(1.0D00-DELTA)))
       DO L = 1,6,1
         R(INT(L)) = ((R(L)*U0)/SV)
-      END DO
+      enddo
       DO L = 1,6,1
         IF (L.LE.3) THEN
           PROJ_T(INT(L)) = 1.0D00
@@ -307,11 +307,11 @@ C$OPENAD XXX Template ad_template.f
           PROJ_T(INT(L)) = 0.0D00
           PROJ_S(INT(L)) = 1.0D00
         ENDIF
-      END DO
+      enddo
       DO L = 1,6,1
         R_T(INT(L)) = (PROJ_T(L)*R(L))
         R_S(INT(L)) = (PROJ_S(L)*R(L))
-      END DO
+      enddo
       R1(1) = 1.0D00
       R1(2) = (-1.0D00)
       R1(3) = 0.0D00
@@ -321,14 +321,14 @@ C$OPENAD XXX Template ad_template.f
       DO J = 1,6,1
         DO I = 1,6,1
           X(INT(I),INT(J)) = (R(I)*R(J))
-        END DO
-      END DO
+        enddo
+      enddo
       EPSILON_REGULARIZE = 1.00000000000000002092D-08
       DO J = 1,6,1
         DO I = 1,6,1
           X(INT(I),INT(J)) = (X(I,J)+EPSILON_REGULARIZE)
-        END DO
-      END DO
+        enddo
+      enddo
       END SUBROUTINE
 
       SUBROUTINE box_model_body()
@@ -374,9 +374,9 @@ C$OPENAD XXX Template ad_template.f
               IF (ILOOP.LE.N_MAX) THEN
                 CALL box_forward(ILEV1)
               ENDIF
-            END DO
+            enddo
           ENDIF
-        END DO
+        enddo
         CALL box_final_state()
       ENDIF
       END SUBROUTINE
@@ -419,7 +419,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_acc_0 = (OpenAD_lin_2*INT((-1_w2f__i8)))
         CALL sax(OpenAD_lin_0,SLOC(L),RHOLOC(L))
         CALL saxpy(OpenAD_acc_0,TLOC(L),RHOLOC(L))
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE box_transport(RHOLOC, UVELLOC)
@@ -516,7 +516,7 @@ C$OPENAD XXX Template ad_template.f
         CALL saxpy(-2.0D00,OpenAD_prop_8,OpenAD_prop_9)
         CALL setderiv(FLDNOW(L),OpenAD_prop_7)
         CALL saxpy(OpenAD_lin_59,OpenAD_prop_9,FLDNOW(L))
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE box_cycle_fields()
@@ -554,7 +554,7 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(OpenAD_prop_11,SNOW(L))
         CALL setderiv(SOLD(L),OpenAD_prop_11)
         CALL setderiv(SNOW(L),SNEW(L))
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE box_update(FLDNEW, FLDOLD, DFLDDT)
@@ -593,7 +593,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_61 = OpenAD_tmp_23
         CALL setderiv(FLDNEW(L),FLDOLD(L))
         CALL saxpy(OpenAD_lin_61,DFLDDT(L),FLDNEW(L))
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC, FLD

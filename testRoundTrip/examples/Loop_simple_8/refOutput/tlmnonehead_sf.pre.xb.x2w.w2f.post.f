@@ -33,7 +33,7 @@ C$OPENAD XXX Simple loop
       DO I = 1,(K*2),1
         Y(INT(I))%v = X(I)%v
         CALL setderiv(Y(I),X(I))
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

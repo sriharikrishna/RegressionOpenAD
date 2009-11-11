@@ -61,8 +61,8 @@ C$OPENAD XXX Template ad_template.f
                 CALL sax(OpenAD_lin_0,X(1),Y(1))
                 CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y(1))
               ENDIF
-            END DO
-          END DO
+            enddo
+          enddo
         ELSE
           OpenAD_Symbol_1 = (Y(1)%v/X(1)%v)
           OpenAD_lin_2 = (INT(1_w2f__i8)/X(1)%v)
@@ -72,5 +72,5 @@ C$OPENAD XXX Template ad_template.f
           CALL sax(OpenAD_lin_2,OpenAD_prop_1,Y(1))
           CALL saxpy(OpenAD_lin_3,X(1),Y(1))
         ENDIF
-      END DO
+      enddo
       END SUBROUTINE

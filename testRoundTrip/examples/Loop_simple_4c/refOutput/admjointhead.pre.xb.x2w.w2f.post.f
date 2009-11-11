@@ -116,13 +116,13 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +Y(cp_loop_variable_1)%v
-      end do
+      enddo
       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-      end do
+      enddo
       GLOBALSTRING = theArgSStack(theArgSStackoffset)
       theArgSStackoffset = theArgSStackoffset-1
           end if
@@ -139,7 +139,7 @@ C$OPENAD XXX Simple loop
         IF (GLOBALSTRING.EQ.'no') THEN
           Y(INT(I))%v = (Y(I)%v+X(I)%v*X(I)%v*2.0D00)
         ENDIF
-      END DO
+      enddo
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
 
@@ -178,7 +178,7 @@ C$OPENAD XXX Simple loop
           double_tape(double_tape_pointer) = OpenAD_acc_1
           double_tape_pointer = double_tape_pointer+1
         ENDIF
-      END DO
+      enddo
       stringlength_tape(stringlength_tape_pointer) = len(GLOBALSTRING)
       stringlength_tape_pointer = stringlength_tape_pointer+1
       character_tape(character_tape_pointer:character_tape_pointer+len(G
@@ -235,7 +235,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         I = I-1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

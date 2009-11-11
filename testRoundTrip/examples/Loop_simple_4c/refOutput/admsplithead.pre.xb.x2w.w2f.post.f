@@ -89,7 +89,7 @@ C$OPENAD XXX Simple loop
         IF (GLOBALSTRING.EQ.'no') THEN
           Y(INT(I))%v = (Y(I)%v+X(I)%v*X(I)%v*2.0D00)
         ENDIF
-      END DO
+      enddo
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
           end if
@@ -119,7 +119,7 @@ C$OPENAD XXX Simple loop
           double_tape(double_tape_pointer) = OpenAD_acc_1
           double_tape_pointer = double_tape_pointer+1
         ENDIF
-      END DO
+      enddo
       stringlength_tape(stringlength_tape_pointer) = len(GLOBALSTRING)
       stringlength_tape_pointer = stringlength_tape_pointer+1
       character_tape(character_tape_pointer:character_tape_pointer+len(G
@@ -163,7 +163,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         I = I-1
-      END DO
+      enddo
           end if
         end subroutine foo
 C#########################################################

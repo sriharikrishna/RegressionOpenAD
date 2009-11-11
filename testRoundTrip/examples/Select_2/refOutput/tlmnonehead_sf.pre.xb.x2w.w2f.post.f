@@ -67,5 +67,5 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(OpenAD_lin_1,OpenAD_prop_1,Y(I))
         GO TO 21
  21     CONTINUE
-      END DO
+      enddo
       END SUBROUTINE

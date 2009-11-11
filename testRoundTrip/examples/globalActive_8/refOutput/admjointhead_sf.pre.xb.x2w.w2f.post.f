@@ -103,7 +103,7 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-      end do
+      enddo
       AGLOBAL%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", AGLOBAL%v
       theArgFStackoffset = theArgFStackoffset-1

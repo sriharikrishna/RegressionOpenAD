@@ -198,7 +198,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(X(I),Y(I))
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -215,7 +215,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(X(I),Y(I))
-      END DO
+      enddo
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -236,7 +236,7 @@ C adjoint
       do while (I.GE.1)
         CALL foo(X(I),Y(I))
         I = I-1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

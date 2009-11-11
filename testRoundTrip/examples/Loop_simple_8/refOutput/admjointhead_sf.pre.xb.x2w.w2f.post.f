@@ -86,7 +86,7 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-      end do
+      enddo
       K = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", K, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
@@ -99,7 +99,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,(K*2),1
         Y(INT(I))%v = X(I)%v
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -116,7 +116,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,(K*2),1
         Y(INT(I))%v = X(I)%v
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = K
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -142,7 +142,7 @@ C adjoint
         X(I)%d = X(I)%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

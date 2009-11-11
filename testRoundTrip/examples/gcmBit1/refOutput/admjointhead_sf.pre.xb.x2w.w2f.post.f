@@ -230,7 +230,7 @@ C store arguments
       call cp_store_real_vector(LOCPRES(cp_loop_variable_1,:),size(LOCPR
      +ES(cp_loop_variable_1,:)),theArgFStack,theArgFStackoffset,theArgFS
      +tackSize)
-      end do
+      enddo
       do cp_loop_variable_1 = lbound(TFLD,1),ubound(TFLD,1)
       do cp_loop_variable_2 = lbound(TFLD,2),ubound(TFLD,2)
       do cp_loop_variable_3 = lbound(TFLD,3),ubound(TFLD,3)
@@ -239,10 +239,10 @@ C store arguments
      +_2,cp_loop_variable_3,cp_loop_variable_4,:),size(TFLD(cp_loop_vari
      +able_1,cp_loop_variable_2,cp_loop_variable_3,cp_loop_variable_4,:)
      +),theArgFStack,theArgFStackoffset,theArgFStackSize)
-      end do
-      end do
-      end do
-      end do
+      enddo
+      enddo
+      enddo
+      enddo
       do cp_loop_variable_1 = lbound(SFLD,1),ubound(SFLD,1)
       do cp_loop_variable_2 = lbound(SFLD,2),ubound(SFLD,2)
       do cp_loop_variable_3 = lbound(SFLD,3),ubound(SFLD,3)
@@ -251,10 +251,10 @@ C store arguments
      +_2,cp_loop_variable_3,cp_loop_variable_4,:),size(SFLD(cp_loop_vari
      +able_1,cp_loop_variable_2,cp_loop_variable_3,cp_loop_variable_4,:)
      +),theArgFStack,theArgFStackoffset,theArgFStackSize)
-      end do
-      end do
-      end do
-      end do
+      enddo
+      enddo
+      enddo
+      enddo
           end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -267,11 +267,11 @@ C restore arguments
      +oop_variable_4,cp_loop_variable_5)%v = theArgFStack(theArgFStackof
      +fset)
       theArgFStackoffset = theArgFStackoffset-1
-      end do
-      end do
-      end do
-      end do
-      end do
+      enddo
+      enddo
+      enddo
+      enddo
+      enddo
       do cp_loop_variable_1 = ubound(TFLD,1),lbound(TFLD,1),-1
       do cp_loop_variable_2 = ubound(TFLD,2),lbound(TFLD,2),-1
       do cp_loop_variable_3 = ubound(TFLD,3),lbound(TFLD,3),-1
@@ -281,18 +281,18 @@ C restore arguments
      +oop_variable_4,cp_loop_variable_5)%v = theArgFStack(theArgFStackof
      +fset)
       theArgFStackoffset = theArgFStackoffset-1
-      end do
-      end do
-      end do
-      end do
-      end do
+      enddo
+      enddo
+      enddo
+      enddo
+      enddo
       do cp_loop_variable_1 = ubound(LOCPRES,1),lbound(LOCPRES,1),-1
       do cp_loop_variable_2 = ubound(LOCPRES,2),lbound(LOCPRES,2),-1
       LOCPRES(cp_loop_variable_1,cp_loop_variable_2)%v = theArgFStack(th
      +eArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
-      end do
-      end do
+      enddo
+      enddo
           end if
           if (our_rev_mode%plain) then
             our_orig_mode=our_rev_mode
@@ -355,8 +355,8 @@ C$OPENAD XXX Template ad_template.f
      +(10)*T%v+EOSJMDCKP(11)*T2%v)+P2%v*S%v*(EOSJMDCKP(12)+EOSJMDCKP(13)
      +*T%v+EOSJMDCKP(14)*T2%v))
           BULKMOD(INT(I),INT(J))%v = (BMPRES%v+BMFRESH%v+BMSALT%v)
-        END DO
-      END DO
+        enddo
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -593,11 +593,11 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = J
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_5 = (INT(OpenAD_Symbol_5)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -773,9 +773,9 @@ C adjoint
      +(OpenAD_Symbol_62),INT(OpenAD_Symbol_61))%d+T%d
           T%d = 0.0d0
           OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
-        END DO
+        enddo
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.
@@ -937,17 +937,17 @@ C$OPENAD XXX Template ad_template.f
                 SFLD(INT(I),INT(J),INT(K),INT(L),INT(M))%v = (X(XCOUNT)%
      +v*4.0D00)
                 XCOUNT = (XCOUNT+1)
-              END DO
-            END DO
-          END DO
-        END DO
-      END DO
+              enddo
+            enddo
+          enddo
+        enddo
+      enddo
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       DO I = 1,2,1
         DO J = 1,2,1
           Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
-        END DO
-      END DO
+        enddo
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -998,23 +998,23 @@ C$OPENAD XXX Template ad_template.f
                 XCOUNT = (XCOUNT+1)
                 OpenAD_Symbol_36 = (INT(OpenAD_Symbol_36)+INT(1_w2f__i8)
      +)
-              END DO
+              enddo
               integer_tape(integer_tape_pointer) = OpenAD_Symbol_36
               integer_tape_pointer = integer_tape_pointer+1
               OpenAD_Symbol_35 = (INT(OpenAD_Symbol_35)+INT(1_w2f__i8))
-            END DO
+            enddo
             integer_tape(integer_tape_pointer) = OpenAD_Symbol_35
             integer_tape_pointer = integer_tape_pointer+1
             OpenAD_Symbol_34 = (INT(OpenAD_Symbol_34)+INT(1_w2f__i8))
-          END DO
+          enddo
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_34
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_33 = (INT(OpenAD_Symbol_33)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_33
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_32 = (INT(OpenAD_Symbol_32)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_32
       integer_tape_pointer = integer_tape_pointer+1
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
@@ -1031,11 +1031,11 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = J
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_38 = (INT(OpenAD_Symbol_38)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_38
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_37 = (INT(OpenAD_Symbol_37)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_37
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -1073,9 +1073,9 @@ C adjoint
      +_Symbol_108))%d
           Y(INT(OpenAD_Symbol_108))%d = 0.0d0
           OpenAD_Symbol_21 = INT(OpenAD_Symbol_21)+1
-        END DO
+        enddo
         OpenAD_Symbol_19 = INT(OpenAD_Symbol_19)+1
-      END DO
+      enddo
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_22 = integer_tape(integer_tape_pointer)
@@ -1124,11 +1124,11 @@ C adjoint
      +penAD_Symbol_102),INT(OpenAD_Symbol_101),INT(OpenAD_Symbol_100))%d
      + = 0.0d0
                 OpenAD_Symbol_31 = INT(OpenAD_Symbol_31)+1
-              END DO
+              enddo
               OpenAD_Symbol_29 = INT(OpenAD_Symbol_29)+1
-            END DO
+            enddo
             OpenAD_Symbol_27 = INT(OpenAD_Symbol_27)+1
-          END DO
+          enddo
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_97 = integer_tape(integer_tape_pointer)
           integer_tape_pointer = integer_tape_pointer-1
@@ -1139,9 +1139,9 @@ C adjoint
      +S(INT(OpenAD_Symbol_98),INT(OpenAD_Symbol_97))%d*(2.0D00)
           LOCPRES(INT(OpenAD_Symbol_98),INT(OpenAD_Symbol_97))%d = 0.0d0
           OpenAD_Symbol_25 = INT(OpenAD_Symbol_25)+1
-        END DO
+        enddo
         OpenAD_Symbol_23 = INT(OpenAD_Symbol_23)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

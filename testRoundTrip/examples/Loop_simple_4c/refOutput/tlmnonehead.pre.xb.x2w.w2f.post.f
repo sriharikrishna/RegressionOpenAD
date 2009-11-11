@@ -69,7 +69,7 @@ C$OPENAD XXX Simple loop
           CALL saxpy(OpenAD_acc_0,X(I),Y(I))
           CALL saxpy(OpenAD_acc_1,X(I),Y(I))
         ENDIF
-      END DO
+      enddo
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
       END SUBROUTINE

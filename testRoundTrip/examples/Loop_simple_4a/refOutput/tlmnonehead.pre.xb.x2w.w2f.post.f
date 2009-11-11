@@ -29,5 +29,5 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         Y(INT(J))%v = X(J)%v
         CALL setderiv(Y(J),X(J))
-      END DO
+      enddo
       END SUBROUTINE

@@ -84,7 +84,7 @@ C$OPENAD XXX Simple loop
       DO I = 1,5,1
         Y(INT(I))%v = X%v
         Y(6-I)%v = X%v
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -102,7 +102,7 @@ C$OPENAD XXX Simple loop
       DO I = 1,5,1
         Y(INT(I))%v = X%v
         Y(6-I)%v = X%v
-      END DO
+      enddo
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -126,7 +126,7 @@ C adjoint
         X%d = X%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

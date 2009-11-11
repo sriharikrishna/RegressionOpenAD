@@ -51,5 +51,5 @@ C$OPENAD XXX Template ad_template.f
           CALL sax(OpenAD_lin_0,X(I),Y(1))
           CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y(1))
         ENDIF
-      END DO
+      enddo
       END SUBROUTINE

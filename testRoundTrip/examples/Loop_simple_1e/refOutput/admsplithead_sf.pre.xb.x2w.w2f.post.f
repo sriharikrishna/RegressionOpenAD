@@ -109,7 +109,7 @@ C$OPENAD XXX Simple loop
       J = 1
       DO I = 1,2,1
         CALL foo(X(J),Y(J))
-      END DO
+      enddo
       J = 2
       CALL foo(X(J),Y(J))
           end if
@@ -124,7 +124,7 @@ C$OPENAD XXX Simple loop
         integer_tape(integer_tape_pointer) = J
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
       J = 2
@@ -145,6 +145,6 @@ C adjoint
         J = integer_tape(integer_tape_pointer)
         CALL foo(X(J),Y(J))
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      END DO
+      enddo
           end if
         end subroutine head

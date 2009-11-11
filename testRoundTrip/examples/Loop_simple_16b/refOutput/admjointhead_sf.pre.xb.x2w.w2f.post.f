@@ -119,7 +119,7 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +A(cp_loop_variable_1)%v
-      end do
+      enddo
       SP = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", SP, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
@@ -142,7 +142,7 @@ C$OPENAD XXX Simple loop
           DENOM%v = (DENOM%v*(A(I)%v-A(K)%v))
           NUMER%v = (NUMER%v*(X-A(K)%v))
         ENDIF
-      END DO
+      enddo
       LAG%v = (NUMER%v/DENOM%v)
 
 C original function end
@@ -182,7 +182,7 @@ C$OPENAD XXX Simple loop
           double_tape(double_tape_pointer) = OpenAD_acc_0
           double_tape_pointer = double_tape_pointer+1
         ENDIF
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = SP
       integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = I
@@ -247,7 +247,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         K = K-1
-      END DO
+      enddo
       DENOM%d = 0.0d0
       NUMER%d = 0.0d0
 

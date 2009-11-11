@@ -252,8 +252,8 @@ C$OPENAD XXX Template ad_template.f
      +(10)*T%v+EOSJMDCKP(11)*T2%v)+P2%v*S%v*(EOSJMDCKP(12)+EOSJMDCKP(13)
      +*T%v+EOSJMDCKP(14)*T2%v))
           BULKMOD(INT(I),INT(J))%v = (BMPRES%v+BMFRESH%v+BMSALT%v)
-        END DO
-      END DO
+        enddo
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -481,11 +481,11 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = J
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_5 = (INT(OpenAD_Symbol_5)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -648,9 +648,9 @@ C adjoint
      +(OpenAD_Symbol_62),INT(OpenAD_Symbol_61))%d+T%d
           T%d = 0.0d0
           OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
-        END DO
+        enddo
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      END DO
+      enddo
           end if
         end subroutine find_bulkmod
 C#########################################################
@@ -775,17 +775,17 @@ C$OPENAD XXX Template ad_template.f
                 SFLD(INT(I),INT(J),INT(K),INT(L),INT(M))%v = (X(XCOUNT)%
      +v*4.0D00)
                 XCOUNT = (XCOUNT+1)
-              END DO
-            END DO
-          END DO
-        END DO
-      END DO
+              enddo
+            enddo
+          enddo
+        enddo
+      enddo
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       DO I = 1,2,1
         DO J = 1,2,1
           Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
-        END DO
-      END DO
+        enddo
+      enddo
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -827,23 +827,23 @@ C$OPENAD XXX Template ad_template.f
                 XCOUNT = (XCOUNT+1)
                 OpenAD_Symbol_36 = (INT(OpenAD_Symbol_36)+INT(1_w2f__i8)
      +)
-              END DO
+              enddo
               integer_tape(integer_tape_pointer) = OpenAD_Symbol_36
               integer_tape_pointer = integer_tape_pointer+1
               OpenAD_Symbol_35 = (INT(OpenAD_Symbol_35)+INT(1_w2f__i8))
-            END DO
+            enddo
             integer_tape(integer_tape_pointer) = OpenAD_Symbol_35
             integer_tape_pointer = integer_tape_pointer+1
             OpenAD_Symbol_34 = (INT(OpenAD_Symbol_34)+INT(1_w2f__i8))
-          END DO
+          enddo
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_34
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_33 = (INT(OpenAD_Symbol_33)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_33
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_32 = (INT(OpenAD_Symbol_32)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_32
       integer_tape_pointer = integer_tape_pointer+1
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
@@ -860,11 +860,11 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = J
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_38 = (INT(OpenAD_Symbol_38)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_38
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_37 = (INT(OpenAD_Symbol_37)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_37
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -889,9 +889,9 @@ C adjoint
      +_Symbol_108))%d
           Y(INT(OpenAD_Symbol_108))%d = 0.0d0
           OpenAD_Symbol_21 = INT(OpenAD_Symbol_21)+1
-        END DO
+        enddo
         OpenAD_Symbol_19 = INT(OpenAD_Symbol_19)+1
-      END DO
+      enddo
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_22 = integer_tape(integer_tape_pointer)
@@ -940,11 +940,11 @@ C adjoint
      +penAD_Symbol_102),INT(OpenAD_Symbol_101),INT(OpenAD_Symbol_100))%d
      + = 0.0d0
                 OpenAD_Symbol_31 = INT(OpenAD_Symbol_31)+1
-              END DO
+              enddo
               OpenAD_Symbol_29 = INT(OpenAD_Symbol_29)+1
-            END DO
+            enddo
             OpenAD_Symbol_27 = INT(OpenAD_Symbol_27)+1
-          END DO
+          enddo
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_97 = integer_tape(integer_tape_pointer)
           integer_tape_pointer = integer_tape_pointer-1
@@ -955,8 +955,8 @@ C adjoint
      +S(INT(OpenAD_Symbol_98),INT(OpenAD_Symbol_97))%d*(2.0D00)
           LOCPRES(INT(OpenAD_Symbol_98),INT(OpenAD_Symbol_97))%d = 0.0d0
           OpenAD_Symbol_25 = INT(OpenAD_Symbol_25)+1
-        END DO
+        enddo
         OpenAD_Symbol_23 = INT(OpenAD_Symbol_23)+1
-      END DO
+      enddo
           end if
         end subroutine head

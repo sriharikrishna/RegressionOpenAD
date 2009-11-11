@@ -118,7 +118,7 @@ C$OPENAD XXX Template ad_template.f
           Y(1)%v = COS(X(2)%v)
         ENDIF
         I = (I+1)
-      END DO
+      enddo
       Y(2)%v = (Y(1)%v*Y(2)%v)
 
 C original function end
@@ -157,7 +157,7 @@ C$OPENAD XXX Template ad_template.f
         ENDIF
         I = (I+1)
         OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
       integer_tape_pointer = integer_tape_pointer+1
       OpenAD_Symbol_2 = (Y(1)%v*Y(2)%v)
@@ -217,7 +217,7 @@ C adjoint
           OpenAD_prop_1%d = 0.0d0
         ENDIF
         OpenAD_Symbol_4 = INT(OpenAD_Symbol_4)+1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

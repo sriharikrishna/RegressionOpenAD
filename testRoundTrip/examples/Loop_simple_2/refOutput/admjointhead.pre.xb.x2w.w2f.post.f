@@ -109,14 +109,14 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,3,1
         Y(INT(I))%v = X(I)%v
-      END DO
+      enddo
       DO I = 1,3,1
         DO J = 1,3,1
           DO K = 1,3,1
             Y(INT(I))%v = (X(J)%v*Y(I)%v)
-          END DO
-        END DO
-      END DO
+          enddo
+        enddo
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -133,7 +133,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,3,1
         Y(INT(I))%v = X(I)%v
-      END DO
+      enddo
       OpenAD_Symbol_7 = 0_w2f__i8
       DO I = 1,3,1
         OpenAD_Symbol_8 = 0_w2f__i8
@@ -153,15 +153,15 @@ C$OPENAD XXX Simple loop
             integer_tape(integer_tape_pointer) = J
             integer_tape_pointer = integer_tape_pointer+1
             OpenAD_Symbol_9 = (INT(OpenAD_Symbol_9)+INT(1_w2f__i8))
-          END DO
+          enddo
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_9
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_8 = (INT(OpenAD_Symbol_8)+INT(1_w2f__i8))
-        END DO
+        enddo
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_7 = (INT(OpenAD_Symbol_7)+INT(1_w2f__i8))
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -209,17 +209,17 @@ C adjoint
      +AD_prop_0%d
             OpenAD_prop_0%d = 0.0d0
             OpenAD_Symbol_6 = INT(OpenAD_Symbol_6)+1
-          END DO
+          enddo
           OpenAD_Symbol_4 = INT(OpenAD_Symbol_4)+1
-        END DO
+        enddo
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      END DO
+      enddo
       I = 1+1*((3-1)/1)
       do while (I.GE.1)
         X(I)%d = X(I)%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1
-      END DO
+      enddo
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

@@ -81,8 +81,8 @@ C$OPENAD XXX Simple loop
           AX(INT(I),INT(J))%v = X(I)%v
           APX(INT(I),INT(J)) = (I*DBLE(4.0))
           CALL setderiv(AX(I,J),X(I))
-        END DO
-      END DO
+        enddo
+      enddo
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(AX(I,1:2),Y(1))
@@ -95,5 +95,5 @@ C       $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
         CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
 C       $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
         CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-      END DO
+      enddo
       END SUBROUTINE

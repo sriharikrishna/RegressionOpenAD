@@ -61,7 +61,7 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_4 = (-SIN(X(I)%v))
           CALL sax(OpenAD_lin_4,X(I),Y(I))
         ENDIF
-      END DO
+      enddo
       OpenAD_Symbol_0 = (Y(1)%v*Y(9)%v)
       OpenAD_lin_5 = Y(9)%v
       OpenAD_lin_6 = Y(1)%v

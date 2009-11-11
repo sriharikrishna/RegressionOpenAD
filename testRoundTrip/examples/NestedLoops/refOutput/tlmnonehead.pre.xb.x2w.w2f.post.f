@@ -37,6 +37,6 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_1 = X(I)%v
           CALL sax(OpenAD_lin_0,X(I),Y(I))
           CALL saxpy(OpenAD_lin_1,X(J),Y(I))
-        END DO
-      END DO
+        enddo
+      enddo
       END SUBROUTINE

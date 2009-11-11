@@ -193,13 +193,13 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FY(cp_loop_variable_1)%v
-      end do
+      enddo
       do cp_loop_variable_1 = ubound(FX,1),lbound(FX,1),-1
       FX(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +FX(cp_loop_variable_1)%v
-      end do
+      enddo
       FVAR%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", FVAR%v
       theArgFStackoffset = theArgFStackoffset-1
@@ -317,7 +317,7 @@ C restore arguments
         theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +BX(cp_loop_variable_1)%v
-        end do
+        enddo
         FVAR%v = theArgFStack(theArgFStackoffset)
 C          write(*,'(A,EN26.16E3)') "restore(s)  ", FVAR%v
         theArgFStackoffset = theArgFStackoffset-1

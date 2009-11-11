@@ -380,6 +380,6 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_acc_18,OpenAD_prop_4,FVEC(K))
           CALL saxpy(OpenAD_acc_19,OpenAD_prop_3,FVEC(K))
           CALL saxpy(OpenAD_acc_20,OpenAD_prop_2,FVEC(K))
-        END DO
-      END DO
+        enddo
+      enddo
       END SUBROUTINE

@@ -63,7 +63,7 @@ C$OPENAD XXX Simple loop
           CALL setderiv(Y(1),OpenAD_prop_1)
           CALL dec_deriv(Y(1),X(1))
         ENDIF
-      END DO
+      enddo
       CALL setderiv(OpenAD_prop_2,Y(1))
       CALL setderiv(Y(1),OpenAD_prop_2)
       END SUBROUTINE

@@ -94,7 +94,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         Y(INT(I))%v = X(K)%v
-      END DO
+      enddo
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -122,7 +122,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         Y(INT(I))%v = X(K)%v
-      END DO
+      enddo
       integer_tape(integer_tape_pointer) = K
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -148,7 +148,7 @@ C adjoint
         X(K)%d = X(K)%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1
-      END DO
+      enddo
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
       IF (OpenAD_Symbol_0.ne.0) THEN

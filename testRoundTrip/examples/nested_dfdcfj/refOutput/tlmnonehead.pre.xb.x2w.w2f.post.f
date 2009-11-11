@@ -65,7 +65,7 @@ C$OPENAD XXX Template ad_template.f
         FVEC(INT(K))%v = OpenAD_Symbol_0
         CALL setderiv(OpenAD_prop_0,FVEC(K))
         CALL sax(OpenAD_lin_0,OpenAD_prop_0,FVEC(K))
-      END DO
+      enddo
       END SUBROUTINE
 
       SUBROUTINE foo(NX, NY, X, FVEC, R, N, HX, HY, HY2, HX2)
@@ -329,8 +329,8 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_acc_5,OpenAD_prop_3,FVEC(K))
           CALL saxpy(OpenAD_lin_6,OpenAD_prop_5,FVEC(K))
           CALL saxpy(OpenAD_lin_9,OpenAD_prop_6,FVEC(K))
-        END DO
-      END DO
+        enddo
+      enddo
       END SUBROUTINE
 
       SUBROUTINE bar(PBB, PBL, PB, PBR, PLL, PL, P, PR, PRR, PTL, PT, PT

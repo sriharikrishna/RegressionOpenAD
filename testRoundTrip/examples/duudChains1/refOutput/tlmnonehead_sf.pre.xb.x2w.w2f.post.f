@@ -37,5 +37,5 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(2.0D00,X(I),T(I))
         Y(INT(I))%v = (T(I)%v*4.0D00)
         CALL sax(4.0D00,T(I),Y(I))
-      END DO
+      enddo
       END SUBROUTINE
