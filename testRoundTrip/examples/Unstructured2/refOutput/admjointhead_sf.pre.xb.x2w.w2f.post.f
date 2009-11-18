@@ -99,59 +99,61 @@ C restore arguments
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
- 1    CONTINUE
-      GO TO 2
  2    CONTINUE
       GO TO 3
  3    CONTINUE
-      J = 1
-      GO TO 17
+      GO TO 4
  4    CONTINUE
-      J = J+1
- 17   CONTINUE
-      IF (J.LE.5) THEN
-        GO TO 5
-      ELSE
-        GO TO 15
-      ENDIF
- 5    CONTINUE
-      GO TO 6
- 6    CONTINUE
-      II = 1
+      J = 1
       GO TO 18
- 7    CONTINUE
-      II = II+1
+ 5    CONTINUE
+      J = J+1
  18   CONTINUE
-      IF (II.LE.5) THEN
-        GO TO 8
+      IF (J.LE.5) THEN
+        GO TO 6
       ELSE
-        GO TO 9
+        GO TO 16
       ENDIF
- 8    CONTINUE
-      GO TO 9
- 9    CONTINUE
-      GO TO 10
- 10   CONTINUE
+ 6    CONTINUE
+      GO TO 7
+ 7    CONTINUE
       II = 1
       GO TO 19
- 11   CONTINUE
+ 8    CONTINUE
       II = II+1
  19   CONTINUE
       IF (II.LE.5) THEN
-        GO TO 12
+        GO TO 9
       ELSE
-        GO TO 14
+        GO TO 10
       ENDIF
- 12   CONTINUE
-      Y(1)%v = X(1)%v
-      GO TO 13
- 13   CONTINUE
+ 9    CONTINUE
+      GO TO 10
+ 10   CONTINUE
       GO TO 11
+ 11   CONTINUE
+      II = 1
+      GO TO 20
+ 12   CONTINUE
+      II = II+1
+ 20   CONTINUE
+      IF (II.LE.5) THEN
+        GO TO 13
+      ELSE
+        GO TO 15
+      ENDIF
+ 13   CONTINUE
+      Y(1)%v = X(1)%v
+      GO TO 14
  14   CONTINUE
-      GO TO 4
+      GO TO 12
  15   CONTINUE
-      GO TO 16
+      GO TO 5
  16   CONTINUE
+      GO TO 17
+ 17   CONTINUE
+      GO TO 1
+ 1    CONTINUE
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -164,94 +166,96 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
- 20   CONTINUE
-      GO TO 21
- 21   CONTINUE
-      OpenAD_Symbol_0 = 0_w2f__i8
-      integer_tape(integer_tape_pointer) = OpenAD_Symbol_0
-      integer_tape_pointer = integer_tape_pointer+1
-      GO TO 22
  22   CONTINUE
       GO TO 23
  23   CONTINUE
-      OpenAD_Symbol_1 = 1_w2f__i8
-      integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
+      OpenAD_Symbol_0 = 0_w2f__i8
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_0
       integer_tape_pointer = integer_tape_pointer+1
       GO TO 24
  24   CONTINUE
-      J = 1
-      GO TO 43
+      GO TO 25
  25   CONTINUE
-      J = J+1
- 43   CONTINUE
-      IF (J.LE.5) THEN
-        GO TO 26
-      ELSE
-        GO TO 40
-      ENDIF
+      OpenAD_Symbol_1 = 1_w2f__i8
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
+      integer_tape_pointer = integer_tape_pointer+1
+      GO TO 26
  26   CONTINUE
-      GO TO 27
+      J = 1
+      GO TO 45
  27   CONTINUE
+      J = J+1
+ 45   CONTINUE
+      IF (J.LE.5) THEN
+        GO TO 28
+      ELSE
+        GO TO 42
+      ENDIF
+ 28   CONTINUE
+      GO TO 29
+ 29   CONTINUE
       OpenAD_Symbol_2 = 2_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
-      GO TO 28
- 28   CONTINUE
-      II = 1
-      GO TO 44
- 29   CONTINUE
-      II = II+1
- 44   CONTINUE
-      IF (II.LE.5) THEN
-        GO TO 30
-      ELSE
-        GO TO 32
-      ENDIF
+      GO TO 30
  30   CONTINUE
-      GO TO 31
+      II = 1
+      GO TO 46
  31   CONTINUE
-      OpenAD_Symbol_3 = 3_w2f__i8
-      integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
-      integer_tape_pointer = integer_tape_pointer+1
-      GO TO 32
+      II = II+1
+ 46   CONTINUE
+      IF (II.LE.5) THEN
+        GO TO 32
+      ELSE
+        GO TO 34
+      ENDIF
  32   CONTINUE
       GO TO 33
  33   CONTINUE
-      OpenAD_Symbol_4 = 4_w2f__i8
-      integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
+      OpenAD_Symbol_3 = 3_w2f__i8
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
       GO TO 34
  34   CONTINUE
-      II = 1
-      GO TO 45
+      GO TO 35
  35   CONTINUE
-      II = II+1
- 45   CONTINUE
-      IF (II.LE.5) THEN
-        GO TO 36
-      ELSE
-        GO TO 39
-      ENDIF
+      OpenAD_Symbol_4 = 4_w2f__i8
+      integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
+      integer_tape_pointer = integer_tape_pointer+1
+      GO TO 36
  36   CONTINUE
-      Y(1)%v = X(1)%v
-      GO TO 37
+      II = 1
+      GO TO 47
  37   CONTINUE
+      II = II+1
+ 47   CONTINUE
+      IF (II.LE.5) THEN
+        GO TO 38
+      ELSE
+        GO TO 41
+      ENDIF
+ 38   CONTINUE
+      Y(1)%v = X(1)%v
+      GO TO 39
+ 39   CONTINUE
       OpenAD_Symbol_5 = 5_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
-      GO TO 38
- 38   CONTINUE
-      GO TO 35
- 39   CONTINUE
-      GO TO 25
+      GO TO 40
  40   CONTINUE
-      GO TO 41
+      GO TO 37
  41   CONTINUE
+      GO TO 27
+ 42   CONTINUE
+      GO TO 43
+ 43   CONTINUE
       OpenAD_Symbol_6 = 6_w2f__i8
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
       integer_tape_pointer = integer_tape_pointer+1
-      GO TO 42
- 42   CONTINUE
+      GO TO 44
+ 44   CONTINUE
+      GO TO 21
+ 21   CONTINUE
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -271,27 +275,27 @@ C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
       do while (INT(OpenAD_Symbol_7).ne.INT(0_w2f__i8))
-        IF (OpenAD_Symbol_7.EQ.1) GO TO 68
-        IF (OpenAD_Symbol_7.EQ.2) GO TO 69
-        IF (OpenAD_Symbol_7.EQ.3) GO TO 70
-        IF (OpenAD_Symbol_7.EQ.4) GO TO 71
-        IF (OpenAD_Symbol_7.EQ.5) GO TO 72
-        IF (OpenAD_Symbol_7.EQ.6) GO TO 73
- 68     CONTINUE
-        GO TO 65
- 69     CONTINUE
-        GO TO 65
+        IF (OpenAD_Symbol_7.EQ.1) GO TO 70
+        IF (OpenAD_Symbol_7.EQ.2) GO TO 71
+        IF (OpenAD_Symbol_7.EQ.3) GO TO 72
+        IF (OpenAD_Symbol_7.EQ.4) GO TO 73
+        IF (OpenAD_Symbol_7.EQ.5) GO TO 74
+        IF (OpenAD_Symbol_7.EQ.6) GO TO 75
  70     CONTINUE
-        GO TO 65
+        GO TO 67
  71     CONTINUE
-        GO TO 65
+        GO TO 67
  72     CONTINUE
+        GO TO 67
+ 73     CONTINUE
+        GO TO 67
+ 74     CONTINUE
         X(1)%d = X(1)%d+Y(1)%d
         Y(1)%d = 0.0d0
-        GO TO 65
- 73     CONTINUE
-        GO TO 65
- 65     CONTINUE
+        GO TO 67
+ 75     CONTINUE
+        GO TO 67
+ 67     CONTINUE
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
       enddo

@@ -273,7 +273,7 @@
             </xaif:Y>
           </xaif:Sax>
         </xaif:DerivativePropagator>
-        <xaif:Marker statement_id="43" annotation="{WHIRL_Id#43} [passive: OPR_RETURN]"/>
+        <xaif:Marker statement_id="43" annotation="{WHIRL_Id#43}{StmtReturn#0}"/>
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="13" annotation=""/>
       <xaif:BasicBlock vertex_id="8" annotation="" scope_id="3">
@@ -353,7 +353,7 @@
             </xaif:Y>
           </xaif:Sax>
         </xaif:DerivativePropagator>
-        <xaif:Marker statement_id="59" annotation="{WHIRL_Id#59} [passive: OPR_RETURN]"/>
+        <xaif:Marker statement_id="59" annotation="{WHIRL_Id#59}{StmtReturn#0}"/>
       </xaif:BasicBlock>
       <xaif:BasicBlock vertex_id="11" annotation="" scope_id="3">
       </xaif:BasicBlock>

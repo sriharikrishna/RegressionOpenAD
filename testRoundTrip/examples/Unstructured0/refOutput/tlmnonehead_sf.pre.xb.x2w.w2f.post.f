@@ -38,12 +38,12 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
- 1    CONTINUE
-      GO TO 2
  2    CONTINUE
-C$OPENAD XXX Template ad_template.f
       GO TO 3
  3    CONTINUE
+C$OPENAD XXX Template ad_template.f
+      GO TO 4
+ 4    CONTINUE
       OpenAD_Symbol_0 = (X(1)%v*X(1)%v)
       OpenAD_lin_0 = X(1)%v
       OpenAD_lin_1 = X(1)%v
@@ -52,22 +52,24 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(OpenAD_prop_1,X(1))
       CALL sax(OpenAD_lin_0,OpenAD_prop_0,X(1))
       CALL saxpy(OpenAD_lin_1,OpenAD_prop_1,X(1))
-      GO TO 4
- 4    CONTINUE
+      GO TO 5
+ 5    CONTINUE
       OpenAD_Symbol_1 = (X(1)%v*3.0D00)
       X(1)%v = OpenAD_Symbol_1
       CALL setderiv(OpenAD_prop_2,X(1))
       CALL sax(3.0D00,OpenAD_prop_2,X(1))
-      GO TO 5
- 5    CONTINUE
+      GO TO 6
+ 6    CONTINUE
       OpenAD_Symbol_2 = (X(1)%v*2.0D00)
       X(1)%v = OpenAD_Symbol_2
       CALL setderiv(OpenAD_prop_3,X(1))
       CALL sax(2.0D00,OpenAD_prop_3,X(1))
-      GO TO 6
- 6    CONTINUE
-      Y(1)%v = X(1)%v
-      CALL setderiv(Y(1),X(1))
       GO TO 7
  7    CONTINUE
+      Y(1)%v = X(1)%v
+      CALL setderiv(Y(1),X(1))
+      GO TO 8
+ 8    CONTINUE
+      GO TO 1
+ 1    CONTINUE
       END SUBROUTINE

@@ -29,58 +29,60 @@ C$OPENAD DEPENDENT(Y)
 C
 C     **** Statements ****
 C
-1     CONTINUE
-      GO TO 2
 2     CONTINUE
       GO TO 3
 3     CONTINUE
-      J = 1
-      GO TO 17
+      GO TO 4
 4     CONTINUE
-      J = J + 1
-17    CONTINUE
-      IF(J .LE. 5) THEN
-        GO TO 5
-      ELSE
-        GO TO 15
-      ENDIF
-5     CONTINUE
-      GO TO 6
-6     CONTINUE
-      II = 1
+      J = 1
       GO TO 18
-7     CONTINUE
-      II = II + 1
+5     CONTINUE
+      J = J + 1
 18    CONTINUE
-      IF(II .LE. 5) THEN
-        GO TO 8
+      IF(J .LE. 5) THEN
+        GO TO 6
       ELSE
-        GO TO 9
+        GO TO 16
       ENDIF
-8     CONTINUE
-      GO TO 9
-9     CONTINUE
-      GO TO 10
-10    CONTINUE
+6     CONTINUE
+      GO TO 7
+7     CONTINUE
       II = 1
       GO TO 19
-11    CONTINUE
+8     CONTINUE
       II = II + 1
 19    CONTINUE
       IF(II .LE. 5) THEN
-        GO TO 12
+        GO TO 9
       ELSE
-        GO TO 14
+        GO TO 10
       ENDIF
+9     CONTINUE
+      GO TO 10
+10    CONTINUE
+      GO TO 11
+11    CONTINUE
+      II = 1
+      GO TO 20
 12    CONTINUE
+      II = II + 1
+20    CONTINUE
+      IF(II .LE. 5) THEN
+        GO TO 13
+      ELSE
+        GO TO 15
+      ENDIF
+13    CONTINUE
       __value__(Y(1)) = __value__(X(1))
       CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
-      GO TO 13
-13    CONTINUE
-      GO TO 11
+      GO TO 14
 14    CONTINUE
-      GO TO 4
+      GO TO 12
 15    CONTINUE
-      GO TO 16
+      GO TO 5
 16    CONTINUE
+      GO TO 17
+17    CONTINUE
+      GO TO 1
+1     CONTINUE
       END SUBROUTINE
