@@ -454,7 +454,10 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     elif (majorMode == "trace"):
 	overridableLink(exDir + "/ad_template.trace.f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template.trace.f","ad_template.f")
     # transform head_sf
-    os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
+    if (scalarOrVector=="scalar" and majorMode=="tlm"):
+       os.environ["SCALAR_OR_VECTOR"] = "scalarF"
+    else : 
+       os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
     os.environ["MAJOR_MODE"] = majorMode
     os.environ["MINOR_MODE"] = ctrMode
     if globalVerbose:
