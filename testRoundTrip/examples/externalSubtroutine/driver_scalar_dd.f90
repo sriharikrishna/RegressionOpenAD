@@ -52,13 +52,11 @@
 ! ========== end copyright notice ==============
 program driver
 
-  use OAD_active
   implicit none 
 
   external head
 
-  double precision,dimension(:),allocatable :: x0 
-  type(active),dimension(:),allocatable :: x,y,y0 
+  double precision,dimension(:),allocatable :: x,x0,y,y0 
   double precision h
   integer n,m
   integer i,j,k
@@ -78,38 +76,20 @@ program driver
 
   open(2,file='tmpOutput/dd.out')
   write(2,*) "DD"
-  do j=1,n
-     x(j)%v=x0(j)
+  do j=1,n   
+     x(j)=x0(j)
   end do
   call head(x,y0)
   do i=1,n
      do j=1,n
-        x(j)%v=x0(j)
-        if (i==j) then
-           x(j)%v=x0(j)+h
-        end if
-     end do
-     call head(x,y)
-     do k=1,m
-        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",k,",",i,")=",(y(k)%v-y0(k)%v)/h
-     end do
-  end do
-  close(2)
-
-  open(2,file='tmpOutput/ad.out')
-  write(2,*) "AD"
-  do i=1,n   
-     do j=1,n   
-        x(j)%v=x0(j)
+        x(j)=x0(j)
         if (i==j) then 
-           x(j)%d=1.0
-        else
-           x(j)%d=0.0
+           x(j)=x0(j)+h
         end if
      end do
      call head(x,y)
      do k=1,m
-        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",k,",",i,")=",y(k)%d
+        write(2,'(A,I3,A,I3,A,EN26.16E3)') "F(",k,",",i,")=",(y(k)-y0(k))/h
      end do
   end do
   close(2)
