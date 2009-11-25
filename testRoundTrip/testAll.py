@@ -157,6 +157,8 @@ def refFileCopy(newFile,refFile):
             if (answer == "n"):
                 return 1
             else:
+                if (not os.path.exists(os.path.split(refFile)[0])):
+                    os.makedirs(os.path.split(refFile)[0])
                 shutil.copy(newFile,refFile)
                 cmd="hg add "+refFile
                 if (os.system(cmd)):
