@@ -163,20 +163,7 @@ program driver
 
 end program driver
 
-module d
-  implicit none
-  private
-  public :: reed
-
-  interface reed
-    module procedure dp_reed
-  end interface
-
-  contains
-    subroutine dp_reed ( x )
-      double precision :: x,dummy
-      dummy = x
-    end subroutine dp_reed
-
-end module d
-
+subroutine reed(x)
+  double precision x
+  x=x*2.0
+end subroutine reed

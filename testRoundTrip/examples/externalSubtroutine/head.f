@@ -1,4 +1,14 @@
         module d
+           public :: d_reed
+           interface d_reed
+              module procedure reed
+           end interface
+           private :: reed
+           contains
+             subroutine reed(x)
+               double precision x
+               x=x*2.0
+             end subroutine
         end module d
 
 c$openad XXX Template ad_template.f
