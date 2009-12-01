@@ -92,7 +92,7 @@ endif
 MODULES=
 
 ifneq ($(MAJOR_MODE),dd)
-MODULES+= w2f__types.o OAD_active.o
+MODULES+= w2f__types.o OAD_active.o OAD_intrinsics.pre.xb.x2w.w2f.post.o
 endif
 
 ifeq ($(MAJOR_MODE),adm)
@@ -180,14 +180,9 @@ all: driver
 # transformation
 ######################################################
 
-# paste the globals module into the head file 
-# so we can do the single file transformation
-head_sf.f : all_globals_mod.f head.f 
-	cat $^ > $@
-
 # preprocess F
-head_sf.pre.f: head_sf.f preProcess.py
-	./preProcess.py $(PREPROCESS_FLAGS) --timing $< -o $@ $(preProcessVerbFlag)
+head_sf.pre.f: all_globals_mod.f head.f preProcess.py
+	./preProcess.py $(PREPROCESS_FLAGS) --timing -o $@ $(preProcessVerbFlag) all_globals_mod.f head.f
 
 # F -> WHIRL
 head_sf.pre.B: head_sf.pre.f mfef90
@@ -212,18 +207,11 @@ head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 	./whirl2f -openad -openadType OpenADTy_active  $<
 
 # postprocess F'
-head_sf.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
+OAD_intrinsics.pre.xb.x2w.w2f.post.f90 :  head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
 	$(COMPLAIN)
-	./postProcess.py $(POSTPROCESS_FLAGS) --timing --abstractType OpenADTy_active $< -o $@ $(postProcessVerbFlag)
+	./postProcess.py $(POSTPROCESS_FLAGS) --timing --abstractType OpenADTy_active $< --separateOutput --filenameSuffix=".pre.xb.x2w.w2f.post" --pathSuffix='./' $(postProcessVerbFlag)
 
-# extract the transformed globals module so we the right order of 
-# compilation with respect to the globals checkpoint module
-all_globals_mod.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.post.f
-	cat $< | sed -n '/MODULE all_globals_mod/,/END MODULE/p' > $@
-
-# remove the transformed globals module from the transformed head file
-head.pre.xb.x2w.w2f.post.f: head_sf.pre.xb.x2w.w2f.post.f
-	cat $< | sed '/MODULE all_globals_mod/,/END MODULE/d' > $@
+all_globals_mod.pre.xb.x2w.w2f.post.f head.pre.xb.x2w.w2f.post.f : OAD_intrinsics.pre.xb.x2w.w2f.post.f90
 
 # targets for passing through Pre/PostProcessor and mfef90 exclusively ###################
 
