@@ -464,7 +464,6 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	overridableLink(exDir + "/ad_template.trace.f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template.trace.f","ad_template.f")
     # transform head_sf
     if (scalarOrVector=="scalar" and majorMode=="tlm"):
-        print exOpts
         if ('OAD_active.f90' in exOpts):
             fPath=os.path.join(os.environ["OPENADROOT"],'runTimeSupport',exOpts['OAD_active.f90'],'OAD_active.f90')
             if (not os.path.exists(fPath)) :
