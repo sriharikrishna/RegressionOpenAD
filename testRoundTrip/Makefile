@@ -213,6 +213,10 @@ OAD_intrinsics.pre.xb.x2w.w2f.post.f90 :  head_sf.pre.xb.x2w.w2f.f ad_inline.f p
 
 all_globals_mod.pre.xb.x2w.w2f.post.f head.pre.xb.x2w.w2f.post.f : OAD_intrinsics.pre.xb.x2w.w2f.post.f90
 
+# this file is needed only for the comparison to the reference output, we don't do anything else with it 
+head_sf.pre.xb.x2w.w2f.post.f : OAD_intrinsics.pre.xb.x2w.w2f.post.f90 all_globals_mod.pre.xb.x2w.w2f.post.f head.pre.xb.x2w.w2f.post.f
+	cat $^ > $@
+
 # targets for passing through Pre/PostProcessor and mfef90 exclusively ###################
 
 # WHIRL -> F
@@ -265,9 +269,9 @@ OAD_active.f90:
 ######################################################
 
 # make the driver
-driver: $(DRIVER_PRE_REQ)
+driver: $(DRIVER_PRE_REQ) head_sf.pre.xb.x2w.w2f.post.f
 	$(COMPLAIN)
-	$(F90C) $(F90FLAGS) $^ -o $@ 
+	$(F90C) $(F90FLAGS) $(DRIVER_PRE_REQ) -o $@ 
 
 run: params.conf tmpOutput driver 
 	./driver
@@ -289,7 +293,7 @@ tmpOutput:
 	@mkdir -p $@
 
 minClean:
-	@$(RM) head_sf.* head.* driver* params.conf all_globals_* ad_template.f *mod-whirl tmpOutput data.tmp driver.o all_globals_mod.xb.x2w.w2f.post.o head.xb.x2w.w2f.post.o
+	@$(RM) OAD_intrinsics.* OAD_active.* head_sf.* head.* driver* params.conf all_globals_* ad_template.f *mod-whirl tmpOutput data.tmp driver.o all_globals_mod.xb.x2w.w2f.post.o head.xb.x2w.w2f.post.o
 
 groupClean: minClean
 	@$(RM) *.o
