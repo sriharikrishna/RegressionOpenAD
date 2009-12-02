@@ -1,8 +1,9 @@
 
-
+C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(X, L)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Parameters and Result ****
@@ -19,6 +20,7 @@ C$OPENAD XXX Template ad_template.f
       SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****

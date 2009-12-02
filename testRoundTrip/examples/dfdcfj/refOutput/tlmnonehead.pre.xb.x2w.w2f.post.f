@@ -1,8 +1,9 @@
 
-
+C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(NX, NY, X, FVEC, R)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****

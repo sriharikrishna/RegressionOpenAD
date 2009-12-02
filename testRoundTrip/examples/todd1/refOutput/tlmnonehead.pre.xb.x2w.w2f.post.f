@@ -1,5 +1,5 @@
 
-
+C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(OBJ, G_OBJ0, G_OBJ1, G_OBJ2, G_OBJ3, G_OBJ4, G_OBJ
      +5, X0, X1, X2, X3, X4, X5, H_OBJ0, H_OBJ1, H_OBJ2, H_OBJ3, H_OBJ4,
      + H_OBJ5, H_OBJ6, H_OBJ7, H_OBJ8, H_OBJ9, H_OBJ10, H_OBJ11, H_OBJ12
@@ -7,6 +7,7 @@
      +_OBJ20)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****

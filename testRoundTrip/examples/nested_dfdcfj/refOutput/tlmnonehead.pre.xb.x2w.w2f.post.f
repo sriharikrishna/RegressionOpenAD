@@ -1,8 +1,9 @@
 
-
+C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(NX, NY, X, FVEC, R)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
@@ -71,6 +72,7 @@ C$OPENAD XXX Template ad_template.f
       SUBROUTINE foo(NX, NY, X, FVEC, R, N, HX, HY, HY2, HX2)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
@@ -337,6 +339,7 @@ C$OPENAD XXX Template ad_template.f
      +R, PTT, HY2, HX2, PLAP, PBLAP, PLLAP, PRLAP, PTLAP)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****

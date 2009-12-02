@@ -1,8 +1,9 @@
 
-
+C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(X, Y)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Global Variables & Derived Type Definitions ****
@@ -41,6 +42,7 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Parameters and Result ****

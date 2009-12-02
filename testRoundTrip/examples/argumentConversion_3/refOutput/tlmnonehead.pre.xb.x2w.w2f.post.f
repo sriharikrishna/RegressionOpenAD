@@ -1,5 +1,5 @@
 
-
+C$OPENAD XXX File_start [head.f]
       MODULE globals
       use w2f__types
       use OAD_active
@@ -18,6 +18,7 @@ C
       SUBROUTINE bar(BARX, BARY)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Parameters and Result ****
@@ -39,6 +40,7 @@ C
       SUBROUTINE foo()
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       use globals
       IMPLICIT NONE
 C
@@ -67,6 +69,7 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       use globals
       IMPLICIT NONE
 C

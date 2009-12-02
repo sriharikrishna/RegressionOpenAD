@@ -1,9 +1,15 @@
+!$openad xxx file_start [OAD_intrinsics.f90]
+      module OAD_intrinsics
+      end module
+!$openad xxx file_start [all_globals_mod.f]
       module all_globals_mod
 
       end module
 
+!$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine head(nx,ny,x,fvec,r)
+      use OAD_intrinsics
       integer nx,ny
       double precision r
       double precision x(nx*ny),fvec(nx*ny)
@@ -83,6 +89,7 @@ C$openad DEPENDENT(fvec)
 
 C$openad XXX Template ad_template.f
       subroutine foo(nx,ny,x,fvec,r,n,hx,hy,hy2,hx2)
+      use OAD_intrinsics
       integer nx,ny
       double precision r
       double precision x(nx*ny),fvec(nx*ny)
@@ -174,6 +181,7 @@ C           Laplacians at each point in the 5 point stencil.
 C$openad XXX Template ad_template.f
       subroutine bar(pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt,hy2,h
      +x2,plap,pblap,pllap,prlap,ptlap)
+      use OAD_intrinsics
       double precision pbb,pbl,pb,pbr,pll,pl,p,pr,prr,ptl,pt,ptr,ptt, pl
      +ap,pblap,pllap,prlap,ptlap,hy2,hx2
       double precision zero,one,two,three,four

@@ -1,7 +1,12 @@
+!$openad xxx file_start [OAD_intrinsics.f90]
+      module OAD_intrinsics
+      end module
+!$openad xxx file_start [all_globals_mod.f]
       module all_globals_mod
 
       end module
 
+!$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       SUBROUTINE ad_roehf5 (nrm, priml, primr, gamma, gm1, gm1inv, nlefi
      +x, lefix, mcheps, flux)
@@ -18,6 +23,7 @@ C     !    MODIFIED: Uwe Naumann, Feb 04
 C       
 C     !                                                                 
 C     !*****************************************************************
+      use OAD_intrinsics
       IMPLICIT none
 C     AUGUMENTS(in):                                                    
 C     nrm    : cell face normal                                         

@@ -1,8 +1,9 @@
 
-
+C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(A, N)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       use all_globals_mod
       IMPLICIT NONE
 C
@@ -34,6 +35,7 @@ C$OPENAD XXX Template ad_template.f
       SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       use all_globals_mod
       IMPLICIT NONE
 C
