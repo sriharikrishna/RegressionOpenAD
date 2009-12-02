@@ -451,13 +451,27 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
 	raise ConfigError, "\"ln -s %s/params.conf .\" not successful" % exDir
     overridableLink(exDir + "/all_globals_mod.f","genericFiles/default/all_globals_mod.f","all_globals_mod.f")
     overridableLink(exDir + "/all_globals_cp_mod.f90","genericFiles/default/all_globals_cp_mod.f90","all_globals_cp_mod.f90")
+    exOpts={}
+    if (os.path.exists(os.path.join(exDir,'options'))):
+        exOptsFile=open(os.path.join(exDir,'options'))
+        for line in exOptsFile:
+            (key,opts)=line.split(':')
+            exOpts[key]=opts.strip()
+        exOptsFile.close()
     if (majorMode == "adm"):
 	overridableLink(exDir + "/ad_template." + ctrMode + ".f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template." + ctrMode + ".f","ad_template.f")
     elif (majorMode == "trace"):
 	overridableLink(exDir + "/ad_template.trace.f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template.trace.f","ad_template.f")
     # transform head_sf
     if (scalarOrVector=="scalar" and majorMode=="tlm"):
-       os.environ["SCALAR_OR_VECTOR"] = "scalarF"
+        print exOpts
+        if ('OAD_active.f90' in exOpts):
+            fPath=os.path.join(os.environ["OPENADROOT"],'runTimeSupport',exOpts['OAD_active.f90'],'OAD_active.f90')
+            if (not os.path.exists(fPath)) :
+                raise ConfigError, "example options file specifies to use "+fPath+" which does not exist"
+            os.environ["SCALAR_OR_VECTOR"] = exOpts['OAD_active.f90']
+        else: 
+            os.environ["SCALAR_OR_VECTOR"] = "scalar"
     else : 
        os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
     os.environ["MAJOR_MODE"] = majorMode
