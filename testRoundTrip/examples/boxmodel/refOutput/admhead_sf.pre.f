@@ -1,3 +1,7 @@
+!$openad xxx file_start [OAD_intrinsics.f90]
+      module OAD_intrinsics
+      end module
+!$openad xxx file_start [all_globals_mod.f]
       module all_globals_mod
         integer ndim
         parameter ( ndim = 3 )
@@ -73,11 +77,13 @@ C-- dependent and independent variables
 
       end module
 
+!$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_forward ( ilev1 )
 C-----------------------------------------------------------------------
 
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -147,6 +153,7 @@ C-----------------------------------------------------------------------
       subroutine box_final_state
 C-----------------------------------------------------------------------
 
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -198,6 +205,7 @@ C-----------------------------------------------------------------------
       subroutine box_ini_fields
 C-----------------------------------------------------------------------
 
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -284,6 +292,7 @@ C-----------------------------------------------------------------------
       subroutine box_ini_params
 C-----------------------------------------------------------------------
 
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -450,6 +459,7 @@ C-----------------------------------------------------------------------
       subroutine box_model_body
 C-----------------------------------------------------------------------
 
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -547,6 +557,7 @@ C-----------------------------------------------------------------------
       subroutine box_density ( tLoc, sLoc, rhoLoc )
 C-----------------------------------------------------------------------
 
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -586,6 +597,7 @@ C-----------------------------------------------------------------------
       subroutine box_transport ( rhoLoc, uVelLoc )
 C-----------------------------------------------------------------------
 
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -619,6 +631,7 @@ C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_robert_filter ( fldNow, fldOld, fldNew )
 C-----------------------------------------------------------------------
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -658,6 +671,7 @@ C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_cycle_fields
 C-----------------------------------------------------------------------
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -696,6 +710,7 @@ C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_update ( fldNew, fldOld, dFldDt )
 C-----------------------------------------------------------------------
+      use OAD_intrinsics
       use all_globals_mod
 
 
@@ -737,6 +752,7 @@ C-----------------------------------------------------------------------
       subroutine box_timestep ( gammaLoc, fldStar, extForLoc, uVelLoc, f
      +ldNow, fldOld, fldNew )
 C-----------------------------------------------------------------------
+      use OAD_intrinsics
       use all_globals_mod
 
       implicit none

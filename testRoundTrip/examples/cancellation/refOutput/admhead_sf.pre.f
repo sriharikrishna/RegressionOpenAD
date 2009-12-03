@@ -1,9 +1,15 @@
+!$openad xxx file_start [OAD_intrinsics.f90]
+      module OAD_intrinsics
+      end module
+!$openad xxx file_start [all_globals_mod.f]
       module all_globals_mod
 
       end module
 
+!$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       SUBROUTINE head (x1, x2, y)
+      use OAD_intrinsics
       IMPLICIT none
       double precision,intent(in):: x1, x2
       double precision,intent(out):: y

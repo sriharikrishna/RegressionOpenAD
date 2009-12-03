@@ -1,9 +1,15 @@
+!$openad xxx file_start [OAD_intrinsics.f90]
+      module OAD_intrinsics
+      end module
+!$openad xxx file_start [all_globals_mod.f]
       module all_globals_mod
 
       end module
 
+!$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       SUBROUTINE FIND_BULKMOD( locPres, tFld, sFld, bulkMod)
+      use OAD_intrinsics
 
       Real*8 eosJMDCKFw(5), eosJMDCKSw(7), eosJMDCKP(14)
 
@@ -81,6 +87,7 @@ C$openad XXX Template ad_template.f
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
+      use OAD_intrinsics
       double precision, dimension(32) :: x
       double precision, dimension(4) :: y
       Real*8 locPres(2,2)
