@@ -34,3 +34,5 @@ testRoundTrip/whirl2*
 testRoundTrip/xaif2whirl
 testRoundTrip/xaifBooster
 testRoundTrip/*.xsd
+testRoundTrip/OAD_intrinsics*
+testRoundTrip/OAD_INTRINSICS*
