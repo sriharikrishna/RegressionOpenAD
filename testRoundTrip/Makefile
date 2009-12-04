@@ -92,7 +92,7 @@ endif
 MODULES=
 
 ifneq ($(MAJOR_MODE),dd)
-MODULES+= w2f__types.o OAD_active.o OAD_intrinsics.pre.xb.x2w.w2f.post.o
+MODULES+= w2f__types.o OAD_active.o 
 endif
 
 ifeq ($(MAJOR_MODE),adm)
@@ -105,6 +105,10 @@ endif
 
 ifeq ($(MAJOR_MODE),trace)
 MODULES+=OAD_rev.o OAD_trace.o                   
+endif
+
+ifneq ($(MAJOR_MODE),dd)
+MODULES+=  OAD_intrinsics.pre.xb.x2w.w2f.post.o
 endif
 
 ifeq ($(MAJOR_MODE),dd)
