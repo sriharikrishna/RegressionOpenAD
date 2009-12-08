@@ -273,7 +273,7 @@ OAD_active.f90:
 ######################################################
 
 # make the driver
-driver: $(DRIVER_PRE_REQ) head_sf.pre.xb.x2w.w2f.post.f
+driver: $(DRIVER_PRE_REQ) 
 	$(COMPLAIN)
 	$(F90C) $(F90FLAGS) $(DRIVER_PRE_REQ) -o $@ 
 
