@@ -200,7 +200,7 @@ head_sf.pre.xaif : head_sf.pre.B whirl2xaif
 # XAIF -> XAIF'
 head_sf.pre.xb.xaif : head_sf.pre.xaif xaif.xsd xaif_base.xsd xaif_inlinable_intrinsics.xsd xaif_derivative_propagator.xsd xaif_output.xsd xaifBooster
 	$(COMPLAIN)
-	./xaifBooster -v -V -i $< -c ${XAIFSCHEMAROOT}/schema/examples/inlinable_intrinsics.xaif -o $@ $(CP_FLAG) $(xaifBoosterVerbFlag)
+	./xaifBooster -v -V -i $< -c ${XAIFSCHEMAROOT}/schema/examples/inlinable_intrinsics.xaif -o $@ $(CP_FLAG) $(xaifBoosterVerbFlag)  ${EXAMPLE_SPECIFIC_XAIFBOOSTER_OPTIONS}
 
 # XAIF' -> WHIRL'
 head_sf.pre.xb.x2w.B : head_sf.pre.xb.xaif xaif2whirl

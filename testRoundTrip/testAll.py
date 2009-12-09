@@ -454,9 +454,10 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     exOpts={}
     if (os.path.exists(os.path.join(exDir,'options'))):
         exOptsFile=open(os.path.join(exDir,'options'))
-        for line in exOptsFile:
-            (key,opts)=line.split(':')
-            exOpts[key]=opts.strip()
+        try :
+            exOpts=eval(exOptsFile.read().strip())
+        except Exception, e :
+            raise ConfigError, "example options file does not specify a Python dictionary "+str(e)
         exOptsFile.close()
     if (majorMode == "adm"):
 	overridableLink(exDir + "/ad_template." + ctrMode + ".f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template." + ctrMode + ".f","ad_template.f")
@@ -475,12 +476,23 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
        os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
     os.environ["MAJOR_MODE"] = majorMode
     os.environ["MINOR_MODE"] = ctrMode
+    xaifBoosterSpecialOpts=''
+    if ('xaifBooster' in exOpts):
+        optsDict=exOpts['xaifBooster']
+        print str(optsDict)
+        try:
+            if ((not 'mode' in optsDict) or
+                ('mode' in optsDict and optsDict['mode']==majorMode)):
+                if 'opts' in optsDict:
+                    xaifBoosterSpecialOpts+=optsDict['opts']
+        except Exception, e: 
+            raise ConfigError, "example options file does not specify a Python dictionary for xaifBooster options"+str(e)
+    os.environ['EXAMPLE_SPECIFIC_XAIFBOOSTER_OPTIONS']=xaifBoosterSpecialOpts
     if globalVerbose:
         os.environ["VERBOSE"]='true'
         sys.stdout.write("environment settings:\n")
-        sys.stdout.write("  SCALAR_OR_VECTOR="+scalarOrVector+"\n")
-        sys.stdout.write("  MAJOR_MODE="+majorMode+"\n")
-        sys.stdout.write("  MINOR_MODE="+ctrMode+"\n")
+        for envVar in ['SCALAR_OR_VECTOR','MAJOR_MODE','MINOR_MODE','EXAMPLE_SPECIFIC_XAIFBOOSTER_OPTIONS'] : 
+            sys.stdout.write('  '+envVar+'='+os.environ[envVar]+'\n')
     if (majorMode == 'mf'):
         if (os.system(makeCmd+" head.pre.w2f.f")):
             raise MakeError, makeCmd+" head.pre.w2f.f"
