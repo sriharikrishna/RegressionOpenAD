@@ -175,8 +175,6 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), M1)
       CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_0), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(M1, __deriv__(OpenAD_Symbol_0))
       __value__(M2) = __value__(OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
@@ -184,8 +182,6 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), M1)
       CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_0), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(M1, __deriv__(OpenAD_Symbol_0))
       __value__(M2) = __value__(OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
@@ -237,8 +233,6 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), M1)
       CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_0), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(M1, __deriv__(OpenAD_Symbol_0))
       __value__(M2) = __value__(OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11

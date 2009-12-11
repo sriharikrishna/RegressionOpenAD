@@ -261,8 +261,6 @@ C original function
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(OpenAD_Symbol_0,M1)
       CALL OAD_S_MIN_D(OpenAD_Symbol_0,M2,OAD_CTMP0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(M1,OpenAD_Symbol_0)
       M2%v = OAD_CTMP0%v
 
 C original function end
@@ -279,8 +277,6 @@ C taping
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(OpenAD_Symbol_0,M1)
       CALL OAD_S_MIN_D(OpenAD_Symbol_0,M2,OAD_CTMP0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(M1,OpenAD_Symbol_0)
       M2%v = OAD_CTMP0%v
 
 C taping end
