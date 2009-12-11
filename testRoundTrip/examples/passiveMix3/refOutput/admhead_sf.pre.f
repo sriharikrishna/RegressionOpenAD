@@ -1,0 +1,52 @@
+!$openad xxx file_start [OAD_intrinsics.f90]
+      module OAD_intrinsics
+        interface oad_s_min
+          module procedure oad_s_min_d
+        end interface
+        contains
+          subroutine oad_s_min_d(a,b,r)
+            double precision,intent(in) :: a
+            double precision,intent(in) :: b
+            double precision,intent(out) :: r
+            if (a<b) then
+              r = a
+            else
+              r = b
+            end if
+          end subroutine
+      end module
+!$openad xxx file_start [all_globals_mod.f]
+      module all_globals_mod
+
+      end module
+
+!$openad xxx file_start [head.f]
+      subroutine foo(m1,m2)
+        use OAD_intrinsics
+        implicit none
+        double precision,intent(in) :: m1
+        double precision,intent(inout) :: m2
+        double precision :: oad_ctmp0
+        call oad_s_min(m1,m2,oad_ctmp0)
+        m2 = oad_ctmp0
+      end subroutine foo
+
+C$openad XXX Template ad_template.f
+      subroutine head(x,y)
+        use OAD_intrinsics
+        implicit none
+        double precision, dimension(1), intent(inout) :: x
+        double precision, dimension(1), intent(inout) :: y
+        double precision t,t1
+        double precision :: oad_ctmp0
+        double precision :: oad_ctmp1
+C$openad INDEPENDENT(x)
+        t = 2.0D0
+        call oad_s_min(t,x(1),oad_ctmp0)
+        t1 = oad_ctmp0
+C different signature here should trigger activation of both elements
+        call oad_s_min(t1,t,oad_ctmp1)
+        y(1) = oad_ctmp1
+        call foo(t1,t)
+C$openad DEPENDENT(y)
+      end subroutine
