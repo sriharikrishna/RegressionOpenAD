@@ -1,14 +1,15 @@
 
-
+C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
       use w2f__types
       use OAD_active
+      use oad_intrinsics
       IMPLICIT NONE
 C
 C     **** Parameters and Result ****
 C
-      type(active) :: X(1 : 1)
-      type(active) :: Y(1 : 1)
+      type(active) :: X(1:1)
+      type(active) :: Y(1:1)
 C
 C     **** Top Level Pragmas ****
 C
@@ -25,7 +26,7 @@ C     close(3)
       CLOSE(UNIT = 3)
 C     open(3,file='data.tmp')
       OPEN(UNIT = 3, FILE = 'data.tmp')
-      READ(3, '(EN26.16E3)') X(1)
+      READ(3,'(EN26.16E3)') X(1)%v
 C     close(3)
       CLOSE(UNIT = 3)
       Y(1)%v = X(1)%v
