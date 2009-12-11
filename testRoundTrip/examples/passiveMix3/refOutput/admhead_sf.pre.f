@@ -37,16 +37,17 @@ C$openad XXX Template ad_template.f
         implicit none
         double precision, dimension(1), intent(inout) :: x
         double precision, dimension(1), intent(inout) :: y
-        double precision t,t1
+        double precision t,t1,p
         double precision :: oad_ctmp0
         double precision :: oad_ctmp1
 C$openad INDEPENDENT(x)
         t = 2.0D0
+        p = sqrt(3.0D0)
         call oad_s_min(t,x(1),oad_ctmp0)
         t1 = oad_ctmp0
 C different signature here should trigger activation of both elements
-        call oad_s_min(t1,t,oad_ctmp1)
+        call oad_s_min(x(1),t1,oad_ctmp1)
         y(1) = oad_ctmp1
-        call foo(t1,t)
+        call foo(p,t1)
 C$openad DEPENDENT(y)
       end subroutine
