@@ -107,8 +107,12 @@ ifeq ($(MAJOR_MODE),trace)
 MODULES+=OAD_rev.o OAD_trace.o                   
 endif
 
-ifneq ($(MAJOR_MODE),dd)
-MODULES+=  OAD_intrinsics.pre.xb.x2w.w2f.post.o
+ifeq ($(MAJOR_MODE),dd)
+MODULES+=
+else ifeq ($(MAJOR_MODE),mf)
+MODULES+=
+else
+MODULES+= OAD_intrinsics.pre.xb.x2w.w2f.post.o
 endif
 
 ifeq ($(MAJOR_MODE),dd)
@@ -235,6 +239,7 @@ all_globals_mod.pre.w2f.f: head_sf.pre.w2f.f
 
 # remove the transformed globals module from the transformed head file
 head.pre.w2f.f: head_sf.pre.w2f.f
+	echo 'DRIVER_PRE_REQ = $(DRIVER_PRE_REQ)'
 	cat $< | sed '/MODULE all_globals_mod/,/END MODULE/d' > $@
 
 ##########################################################################################

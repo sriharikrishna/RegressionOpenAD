@@ -481,8 +481,9 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         optsDict=exOpts['xaifBooster']
         print str(optsDict)
         try:
-            if ((not 'mode' in optsDict) or
-                ('mode' in optsDict and optsDict['mode']==majorMode)):
+            if ((not 'majorMode' in optsDict) or ('majorMode' in optsDict and optsDict['majorMode']==majorMode)
+                and
+                (not 'ctrMode' in optsDict) or ('ctrMode' in optsDict and optsDict['ctrMode']==ctrMode)):
                 if 'opts' in optsDict:
                     xaifBoosterSpecialOpts+=optsDict['opts']
         except Exception, e: 
@@ -493,6 +494,7 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         sys.stdout.write("environment settings:\n")
         for envVar in ['SCALAR_OR_VECTOR','MAJOR_MODE','MINOR_MODE','EXAMPLE_SPECIFIC_XAIFBOOSTER_OPTIONS'] : 
             sys.stdout.write('  '+envVar+'='+os.environ[envVar]+'\n')
+    print "majorMode =",majorMode
     if (majorMode == 'mf'):
         if (os.system(makeCmd+" head.pre.w2f.f")):
             raise MakeError, makeCmd+" head.pre.w2f.f"
