@@ -239,7 +239,6 @@ all_globals_mod.pre.w2f.f: head_sf.pre.w2f.f
 
 # remove the transformed globals module from the transformed head file
 head.pre.w2f.f: head_sf.pre.w2f.f
-	echo 'DRIVER_PRE_REQ = $(DRIVER_PRE_REQ)'
 	cat $< | sed '/MODULE all_globals_mod/,/END MODULE/d' > $@
 
 ##########################################################################################
