@@ -102,6 +102,8 @@ def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
     # in a fortran-specific format for specifying constants
     paramsFile.readline()
     relErrorMax=float(paramsFile.readline())
+    if (relErrorMax!=relErrorMax):
+        raise RuntimeError('max rel error in params is not a NaN')
     paramsFile.close()
     numbers={}
     # order is given in usage
@@ -111,7 +113,10 @@ def compareFiles (fileDict,withAD,doBatch,graphs,name,impulse,makeSVG,verbose):
         for theLine in numberFile:
             if (theLine[0] == "F"):
                 fElementString,fValueString = theLine.split('=')
-                numbers[fileKey].append(float(fValueString))
+                fVal=float(fValueString)
+                numbers[fileKey].append(fVal)
+                if (fVal!=fVal):
+                    raise RuntimeError('read a floating point number from '+fileName+' that is a NaN')
     errDict={}
     if (withAD): 
         for key in ['absDiscrADDD','relDiscrADDD','absDiscrCvR_AD','relDiscrCvR_AD'] :
