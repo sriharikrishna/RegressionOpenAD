@@ -1,0 +1,329 @@
+
+C$OPENAD XXX File_start [OAD_intrinsics.f90]
+      MODULE oad_intrinsics
+      use w2f__types
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Top Level Pragmas ****
+C
+      interface  OAD_S_MAX
+        module procedure  OAD_S_MAX_D
+
+      end interface 
+      
+C
+C     **** Statements ****
+C
+      CONTAINS
+
+        SUBROUTINE OAD_S_MAX_D(A, B, R)
+        use w2f__types
+        IMPLICIT NONE
+C
+C       **** Global Variables & Derived Type Definitions ****
+C
+        INTEGER(w2f__i8) OpenAD_Symbol_1
+        INTEGER(w2f__i8) OpenAD_Symbol_2
+        INTEGER(w2f__i8) OpenAD_Symbol_3
+        INTEGER(w2f__i8) OpenAD_Symbol_4
+        INTEGER(w2f__i8) OpenAD_Symbol_5
+        INTEGER(w2f__i8) OpenAD_Symbol_6
+C
+C       **** Parameters and Result ****
+C
+        TYPE (OpenADTy_active) A
+        REAL(w2f__8) B
+        TYPE (OpenADTy_active) R
+C
+C       **** Statements ****
+C
+C       $OpenAD$ BEGIN REPLACEMENT 1
+        IF(__value__(A) .GT. B) THEN
+          __value__(R) = __value__(A)
+        ELSE
+          __value__(R) = B
+        ENDIF
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 2
+        IF(__value__(A) .GT. B) THEN
+          __value__(R) = __value__(A)
+          OpenAD_Symbol_2 = 1_w2f__i8
+C         $OpenAD$ INLINE push_i(subst)
+          CALL push_i(OpenAD_Symbol_2)
+        ELSE
+          __value__(R) = B
+          OpenAD_Symbol_3 = 0_w2f__i8
+C         $OpenAD$ INLINE push_i(subst)
+          CALL push_i(OpenAD_Symbol_3)
+        ENDIF
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 3
+C       $OpenAD$ INLINE pop_i(subst)
+        CALL pop_i(OpenAD_Symbol_1)
+        IF(OpenAD_Symbol_1 .ne. 0) THEN
+C         $OpenAD$ INLINE IncDeriv(subst,subst)
+          CALL IncDeriv(__deriv__(R), __deriv__(A))
+C         $OpenAD$ INLINE ZeroDeriv(subst)
+          CALL ZeroDeriv(__deriv__(R))
+        ELSE
+C         $OpenAD$ INLINE ZeroDeriv(subst)
+          CALL ZeroDeriv(__deriv__(R))
+        ENDIF
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 4
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
+        CALL cp_arg_store_real_scalar_a(__deriv__(A))
+C       $OpenAD$ INLINE cp_arg_store_real_scalar(subst)
+        CALL cp_arg_store_real_scalar(B)
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 5
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 6
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar(subst)
+        CALL cp_arg_restore_real_scalar(B)
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
+        CALL cp_arg_restore_real_scalar_a(__deriv__(A))
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 7
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 8
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
+        CALL cp_arg_store_real_scalar_a(__deriv__(R))
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
+        CALL cp_arg_store_real_scalar_a(__deriv__(A))
+C       $OpenAD$ INLINE cp_arg_store_real_scalar(subst)
+        CALL cp_arg_store_real_scalar(B)
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 9
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar(subst)
+        CALL cp_arg_restore_real_scalar(B)
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
+        CALL cp_arg_restore_real_scalar_a(__deriv__(A))
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
+        CALL cp_arg_restore_real_scalar_a(__deriv__(R))
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 10
+        IF(__value__(A) .GT. B) THEN
+          __value__(R) = __value__(A)
+          OpenAD_Symbol_5 = 1_w2f__i8
+C         $OpenAD$ INLINE push_i(subst)
+          CALL push_i(OpenAD_Symbol_5)
+        ELSE
+          __value__(R) = B
+          OpenAD_Symbol_6 = 0_w2f__i8
+C         $OpenAD$ INLINE push_i(subst)
+          CALL push_i(OpenAD_Symbol_6)
+        ENDIF
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 11
+C       $OpenAD$ INLINE pop_i(subst)
+        CALL pop_i(OpenAD_Symbol_4)
+        IF(OpenAD_Symbol_4 .ne. 0) THEN
+C         $OpenAD$ INLINE IncDeriv(subst,subst)
+          CALL IncDeriv(__deriv__(R), __deriv__(A))
+C         $OpenAD$ INLINE ZeroDeriv(subst)
+          CALL ZeroDeriv(__deriv__(R))
+        ELSE
+C         $OpenAD$ INLINE ZeroDeriv(subst)
+          CALL ZeroDeriv(__deriv__(R))
+        ENDIF
+C       $OpenAD$ END REPLACEMENT
+        END SUBROUTINE
+      END
+
+C$OPENAD XXX File_start [all_globals_mod.f]
+      MODULE all_globals_mod
+      use w2f__types
+      IMPLICIT NONE
+      SAVE
+C
+C     **** Statements ****
+C
+      END MODULE
+
+C$OPENAD XXX File_start [head.f]
+      Function bar(X)
+      use w2f__types
+      use oad_intrinsics
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      REAL(w2f__8) X
+      INTENT(IN)  X
+      REAL(w2f__8) bar
+C
+C     **** Statements ****
+C
+      bar = MAX(X, 4.0D00)
+      RETURN
+      END FUNCTION
+
+      SUBROUTINE oad_s_bar(X, BAR)
+      use w2f__types
+      use oad_intrinsics
+      use oad_intrinsics
+      use oad_intrinsics
+      IMPLICIT NONE
+C
+C     **** Parameters and Result ****
+C
+      TYPE (OpenADTy_active) X
+      TYPE (OpenADTy_active) BAR
+C
+C     **** Local Variables and Functions ****
+C
+      TYPE (OpenADTy_active) OAD_CTMP0
+      REAL(w2f__8) OAD_CTMP1
+C
+C     **** Statements ****
+C
+C     $OpenAD$ BEGIN REPLACEMENT 1
+      OAD_CTMP1 = 4.0D00
+      CALL OAD_S_MAX_D(__deriv__(X), OAD_CTMP1, __deriv__(OAD_CTMP0))
+      __value__(BAR) = __value__(OAD_CTMP0)
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 2
+      OAD_CTMP1 = 4.0D00
+      CALL OAD_S_MAX_D(__deriv__(X), OAD_CTMP1, __deriv__(OAD_CTMP0))
+      __value__(BAR) = __value__(OAD_CTMP0)
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 3
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(BAR), __deriv__(OAD_CTMP0))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(BAR))
+      CALL OAD_S_MAX_D(__deriv__(X), OAD_CTMP1, __deriv__(OAD_CTMP0))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 4
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
+      CALL cp_arg_store_real_scalar_a(__deriv__(X))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 5
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 6
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
+      CALL cp_arg_restore_real_scalar_a(__deriv__(X))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 7
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 8
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
+      CALL cp_arg_store_real_scalar_a(__deriv__(BAR))
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
+      CALL cp_arg_store_real_scalar_a(__deriv__(X))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 9
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
+      CALL cp_arg_restore_real_scalar_a(__deriv__(X))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
+      CALL cp_arg_restore_real_scalar_a(__deriv__(BAR))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 10
+      OAD_CTMP1 = 4.0D00
+      CALL OAD_S_MAX_D(__deriv__(X), OAD_CTMP1, __deriv__(OAD_CTMP0))
+      __value__(BAR) = __value__(OAD_CTMP0)
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 11
+C     $OpenAD$ INLINE IncDeriv(subst,subst)
+      CALL IncDeriv(__deriv__(BAR), __deriv__(OAD_CTMP0))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(BAR))
+      CALL OAD_S_MAX_D(__deriv__(X), OAD_CTMP1, __deriv__(OAD_CTMP0))
+C     $OpenAD$ END REPLACEMENT
+      END SUBROUTINE
+
+      SUBROUTINE head(X, Y)
+      use w2f__types
+      use oad_intrinsics
+      use oad_intrinsics
+      use oad_intrinsics
+      IMPLICIT NONE
+C
+C     **** Global Variables & Derived Type Definitions ****
+C
+      TYPE (OpenADTy_active) OpenAD_Symbol_0
+      TYPE (OpenADTy_active) OpenAD_Symbol_7
+C
+C     **** Parameters and Result ****
+C
+      TYPE (OpenADTy_active) X(1 : 1)
+      TYPE (OpenADTy_active) Y(1 : 1)
+C
+C     **** Local Variables and Functions ****
+C
+      TYPE (OpenADTy_active) OAD_CTMP0
+      REAL(w2f__8) OAD_CTMP1
+      EXTERNAL oad_s_bar
+      REAL(w2f__8) T
+C
+C     **** Top Level Pragmas ****
+C
+C$OPENAD INDEPENDENT(X)
+C$OPENAD DEPENDENT(Y)
+C
+C     **** Statements ****
+C
+C     $OpenAD$ BEGIN REPLACEMENT 1
+C$OPENAD XXX Template ad_template.f
+      CALL oad_s_bar(__deriv__(X(1)), __deriv__(OAD_CTMP0))
+      __value__(Y(1)) = (__value__(OAD_CTMP0) * 2.0D00)
+C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
+      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), OAD_CTMP1)
+      CALL oad_s_bar(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
+      CALL convert_a2p_scalar(OAD_CTMP1, __deriv__(OpenAD_Symbol_0))
+      T = OAD_CTMP1
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 2
+C$OPENAD XXX Template ad_template.f
+      CALL oad_s_bar(__deriv__(X(1)), __deriv__(OAD_CTMP0))
+      __value__(Y(1)) = (__value__(OAD_CTMP0) * 2.0D00)
+C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
+      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), OAD_CTMP1)
+      CALL oad_s_bar(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
+      CALL convert_a2p_scalar(OAD_CTMP1, __deriv__(OpenAD_Symbol_0))
+      T = OAD_CTMP1
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 3
+      CALL oad_s_bar(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_7))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(2.0D00, __deriv__(Y(1)), __deriv__(OAD_CTMP0))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(1)))
+      CALL oad_s_bar(__deriv__(X(1)), __deriv__(OAD_CTMP0))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 4
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 5
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 6
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 7
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 8
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 9
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 10
+C$OPENAD XXX Template ad_template.f
+      CALL oad_s_bar(__deriv__(X(1)), __deriv__(OAD_CTMP0))
+      __value__(Y(1)) = (__value__(OAD_CTMP0) * 2.0D00)
+C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
+      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), OAD_CTMP1)
+      CALL oad_s_bar(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
+      CALL convert_a2p_scalar(OAD_CTMP1, __deriv__(OpenAD_Symbol_0))
+      T = OAD_CTMP1
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 11
+      CALL oad_s_bar(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_7))
+C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
+      CALL Saxpy(2.0D00, __deriv__(Y(1)), __deriv__(OAD_CTMP0))
+C     $OpenAD$ INLINE ZeroDeriv(subst)
+      CALL ZeroDeriv(__deriv__(Y(1)))
+      CALL oad_s_bar(__deriv__(X(1)), __deriv__(OAD_CTMP0))
+C     $OpenAD$ END REPLACEMENT
+      END SUBROUTINE
