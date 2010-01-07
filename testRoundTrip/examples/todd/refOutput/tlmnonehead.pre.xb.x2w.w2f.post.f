@@ -10,6 +10,10 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_10
+      REAL(w2f__8) OpenAD_acc_11
+      REAL(w2f__8) OpenAD_acc_12
+      REAL(w2f__8) OpenAD_acc_13
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
       REAL(w2f__8) OpenAD_acc_4
@@ -17,6 +21,7 @@ C
       REAL(w2f__8) OpenAD_acc_6
       REAL(w2f__8) OpenAD_acc_7
       REAL(w2f__8) OpenAD_acc_8
+      REAL(w2f__8) OpenAD_acc_9
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
@@ -143,14 +148,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_acc_6 = (OpenAD_lin_17*OpenAD_lin_19*OpenAD_lin_26)
       OpenAD_acc_7 = (OpenAD_lin_10*OpenAD_lin_18*OpenAD_lin_26)
       OpenAD_acc_8 = (OpenAD_lin_11*OpenAD_lin_18*OpenAD_lin_26)
-      CALL sax(OpenAD_lin_6,MATR(0),M03)
-      CALL saxpy(OpenAD_lin_7,MATR(3),M03)
-      CALL sax(OpenAD_lin_8,MATR(1),M12)
-      CALL saxpy(OpenAD_lin_9,MATR(2),M12)
-      CALL setderiv(G,M03)
-      CALL dec_deriv(G,M12)
-      CALL sax(OpenAD_acc_0,G,OBJ(1))
-      CALL saxpy(OpenAD_acc_1,MATR(2),OBJ(1))
+      OpenAD_acc_9 = (INT((-1_w2f__i8))*OpenAD_acc_0)
+      OpenAD_acc_10 = (OpenAD_lin_8*OpenAD_acc_9)
+      OpenAD_acc_11 = (OpenAD_lin_9*OpenAD_acc_9)
+      OpenAD_acc_12 = (OpenAD_lin_6*OpenAD_acc_0)
+      OpenAD_acc_13 = (OpenAD_lin_7*OpenAD_acc_0)
+      CALL sax(OpenAD_acc_1,MATR(2),OBJ(1))
       CALL saxpy(OpenAD_acc_2,MATR(2),OBJ(1))
       CALL saxpy(OpenAD_acc_3,MATR(1),OBJ(1))
       CALL saxpy(OpenAD_acc_4,MATR(1),OBJ(1))
@@ -158,4 +161,8 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_6,MATR(3),OBJ(1))
       CALL saxpy(OpenAD_acc_7,MATR(0),OBJ(1))
       CALL saxpy(OpenAD_acc_8,MATR(0),OBJ(1))
+      CALL saxpy(OpenAD_acc_10,MATR(1),OBJ(1))
+      CALL saxpy(OpenAD_acc_11,MATR(2),OBJ(1))
+      CALL saxpy(OpenAD_acc_12,MATR(0),OBJ(1))
+      CALL saxpy(OpenAD_acc_13,MATR(3),OBJ(1))
       END SUBROUTINE

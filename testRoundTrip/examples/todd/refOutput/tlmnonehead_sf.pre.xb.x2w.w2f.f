@@ -29,6 +29,10 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_10
+      REAL(w2f__8) OpenAD_acc_11
+      REAL(w2f__8) OpenAD_acc_12
+      REAL(w2f__8) OpenAD_acc_13
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
       REAL(w2f__8) OpenAD_acc_4
@@ -36,6 +40,7 @@ C
       REAL(w2f__8) OpenAD_acc_6
       REAL(w2f__8) OpenAD_acc_7
       REAL(w2f__8) OpenAD_acc_8
+      REAL(w2f__8) OpenAD_acc_9
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
@@ -166,14 +171,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_acc_6 = (OpenAD_lin_17 * OpenAD_lin_19 * OpenAD_lin_26)
       OpenAD_acc_7 = (OpenAD_lin_10 * OpenAD_lin_18 * OpenAD_lin_26)
       OpenAD_acc_8 = (OpenAD_lin_11 * OpenAD_lin_18 * OpenAD_lin_26)
-      CALL sax(OpenAD_lin_6, __deriv__(MATR(0)), __deriv__(M03))
-      CALL saxpy(OpenAD_lin_7, __deriv__(MATR(3)), __deriv__(M03))
-      CALL sax(OpenAD_lin_8, __deriv__(MATR(1)), __deriv__(M12))
-      CALL saxpy(OpenAD_lin_9, __deriv__(MATR(2)), __deriv__(M12))
-      CALL setderiv(__deriv__(G), __deriv__(M03))
-      CALL dec_deriv(__deriv__(G), __deriv__(M12))
-      CALL sax(OpenAD_acc_0, __deriv__(G), __deriv__(OBJ(1)))
-      CALL saxpy(OpenAD_acc_1, __deriv__(MATR(2)), __deriv__(OBJ(1)))
+      OpenAD_acc_9 = (INT((-1_w2f__i8)) * OpenAD_acc_0)
+      OpenAD_acc_10 = (OpenAD_lin_8 * OpenAD_acc_9)
+      OpenAD_acc_11 = (OpenAD_lin_9 * OpenAD_acc_9)
+      OpenAD_acc_12 = (OpenAD_lin_6 * OpenAD_acc_0)
+      OpenAD_acc_13 = (OpenAD_lin_7 * OpenAD_acc_0)
+      CALL sax(OpenAD_acc_1, __deriv__(MATR(2)), __deriv__(OBJ(1)))
       CALL saxpy(OpenAD_acc_2, __deriv__(MATR(2)), __deriv__(OBJ(1)))
       CALL saxpy(OpenAD_acc_3, __deriv__(MATR(1)), __deriv__(OBJ(1)))
       CALL saxpy(OpenAD_acc_4, __deriv__(MATR(1)), __deriv__(OBJ(1)))
@@ -181,4 +184,8 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_6, __deriv__(MATR(3)), __deriv__(OBJ(1)))
       CALL saxpy(OpenAD_acc_7, __deriv__(MATR(0)), __deriv__(OBJ(1)))
       CALL saxpy(OpenAD_acc_8, __deriv__(MATR(0)), __deriv__(OBJ(1)))
+      CALL saxpy(OpenAD_acc_10, __deriv__(MATR(1)), __deriv__(OBJ(1)))
+      CALL saxpy(OpenAD_acc_11, __deriv__(MATR(2)), __deriv__(OBJ(1)))
+      CALL saxpy(OpenAD_acc_12, __deriv__(MATR(0)), __deriv__(OBJ(1)))
+      CALL saxpy(OpenAD_acc_13, __deriv__(MATR(3)), __deriv__(OBJ(1)))
       END SUBROUTINE

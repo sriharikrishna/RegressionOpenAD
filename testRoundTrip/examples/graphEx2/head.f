@@ -42,7 +42,7 @@ c$openad XXX Template ad_template.f
       double precision::h_obj19
       double precision::h_obj20
 
-      double precision f,g,loc1,loc2,norm,gg,d00,d11,d12,d03,d01
+      double precision f,g,loc1,loc2,gg,d00,d11,d12,d03,d01
       double precision matr0,matr1,matr2,matr3,adj_m0,adj_m1,adj_m2,
      &adj_m3
       double precision m00,m01,m02,m03,m11,m12,m13,m22,m23,m33
@@ -89,7 +89,6 @@ c$openad INDEPENDENT(x06)
       d03=m11*m22
 
       f=d12+d03
-      norm=f
 
       loc1=a*(1/g)
       obj=f*loc1
@@ -197,7 +196,6 @@ C second time around
       d03=m11*m22
 
       f=d12+d03
-      norm=f
 
       loc1=a*(1/g)
       obj=f*loc1
