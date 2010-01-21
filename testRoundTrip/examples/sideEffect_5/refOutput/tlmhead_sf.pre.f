@@ -31,11 +31,11 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1) :: y
         integer i
 C$openad INDEPENDENT(x)
-        g = 1
-        i = 2
+        g=1
+        i=2
         call foo(x,2)
         call foo(x,i)
-        y(1) = 0
+        y(1)=0
         do i=1,3
          y(1) = y(1)+x(i)
         end do

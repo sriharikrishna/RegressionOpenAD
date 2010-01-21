@@ -14,10 +14,10 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1), intent(out) :: y
           integer i
 C$openad INDEPENDENT(x)
-          y(1) = x(1)
+          y(1)=x(1)
           do i=1,3
             y(1) = y(1)*x(1)
           end do
-          y(1) = y(1)
+          y(1)=y(1)
 C$openad DEPENDENT(y)
       end subroutine

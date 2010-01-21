@@ -64,5 +64,5 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(OpenAD_prop_0,Y(1))
         CALL sax(OpenAD_lin_0,X(2),Y(1))
         CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y(1))
-      enddo
+      END DO
       END SUBROUTINE

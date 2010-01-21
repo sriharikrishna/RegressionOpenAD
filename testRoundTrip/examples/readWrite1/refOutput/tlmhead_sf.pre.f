@@ -19,6 +19,6 @@ C$openad INDEPENDENT(x)
         open(3,file='data.tmp')
         read(3,'(EN26.16E3)') x(1)
         close(3)
-          y(1) = x(1)
+          y(1)=x(1)
 C$openad DEPENDENT(y)
       end subroutine

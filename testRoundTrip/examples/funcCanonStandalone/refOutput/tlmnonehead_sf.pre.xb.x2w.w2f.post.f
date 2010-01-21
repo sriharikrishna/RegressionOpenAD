@@ -70,7 +70,7 @@ C
 C
 C     **** Statements ****
 C
-      bar = MAX(X,4.0D00)
+      bar = MAX(X, 4.0D00)
       RETURN
       END FUNCTION
 

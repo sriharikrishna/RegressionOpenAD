@@ -35,12 +35,12 @@ C
          if (our_rev_mode%plain) then
 C original function
 C$OPENAD XXX Template ad_template.f
-      L = (X.ne.0.0D00)
+      L = (X .ne. 0.0D00)
           end if
           if (our_rev_mode%tape) then
 C taping
 C$OPENAD XXX Template ad_template.f
-      L = (X.ne.0.0D00)
+      L = (X .ne. 0.0D00)
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -108,7 +108,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL foo(OpenAD_Symbol_0,L)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
-      IF (L) THEN
+      IF(L) THEN
         Y(1)%v = X(1)%v
       ENDIF
           end if
@@ -120,7 +120,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
       CALL foo(OpenAD_Symbol_0,L)
 C!! requested inline of 'convert_p2a_scalar' has no defn
       CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
-      IF (L) THEN
+      IF(L) THEN
         Y(1)%v = X(1)%v
         OpenAD_Symbol_2 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_2

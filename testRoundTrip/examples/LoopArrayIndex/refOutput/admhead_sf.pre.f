@@ -30,7 +30,7 @@ C$openad XXX Template ad_template.f
         double precision y
         integer i,j
 C$openad INDEPENDENT(x)
-        i = 1
+        i=1
         do j=1,2
           call foo(x(j))
           call bar(x(j),i)

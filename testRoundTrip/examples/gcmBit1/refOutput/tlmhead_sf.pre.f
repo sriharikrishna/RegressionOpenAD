@@ -22,39 +22,39 @@ C$openad XXX Template ad_template.f
       Real*8 t, t2, t3, t4, s, s3o2, p, p2
       real*8 SItoBar
 
-      eosJMDCKFw(1) = 19659.33
-      eosJMDCKFw(2) = 144.4304
+      eosJMDCKFw(1)=19659.33
+      eosJMDCKFw(2)=144.4304
       eosJMDCKFw(3) = -1.706103
-      eosJMDCKFw(4) = 0.009648704
+      eosJMDCKFw(4)=0.009648704
       eosJMDCKFw(5) = -4.190253e-05
 
-      eosJMDCKSw(1) = 52.84855
+      eosJMDCKSw(1)=52.84855
       eosJMDCKSw(2) = -0.3101089
-      eosJMDCKSw(3) = 0.006283263
+      eosJMDCKSw(3)=0.006283263
       eosJMDCKSw(4) = -5.084188e-05
-      eosJMDCKSw(5) = 0.388664
-      eosJMDCKSw(6) = 0.00908583
+      eosJMDCKSw(5)=0.388664
+      eosJMDCKSw(6)=0.00908583
       eosJMDCKSw(7) = -0.0004619924
 
-      eosJMDCKP(1) = 3.186519
-      eosJMDCKP(2) = 0.02212276
+      eosJMDCKP(1)=3.186519
+      eosJMDCKP(2)=0.02212276
       eosJMDCKP(3) = -0.0002984642
-      eosJMDCKP(4) = 1.956415e-06
-      eosJMDCKP(5) = 0.006704388
+      eosJMDCKP(4)=1.956415e-06
+      eosJMDCKP(5)=0.006704388
       eosJMDCKP(6) = -0.0001847318
-      eosJMDCKP(7) = 2.059331e-07
-      eosJMDCKP(8) = 0.0001480266
-      eosJMDCKP(9) = 0.0002102898
+      eosJMDCKP(7)=2.059331e-07
+      eosJMDCKP(8)=0.0001480266
+      eosJMDCKP(9)=0.0002102898
       eosJMDCKP(10) = -1.202016e-05
-      eosJMDCKP(11) = 1.39468e-07
+      eosJMDCKP(11)=1.39468e-07
       eosJMDCKP(12) = -2.040237e-06
-      eosJMDCKP(13) = 6.128773e-08
-      eosJMDCKP(14) = 6.207323e-10
+      eosJMDCKP(13)=6.128773e-08
+      eosJMDCKP(14)=6.207323e-10
 
-      k = 1
-      bi = 1
-      bj = 1
-      SItoBar = 1.0
+      k=1
+      bi=1
+      bj=1
+      SItoBar=1.0
       DO j=1,2
          DO i=1,2
             t = tFld(i,j,k,bi,bj)
@@ -62,7 +62,7 @@ C$openad XXX Template ad_template.f
             t3 = t2*t
             t4 = t3*t
             s = sFld(i,j,k,bi,bj)
-          IF ( s .GT. 0.d0 ) THEN
+          IF (s.GT.0.d0) THEN
             s3o2 = s*SQRT(s)
           ELSE
             s = 0.d0
@@ -96,7 +96,7 @@ C$openad XXX Template ad_template.f
       Real*8 bulkMod(2,2)
       integer i,j,k,l,m,xcount
 C$openad INDEPENDENT(x)
-      xcount = 1
+      xcount=1
       DO i=1,2
          DO j=1,2
             locpres(i,j) = 2*x(xcount)
@@ -114,7 +114,7 @@ C$openad INDEPENDENT(x)
       call FIND_BULKMOD( locPres, tFld, sFld, bulkMod)
       DO i=1,2
          DO j=1,2
-            y((i-1)*2+j) = bulkmod(i,j)
+            y((i-1)*2+j)=bulkmod(i,j)
          end do
       end do
 C$openad DEPENDENT(y)

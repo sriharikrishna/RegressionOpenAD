@@ -14,10 +14,10 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1), intent(out) :: y
           integer i
 C$openad INDEPENDENT(x)
-          i = 1
+          i=1
           select case (i)
           case (1)
-            y(1) = x(1)
+            y(1)=x(1)
           end select
 C$openad DEPENDENT(y)
       end subroutine

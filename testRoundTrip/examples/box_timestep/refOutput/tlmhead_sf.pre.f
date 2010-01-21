@@ -33,14 +33,14 @@ C-- local variables:
       double precision dFldDt(3)
 C$openad INDEPENDENT(fldnow)
 C -- initialization
-      vol(1) = 10.D0
-      vol(2) = 12.D0
-      vol(3) = 14.D0
-      delta_t = 20.D0
+      vol(1)=10.D0
+      vol(2)=12.D0
+      vol(3)=14.D0
+      delta_t=20.D0
 
 C-- routine body
 
-      if ( uVelLoc .GE. 0. ) then
+      if (uVelLoc.GE.0.) then
          dFldDt(1) = (extForLoc(1)+gammaLoc*(fldStar(1)-fldNow(1))*vol(1
      +)+uVelLoc*(fldNow(3)-fldNow(1)))/vol(1)
          dFldDt(2) = (extForLoc(2)+gammaLoc*(fldStar(2)-fldNow(2))*vol(2

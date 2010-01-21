@@ -43,7 +43,7 @@ C$openad INDEPENDENT(x17)
 C$openad INDEPENDENT(x18)
 C$openad INDEPENDENT(x19)
 
-      t01 = sin(x01**2+x02**2+x03**2)
+      t01 = sin (x01 **2 + x02 **2 + x03 **2)
       t02 = one/t01
       t03 = x01*t02
       t04 = x02*t02
@@ -60,7 +60,7 @@ C$openad INDEPENDENT(x19)
       t15 = t06*t10+t07*t11
       t18 = half*(t12**2+t13**2+t14**2)
       t16 = x15*(t15-t18)
-      t16 = sin(t16)
+      t16 = sin (t16)
       t17 = t03*t12+t04*t13+t05*t14
       t19 = t04*t14-t05*t13
       t20 = t05*t12-t03*t14

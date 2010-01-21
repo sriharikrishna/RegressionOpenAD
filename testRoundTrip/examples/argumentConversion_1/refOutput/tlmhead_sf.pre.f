@@ -21,8 +21,8 @@ C$openad XXX Template ad_template.f
         double precision, dimension(2) :: x, px
         double precision y, py
 C$openad INDEPENDENT(x)
-        px(1) = 1.0
-        px(2) = 2.0
+        px(1)=1.0
+        px(2)=2.0
         call foo(x,y)
         call foo(px,py)
         call foo(px,py)

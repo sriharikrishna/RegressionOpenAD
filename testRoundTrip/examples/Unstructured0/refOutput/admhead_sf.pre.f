@@ -19,6 +19,6 @@ C$openad INDEPENDENT(x)
          goto 3
  1    x(1) = x(1)*x(1)
          goto 2
- 4    y(1) = x(1)
+ 4    y(1)=x(1)
 C$openad DEPENDENT(y)
       end subroutine

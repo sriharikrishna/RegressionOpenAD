@@ -97,7 +97,7 @@ C$OPENAD XXX Template ad_template.f
       VOL(2) = 1.2D+01
       VOL(3) = 1.4D+01
       DELTA_T = 2.0D+01
-      IF (UVELLOC.GE.0.0D00) THEN
+      IF(UVELLOC .GE. 0.0D00) THEN
         OpenAD_tmp_2 = (FLDSTAR(1)-FLDNOW(1)%v)
         OpenAD_tmp_1 = (GAMMALOC*OpenAD_tmp_2)
         OpenAD_tmp_3 = (FLDNOW(3)%v-FLDNOW(1)%v)
@@ -191,5 +191,5 @@ C$OPENAD XXX Template ad_template.f
         FLDNEW(INT(L))%v = (FLDOLD(L)+DFLDDT(L)%v*OpenAD_tmp_10)
         OpenAD_lin_25 = OpenAD_tmp_10
         CALL sax(OpenAD_lin_25,DFLDDT(L),FLDNEW(L))
-      enddo
+      END DO
       END SUBROUTINE

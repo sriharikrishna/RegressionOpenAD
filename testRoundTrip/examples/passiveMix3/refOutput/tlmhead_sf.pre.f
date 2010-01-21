@@ -41,7 +41,7 @@ C$openad XXX Template ad_template.f
         double precision :: oad_ctmp0
         double precision :: oad_ctmp1
 C$openad INDEPENDENT(x)
-        t = 2.0D0
+        t=2.0D0
         p = sqrt(3.0D0)
         call oad_s_min(t,x(1),oad_ctmp0)
         t1 = oad_ctmp0

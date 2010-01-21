@@ -130,7 +130,7 @@ C
 C     set normal quantities                                             
 C UN changed      nsize = sqrt (nrm (1) **2 + nrm (2) **2 + nrm (3) **2)
 
-      nsize = sin(nrm1**2+nrm2**2+nrm3**2)
+      nsize = sin (nrm1 **2 + nrm2 **2 + nrm3 **2)
 C      IF (nsize.gt.mcheps) then
 
                 nsizei = one/nsize
@@ -167,7 +167,7 @@ C UN removed      cave = max (cave, zero)
 C       
 C UN changed      cave = sqrt (cave)
 
-      cave = sin(cave)
+      cave = sin (cave)
       uhat = nxhat*uave+nyhat*vave+nzhat*wave
       utilde = nyhat*wave-nzhat*vave
       vtilde = nzhat*uave-nxhat*wave

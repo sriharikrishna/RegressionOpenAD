@@ -23,13 +23,13 @@ C$openad XXX Template ad_template.f
         double precision, dimension(2) :: p,q
         integer k,l
 C$openad INDEPENDENT(x)
-        k = 1
+        k=1
         call foo(x(k),y)
 C activate q, p stays passive
-        q(1) = y
-        y = q(1)
-        p(1) = 1.0
-        l = 1
+        q(1)=y
+        y=q(1)
+        p(1)=1.0
+        l=1
         call foo(p(k),q(l))
 C$openad DEPENDENT(y)
       end subroutine

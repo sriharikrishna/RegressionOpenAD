@@ -86,13 +86,13 @@ C restore arguments
 C original function
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,3,1
-        IF (I.eq.2) THEN
+      DO I = 1, 3, 1
+        IF(I .eq. 2) THEN
           Y(INT(I))%v = X(I)%v
         ELSE
           Y(INT(I))%v = (X(I)%v*2.0D00)
         ENDIF
-      enddo
+      END DO
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -113,7 +113,7 @@ C$OPENAD XXX Simple loop
         ELSE
           Y(INT(I))%v = (X(I)%v*2.0D00)
         ENDIF
-      enddo
+      END DO
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -140,7 +140,7 @@ C adjoint
           Y(I)%d = 0.0d0
         ENDIF
         I = I-1
-      enddo
+      END DO
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

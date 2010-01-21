@@ -16,7 +16,7 @@ C$openad XXX Template ad_template.f
 C$openad INDEPENDENT(x)
         t1 = x(1)+x(1)
         t2 = 2*t1
-          y1 = t2
-          y(1) = y1
+          y1=t2
+          y(1)=y1
 C$openad DEPENDENT(y)
       end subroutine

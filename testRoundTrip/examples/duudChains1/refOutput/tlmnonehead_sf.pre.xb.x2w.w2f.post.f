@@ -46,10 +46,10 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         T(INT(I))%v = (X(I)%v*2.0D00)
         CALL sax(2.0D00,X(I),T(I))
         Y(INT(I))%v = (T(I)%v*4.0D00)
         CALL sax(4.0D00,T(I),Y(I))
-      enddo
+      END DO
       END SUBROUTINE

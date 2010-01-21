@@ -115,7 +115,7 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-      IF (A(1:LEN(A)).EQ.'two') THEN
+      IF(A(1 : LEN(A)) .EQ. 'two') THEN
         X%v = (X%v*2.0D00)
       ENDIF
       IF (A(1:LEN(A)).EQ.'three') THEN

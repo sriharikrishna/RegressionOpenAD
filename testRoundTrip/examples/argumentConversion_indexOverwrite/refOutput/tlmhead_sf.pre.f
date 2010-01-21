@@ -31,7 +31,7 @@ C$openad XXX Template ad_template.f
         double precision, dimension(2) :: v
 C$openad INDEPENDENT(x)
         i = 1
-        y(1) = 1.0D0
+        y(1)=1.0D0
         v(1) = 0.00908583
         v(2) = -0.0002984642
         call foo(x(1),y(1))

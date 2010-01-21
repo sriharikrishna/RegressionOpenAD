@@ -19,7 +19,7 @@ C$openad INDEPENDENT(x)
           t3 = t1*t2
         y(1) = t1*t3
         y(2) = 1./t3
-        y(3) = sin(t3)
+        y(3)=sin(t3)
         y(4) = t3*t2
 C$openad DEPENDENT(y)
       end subroutine

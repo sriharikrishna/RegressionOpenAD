@@ -96,13 +96,13 @@ C restore arguments
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,10,1
-        IF (I.eq.1) THEN
+      DO I = 1, 10, 1
+        IF(I .eq. 1) THEN
           Y(1)%v = X(1)%v
         ELSE
           Y(1)%v = (X(I)%v*Y(1)%v)
         ENDIF
-      enddo
+      END DO
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -139,7 +139,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
         OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -182,7 +182,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      enddo
+      END DO
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

@@ -88,14 +88,14 @@ C
          if (our_rev_mode%plain) then
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,2,1
-        IF (I.eq.1) THEN
+      DO I = 1, 2, 1
+        IF(I .eq. 1) THEN
           Y(INT(I))%v = (X(I)%v*X(I)%v)
         ELSE
           Y(INT(I))%v = (X(I)%v+X(I)%v)
         ENDIF
         X(INT(I))%v = 0.0
-      enddo
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -127,7 +127,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = I
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -164,6 +164,6 @@ C adjoint
           Y(INT(OpenAD_Symbol_16))%d = 0.0d0
         ENDIF
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      enddo
+      END DO
           end if
         end subroutine head

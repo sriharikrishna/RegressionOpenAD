@@ -48,8 +48,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 0,3,1
+      DO I = 0, 3, 1
         Y(INT(I+1))%v = X(I+1)%v
         CALL setderiv(Y(I+1),X(I+1))
-      enddo
+      END DO
       END SUBROUTINE

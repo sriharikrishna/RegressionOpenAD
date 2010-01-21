@@ -80,10 +80,10 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         AX(INT(I),2)%v = X(I)%v
         CALL setderiv(AX(I,2),X(I))
-      enddo
+      END DO
       CALL foo(AX(1,2),Y)
 C     $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
       CALL convert_p2a_matrix(OpenAD_Symbol_0,APX)

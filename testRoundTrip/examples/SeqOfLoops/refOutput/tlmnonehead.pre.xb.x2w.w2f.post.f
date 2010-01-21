@@ -32,10 +32,10 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         Y(INT(I))%v = X(I)%v
         CALL setderiv(Y(I),X(I))
-      enddo
+      END DO
       DO I = 1,2,1
         OpenAD_Symbol_0 = (X(I)%v*Y(I)%v)
         OpenAD_lin_0 = Y(I)%v
@@ -44,5 +44,5 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(OpenAD_prop_0,Y(I))
         CALL sax(OpenAD_lin_0,X(I),Y(I))
         CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y(I))
-      enddo
+      END DO
       END SUBROUTINE

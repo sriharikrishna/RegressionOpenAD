@@ -15,7 +15,7 @@ C$openad XXX Template ad_template.f
           double precision t
 C$openad INDEPENDENT(x)
           t = x(1)*x(2)
-        y(1) = sin(t)
-        y(2) = cos(t)
+        y(1)=sin(t)
+        y(2)=cos(t)
 C$openad DEPENDENT(y)
       end subroutine

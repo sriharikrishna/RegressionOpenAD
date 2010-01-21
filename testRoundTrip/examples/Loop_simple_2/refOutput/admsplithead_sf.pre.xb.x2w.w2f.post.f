@@ -102,16 +102,16 @@ C
 C original function
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,3,1
+      DO I = 1, 3, 1
         Y(INT(I))%v = X(I)%v
-      enddo
+      END DO
       DO I = 1,3,1
         DO J = 1,3,1
           DO K = 1,3,1
             Y(INT(I))%v = (X(J)%v*Y(I)%v)
-          enddo
-        enddo
-      enddo
+          END DO
+        END DO
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -119,7 +119,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,3,1
         Y(INT(I))%v = X(I)%v
-      enddo
+      END DO
       OpenAD_Symbol_7 = 0_w2f__i8
       DO I = 1,3,1
         OpenAD_Symbol_8 = 0_w2f__i8
@@ -139,15 +139,15 @@ C$OPENAD XXX Simple loop
             integer_tape(integer_tape_pointer) = J
             integer_tape_pointer = integer_tape_pointer+1
             OpenAD_Symbol_9 = (INT(OpenAD_Symbol_9)+INT(1_w2f__i8))
-          enddo
+          END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_9
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_8 = (INT(OpenAD_Symbol_8)+INT(1_w2f__i8))
-        enddo
+        END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_7 = (INT(OpenAD_Symbol_7)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -182,16 +182,16 @@ C adjoint
      +AD_prop_0%d
             OpenAD_prop_0%d = 0.0d0
             OpenAD_Symbol_6 = INT(OpenAD_Symbol_6)+1
-          enddo
+          END DO
           OpenAD_Symbol_4 = INT(OpenAD_Symbol_4)+1
-        enddo
+        END DO
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      enddo
+      END DO
       I = 1+1*((3-1)/1)
       do while (I.GE.1)
         X(I)%d = X(I)%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1
-      enddo
+      END DO
           end if
         end subroutine head

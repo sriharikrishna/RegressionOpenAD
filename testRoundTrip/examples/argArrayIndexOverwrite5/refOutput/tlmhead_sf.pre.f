@@ -23,8 +23,8 @@ C$openad XXX Template ad_template.f
         double precision y
         integer i,j
 C$openad INDEPENDENT(x)
-        i = 1
-        j = 1
+        i=1
+        j=1
         call foo(x(i+j),i)
         call foo(x(i-j),i)
         y = x(1)*x(2)

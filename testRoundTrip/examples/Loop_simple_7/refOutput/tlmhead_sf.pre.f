@@ -16,7 +16,7 @@ C$openad XXX Template ad_template.f
 C$openad xxx simple loop
 
         do i=1,k
-          y(i) = x(i)
+          y(i)=x(i)
         end do
       end subroutine
 

@@ -17,6 +17,6 @@ C$openad XXX Template ad_template.f
            Real*8 deg2rad
            PARAMETER ( deg2rad = 2.d0*PI/360.d0 )
 C$openad INDEPENDENT(x)
-          y(1) = cos(deg2rad*x(1))
+          y(1)=cos(deg2rad*x(1))
 C$openad DEPENDENT(y)
       end subroutine

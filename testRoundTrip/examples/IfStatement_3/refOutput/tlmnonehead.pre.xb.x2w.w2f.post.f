@@ -14,7 +14,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      L = (X.ne.0.0D00)
+      L = (X .ne. 0.0D00)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -50,7 +50,7 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL foo(OpenAD_Symbol_0,L)
 C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
       CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
-      IF (L) THEN
+      IF(L) THEN
         Y(1)%v = X(1)%v
         CALL setderiv(Y(1),X(1))
       ENDIF

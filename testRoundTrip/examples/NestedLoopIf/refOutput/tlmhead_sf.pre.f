@@ -20,7 +20,7 @@ C$openad INDEPENDENT(x)
             else
               y(i) = x(i)+x(i)
             end if
-            x(i) = 0.0
+            x(i)=0.0
           end do
 C$openad DEPENDENT(y)
       end subroutine

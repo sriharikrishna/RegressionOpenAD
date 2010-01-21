@@ -28,6 +28,6 @@ C$openad XXX Template ad_template.f
       double precision, dimension(1), intent(inout) :: y
 C$openad INDEPENDENT(x)
           call foo(x(1))
-          y(1) = x(1)
+          y(1)=x(1)
 C$openad DEPENDENT(y)
       end subroutine

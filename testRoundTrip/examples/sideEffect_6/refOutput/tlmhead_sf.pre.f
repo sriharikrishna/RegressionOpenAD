@@ -27,11 +27,11 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1) :: y
         character (10) a
 C$openad INDEPENDENT(x)
-        a = 'two'
+        a='two'
         call foo(a,x)
-        a = 'three'
+        a='three'
         call foo(a,x)
-        a = 'four'
-        y(1) = x(1)
+        a='four'
+        y(1)=x(1)
 C$openad DEPENDENT(y)
       end subroutine

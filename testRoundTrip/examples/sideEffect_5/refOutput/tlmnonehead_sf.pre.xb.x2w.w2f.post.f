@@ -50,12 +50,12 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,(N+1),1
+      DO I = 1, (N + 1), 1
         OpenAD_Symbol_0 = (A(I)%v*2.0D00)
         A(INT(I))%v = OpenAD_Symbol_0
         CALL setderiv(OpenAD_prop_0,A(I))
         CALL sax(2.0D00,OpenAD_prop_0,A(I))
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -98,5 +98,5 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(OpenAD_prop_1,Y(1))
         CALL setderiv(Y(1),X(I))
         CALL inc_deriv(Y(1),OpenAD_prop_1)
-      enddo
+      END DO
       END SUBROUTINE

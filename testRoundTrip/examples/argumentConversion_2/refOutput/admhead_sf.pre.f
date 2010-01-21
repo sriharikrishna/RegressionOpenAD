@@ -12,7 +12,7 @@ C$openad XXX Template ad_template.f
       use OAD_intrinsics
         double precision x
         double precision y
-        y = x
+        y=x
       end subroutine
 
 C$openad XXX Template ad_template.f

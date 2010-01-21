@@ -76,10 +76,10 @@ C
 C original function
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,5,1
+      DO I = 1, 5, 1
         Y(INT(I))%v = X%v
         Y(6-I)%v = X%v
-      enddo
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -88,7 +88,7 @@ C$OPENAD XXX Simple loop
       DO I = 1,5,1
         Y(INT(I))%v = X%v
         Y(6-I)%v = X%v
-      enddo
+      END DO
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -99,6 +99,6 @@ C adjoint
         X%d = X%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1
-      enddo
+      END DO
           end if
         end subroutine head

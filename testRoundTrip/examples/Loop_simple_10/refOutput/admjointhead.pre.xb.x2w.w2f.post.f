@@ -95,7 +95,7 @@ C store arguments
       do cp_loop_variable_2 = lbound(A,2),ubound(A,2)
       call cp_store_int_vector(A(:,cp_loop_variable_2),size(A(:,cp_loop_
      +variable_2)),theArgIStack,theArgIStackoffset,theArgIStackSize)
-      enddo
+      end do
           end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
@@ -104,20 +104,20 @@ C restore arguments
       A(cp_loop_variable_1,cp_loop_variable_2) = theArgIStack(theArgISta
      +ckoffset)
       theArgIStackoffset = theArgIStackoffset-1
-      enddo
-      enddo
+      end do
+      end do
       do cp_loop_variable_1 = ubound(Y,1),lbound(Y,1),-1
       Y(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +Y(cp_loop_variable_1)%v
-      enddo
+      end do
       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-      enddo
+      end do
       J = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", J, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
@@ -134,7 +134,7 @@ C$OPENAD XXX Simple loop
         ELSE
           Y(1)%v = 0.0
         ENDIF
-      enddo
+      END DO
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -169,7 +169,7 @@ C$OPENAD XXX Simple loop
         ENDIF
         integer_tape(integer_tape_pointer) = A(I,J)
         integer_tape_pointer = integer_tape_pointer+1
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = J
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -208,7 +208,7 @@ C adjoint
           Y(1)%d = 0.0d0
         ENDIF
         I = I-1
-      enddo
+      END DO
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
 
@@ -326,18 +326,18 @@ C restore arguments
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,2,1
-        DO J = 1,2,1
-          A(I,J) = (I+J)
-        enddo
-      enddo
+      DO I = 1, 2, 1
+        DO J = 1, 2, 1
+          A(I, J) = (I + J)
+        END DO
+      END DO
       OAD_CTMP0 = 2
       CALL foo(X,Y,A,OAD_CTMP0)
       DO I = 1,2,1
         DO J = 1,2,1
           A(I,J) = 0
-        enddo
-      enddo
+        END DO
+      END DO
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -357,11 +357,11 @@ C$OPENAD XXX Template ad_template.f
         DO J = 1,2,1
           A(I,J) = (I+J)
           OpenAD_Symbol_16 = (INT(OpenAD_Symbol_16)+INT(1_w2f__i8))
-        enddo
+        END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_16
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_15 = (INT(OpenAD_Symbol_15)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
       integer_tape_pointer = integer_tape_pointer+1
       OAD_CTMP0 = 2
@@ -372,11 +372,11 @@ C$OPENAD XXX Template ad_template.f
         DO J = 1,2,1
           A(I,J) = 0
           OpenAD_Symbol_18 = (INT(OpenAD_Symbol_18)+INT(1_w2f__i8))
-        enddo
+        END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_18
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_17 = (INT(OpenAD_Symbol_17)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_17
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -404,9 +404,9 @@ C adjoint
         OpenAD_Symbol_10 = 1
         do while (INT(OpenAD_Symbol_10).LE.INT(OpenAD_Symbol_9))
           OpenAD_Symbol_10 = INT(OpenAD_Symbol_10)+1
-        enddo
+        END DO
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8)+1
-      enddo
+      END DO
       CALL foo(X,Y,A,OAD_CTMP0)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_11 = integer_tape(integer_tape_pointer)
@@ -417,9 +417,9 @@ C adjoint
         OpenAD_Symbol_14 = 1
         do while (INT(OpenAD_Symbol_14).LE.INT(OpenAD_Symbol_13))
           OpenAD_Symbol_14 = INT(OpenAD_Symbol_14)+1
-        enddo
+        END DO
         OpenAD_Symbol_12 = INT(OpenAD_Symbol_12)+1
-      enddo
+      END DO
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

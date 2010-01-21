@@ -66,7 +66,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      K = (K*2)
+      K = (K * 2)
       OpenAD_Symbol_1 = (K*A%v)
       OpenAD_lin_2 = K
       A%v = OpenAD_Symbol_1
@@ -106,10 +106,10 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       I = 1
-      DO J = 1,2,1
+      DO J = 1, 2, 1
         CALL foo(X(J))
         CALL bar(X(J),I)
-      enddo
+      END DO
       Y%v = (X(1)%v*X(2)%v)
       OpenAD_lin_3 = X(2)%v
       OpenAD_lin_4 = X(1)%v

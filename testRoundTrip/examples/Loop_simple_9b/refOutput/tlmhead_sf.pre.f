@@ -16,12 +16,12 @@ C$openad XXX Template ad_template.f
 C$openad INDEPENDENT(x)
 C$openad xxx simple loop
        do i=1,2
-          k = i
+          k=i
 C put control flow between definition and use of k
           if (i==1) then
             y(i) = 2*x(i)
             end if
-          y(i) = x(k)
+          y(i)=x(k)
        end do
 C$openad DEPENDENT(y)
       end subroutine

@@ -14,7 +14,7 @@ C$openad XXX Template ad_template.f
         double precision, dimension(:), allocatable :: p
         allocate (p(3))
 C$openad INDEPENDENT(x)
-        p(:2) = x
-        y = p(:2)
+        p(:2)=x
+        y=p(:2)
 C$openad DEPENDENT(y)
       end subroutine

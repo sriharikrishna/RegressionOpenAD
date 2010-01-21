@@ -142,7 +142,7 @@ C$OPENAD XXX Template ad_template.f
       VOL(2) = 1.2D+01
       VOL(3) = 1.4D+01
       DELTA_T = 2.0D+01
-      IF (UVELLOC.GE.0.0D00) THEN
+      IF(UVELLOC .GE. 0.0D00) THEN
         DFLDDT(1)%v = ((EXTFORLOC(1)+VOL(1)*GAMMALOC*(FLDSTAR(1)-FLDNOW(
      +1)%v)+UVELLOC*(FLDNOW(3)%v-FLDNOW(1)%v))/VOL(1))
         DFLDDT(2)%v = ((EXTFORLOC(2)+VOL(2)*GAMMALOC*(FLDSTAR(2)-FLDNOW(
@@ -157,7 +157,7 @@ C$OPENAD XXX Template ad_template.f
       ENDIF
       DO L = 1,3,1
         FLDNEW(INT(L))%v = (FLDOLD(L)+DFLDDT(L)%v*DELTA_T*2.0D00)
-      enddo
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -269,7 +269,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_5 = (INT(OpenAD_Symbol_5)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -287,7 +287,7 @@ C adjoint
      +d+FLDNEW(INT(OpenAD_Symbol_17))%d*(OpenAD_Symbol_18)
         FLDNEW(INT(OpenAD_Symbol_17))%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      enddo
+      END DO
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
       IF (OpenAD_Symbol_2.ne.0) THEN

@@ -56,9 +56,9 @@ C original function
 C$OPENAD XXX Template ad_template.f
       J = K
 C$OPENAD XXX Simple loop
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         Y(INT(J))%v = (Y(J)%v+X(I)%v*X(I)%v)
-      enddo
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -73,7 +73,7 @@ C$OPENAD XXX Simple loop
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_lin_1
         double_tape_pointer = double_tape_pointer+1
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = J
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -94,7 +94,7 @@ C adjoint
         Y(J)%d = Y(J)%d+OpenAD_prop_0%d
         OpenAD_prop_0%d = 0.0d0
         I = I-1
-      enddo
+      END DO
           end if
         end subroutine foo
 C#########################################################

@@ -82,13 +82,13 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,2,1
-        DO J = 1,2,1
+      DO I = 1, 2, 1
+        DO J = 1, 2, 1
           AX(INT(I),INT(J))%v = X(I)%v
           APX(INT(I),INT(J)) = (I*DBLE(4.0))
           CALL setderiv(AX(I,J),X(I))
-        enddo
-      enddo
+        END DO
+      END DO
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         DO J = 1,2,1
@@ -102,6 +102,6 @@ C         $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
           CALL convert_a2p_scalar(APX(I,J),OpenAD_Symbol_0)
 C         $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
           CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-        enddo
-      enddo
+        END DO
+      END DO
       END SUBROUTINE

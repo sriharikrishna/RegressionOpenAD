@@ -35,5 +35,5 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         Y(INT(I))%v = X(K)%v
         CALL setderiv(Y(I),X(K))
-      enddo
+      END DO
       END SUBROUTINE

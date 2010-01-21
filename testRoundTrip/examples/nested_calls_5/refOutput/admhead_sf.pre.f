@@ -12,7 +12,7 @@ C$openad XXX Template ad_template.f
       use OAD_intrinsics
       double precision x(2),y(1)
       integer i
-      i = 1
+      i=1
 C$openad INDEPENDENT(x)
       call foo(x(i),x(i+1),y(1))
 C$openad DEPENDENT(y)

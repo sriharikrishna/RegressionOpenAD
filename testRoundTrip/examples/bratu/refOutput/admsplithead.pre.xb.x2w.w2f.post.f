@@ -275,7 +275,7 @@ C$OPENAD XXX Template ad_template.f
      +1.19999999999999995559D00)+F(I)%v-X(I)%v*2.0D00)
         F(INT(I+1))%v = (X(I)%v+EXP(X(I)%v/(X(I)%v*X(9)%v+1.0D00))*((X(8
      +)%v*H*H)/1.2D+01))
-      enddo
+      END DO
       F(6)%v = (X(7)%v+F(6)%v+EXP(X(7)%v/(X(7)%v*X(9)%v+1.0D00))*((X(8)%
      +v*H*H)/1.2D+01))
       F(7)%v = (F(7)%v-X(7)%v*2.0D00)
@@ -483,7 +483,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = I
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
       OpenAD_tmp_34 = (X(7)%v*X(9)%v+1.0D00)
@@ -683,7 +683,7 @@ C adjoint
      +rop_0%d
         OpenAD_prop_0%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      enddo
+      END DO
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_18 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1

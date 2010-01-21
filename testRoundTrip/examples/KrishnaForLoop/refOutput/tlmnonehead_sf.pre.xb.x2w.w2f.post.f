@@ -55,9 +55,9 @@ C
 C$OPENAD XXX Template ad_template.f
       A = 1
       B = 3
-      DO I = A,B,1
+      DO I = A, B, 1
         J = 3.0D00
-      enddo
+      END DO
       Y(1)%v = (X(1)%v*X(2)%v)
       OpenAD_lin_0 = X(2)%v
       OpenAD_lin_1 = X(1)%v

@@ -51,8 +51,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,2,1
-        IF (I.eq.1) THEN
+      DO I = 1, 2, 1
+        IF(I .eq. 1) THEN
           Y(INT(I))%v = (X(I)%v*X(I)%v)
           OpenAD_lin_0 = X(I)%v
           OpenAD_lin_1 = X(I)%v
@@ -65,5 +65,5 @@ C$OPENAD XXX Template ad_template.f
         ENDIF
         X(INT(I))%v = 0.0
         CALL zero_deriv(X(INT(I)))
-      enddo
+      END DO
       END SUBROUTINE

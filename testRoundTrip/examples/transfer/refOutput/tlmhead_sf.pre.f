@@ -15,7 +15,7 @@ C$openad XXX Template ad_template.f
           integer(8) :: i
 C$openad INDEPENDENT(x)
 C transfer is a passivating operation !
-          i = transfer(x(1),i)
+          i=transfer(x(1),i)
         y(1) = x(1)+transfer(i,x(1))
 C$openad DEPENDENT(y)
       end subroutine

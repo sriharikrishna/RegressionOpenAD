@@ -98,7 +98,7 @@ CONTAINS
       our_orig_mode=our_rev_mode
       our_rev_mode%arg_store=.FALSE.
 ! original function
-  IF (A.GT.B) THEN
+  IF(A .GT. B) THEN
     R = A
   ELSE
     R = B
@@ -115,7 +115,7 @@ CONTAINS
       our_rev_mode%tape=.FALSE.
       our_rev_mode%adjoint=.FALSE.
 ! taping
-  IF (A.GT.B) THEN
+  IF(A .GT. B) THEN
     R = A
     OpenAD_Symbol_1 = 1_w2f__i8
     integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
@@ -144,7 +144,7 @@ CONTAINS
 ! adjoint
   integer_tape_pointer = integer_tape_pointer-1
   OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
-  IF (OpenAD_Symbol_0.ne.0) THEN
+  IF(OpenAD_Symbol_0 .ne. 0) THEN
   ENDIF
 
 ! adjoint end

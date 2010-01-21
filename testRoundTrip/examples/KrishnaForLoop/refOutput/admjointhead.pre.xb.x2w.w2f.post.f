@@ -92,9 +92,9 @@ C original function
 C$OPENAD XXX Template ad_template.f
       A = 1
       B = 3
-      DO I = A,B,1
+      DO I = A, B, 1
         J = 3.0D00
-      enddo
+      END DO
       Y(1)%v = (X(1)%v*X(2)%v)
 
 C original function end
@@ -115,7 +115,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = A,B,1
         J = 3.0D00
         OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
       Y(1)%v = (X(1)%v*X(2)%v)
@@ -153,7 +153,7 @@ C adjoint
       OpenAD_Symbol_1 = 1
       do while (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
-      enddo
+      END DO
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

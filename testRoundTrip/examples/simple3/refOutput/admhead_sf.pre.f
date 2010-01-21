@@ -16,7 +16,7 @@ C$openad INDEPENDENT(x2)
         v3 = x1*x2
         v4 = x1*v3
           y1 = v3*x2*v4
-          y2 = sin(v4)
+          y2=sin(v4)
 C$openad DEPENDENT(y1)
 C$openad DEPENDENT(y2)
       end subroutine

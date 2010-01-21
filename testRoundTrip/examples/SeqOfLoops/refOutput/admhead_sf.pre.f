@@ -15,7 +15,7 @@ C$openad XXX Template ad_template.f
           integer i
 C$openad INDEPENDENT(x)
           do i=1,2
-            y(i) = x(i)
+            y(i)=x(i)
           end do
           do i=1,2
             y(i) = y(i)*x(i)

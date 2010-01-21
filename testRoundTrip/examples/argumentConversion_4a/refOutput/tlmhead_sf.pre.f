@@ -23,7 +23,7 @@ C$openad XXX Template ad_template.f
         double precision y,py
 C$openad INDEPENDENT(x)
         do i=1,2
-          ax(i,2) = x(i)
+          ax(i,2)=x(i)
           end do
         call foo(ax(1,2),y)
         call foo(apx(1,2),py)

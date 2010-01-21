@@ -27,13 +27,13 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         K = I
-        IF (I.eq.1) THEN
+        IF(I .eq. 1) THEN
           Y(INT(I))%v = (X(I)%v*2.0D00)
           CALL sax(2.0D00,X(I),Y(I))
         ENDIF
         Y(INT(I))%v = X(K)%v
         CALL setderiv(Y(I),X(K))
-      enddo
+      END DO
       END SUBROUTINE

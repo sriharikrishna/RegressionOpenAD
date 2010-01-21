@@ -32,15 +32,15 @@ C
       C%v = OpenAD_Symbol_0
       CALL setderiv(OpenAD_prop_0,A)
       CALL sax(2.0D00,OpenAD_prop_0,C)
-      t__1 = .true.
+      t__1 = .TRUE.
       IF (.not. PRESENT(B)) THEN
-        t__1 = .false.
+        t__1 = .FALSE.
       ELSE
         IF (.not. PRESENT(D)) THEN
-          t__1 = .false.
+          t__1 = .FALSE.
         ENDIF
       ENDIF
-      IF (t__1) THEN
+      IF(t__1) THEN
         OpenAD_Symbol_1 = (B%v*3.0D00)
         D%v = OpenAD_Symbol_1
         CALL setderiv(OpenAD_prop_1,B)

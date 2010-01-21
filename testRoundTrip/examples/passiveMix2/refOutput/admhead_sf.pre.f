@@ -32,7 +32,7 @@ C$openad XXX Template ad_template.f
         double precision :: oad_ctmp2
         double precision :: oad_ctmp3
 C$openad INDEPENDENT(x)
-        t = 2.0D0
+        t=2.0D0
           call oad_s_min(t,x(1),oad_ctmp0)
           t1 = oad_ctmp0
 C different signature here should trigger activation of both elements

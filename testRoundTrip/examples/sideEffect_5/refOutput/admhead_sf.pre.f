@@ -32,12 +32,12 @@ C$openad XXX Template ad_template.f
         integer i
         integer :: oad_ctmp0
 C$openad INDEPENDENT(x)
-        g = 1
-        i = 2
+        g=1
+        i=2
         oad_ctmp0 = 2
         call foo(x,oad_ctmp0)
         call foo(x,i)
-        y(1) = 0
+        y(1)=0
         do i=1,3
          y(1) = y(1)+x(i)
         end do

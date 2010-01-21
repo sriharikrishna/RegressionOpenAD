@@ -117,12 +117,12 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
         DO I = 1,3,1
           Y(INT(I))%v = X(I)%v
-        enddo
+        END DO
       ELSE
 C$OPENAD XXX Simple loop
         DO I = 1,3,1
           Y(INT(I))%v = (X(I)%v*2.0D00)
-        enddo
+        END DO
       ENDIF
 
 C original function end
@@ -141,7 +141,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
         DO I = 1,3,1
           Y(INT(I))%v = X(I)%v
-        enddo
+        END DO
         OpenAD_Symbol_1 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
         integer_tape_pointer = integer_tape_pointer+1
@@ -149,7 +149,7 @@ C$OPENAD XXX Simple loop
 C$OPENAD XXX Simple loop
         DO I = 1,3,1
           Y(INT(I))%v = (X(I)%v*2.0D00)
-        enddo
+        END DO
         OpenAD_Symbol_2 = 0_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
         integer_tape_pointer = integer_tape_pointer+1
@@ -178,14 +178,14 @@ C adjoint
           X(I)%d = X(I)%d+Y(I)%d
           Y(I)%d = 0.0d0
           I = I-1
-        enddo
+        END DO
       ELSE
         I = 1+1*((3-1)/1)
         do while (I.GE.1)
           X(I)%d = X(I)%d+Y(I)%d*(2.0D00)
           Y(I)%d = 0.0d0
           I = I-1
-        enddo
+        END DO
       ENDIF
 
 C adjoint end

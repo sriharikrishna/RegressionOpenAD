@@ -20,7 +20,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      K = (K*2)
+      K = (K * 2)
       OpenAD_Symbol_0 = (K*A%v)
       OpenAD_lin_1 = K
       A%v = OpenAD_Symbol_0

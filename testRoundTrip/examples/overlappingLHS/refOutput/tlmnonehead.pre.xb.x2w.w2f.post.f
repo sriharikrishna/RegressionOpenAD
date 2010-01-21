@@ -26,10 +26,10 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,5,1
+      DO I = 1, 5, 1
         Y(INT(I))%v = X%v
         CALL setderiv(Y(I),X)
         Y(6-I)%v = X%v
         CALL setderiv(Y(6-I),X)
-      enddo
+      END DO
       END SUBROUTINE

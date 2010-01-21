@@ -30,8 +30,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,10,1
-        IF (I.eq.1) THEN
+      DO I = 1, 10, 1
+        IF(I .eq. 1) THEN
           Y(1)%v = X(1)%v
           CALL setderiv(Y(1),X(1))
         ELSE
@@ -43,5 +43,5 @@ C$OPENAD XXX Template ad_template.f
           CALL sax(OpenAD_lin_0,X(I),Y(1))
           CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y(1))
         ENDIF
-      enddo
+      END DO
       END SUBROUTINE

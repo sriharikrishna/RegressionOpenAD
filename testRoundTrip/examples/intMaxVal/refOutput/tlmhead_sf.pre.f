@@ -15,12 +15,12 @@ C$openad XXX Template ad_template.f
           double precision t
         integer :: i(3),maxI
 C$openad INDEPENDENT(x)
-        i(1) = 1
-          i(2) = 0
+        i(1)=1
+          i(2)=0
           i(3) = -1
-        maxI = maxval(i)
+        maxI=maxval(i)
           t = x(maxI)*x(2)
-        y(maxI) = sin(t)
-        y(2) = cos(t)
+        y(maxI)=sin(t)
+        y(2)=cos(t)
 C$openad DEPENDENT(y)
       end subroutine

@@ -14,7 +14,7 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1), intent(out) :: y
           integer i
 C$openad INDEPENDENT(x)
-          i = 2
+          i=2
         if (x(1).lt.1.0) then
           select case (i)
           case (2)

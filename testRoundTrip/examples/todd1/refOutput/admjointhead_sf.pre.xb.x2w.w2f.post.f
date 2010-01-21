@@ -458,7 +458,7 @@ C original function
 C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
       B = (-1.0D00)
-      AB = (A*B)
+      AB = (A * B)
       SQRT3 = 5.77350258827209472656D-01
       TSQRT3 = 1.15470051765441894531D00
       TWOSQRT3 = 1.15470051765441894531D00

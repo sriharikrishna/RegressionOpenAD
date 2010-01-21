@@ -83,8 +83,8 @@ C restore arguments
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-      L = .true.
-      IF (L) THEN
+      L = .TRUE.
+      IF(L) THEN
         Y(1)%v = (X(1)%v*4.0D00)
       ELSE
         Y(1)%v = (X(1)%v*2.0D00)
@@ -102,8 +102,8 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-      L = .true.
-      IF (L) THEN
+      L = .TRUE.
+      IF(L) THEN
         Y(1)%v = (X(1)%v*4.0D00)
         OpenAD_Symbol_1 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_1

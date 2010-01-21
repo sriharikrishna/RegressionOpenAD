@@ -84,10 +84,10 @@ C restore arguments
 C original function
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,5,1
+      DO I = 1, 5, 1
         Y(INT(I))%v = X%v
         Y(6-I)%v = X%v
-      enddo
+      END DO
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -105,7 +105,7 @@ C$OPENAD XXX Simple loop
       DO I = 1,5,1
         Y(INT(I))%v = X%v
         Y(6-I)%v = X%v
-      enddo
+      END DO
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -129,7 +129,7 @@ C adjoint
         X%d = X%d+Y(I)%d
         Y(I)%d = 0.0d0
         I = I-1
-      enddo
+      END DO
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

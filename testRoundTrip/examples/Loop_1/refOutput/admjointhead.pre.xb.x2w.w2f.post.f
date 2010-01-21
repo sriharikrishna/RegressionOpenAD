@@ -93,7 +93,7 @@ C original function
       Y(1)%v = X(1)%v
       DO I = 1,3,1
         Y(1)%v = (X(1)%v*Y(1)%v)
-      enddo
+      END DO
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -119,7 +119,7 @@ C$OPENAD XXX Template ad_template.f
         double_tape(double_tape_pointer) = OpenAD_lin_1
         double_tape_pointer = double_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -156,7 +156,7 @@ C adjoint
         Y(1)%d = Y(1)%d+OpenAD_prop_0%d
         OpenAD_prop_0%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      enddo
+      END DO
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
 

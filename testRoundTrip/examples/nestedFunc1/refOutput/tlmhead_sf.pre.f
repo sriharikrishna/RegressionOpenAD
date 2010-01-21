@@ -14,7 +14,7 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1), intent(out) :: y
         integer j
 C$openad INDEPENDENT(x)
-        y(1) = 1.0
+        y(1)=1.0
         call foo()
 C$openad DEPENDENT(y)
       contains

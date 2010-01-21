@@ -101,7 +101,7 @@ C
          if (our_rev_mode%plain) then
 C original function
 C$OPENAD XXX Template ad_template.f
-      K = (K*2)
+      K = (K * 2)
       A%v = (K*A%v)
           end if
           if (our_rev_mode%tape) then
@@ -186,10 +186,10 @@ C
 C original function
 C$OPENAD XXX Template ad_template.f
       I = 1
-      DO J = 1,2,1
+      DO J = 1, 2, 1
         CALL foo(X(J))
         CALL bar(X(J),I)
-      enddo
+      END DO
       Y%v = (X(1)%v*X(2)%v)
           end if
           if (our_rev_mode%tape) then
@@ -205,7 +205,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = J
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
       Y%v = (X(1)%v*X(2)%v)
@@ -236,6 +236,6 @@ C adjoint
         J = integer_tape(integer_tape_pointer)
         CALL foo(X(J))
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
-      enddo
+      END DO
           end if
         end subroutine head

@@ -60,8 +60,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       I = 1
-      do while (I.LT.3)
-        IF (I.LT.2) THEN
+      DO WHILE(I .LT. 3)
+        IF(I .LT. 2) THEN
           OpenAD_Symbol_0 = SIN(X(1)%v)
           OpenAD_lin_0 = COS(X(1)%v)
           Y(2)%v = OpenAD_Symbol_0
@@ -75,7 +75,7 @@ C$OPENAD XXX Template ad_template.f
           CALL sax(OpenAD_lin_1,OpenAD_prop_1,Y(1))
         ENDIF
         I = (I+1)
-      enddo
+      END DO
       OpenAD_Symbol_2 = (Y(1)%v*Y(2)%v)
       OpenAD_lin_2 = Y(2)%v
       OpenAD_lin_3 = Y(1)%v

@@ -130,7 +130,7 @@ C$OPENAD XXX Template ad_template.f
           TNOW(INT(L))%v = 2.0D00
           CALL zero_deriv(TNOW(INT(L)))
         ENDIF
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE box_final_state()
@@ -153,13 +153,13 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO L = 1,6,1
+      DO L = 1, 6, 1
         TSVEC(INT(L)) = 0.0
-      enddo
-      DO L = 1,3,1
+      END DO
+      DO L = 1, 3, 1
         TSVEC(INT(L)) = TNOW(L)%v
         TSVEC(INT(L+3)) = SNOW(L)%v
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE box_ini_fields()
@@ -195,13 +195,13 @@ C$OPENAD XXX Template ad_template.f
       METRIC = 0.0D00
       NULLFORCE(1) = 0.0D00
       NULLFORCE(2) = 0.0D00
-      FW(1) = (AREA(1)*(HUNDRED/YEAR)*3.5D+01)
-      FW(2) = (-FW(1))
+      FW(1) = (AREA(1) *(HUNDRED / YEAR) * 3.5D+01)
+      FW(2) = (- FW(1))
       TSTAR(1) = 2.2D+01
       TSTAR(2) = 0.0D00
       SSTAR(1) = 3.6D+01
       SSTAR(2) = 3.4D+01
-      UBAR = (SV*2.0D+01)
+      UBAR = (SV * 2.0D+01)
       T(1)%v = 2.0D+01
       T(2)%v = 1.0D00
       T(3)%v = 1.0D00
@@ -216,7 +216,7 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(S(3))
       DO L = 1,6,1
         TSVEC(INT(L)) = 0.0
-      enddo
+      END DO
       DO L = 1,3,1
         T(INT(L))%v = (T(L)%v+XX(L)%v)
         S(INT(L))%v = (S(L)%v+XX(L+3)%v)
@@ -226,7 +226,7 @@ C$OPENAD XXX Template ad_template.f
         CALL inc_deriv(T(L),XX(L))
         CALL setderiv(S(L),OpenAD_prop_13)
         CALL inc_deriv(S(L),XX(L+3))
-      enddo
+      END DO
       DO L = 1,3,1
         TNEW(INT(L))%v = T(L)%v
         CALL setderiv(TNEW(L),T(L))
@@ -240,7 +240,7 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(TNOW(L),T(L))
         SNOW(INT(L))%v = S(L)%v
         CALL setderiv(SNOW(L),S(L))
-      enddo
+      END DO
       UVEL%v = UBAR
       CALL zero_deriv(UVEL)
       END SUBROUTINE
@@ -267,85 +267,85 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      VERBMODE = .false.
+      VERBMODE = .FALSE.
       BLENGTH(1) = 5.0D+08
       BLENGTH(2) = 1.0D+08
       BLENGTH(3) = BLENGTH(1)
       BHEIGHT(1) = 1.0D+05
       BHEIGHT(3) = 4.0D+05
-      BHEIGHT(2) = (BHEIGHT(1)+BHEIGHT(3))
-      DELTA = (BHEIGHT(1)/(BHEIGHT(1)+BHEIGHT(3)))
+      BHEIGHT(2) = (BHEIGHT(1) + BHEIGHT(3))
+      DELTA = (BHEIGHT(1) /(BHEIGHT(1) + BHEIGHT(3)))
       BWIDTH = 4.0D+08
-      AREA(1) = (BLENGTH(1)*BWIDTH)
-      AREA(2) = (BLENGTH(2)*BWIDTH)
-      AREA(3) = (BLENGTH(3)*BWIDTH)
-      VOL(1) = (AREA(1)*BHEIGHT(1))
-      VOL(2) = (AREA(2)*(BHEIGHT(1)+BHEIGHT(3)))
-      VOL(3) = (AREA(3)*BHEIGHT(3))
+      AREA(1) = (BLENGTH(1) * BWIDTH)
+      AREA(2) = (BLENGTH(2) * BWIDTH)
+      AREA(3) = (BLENGTH(3) * BWIDTH)
+      VOL(1) = (AREA(1) * BHEIGHT(1))
+      VOL(2) = (AREA(2) *(BHEIGHT(1) + BHEIGHT(3)))
+      VOL(3) = (AREA(3) * BHEIGHT(3))
       ROBERT_FILTER_COEFF = 2.5D-01
       HUNDRED = 1.0D+02
       THOUSAND = 1.0D+03
       DAY = 8.64D+04
-      YEAR = (DAY*3.65D+02)
+      YEAR = (DAY * 3.65D+02)
       SV = 1.0D+12
-      U0 = ((SV*1.6D+01)/4.00000000000000019169D-04)
+      U0 = ((SV * 1.6D+01) / 4.00000000000000019169D-04)
       ALPHA = 1.6679999999999998864D-04
       BETA = 7.81000000000000010186D-04
       DAYS_PER_50M_MIXED_LAYER = 5.0D+01
-      GAMMA_T = (1.0D00/(DAY*3.0D+02))
-      GAMMA_S = (0.0D00/((BHEIGHT(1)/5.0D+03)*DAY*DAYS_PER_50M_MIXED_LAY
-     +ER))
+      GAMMA_T = (1.0D00 /(DAY * 3.0D+02))
+      GAMMA_S = (0.0D00 /((BHEIGHT(1) / 5.0D+03) * DAY * DAYS_PER_50M_MI
+     +XED_LAYER))
       EPSILON_IC = (-1.00000000000000004792D-04)
-      NOISE_CORRELATION_TIME = (DAY*1.5D+01)
-      DELTA_T = (DAY*5.0D00)
-      INTEGRATION_TIME = (YEAR*5.0D+01)
-      N_MAX = INT(INTEGRATION_TIME/DELTA_T)
+      NOISE_CORRELATION_TIME = (DAY * 1.5D+01)
+      DELTA_T = (DAY * 5.0D00)
+      INTEGRATION_TIME = (YEAR * 5.0D+01)
+      N_MAX = INT(INTEGRATION_TIME / DELTA_T)
       FDEPS = 9.99999999999999954748D-07
-      Y(1) = (THOUSAND/3.2680000000000000715D-02)
-      Y(2) = (THOUSAND/7.9399999999999991418D-03)
-      Y(3) = (THOUSAND/1.39999999999999998578D-03)
-      Y(4) = (THOUSAND/1.41699999999999992628D-01)
-      Y(5) = (THOUSAND/1.28599999999999992095D-01)
-      Y(6) = (THOUSAND/8.7800000000000003042D-02)
-      R(1) = (ALPHA*DELTA)
-      R(2) = (-ALPHA)
-      R(3) = (ALPHA*(1.0D00-DELTA))
-      R(4) = (-(BETA*DELTA))
+      Y(1) = (THOUSAND / 3.2680000000000000715D-02)
+      Y(2) = (THOUSAND / 7.9399999999999991418D-03)
+      Y(3) = (THOUSAND / 1.39999999999999998578D-03)
+      Y(4) = (THOUSAND / 1.41699999999999992628D-01)
+      Y(5) = (THOUSAND / 1.28599999999999992095D-01)
+      Y(6) = (THOUSAND / 8.7800000000000003042D-02)
+      R(1) = (ALPHA * DELTA)
+      R(2) = (- ALPHA)
+      R(3) = (ALPHA *(1.0D00 - DELTA))
+      R(4) = (-(BETA * DELTA))
       R(5) = BETA
-      R(6) = (-(BETA*(1.0D00-DELTA)))
-      DO L = 1,6,1
-        R(INT(L)) = ((R(L)*U0)/SV)
-      enddo
-      DO L = 1,6,1
-        IF (L.LE.3) THEN
+      R(6) = (-(BETA *(1.0D00 - DELTA)))
+      DO L = 1, 6, 1
+        R(INT(L)) = ((R(L) * U0) / SV)
+      END DO
+      DO L = 1, 6, 1
+        IF(L .LE. 3) THEN
           PROJ_T(INT(L)) = 1.0D00
           PROJ_S(INT(L)) = 0.0D00
         ELSE
           PROJ_T(INT(L)) = 0.0D00
           PROJ_S(INT(L)) = 1.0D00
         ENDIF
-      enddo
-      DO L = 1,6,1
-        R_T(INT(L)) = (PROJ_T(L)*R(L))
-        R_S(INT(L)) = (PROJ_S(L)*R(L))
-      enddo
+      END DO
+      DO L = 1, 6, 1
+        R_T(INT(L)) = (PROJ_T(L) * R(L))
+        R_S(INT(L)) = (PROJ_S(L) * R(L))
+      END DO
       R1(1) = 1.0D00
       R1(2) = (-1.0D00)
       R1(3) = 0.0D00
       R1(4) = 0.0D00
       R1(5) = 0.0D00
       R1(6) = 0.0D00
-      DO J = 1,6,1
-        DO I = 1,6,1
-          X(INT(I),INT(J)) = (R(I)*R(J))
-        enddo
-      enddo
+      DO J = 1, 6, 1
+        DO I = 1, 6, 1
+          X(INT(I), INT(J)) = (R(I) * R(J))
+        END DO
+      END DO
       EPSILON_REGULARIZE = 1.00000000000000002092D-08
-      DO J = 1,6,1
-        DO I = 1,6,1
-          X(INT(I),INT(J)) = (X(I,J)+EPSILON_REGULARIZE)
-        enddo
-      enddo
+      DO J = 1, 6, 1
+        DO I = 1, 6, 1
+          X(INT(I), INT(J)) = (X(I, J) + EPSILON_REGULARIZE)
+        END DO
+      END DO
       END SUBROUTINE
 
       SUBROUTINE box_model_body()
@@ -381,20 +381,20 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL box_ini_fields()
-      MAXLEV2 = ((N_MAX/73)+1)
-      IF (N_MAX.GT.3650) THEN
+      MAXLEV2 = ((N_MAX / 73) + 1)
+      IF(N_MAX .GT. 3650) THEN
         WRITE(*,*) 'NEED TO SET nlev1*nlev2 >= n_max '
       ELSE
-        DO ILEV2 = 1,50,1
-          IF (ILEV2.LE.MAXLEV2) THEN
-            DO ILEV1 = 1,73,1
-              ILOOP = (ILEV1+ILEV2*73+(-73))
-              IF (ILOOP.LE.N_MAX) THEN
+        DO ILEV2 = 1, 50, 1
+          IF(ILEV2 .LE. MAXLEV2) THEN
+            DO ILEV1 = 1, 73, 1
+              ILOOP = (ILEV1 + ILEV2 * 73 +(-73))
+              IF(ILOOP .LE. N_MAX) THEN
                 CALL box_forward(ILEV1)
               ENDIF
-            enddo
+            END DO
           ENDIF
-        enddo
+        END DO
         CALL box_final_state()
       ENDIF
       END SUBROUTINE
@@ -431,14 +431,14 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO L = 1,3,1
+      DO L = 1, 3, 1
         RHOLOC(INT(L))%v = (SLOC(L)%v*BETA-TLOC(L)%v*ALPHA)
         OpenAD_lin_0 = BETA
         OpenAD_lin_2 = ALPHA
         OpenAD_acc_0 = (OpenAD_lin_2*INT((-1_w2f__i8)))
         CALL sax(OpenAD_lin_0,SLOC(L),RHOLOC(L))
         CALL saxpy(OpenAD_acc_0,TLOC(L),RHOLOC(L))
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE box_transport(RHOLOC, UVELLOC)
@@ -475,7 +475,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_tmp_1 = (1.0D00-DELTA)
+      OpenAD_tmp_1 = (1.0D00 - DELTA)
       OpenAD_tmp_0 = (RHOLOC(1)%v*DELTA+RHOLOC(3)%v*OpenAD_tmp_1-RHOLOC(
      +2)%v)
       UVELLOC%v = (-(U0*OpenAD_tmp_0))
@@ -524,7 +524,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO L = 1,3,1
+      DO L = 1, 3, 1
         OpenAD_tmp_22 = (FLDOLD(L)%v+FLDNEW(L)%v-FLDNOW(L)%v*2.0D00)
         OpenAD_Symbol_0 = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*OpenAD_tmp_22
      +)
@@ -537,7 +537,7 @@ C$OPENAD XXX Template ad_template.f
         CALL saxpy(-2.0D00,OpenAD_prop_8,OpenAD_prop_9)
         CALL setderiv(FLDNOW(L),OpenAD_prop_7)
         CALL saxpy(OpenAD_lin_59,OpenAD_prop_9,FLDNOW(L))
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE box_cycle_fields()
@@ -565,7 +565,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO L = 1,3,1
+      DO L = 1, 3, 1
         TOLD(INT(L))%v = TNOW(L)%v
         TNOW(INT(L))%v = TNEW(L)%v
         CALL setderiv(OpenAD_prop_10,TNOW(L))
@@ -576,7 +576,7 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(OpenAD_prop_11,SNOW(L))
         CALL setderiv(SOLD(L),OpenAD_prop_11)
         CALL setderiv(SNOW(L),SNEW(L))
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE box_update(FLDNEW, FLDOLD, DFLDDT)
@@ -610,13 +610,13 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO L = 1,3,1
-        OpenAD_tmp_23 = (DELTA_T*2.0D00)
+      DO L = 1, 3, 1
+        OpenAD_tmp_23 = (DELTA_T * 2.0D00)
         FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*OpenAD_tmp_23)
         OpenAD_lin_61 = OpenAD_tmp_23
         CALL setderiv(FLDNEW(L),FLDOLD(L))
         CALL saxpy(OpenAD_lin_61,DFLDDT(L),FLDNEW(L))
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE box_timestep(GAMMALOC, FLDSTAR, EXTFORLOC, UVELLOC, FLD

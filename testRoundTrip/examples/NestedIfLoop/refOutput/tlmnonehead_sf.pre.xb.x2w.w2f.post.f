@@ -61,7 +61,7 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_1 = X(I)%v
           CALL sax(OpenAD_lin_0,X(I),Y(I))
           CALL saxpy(OpenAD_lin_1,X(I),Y(I))
-        enddo
+        END DO
       ELSE
         DO I = 1,2,1
           Y(INT(I))%v = (X(I)%v*X(I)%v)
@@ -69,6 +69,6 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_3 = X(I)%v
           CALL sax(OpenAD_lin_2,X(I),Y(I))
           CALL saxpy(OpenAD_lin_3,X(I),Y(I))
-        enddo
+        END DO
       ENDIF
       END SUBROUTINE

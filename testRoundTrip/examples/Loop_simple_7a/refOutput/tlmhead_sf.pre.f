@@ -16,7 +16,7 @@ C$openad XXX Template ad_template.f
 C$openad xxx simple loop
 
         do i=1,min(k,3)
-          y(i) = x(i)
+          y(i)=x(i)
         end do
       end subroutine
 
@@ -27,7 +27,7 @@ C$openad XXX Template ad_template.f
         double precision, dimension(3), intent(out) :: y
           integer i,j,k
 C$openad INDEPENDENT(x)
-        k = 3
+        k=3
         call bar(x,y,k)
 C$openad DEPENDENT(y)
       end subroutine

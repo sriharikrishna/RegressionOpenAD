@@ -39,7 +39,7 @@ CONTAINS
 !
 !       **** Statements ****
 !
-  IF (A.GT.B) THEN
+  IF(A .GT. B) THEN
     R = A
   ELSE
     R = B

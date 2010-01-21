@@ -119,7 +119,7 @@ C restore arguments
       theArgFStackoffset = theArgFStackoffset-1
 C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
-      enddo
+      end do
       S = theArgIStack(theArgIStackoffset)
 C          write(*,'(A,I5,I5)') "restore(s)  ", S, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
@@ -139,11 +139,11 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", Y%v
 C original function
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = L,U,S
-        IF (I.LT.5) THEN
+      DO I = L, U, S
+        IF(I .LT. 5) THEN
           Y%v = (X(I)%v*Y%v)
         ENDIF
-      enddo
+      END DO
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -169,7 +169,7 @@ C$OPENAD XXX Simple loop
           double_tape(double_tape_pointer) = OpenAD_lin_1
           double_tape_pointer = double_tape_pointer+1
         ENDIF
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = L
       integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = U
@@ -213,7 +213,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         I = I-S
-      enddo
+      END DO
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

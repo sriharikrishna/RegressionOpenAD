@@ -28,7 +28,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         J = K
         Y(INT(J))%v = (Y(J)%v+X(I)%v*X(I)%v)
         OpenAD_lin_0 = X(I)%v
@@ -37,7 +37,7 @@ C$OPENAD XXX Simple loop
         CALL setderiv(Y(J),OpenAD_prop_0)
         CALL saxpy(OpenAD_lin_0,X(I),Y(J))
         CALL saxpy(OpenAD_lin_1,X(I),Y(J))
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

@@ -86,7 +86,7 @@ C$OPENAD XXX Template ad_template.f
       Y(9) = 3.23000000000000023204D-02
       Y(10) = 2.35000000000000000555D-02
       Y(11) = 2.46000000000000003386D-02
-      DO I = 1,11,1
+      DO I = 1, 11, 1
         OpenAD_tmp_0 = (X(2)%v+V(I))
         TEMP1%v = (V(I)*OpenAD_tmp_0)
         OpenAD_lin_1 = V(I)
@@ -108,5 +108,5 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(OpenAD_acc_0,TEMP2,FVEC(I))
         CALL saxpy(OpenAD_acc_1,X(1),FVEC(I))
         CALL saxpy(OpenAD_acc_2,X(2),FVEC(I))
-      enddo
+      END DO
       END SUBROUTINE

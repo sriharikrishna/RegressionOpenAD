@@ -17,7 +17,7 @@
 C$openad INDEPENDENT(x)
           oad_ctmp0 = 2
           call sq(oad_ctmp0,x,y)
-          p = 2.
+          p=2.
           q = p*p
 C$openad DEPENDENT(y)
         end subroutine
@@ -28,7 +28,7 @@ C$openad DEPENDENT(y)
           integer :: n
           real(8), dimension(2) :: u
           real(8), dimension(2) :: v
-          v(1) = sqrt(u(1)**2+u(2)**2)
+          v(1)=sqrt(u(1)**2+u(2)**2)
           v(2) = u(2)/u(1)+sin(u(2))-cos(u(1))+u(1)**3+u(2)**3+2*u(1)*u(
      +2)
         end subroutine

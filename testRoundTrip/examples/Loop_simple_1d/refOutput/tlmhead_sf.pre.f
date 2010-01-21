@@ -10,7 +10,7 @@
       subroutine foo(x,y)
       use OAD_intrinsics
       double precision :: x,y
-        y = x
+        y=x
       end subroutine
 
 C$openad XXX Template ad_template.f

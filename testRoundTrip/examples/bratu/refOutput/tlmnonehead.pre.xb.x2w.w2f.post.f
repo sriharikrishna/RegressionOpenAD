@@ -182,7 +182,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       H = 2.5D-01
-      OpenAD_tmp_3 = (H*H)
+      OpenAD_tmp_3 = (H * H)
       OpenAD_tmp_2 = (X(8)%v*OpenAD_tmp_3)
       OpenAD_tmp_0 = (OpenAD_tmp_2/1.2D+01)
       OpenAD_tmp_6 = (X(1)%v*X(9)%v+1.0D00)
@@ -324,7 +324,7 @@ C$OPENAD XXX Template ad_template.f
         CALL saxpy(OpenAD_acc_26,X(I),F(I+1))
         CALL saxpy(OpenAD_acc_28,X(I),F(I+1))
         CALL saxpy(OpenAD_acc_29,X(9),F(I+1))
-      enddo
+      END DO
       OpenAD_tmp_34 = (X(7)%v*X(9)%v+1.0D00)
       OpenAD_tmp_33 = (X(7)%v/OpenAD_tmp_34)
       OpenAD_tmp_31 = EXP(OpenAD_tmp_33)

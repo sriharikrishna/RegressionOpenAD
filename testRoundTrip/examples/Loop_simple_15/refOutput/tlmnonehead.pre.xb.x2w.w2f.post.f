@@ -47,5 +47,5 @@ C$OPENAD XXX Simple loop
         ENDIF
         Y(INT(I))%v = (X(I)%v+S)
         CALL setderiv(Y(I),X(I))
-      enddo
+      END DO
       END SUBROUTINE

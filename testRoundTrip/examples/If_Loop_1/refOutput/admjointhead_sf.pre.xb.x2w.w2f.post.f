@@ -127,7 +127,7 @@ C original function
       IF (Y(1)%v.GT.0.0D00) THEN
         DO I = 1,3,1
           Y(1)%v = (X(1)%v*Y(1)%v)
-        enddo
+        END DO
       ELSE
         Y(1)%v = (Y(1)%v/X(1)%v)
       ENDIF
@@ -157,7 +157,7 @@ C$OPENAD XXX Template ad_template.f
           double_tape(double_tape_pointer) = OpenAD_lin_1
           double_tape_pointer = double_tape_pointer+1
           OpenAD_Symbol_5 = (INT(OpenAD_Symbol_5)+INT(1_w2f__i8))
-        enddo
+        END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_7 = 1_w2f__i8
@@ -209,7 +209,7 @@ C adjoint
           Y(1)%d = Y(1)%d+OpenAD_prop_0%d
           OpenAD_prop_0%d = 0.0d0
           OpenAD_Symbol_4 = INT(OpenAD_Symbol_4)+1
-        enddo
+        END DO
       ELSE
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_16 = double_tape(double_tape_pointer)

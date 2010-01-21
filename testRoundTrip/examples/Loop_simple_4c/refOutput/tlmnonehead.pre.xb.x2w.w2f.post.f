@@ -48,8 +48,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,2,1
-        IF (GLOBALSTRING.EQ.'yes') THEN
+      DO I = 1, 2, 1
+        IF(GLOBALSTRING .EQ. 'yes') THEN
           Y(INT(I))%v = (Y(I)%v+X(I)%v*X(I)%v)
           OpenAD_lin_0 = X(I)%v
           OpenAD_lin_1 = X(I)%v
@@ -70,7 +70,7 @@ C$OPENAD XXX Simple loop
           CALL saxpy(OpenAD_acc_0,X(I),Y(I))
           CALL saxpy(OpenAD_acc_1,X(I),Y(I))
         ENDIF
-      enddo
+      END DO
       GLOBALSTRING = 'either'
       LOCALSTRING = GLOBALSTRING
       END SUBROUTINE

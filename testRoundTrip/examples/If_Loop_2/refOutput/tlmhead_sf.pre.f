@@ -15,7 +15,7 @@ C$openad XXX Template ad_template.f
           integer i,j,k
 C$openad INDEPENDENT(x)
           do i=1,1
-            y(1) = x(1)
+            y(1)=x(1)
             if (y(1)>0.) then
               do j=1,3
                 do k=1,3

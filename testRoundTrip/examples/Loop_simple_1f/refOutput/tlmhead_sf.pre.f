@@ -16,7 +16,7 @@ C$openad XXX Template ad_template.f
 C$openad INDEPENDENT(x)
 C$openad xxx simple loop
        do i=0,3
-          y(i+1) = x(i+1)
+          y(i+1)=x(i+1)
        end do
 C$openad DEPENDENT(y)
       end subroutine

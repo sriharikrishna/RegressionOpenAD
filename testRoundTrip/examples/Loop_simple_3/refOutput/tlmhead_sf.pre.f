@@ -17,18 +17,18 @@ C$openad XXX Template ad_template.f
 
 C$openad INDEPENDENT(x)
 
-          y(1) = x(1)
-        aString = 'blah'
+          y(1)=x(1)
+        aString='blah'
 
 C$openad xxx simple loop
           do i=1,3
-            if (aString .eq. 'blah') then
+            if (aString.eq.'blah') then
               y(1) = y(1)*x(1)
             end if
-            if (aString .eq. 'bloh') then
+            if (aString.eq.'bloh') then
               y(1) = y(1)-x(1)
             end if
           end do
-          y(1) = y(1)
+          y(1)=y(1)
 C$openad DEPENDENT(y)
       end subroutine

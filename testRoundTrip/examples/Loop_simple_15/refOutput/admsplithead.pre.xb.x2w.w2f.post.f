@@ -73,7 +73,7 @@ C$OPENAD XXX Simple loop
           S = 0.0D00
         ENDIF
         Y(INT(I))%v = (X(I)%v+S)
-      enddo
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -97,7 +97,7 @@ C$OPENAD XXX Simple loop
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
         Y(INT(I))%v = (X(I)%v+S)
-      enddo
+      END DO
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -114,7 +114,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         I = I-1
-      enddo
+      END DO
       Y(2)%d = 0.0d0
       Y(1)%d = 0.0d0
           end if

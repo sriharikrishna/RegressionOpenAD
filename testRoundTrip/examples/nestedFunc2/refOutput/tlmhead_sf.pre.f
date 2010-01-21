@@ -30,7 +30,7 @@ C$openad XXX Template ad_template.f
           subroutine bar(bx,by)
             double precision, dimension(1) :: bx
             double precision, dimension(1) :: by
-            fVar = bx(1)
-            by(1) = fVar
+            fVar=bx(1)
+            by(1)=fVar
             end subroutine
       end subroutine

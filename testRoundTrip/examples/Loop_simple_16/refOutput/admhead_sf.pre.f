@@ -38,7 +38,7 @@ C$openad XXX Template ad_template.f
         integer :: oad_ctmp10
         integer :: oad_ctmp11
 C$openad INDEPENDENT(x)
-          y = x(1:4)
+          y=x(1:4)
         oad_ctmp0 = 1
         oad_ctmp1 = 3
         oad_ctmp2 = 1

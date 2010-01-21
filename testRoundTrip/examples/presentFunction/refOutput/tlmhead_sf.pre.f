@@ -14,7 +14,7 @@ C$openad XXX Template ad_template.f
           double precision,optional,intent(in) :: optarg
           double precision,intent(inout) :: outarg
           if(present(optarg)) then
-            if(optarg .le. 2.0) then
+            if (optarg.le.2.0) then
               outarg = outarg*optarg*reqarg
             end if
           else

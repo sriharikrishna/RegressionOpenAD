@@ -19,9 +19,9 @@ C$openad INDEPENDENT(x)
             y(1) = x(1)-x(2)
           end if
           if (y(1)==0) then
-            y(2) = x(1)
+            y(2)=x(1)
           else
-            y(2) = y(1)
+            y(2)=y(1)
           end if
 C$openad DEPENDENT(y)
       end subroutine

@@ -21,7 +21,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      IF (A(1:LEN(A)).EQ.'two') THEN
+      IF(A(1 : LEN(A)) .EQ. 'two') THEN
         OpenAD_Symbol_0 = (X%v*2.0D00)
         X%v = OpenAD_Symbol_0
         CALL setderiv(OpenAD_prop_0,X)

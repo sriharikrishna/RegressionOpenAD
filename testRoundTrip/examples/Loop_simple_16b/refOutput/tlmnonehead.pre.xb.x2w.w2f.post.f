@@ -68,7 +68,7 @@ C$OPENAD XXX Simple loop
           CALL sax(OpenAD_lin_2,OpenAD_prop_1,NUMER)
           CALL saxpy(OpenAD_acc_0,A(K),NUMER)
         ENDIF
-      enddo
+      END DO
       LAG%v = (NUMER%v/DENOM%v)
       OpenAD_lin_5 = (INT(1_w2f__i8)/DENOM%v)
       OpenAD_lin_6 = (-(NUMER%v/(DENOM%v*DENOM%v)))

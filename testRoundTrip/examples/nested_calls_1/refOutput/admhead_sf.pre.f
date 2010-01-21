@@ -13,9 +13,9 @@ C$openad XXX Template ad_template.f
       double precision x(4),y(4)
 C$openad INDEPENDENT(x)
       call foo(x(1),x(2),y(1))
-      y(2) = sin(x(1)*x(2))
-      y(3) = sin(x(3))
-      y(4) = cos(x(4))
+      y(2)=sin(x(1)*x(2))
+      y(3)=sin(x(3))
+      y(4)=cos(x(4))
 C$openad DEPENDENT(y)
       end subroutine head
 
@@ -34,6 +34,6 @@ C$openad XXX Template ad_template.f
       use OAD_intrinsics
       double precision a
 
-      a = cos(a*a)
+      a=cos(a*a)
 
       end subroutine

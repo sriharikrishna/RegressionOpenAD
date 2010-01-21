@@ -14,8 +14,8 @@ C$openad XXX Template ad_template.f
         double precision :: y
         double precision :: t1, t2
 C$openad INDEPENDENT(x)
-        t1 = x
+        t1=x
         call barExt(x,t2)
-          y = t2
+          y=t2
 C$openad DEPENDENT(y)
       end subroutine

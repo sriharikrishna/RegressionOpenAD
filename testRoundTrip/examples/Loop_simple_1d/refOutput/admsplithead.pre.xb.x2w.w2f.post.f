@@ -99,9 +99,9 @@ C
 C original function
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         CALL foo(X(I),Y(I))
-      enddo
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -109,7 +109,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(X(I),Y(I))
-      enddo
+      END DO
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -117,6 +117,6 @@ C adjoint
       do while (I.GE.1)
         CALL foo(X(I),Y(I))
         I = I-1
-      enddo
+      END DO
           end if
         end subroutine head

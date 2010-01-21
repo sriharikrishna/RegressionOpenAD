@@ -52,8 +52,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = L,U,S
-        IF (I.LT.5) THEN
+      DO I = L, U, S
+        IF(I .LT. 5) THEN
           OpenAD_Symbol_0 = (X(I)%v*Y%v)
           OpenAD_lin_0 = Y%v
           OpenAD_lin_1 = X(I)%v
@@ -62,7 +62,7 @@ C$OPENAD XXX Simple loop
           CALL sax(OpenAD_lin_0,X(I),Y)
           CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y)
         ENDIF
-      enddo
+      END DO
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

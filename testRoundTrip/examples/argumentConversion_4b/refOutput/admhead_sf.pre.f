@@ -32,7 +32,7 @@ C$openad INDEPENDENT(x)
 C$openad xxx simple loop
       do i=1,2
          do j=1,2
-            ax(i,j) = x(i)
+            ax(i,j)=x(i)
             apx(i,j) = i*4.0
          end do
       end do

@@ -15,8 +15,8 @@ C$openad XXX Template ad_template.f
         double precision, dimension(size(x)) :: z
       integer :: i,j, n=2
 C$openad INDEPENDENT(x)
-      z = x
-        y = z
+      z=x
+        y=z
 C$openad DEPENDENT(y)
       end subroutine
 

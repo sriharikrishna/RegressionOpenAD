@@ -104,7 +104,7 @@ C$OPENAD XXX Simple loop
           S%v = 0.0D00
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
-      enddo
+      END DO
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -137,7 +137,7 @@ C$OPENAD XXX Simple loop
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
         Y(INT(I))%v = (X(I)%v+S%v)
-      enddo
+      END DO
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -172,7 +172,7 @@ C adjoint
         X(I)%d = X(I)%d+S%d
         S%d = 0.0d0
         I = I-1
-      enddo
+      END DO
       Y(2)%d = 0.0d0
       Y(1)%d = 0.0d0
 

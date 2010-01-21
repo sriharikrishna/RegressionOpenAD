@@ -50,7 +50,7 @@ C
 C$OPENAD XXX Template ad_template.f
       I = 1
       select_expr_temp_0 = I
-      IF (select_expr_temp_0.ne.0) THEN
+      IF(select_expr_temp_0 .ne. 0) THEN
         Y(1)%v = X(1)%v
         CALL setderiv(Y(1),X(1))
       ENDIF

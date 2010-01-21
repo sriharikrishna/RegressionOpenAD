@@ -22,9 +22,9 @@ C$openad INDEPENDENT(x)
           do i=1,3
           select case (i)
           case (1)
-            y(i) = sin(x(i))
+            y(i)=sin(x(i))
           case (2)
-            y(i) = cos(x(i))
+            y(i)=cos(x(i))
           case default
             y(i) = 2*x(i)
           end select

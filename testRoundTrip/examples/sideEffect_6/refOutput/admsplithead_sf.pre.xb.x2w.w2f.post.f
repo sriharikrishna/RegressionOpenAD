@@ -76,7 +76,7 @@ C
          if (our_rev_mode%plain) then
 C original function
 C$OPENAD XXX Template ad_template.f
-      IF (A(1:LEN(A)).EQ.'two') THEN
+      IF(A(1 : LEN(A)) .EQ. 'two') THEN
         X%v = (X%v*2.0D00)
       ENDIF
       IF (A(1:LEN(A)).EQ.'three') THEN

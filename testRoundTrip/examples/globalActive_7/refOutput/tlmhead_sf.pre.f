@@ -32,7 +32,7 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1) :: y
 C$openad INDEPENDENT(x)
         call foo(x,aGlobal)
-          y(1) = aGlobal
+          y(1)=aGlobal
 C$openad DEPENDENT(y)
       end subroutine
 

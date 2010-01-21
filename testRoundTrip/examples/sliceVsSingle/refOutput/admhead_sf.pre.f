@@ -34,7 +34,7 @@
         double precision, dimension(2) :: x,y
 C$openad INDEPENDENT(x)
         call foo(x(1))
-        y = x
+        y=x
         call bar(y(2:2))
 C$openad DEPENDENT(y)
       end subroutine

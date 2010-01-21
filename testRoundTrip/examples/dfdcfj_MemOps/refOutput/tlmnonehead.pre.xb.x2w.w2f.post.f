@@ -145,17 +145,17 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      N = (NX*NY)
-      NXP1 = (NX+1)
-      NYP1 = (NY+1)
-      HX = (1.0D00/NXP1)
-      HY = (1.0D00/NYP1)
-      HY2 = (HY*HY)
-      HX2 = (HX*HX)
-      DO I = 1,NY,1
-        DO J = 1,NX,1
-          K = (J+NX*(I+(-1)))
-          IF ((I.eq.1).OR.(J.eq.1)) THEN
+      N = (NX * NY)
+      NXP1 = (NX + 1)
+      NYP1 = (NY + 1)
+      HX = (1.0D00 / NXP1)
+      HY = (1.0D00 / NYP1)
+      HY2 = (HY * HY)
+      HX2 = (HX * HX)
+      DO I = 1, NY, 1
+        DO J = 1, NX, 1
+          K = (J + NX *(I +(-1)))
+          IF((I .eq. 1) .OR.(J .eq. 1)) THEN
             PBL%v = 0.0D00
             CALL zero_deriv(PBL)
           ELSE
@@ -381,6 +381,6 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_acc_18,OpenAD_prop_4,FVEC(K))
           CALL saxpy(OpenAD_acc_19,OpenAD_prop_3,FVEC(K))
           CALL saxpy(OpenAD_acc_20,OpenAD_prop_2,FVEC(K))
-        enddo
-      enddo
+        END DO
+      END DO
       END SUBROUTINE

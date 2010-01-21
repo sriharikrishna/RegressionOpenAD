@@ -22,15 +22,15 @@ C$openad XXX Template ad_template.f
           integer i
 C$openad xxx simple loop
           do i=1,2
-          if (globalString .eq. 'yes') then
+          if (globalString.eq.'yes') then
               y(i) = y(i)+x(i)*x(i)
             end if
-          if (globalString .eq. 'no') then
+          if (globalString.eq.'no') then
               y(i) = y(i)+x(i)*x(i)*2
             end if
           end do
-        globalString = 'either'
-        localString = globalString
+        globalString='either'
+        localString=globalString
       end subroutine
 
 C$openad XXX Template ad_template.f
@@ -40,10 +40,10 @@ C$openad XXX Template ad_template.f
         double precision, dimension(2), intent(in) :: x
         double precision, dimension(2), intent(out) :: y
 C$openad INDEPENDENT(x)
-        y(1) = 1.0
-        y(2) = 1.0
-        globalString = 'yes'
+        y(1)=1.0
+        y(2)=1.0
+        globalString='yes'
           call foo(x,y)
-        globalString = 'both'
+        globalString='both'
 C$openad DEPENDENT(y)
       end subroutine

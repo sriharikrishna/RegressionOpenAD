@@ -19,8 +19,8 @@ C
 C         
 C$openad xxx simple loop
           do i=1,5
-            y(i) = x
-            y(6-i) = x
+            y(i)=x
+            y(6-i)=x
           end do
 
 C$openad DEPENDENT(y)

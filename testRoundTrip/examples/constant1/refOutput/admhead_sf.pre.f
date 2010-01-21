@@ -20,6 +20,6 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1) :: x
         double precision, dimension(1) :: y
 C$openad INDEPENDENT(x)
-          y(1) = sin(x(1)*pi2*2)
+          y(1)=sin(x(1)*pi2*2)
 C$openad DEPENDENT(y)
       end subroutine

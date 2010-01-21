@@ -171,17 +171,17 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      N = (NX*NY)
-      NXP1 = (NX+1)
-      NYP1 = (NY+1)
-      HX = (1.0D00/NXP1)
-      HY = (1.0D00/NYP1)
-      HY2 = (HY*HY)
-      HX2 = (HX*HX)
-      DO I = 1,NY,1
-        DO J = 1,NX,1
-          K = (J+NX*(I+(-1)))
-          IF ((I.eq.1).OR.(J.eq.1)) THEN
+      N = (NX * NY)
+      NXP1 = (NX + 1)
+      NYP1 = (NY + 1)
+      HX = (1.0D00 / NXP1)
+      HY = (1.0D00 / NYP1)
+      HY2 = (HY * HY)
+      HX2 = (HX * HX)
+      DO I = 1, NY, 1
+        DO J = 1, NX, 1
+          K = (J + NX *(I +(-1)))
+          IF((I .eq. 1) .OR.(J .eq. 1)) THEN
             PBL%v = 0.0D00
             CALL zero_deriv(PBL)
           ELSE
@@ -407,8 +407,8 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_acc_18,OpenAD_prop_4,FVEC(K))
           CALL saxpy(OpenAD_acc_19,OpenAD_prop_3,FVEC(K))
           CALL saxpy(OpenAD_acc_20,OpenAD_prop_2,FVEC(K))
-        enddo
-      enddo
+        END DO
+      END DO
       DO K = 1,N,1
         OpenAD_tmp_23 = (HX2*HY2)
         OpenAD_Symbol_0 = (FVEC(K)%v*OpenAD_tmp_23)
@@ -416,5 +416,5 @@ C$OPENAD XXX Template ad_template.f
         FVEC(INT(K))%v = OpenAD_Symbol_0
         CALL setderiv(OpenAD_prop_12,FVEC(K))
         CALL sax(OpenAD_lin_51,OpenAD_prop_12,FVEC(K))
-      enddo
+      END DO
       END SUBROUTINE

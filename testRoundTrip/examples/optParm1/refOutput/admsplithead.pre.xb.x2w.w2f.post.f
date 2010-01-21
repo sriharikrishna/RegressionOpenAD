@@ -68,15 +68,15 @@ C
          if (our_rev_mode%plain) then
 C original function
       C%v = (A%v*2.0D00)
-      t__1 = .true.
+      t__1 = .TRUE.
       IF (.not. PRESENT(B)) THEN
-        t__1 = .false.
+        t__1 = .FALSE.
       ELSE
         IF (.not. PRESENT(D)) THEN
-          t__1 = .false.
+          t__1 = .FALSE.
         ENDIF
       ENDIF
-      IF (t__1) THEN
+      IF(t__1) THEN
         D%v = (B%v*3.0D00)
       ENDIF
           end if
@@ -84,15 +84,15 @@ C original function
 C taping
       OpenAD_Symbol_0 = (A%v*2.0D00)
       C%v = OpenAD_Symbol_0
-      t__1 = .true.
+      t__1 = .TRUE.
       IF (.not. PRESENT(B)) THEN
-        t__1 = .false.
+        t__1 = .FALSE.
         OpenAD_Symbol_7 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
         integer_tape_pointer = integer_tape_pointer+1
       ELSE
         IF (.not. PRESENT(D)) THEN
-          t__1 = .false.
+          t__1 = .FALSE.
           OpenAD_Symbol_5 = 1_w2f__i8
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
           integer_tape_pointer = integer_tape_pointer+1
@@ -105,7 +105,7 @@ C taping
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-      IF (t__1) THEN
+      IF(t__1) THEN
         OpenAD_Symbol_1 = (B%v*3.0D00)
         D%v = OpenAD_Symbol_1
         OpenAD_Symbol_9 = 1_w2f__i8

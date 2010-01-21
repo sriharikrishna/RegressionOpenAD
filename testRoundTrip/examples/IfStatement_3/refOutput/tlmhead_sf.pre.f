@@ -24,7 +24,7 @@ C$openad XXX Template ad_template.f
 C$openad INDEPENDENT(x)
           call foo(x(1),l)
           if (l) then
-            y(1) = x(1)
+            y(1)=x(1)
           end if
 C$openad DEPENDENT(y)
       end subroutine

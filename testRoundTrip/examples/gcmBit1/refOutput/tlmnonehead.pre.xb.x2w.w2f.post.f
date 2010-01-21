@@ -154,8 +154,8 @@ C$OPENAD XXX Template ad_template.f
       BI = 1
       BJ = 1
       SITOBAR = 1.0D00
-      DO J = 1,2,1
-        DO I = 1,2,1
+      DO J = 1, 2, 1
+        DO I = 1, 2, 1
           T%v = TFLD(I,J,K,BI,BJ)%v
           T2%v = (T%v*T%v)
           OpenAD_lin_0 = T%v
@@ -299,8 +299,8 @@ C$OPENAD XXX Template ad_template.f
           CALL saxpy(OpenAD_lin_19,T3,BULKMOD(I,J))
           CALL saxpy(OpenAD_lin_21,T4,BULKMOD(I,J))
           CALL saxpy(OpenAD_lin_15,T,BULKMOD(I,J))
-        enddo
-      enddo
+        END DO
+      END DO
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -337,8 +337,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       XCOUNT = 1
-      DO I = 1,2,1
-        DO J = 1,2,1
+      DO I = 1, 2, 1
+        DO J = 1, 2, 1
           LOCPRES(INT(I),INT(J))%v = (X(XCOUNT)%v*2.0D00)
           CALL sax(2.0D00,X(XCOUNT),LOCPRES(I,J))
           DO K = 1,2,1
@@ -351,16 +351,16 @@ C$OPENAD XXX Template ad_template.f
                 CALL sax(3.0D00,X(XCOUNT),TFLD(I,J,K,L,M))
                 CALL sax(4.0D00,X(XCOUNT),SFLD(I,J,K,L,M))
                 XCOUNT = (XCOUNT+1)
-              enddo
-            enddo
-          enddo
-        enddo
-      enddo
+              END DO
+            END DO
+          END DO
+        END DO
+      END DO
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       DO I = 1,2,1
         DO J = 1,2,1
           Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
           CALL setderiv(Y(J+I*2+(-2)),BULKMOD(I,J))
-        enddo
-      enddo
+        END DO
+      END DO
       END SUBROUTINE

@@ -18,7 +18,7 @@ C$openad INDEPENDENT(x)
 C$openad xxx simple loop
 
            do i=1,3
-      	y(i) = x(i)
+      	y(i)=x(i)
            end do
         else
 C$openad xxx simple loop

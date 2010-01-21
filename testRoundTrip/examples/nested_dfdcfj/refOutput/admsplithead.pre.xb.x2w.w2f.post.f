@@ -80,17 +80,17 @@ C
          if (our_rev_mode%plain) then
 C original function
 C$OPENAD XXX Template ad_template.f
-      N = (NX*NY)
-      NXP1 = (NX+1)
-      NYP1 = (NY+1)
-      HX = (1.0D00/NXP1)
-      HY = (1.0D00/NYP1)
-      HY2 = (HY*HY)
-      HX2 = (HX*HX)
+      N = (NX * NY)
+      NXP1 = (NX + 1)
+      NYP1 = (NY + 1)
+      HX = (1.0D00 / NXP1)
+      HY = (1.0D00 / NYP1)
+      HY2 = (HY * HY)
+      HX2 = (HX * HX)
       CALL foo(NX,NY,X,FVEC,R,N,HX,HY,HY2,HX2)
       DO K = 1,N,1
         FVEC(INT(K))%v = (FVEC(K)%v*HX2*HY2)
-      enddo
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -118,7 +118,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = K
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -139,7 +139,7 @@ C adjoint
      +OpenAD_prop_0%d
         OpenAD_prop_0%d = 0.0d0
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      enddo
+      END DO
       integer_tape_pointer = integer_tape_pointer-1
       NY = integer_tape(integer_tape_pointer)
       integer_tape_pointer = integer_tape_pointer-1
@@ -397,10 +397,10 @@ C
          if (our_rev_mode%plain) then
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,NY,1
-        DO J = 1,NX,1
-          K = (J+NX*(I+(-1)))
-          IF ((I.eq.1).OR.(J.eq.1)) THEN
+      DO I = 1, NY, 1
+        DO J = 1, NX, 1
+          K = (J + NX *(I +(-1)))
+          IF((I .eq. 1) .OR.(J .eq. 1)) THEN
             PBL%v = 0.0D00
           ELSE
             PBL%v = X(K-NX+(-1))%v
@@ -476,8 +476,8 @@ C$OPENAD XXX Template ad_template.f
           FVEC(INT(K))%v = (((PBLAP%v+PTLAP%v-PLAP%v*2.0D00)/HY2)+((PLLA
      +P%v+PRLAP%v-PLAP%v*2.0D00)/HX2)-R*(((DPDY%v*(PRLAP%v-PLLAP%v))/(HX
      +*2.0D00))-((DPDX%v*(PTLAP%v-PBLAP%v))/(HY*2.0D00))))
-        enddo
-      enddo
+        END DO
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -742,11 +742,11 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = K
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_24 = (INT(OpenAD_Symbol_24)+INT(1_w2f__i8))
-        enddo
+        END DO
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_24
         integer_tape_pointer = integer_tape_pointer+1
         OpenAD_Symbol_23 = (INT(OpenAD_Symbol_23)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_23
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -994,9 +994,9 @@ C adjoint
             PBL%d = 0.0d0
           ENDIF
           OpenAD_Symbol_10 = INT(OpenAD_Symbol_10)+1
-        enddo
+        END DO
         OpenAD_Symbol_8 = INT(OpenAD_Symbol_8)+1
-      enddo
+      END DO
           end if
         end subroutine foo
 C#########################################################

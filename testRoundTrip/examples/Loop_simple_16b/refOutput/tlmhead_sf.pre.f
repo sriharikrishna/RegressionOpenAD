@@ -23,7 +23,7 @@ C$openad XXX Template ad_template.f
       DENOM = 1.0D00
 C$openad xxx simple loop
       DO K = 1, SP, 1
-        IF(I .ne. K) THEN
+        IF (I.ne.K) THEN
           DENOM = DENOM*(A(I)-A(K))
           NUMER = NUMER*(X-A(K))
         ENDIF

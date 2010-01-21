@@ -105,7 +105,7 @@ C$OPENAD XXX Simple loop
           DENOM%v = (DENOM%v*(A(I)%v-A(K)%v))
           NUMER%v = (NUMER%v*(X-A(K)%v))
         ENDIF
-      enddo
+      END DO
       LAG%v = (NUMER%v/DENOM%v)
           end if
           if (our_rev_mode%tape) then
@@ -136,7 +136,7 @@ C$OPENAD XXX Simple loop
           double_tape(double_tape_pointer) = OpenAD_acc_0
           double_tape_pointer = double_tape_pointer+1
         ENDIF
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = SP
       integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = I
@@ -188,7 +188,7 @@ C adjoint
           OpenAD_prop_0%d = 0.0d0
         ENDIF
         K = K-1
-      enddo
+      END DO
       DENOM%d = 0.0d0
       NUMER%d = 0.0d0
           end if

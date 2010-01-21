@@ -77,13 +77,13 @@ C
 C original function
 C$OPENAD XXX Template ad_template.f
       PI = 3.14149999618530273438D00
-      DO I = 1,9,1
-        IF (I.GT.5) THEN
+      DO I = 1, 9, 1
+        IF(I .GT. 5) THEN
           Y(INT(I))%v = (PI*SIN(X(I)%v))
         ELSE
           Y(INT(I))%v = (PI+COS(X(I)%v))
         ENDIF
-      enddo
+      END DO
       Y(10)%v = (Y(1)%v*Y(9)%v)
           end if
           if (our_rev_mode%tape) then
@@ -117,7 +117,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
         OpenAD_Symbol_4 = (INT(OpenAD_Symbol_4)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
       OpenAD_Symbol_0 = (Y(1)%v*Y(9)%v)
@@ -166,6 +166,6 @@ C adjoint
           Y(INT(OpenAD_Symbol_15))%d = 0.0d0
         ENDIF
         OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
-      enddo
+      END DO
           end if
         end subroutine head

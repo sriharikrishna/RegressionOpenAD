@@ -91,7 +91,7 @@ C
          if (our_rev_mode%plain) then
 C original function
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,1,1
+      DO I = 1, 1, 1
         Y(1)%v = X(1)%v
         IF (Y(1)%v.GT.0.0D00) THEN
           DO J = 1,3,1
@@ -99,12 +99,12 @@ C$OPENAD XXX Template ad_template.f
               IF (X(1)%v.GT.0.0D00) THEN
                 Y(1)%v = (X(1)%v*Y(1)%v)
               ENDIF
-            enddo
-          enddo
+            END DO
+          END DO
         ELSE
           Y(1)%v = (Y(1)%v/X(1)%v)
         ENDIF
-      enddo
+      END DO
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -135,11 +135,11 @@ C$OPENAD XXX Template ad_template.f
                 integer_tape_pointer = integer_tape_pointer+1
               ENDIF
               OpenAD_Symbol_12 = (INT(OpenAD_Symbol_12)+INT(1_w2f__i8))
-            enddo
+            END DO
             integer_tape(integer_tape_pointer) = OpenAD_Symbol_12
             integer_tape_pointer = integer_tape_pointer+1
             OpenAD_Symbol_11 = (INT(OpenAD_Symbol_11)+INT(1_w2f__i8))
-          enddo
+          END DO
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_16 = 1_w2f__i8
@@ -159,7 +159,7 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
         ENDIF
         OpenAD_Symbol_10 = (INT(OpenAD_Symbol_10)+INT(1_w2f__i8))
-      enddo
+      END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_10
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -195,9 +195,9 @@ C adjoint
                 OpenAD_prop_0%d = 0.0d0
               ENDIF
               OpenAD_Symbol_8 = INT(OpenAD_Symbol_8)+1
-            enddo
+            END DO
             OpenAD_Symbol_6 = INT(OpenAD_Symbol_6)+1
-          enddo
+          END DO
         ELSE
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_34 = double_tape(double_tape_pointer)
@@ -212,6 +212,6 @@ C adjoint
         X(1)%d = X(1)%d+Y(1)%d
         Y(1)%d = 0.0d0
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
-      enddo
+      END DO
           end if
         end subroutine head
