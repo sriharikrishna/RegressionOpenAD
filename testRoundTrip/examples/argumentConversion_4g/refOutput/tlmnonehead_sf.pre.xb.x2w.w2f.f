@@ -82,6 +82,8 @@ C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
 C     $OpenAD$ INLINE convert_a2p_vector(subst,subst)
       CALL convert_a2p_vector(OpenAD_Symbol_0, __deriv__(Y))
       CALL FOOI(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_ShapeTest(subst,subst)
+      CALL oad_ShapeTest(OpenAD_Symbol_0, __deriv__(Y))
 C     $OpenAD$ INLINE convert_p2a_vector(subst,subst)
       CALL convert_p2a_vector(__deriv__(Y), OpenAD_Symbol_0)
       END SUBROUTINE

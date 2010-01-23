@@ -106,6 +106,8 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
 C!! requested inline of 'convert_a2p_vector' has no defn
       CALL convert_a2p_vector(OpenAD_Symbol_0,X)
       CALL barext(OpenAD_Symbol_0)
+C!! requested inline of 'oad_ShapeTest' has no defn
+      CALL oad_ShapeTest(OpenAD_Symbol_0,X)
 C!! requested inline of 'convert_p2a_vector' has no defn
       CALL convert_p2a_vector(X,OpenAD_Symbol_0)
       Y(1)%v = (X(1)%v+X(2)%v)
@@ -128,6 +130,8 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
 C!! requested inline of 'convert_a2p_vector' has no defn
       CALL convert_a2p_vector(OpenAD_Symbol_0,X)
       CALL barext(OpenAD_Symbol_0)
+C!! requested inline of 'oad_ShapeTest' has no defn
+      CALL oad_ShapeTest(OpenAD_Symbol_0,X)
 C!! requested inline of 'convert_p2a_vector' has no defn
       CALL convert_p2a_vector(X,OpenAD_Symbol_0)
       Y(1)%v = (X(1)%v+X(2)%v)
