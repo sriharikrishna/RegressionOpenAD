@@ -82,7 +82,7 @@ C
 C
 C       **** Statements ****
 C
-        FOO_II = X+1
+        FOO_II = X + 1
         RETURN
         END FUNCTION
 
@@ -128,7 +128,7 @@ C
 C
 C       **** Statements ****
 C
-        FOO_II = (X+1)
+        FOO_II = (X + 1)
         END SUBROUTINE
       END
 

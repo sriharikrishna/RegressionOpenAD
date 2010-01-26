@@ -54,12 +54,14 @@ C$openad XXX Template ad_template.f
         double precision :: oad_ctmp0
         double precision :: oad_ctmp1
         integer :: oad_ctmp2
+        integer :: oad_ctmp3
 C$openad INDEPENDENT(x)
           mx=x(1)
           call oad_s_foo(x(1),oad_ctmp1)
           call oad_s_foo(oad_ctmp1,oad_ctmp0)
           y(1) = oad_ctmp0
-          call oad_s_foo(2,oad_ctmp2)
+          oad_ctmp3 = 2
+          call oad_s_foo(oad_ctmp3,oad_ctmp2)
           i = oad_ctmp2
 C$openad DEPENDENT(y)
       end subroutine
