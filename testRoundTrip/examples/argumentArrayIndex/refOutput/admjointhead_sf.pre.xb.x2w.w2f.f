@@ -29,7 +29,7 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
       TYPE (OpenADTy_active) OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -45,8 +45,8 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_0 = (__value__(X) * 2.0D00)
-      __value__(Y) = OpenAD_Symbol_0
+      OpenAD_Symbol_1 = (__value__(X) * 2.0D00)
+      __value__(Y) = OpenAD_Symbol_1
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
@@ -96,8 +96,8 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_0 = (__value__(X) * 2.0D00)
-      __value__(Y) = OpenAD_Symbol_0
+      OpenAD_Symbol_1 = (__value__(X) * 2.0D00)
+      __value__(Y) = OpenAD_Symbol_1
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)

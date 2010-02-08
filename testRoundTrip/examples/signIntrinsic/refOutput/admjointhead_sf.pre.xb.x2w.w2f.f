@@ -29,10 +29,8 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_Symbol_3
       TYPE (OpenADTy_active) OpenAD_prop_0
-      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -41,7 +39,9 @@ C
 C
 C     **** Local Variables and Functions ****
 C
+      REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_4
 C
 C     **** Top Level Pragmas ****
 C
@@ -56,19 +56,19 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      OpenAD_tmp_0 = (- __value__(X(2)))
-      OpenAD_Symbol_0 = SIGN(__value__(X(1)), OpenAD_tmp_0)
-      OpenAD_lin_0 = (SIGN(1.0D00, __value__(X(1))) * SIGN(1.0D00,
-     >  OpenAD_tmp_0))
-      __value__(Y(1)) = OpenAD_Symbol_0
+      OpenAD_Symbol_0 = (- __value__(X(2)))
+      OpenAD_Symbol_3 = SIGN(__value__(X(1)), OpenAD_Symbol_0)
+      OpenAD_Symbol_1 = (SIGN(1.0D00, __value__(X(1))) * SIGN(1.0D00,
+     >  OpenAD_Symbol_0))
+      __value__(Y(1)) = OpenAD_Symbol_3
 C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_lin_0)
+      CALL push(OpenAD_Symbol_1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_1)
+      CALL Pop(OpenAD_Symbol_4)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_1, __deriv__(Y(1)), __deriv__(
+      CALL Saxpy(OpenAD_Symbol_4, __deriv__(Y(1)), __deriv__(
      > OpenAD_prop_0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
@@ -91,19 +91,19 @@ C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      OpenAD_tmp_0 = (- __value__(X(2)))
-      OpenAD_Symbol_0 = SIGN(__value__(X(1)), OpenAD_tmp_0)
-      OpenAD_lin_0 = (SIGN(1.0D00, __value__(X(1))) * SIGN(1.0D00,
-     >  OpenAD_tmp_0))
-      __value__(Y(1)) = OpenAD_Symbol_0
+      OpenAD_Symbol_0 = (- __value__(X(2)))
+      OpenAD_Symbol_3 = SIGN(__value__(X(1)), OpenAD_Symbol_0)
+      OpenAD_Symbol_1 = (SIGN(1.0D00, __value__(X(1))) * SIGN(1.0D00,
+     >  OpenAD_Symbol_0))
+      __value__(Y(1)) = OpenAD_Symbol_3
 C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_lin_0)
+      CALL push(OpenAD_Symbol_1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_1)
+      CALL Pop(OpenAD_Symbol_4)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_1, __deriv__(Y(1)), __deriv__(
+      CALL Saxpy(OpenAD_Symbol_4, __deriv__(Y(1)), __deriv__(
      > OpenAD_prop_0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))

@@ -24,7 +24,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_lin_6
 C
 C     **** Parameters and Result ****
 C
@@ -41,7 +40,8 @@ C
       type(active) :: T6
       type(active) :: T7
       type(active) :: Y1
-      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_Symbol_7
 C
 C     **** Top Level Pragmas ****
 C
@@ -117,9 +117,9 @@ C taping
       T6%v = (T5%v+3.0D00)
       T7%v = (T6%v+(-9.0D00))
       Y1%v = EXP(T7%v)
-      OpenAD_lin_6 = EXP(T7%v)
+      OpenAD_Symbol_6 = EXP(T7%v)
       Y(1)%v = Y1%v
-      OpenAD_acc_0 = (1.0D00*OpenAD_lin_6)
+      OpenAD_acc_0 = (1.0D00*OpenAD_Symbol_6)
       double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
 
@@ -139,8 +139,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_0 = double_tape(double_tape_pointer)
-      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_0)
+      OpenAD_Symbol_7 = double_tape(double_tape_pointer)
+      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_7)
       Y(1)%d = 0.0d0
 
 C adjoint end

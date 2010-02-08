@@ -46,7 +46,7 @@ C
 C
 C       **** Global Variables & Derived Type Definitions ****
 C
-        REAL(w2f__8) OpenAD_Symbol_0
+        REAL(w2f__8) OpenAD_Symbol_1
         TYPE (OpenADTy_active) OpenAD_prop_0
 C
 C       **** Parameters and Result ****
@@ -59,8 +59,8 @@ C       $OpenAD$ BEGIN REPLACEMENT 1
         __value__(X) = (__value__(X) * 2.0D00)
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 2
-        OpenAD_Symbol_0 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_Symbol_0
+        OpenAD_Symbol_1 = (__value__(X) * 2.0D00)
+        __value__(X) = OpenAD_Symbol_1
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 3
 C       $OpenAD$ INLINE Saxpy(subst,subst,subst)
@@ -97,8 +97,8 @@ C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
         CALL cp_arg_restore_real_scalar_a(__deriv__(X))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 10
-        OpenAD_Symbol_0 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_Symbol_0
+        OpenAD_Symbol_1 = (__value__(X) * 2.0D00)
+        __value__(X) = OpenAD_Symbol_1
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 11
 C       $OpenAD$ INLINE Saxpy(subst,subst,subst)

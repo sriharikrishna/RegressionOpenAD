@@ -24,8 +24,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -39,6 +37,8 @@ C
       REAL(w2f__8) PI
       PARAMETER ( PI = 3.141592653589793116D00)
       REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_3
 C
 C     **** Top Level Pragmas ****
 C
@@ -98,10 +98,10 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_tmp_0 = (X(1)%v*1.74532925199432954744D-02)
-      Y(1)%v = COS(OpenAD_tmp_0)
-      OpenAD_lin_0 = (-SIN(OpenAD_tmp_0))
-      OpenAD_acc_0 = (1.74532925199432954744D-02*OpenAD_lin_0)
+      OpenAD_Symbol_0 = (X(1)%v*1.74532925199432954744D-02)
+      Y(1)%v = COS(OpenAD_Symbol_0)
+      OpenAD_Symbol_1 = (-SIN(OpenAD_Symbol_0))
+      OpenAD_acc_0 = (1.74532925199432954744D-02*OpenAD_Symbol_1)
       double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
 
@@ -121,8 +121,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_0 = double_tape(double_tape_pointer)
-      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_0)
+      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
+      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_3)
       Y(1)%d = 0.0d0
 
 C adjoint end
