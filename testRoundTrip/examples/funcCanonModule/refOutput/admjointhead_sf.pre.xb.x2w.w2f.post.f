@@ -37,12 +37,12 @@ CONTAINS
 !
 !       **** Global Variables & Derived Type Definitions ****
 !
-  INTEGER(w2f__i8) OpenAD_Symbol_1
   INTEGER(w2f__i8) OpenAD_Symbol_2
   INTEGER(w2f__i8) OpenAD_Symbol_3
   INTEGER(w2f__i8) OpenAD_Symbol_4
   INTEGER(w2f__i8) OpenAD_Symbol_5
   INTEGER(w2f__i8) OpenAD_Symbol_6
+  INTEGER(w2f__i8) OpenAD_Symbol_7
 !
 !       **** Parameters and Result ****
 !
@@ -116,13 +116,13 @@ CONTAINS
 ! taping
   IF (A%v.GT.B) THEN
     R%v = A%v
-    OpenAD_Symbol_2 = 1_w2f__i8
-    integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
+    OpenAD_Symbol_3 = 1_w2f__i8
+    integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
     integer_tape_pointer = integer_tape_pointer+1
   ELSE
     R%v = B
-    OpenAD_Symbol_3 = 0_w2f__i8
-    integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
+    OpenAD_Symbol_4 = 0_w2f__i8
+    integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
     integer_tape_pointer = integer_tape_pointer+1
   ENDIF
 
@@ -142,8 +142,8 @@ CONTAINS
       our_rev_mode%adjoint=.FALSE.
 ! adjoint
   integer_tape_pointer = integer_tape_pointer-1
-  OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)
-  IF (OpenAD_Symbol_1.ne.0) THEN
+  OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
+  IF (OpenAD_Symbol_2.ne.0) THEN
     A%d = A%d+R%d
     R%d = 0.0d0
   ELSE
@@ -346,7 +346,7 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
-      type(active) :: OpenAD_Symbol_7
+      type(active) :: OpenAD_Symbol_8
 C
 C     **** Parameters and Result ****
 C
@@ -448,7 +448,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-      CALL OAD_S_BAR(Y(1),OpenAD_Symbol_7)
+      CALL OAD_S_BAR(Y(1),OpenAD_Symbol_8)
       OAD_CTMP0%d = OAD_CTMP0%d+Y(1)%d*(2.0D00)
       Y(1)%d = 0.0d0
       CALL OAD_S_BAR(X(1),OAD_CTMP0)
