@@ -27,14 +27,10 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
       TYPE (OpenADTy_active) OpenAD_prop_0
-      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -48,6 +44,10 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_4
 C
 C     **** Top Level Pragmas ****
 C
@@ -61,14 +61,14 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         IF(A(I, J) .ne. 0) THEN
-          OpenAD_tmp_0 = (__value__(X(1)) * __value__(Y(1)))
-          OpenAD_Symbol_0 = (A(I, J) * OpenAD_tmp_0)
-          OpenAD_lin_2 = __value__(Y(1))
-          OpenAD_lin_3 = __value__(X(1))
-          OpenAD_lin_1 = A(I, J)
-          __value__(Y(1)) = OpenAD_Symbol_0
-          OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
-          OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
+          OpenAD_Symbol_0 = (__value__(X(1)) * __value__(Y(1)))
+          OpenAD_Symbol_5 = (A(I, J) * OpenAD_Symbol_0)
+          OpenAD_Symbol_3 = __value__(Y(1))
+          OpenAD_Symbol_4 = __value__(X(1))
+          OpenAD_Symbol_2 = A(I, J)
+          __value__(Y(1)) = OpenAD_Symbol_5
+          OpenAD_acc_0 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
+          OpenAD_acc_1 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
           CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y(1)))
           CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(1)))
           CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prop_0), __deriv__(

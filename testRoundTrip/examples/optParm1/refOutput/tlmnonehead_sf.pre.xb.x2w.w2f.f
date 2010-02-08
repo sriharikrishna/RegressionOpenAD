@@ -27,8 +27,8 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_3
       TYPE (OpenADTy_active) OpenAD_prop_0
       TYPE (OpenADTy_active) OpenAD_prop_1
 C
@@ -47,8 +47,8 @@ C
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_0 = (__value__(A) * 2.0D00)
-      __value__(C) = OpenAD_Symbol_0
+      OpenAD_Symbol_1 = (__value__(A) * 2.0D00)
+      __value__(C) = OpenAD_Symbol_1
       CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(A))
       CALL sax(2.0D00, __deriv__(OpenAD_prop_0), __deriv__(C))
       t__1 = .TRUE.
@@ -60,8 +60,8 @@ C
         ENDIF
       ENDIF
       IF(t__1) THEN
-        OpenAD_Symbol_1 = (__value__(B) * 3.0D00)
-        __value__(D) = OpenAD_Symbol_1
+        OpenAD_Symbol_3 = (__value__(B) * 3.0D00)
+        __value__(D) = OpenAD_Symbol_3
         CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(B))
         CALL sax(3.0D00, __deriv__(OpenAD_prop_1), __deriv__(D))
       ENDIF

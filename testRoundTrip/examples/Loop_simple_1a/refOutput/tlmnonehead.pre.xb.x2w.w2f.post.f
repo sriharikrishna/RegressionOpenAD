@@ -8,9 +8,7 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_Symbol_2
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
 C
@@ -24,6 +22,8 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -37,13 +37,13 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(Y(1),X(1))
 C$OPENAD XXX Simple loop
       DO I = 3,1,(-1)
-        OpenAD_Symbol_0 = (X(1)%v*Y(1)%v)
-        OpenAD_lin_0 = Y(1)%v
-        OpenAD_lin_1 = X(1)%v
-        Y(1)%v = OpenAD_Symbol_0
+        OpenAD_Symbol_2 = (X(1)%v*Y(1)%v)
+        OpenAD_Symbol_0 = Y(1)%v
+        OpenAD_Symbol_1 = X(1)%v
+        Y(1)%v = OpenAD_Symbol_2
         CALL setderiv(OpenAD_prop_0,Y(1))
-        CALL sax(OpenAD_lin_0,X(1),Y(1))
-        CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Y(1))
+        CALL sax(OpenAD_Symbol_0,X(1),Y(1))
+        CALL saxpy(OpenAD_Symbol_1,OpenAD_prop_0,Y(1))
       END DO
       CALL setderiv(OpenAD_prop_1,Y(1))
       CALL setderiv(Y(1),OpenAD_prop_1)

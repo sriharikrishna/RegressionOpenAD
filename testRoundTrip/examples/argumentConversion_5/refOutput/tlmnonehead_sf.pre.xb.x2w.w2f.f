@@ -25,24 +25,24 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 2, 1 : 1)
       TYPE (OpenADTy_active) Y
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_3
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(Y) = (__value__(X(1, 1)) * __value__(X(2, 1)))
-      OpenAD_lin_0 = __value__(X(2, 1))
-      OpenAD_lin_1 = __value__(X(1, 1))
-      CALL sax(OpenAD_lin_0, __deriv__(X(1, 1)), __deriv__(Y))
-      CALL saxpy(OpenAD_lin_1, __deriv__(X(2, 1)), __deriv__(Y))
+      OpenAD_Symbol_2 = __value__(X(2, 1))
+      OpenAD_Symbol_3 = __value__(X(1, 1))
+      CALL sax(OpenAD_Symbol_2, __deriv__(X(1, 1)), __deriv__(Y))
+      CALL saxpy(OpenAD_Symbol_3, __deriv__(X(2, 1)), __deriv__(Y))
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

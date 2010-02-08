@@ -8,8 +8,7 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_Symbol_2
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -18,15 +17,19 @@ C
       type(active) :: Y
       INTEGER(w2f__i4) K
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_1
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_0 = (K*X%v)
-      OpenAD_lin_1 = K
-      Y%v = OpenAD_Symbol_0
+      OpenAD_Symbol_2 = (K*X%v)
+      OpenAD_Symbol_1 = K
+      Y%v = OpenAD_Symbol_2
       K = (K*2)
       CALL setderiv(OpenAD_prop_0,X)
-      CALL sax(OpenAD_lin_1,OpenAD_prop_0,Y)
+      CALL sax(OpenAD_Symbol_1,OpenAD_prop_0,Y)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

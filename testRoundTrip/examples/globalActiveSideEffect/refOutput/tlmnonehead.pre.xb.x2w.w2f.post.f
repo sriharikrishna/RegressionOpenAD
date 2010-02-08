@@ -23,24 +23,27 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_Symbol_3
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
       type(active) :: P
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_2
+C
 C     **** Statements ****
 C
-      OpenAD_Symbol_1 = (P%v*AGLOBALACTIVE%v)
-      OpenAD_lin_0 = AGLOBALACTIVE%v
-      OpenAD_lin_1 = P%v
-      AGLOBALACTIVE%v = OpenAD_Symbol_1
+      OpenAD_Symbol_3 = (P%v*AGLOBALACTIVE%v)
+      OpenAD_Symbol_1 = AGLOBALACTIVE%v
+      OpenAD_Symbol_2 = P%v
+      AGLOBALACTIVE%v = OpenAD_Symbol_3
       CALL setderiv(OpenAD_prop_0,AGLOBALACTIVE)
-      CALL sax(OpenAD_lin_0,P,AGLOBALACTIVE)
-      CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,AGLOBALACTIVE)
+      CALL sax(OpenAD_Symbol_1,P,AGLOBALACTIVE)
+      CALL saxpy(OpenAD_Symbol_2,OpenAD_prop_0,AGLOBALACTIVE)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -53,7 +56,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_2
 C
 C     **** Parameters and Result ****
 C
@@ -66,6 +68,7 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) ANINACTIVE
       EXTERNAL foo
+      REAL(w2f__8) OpenAD_Symbol_4
 C
 C     **** Top Level Pragmas ****
 C
@@ -85,6 +88,6 @@ C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
 C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(ANINACTIVE,OpenAD_Symbol_0)
       Y(1)%v = SIN(AGLOBALACTIVE%v)
-      OpenAD_lin_2 = COS(AGLOBALACTIVE%v)
-      CALL sax(OpenAD_lin_2,AGLOBALACTIVE,Y(1))
+      OpenAD_Symbol_4 = COS(AGLOBALACTIVE%v)
+      CALL sax(OpenAD_Symbol_4,AGLOBALACTIVE,Y(1))
       END SUBROUTINE

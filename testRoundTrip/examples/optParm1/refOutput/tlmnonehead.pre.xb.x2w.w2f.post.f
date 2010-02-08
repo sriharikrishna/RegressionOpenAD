@@ -8,8 +8,8 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_3
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
 C
@@ -28,8 +28,8 @@ C
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_0 = (A%v*2.0D00)
-      C%v = OpenAD_Symbol_0
+      OpenAD_Symbol_1 = (A%v*2.0D00)
+      C%v = OpenAD_Symbol_1
       CALL setderiv(OpenAD_prop_0,A)
       CALL sax(2.0D00,OpenAD_prop_0,C)
       t__1 = .TRUE.
@@ -41,8 +41,8 @@ C
         ENDIF
       ENDIF
       IF(t__1) THEN
-        OpenAD_Symbol_1 = (B%v*3.0D00)
-        D%v = OpenAD_Symbol_1
+        OpenAD_Symbol_3 = (B%v*3.0D00)
+        D%v = OpenAD_Symbol_3
         CALL setderiv(OpenAD_prop_1,B)
         CALL sax(3.0D00,OpenAD_prop_1,D)
       ENDIF

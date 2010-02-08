@@ -43,13 +43,8 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
       TYPE (OpenADTy_active) OpenAD_prop_0
       TYPE (OpenADTy_active) OpenAD_prop_1
-      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -61,6 +56,11 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       CHARACTER(3) LOCALSTRING
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_5
 C
 C     **** Statements ****
 C
@@ -70,21 +70,21 @@ C$OPENAD XXX Simple loop
         IF(GLOBALSTRING .EQ. 'yes') THEN
           __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
      >  __value__(X(I)))
-          OpenAD_lin_0 = __value__(X(I))
-          OpenAD_lin_1 = __value__(X(I))
+          OpenAD_Symbol_0 = __value__(X(I))
+          OpenAD_Symbol_1 = __value__(X(I))
           CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y(I)))
           CALL setderiv(__deriv__(Y(I)), __deriv__(OpenAD_prop_0))
-          CALL saxpy(OpenAD_lin_0, __deriv__(X(I)), __deriv__(Y(I)))
-          CALL saxpy(OpenAD_lin_1, __deriv__(X(I)), __deriv__(Y(I)))
+          CALL saxpy(OpenAD_Symbol_0, __deriv__(X(I)), __deriv__(Y(I)))
+          CALL saxpy(OpenAD_Symbol_1, __deriv__(X(I)), __deriv__(Y(I)))
         ENDIF
         IF(GLOBALSTRING .EQ. 'no') THEN
-          OpenAD_tmp_0 = (__value__(X(I)) * __value__(X(I)))
-          __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_tmp_0 *
+          OpenAD_Symbol_2 = (__value__(X(I)) * __value__(X(I)))
+          __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_Symbol_2 *
      >  2.0D00)
-          OpenAD_lin_3 = __value__(X(I))
-          OpenAD_lin_4 = __value__(X(I))
-          OpenAD_acc_0 = (OpenAD_lin_3 * 2.0D00)
-          OpenAD_acc_1 = (OpenAD_lin_4 * 2.0D00)
+          OpenAD_Symbol_4 = __value__(X(I))
+          OpenAD_Symbol_5 = __value__(X(I))
+          OpenAD_acc_0 = (OpenAD_Symbol_4 * 2.0D00)
+          OpenAD_acc_1 = (OpenAD_Symbol_5 * 2.0D00)
           CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(Y(I)))
           CALL setderiv(__deriv__(Y(I)), __deriv__(OpenAD_prop_1))
           CALL saxpy(OpenAD_acc_0, __deriv__(X(I)), __deriv__(Y(I)))

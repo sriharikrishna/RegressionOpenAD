@@ -8,8 +8,8 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_3
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
 C
@@ -22,14 +22,14 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'two') THEN
-        OpenAD_Symbol_0 = (X%v*2.0D00)
-        X%v = OpenAD_Symbol_0
+        OpenAD_Symbol_1 = (X%v*2.0D00)
+        X%v = OpenAD_Symbol_1
         CALL setderiv(OpenAD_prop_0,X)
         CALL sax(2.0D00,OpenAD_prop_0,X)
       ENDIF
       IF (A(1:LEN(A)).EQ.'three') THEN
-        OpenAD_Symbol_1 = (X%v*3.0D00)
-        X%v = OpenAD_Symbol_1
+        OpenAD_Symbol_3 = (X%v*3.0D00)
+        X%v = OpenAD_Symbol_3
         CALL setderiv(OpenAD_prop_1,X)
         CALL sax(3.0D00,OpenAD_prop_1,X)
       ENDIF

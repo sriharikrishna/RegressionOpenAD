@@ -27,13 +27,9 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_6
       TYPE (OpenADTy_active) OpenAD_prop_0
       TYPE (OpenADTy_active) OpenAD_prop_1
       TYPE (OpenADTy_active) OpenAD_prop_2
@@ -47,6 +43,10 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_5
 C
 C     **** Top Level Pragmas ****
 C
@@ -59,29 +59,30 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       DO WHILE(I .LT. 3)
         IF(I .LT. 2) THEN
-          OpenAD_Symbol_0 = SIN(__value__(X(1)))
-          OpenAD_lin_0 = COS(__value__(X(1)))
-          __value__(Y(2)) = OpenAD_Symbol_0
+          OpenAD_Symbol_1 = SIN(__value__(X(1)))
+          OpenAD_Symbol_0 = COS(__value__(X(1)))
+          __value__(Y(2)) = OpenAD_Symbol_1
           CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(X(1)))
-          CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prop_0), __deriv__(Y(
-     > 2)))
+          CALL sax(OpenAD_Symbol_0, __deriv__(OpenAD_prop_0), __deriv__
+     > (Y(2)))
         ELSE
-          OpenAD_Symbol_1 = COS(__value__(X(2)))
-          OpenAD_lin_1 = (- SIN(__value__(X(2))))
-          __value__(Y(1)) = OpenAD_Symbol_1
+          OpenAD_Symbol_3 = COS(__value__(X(2)))
+          OpenAD_Symbol_2 = (- SIN(__value__(X(2))))
+          __value__(Y(1)) = OpenAD_Symbol_3
           CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(X(2)))
-          CALL sax(OpenAD_lin_1, __deriv__(OpenAD_prop_1), __deriv__(Y(
-     > 1)))
+          CALL sax(OpenAD_Symbol_2, __deriv__(OpenAD_prop_1), __deriv__
+     > (Y(1)))
         ENDIF
         I = (I + 1)
       END DO
-      OpenAD_Symbol_2 = (__value__(Y(1)) * __value__(Y(2)))
-      OpenAD_lin_2 = __value__(Y(2))
-      OpenAD_lin_3 = __value__(Y(1))
-      __value__(Y(2)) = OpenAD_Symbol_2
+      OpenAD_Symbol_6 = (__value__(Y(1)) * __value__(Y(2)))
+      OpenAD_Symbol_4 = __value__(Y(2))
+      OpenAD_Symbol_5 = __value__(Y(1))
+      __value__(Y(2)) = OpenAD_Symbol_6
       CALL setderiv(__deriv__(OpenAD_prop_2), __deriv__(Y(1)))
       CALL setderiv(__deriv__(OpenAD_prop_3), __deriv__(Y(2)))
-      CALL sax(OpenAD_lin_2, __deriv__(OpenAD_prop_2), __deriv__(Y(2)))
-      CALL saxpy(OpenAD_lin_3, __deriv__(OpenAD_prop_3), __deriv__(Y(2)
-     > ))
+      CALL sax(OpenAD_Symbol_4, __deriv__(OpenAD_prop_2), __deriv__(Y(2
+     > )))
+      CALL saxpy(OpenAD_Symbol_5, __deriv__(OpenAD_prop_3), __deriv__(Y
+     > (2)))
       END SUBROUTINE

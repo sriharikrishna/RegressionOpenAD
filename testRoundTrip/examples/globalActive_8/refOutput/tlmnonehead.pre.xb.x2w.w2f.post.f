@@ -21,25 +21,25 @@ C
       use globals
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
       type(active) :: Y
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       AGLOBAL%v = (X(1)%v*X(2)%v)
-      OpenAD_lin_0 = X(2)%v
-      OpenAD_lin_1 = X(1)%v
+      OpenAD_Symbol_0 = X(2)%v
+      OpenAD_Symbol_1 = X(1)%v
       Y%v = AGLOBAL%v
-      CALL sax(OpenAD_lin_0,X(1),AGLOBAL)
-      CALL saxpy(OpenAD_lin_1,X(2),AGLOBAL)
+      CALL sax(OpenAD_Symbol_0,X(1),AGLOBAL)
+      CALL saxpy(OpenAD_Symbol_1,X(2),AGLOBAL)
       CALL setderiv(Y,AGLOBAL)
       END SUBROUTINE
 
@@ -82,18 +82,18 @@ C$OPENAD XXX Template ad_template.f
       use globals
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_2
-C
 C     **** Parameters and Result ****
 C
       type(active) :: AP
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_2
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       AP%v = (AGLOBAL%v**3)
-      OpenAD_lin_2 = (3*(AGLOBAL%v**(3-INT(1_w2f__i8))))
-      CALL sax(OpenAD_lin_2,AGLOBAL,AP)
+      OpenAD_Symbol_2 = (3*(AGLOBAL%v**(3-INT(1_w2f__i8))))
+      CALL sax(OpenAD_Symbol_2,AGLOBAL,AP)
       END SUBROUTINE

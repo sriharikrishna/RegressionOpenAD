@@ -6,10 +6,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_0
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:1)
@@ -19,6 +15,7 @@ C     **** Local Variables and Functions ****
 C
       type(active) :: S
       type(active) :: T
+      REAL(w2f__8) OpenAD_Symbol_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -31,6 +28,6 @@ C$OPENAD XXX Template ad_template.f
       S%v = X(1)%v
       T%v = S%v
       Y(1)%v = SIN(T%v)
-      OpenAD_lin_0 = COS(T%v)
-      CALL sax(OpenAD_lin_0,X(1),Y(1))
+      OpenAD_Symbol_0 = COS(T%v)
+      CALL sax(OpenAD_Symbol_0,X(1),Y(1))
       END SUBROUTINE

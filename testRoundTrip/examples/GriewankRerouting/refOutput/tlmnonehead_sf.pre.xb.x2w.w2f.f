@@ -31,14 +31,6 @@ C
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
 C
 C     **** Parameters and Result ****
 C
@@ -55,6 +47,14 @@ C
       TYPE (OpenADTy_active) T2
       TYPE (OpenADTy_active) T3
       TYPE (OpenADTy_active) T4
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_Symbol_7
 C
 C     **** Top Level Pragmas ****
 C
@@ -69,27 +69,27 @@ C$OPENAD XXX Template ad_template.f
       __value__(T1) = __value__(X1)
       __value__(T2) = __value__(X2)
       __value__(T3) = (__value__(T1) / __value__(T2))
-      OpenAD_lin_0 = (INT(1_w2f__i8) / __value__(T2))
-      OpenAD_lin_1 = (-(__value__(T1) /(__value__(T2) * __value__(T2)))
-     > )
+      OpenAD_Symbol_0 = (INT(1_w2f__i8) / __value__(T2))
+      OpenAD_Symbol_1 = (-(__value__(T1) /(__value__(T2) * __value__(T2
+     > ))))
       __value__(T4) = (__value__(T1) * __value__(T2))
-      OpenAD_lin_2 = __value__(T2)
-      OpenAD_lin_3 = __value__(T1)
+      OpenAD_Symbol_2 = __value__(T2)
+      OpenAD_Symbol_3 = __value__(T1)
       __value__(Y1) = (__value__(T3) * __value__(T4))
-      OpenAD_lin_4 = __value__(T4)
-      OpenAD_lin_5 = __value__(T3)
+      OpenAD_Symbol_4 = __value__(T4)
+      OpenAD_Symbol_5 = __value__(T3)
       __value__(Y2) = (__value__(T3) / __value__(T4))
-      OpenAD_lin_6 = (INT(1_w2f__i8) / __value__(T4))
-      OpenAD_lin_7 = (-(__value__(T3) /(__value__(T4) * __value__(T4)))
-     > )
-      OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_5 + OpenAD_lin_1 *
-     >  OpenAD_lin_4)
-      OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_7 + OpenAD_lin_1 *
-     >  OpenAD_lin_6)
-      OpenAD_acc_2 = (OpenAD_lin_2 * OpenAD_lin_7 + OpenAD_lin_0 *
-     >  OpenAD_lin_6)
-      OpenAD_acc_3 = (OpenAD_lin_2 * OpenAD_lin_5 + OpenAD_lin_0 *
-     >  OpenAD_lin_4)
+      OpenAD_Symbol_6 = (INT(1_w2f__i8) / __value__(T4))
+      OpenAD_Symbol_7 = (-(__value__(T3) /(__value__(T4) * __value__(T4
+     > ))))
+      OpenAD_acc_0 = (OpenAD_Symbol_3 * OpenAD_Symbol_5 +
+     >  OpenAD_Symbol_1 * OpenAD_Symbol_4)
+      OpenAD_acc_1 = (OpenAD_Symbol_3 * OpenAD_Symbol_7 +
+     >  OpenAD_Symbol_1 * OpenAD_Symbol_6)
+      OpenAD_acc_2 = (OpenAD_Symbol_2 * OpenAD_Symbol_7 +
+     >  OpenAD_Symbol_0 * OpenAD_Symbol_6)
+      OpenAD_acc_3 = (OpenAD_Symbol_2 * OpenAD_Symbol_5 +
+     >  OpenAD_Symbol_0 * OpenAD_Symbol_4)
       CALL sax(OpenAD_acc_0, __deriv__(X2), __deriv__(Y1))
       CALL saxpy(OpenAD_acc_3, __deriv__(X1), __deriv__(Y1))
       CALL sax(OpenAD_acc_1, __deriv__(X2), __deriv__(Y2))

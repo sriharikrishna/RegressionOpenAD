@@ -32,7 +32,7 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
       TYPE (OpenADTy_active) OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -48,8 +48,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, (N + 1), 1
-        OpenAD_Symbol_0 = (__value__(A(I)) * 2.0D00)
-        __value__(A(INT(I))) = OpenAD_Symbol_0
+        OpenAD_Symbol_1 = (__value__(A(I)) * 2.0D00)
+        __value__(A(INT(I))) = OpenAD_Symbol_1
         CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(A(I)))
         CALL sax(2.0D00, __deriv__(OpenAD_prop_0), __deriv__(A(I)))
       END DO
