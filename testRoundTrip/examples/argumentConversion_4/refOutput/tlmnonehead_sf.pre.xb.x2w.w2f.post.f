@@ -28,24 +28,24 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X
       type(active) :: Y
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_3
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*X%v)
-      OpenAD_lin_0 = X%v
-      OpenAD_lin_1 = X%v
-      CALL sax(OpenAD_lin_0,X,Y)
-      CALL saxpy(OpenAD_lin_1,X,Y)
+      OpenAD_Symbol_2 = X%v
+      OpenAD_Symbol_3 = X%v
+      CALL sax(OpenAD_Symbol_2,X,Y)
+      CALL saxpy(OpenAD_Symbol_3,X,Y)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

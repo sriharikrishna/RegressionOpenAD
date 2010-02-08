@@ -30,7 +30,7 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_Symbol_1
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -40,8 +40,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_0 = (A%v*2.0D00)
-      A%v = OpenAD_Symbol_0
+      OpenAD_Symbol_1 = (A%v*2.0D00)
+      A%v = OpenAD_Symbol_1
       CALL setderiv(OpenAD_prop_0,A)
       CALL sax(2.0D00,OpenAD_prop_0,A)
       END SUBROUTINE
@@ -54,8 +54,7 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_Symbol_4
       type(active) :: OpenAD_prop_1
 C
 C     **** Parameters and Result ****
@@ -63,15 +62,19 @@ C
       type(active) :: A
       INTEGER(w2f__i4) K
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_3
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       K = (K * 2)
-      OpenAD_Symbol_1 = (K*A%v)
-      OpenAD_lin_2 = K
-      A%v = OpenAD_Symbol_1
+      OpenAD_Symbol_4 = (K*A%v)
+      OpenAD_Symbol_3 = K
+      A%v = OpenAD_Symbol_4
       CALL setderiv(OpenAD_prop_1,A)
-      CALL sax(OpenAD_lin_2,OpenAD_prop_1,A)
+      CALL sax(OpenAD_Symbol_3,OpenAD_prop_1,A)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -79,11 +82,6 @@ C$OPENAD XXX Template ad_template.f
       use OAD_active
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
 C
 C     **** Parameters and Result ****
 C
@@ -95,6 +93,8 @@ C
       EXTERNAL bar
       EXTERNAL foo
       INTEGER(w2f__i4) I
+      REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_6
 C
 C     **** Top Level Pragmas ****
 C
@@ -108,8 +108,8 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X(I))
       CALL bar(X(I+1),I)
       Y%v = (X(1)%v*X(2)%v)
-      OpenAD_lin_3 = X(2)%v
-      OpenAD_lin_4 = X(1)%v
-      CALL sax(OpenAD_lin_3,X(1),Y)
-      CALL saxpy(OpenAD_lin_4,X(2),Y)
+      OpenAD_Symbol_5 = X(2)%v
+      OpenAD_Symbol_6 = X(1)%v
+      CALL sax(OpenAD_Symbol_5,X(1),Y)
+      CALL saxpy(OpenAD_Symbol_6,X(2),Y)
       END SUBROUTINE

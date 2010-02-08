@@ -45,7 +45,7 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_3
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -54,8 +54,8 @@ C
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_2 = (P%v*2.0D00)
-      P%v = OpenAD_Symbol_2
+      OpenAD_Symbol_3 = (P%v*2.0D00)
+      P%v = OpenAD_Symbol_3
       I = (I+1)
       CALL setderiv(OpenAD_prop_0,P)
       CALL sax(2.0D00,OpenAD_prop_0,P)

@@ -34,14 +34,17 @@ C
       COMMON /cb/ S, T
       type(active) :: S
       type(active) :: T
-      REAL(w2f__8) OpenAD_lin_0
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_Symbol_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       T%v = SIN(S%v)
-      OpenAD_lin_0 = COS(S%v)
-      CALL sax(OpenAD_lin_0,S,T)
+      OpenAD_Symbol_0 = COS(S%v)
+      CALL sax(OpenAD_Symbol_0,S,T)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
