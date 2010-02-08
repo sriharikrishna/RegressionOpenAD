@@ -46,10 +46,6 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -60,6 +56,10 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_5
 C
 C     **** Top Level Pragmas ****
 C
@@ -81,13 +81,13 @@ C original function
           if (our_rev_mode%tape) then
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_tmp_0 = (X%v*X%v)
-      Y%v = SIN(OpenAD_tmp_0)
-      OpenAD_lin_1 = X%v
-      OpenAD_lin_2 = X%v
-      OpenAD_lin_0 = COS(OpenAD_tmp_0)
-      OpenAD_acc_0 = (OpenAD_lin_1*OpenAD_lin_0)
-      OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
+      OpenAD_Symbol_0 = (X%v*X%v)
+      Y%v = SIN(OpenAD_Symbol_0)
+      OpenAD_Symbol_2 = X%v
+      OpenAD_Symbol_3 = X%v
+      OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
+      OpenAD_acc_0 = (OpenAD_Symbol_2*OpenAD_Symbol_1)
+      OpenAD_acc_1 = (OpenAD_Symbol_3*OpenAD_Symbol_1)
       double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
@@ -96,11 +96,11 @@ C$OPENAD XXX Template ad_template.f
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_0 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_4 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_1 = double_tape(double_tape_pointer)
-      X%d = X%d+Y%d*(OpenAD_Symbol_0)
-      X%d = X%d+Y%d*(OpenAD_Symbol_1)
+      OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+      X%d = X%d+Y%d*(OpenAD_Symbol_4)
+      X%d = X%d+Y%d*(OpenAD_Symbol_5)
       Y%d = 0.0d0
           end if
         end subroutine head
