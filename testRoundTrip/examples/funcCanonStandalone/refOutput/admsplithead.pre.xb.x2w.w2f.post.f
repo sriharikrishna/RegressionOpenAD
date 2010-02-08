@@ -98,7 +98,7 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
-      type(active) :: OpenAD_Symbol_7
+      type(active) :: OpenAD_Symbol_8
 C
 C     **** Parameters and Result ****
 C
@@ -150,7 +150,7 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
-      CALL oad_s_bar(Y(1),OpenAD_Symbol_7)
+      CALL oad_s_bar(Y(1),OpenAD_Symbol_8)
       OAD_CTMP0%d = OAD_CTMP0%d+Y(1)%d*(2.0D00)
       Y(1)%d = 0.0d0
       CALL oad_s_bar(X(1),OAD_CTMP0)

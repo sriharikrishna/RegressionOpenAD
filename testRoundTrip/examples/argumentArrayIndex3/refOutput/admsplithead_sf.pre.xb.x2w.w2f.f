@@ -94,7 +94,7 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_Symbol_1
+      TYPE (OpenADTy_active) OpenAD_Symbol_2
       TYPE (OpenADTy_active) OpenAD_prop_0
       TYPE (OpenADTy_active) OpenAD_prop_1
 C
@@ -157,7 +157,7 @@ C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(L)
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(K)
-      CALL foo(__deriv__(OpenAD_Symbol_1), __deriv__(Q(L)))
+      CALL foo(__deriv__(OpenAD_Symbol_2), __deriv__(Q(L)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y), __deriv__(OpenAD_prop_1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
@@ -215,7 +215,7 @@ C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(L)
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(K)
-      CALL foo(__deriv__(OpenAD_Symbol_1), __deriv__(Q(L)))
+      CALL foo(__deriv__(OpenAD_Symbol_2), __deriv__(Q(L)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y), __deriv__(OpenAD_prop_1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)

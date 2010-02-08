@@ -45,7 +45,7 @@ C
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_3
       TYPE (OpenADTy_active) OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -59,8 +59,8 @@ C     $OpenAD$ BEGIN REPLACEMENT 1
       I = (I + 1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
-      OpenAD_Symbol_2 = (__value__(P) * 2.0D00)
-      __value__(P) = OpenAD_Symbol_2
+      OpenAD_Symbol_3 = (__value__(P) * 2.0D00)
+      __value__(P) = OpenAD_Symbol_3
       I = (I + 1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
@@ -110,8 +110,8 @@ C     $OpenAD$ INLINE cp_arg_restore_integer_scalar(subst)
       CALL cp_arg_restore_integer_scalar(I)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
-      OpenAD_Symbol_2 = (__value__(P) * 2.0D00)
-      __value__(P) = OpenAD_Symbol_2
+      OpenAD_Symbol_3 = (__value__(P) * 2.0D00)
+      __value__(P) = OpenAD_Symbol_3
       I = (I + 1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
@@ -139,7 +139,7 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_Symbol_3
+      TYPE (OpenADTy_active) OpenAD_Symbol_4
 C
 C     **** Parameters and Result ****
 C
@@ -197,7 +197,7 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL foo(__deriv__(X(1)))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(I)
-      CALL foo(__deriv__(OpenAD_Symbol_3))
+      CALL foo(__deriv__(OpenAD_Symbol_4))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ INLINE cp_arg_store_integer_scalar(subst)
@@ -247,6 +247,6 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL foo(__deriv__(X(1)))
 C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(I)
-      CALL foo(__deriv__(OpenAD_Symbol_3))
+      CALL foo(__deriv__(OpenAD_Symbol_4))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

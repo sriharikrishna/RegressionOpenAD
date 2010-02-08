@@ -73,8 +73,8 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: OpenAD_Symbol_0
       type(active) :: OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_2
-      type(active) :: OpenAD_Symbol_4
+      type(active) :: OpenAD_Symbol_3
+      type(active) :: OpenAD_Symbol_5
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
 C
@@ -158,12 +158,12 @@ C!! requested inline of 'convert_a2p_scalar' has no defn
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       L = integer_tape(integer_tape_pointer)
-      CALL foo(OpenAD_Symbol_2,Q(L))
+      CALL foo(OpenAD_Symbol_3,Q(L))
       integer_tape_pointer = integer_tape_pointer-1
       L = integer_tape(integer_tape_pointer)
       integer_tape_pointer = integer_tape_pointer-1
       K = integer_tape(integer_tape_pointer)
-      CALL foo(OpenAD_Symbol_4,Q(L))
+      CALL foo(OpenAD_Symbol_5,Q(L))
       OpenAD_prop_1%d = OpenAD_prop_1%d+Y%d
       Y%d = 0.0d0
       Q(1)%d = Q(1)%d+OpenAD_prop_1%d
