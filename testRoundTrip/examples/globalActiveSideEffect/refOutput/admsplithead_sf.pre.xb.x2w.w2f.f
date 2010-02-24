@@ -70,16 +70,16 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
       OpenAD_Symbol_1 = __value__(AGLOBALACTIVE)
       OpenAD_Symbol_2 = __value__(P)
       __value__(AGLOBALACTIVE) = OpenAD_Symbol_3
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_1)
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_2)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_5)
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_5)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_6)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_5, __deriv__(AGLOBALACTIVE), __deriv__(
      > OpenAD_prop_0))
@@ -130,16 +130,16 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
       OpenAD_Symbol_1 = __value__(AGLOBALACTIVE)
       OpenAD_Symbol_2 = __value__(P)
       __value__(AGLOBALACTIVE) = OpenAD_Symbol_3
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_1)
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_2)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_5)
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_5)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_6)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_5, __deriv__(AGLOBALACTIVE), __deriv__(
      > OpenAD_prop_0))
@@ -213,12 +213,12 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
       __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
       OpenAD_Symbol_4 = COS(__value__(AGLOBALACTIVE))
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_4)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_4)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_7)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_7)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_7, __deriv__(Y(1)), __deriv__(
      > AGLOBALACTIVE))
@@ -265,12 +265,12 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       CALL convert_a2p_scalar(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
       __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
       OpenAD_Symbol_4 = COS(__value__(AGLOBALACTIVE))
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_4)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_4)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_7)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_7)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_7, __deriv__(Y(1)), __deriv__(
      > AGLOBALACTIVE))

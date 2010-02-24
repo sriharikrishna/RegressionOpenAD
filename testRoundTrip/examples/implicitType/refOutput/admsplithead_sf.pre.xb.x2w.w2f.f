@@ -58,12 +58,12 @@ C$OPENAD XXX Template ad_template.f
       __value__(T) = __value__(S)
       __value__(Y(1)) = SIN(__value__(T))
       OpenAD_Symbol_0 = COS(__value__(T))
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_1)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_1, __deriv__(Y(1)), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
@@ -87,12 +87,12 @@ C$OPENAD XXX Template ad_template.f
       __value__(T) = __value__(S)
       __value__(Y(1)) = SIN(__value__(T))
       OpenAD_Symbol_0 = COS(__value__(T))
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_1)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_1, __deriv__(Y(1)), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
