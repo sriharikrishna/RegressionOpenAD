@@ -59,12 +59,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (INT(1_w2f__i8) /(__value__(X(1)) * LOG(1.0D+01
      > )))
       __value__(Y(1)) = OpenAD_Symbol_1
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_2)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_2, __deriv__(Y(1)), __deriv__(
      > OpenAD_prop_0))
@@ -93,12 +93,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = (INT(1_w2f__i8) /(__value__(X(1)) * LOG(1.0D+01
      > )))
       __value__(Y(1)) = OpenAD_Symbol_1
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_2)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_2, __deriv__(Y(1)), __deriv__(
      > OpenAD_prop_0))

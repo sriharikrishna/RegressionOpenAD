@@ -298,12 +298,12 @@ C$OPENAD XXX Template ad_template.f
       CALL OAD_S_MAX_D(P1, P2, OAD_CTMP1)
       __value__(Y(1)) = (__value__(OAD_CTMP0) * OAD_CTMP1)
       OpenAD_Symbol_0 = OAD_CTMP1
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_14)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_14)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_14, __deriv__(Y(1)), __deriv__(OAD_CTMP0
      > ))
@@ -334,12 +334,12 @@ C$OPENAD XXX Template ad_template.f
       CALL OAD_S_MAX_D(P1, P2, OAD_CTMP1)
       __value__(Y(1)) = (__value__(OAD_CTMP0) * OAD_CTMP1)
       OpenAD_Symbol_0 = OAD_CTMP1
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_Symbol_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_14)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_14)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_14, __deriv__(Y(1)), __deriv__(OAD_CTMP0
      > ))

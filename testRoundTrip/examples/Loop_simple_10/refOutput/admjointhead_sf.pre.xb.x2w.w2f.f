@@ -90,10 +90,10 @@ C$OPENAD XXX Simple loop
           __value__(Y(1)) = OpenAD_Symbol_5
           OpenAD_acc_0 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
           OpenAD_acc_1 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
-C         $OpenAD$ INLINE push(subst)
-          CALL push(OpenAD_acc_0)
-C         $OpenAD$ INLINE push(subst)
-          CALL push(OpenAD_acc_1)
+C         $OpenAD$ INLINE push_s0(subst)
+          CALL push_s0(OpenAD_acc_0)
+C         $OpenAD$ INLINE push_s0(subst)
+          CALL push_s0(OpenAD_acc_1)
         ELSE
           __value__(Y(1)) = 0.0
         ENDIF
@@ -111,10 +111,10 @@ C     $OpenAD$ INLINE pop_i(subst)
 C       $OpenAD$ INLINE pop_i(subst)
         CALL pop_i(A(I, J))
         IF(A(I, J) .ne. 0) THEN
-C         $OpenAD$ INLINE Pop(subst)
-          CALL Pop(OpenAD_Symbol_36)
-C         $OpenAD$ INLINE Pop(subst)
-          CALL Pop(OpenAD_Symbol_37)
+C         $OpenAD$ INLINE pop_s0(subst)
+          CALL pop_s0(OpenAD_Symbol_36)
+C         $OpenAD$ INLINE pop_s0(subst)
+          CALL pop_s0(OpenAD_Symbol_37)
 C         $OpenAD$ INLINE Saxpy(subst,subst,subst)
           CALL Saxpy(OpenAD_Symbol_36, __deriv__(Y(1)), __deriv__(
      > OpenAD_prop_0))
@@ -201,10 +201,10 @@ C$OPENAD XXX Simple loop
           __value__(Y(1)) = OpenAD_Symbol_5
           OpenAD_acc_0 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
           OpenAD_acc_1 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
-C         $OpenAD$ INLINE push(subst)
-          CALL push(OpenAD_acc_0)
-C         $OpenAD$ INLINE push(subst)
-          CALL push(OpenAD_acc_1)
+C         $OpenAD$ INLINE push_s0(subst)
+          CALL push_s0(OpenAD_acc_0)
+C         $OpenAD$ INLINE push_s0(subst)
+          CALL push_s0(OpenAD_acc_1)
           OpenAD_Symbol_10 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_10)
@@ -227,10 +227,10 @@ C     $OpenAD$ INLINE pop_i(subst)
 C       $OpenAD$ INLINE pop_i(subst)
         CALL pop_i(OpenAD_Symbol_8)
         IF(OpenAD_Symbol_8 .ne. 0) THEN
-C         $OpenAD$ INLINE Pop(subst)
-          CALL Pop(OpenAD_Symbol_36)
-C         $OpenAD$ INLINE Pop(subst)
-          CALL Pop(OpenAD_Symbol_37)
+C         $OpenAD$ INLINE pop_s0(subst)
+          CALL pop_s0(OpenAD_Symbol_36)
+C         $OpenAD$ INLINE pop_s0(subst)
+          CALL pop_s0(OpenAD_Symbol_37)
 C         $OpenAD$ INLINE Saxpy(subst,subst,subst)
           CALL Saxpy(OpenAD_Symbol_36, __deriv__(Y(1)), __deriv__(
      > OpenAD_prop_0))
