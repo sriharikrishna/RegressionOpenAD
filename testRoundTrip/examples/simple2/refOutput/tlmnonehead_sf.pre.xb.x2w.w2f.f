@@ -25,12 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X1
@@ -44,6 +38,8 @@ C
       TYPE (OpenADTy_active) T2
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_10
+      REAL(w2f__8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -51,6 +47,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_8
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -75,12 +72,12 @@ C$OPENAD XXX Template ad_template.f
       __value__(Y2) = (__value__(X2) * __value__(T2))
       OpenAD_Symbol_7 = __value__(T2)
       OpenAD_Symbol_8 = __value__(X2)
-      OpenAD_acc_0 = (OpenAD_Symbol_5 * OpenAD_Symbol_4)
-      OpenAD_acc_1 = (OpenAD_Symbol_0 * OpenAD_acc_0)
-      OpenAD_acc_2 = (OpenAD_Symbol_1 * OpenAD_acc_0)
+      OpenAD_Symbol_9 = (OpenAD_Symbol_5 * OpenAD_Symbol_4)
+      OpenAD_Symbol_10 = (OpenAD_Symbol_0 * OpenAD_Symbol_9)
+      OpenAD_Symbol_11 = (OpenAD_Symbol_1 * OpenAD_Symbol_9)
       CALL sax(OpenAD_Symbol_3, __deriv__(X1), __deriv__(T2))
-      CALL saxpy(OpenAD_acc_1, __deriv__(X1), __deriv__(T2))
-      CALL saxpy(OpenAD_acc_2, __deriv__(X2), __deriv__(T2))
+      CALL saxpy(OpenAD_Symbol_10, __deriv__(X1), __deriv__(T2))
+      CALL saxpy(OpenAD_Symbol_11, __deriv__(X2), __deriv__(T2))
       CALL sax(OpenAD_Symbol_6, __deriv__(T2), __deriv__(Y1))
       CALL sax(OpenAD_Symbol_7, __deriv__(X2), __deriv__(Y2))
       CALL saxpy(OpenAD_Symbol_8, __deriv__(T2), __deriv__(Y2))

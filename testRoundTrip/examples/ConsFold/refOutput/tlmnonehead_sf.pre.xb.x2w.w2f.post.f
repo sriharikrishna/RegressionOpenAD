@@ -28,10 +28,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:1)
@@ -48,6 +44,7 @@ C
       type(active) :: T7
       type(active) :: Y1
       REAL(w2f__8) OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_Symbol_7
 C
 C     **** Top Level Pragmas ****
 C
@@ -67,6 +64,6 @@ C$OPENAD XXX Template ad_template.f
       Y1%v = EXP(T7%v)
       OpenAD_Symbol_6 = EXP(T7%v)
       Y(1)%v = Y1%v
-      OpenAD_acc_0 = (1.0D00*OpenAD_Symbol_6)
-      CALL sax(OpenAD_acc_0,X(1),Y(1))
+      OpenAD_Symbol_7 = (1.0D00*OpenAD_Symbol_6)
+      CALL sax(OpenAD_Symbol_7,X(1),Y(1))
       END SUBROUTINE

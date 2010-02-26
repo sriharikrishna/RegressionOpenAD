@@ -197,11 +197,11 @@ C restore arguments
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,X(1))
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,X(1))
       CALL foo(OpenAD_Symbol_0,L)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(X(1),OpenAD_Symbol_0)
       IF(L) THEN
         Y(1)%v = X(1)%v
       ENDIF
@@ -218,11 +218,11 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,X(1))
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,X(1))
       CALL foo(OpenAD_Symbol_0,L)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(X(1),OpenAD_Symbol_0)
       IF(L) THEN
         Y(1)%v = X(1)%v
         OpenAD_Symbol_2 = 1_w2f__i8

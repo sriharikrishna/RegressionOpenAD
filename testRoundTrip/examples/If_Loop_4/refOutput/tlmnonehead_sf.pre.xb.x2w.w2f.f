@@ -28,7 +28,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_acc_0
       TYPE (OpenADTy_active) OpenAD_prop_0
       TYPE (OpenADTy_active) OpenAD_prop_1
 C
@@ -49,6 +48,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -65,8 +65,8 @@ C$OPENAD XXX Template ad_template.f
           __value__(Y(INT(I))) = (PI * OpenAD_Symbol_0)
           OpenAD_Symbol_3 = COS(__value__(X(I)))
           OpenAD_Symbol_2 = PI
-          OpenAD_acc_0 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
-          CALL sax(OpenAD_acc_0, __deriv__(X(I)), __deriv__(Y(I)))
+          OpenAD_Symbol_9 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
+          CALL sax(OpenAD_Symbol_9, __deriv__(X(I)), __deriv__(Y(I)))
         ELSE
           __value__(Y(INT(I))) = (PI + COS(__value__(X(I))))
           OpenAD_Symbol_5 = (- SIN(__value__(X(I))))

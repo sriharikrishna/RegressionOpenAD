@@ -100,11 +100,11 @@ C$OPENAD XXX Template ad_template.f
       __value__(AGLOBALACTIVE) = 1.61803400516510009766D00
       CALL zero_deriv(__deriv__(AGLOBALACTIVE))
       CALL foo(__deriv__(X(1)))
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
       CALL foo(__deriv__(OpenAD_Symbol_0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
       __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
       OpenAD_Symbol_4 = COS(__value__(AGLOBALACTIVE))
       CALL sax(OpenAD_Symbol_4, __deriv__(AGLOBALACTIVE), __deriv__(Y(1

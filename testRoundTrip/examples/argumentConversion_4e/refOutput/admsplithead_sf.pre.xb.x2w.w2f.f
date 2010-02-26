@@ -61,11 +61,11 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
         __value__(T(INT(I), 2)) = __value__(X(I))
       END DO
-C     $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
-      CALL convert_a2p_matrix(OpenAD_Symbol_0, __deriv__(T))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0, __deriv__(T))
       CALL barext(OpenAD_Symbol_0(1, 2))
-C     $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
-      CALL convert_p2a_matrix(__deriv__(T), OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(T), OpenAD_Symbol_0)
       __value__(Y(1)) = __value__(T(1, 2))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
@@ -79,11 +79,11 @@ C       $OpenAD$ INLINE push_i(subst)
       END DO
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_3)
-C     $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
-      CALL convert_a2p_matrix(OpenAD_Symbol_0, __deriv__(T))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0, __deriv__(T))
       CALL barext(OpenAD_Symbol_0(1, 2))
-C     $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
-      CALL convert_p2a_matrix(__deriv__(T), OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(T), OpenAD_Symbol_0)
       __value__(Y(1)) = __value__(T(1, 2))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
@@ -128,11 +128,11 @@ C       $OpenAD$ INLINE push_i(subst)
       END DO
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_6)
-C     $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
-      CALL convert_a2p_matrix(OpenAD_Symbol_0, __deriv__(T))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0, __deriv__(T))
       CALL barext(OpenAD_Symbol_0(1, 2))
-C     $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
-      CALL convert_p2a_matrix(__deriv__(T), OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(T), OpenAD_Symbol_0)
       __value__(Y(1)) = __value__(T(1, 2))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11

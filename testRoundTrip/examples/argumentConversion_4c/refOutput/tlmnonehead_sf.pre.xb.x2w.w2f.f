@@ -89,18 +89,16 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         DO J = 1, 2, 1
           CALL foo(__deriv__(AX(I, J)), __deriv__(Y))
-C         $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-          CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), APX(I, J)
-     > )
-C         $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-          CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_1), PY)
+C         $OpenAD$ INLINE oad_convert(subst,subst)
+          CALL oad_convert(__deriv__(OpenAD_Symbol_0), APX(I, J))
+C         $OpenAD$ INLINE oad_convert(subst,subst)
+          CALL oad_convert(__deriv__(OpenAD_Symbol_1), PY)
           CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(
      > OpenAD_Symbol_1))
-C         $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-          CALL convert_a2p_scalar(APX(I, J), __deriv__(OpenAD_Symbol_0)
-     > )
-C         $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-          CALL convert_a2p_scalar(PY, __deriv__(OpenAD_Symbol_1))
+C         $OpenAD$ INLINE oad_convert(subst,subst)
+          CALL oad_convert(APX(I, J), __deriv__(OpenAD_Symbol_0))
+C         $OpenAD$ INLINE oad_convert(subst,subst)
+          CALL oad_convert(PY, __deriv__(OpenAD_Symbol_1))
         END DO
       END DO
       END SUBROUTINE

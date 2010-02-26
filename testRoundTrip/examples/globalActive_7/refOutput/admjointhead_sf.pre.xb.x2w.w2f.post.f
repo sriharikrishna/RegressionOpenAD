@@ -374,15 +374,15 @@ C restore arguments
             our_rev_mode%arg_store=.FALSE.
 C original function
 C$OPENAD XXX Template ad_template.f
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(OpenAD_Symbol_0,X)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,Y)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,X)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_1,Y)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(X,OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(Y,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(X,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(Y,OpenAD_Symbol_1)
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -396,15 +396,15 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(OpenAD_Symbol_0,X)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,Y)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,X)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_1,Y)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(X,OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(Y,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(X,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(Y,OpenAD_Symbol_1)
 
 C taping end
             our_rev_mode%arg_store=.FALSE.

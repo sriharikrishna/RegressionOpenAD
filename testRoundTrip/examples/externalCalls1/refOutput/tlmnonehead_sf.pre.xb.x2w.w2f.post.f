@@ -49,11 +49,11 @@ C
 C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
       CALL setderiv(T,X(1))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,T)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(T,OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(T,OpenAD_Symbol_0)
       Y%v = (X(2)%v*T%v)
       OpenAD_Symbol_1 = T%v
       OpenAD_Symbol_2 = X(2)%v

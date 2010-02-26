@@ -53,13 +53,6 @@ C
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-C
 C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) N
@@ -76,7 +69,11 @@ C
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_Symbol_16
+      REAL(w2f__8) OpenAD_Symbol_18
+      REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_20
+      REAL(w2f__8) OpenAD_Symbol_21
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_8
@@ -90,10 +87,10 @@ C
       OpenAD_Symbol_4 = (2 *(__value__(U(2)) **(2 - INT(1_w2f__i8))))
       OpenAD_Symbol_1 = (5.0D-01 / OpenAD_Symbol_0)
       __value__(V(1)) = OpenAD_Symbol_0
-      OpenAD_acc_0 = (OpenAD_Symbol_4 * OpenAD_Symbol_1)
-      OpenAD_acc_1 = (OpenAD_Symbol_2 * OpenAD_Symbol_1)
-      CALL sax(OpenAD_acc_0, __deriv__(U(2)), __deriv__(V(1)))
-      CALL saxpy(OpenAD_acc_1, __deriv__(U(1)), __deriv__(V(1)))
+      OpenAD_Symbol_18 = (OpenAD_Symbol_4 * OpenAD_Symbol_1)
+      OpenAD_Symbol_19 = (OpenAD_Symbol_2 * OpenAD_Symbol_1)
+      CALL sax(OpenAD_Symbol_18, __deriv__(U(2)), __deriv__(V(1)))
+      CALL saxpy(OpenAD_Symbol_19, __deriv__(U(1)), __deriv__(V(1)))
       OpenAD_Symbol_14 = (__value__(U(1)) * 2.0D00)
       __value__(V(2)) = ((__value__(U(1)) ** 3) + SIN(__value__(U(2)))
      >  +(__value__(U(2)) / __value__(U(1))) - COS(__value__(U(1))) +(
@@ -107,14 +104,14 @@ C
       OpenAD_Symbol_12 = (3 *(__value__(U(2)) **(3 - INT(1_w2f__i8))))
       OpenAD_Symbol_15 = OpenAD_Symbol_14
       OpenAD_Symbol_16 = __value__(U(2))
-      OpenAD_acc_2 = (OpenAD_Symbol_11 * INT((-1_w2f__i8)))
-      OpenAD_acc_3 = (2.0D00 * OpenAD_Symbol_16)
+      OpenAD_Symbol_20 = (OpenAD_Symbol_11 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_21 = (2.0D00 * OpenAD_Symbol_16)
       CALL sax(OpenAD_Symbol_12, __deriv__(U(2)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_6, __deriv__(U(1)), __deriv__(V(2)))
-      CALL saxpy(OpenAD_acc_2, __deriv__(U(1)), __deriv__(V(2)))
+      CALL saxpy(OpenAD_Symbol_20, __deriv__(U(1)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_8, __deriv__(U(2)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_9, __deriv__(U(2)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_10, __deriv__(U(1)), __deriv__(V(2)))
       CALL saxpy(OpenAD_Symbol_15, __deriv__(U(2)), __deriv__(V(2)))
-      CALL saxpy(OpenAD_acc_3, __deriv__(U(1)), __deriv__(V(2)))
+      CALL saxpy(OpenAD_Symbol_21, __deriv__(U(1)), __deriv__(V(2)))
       END SUBROUTINE

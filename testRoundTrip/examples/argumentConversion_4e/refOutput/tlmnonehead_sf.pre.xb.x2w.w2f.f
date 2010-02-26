@@ -52,11 +52,11 @@ C$OPENAD XXX Template ad_template.f
         __value__(T(INT(I), 2)) = __value__(X(I))
         CALL setderiv(__deriv__(T(I, 2)), __deriv__(X(I)))
       END DO
-C     $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
-      CALL convert_a2p_matrix(OpenAD_Symbol_0, __deriv__(T))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0, __deriv__(T))
       CALL barext(OpenAD_Symbol_0(1, 2))
-C     $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
-      CALL convert_p2a_matrix(__deriv__(T), OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(T), OpenAD_Symbol_0)
       __value__(Y(1)) = __value__(T(1, 2))
       CALL setderiv(__deriv__(Y(1)), __deriv__(T(1, 2)))
       END SUBROUTINE

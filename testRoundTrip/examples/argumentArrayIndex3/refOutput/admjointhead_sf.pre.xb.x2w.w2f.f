@@ -126,11 +126,11 @@ C$OPENAD XXX Template ad_template.f
       __value__(Y) = __value__(Q(1))
       P(1) = 1.0
       L = 1
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), P(K))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), P(K))
       CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(Q(L)))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(P(K), __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(P(K), __deriv__(OpenAD_Symbol_0))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
@@ -142,11 +142,11 @@ C     $OpenAD$ INLINE push_i(subst)
       __value__(Y) = __value__(Q(1))
       P(1) = 1.0
       L = 1
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), P(K))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), P(K))
       CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(Q(L)))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(P(K), __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(P(K), __deriv__(OpenAD_Symbol_0))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(K)
 C     $OpenAD$ INLINE push_i(subst)
@@ -200,11 +200,11 @@ C     $OpenAD$ INLINE push_i(subst)
       __value__(Y) = __value__(Q(1))
       P(1) = 1.0
       L = 1
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), P(K))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), P(K))
       CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(Q(L)))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(P(K), __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(P(K), __deriv__(OpenAD_Symbol_0))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(K)
 C     $OpenAD$ INLINE push_i(subst)

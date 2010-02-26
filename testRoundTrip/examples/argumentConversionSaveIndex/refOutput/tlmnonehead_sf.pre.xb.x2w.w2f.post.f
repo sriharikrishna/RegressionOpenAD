@@ -96,11 +96,11 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       A(1) = 9.085830301E-03
       OpenAD_Symbol_1 = I
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,A(I))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0,A(I))
       CALL foo(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(A(INT(OpenAD_Symbol_1)),OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(A(INT(OpenAD_Symbol_1)),OpenAD_Symbol_0)
       CALL foo(X(1))
       Y(1)%v = X(1)%v
       CALL setderiv(Y(1),X(1))

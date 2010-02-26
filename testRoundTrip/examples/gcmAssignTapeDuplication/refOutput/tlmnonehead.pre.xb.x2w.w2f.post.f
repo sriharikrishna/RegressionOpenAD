@@ -8,14 +8,6 @@ C$OPENAD XXX File_start [head.f]
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_acc_4
-      REAL(w2f__8) OpenAD_acc_5
-      REAL(w2f__8) OpenAD_acc_6
-      REAL(w2f__8) OpenAD_acc_7
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
 C
@@ -35,7 +27,15 @@ C
       REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_14
+      REAL(w2f__8) OpenAD_Symbol_15
+      REAL(w2f__8) OpenAD_Symbol_16
+      REAL(w2f__8) OpenAD_Symbol_17
+      REAL(w2f__8) OpenAD_Symbol_18
+      REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_20
+      REAL(w2f__8) OpenAD_Symbol_21
+      REAL(w2f__8) OpenAD_Symbol_22
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
@@ -69,14 +69,14 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_6 = (-(OpenAD_Symbol_3/(OpenAD_Symbol_4*OpenAD_Symbo
      +l_4)))
       OpenAD_Symbol_2 = X(3)%v
-      OpenAD_acc_0 = (OpenAD_Symbol_5*OpenAD_Symbol_2)
-      OpenAD_acc_1 = (OpenAD_Symbol_6*OpenAD_Symbol_2)
-      OpenAD_acc_2 = (OpenAD_Symbol_13*OpenAD_acc_1)
-      OpenAD_acc_3 = (OpenAD_Symbol_14*OpenAD_acc_1)
-      OpenAD_acc_4 = (OpenAD_Symbol_8*OpenAD_acc_0)
-      OpenAD_acc_5 = (OpenAD_Symbol_9*OpenAD_acc_0)
-      OpenAD_acc_6 = (OpenAD_Symbol_10*OpenAD_acc_0)
-      OpenAD_acc_7 = (OpenAD_Symbol_11*OpenAD_acc_0)
+      OpenAD_Symbol_15 = (OpenAD_Symbol_5*OpenAD_Symbol_2)
+      OpenAD_Symbol_16 = (OpenAD_Symbol_6*OpenAD_Symbol_2)
+      OpenAD_Symbol_17 = (OpenAD_Symbol_13*OpenAD_Symbol_16)
+      OpenAD_Symbol_18 = (OpenAD_Symbol_14*OpenAD_Symbol_16)
+      OpenAD_Symbol_19 = (OpenAD_Symbol_8*OpenAD_Symbol_15)
+      OpenAD_Symbol_20 = (OpenAD_Symbol_9*OpenAD_Symbol_15)
+      OpenAD_Symbol_21 = (OpenAD_Symbol_10*OpenAD_Symbol_15)
+      OpenAD_Symbol_22 = (OpenAD_Symbol_11*OpenAD_Symbol_15)
       CALL setderiv(OpenAD_prop_0,X(8))
       CALL inc_deriv(OpenAD_prop_0,X(7))
       CALL inc_deriv(OpenAD_prop_0,X(5))
@@ -86,11 +86,11 @@ C$OPENAD XXX Template ad_template.f
       CALL inc_deriv(OpenAD_prop_1,X(9))
       CALL inc_deriv(OpenAD_prop_1,X(10))
       CALL sax(OpenAD_Symbol_1,X(3),Y(1))
-      CALL saxpy(OpenAD_acc_2,X(1),Y(1))
-      CALL saxpy(OpenAD_acc_3,OpenAD_prop_1,Y(1))
-      CALL saxpy(OpenAD_acc_1,X(2),Y(1))
-      CALL saxpy(OpenAD_acc_4,X(1),Y(1))
-      CALL saxpy(OpenAD_acc_5,OpenAD_prop_0,Y(1))
-      CALL saxpy(OpenAD_acc_6,X(2),Y(1))
-      CALL saxpy(OpenAD_acc_7,X(4),Y(1))
+      CALL saxpy(OpenAD_Symbol_17,X(1),Y(1))
+      CALL saxpy(OpenAD_Symbol_18,OpenAD_prop_1,Y(1))
+      CALL saxpy(OpenAD_Symbol_16,X(2),Y(1))
+      CALL saxpy(OpenAD_Symbol_19,X(1),Y(1))
+      CALL saxpy(OpenAD_Symbol_20,OpenAD_prop_0,Y(1))
+      CALL saxpy(OpenAD_Symbol_21,X(2),Y(1))
+      CALL saxpy(OpenAD_Symbol_22,X(4),Y(1))
       END SUBROUTINE

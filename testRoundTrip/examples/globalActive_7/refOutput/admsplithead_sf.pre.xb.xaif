@@ -1184,7 +1184,7 @@
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_USE]"/>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_vector" statement_id="SubroutineCallAlg::addConversion prior">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -1196,7 +1196,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -1220,7 +1220,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_vector" statement_id="SubroutineCallAlg::addConversion post">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="7" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="7"/>
@@ -1232,7 +1232,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="8" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="7"/>
@@ -1255,7 +1255,7 @@
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_USE]"/>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_vector" statement_id="SubroutineCallAlg::addConversion prior">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -1267,7 +1267,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -1291,7 +1291,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_vector" statement_id="SubroutineCallAlg::addConversion post">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="7" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="7"/>
@@ -1303,7 +1303,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="8" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="7"/>
@@ -1394,7 +1394,7 @@
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_USE]"/>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_vector" statement_id="SubroutineCallAlg::addConversion prior">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -1406,7 +1406,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
@@ -1430,7 +1430,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_vector" statement_id="SubroutineCallAlg::addConversion post">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="7" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="7"/>
@@ -1442,7 +1442,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion post">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="8" du_ud="2" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="7"/>

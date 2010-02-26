@@ -112,11 +112,11 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
         T(INT(I),2)%v = X(I)%v
       END DO
-C!! requested inline of 'convert_a2p_matrix' has no defn
-      CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0(1,2))
-C!! requested inline of 'convert_p2a_matrix' has no defn
-      CALL convert_p2a_matrix(T,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(T,OpenAD_Symbol_0)
       Y(1)%v = T(1,2)%v
 
 C original function end
@@ -140,11 +140,11 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-C!! requested inline of 'convert_a2p_matrix' has no defn
-      CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0(1,2))
-C!! requested inline of 'convert_p2a_matrix' has no defn
-      CALL convert_p2a_matrix(T,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(T,OpenAD_Symbol_0)
       Y(1)%v = T(1,2)%v
 
 C taping end

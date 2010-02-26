@@ -204,11 +204,11 @@ C$OPENAD XXX Template ad_template.f
       Y%v = Q(1)%v
       P(1) = 1.0
       L = 1
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,P(K))
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,P(K))
       CALL foo(OpenAD_Symbol_0,Q(L))
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(P(K),OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(P(K),OpenAD_Symbol_0)
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -230,11 +230,11 @@ C$OPENAD XXX Template ad_template.f
       Y%v = Q(1)%v
       P(1) = 1.0
       L = 1
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,P(K))
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,P(K))
       CALL foo(OpenAD_Symbol_0,Q(L))
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(P(K),OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(P(K),OpenAD_Symbol_0)
       integer_tape(integer_tape_pointer) = K
       integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = L

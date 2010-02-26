@@ -75,13 +75,13 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL foo(__deriv__(X), __deriv__(Y))
-C     $OpenAD$ INLINE convert_p2a_vector(subst,subst)
-      CALL convert_p2a_vector(__deriv__(OpenAD_Symbol_0), PX)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_1), PY)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), PX)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_1), PY)
       CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(OpenAD_Symbol_1))
-C     $OpenAD$ INLINE convert_a2p_vector(subst,subst)
-      CALL convert_a2p_vector(PX, __deriv__(OpenAD_Symbol_0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(PY, __deriv__(OpenAD_Symbol_1))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(PX, __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(PY, __deriv__(OpenAD_Symbol_1))
       END SUBROUTINE

@@ -56,11 +56,11 @@ C
 C$OPENAD XXX Template ad_template.f
       P = 2.0D00
       CALL foo(X(1),X(2),C,D)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,P)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0,P)
       CALL foo(X(1),OpenAD_Symbol_0,C,D)
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(P,OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(P,OpenAD_Symbol_0)
       Y(3)%v = (C%v*D%v)
       OpenAD_Symbol_1 = D%v
       OpenAD_Symbol_2 = C%v
@@ -83,8 +83,6 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -96,12 +94,14 @@ C
 C
 C     **** Local Variables and Functions ****
 C
+      REAL(w2f__8) OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_8
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Statements ****
 C
@@ -114,11 +114,11 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_7 = (A%v+B%v)
       D%v = COS(OpenAD_Symbol_7)
       OpenAD_Symbol_8 = (-SIN(OpenAD_Symbol_7))
-      OpenAD_acc_0 = (OpenAD_Symbol_5*OpenAD_Symbol_4)
-      OpenAD_acc_1 = (OpenAD_Symbol_6*OpenAD_Symbol_4)
+      OpenAD_Symbol_9 = (OpenAD_Symbol_5*OpenAD_Symbol_4)
+      OpenAD_Symbol_10 = (OpenAD_Symbol_6*OpenAD_Symbol_4)
       CALL setderiv(OpenAD_prop_0,A)
       CALL inc_deriv(OpenAD_prop_0,B)
-      CALL sax(OpenAD_acc_0,A,C)
-      CALL saxpy(OpenAD_acc_1,B,C)
+      CALL sax(OpenAD_Symbol_9,A,C)
+      CALL saxpy(OpenAD_Symbol_10,B,C)
       CALL sax(OpenAD_Symbol_8,OpenAD_prop_0,D)
       END SUBROUTINE

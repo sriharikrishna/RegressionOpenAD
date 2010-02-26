@@ -79,9 +79,9 @@ C$OPENAD XXX Template ad_template.f
       L = 1
       CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(Q(1)))
       CALL setderiv(__deriv__(Y), __deriv__(OpenAD_prop_1))
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), P(K))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), P(K))
       CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(Q(L)))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(P(K), __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(P(K), __deriv__(OpenAD_Symbol_0))
       END SUBROUTINE

@@ -55,11 +55,11 @@ C$OPENAD XXX Template ad_template.f
         T(INT(I),2)%v = X(I)%v
         CALL setderiv(T(I,2),X(I))
       END DO
-C     $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
-      CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0(1,2))
-C     $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
-      CALL convert_p2a_matrix(T,OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(T,OpenAD_Symbol_0)
       Y(1)%v = T(1,2)%v
       CALL setderiv(Y(1),T(1,2))
       END SUBROUTINE

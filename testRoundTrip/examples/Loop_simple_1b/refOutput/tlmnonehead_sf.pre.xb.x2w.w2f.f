@@ -28,8 +28,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
       TYPE (OpenADTy_active) OpenAD_prop_0
       TYPE (OpenADTy_active) OpenAD_prop_1
 C
@@ -47,6 +45,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
+      REAL(w2f__8) OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_Symbol_7
 C
 C     **** Top Level Pragmas ****
 C
@@ -66,12 +66,12 @@ C$OPENAD XXX Simple loop
         OpenAD_Symbol_4 = __value__(X(1))
         OpenAD_Symbol_2 = I
         __value__(Y(1)) = OpenAD_Symbol_5
-        OpenAD_acc_0 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
-        OpenAD_acc_1 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
+        OpenAD_Symbol_6 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
+        OpenAD_Symbol_7 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
         CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y(1)))
-        CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(1)))
-        CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prop_0), __deriv__(Y(
-     > 1)))
+        CALL sax(OpenAD_Symbol_6, __deriv__(X(1)), __deriv__(Y(1)))
+        CALL saxpy(OpenAD_Symbol_7, __deriv__(OpenAD_prop_0), __deriv__
+     > (Y(1)))
       END DO
       CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(Y(1)))
       CALL setderiv(__deriv__(Y(1)), __deriv__(OpenAD_prop_1))

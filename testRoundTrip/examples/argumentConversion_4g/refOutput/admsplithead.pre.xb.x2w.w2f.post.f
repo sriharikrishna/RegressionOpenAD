@@ -107,13 +107,13 @@ C original function
       Y(1:)%v = X(1:)%v
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_Symbol_0,Y)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(OpenAD_Symbol_0,Y)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,Y)
       CALL FOOI(OpenAD_Symbol_0)
 C!! requested inline of 'oad_ShapeTest' has no defn
       CALL oad_ShapeTest(OpenAD_Symbol_0,Y)
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(Y,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(Y,OpenAD_Symbol_0)
           end if
           if (our_rev_mode%tape) then
 C taping
@@ -121,13 +121,13 @@ C$OPENAD XXX Template ad_template.f
       Y(1:)%v = X(1:)%v
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_Symbol_0,Y)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(OpenAD_Symbol_0,Y)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,Y)
       CALL FOOI(OpenAD_Symbol_0)
 C!! requested inline of 'oad_ShapeTest' has no defn
       CALL oad_ShapeTest(OpenAD_Symbol_0,Y)
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(Y,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(Y,OpenAD_Symbol_0)
           end if
           if (our_rev_mode%adjoint) then
 C adjoint

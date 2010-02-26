@@ -266,15 +266,15 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         DO J = 1,2,1
           CALL foo(AX(I,J),Y)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-          CALL convert_p2a_scalar(OpenAD_Symbol_0,APX(I,J))
-C!! requested inline of 'convert_p2a_scalar' has no defn
-          CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
+C!! requested inline of 'oad_convert' has no defn
+          CALL oad_convert(OpenAD_Symbol_0,APX(I,J))
+C!! requested inline of 'oad_convert' has no defn
+          CALL oad_convert(OpenAD_Symbol_1,PY)
           CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-          CALL convert_a2p_scalar(APX(I,J),OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-          CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+          CALL oad_convert(APX(I,J),OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+          CALL oad_convert(PY,OpenAD_Symbol_1)
         END DO
       END DO
 
@@ -301,15 +301,15 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         DO J = 1,2,1
           CALL foo(AX(I,J),Y)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-          CALL convert_p2a_scalar(OpenAD_Symbol_0,APX(I,J))
-C!! requested inline of 'convert_p2a_scalar' has no defn
-          CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
+C!! requested inline of 'oad_convert' has no defn
+          CALL oad_convert(OpenAD_Symbol_0,APX(I,J))
+C!! requested inline of 'oad_convert' has no defn
+          CALL oad_convert(OpenAD_Symbol_1,PY)
           CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-          CALL convert_a2p_scalar(APX(I,J),OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-          CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+          CALL oad_convert(APX(I,J),OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+          CALL oad_convert(PY,OpenAD_Symbol_1)
         END DO
       END DO
 

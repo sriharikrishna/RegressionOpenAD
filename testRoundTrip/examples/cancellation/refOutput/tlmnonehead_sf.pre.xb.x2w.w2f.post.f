@@ -31,10 +31,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
       type(active) :: OpenAD_prop_2
@@ -62,7 +58,11 @@ C
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_Symbol_16
+      REAL(w2f__8) OpenAD_Symbol_17
+      REAL(w2f__8) OpenAD_Symbol_18
+      REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_Symbol_20
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
@@ -88,11 +88,11 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_5 = A%v
       OpenAD_Symbol_6 = X2%v
       C%v = X2%v
-      OpenAD_acc_0 = (OpenAD_Symbol_3*OpenAD_Symbol_2)
-      OpenAD_acc_1 = (OpenAD_Symbol_4*OpenAD_Symbol_2)
+      OpenAD_Symbol_17 = (OpenAD_Symbol_3*OpenAD_Symbol_2)
+      OpenAD_Symbol_18 = (OpenAD_Symbol_4*OpenAD_Symbol_2)
       CALL setderiv(C,X2)
-      CALL sax(OpenAD_acc_0,X1,A)
-      CALL saxpy(OpenAD_acc_1,X2,A)
+      CALL sax(OpenAD_Symbol_17,X1,A)
+      CALL saxpy(OpenAD_Symbol_18,X2,A)
       CALL sax(OpenAD_Symbol_5,X2,B)
       CALL saxpy(OpenAD_Symbol_6,A,B)
       OpenAD_Symbol_8 = SIN(C%v)
@@ -113,14 +113,14 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_14 = B%v
       OpenAD_Symbol_15 = E%v
       OpenAD_Symbol_16 = C%v
-      OpenAD_acc_2 = (5.0D-01*OpenAD_Symbol_14)
-      OpenAD_acc_3 = (5.0D-01*OpenAD_Symbol_16)
+      OpenAD_Symbol_19 = (5.0D-01*OpenAD_Symbol_14)
+      OpenAD_Symbol_20 = (5.0D-01*OpenAD_Symbol_16)
       CALL setderiv(OpenAD_prop_1,F)
       CALL dec_deriv(OpenAD_prop_1,A)
       CALL setderiv(OpenAD_prop_2,D)
       CALL dec_deriv(OpenAD_prop_2,A)
       CALL sax(OpenAD_Symbol_13,B,Y)
-      CALL saxpy(OpenAD_acc_2,OpenAD_prop_1,Y)
+      CALL saxpy(OpenAD_Symbol_19,OpenAD_prop_1,Y)
       CALL saxpy(OpenAD_Symbol_15,C,Y)
-      CALL saxpy(OpenAD_acc_3,OpenAD_prop_2,Y)
+      CALL saxpy(OpenAD_Symbol_20,OpenAD_prop_2,Y)
       END SUBROUTINE

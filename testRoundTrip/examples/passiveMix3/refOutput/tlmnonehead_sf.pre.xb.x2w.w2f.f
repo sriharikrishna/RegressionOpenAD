@@ -74,8 +74,8 @@ C
 C
 C     **** Statements ****
 C
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), M1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), M1)
       CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_0), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
       __value__(M2) = __value__(OAD_CTMP0)
@@ -115,12 +115,12 @@ C
 C$OPENAD XXX Template ad_template.f
       T = 2.0D00
       P = SQRT(3.0D00)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_1), T)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_1), T)
       CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_1), __deriv__(X(1)),
      >  __deriv__(OAD_CTMP0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(T, __deriv__(OpenAD_Symbol_1))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(T, __deriv__(OpenAD_Symbol_1))
       __value__(T1) = __value__(OAD_CTMP0)
       CALL setderiv(__deriv__(T1), __deriv__(OAD_CTMP0))
       CALL OAD_S_MIN_D(__deriv__(X(1)), __deriv__(T1), __deriv__(

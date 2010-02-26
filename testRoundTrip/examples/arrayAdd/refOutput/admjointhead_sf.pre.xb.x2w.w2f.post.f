@@ -122,11 +122,11 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
       Z(1:INT(SIZE(X)))%v = X(1:2)%v
-      OpenAD_Symbol_0 = SIZE(INT(X%v))
+      OpenAD_Symbol_0 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_0
       integer_tape_pointer = integer_tape_pointer+1
       Y(1:2)%v = (X(1:2)%v+Z(1:INT(SIZE(X)))%v)
-      OpenAD_Symbol_1 = SIZE(INT(X%v))
+      OpenAD_Symbol_1 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
 

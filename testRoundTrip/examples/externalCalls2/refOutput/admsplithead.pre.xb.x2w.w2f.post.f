@@ -49,22 +49,22 @@ C$OPENAD XXX Template ad_template.f
          if (our_rev_mode%plain) then
 C original function
       T%v = X(1)%v
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,T)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(T,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(T,OpenAD_Symbol_0)
       Y%v = (X(2)%v*T%v)
           end if
           if (our_rev_mode%tape) then
 C taping
 C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,T)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,T)
       CALL barext(OpenAD_Symbol_0)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(T,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(T,OpenAD_Symbol_0)
       Y%v = (X(2)%v*T%v)
       OpenAD_Symbol_1 = T%v
       OpenAD_Symbol_2 = X(2)%v

@@ -61,11 +61,11 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       __value__(Z(1 : INT(SIZE(X)))) = __value__(X(1 : 2))
-      OpenAD_Symbol_0 = SIZE(INT(__value__(X)))
+      OpenAD_Symbol_0 = SIZE(__value__(X))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_0)
       __value__(Y(1 : 2)) = __value__(Z(1 : INT(SIZE(X))))
-      OpenAD_Symbol_1 = SIZE(INT(__value__(X)))
+      OpenAD_Symbol_1 = SIZE(__value__(X))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_1)
 C     $OpenAD$ END REPLACEMENT
@@ -100,11 +100,11 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       __value__(Z(1 : INT(SIZE(X)))) = __value__(X(1 : 2))
-      OpenAD_Symbol_0 = SIZE(INT(__value__(X)))
+      OpenAD_Symbol_0 = SIZE(__value__(X))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_0)
       __value__(Y(1 : 2)) = __value__(Z(1 : INT(SIZE(X))))
-      OpenAD_Symbol_1 = SIZE(INT(__value__(X)))
+      OpenAD_Symbol_1 = SIZE(__value__(X))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_1)
 C     $OpenAD$ END REPLACEMENT

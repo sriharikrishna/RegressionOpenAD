@@ -395,11 +395,11 @@ C original function
 C$OPENAD XXX Template ad_template.f
       CALL oad_s_bar(X(1),OAD_CTMP0)
       Y(1)%v = (OAD_CTMP0%v*2.0D00)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,OAD_CTMP1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,OAD_CTMP1)
       CALL oad_s_bar(Y(1),OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OAD_CTMP1,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OAD_CTMP1,OpenAD_Symbol_0)
       T = OAD_CTMP1
 
 C original function end
@@ -416,11 +416,11 @@ C taping
 C$OPENAD XXX Template ad_template.f
       CALL oad_s_bar(X(1),OAD_CTMP0)
       Y(1)%v = (OAD_CTMP0%v*2.0D00)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,OAD_CTMP1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,OAD_CTMP1)
       CALL oad_s_bar(Y(1),OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OAD_CTMP1,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OAD_CTMP1,OpenAD_Symbol_0)
       T = OAD_CTMP1
 
 C taping end

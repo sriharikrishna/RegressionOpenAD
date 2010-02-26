@@ -194,11 +194,11 @@ C$OPENAD XXX Template ad_template.f
       ANINACTIVE = 4.445600128173828125D+01
       __value__(AGLOBALACTIVE) = 1.61803400516510009766D00
       CALL foo(__deriv__(X(1)))
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
       CALL foo(__deriv__(OpenAD_Symbol_0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
       __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
@@ -206,11 +206,11 @@ C$OPENAD XXX Template ad_template.f
       ANINACTIVE = 4.445600128173828125D+01
       __value__(AGLOBALACTIVE) = 1.61803400516510009766D00
       CALL foo(__deriv__(X(1)))
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
       CALL foo(__deriv__(OpenAD_Symbol_0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
       __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
       OpenAD_Symbol_4 = COS(__value__(AGLOBALACTIVE))
 C     $OpenAD$ INLINE push_s0(subst)
@@ -258,11 +258,11 @@ C$OPENAD XXX Template ad_template.f
       ANINACTIVE = 4.445600128173828125D+01
       __value__(AGLOBALACTIVE) = 1.61803400516510009766D00
       CALL foo(__deriv__(X(1)))
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
       CALL foo(__deriv__(OpenAD_Symbol_0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
       __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
       OpenAD_Symbol_4 = COS(__value__(AGLOBALACTIVE))
 C     $OpenAD$ INLINE push_s0(subst)

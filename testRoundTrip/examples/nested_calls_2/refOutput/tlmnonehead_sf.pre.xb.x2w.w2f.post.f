@@ -32,8 +32,6 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
 C
@@ -47,6 +45,8 @@ C
       EXTERNAL foo
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_15
+      REAL(w2f__8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -67,10 +67,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_2 = X(2)%v
       OpenAD_Symbol_3 = X(1)%v
       OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
-      OpenAD_acc_0 = (OpenAD_Symbol_2*OpenAD_Symbol_1)
-      OpenAD_acc_1 = (OpenAD_Symbol_3*OpenAD_Symbol_1)
-      CALL sax(OpenAD_acc_0,X(1),Y(2))
-      CALL saxpy(OpenAD_acc_1,X(2),Y(2))
+      OpenAD_Symbol_15 = (OpenAD_Symbol_2*OpenAD_Symbol_1)
+      OpenAD_Symbol_16 = (OpenAD_Symbol_3*OpenAD_Symbol_1)
+      CALL sax(OpenAD_Symbol_15,X(1),Y(2))
+      CALL saxpy(OpenAD_Symbol_16,X(2),Y(2))
       OpenAD_Symbol_5 = SIN(X(3)%v)
       OpenAD_Symbol_4 = COS(X(3)%v)
       Y(3)%v = OpenAD_Symbol_5
@@ -122,8 +122,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_14
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
       type(active) :: OpenAD_prop_2
       type(active) :: OpenAD_prop_3
 C
@@ -137,6 +135,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
+      REAL(w2f__8) OpenAD_Symbol_17
+      REAL(w2f__8) OpenAD_Symbol_18
 C
 C     **** Statements ****
 C
@@ -147,10 +147,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_13 = A%v
       OpenAD_Symbol_11 = (-SIN(OpenAD_Symbol_10))
       A%v = OpenAD_Symbol_14
-      OpenAD_acc_2 = (OpenAD_Symbol_12*OpenAD_Symbol_11)
-      OpenAD_acc_3 = (OpenAD_Symbol_13*OpenAD_Symbol_11)
+      OpenAD_Symbol_17 = (OpenAD_Symbol_12*OpenAD_Symbol_11)
+      OpenAD_Symbol_18 = (OpenAD_Symbol_13*OpenAD_Symbol_11)
       CALL setderiv(OpenAD_prop_2,A)
       CALL setderiv(OpenAD_prop_3,A)
-      CALL sax(OpenAD_acc_2,OpenAD_prop_2,A)
-      CALL saxpy(OpenAD_acc_3,OpenAD_prop_3,A)
+      CALL sax(OpenAD_Symbol_17,OpenAD_prop_2,A)
+      CALL saxpy(OpenAD_Symbol_18,OpenAD_prop_3,A)
       END SUBROUTINE

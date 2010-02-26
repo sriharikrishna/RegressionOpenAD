@@ -50,8 +50,6 @@ C$OPENAD XXX Template ad_template.f
 C
 C     **** Global Variables & Derived Type Definitions ****
 C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -69,6 +67,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_Symbol_8
+      REAL(w2f__8) OpenAD_Symbol_9
 C
 C     **** Statements ****
 C
@@ -81,11 +81,11 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_6 = (A%v+B%v)
       D%v = COS(OpenAD_Symbol_6)
       OpenAD_Symbol_7 = (-SIN(OpenAD_Symbol_6))
-      OpenAD_acc_0 = (OpenAD_Symbol_4*OpenAD_Symbol_3)
-      OpenAD_acc_1 = (OpenAD_Symbol_5*OpenAD_Symbol_3)
+      OpenAD_Symbol_8 = (OpenAD_Symbol_4*OpenAD_Symbol_3)
+      OpenAD_Symbol_9 = (OpenAD_Symbol_5*OpenAD_Symbol_3)
       CALL setderiv(OpenAD_prop_0,A)
       CALL inc_deriv(OpenAD_prop_0,B)
-      CALL sax(OpenAD_acc_0,A,C)
-      CALL saxpy(OpenAD_acc_1,B,C)
+      CALL sax(OpenAD_Symbol_8,A,C)
+      CALL saxpy(OpenAD_Symbol_9,B,C)
       CALL sax(OpenAD_Symbol_7,OpenAD_prop_0,D)
       END SUBROUTINE

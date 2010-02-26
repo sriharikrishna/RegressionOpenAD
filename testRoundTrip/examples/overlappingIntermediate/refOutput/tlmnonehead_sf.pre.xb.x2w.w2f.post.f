@@ -31,10 +31,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_11
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -52,6 +48,10 @@ C
       REAL(w2f__8) OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
+      REAL(w2f__8) OpenAD_Symbol_14
+      REAL(w2f__8) OpenAD_Symbol_15
+      REAL(w2f__8) OpenAD_Symbol_16
+      REAL(w2f__8) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -77,11 +77,11 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_2 = X(3)%v
       Y(1)%v = SIN(T%v)
       OpenAD_Symbol_5 = COS(T%v)
-      OpenAD_acc_0 = (OpenAD_Symbol_3*OpenAD_Symbol_2)
-      OpenAD_acc_1 = (OpenAD_Symbol_4*OpenAD_Symbol_2)
+      OpenAD_Symbol_14 = (OpenAD_Symbol_3*OpenAD_Symbol_2)
+      OpenAD_Symbol_15 = (OpenAD_Symbol_4*OpenAD_Symbol_2)
       CALL sax(OpenAD_Symbol_1,X(3),T)
-      CALL saxpy(OpenAD_acc_0,X(1),T)
-      CALL saxpy(OpenAD_acc_1,X(2),T)
+      CALL saxpy(OpenAD_Symbol_14,X(1),T)
+      CALL saxpy(OpenAD_Symbol_15,X(2),T)
       CALL sax(OpenAD_Symbol_5,T,Y(1))
       OpenAD_Symbol_6 = (X(4)%v*T%v)
       OpenAD_Symbol_11 = (X(5)%v*OpenAD_Symbol_6)
@@ -92,12 +92,12 @@ C$OPENAD XXX Template ad_template.f
       T%v = OpenAD_Symbol_11
       Y(2)%v = SIN(T%v)
       OpenAD_Symbol_12 = COS(T%v)
-      OpenAD_acc_2 = (OpenAD_Symbol_9*OpenAD_Symbol_8)
-      OpenAD_acc_3 = (OpenAD_Symbol_10*OpenAD_Symbol_8)
+      OpenAD_Symbol_16 = (OpenAD_Symbol_9*OpenAD_Symbol_8)
+      OpenAD_Symbol_17 = (OpenAD_Symbol_10*OpenAD_Symbol_8)
       CALL setderiv(OpenAD_prop_0,T)
       CALL sax(OpenAD_Symbol_7,X(5),T)
-      CALL saxpy(OpenAD_acc_2,X(4),T)
-      CALL saxpy(OpenAD_acc_3,OpenAD_prop_0,T)
+      CALL saxpy(OpenAD_Symbol_16,X(4),T)
+      CALL saxpy(OpenAD_Symbol_17,OpenAD_prop_0,T)
       CALL sax(OpenAD_Symbol_12,T,Y(2))
       Y(3)%v = COS(T%v)
       OpenAD_Symbol_13 = (-SIN(T%v))

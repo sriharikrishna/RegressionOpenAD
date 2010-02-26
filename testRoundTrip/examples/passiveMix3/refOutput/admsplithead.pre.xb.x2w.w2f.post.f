@@ -43,15 +43,15 @@ C
 
          if (our_rev_mode%plain) then
 C original function
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,M1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,M1)
       CALL OAD_S_MIN_D(OpenAD_Symbol_0,M2,OAD_CTMP0)
       M2%v = OAD_CTMP0%v
           end if
           if (our_rev_mode%tape) then
 C taping
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,M1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,M1)
       CALL OAD_S_MIN_D(OpenAD_Symbol_0,M2,OAD_CTMP0)
       M2%v = OAD_CTMP0%v
           end if
@@ -119,11 +119,11 @@ C original function
 C$OPENAD XXX Template ad_template.f
       T = 2.0D00
       P = SQRT(3.0D00)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,T)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_1,T)
       CALL OAD_S_MIN_D(OpenAD_Symbol_1,X(1),OAD_CTMP0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(T,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(T,OpenAD_Symbol_1)
       T1%v = OAD_CTMP0%v
       CALL OAD_S_MIN_D(X(1),T1,OAD_CTMP1)
       Y(1)%v = OAD_CTMP1%v
@@ -134,11 +134,11 @@ C taping
 C$OPENAD XXX Template ad_template.f
       T = 2.0D00
       P = SQRT(3.0D00)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,T)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_1,T)
       CALL OAD_S_MIN_D(OpenAD_Symbol_1,X(1),OAD_CTMP0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(T,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(T,OpenAD_Symbol_1)
       T1%v = OAD_CTMP0%v
       CALL OAD_S_MIN_D(X(1),T1,OAD_CTMP1)
       Y(1)%v = OAD_CTMP1%v

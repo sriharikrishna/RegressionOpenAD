@@ -252,11 +252,11 @@ C$OPENAD XXX Template ad_template.f
       ANINACTIVE = 4.445600128173828125D+01
       AGLOBALACTIVE%v = 1.61803400516510009766D00
       CALL foo(X(1))
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,ANINACTIVE)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,ANINACTIVE)
       CALL foo(OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(ANINACTIVE,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(ANINACTIVE,OpenAD_Symbol_0)
       Y(1)%v = SIN(AGLOBALACTIVE%v)
 
 C original function end
@@ -274,11 +274,11 @@ C$OPENAD XXX Template ad_template.f
       ANINACTIVE = 4.445600128173828125D+01
       AGLOBALACTIVE%v = 1.61803400516510009766D00
       CALL foo(X(1))
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,ANINACTIVE)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,ANINACTIVE)
       CALL foo(OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(ANINACTIVE,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(ANINACTIVE,OpenAD_Symbol_0)
       Y(1)%v = SIN(AGLOBALACTIVE%v)
       OpenAD_Symbol_4 = COS(AGLOBALACTIVE%v)
       double_tape(double_tape_pointer) = OpenAD_Symbol_4

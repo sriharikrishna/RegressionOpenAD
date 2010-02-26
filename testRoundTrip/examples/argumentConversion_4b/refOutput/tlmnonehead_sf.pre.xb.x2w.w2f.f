@@ -96,15 +96,15 @@ C$OPENAD XXX Simple loop
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(__deriv__(AX(I, 1 : 2)), __deriv__(Y(1)))
-C       $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
-        CALL convert_p2a_matrix(__deriv__(OpenAD_Symbol_0), APX)
-C       $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-        CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_1), PY)
+C       $OpenAD$ INLINE oad_convert(subst,subst)
+        CALL oad_convert(__deriv__(OpenAD_Symbol_0), APX)
+C       $OpenAD$ INLINE oad_convert(subst,subst)
+        CALL oad_convert(__deriv__(OpenAD_Symbol_1), PY)
         CALL foo(__deriv__(OpenAD_Symbol_0(I, 1 : 2)), __deriv__(
      > OpenAD_Symbol_1))
-C       $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
-        CALL convert_a2p_matrix(APX, __deriv__(OpenAD_Symbol_0))
-C       $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-        CALL convert_a2p_scalar(PY, __deriv__(OpenAD_Symbol_1))
+C       $OpenAD$ INLINE oad_convert(subst,subst)
+        CALL oad_convert(APX, __deriv__(OpenAD_Symbol_0))
+C       $OpenAD$ INLINE oad_convert(subst,subst)
+        CALL oad_convert(PY, __deriv__(OpenAD_Symbol_1))
       END DO
       END SUBROUTINE

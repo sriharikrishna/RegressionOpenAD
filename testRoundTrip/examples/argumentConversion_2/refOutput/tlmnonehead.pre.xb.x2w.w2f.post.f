@@ -48,11 +48,11 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,2.0)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0,2.0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_1,PY)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(PY,OpenAD_Symbol_1)
       END SUBROUTINE

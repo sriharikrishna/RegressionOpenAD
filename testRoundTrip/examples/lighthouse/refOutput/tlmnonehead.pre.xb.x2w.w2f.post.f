@@ -9,10 +9,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
       type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
@@ -31,6 +27,10 @@ C
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_11
+      REAL(w2f__8) OpenAD_Symbol_13
+      REAL(w2f__8) OpenAD_Symbol_14
+      REAL(w2f__8) OpenAD_Symbol_15
+      REAL(w2f__8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -64,15 +64,17 @@ C
       OpenAD_Symbol_6 = (INT(1_w2f__i8)/OpenAD_Symbol_5)
       OpenAD_Symbol_7 = (-(OpenAD_Symbol_4/(OpenAD_Symbol_5*OpenAD_Symbo
      +l_5)))
-      OpenAD_acc_0 = (OpenAD_Symbol_9*OpenAD_Symbol_6+INT((-1_w2f__i8))*
-     +OpenAD_Symbol_7)
-      OpenAD_acc_1 = (OpenAD_Symbol_8*OpenAD_Symbol_6)
-      OpenAD_acc_2 = (OpenAD_Symbol_2*OpenAD_Symbol_1*OpenAD_acc_0)
-      OpenAD_acc_3 = (OpenAD_Symbol_3*OpenAD_Symbol_1*OpenAD_acc_0)
+      OpenAD_Symbol_13 = (OpenAD_Symbol_9*OpenAD_Symbol_6+INT((-1_w2f__i
+     +8))*OpenAD_Symbol_7)
+      OpenAD_Symbol_14 = (OpenAD_Symbol_8*OpenAD_Symbol_6)
+      OpenAD_Symbol_15 = (OpenAD_Symbol_2*OpenAD_Symbol_1*OpenAD_Symbol_
+     +13)
+      OpenAD_Symbol_16 = (OpenAD_Symbol_3*OpenAD_Symbol_1*OpenAD_Symbol_
+     +13)
       CALL setderiv(GAMMA,X(2))
-      CALL sax(OpenAD_acc_1,X(1),Y(1))
-      CALL saxpy(OpenAD_acc_2,X(3),Y(1))
-      CALL saxpy(OpenAD_acc_3,X(4),Y(1))
+      CALL sax(OpenAD_Symbol_14,X(1),Y(1))
+      CALL saxpy(OpenAD_Symbol_15,X(3),Y(1))
+      CALL saxpy(OpenAD_Symbol_16,X(4),Y(1))
       CALL saxpy(OpenAD_Symbol_7,GAMMA,Y(1))
       OpenAD_Symbol_12 = (Y(1)%v*GAMMA%v)
       OpenAD_Symbol_10 = GAMMA%v

@@ -272,15 +272,15 @@ C$OPENAD XXX Simple loop
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(AX(I,1:2),Y(1))
-C!! requested inline of 'convert_p2a_matrix' has no defn
-        CALL convert_p2a_matrix(OpenAD_Symbol_0,APX)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-        CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
+C!! requested inline of 'oad_convert' has no defn
+        CALL oad_convert(OpenAD_Symbol_0,APX)
+C!! requested inline of 'oad_convert' has no defn
+        CALL oad_convert(OpenAD_Symbol_1,PY)
         CALL foo(OpenAD_Symbol_0(I,1:2),OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_matrix' has no defn
-        CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-        CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+        CALL oad_convert(APX,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+        CALL oad_convert(PY,OpenAD_Symbol_1)
       END DO
 
 C original function end
@@ -305,15 +305,15 @@ C$OPENAD XXX Simple loop
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(AX(I,1:2),Y(1))
-C!! requested inline of 'convert_p2a_matrix' has no defn
-        CALL convert_p2a_matrix(OpenAD_Symbol_0,APX)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-        CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
+C!! requested inline of 'oad_convert' has no defn
+        CALL oad_convert(OpenAD_Symbol_0,APX)
+C!! requested inline of 'oad_convert' has no defn
+        CALL oad_convert(OpenAD_Symbol_1,PY)
         CALL foo(OpenAD_Symbol_0(I,1:2),OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_matrix' has no defn
-        CALL convert_a2p_matrix(APX,OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-        CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+        CALL oad_convert(APX,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+        CALL oad_convert(PY,OpenAD_Symbol_1)
       END DO
 
 C taping end

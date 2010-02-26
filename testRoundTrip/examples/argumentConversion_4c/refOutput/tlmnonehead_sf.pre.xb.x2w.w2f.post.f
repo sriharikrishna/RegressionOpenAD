@@ -93,15 +93,15 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         DO J = 1,2,1
           CALL foo(AX(I,J),Y)
-C         $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-          CALL convert_p2a_scalar(OpenAD_Symbol_0,APX(I,J))
-C         $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-          CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
+C         $OpenAD$ INLINE oad_convert(subst,subst)
+          CALL oad_convert(OpenAD_Symbol_0,APX(I,J))
+C         $OpenAD$ INLINE oad_convert(subst,subst)
+          CALL oad_convert(OpenAD_Symbol_1,PY)
           CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C         $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-          CALL convert_a2p_scalar(APX(I,J),OpenAD_Symbol_0)
-C         $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-          CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
+C         $OpenAD$ INLINE oad_convert(subst,subst)
+          CALL oad_convert(APX(I,J),OpenAD_Symbol_0)
+C         $OpenAD$ INLINE oad_convert(subst,subst)
+          CALL oad_convert(PY,OpenAD_Symbol_1)
         END DO
       END DO
       END SUBROUTINE

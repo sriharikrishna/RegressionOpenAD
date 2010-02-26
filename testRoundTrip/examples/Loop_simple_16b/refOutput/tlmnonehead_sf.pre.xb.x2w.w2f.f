@@ -29,7 +29,6 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_acc_0
       TYPE (OpenADTy_active) OpenAD_prop_0
       TYPE (OpenADTy_active) OpenAD_prop_1
       TYPE (OpenADTy_active) OpenAD_prop_2
@@ -51,6 +50,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_10
+      REAL(w2f__8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
@@ -77,7 +77,7 @@ C$OPENAD XXX Simple loop
           OpenAD_Symbol_5 = OpenAD_Symbol_4
           OpenAD_Symbol_6 = __value__(NUMER)
           __value__(NUMER) = OpenAD_Symbol_8
-          OpenAD_acc_0 = (INT((-1_w2f__i8)) * OpenAD_Symbol_6)
+          OpenAD_Symbol_11 = (INT((-1_w2f__i8)) * OpenAD_Symbol_6)
           CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(DENOM))
           CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(NUMER))
           CALL setderiv(__deriv__(OpenAD_prop_2), __deriv__(A(I)))
@@ -88,7 +88,8 @@ C$OPENAD XXX Simple loop
      >  __deriv__(DENOM))
           CALL sax(OpenAD_Symbol_5, __deriv__(OpenAD_prop_1), __deriv__
      > (NUMER))
-          CALL saxpy(OpenAD_acc_0, __deriv__(A(K)), __deriv__(NUMER))
+          CALL saxpy(OpenAD_Symbol_11, __deriv__(A(K)), __deriv__(NUMER
+     > ))
         ENDIF
       END DO
       __value__(LAG) = (__value__(NUMER) / __value__(DENOM))

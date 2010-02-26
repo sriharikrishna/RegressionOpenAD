@@ -66,12 +66,10 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_12
       INTEGER(w2f__i8) OpenAD_Symbol_13
       INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_6
-      INTEGER(w2f__i8) OpenAD_Symbol_7
+      INTEGER(w2f__i8) OpenAD_Symbol_15
+      INTEGER(w2f__i8) OpenAD_Symbol_16
       INTEGER(w2f__i8) OpenAD_Symbol_8
       INTEGER(w2f__i8) OpenAD_Symbol_9
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
       type(active) :: OpenAD_prop_0
       type(active) :: OpenAD_prop_1
 C
@@ -86,15 +84,17 @@ C
       CHARACTER(3) LOCALSTRING
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      REAL(w2f__8) OpenAD_Symbol_16
-      REAL(w2f__8) OpenAD_Symbol_17
-      INTEGER(w2f__i8) OpenAD_Symbol_18
+      INTEGER(w2f__i8) OpenAD_Symbol_17
+      REAL(w2f__8) OpenAD_Symbol_18
       REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_20
+      INTEGER(w2f__i8) OpenAD_Symbol_20
+      REAL(w2f__8) OpenAD_Symbol_21
+      REAL(w2f__8) OpenAD_Symbol_22
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_5
+      REAL(w2f__8) OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_Symbol_7
 
 
           integer iaddr
@@ -137,11 +137,11 @@ C$OPENAD XXX Simple loop
           Y(INT(I))%v = (Y(I)%v+OpenAD_Symbol_2*2.0D00)
           OpenAD_Symbol_4 = X(I)%v
           OpenAD_Symbol_5 = X(I)%v
-          OpenAD_acc_0 = (OpenAD_Symbol_4*2.0D00)
-          OpenAD_acc_1 = (OpenAD_Symbol_5*2.0D00)
-          double_tape(double_tape_pointer) = OpenAD_acc_0
+          OpenAD_Symbol_6 = (OpenAD_Symbol_4*2.0D00)
+          OpenAD_Symbol_7 = (OpenAD_Symbol_5*2.0D00)
+          double_tape(double_tape_pointer) = OpenAD_Symbol_6
           double_tape_pointer = double_tape_pointer+1
-          double_tape(double_tape_pointer) = OpenAD_acc_1
+          double_tape(double_tape_pointer) = OpenAD_Symbol_7
           double_tape_pointer = double_tape_pointer+1
         ENDIF
       END DO
@@ -165,11 +165,11 @@ C adjoint
       do while (I.GE.1)
         IF (GLOBALSTRING.EQ.'no') THEN
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_19 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_21 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_20 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_19)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_20)
+          OpenAD_Symbol_22 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_21)
+          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_22)
           OpenAD_prop_1%d = OpenAD_prop_1%d+Y(I)%d
           Y(I)%d = 0.0d0
           Y(I)%d = Y(I)%d+OpenAD_prop_1%d
@@ -177,11 +177,11 @@ C adjoint
         ENDIF
         IF (GLOBALSTRING.EQ.'yes') THEN
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_16 = double_tape(double_tape_pointer)
+          OpenAD_Symbol_18 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
-          OpenAD_Symbol_17 = double_tape(double_tape_pointer)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_16)
-          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_17)
+          OpenAD_Symbol_19 = double_tape(double_tape_pointer)
+          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_18)
+          X(I)%d = X(I)%d+Y(I)%d*(OpenAD_Symbol_19)
           OpenAD_prop_0%d = OpenAD_prop_0%d+Y(I)%d
           Y(I)%d = 0.0d0
           Y(I)%d = Y(I)%d+OpenAD_prop_0%d

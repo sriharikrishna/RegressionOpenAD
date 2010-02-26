@@ -220,15 +220,15 @@ C          write(*,'(A,EN26.16E3)') "restore(s)  ", GX%v
             our_orig_mode=our_rev_mode
             our_rev_mode%arg_store=.FALSE.
 C original function
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,GX)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OpenAD_Symbol_1,GY)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,GX)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_1,GY)
       CALL bar(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(GX,OpenAD_Symbol_0)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(GX,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(GY,OpenAD_Symbol_1)
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -241,15 +241,15 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,GX)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(OpenAD_Symbol_1,GY)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,GX)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_1,GY)
       CALL bar(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(GX,OpenAD_Symbol_0)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(GY,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(GX,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(GY,OpenAD_Symbol_1)
 
 C taping end
             our_rev_mode%arg_store=.FALSE.

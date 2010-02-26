@@ -246,24 +246,24 @@ C$OPENAD XXX Template ad_template.f
       PX(1) = 1.0
       PX(2) = 2.0
       CALL foo(X,Y)
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(OpenAD_Symbol_0,PX)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,PX)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_1,PY)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(PX,OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(OpenAD_Symbol_2,PX)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_3,PY)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(PX,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(PY,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_2,PX)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_3,PY)
       CALL foo(OpenAD_Symbol_2,OpenAD_Symbol_3)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(PX,OpenAD_Symbol_2)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(PY,OpenAD_Symbol_3)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(PX,OpenAD_Symbol_2)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(PY,OpenAD_Symbol_3)
 
 C original function end
             our_rev_mode=our_orig_mode
@@ -280,24 +280,24 @@ C$OPENAD XXX Template ad_template.f
       PX(1) = 1.0
       PX(2) = 2.0
       CALL foo(X,Y)
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(OpenAD_Symbol_0,PX)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_0,PX)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_1,PY)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(PX,OpenAD_Symbol_0)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
-C!! requested inline of 'convert_p2a_vector' has no defn
-      CALL convert_p2a_vector(OpenAD_Symbol_2,PX)
-C!! requested inline of 'convert_p2a_scalar' has no defn
-      CALL convert_p2a_scalar(OpenAD_Symbol_3,PY)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(PX,OpenAD_Symbol_0)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(PY,OpenAD_Symbol_1)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_2,PX)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(OpenAD_Symbol_3,PY)
       CALL foo(OpenAD_Symbol_2,OpenAD_Symbol_3)
-C!! requested inline of 'convert_a2p_vector' has no defn
-      CALL convert_a2p_vector(PX,OpenAD_Symbol_2)
-C!! requested inline of 'convert_a2p_scalar' has no defn
-      CALL convert_a2p_scalar(PY,OpenAD_Symbol_3)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(PX,OpenAD_Symbol_2)
+C!! requested inline of 'oad_convert' has no defn
+      CALL oad_convert(PY,OpenAD_Symbol_3)
 
 C taping end
             our_rev_mode%arg_store=.FALSE.

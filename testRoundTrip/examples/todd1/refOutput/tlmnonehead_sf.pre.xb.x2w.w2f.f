@@ -32,24 +32,6 @@ C
 C     **** Global Variables & Derived Type Definitions ****
 C
       REAL(w2f__8) OpenAD_Symbol_79
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_10
-      REAL(w2f__8) OpenAD_acc_11
-      REAL(w2f__8) OpenAD_acc_12
-      REAL(w2f__8) OpenAD_acc_13
-      REAL(w2f__8) OpenAD_acc_14
-      REAL(w2f__8) OpenAD_acc_15
-      REAL(w2f__8) OpenAD_acc_16
-      REAL(w2f__8) OpenAD_acc_17
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_acc_4
-      REAL(w2f__8) OpenAD_acc_5
-      REAL(w2f__8) OpenAD_acc_6
-      REAL(w2f__8) OpenAD_acc_7
-      REAL(w2f__8) OpenAD_acc_8
-      REAL(w2f__8) OpenAD_acc_9
       TYPE (OpenADTy_active) OpenAD_prop_0
       TYPE (OpenADTy_active) OpenAD_prop_1
       TYPE (OpenADTy_active) OpenAD_prop_10
@@ -193,8 +175,26 @@ C
       REAL(w2f__8) OpenAD_Symbol_150
       REAL(w2f__8) OpenAD_Symbol_152
       REAL(w2f__8) OpenAD_Symbol_154
+      REAL(w2f__8) OpenAD_Symbol_155
+      REAL(w2f__8) OpenAD_Symbol_156
+      REAL(w2f__8) OpenAD_Symbol_157
+      REAL(w2f__8) OpenAD_Symbol_158
+      REAL(w2f__8) OpenAD_Symbol_159
       REAL(w2f__8) OpenAD_Symbol_16
+      REAL(w2f__8) OpenAD_Symbol_160
+      REAL(w2f__8) OpenAD_Symbol_161
+      REAL(w2f__8) OpenAD_Symbol_162
+      REAL(w2f__8) OpenAD_Symbol_163
+      REAL(w2f__8) OpenAD_Symbol_164
+      REAL(w2f__8) OpenAD_Symbol_165
+      REAL(w2f__8) OpenAD_Symbol_166
+      REAL(w2f__8) OpenAD_Symbol_167
+      REAL(w2f__8) OpenAD_Symbol_168
+      REAL(w2f__8) OpenAD_Symbol_169
       REAL(w2f__8) OpenAD_Symbol_17
+      REAL(w2f__8) OpenAD_Symbol_170
+      REAL(w2f__8) OpenAD_Symbol_171
+      REAL(w2f__8) OpenAD_Symbol_172
       REAL(w2f__8) OpenAD_Symbol_18
       REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_Symbol_2
@@ -386,22 +386,22 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_47 = (-(1.0D00 /(OpenAD_Symbol_45 *
      >  OpenAD_Symbol_45)))
       OpenAD_Symbol_44 = OpenAD_Symbol_41
-      OpenAD_acc_0 = (OpenAD_Symbol_30 * OpenAD_Symbol_28)
-      OpenAD_acc_1 = (OpenAD_Symbol_14 + OpenAD_Symbol_15)
-      OpenAD_acc_2 = (OpenAD_Symbol_16 + OpenAD_Symbol_17)
-      OpenAD_acc_3 = (OpenAD_Symbol_18 + OpenAD_Symbol_19)
-      OpenAD_acc_4 = (OpenAD_Symbol_20 + OpenAD_Symbol_21)
-      OpenAD_acc_5 = ((OpenAD_Symbol_49 +(OpenAD_Symbol_51 +
+      OpenAD_Symbol_155 = (OpenAD_Symbol_30 * OpenAD_Symbol_28)
+      OpenAD_Symbol_156 = (OpenAD_Symbol_14 + OpenAD_Symbol_15)
+      OpenAD_Symbol_157 = (OpenAD_Symbol_16 + OpenAD_Symbol_17)
+      OpenAD_Symbol_158 = (OpenAD_Symbol_18 + OpenAD_Symbol_19)
+      OpenAD_Symbol_159 = (OpenAD_Symbol_20 + OpenAD_Symbol_21)
+      OpenAD_Symbol_160 = ((OpenAD_Symbol_49 +(OpenAD_Symbol_51 +
      >  OpenAD_Symbol_52) * OpenAD_Symbol_50) * OpenAD_Symbol_47 *
      >  OpenAD_Symbol_44)
-      OpenAD_acc_6 = ((OpenAD_Symbol_39 + OpenAD_Symbol_40) *
+      OpenAD_Symbol_161 = ((OpenAD_Symbol_39 + OpenAD_Symbol_40) *
      >  OpenAD_Symbol_38 * OpenAD_Symbol_35)
       CALL setderiv(__deriv__(MATR0), __deriv__(X1))
       CALL dec_deriv(__deriv__(MATR0), __deriv__(X0))
       CALL setderiv(__deriv__(MATR2), __deriv__(X4))
       CALL dec_deriv(__deriv__(MATR2), __deriv__(X3))
-      CALL sax(OpenAD_acc_1, __deriv__(MATR0), __deriv__(M00))
-      CALL sax(OpenAD_acc_3, __deriv__(MATR2), __deriv__(M22))
+      CALL sax(OpenAD_Symbol_156, __deriv__(MATR0), __deriv__(M00))
+      CALL sax(OpenAD_Symbol_158, __deriv__(MATR2), __deriv__(M22))
       CALL set_neg_deriv(__deriv__(OpenAD_prop_0), __deriv__(X0))
       CALL dec_deriv(__deriv__(OpenAD_prop_0), __deriv__(X1))
       CALL saxpy(2.0D00, __deriv__(X2), __deriv__(OpenAD_prop_0))
@@ -420,19 +420,19 @@ C$OPENAD XXX Template ad_template.f
       CALL dec_deriv(__deriv__(G), __deriv__(M12))
       CALL sax(2.0D00, __deriv__(M03), __deriv__(D00))
       CALL sax(2.0D00, __deriv__(M12), __deriv__(D11))
-      CALL sax(OpenAD_acc_2, __deriv__(MATR1), __deriv__(M11))
-      CALL sax(OpenAD_acc_4, __deriv__(MATR3), __deriv__(M33))
+      CALL sax(OpenAD_Symbol_157, __deriv__(MATR1), __deriv__(M11))
+      CALL sax(OpenAD_Symbol_159, __deriv__(MATR3), __deriv__(M33))
       CALL sax(OpenAD_Symbol_22, __deriv__(M00), __deriv__(D12))
       CALL saxpy(OpenAD_Symbol_23, __deriv__(M33), __deriv__(D12))
       CALL sax(OpenAD_Symbol_24, __deriv__(M11), __deriv__(D03))
       CALL saxpy(OpenAD_Symbol_25, __deriv__(M22), __deriv__(D03))
       CALL setderiv(__deriv__(F), __deriv__(D03))
       CALL inc_deriv(__deriv__(F), __deriv__(D12))
-      CALL sax(OpenAD_acc_0, __deriv__(G), __deriv__(LOC1))
+      CALL sax(OpenAD_Symbol_155, __deriv__(G), __deriv__(LOC1))
       CALL sax(OpenAD_Symbol_31, __deriv__(F), __deriv__(OBJ))
       CALL saxpy(OpenAD_Symbol_32, __deriv__(LOC1), __deriv__(OBJ))
-      CALL sax(OpenAD_acc_6, __deriv__(G), __deriv__(LOC2))
-      CALL sax(OpenAD_acc_5, __deriv__(G), __deriv__(GG))
+      CALL sax(OpenAD_Symbol_161, __deriv__(G), __deriv__(LOC2))
+      CALL sax(OpenAD_Symbol_160, __deriv__(G), __deriv__(GG))
       __value__(G) = (__value__(F) * __value__(LOC2))
       OpenAD_Symbol_53 = __value__(LOC2)
       OpenAD_Symbol_54 = __value__(F)
@@ -466,35 +466,37 @@ C$OPENAD XXX Template ad_template.f
       __value__(G_OBJ0) = (-(__value__(ADJ_M0) + __value__(LOC1)))
       __value__(G_OBJ1) = (__value__(ADJ_M0) - __value__(LOC1))
       __value__(G_OBJ2) = (__value__(LOC1) * 2.0D00)
-      OpenAD_acc_7 = (2.0D00 * OpenAD_Symbol_56)
-      OpenAD_acc_8 = (2.0D00 * OpenAD_Symbol_60)
-      OpenAD_acc_9 = (OpenAD_Symbol_62 * INT((-1_w2f__i8)))
-      OpenAD_acc_10 = (OpenAD_Symbol_63 * INT((-1_w2f__i8)))
-      OpenAD_acc_11 = (2.0D00 * OpenAD_Symbol_64)
-      OpenAD_acc_12 = (OpenAD_Symbol_66 * INT((-1_w2f__i8)))
-      OpenAD_acc_13 = (OpenAD_Symbol_67 * INT((-1_w2f__i8)))
-      OpenAD_acc_14 = (2.0D00 * OpenAD_Symbol_68)
+      OpenAD_Symbol_162 = (2.0D00 * OpenAD_Symbol_56)
+      OpenAD_Symbol_163 = (2.0D00 * OpenAD_Symbol_60)
+      OpenAD_Symbol_164 = (OpenAD_Symbol_62 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_165 = (OpenAD_Symbol_63 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_166 = (2.0D00 * OpenAD_Symbol_64)
+      OpenAD_Symbol_167 = (OpenAD_Symbol_66 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_168 = (OpenAD_Symbol_67 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_169 = (2.0D00 * OpenAD_Symbol_68)
       CALL setderiv(__deriv__(OpenAD_prop_2), __deriv__(LOC1))
       CALL sax(OpenAD_Symbol_53, __deriv__(F), __deriv__(G))
       CALL saxpy(OpenAD_Symbol_54, __deriv__(LOC2), __deriv__(G))
       CALL sax(OpenAD_Symbol_57, __deriv__(MATR0), __deriv__(ADJ_M0))
-      CALL saxpy(OpenAD_acc_7, __deriv__(OpenAD_prop_2), __deriv__(
-     > ADJ_M0))
+      CALL saxpy(OpenAD_Symbol_162, __deriv__(OpenAD_prop_2), __deriv__
+     > (ADJ_M0))
       CALL saxpy(OpenAD_Symbol_58, __deriv__(G), __deriv__(ADJ_M0))
       CALL saxpy(OpenAD_Symbol_59, __deriv__(MATR3), __deriv__(ADJ_M0))
       CALL sax(OpenAD_Symbol_61, __deriv__(MATR1), __deriv__(ADJ_M1))
-      CALL saxpy(OpenAD_acc_8, __deriv__(OpenAD_prop_2), __deriv__(
-     > ADJ_M1))
-      CALL saxpy(OpenAD_acc_9, __deriv__(G), __deriv__(ADJ_M1))
-      CALL saxpy(OpenAD_acc_10, __deriv__(MATR2), __deriv__(ADJ_M1))
+      CALL saxpy(OpenAD_Symbol_163, __deriv__(OpenAD_prop_2), __deriv__
+     > (ADJ_M1))
+      CALL saxpy(OpenAD_Symbol_164, __deriv__(G), __deriv__(ADJ_M1))
+      CALL saxpy(OpenAD_Symbol_165, __deriv__(MATR2), __deriv__(ADJ_M1)
+     > )
       CALL sax(OpenAD_Symbol_65, __deriv__(MATR2), __deriv__(ADJ_M2))
-      CALL saxpy(OpenAD_acc_11, __deriv__(OpenAD_prop_2), __deriv__(
-     > ADJ_M2))
-      CALL saxpy(OpenAD_acc_12, __deriv__(G), __deriv__(ADJ_M2))
-      CALL saxpy(OpenAD_acc_13, __deriv__(MATR1), __deriv__(ADJ_M2))
+      CALL saxpy(OpenAD_Symbol_166, __deriv__(OpenAD_prop_2), __deriv__
+     > (ADJ_M2))
+      CALL saxpy(OpenAD_Symbol_167, __deriv__(G), __deriv__(ADJ_M2))
+      CALL saxpy(OpenAD_Symbol_168, __deriv__(MATR1), __deriv__(ADJ_M2)
+     > )
       CALL sax(OpenAD_Symbol_69, __deriv__(MATR3), __deriv__(ADJ_M3))
-      CALL saxpy(OpenAD_acc_14, __deriv__(OpenAD_prop_2), __deriv__(
-     > ADJ_M3))
+      CALL saxpy(OpenAD_Symbol_169, __deriv__(OpenAD_prop_2), __deriv__
+     > (ADJ_M3))
       CALL saxpy(OpenAD_Symbol_70, __deriv__(G), __deriv__(ADJ_M3))
       CALL saxpy(OpenAD_Symbol_71, __deriv__(MATR0), __deriv__(ADJ_M3))
       CALL sax(OpenAD_Symbol_72, __deriv__(ADJ_M1), __deriv__(LOC1))
@@ -610,9 +612,9 @@ C$OPENAD XXX Template ad_template.f
       __value__(H_OBJ4) = (__value__(F) + __value__(LOC1))
       __value__(H_OBJ5) = (FOUR3RD * __value__(R11))
       OpenAD_Symbol_111 = FOUR3RD
-      OpenAD_acc_15 = (OpenAD_Symbol_108 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_170 = (OpenAD_Symbol_108 * INT((-1_w2f__i8)))
       CALL sax(OpenAD_Symbol_111, __deriv__(R11), __deriv__(H_OBJ5))
-      CALL sax(OpenAD_acc_15, __deriv__(R11), __deriv__(LOC1))
+      CALL sax(OpenAD_Symbol_170, __deriv__(R11), __deriv__(LOC1))
       CALL setderiv(__deriv__(H_OBJ2), __deriv__(LOC1))
       CALL dec_deriv(__deriv__(H_OBJ2), __deriv__(F))
       CALL setderiv(__deriv__(H_OBJ4), __deriv__(F))
@@ -651,9 +653,9 @@ C$OPENAD XXX Template ad_template.f
       __value__(H_OBJ19) = (__value__(F) + __value__(LOC1))
       __value__(H_OBJ20) = (FOUR3RD * __value__(R00))
       OpenAD_Symbol_122 = FOUR3RD
-      OpenAD_acc_16 = (OpenAD_Symbol_119 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_171 = (OpenAD_Symbol_119 * INT((-1_w2f__i8)))
       CALL sax(OpenAD_Symbol_122, __deriv__(R00), __deriv__(H_OBJ20))
-      CALL sax(OpenAD_acc_16, __deriv__(R00), __deriv__(LOC1))
+      CALL sax(OpenAD_Symbol_171, __deriv__(R00), __deriv__(LOC1))
       CALL setderiv(__deriv__(H_OBJ17), __deriv__(LOC1))
       CALL dec_deriv(__deriv__(H_OBJ17), __deriv__(F))
       CALL setderiv(__deriv__(H_OBJ19), __deriv__(F))
@@ -688,7 +690,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_140 = TWOSQRT3
       __value__(H_OBJ8) = (__value__(G) - __value__(F))
       __value__(H_OBJ11) = (__value__(F) + __value__(G))
-      OpenAD_acc_17 = (OpenAD_Symbol_138 * INT((-1_w2f__i8)))
+      OpenAD_Symbol_172 = (OpenAD_Symbol_138 * INT((-1_w2f__i8)))
       CALL setderiv(__deriv__(OpenAD_prop_7), __deriv__(M01))
       CALL inc_deriv(__deriv__(OpenAD_prop_7), __deriv__(M23))
       CALL sax(OpenAD_Symbol_124, __deriv__(LOC2), __deriv__(LOC1))
@@ -709,7 +711,7 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_Symbol_136, __deriv__(GG), __deriv__(R12))
       CALL saxpy(OpenAD_Symbol_137, __deriv__(M12), __deriv__(R12))
       CALL sax(OpenAD_Symbol_140, __deriv__(R03), __deriv__(F))
-      CALL sax(OpenAD_acc_17, __deriv__(R13), __deriv__(G))
+      CALL sax(OpenAD_Symbol_172, __deriv__(R13), __deriv__(G))
       CALL setderiv(__deriv__(H_OBJ8), __deriv__(G))
       CALL dec_deriv(__deriv__(H_OBJ8), __deriv__(F))
       CALL setderiv(__deriv__(H_OBJ11), __deriv__(F))

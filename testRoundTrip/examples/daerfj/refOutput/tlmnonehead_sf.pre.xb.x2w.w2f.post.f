@@ -28,12 +28,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:4)
@@ -51,6 +45,9 @@ C
       REAL(w2f__8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
+      REAL(w2f__8) OpenAD_Symbol_14
+      REAL(w2f__8) OpenAD_Symbol_15
+      REAL(w2f__8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_4
       REAL(w2f__8) OpenAD_Symbol_6
@@ -99,15 +96,15 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_13 = X(1)%v
         OpenAD_Symbol_10 = (INT(1_w2f__i8)/TEMP2%v)
         OpenAD_Symbol_11 = (-(OpenAD_Symbol_9/(TEMP2%v*TEMP2%v)))
-        OpenAD_acc_0 = (OpenAD_Symbol_11*INT((-1_w2f__i8)))
-        OpenAD_acc_1 = (OpenAD_Symbol_12*OpenAD_Symbol_10*INT((-1_w2f__i
-     +8)))
-        OpenAD_acc_2 = (OpenAD_Symbol_2*OpenAD_Symbol_13*OpenAD_Symbol_1
-     +0*INT((-1_w2f__i8)))
+        OpenAD_Symbol_14 = (OpenAD_Symbol_11*INT((-1_w2f__i8)))
+        OpenAD_Symbol_15 = (OpenAD_Symbol_12*OpenAD_Symbol_10*INT((-1_w2
+     +f__i8)))
+        OpenAD_Symbol_16 = (OpenAD_Symbol_2*OpenAD_Symbol_13*OpenAD_Symb
+     +ol_10*INT((-1_w2f__i8)))
         CALL setderiv(TEMP2,X(4))
         CALL saxpy(OpenAD_Symbol_6,X(3),TEMP2)
-        CALL sax(OpenAD_acc_0,TEMP2,FVEC(I))
-        CALL saxpy(OpenAD_acc_1,X(1),FVEC(I))
-        CALL saxpy(OpenAD_acc_2,X(2),FVEC(I))
+        CALL sax(OpenAD_Symbol_14,TEMP2,FVEC(I))
+        CALL saxpy(OpenAD_Symbol_15,X(1),FVEC(I))
+        CALL saxpy(OpenAD_Symbol_16,X(2),FVEC(I))
       END DO
       END SUBROUTINE

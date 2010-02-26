@@ -28,14 +28,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_acc_4
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X1
@@ -49,6 +41,11 @@ C
       type(active) :: V4
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_Symbol_10
+      REAL(w2f__8) OpenAD_Symbol_11
+      REAL(w2f__8) OpenAD_Symbol_12
+      REAL(w2f__8) OpenAD_Symbol_13
+      REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -82,17 +79,17 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_6 = V4%v
       Y2%v = SIN(V4%v)
       OpenAD_Symbol_9 = COS(V4%v)
-      OpenAD_acc_0 = (OpenAD_Symbol_7*OpenAD_Symbol_6)
-      OpenAD_acc_1 = (OpenAD_Symbol_8*OpenAD_Symbol_6+OpenAD_Symbol_3*Op
-     +enAD_Symbol_5)
-      OpenAD_acc_2 = (OpenAD_Symbol_3*OpenAD_Symbol_9)
-      OpenAD_acc_3 = (OpenAD_Symbol_2*OpenAD_Symbol_5)
-      OpenAD_acc_4 = (OpenAD_Symbol_2*OpenAD_Symbol_9)
+      OpenAD_Symbol_10 = (OpenAD_Symbol_7*OpenAD_Symbol_6)
+      OpenAD_Symbol_11 = (OpenAD_Symbol_8*OpenAD_Symbol_6+OpenAD_Symbol_
+     +3*OpenAD_Symbol_5)
+      OpenAD_Symbol_12 = (OpenAD_Symbol_3*OpenAD_Symbol_9)
+      OpenAD_Symbol_13 = (OpenAD_Symbol_2*OpenAD_Symbol_5)
+      OpenAD_Symbol_14 = (OpenAD_Symbol_2*OpenAD_Symbol_9)
       CALL sax(OpenAD_Symbol_0,X1,V3)
       CALL saxpy(OpenAD_Symbol_1,X2,V3)
-      CALL sax(OpenAD_acc_2,V3,Y2)
-      CALL saxpy(OpenAD_acc_4,X1,Y2)
-      CALL sax(OpenAD_acc_0,X2,Y1)
-      CALL saxpy(OpenAD_acc_1,V3,Y1)
-      CALL saxpy(OpenAD_acc_3,X1,Y1)
+      CALL sax(OpenAD_Symbol_12,V3,Y2)
+      CALL saxpy(OpenAD_Symbol_14,X1,Y2)
+      CALL sax(OpenAD_Symbol_10,X2,Y1)
+      CALL saxpy(OpenAD_Symbol_11,V3,Y1)
+      CALL saxpy(OpenAD_Symbol_13,X1,Y1)
       END SUBROUTINE

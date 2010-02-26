@@ -114,13 +114,13 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-C     $OpenAD$ INLINE convert_p2a_vector(subst,subst)
-      CALL convert_p2a_vector(OpenAD_Symbol_0,X)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,Y)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_0,X)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_Symbol_1,Y)
       CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C     $OpenAD$ INLINE convert_a2p_vector(subst,subst)
-      CALL convert_a2p_vector(X,OpenAD_Symbol_0)
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(Y,OpenAD_Symbol_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(X,OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(Y,OpenAD_Symbol_1)
       END SUBROUTINE
