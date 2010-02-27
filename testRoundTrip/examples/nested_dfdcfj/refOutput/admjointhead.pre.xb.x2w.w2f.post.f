@@ -499,29 +499,29 @@ C restore arguments
       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
-C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
+C        write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
       end do
       HY = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", HY
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", HY
       theArgFStackoffset = theArgFStackoffset-1
       HX = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", HX
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", HX
       theArgFStackoffset = theArgFStackoffset-1
       R = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", R
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", R
       theArgFStackoffset = theArgFStackoffset-1
       NY = theArgIStack(theArgIStackoffset)
-C          write(*,'(A,I5,I5)') "restore(s)  ", NY, theArgIStackOffset
+C        write(*,'(A,I5,I5)') "restore(s)  ", NY, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
       NX = theArgIStack(theArgIStackoffset)
-C          write(*,'(A,I5,I5)') "restore(s)  ", NX, theArgIStackOffset
+C        write(*,'(A,I5,I5)') "restore(s)  ", NX, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
       HX2 = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", HX2
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", HX2
       theArgFStackoffset = theArgFStackoffset-1
       HY2 = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", HY2
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", HY2
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
@@ -1331,49 +1331,49 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       HX2 = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", HX2
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", HX2
       theArgFStackoffset = theArgFStackoffset-1
       HY2 = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", HY2
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", HY2
       theArgFStackoffset = theArgFStackoffset-1
       PTT%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PTT%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PTT%v
       theArgFStackoffset = theArgFStackoffset-1
       PTR%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PTR%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PTR%v
       theArgFStackoffset = theArgFStackoffset-1
       PT%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PT%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PT%v
       theArgFStackoffset = theArgFStackoffset-1
       PTL%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PTL%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PTL%v
       theArgFStackoffset = theArgFStackoffset-1
       PRR%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PRR%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PRR%v
       theArgFStackoffset = theArgFStackoffset-1
       PR%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PR%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PR%v
       theArgFStackoffset = theArgFStackoffset-1
       P%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", P%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", P%v
       theArgFStackoffset = theArgFStackoffset-1
       PL%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PL%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PL%v
       theArgFStackoffset = theArgFStackoffset-1
       PLL%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PLL%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PLL%v
       theArgFStackoffset = theArgFStackoffset-1
       PBR%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PBR%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PBR%v
       theArgFStackoffset = theArgFStackoffset-1
       PB%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PB%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PB%v
       theArgFStackoffset = theArgFStackoffset-1
       PBL%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PBL%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PBL%v
       theArgFStackoffset = theArgFStackoffset-1
       PBB%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", PBB%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", PBB%v
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then

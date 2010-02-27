@@ -113,14 +113,14 @@ C restore arguments
       do cp_loop_variable_1 = ubound(A,1),lbound(A,1),-1
       A(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
-C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
+C        write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +A(cp_loop_variable_1)%v
       end do
       N = theArgIStack(theArgIStackoffset)
-C          write(*,'(A,I5,I5)') "restore(s)  ", N, theArgIStackOffset
+C        write(*,'(A,I5,I5)') "restore(s)  ", N, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
       G = theArgIStack(theArgIStackoffset)
-C          write(*,'(A,I5,I5)') "restore(s)  ", G, theArgIStackOffset
+C        write(*,'(A,I5,I5)') "restore(s)  ", G, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
           end if
           if (our_rev_mode%plain) then
@@ -281,7 +281,7 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       G = theArgIStack(theArgIStackoffset)
-C          write(*,'(A,I5,I5)') "restore(s)  ", G, theArgIStackOffset
+C        write(*,'(A,I5,I5)') "restore(s)  ", G, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
           end if
           if (our_rev_mode%plain) then

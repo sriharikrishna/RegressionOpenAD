@@ -92,20 +92,20 @@ C restore arguments
       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
-C          write(*,'(A,EN26.16E3)') "restore(v)  ", 
+C        write(*,'(A,EN26.16E3)') "restore(v)  ", 
 C     +X(cp_loop_variable_1)%v
       end do
       S = theArgIStack(theArgIStackoffset)
-C          write(*,'(A,I5,I5)') "restore(s)  ", S, theArgIStackOffset
+C        write(*,'(A,I5,I5)') "restore(s)  ", S, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
       U = theArgIStack(theArgIStackoffset)
-C          write(*,'(A,I5,I5)') "restore(s)  ", U, theArgIStackOffset
+C        write(*,'(A,I5,I5)') "restore(s)  ", U, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
       L = theArgIStack(theArgIStackoffset)
-C          write(*,'(A,I5,I5)') "restore(s)  ", L, theArgIStackOffset
+C        write(*,'(A,I5,I5)') "restore(s)  ", L, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
       Y%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", Y%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", Y%v
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then

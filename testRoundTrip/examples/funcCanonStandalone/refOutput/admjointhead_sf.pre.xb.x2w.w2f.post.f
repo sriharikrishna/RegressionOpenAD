@@ -87,10 +87,10 @@ CONTAINS
     if (our_rev_mode%arg_restore) then
 ! restore arguments
   B = theArgFStack(theArgFStackoffset)
-!          write(*,'(A,EN26.16E3)') "restore(s)  ", B
+!        write(*,'(A,EN26.16E3)') "restore(s)  ", B
   theArgFStackoffset = theArgFStackoffset-1
   A%v = theArgFStack(theArgFStackoffset)
-!          write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
+!        write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
   theArgFStackoffset = theArgFStackoffset-1
     end if
     if (our_rev_mode%plain) then
@@ -257,7 +257,7 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       X%v = theArgFStack(theArgFStackoffset)
-C          write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
+C        write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
