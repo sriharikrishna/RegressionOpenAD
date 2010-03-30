@@ -42,6 +42,7 @@ C
       TYPE (OpenADTy_active) Y1
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_Symbol_8
 C
 C     **** Top Level Pragmas ****
 C
@@ -58,9 +59,10 @@ C$OPENAD XXX Template ad_template.f
       __value__(T5) = (__value__(T4) + 4.0D00)
       __value__(T6) = (__value__(T5) + 3.0D00)
       __value__(T7) = (__value__(T6) +(-9.0D00))
-      __value__(Y1) = EXP(__value__(T7))
       OpenAD_Symbol_6 = EXP(__value__(T7))
+      OpenAD_Symbol_7 = OpenAD_Symbol_6
+      __value__(Y1) = OpenAD_Symbol_6
       __value__(Y(1)) = __value__(Y1)
-      OpenAD_Symbol_7 = (1.0D00 * OpenAD_Symbol_6)
-      CALL sax(OpenAD_Symbol_7, __deriv__(X(1)), __deriv__(Y(1)))
+      OpenAD_Symbol_8 = (1.0D00 * OpenAD_Symbol_7)
+      CALL sax(OpenAD_Symbol_8, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE
