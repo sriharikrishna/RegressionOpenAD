@@ -108,10 +108,6 @@ C
       use foo
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
@@ -122,6 +118,7 @@ C
       TYPE (OpenADTy_active) OAD_CTMP0
       REAL(w2f__8) OAD_CTMP1
       REAL(w2f__8) T
+      TYPE (OpenADTy_active) OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -135,9 +132,9 @@ C$OPENAD XXX Template ad_template.f
       __value__(Y(1)) = (__value__(OAD_CTMP0) * 2.0D00)
       CALL sax(2.0D00, __deriv__(OAD_CTMP0), __deriv__(Y(1)))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), OAD_CTMP1)
-      CALL OAD_S_BAR(__deriv__(Y(1)), __deriv__(OpenAD_Symbol_0))
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), OAD_CTMP1)
+      CALL OAD_S_BAR(__deriv__(Y(1)), __deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OAD_CTMP1, __deriv__(OpenAD_Symbol_0))
+      CALL oad_convert(OAD_CTMP1, __deriv__(OpenAD_tyc_0))
       T = OAD_CTMP1
       END SUBROUTINE

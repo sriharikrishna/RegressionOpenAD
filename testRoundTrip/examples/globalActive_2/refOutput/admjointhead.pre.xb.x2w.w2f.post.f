@@ -49,9 +49,9 @@ C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
 
 
 C checkpointing stacks and offsets
@@ -125,15 +125,15 @@ C taping
 C$OPENAD XXX Template ad_template.f
       APASSIVEGLOBAL = 2.0D00
       AGLOBAL%v = (X(1)%v*X(2)%v)
-      OpenAD_Symbol_0 = X(2)%v
-      OpenAD_Symbol_1 = X(1)%v
+      OpenAD_lin_0 = X(2)%v
+      OpenAD_lin_1 = X(1)%v
       Y(1)%v = (AGLOBAL%v*APASSIVEGLOBAL)
-      OpenAD_Symbol_2 = APASSIVEGLOBAL
-      double_tape(double_tape_pointer) = OpenAD_Symbol_0
+      OpenAD_lin_2 = APASSIVEGLOBAL
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_1
+      double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_2
+      double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
 
 C taping end
@@ -152,15 +152,15 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_4 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_0 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_5 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_1 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-      AGLOBAL%d = AGLOBAL%d+Y(1)%d*(OpenAD_Symbol_4)
+      OpenAD_Symbol_2 = double_tape(double_tape_pointer)
+      AGLOBAL%d = AGLOBAL%d+Y(1)%d*(OpenAD_Symbol_0)
       Y(1)%d = 0.0d0
-      X(2)%d = X(2)%d+AGLOBAL%d*(OpenAD_Symbol_5)
-      X(1)%d = X(1)%d+AGLOBAL%d*(OpenAD_Symbol_6)
+      X(2)%d = X(2)%d+AGLOBAL%d*(OpenAD_Symbol_1)
+      X(1)%d = X(1)%d+AGLOBAL%d*(OpenAD_Symbol_2)
       AGLOBAL%d = 0.0d0
 
 C adjoint end

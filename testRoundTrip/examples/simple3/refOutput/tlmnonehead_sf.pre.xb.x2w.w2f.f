@@ -36,21 +36,21 @@ C     **** Local Variables and Functions ****
 C
       TYPE (OpenADTy_active) V3
       TYPE (OpenADTy_active) V4
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_10
-      REAL(w2f__8) OpenAD_Symbol_11
-      REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_Symbol_13
-      REAL(w2f__8) OpenAD_Symbol_14
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_acc_4
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
+      REAL(w2f__8) OpenAD_lin_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -63,30 +63,30 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(V3) = (__value__(X1) * __value__(X2))
-      OpenAD_Symbol_0 = __value__(X2)
-      OpenAD_Symbol_1 = __value__(X1)
+      OpenAD_lin_0 = __value__(X2)
+      OpenAD_lin_1 = __value__(X1)
       __value__(V4) = (__value__(X1) * __value__(V3))
-      OpenAD_Symbol_2 = __value__(V3)
-      OpenAD_Symbol_3 = __value__(X1)
-      OpenAD_Symbol_4 = (__value__(X2) * __value__(V3))
-      __value__(Y1) = (__value__(V4) * OpenAD_Symbol_4)
-      OpenAD_Symbol_5 = OpenAD_Symbol_4
-      OpenAD_Symbol_7 = __value__(V3)
-      OpenAD_Symbol_8 = __value__(X2)
-      OpenAD_Symbol_6 = __value__(V4)
+      OpenAD_lin_2 = __value__(V3)
+      OpenAD_lin_3 = __value__(X1)
+      OpenAD_lin_4 = (__value__(X2) * __value__(V3))
+      __value__(Y1) = (__value__(V4) * OpenAD_lin_4)
+      OpenAD_lin_5 = OpenAD_lin_4
+      OpenAD_lin_7 = __value__(V3)
+      OpenAD_lin_8 = __value__(X2)
+      OpenAD_lin_6 = __value__(V4)
       __value__(Y2) = SIN(__value__(V4))
-      OpenAD_Symbol_9 = COS(__value__(V4))
-      OpenAD_Symbol_10 = (OpenAD_Symbol_7 * OpenAD_Symbol_6)
-      OpenAD_Symbol_11 = (OpenAD_Symbol_8 * OpenAD_Symbol_6 +
-     >  OpenAD_Symbol_3 * OpenAD_Symbol_5)
-      OpenAD_Symbol_12 = (OpenAD_Symbol_3 * OpenAD_Symbol_9)
-      OpenAD_Symbol_13 = (OpenAD_Symbol_2 * OpenAD_Symbol_5)
-      OpenAD_Symbol_14 = (OpenAD_Symbol_2 * OpenAD_Symbol_9)
-      CALL sax(OpenAD_Symbol_0, __deriv__(X1), __deriv__(V3))
-      CALL saxpy(OpenAD_Symbol_1, __deriv__(X2), __deriv__(V3))
-      CALL sax(OpenAD_Symbol_12, __deriv__(V3), __deriv__(Y2))
-      CALL saxpy(OpenAD_Symbol_14, __deriv__(X1), __deriv__(Y2))
-      CALL sax(OpenAD_Symbol_10, __deriv__(X2), __deriv__(Y1))
-      CALL saxpy(OpenAD_Symbol_11, __deriv__(V3), __deriv__(Y1))
-      CALL saxpy(OpenAD_Symbol_13, __deriv__(X1), __deriv__(Y1))
+      OpenAD_lin_9 = COS(__value__(V4))
+      OpenAD_acc_0 = (OpenAD_lin_7 * OpenAD_lin_6)
+      OpenAD_acc_1 = (OpenAD_lin_8 * OpenAD_lin_6 + OpenAD_lin_3 *
+     >  OpenAD_lin_5)
+      OpenAD_acc_2 = (OpenAD_lin_3 * OpenAD_lin_9)
+      OpenAD_acc_3 = (OpenAD_lin_2 * OpenAD_lin_5)
+      OpenAD_acc_4 = (OpenAD_lin_2 * OpenAD_lin_9)
+      CALL sax(OpenAD_lin_0, __deriv__(X1), __deriv__(V3))
+      CALL saxpy(OpenAD_lin_1, __deriv__(X2), __deriv__(V3))
+      CALL sax(OpenAD_acc_2, __deriv__(V3), __deriv__(Y2))
+      CALL saxpy(OpenAD_acc_4, __deriv__(X1), __deriv__(Y2))
+      CALL sax(OpenAD_acc_0, __deriv__(X2), __deriv__(Y1))
+      CALL saxpy(OpenAD_acc_1, __deriv__(V3), __deriv__(Y1))
+      CALL saxpy(OpenAD_acc_3, __deriv__(X1), __deriv__(Y1))
       END SUBROUTINE

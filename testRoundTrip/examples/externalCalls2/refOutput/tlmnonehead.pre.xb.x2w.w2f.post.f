@@ -6,10 +6,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
@@ -19,8 +15,9 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL barext
       type(active) :: T
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_tyc_0
 C
 C     **** Statements ****
 C
@@ -28,15 +25,15 @@ C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
       CALL setderiv(T,X(1))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0,T)
-      CALL barext(OpenAD_Symbol_0)
+      CALL oad_convert(OpenAD_tyc_0,T)
+      CALL barext(OpenAD_tyc_0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T,OpenAD_Symbol_0)
+      CALL oad_convert(T,OpenAD_tyc_0)
       Y%v = (X(2)%v*T%v)
-      OpenAD_Symbol_1 = T%v
-      OpenAD_Symbol_2 = X(2)%v
-      CALL sax(OpenAD_Symbol_1,X(2),Y)
-      CALL saxpy(OpenAD_Symbol_2,T,Y)
+      OpenAD_lin_0 = T%v
+      OpenAD_lin_1 = X(2)%v
+      CALL sax(OpenAD_lin_0,X(2),Y)
+      CALL saxpy(OpenAD_lin_1,T,Y)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

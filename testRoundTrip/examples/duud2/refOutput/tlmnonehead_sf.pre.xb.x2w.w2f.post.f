@@ -36,8 +36,8 @@ C
 C     **** Local Variables and Functions ****
 C
       type(active) :: LOCALX(1:1)
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
 C
 C     **** Top Level Pragmas ****
 C
@@ -50,8 +50,8 @@ C$OPENAD XXX Template ad_template.f
       LOCALX(1)%v = (X(1)%v*2.0D00)
       CALL sax(2.0D00,X(1),LOCALX(1))
       Y(1)%v = (LOCALX(1)%v*LOCALX(1)%v)
-      OpenAD_Symbol_1 = LOCALX(1)%v
-      OpenAD_Symbol_2 = LOCALX(1)%v
-      CALL sax(OpenAD_Symbol_1,LOCALX(1),Y(1))
-      CALL saxpy(OpenAD_Symbol_2,LOCALX(1),Y(1))
+      OpenAD_lin_1 = LOCALX(1)%v
+      OpenAD_lin_2 = LOCALX(1)%v
+      CALL sax(OpenAD_lin_1,LOCALX(1),Y(1))
+      CALL saxpy(OpenAD_lin_2,LOCALX(1),Y(1))
       END SUBROUTINE

@@ -66,26 +66,23 @@ C
       use globals
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL bar
+      REAL(w2f__8) OpenAD_tyc_0
+      REAL(w2f__8) OpenAD_tyc_1
 C
 C     **** Statements ****
 C
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0,GX)
+      CALL oad_convert(OpenAD_tyc_0,GX)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_1,GY)
-      CALL bar(OpenAD_Symbol_0,OpenAD_Symbol_1)
+      CALL oad_convert(OpenAD_tyc_1,GY)
+      CALL bar(OpenAD_tyc_0,OpenAD_tyc_1)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(GX,OpenAD_Symbol_0)
+      CALL oad_convert(GX,OpenAD_tyc_0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(GY,OpenAD_Symbol_1)
+      CALL oad_convert(GY,OpenAD_tyc_1)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

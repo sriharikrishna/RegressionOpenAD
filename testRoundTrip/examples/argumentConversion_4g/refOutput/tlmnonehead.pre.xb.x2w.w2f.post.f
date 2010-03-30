@@ -40,15 +40,15 @@ C$OPENAD XXX Template ad_template.f
       use m
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0(:)
-      ALLOCATABLE OpenAD_Symbol_0
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:)
       type(active) :: Y(1:)
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_tyc_0(:)
+      ALLOCATABLE OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -61,12 +61,12 @@ C$OPENAD XXX Template ad_template.f
       Y(1:)%v = X(1:)%v
       CALL setderiv(Y(1:),X(1:))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
-      CALL oad_AllocateMatching(OpenAD_Symbol_0,Y)
+      CALL oad_AllocateMatching(OpenAD_tyc_0,Y)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0,Y)
-      CALL FOOI(OpenAD_Symbol_0)
+      CALL oad_convert(OpenAD_tyc_0,Y)
+      CALL FOOI(OpenAD_tyc_0)
 C     $OpenAD$ INLINE oad_ShapeTest(subst,subst)
-      CALL oad_ShapeTest(OpenAD_Symbol_0,Y)
+      CALL oad_ShapeTest(OpenAD_tyc_0,Y)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(Y,OpenAD_Symbol_0)
+      CALL oad_convert(Y,OpenAD_tyc_0)
       END SUBROUTINE

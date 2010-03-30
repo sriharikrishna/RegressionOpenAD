@@ -34,8 +34,8 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -48,10 +48,10 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
         IF(I .eq. 1) THEN
           __value__(Y(INT(I))) = (__value__(X(I)) * __value__(X(I)))
-          OpenAD_Symbol_0 = __value__(X(I))
-          OpenAD_Symbol_1 = __value__(X(I))
-          CALL sax(OpenAD_Symbol_0, __deriv__(X(I)), __deriv__(Y(I)))
-          CALL saxpy(OpenAD_Symbol_1, __deriv__(X(I)), __deriv__(Y(I)))
+          OpenAD_lin_0 = __value__(X(I))
+          OpenAD_lin_1 = __value__(X(I))
+          CALL sax(OpenAD_lin_0, __deriv__(X(I)), __deriv__(Y(I)))
+          CALL saxpy(OpenAD_lin_1, __deriv__(X(I)), __deriv__(Y(I)))
         ELSE
           __value__(Y(INT(I))) = (__value__(X(I)) + __value__(X(I)))
           CALL setderiv(__deriv__(Y(I)), __deriv__(X(I)))

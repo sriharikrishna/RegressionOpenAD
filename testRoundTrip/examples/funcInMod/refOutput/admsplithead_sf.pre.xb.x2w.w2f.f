@@ -88,15 +88,15 @@ C
         use oad_intrinsics
         IMPLICIT NONE
 C
-C       **** Global Variables & Derived Type Definitions ****
-C
-        TYPE (OpenADTy_active) OpenAD_prop_0
-        TYPE (OpenADTy_active) OpenAD_prop_1
-C
 C       **** Parameters and Result ****
 C
         TYPE (OpenADTy_active) X
         TYPE (OpenADTy_active) FOO_I
+C
+C       **** Local Variables and Functions ****
+C
+        TYPE (OpenADTy_active) OpenAD_prp_0
+        TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C       **** Statements ****
 C
@@ -114,19 +114,19 @@ C       $OpenAD$ INLINE IncDeriv(subst,subst)
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(FOO_I))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(MX), __deriv__(OpenAD_prop_1))
+        CALL IncDeriv(__deriv__(MX), __deriv__(OpenAD_prp_1))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(MX), __deriv__(OpenAD_prop_0))
+        CALL IncDeriv(__deriv__(MX), __deriv__(OpenAD_prp_0))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(MX))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(OpenAD_prop_1), __deriv__(MX))
+        CALL IncDeriv(__deriv__(OpenAD_prp_1), __deriv__(MX))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
-        CALL ZeroDeriv(__deriv__(OpenAD_prop_1))
+        CALL ZeroDeriv(__deriv__(OpenAD_prp_1))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(OpenAD_prop_0), __deriv__(X))
+        CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
-        CALL ZeroDeriv(__deriv__(OpenAD_prop_0))
+        CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 4
 C       $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
@@ -186,19 +186,19 @@ C       $OpenAD$ INLINE IncDeriv(subst,subst)
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(FOO_I))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(MX), __deriv__(OpenAD_prop_1))
+        CALL IncDeriv(__deriv__(MX), __deriv__(OpenAD_prp_1))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(MX), __deriv__(OpenAD_prop_0))
+        CALL IncDeriv(__deriv__(MX), __deriv__(OpenAD_prp_0))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(MX))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(OpenAD_prop_1), __deriv__(MX))
+        CALL IncDeriv(__deriv__(OpenAD_prp_1), __deriv__(MX))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
-        CALL ZeroDeriv(__deriv__(OpenAD_prop_1))
+        CALL ZeroDeriv(__deriv__(OpenAD_prp_1))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(OpenAD_prop_0), __deriv__(X))
+        CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
-        CALL ZeroDeriv(__deriv__(OpenAD_prop_0))
+        CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
 C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
 

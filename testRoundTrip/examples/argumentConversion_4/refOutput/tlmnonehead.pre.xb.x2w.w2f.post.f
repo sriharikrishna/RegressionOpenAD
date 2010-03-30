@@ -13,17 +13,17 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       Y%v = (X%v*X%v)
-      OpenAD_Symbol_2 = X%v
-      OpenAD_Symbol_3 = X%v
-      CALL sax(OpenAD_Symbol_2,X,Y)
-      CALL saxpy(OpenAD_Symbol_3,X,Y)
+      OpenAD_lin_0 = X%v
+      OpenAD_lin_1 = X%v
+      CALL sax(OpenAD_lin_0,X,Y)
+      CALL saxpy(OpenAD_lin_1,X,Y)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -31,11 +31,6 @@ C$OPENAD XXX Template ad_template.f
       use OAD_active
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_Symbol_0
-      type(active) :: OpenAD_Symbol_1
 C
 C     **** Parameters and Result ****
 C
@@ -47,6 +42,8 @@ C
       EXTERNAL foo
       REAL(w2f__8) PX(1 : 2)
       REAL(w2f__8) PY
+      type(active) :: OpenAD_tyc_0
+      type(active) :: OpenAD_tyc_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -58,12 +55,12 @@ C
 C$OPENAD XXX Template ad_template.f
       CALL foo(X(1),Y)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0,PX(1))
+      CALL oad_convert(OpenAD_tyc_0,PX(1))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_1,PY)
-      CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
+      CALL oad_convert(OpenAD_tyc_1,PY)
+      CALL foo(OpenAD_tyc_0,OpenAD_tyc_1)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(PX(1),OpenAD_Symbol_0)
+      CALL oad_convert(PX(1),OpenAD_tyc_0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(PY,OpenAD_Symbol_1)
+      CALL oad_convert(PY,OpenAD_tyc_1)
       END SUBROUTINE

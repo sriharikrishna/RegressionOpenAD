@@ -86,25 +86,25 @@ C
         use oad_intrinsics
         IMPLICIT NONE
 C
-C       **** Global Variables & Derived Type Definitions ****
-C
-        TYPE (OpenADTy_active) OpenAD_prop_0
-        TYPE (OpenADTy_active) OpenAD_prop_1
-C
 C       **** Parameters and Result ****
 C
         TYPE (OpenADTy_active) X
         TYPE (OpenADTy_active) FOO_I
         INTENT(OUT)  FOO_I
 C
+C       **** Local Variables and Functions ****
+C
+        TYPE (OpenADTy_active) OpenAD_prp_0
+        TYPE (OpenADTy_active) OpenAD_prp_1
+C
 C       **** Statements ****
 C
         __value__(MX) = (__value__(X) + __value__(MX))
         __value__(FOO_I) = __value__(MX)
-        CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(X))
-        CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(MX))
-        CALL setderiv(__deriv__(MX), __deriv__(OpenAD_prop_0))
-        CALL inc_deriv(__deriv__(MX), __deriv__(OpenAD_prop_1))
+        CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X))
+        CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(MX))
+        CALL setderiv(__deriv__(MX), __deriv__(OpenAD_prp_0))
+        CALL inc_deriv(__deriv__(MX), __deriv__(OpenAD_prp_1))
         CALL setderiv(__deriv__(FOO_I), __deriv__(MX))
         END SUBROUTINE
 

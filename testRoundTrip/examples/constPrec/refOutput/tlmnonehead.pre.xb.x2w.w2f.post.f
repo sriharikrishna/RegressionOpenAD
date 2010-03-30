@@ -17,9 +17,9 @@ C
       PARAMETER ( DEG2RAD = 1.74532925199432954744D-02)
       REAL(w2f__8) PI
       PARAMETER ( PI = 3.141592653589793116D00)
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -29,9 +29,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_0 = (X(1)%v*1.74532925199432954744D-02)
-      Y(1)%v = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_1 = (-SIN(OpenAD_Symbol_0))
-      OpenAD_Symbol_3 = (1.74532925199432954744D-02*OpenAD_Symbol_1)
-      CALL sax(OpenAD_Symbol_3,X(1),Y(1))
+      OpenAD_lin_0 = (X(1)%v*1.74532925199432954744D-02)
+      Y(1)%v = COS(OpenAD_lin_0)
+      OpenAD_lin_1 = (-SIN(OpenAD_lin_0))
+      OpenAD_acc_0 = (1.74532925199432954744D-02*OpenAD_lin_1)
+      CALL sax(OpenAD_acc_0,X(1),Y(1))
       END SUBROUTINE

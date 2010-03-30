@@ -58,14 +58,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_Symbol_2
-      TYPE (OpenADTy_active) OpenAD_Symbol_3
-      TYPE (OpenADTy_active) OpenAD_Symbol_4
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
@@ -79,6 +71,11 @@ C
       REAL(w2f__8) T
       TYPE (OpenADTy_active) T1
       REAL(w2f__8) T2
+      TYPE (OpenADTy_active) OpenAD_tyc_0
+      TYPE (OpenADTy_active) OpenAD_tyc_1
+      TYPE (OpenADTy_active) OpenAD_tyc_2
+      TYPE (OpenADTy_active) OpenAD_tyc_3
+      TYPE (OpenADTy_active) OpenAD_tyc_4
 C
 C     **** Top Level Pragmas ****
 C
@@ -90,32 +87,32 @@ C
 C$OPENAD XXX Template ad_template.f
       T = 2.0D00
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), T)
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_0), __deriv__(X(1)),
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), T)
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_0), __deriv__(X(1)),
      >  __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T, __deriv__(OpenAD_Symbol_0))
+      CALL oad_convert(T, __deriv__(OpenAD_tyc_0))
       __value__(T1) = __value__(OAD_CTMP0)
       CALL setderiv(__deriv__(T1), __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_1), T)
-      CALL OAD_S_MIN_D(__deriv__(T1), __deriv__(OpenAD_Symbol_1),
+      CALL oad_convert(__deriv__(OpenAD_tyc_1), T)
+      CALL OAD_S_MIN_D(__deriv__(T1), __deriv__(OpenAD_tyc_1),
      >  __deriv__(OAD_CTMP1))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T, __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(T, __deriv__(OpenAD_tyc_1))
       __value__(Y(1)) = __value__(OAD_CTMP1)
       CALL setderiv(__deriv__(Y(1)), __deriv__(OAD_CTMP1))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_2), T)
+      CALL oad_convert(__deriv__(OpenAD_tyc_2), T)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_3), 2.5D00)
+      CALL oad_convert(__deriv__(OpenAD_tyc_3), 2.5D00)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_4), OAD_CTMP2)
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_2), __deriv__(
-     > OpenAD_Symbol_3), __deriv__(OpenAD_Symbol_4))
+      CALL oad_convert(__deriv__(OpenAD_tyc_4), OAD_CTMP2)
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_2), __deriv__(OpenAD_tyc_3)
+     > , __deriv__(OpenAD_tyc_4))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T, __deriv__(OpenAD_Symbol_2))
+      CALL oad_convert(T, __deriv__(OpenAD_tyc_2))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OAD_CTMP2, __deriv__(OpenAD_Symbol_4))
+      CALL oad_convert(OAD_CTMP2, __deriv__(OpenAD_tyc_4))
       T2 = OAD_CTMP2
       END SUBROUTINE

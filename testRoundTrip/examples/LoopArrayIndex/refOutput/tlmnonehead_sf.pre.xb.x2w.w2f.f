@@ -25,33 +25,28 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_prop_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) A
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_dly_0
+      TYPE (OpenADTy_active) OpenAD_prp_0
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_1 = (__value__(A) * 2.0D00)
-      __value__(A) = OpenAD_Symbol_1
-      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(A))
-      CALL sax(2.0D00, __deriv__(OpenAD_prop_0), __deriv__(A))
+      OpenAD_dly_0 = (__value__(A) * 2.0D00)
+      __value__(A) = OpenAD_dly_0
+      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(A))
+      CALL sax(2.0D00, __deriv__(OpenAD_prp_0), __deriv__(A))
       END SUBROUTINE
 
       SUBROUTINE bar(A, K)
       use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_4
-      TYPE (OpenADTy_active) OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -60,17 +55,19 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_dly_1
+      REAL(w2f__8) OpenAD_lin_2
+      TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       K = (K * 2)
-      OpenAD_Symbol_4 = (K * __value__(A))
-      OpenAD_Symbol_3 = K
-      __value__(A) = OpenAD_Symbol_4
-      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(A))
-      CALL sax(OpenAD_Symbol_3, __deriv__(OpenAD_prop_1), __deriv__(A))
+      OpenAD_dly_1 = (K * __value__(A))
+      OpenAD_lin_2 = K
+      __value__(A) = OpenAD_dly_1
+      CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(A))
+      CALL sax(OpenAD_lin_2, __deriv__(OpenAD_prp_1), __deriv__(A))
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -89,8 +86,8 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
 C
 C     **** Top Level Pragmas ****
 C
@@ -106,8 +103,8 @@ C$OPENAD XXX Template ad_template.f
         CALL bar(__deriv__(X(J)), I)
       END DO
       __value__(Y) = (__value__(X(1)) * __value__(X(2)))
-      OpenAD_Symbol_5 = __value__(X(2))
-      OpenAD_Symbol_6 = __value__(X(1))
-      CALL sax(OpenAD_Symbol_5, __deriv__(X(1)), __deriv__(Y))
-      CALL saxpy(OpenAD_Symbol_6, __deriv__(X(2)), __deriv__(Y))
+      OpenAD_lin_3 = __value__(X(2))
+      OpenAD_lin_4 = __value__(X(1))
+      CALL sax(OpenAD_lin_3, __deriv__(X(1)), __deriv__(Y))
+      CALL saxpy(OpenAD_lin_4, __deriv__(X(2)), __deriv__(Y))
       END SUBROUTINE

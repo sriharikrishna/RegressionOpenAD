@@ -70,25 +70,25 @@ C
         use oad_intrinsics
         IMPLICIT NONE
 C
-C       **** Global Variables & Derived Type Definitions ****
-C
-        type(active) :: OpenAD_prop_0
-        type(active) :: OpenAD_prop_1
-C
 C       **** Parameters and Result ****
 C
         type(active) :: X
         type(active) :: FOO_I
         INTENT(OUT) FOO_I
 C
+C       **** Local Variables and Functions ****
+C
+        type(active) :: OpenAD_prp_0
+        type(active) :: OpenAD_prp_1
+C
 C       **** Statements ****
 C
         MX%v = (X%v+MX%v)
         FOO_I%v = MX%v
-        CALL setderiv(OpenAD_prop_0,X)
-        CALL setderiv(OpenAD_prop_1,MX)
-        CALL setderiv(MX,OpenAD_prop_0)
-        CALL inc_deriv(MX,OpenAD_prop_1)
+        CALL setderiv(OpenAD_prp_0,X)
+        CALL setderiv(OpenAD_prp_1,MX)
+        CALL setderiv(MX,OpenAD_prp_0)
+        CALL inc_deriv(MX,OpenAD_prp_1)
         CALL setderiv(FOO_I,MX)
         END SUBROUTINE
 

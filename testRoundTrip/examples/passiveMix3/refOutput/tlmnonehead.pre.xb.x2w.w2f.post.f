@@ -6,10 +6,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_Symbol_0
-C
 C     **** Parameters and Result ****
 C
       REAL(w2f__8) M1
@@ -19,12 +15,13 @@ C
 C     **** Local Variables and Functions ****
 C
       type(active) :: OAD_CTMP0
+      type(active) :: OpenAD_tyc_0
 C
 C     **** Statements ****
 C
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0,M1)
-      CALL OAD_S_MIN_D(OpenAD_Symbol_0,M2,OAD_CTMP0)
+      CALL oad_convert(OpenAD_tyc_0,M1)
+      CALL OAD_S_MIN_D(OpenAD_tyc_0,M2,OAD_CTMP0)
       M2%v = OAD_CTMP0%v
       CALL setderiv(M2,OAD_CTMP0)
       END SUBROUTINE
@@ -34,10 +31,6 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       use OAD_active
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_Symbol_1
 C
 C     **** Parameters and Result ****
 C
@@ -52,6 +45,7 @@ C
       REAL(w2f__8) P
       REAL(w2f__8) T
       type(active) :: T1
+      type(active) :: OpenAD_tyc_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -64,10 +58,10 @@ C$OPENAD XXX Template ad_template.f
       T = 2.0D00
       P = SQRT(3.0D00)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_1,T)
-      CALL OAD_S_MIN_D(OpenAD_Symbol_1,X(1),OAD_CTMP0)
+      CALL oad_convert(OpenAD_tyc_1,T)
+      CALL OAD_S_MIN_D(OpenAD_tyc_1,X(1),OAD_CTMP0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T,OpenAD_Symbol_1)
+      CALL oad_convert(T,OpenAD_tyc_1)
       T1%v = OAD_CTMP0%v
       CALL setderiv(T1,OAD_CTMP0)
       CALL OAD_S_MIN_D(X(1),T1,OAD_CTMP1)

@@ -38,8 +38,8 @@ C
       INTEGER(w2f__i4) N
       SAVE N
       type(active) :: Z(1:INT(SIZE(X)))
-      REAL(w2f__8) OpenAD_Symbol_0(1 : 2)
-      REAL(w2f__8) OpenAD_Symbol_1(1 : 2)
+      REAL(w2f__8) OpenAD_lin_0(1 : 2)
+      REAL(w2f__8) OpenAD_lin_1(1 : 2)
 C
 C     **** Initializers ****
 C
@@ -56,8 +56,8 @@ C$OPENAD XXX Template ad_template.f
       Z(1:INT(SIZE(X)))%v = X(1:2)%v
       CALL setderiv(Z(1:INT(SIZE(X))),X(1:2))
       Y(1:2)%v = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
-      OpenAD_Symbol_0 = Z(1:INT(SIZE(X)))%v
-      OpenAD_Symbol_1 = X(1:2)%v
-      CALL sax(OpenAD_Symbol_0,X(1:2),Y(1:2))
-      CALL saxpy(OpenAD_Symbol_1,Z(1:INT(SIZE(X))),Y(1:2))
+      OpenAD_lin_0 = Z(1:INT(SIZE(X)))%v
+      OpenAD_lin_1 = X(1:2)%v
+      CALL sax(OpenAD_lin_0,X(1:2),Y(1:2))
+      CALL saxpy(OpenAD_lin_1,Z(1:INT(SIZE(X))),Y(1:2))
       END SUBROUTINE

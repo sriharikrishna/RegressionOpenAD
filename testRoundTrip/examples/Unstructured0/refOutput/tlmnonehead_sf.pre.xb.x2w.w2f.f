@@ -25,16 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_6
-      TYPE (OpenADTy_active) OpenAD_prop_0
-      TYPE (OpenADTy_active) OpenAD_prop_1
-      TYPE (OpenADTy_active) OpenAD_prop_2
-      TYPE (OpenADTy_active) OpenAD_prop_3
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
@@ -42,8 +32,15 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_dly_0
+      REAL(w2f__8) OpenAD_dly_1
+      REAL(w2f__8) OpenAD_dly_2
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      TYPE (OpenADTy_active) OpenAD_prp_0
+      TYPE (OpenADTy_active) OpenAD_prp_1
+      TYPE (OpenADTy_active) OpenAD_prp_2
+      TYPE (OpenADTy_active) OpenAD_prp_3
 C
 C     **** Top Level Pragmas ****
 C
@@ -58,28 +55,27 @@ C
 C$OPENAD XXX Template ad_template.f
       GO TO 4
 4     CONTINUE
-      OpenAD_Symbol_2 = (__value__(X(1)) * __value__(X(1)))
-      OpenAD_Symbol_0 = __value__(X(1))
-      OpenAD_Symbol_1 = __value__(X(1))
-      __value__(X(1)) = OpenAD_Symbol_2
-      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(X(1)))
-      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(X(1)))
-      CALL sax(OpenAD_Symbol_0, __deriv__(OpenAD_prop_0), __deriv__(X(1
-     > )))
-      CALL saxpy(OpenAD_Symbol_1, __deriv__(OpenAD_prop_1), __deriv__(X
-     > (1)))
+      OpenAD_dly_0 = (__value__(X(1)) * __value__(X(1)))
+      OpenAD_lin_0 = __value__(X(1))
+      OpenAD_lin_1 = __value__(X(1))
+      __value__(X(1)) = OpenAD_dly_0
+      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X(1)))
+      CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(X(1)))
+      CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prp_0), __deriv__(X(1)))
+      CALL saxpy(OpenAD_lin_1, __deriv__(OpenAD_prp_1), __deriv__(X(1))
+     > )
       GO TO 5
 5     CONTINUE
-      OpenAD_Symbol_4 = (__value__(X(1)) * 3.0D00)
-      __value__(X(1)) = OpenAD_Symbol_4
-      CALL setderiv(__deriv__(OpenAD_prop_2), __deriv__(X(1)))
-      CALL sax(3.0D00, __deriv__(OpenAD_prop_2), __deriv__(X(1)))
+      OpenAD_dly_1 = (__value__(X(1)) * 3.0D00)
+      __value__(X(1)) = OpenAD_dly_1
+      CALL setderiv(__deriv__(OpenAD_prp_2), __deriv__(X(1)))
+      CALL sax(3.0D00, __deriv__(OpenAD_prp_2), __deriv__(X(1)))
       GO TO 6
 6     CONTINUE
-      OpenAD_Symbol_6 = (__value__(X(1)) * 2.0D00)
-      __value__(X(1)) = OpenAD_Symbol_6
-      CALL setderiv(__deriv__(OpenAD_prop_3), __deriv__(X(1)))
-      CALL sax(2.0D00, __deriv__(OpenAD_prop_3), __deriv__(X(1)))
+      OpenAD_dly_2 = (__value__(X(1)) * 2.0D00)
+      __value__(X(1)) = OpenAD_dly_2
+      CALL setderiv(__deriv__(OpenAD_prp_3), __deriv__(X(1)))
+      CALL sax(2.0D00, __deriv__(OpenAD_prp_3), __deriv__(X(1)))
       GO TO 7
 7     CONTINUE
       __value__(Y(1)) = __value__(X(1))

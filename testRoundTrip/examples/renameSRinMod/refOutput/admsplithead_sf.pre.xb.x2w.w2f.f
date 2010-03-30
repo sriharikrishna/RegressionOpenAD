@@ -44,14 +44,14 @@ C
         use oad_intrinsics
         IMPLICIT NONE
 C
-C       **** Global Variables & Derived Type Definitions ****
-C
-        REAL(w2f__8) OpenAD_Symbol_1
-        TYPE (OpenADTy_active) OpenAD_prop_0
-C
 C       **** Parameters and Result ****
 C
         TYPE (OpenADTy_active) X
+C
+C       **** Local Variables and Functions ****
+C
+        REAL(w2f__8) OpenAD_dly_0
+        TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C       **** Statements ****
 C
@@ -59,18 +59,18 @@ C       $OpenAD$ BEGIN REPLACEMENT 1
         __value__(X) = (__value__(X) * 2.0D00)
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 2
-        OpenAD_Symbol_1 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_Symbol_1
+        OpenAD_dly_0 = (__value__(X) * 2.0D00)
+        __value__(X) = OpenAD_dly_0
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 3
 C       $OpenAD$ INLINE Saxpy(subst,subst,subst)
-        CALL Saxpy(2.0D00, __deriv__(X), __deriv__(OpenAD_prop_0))
+        CALL Saxpy(2.0D00, __deriv__(X), __deriv__(OpenAD_prp_0))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(X))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(OpenAD_prop_0), __deriv__(X))
+        CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
-        CALL ZeroDeriv(__deriv__(OpenAD_prop_0))
+        CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 4
 C       $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
@@ -97,18 +97,18 @@ C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
         CALL cp_arg_restore_real_scalar_a(__deriv__(X))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 10
-        OpenAD_Symbol_1 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_Symbol_1
+        OpenAD_dly_0 = (__value__(X) * 2.0D00)
+        __value__(X) = OpenAD_dly_0
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 11
 C       $OpenAD$ INLINE Saxpy(subst,subst,subst)
-        CALL Saxpy(2.0D00, __deriv__(X), __deriv__(OpenAD_prop_0))
+        CALL Saxpy(2.0D00, __deriv__(X), __deriv__(OpenAD_prp_0))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(X))
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
-        CALL IncDeriv(__deriv__(OpenAD_prop_0), __deriv__(X))
+        CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
-        CALL ZeroDeriv(__deriv__(OpenAD_prop_0))
+        CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
 C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
       END

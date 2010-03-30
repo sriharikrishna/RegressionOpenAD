@@ -23,12 +23,12 @@ C
 C
 C       **** Global Variables & Derived Type Definitions ****
 C
+        INTEGER(w2f__i8) OpenAD_Symbol_0
+        INTEGER(w2f__i8) OpenAD_Symbol_1
         INTEGER(w2f__i8) OpenAD_Symbol_2
         INTEGER(w2f__i8) OpenAD_Symbol_3
         INTEGER(w2f__i8) OpenAD_Symbol_4
         INTEGER(w2f__i8) OpenAD_Symbol_5
-        INTEGER(w2f__i8) OpenAD_Symbol_6
-        INTEGER(w2f__i8) OpenAD_Symbol_7
 C
 C       **** Parameters and Result ****
 C
@@ -48,20 +48,20 @@ C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 2
         IF(__value__(A) .LT. __value__(B)) THEN
           __value__(R) = __value__(A)
-          OpenAD_Symbol_3 = 1_w2f__i8
+          OpenAD_Symbol_1 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_3)
+          CALL push_i(OpenAD_Symbol_1)
         ELSE
           __value__(R) = __value__(B)
-          OpenAD_Symbol_4 = 0_w2f__i8
+          OpenAD_Symbol_2 = 0_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_4)
+          CALL push_i(OpenAD_Symbol_2)
         ENDIF
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 3
 C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_2)
-        IF(OpenAD_Symbol_2 .ne. 0) THEN
+        CALL pop_i(OpenAD_Symbol_0)
+        IF(OpenAD_Symbol_0 .ne. 0) THEN
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
           CALL IncDeriv(__deriv__(R), __deriv__(A))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
@@ -108,20 +108,20 @@ C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 10
         IF(__value__(A) .LT. __value__(B)) THEN
           __value__(R) = __value__(A)
-          OpenAD_Symbol_6 = 1_w2f__i8
+          OpenAD_Symbol_4 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_6)
+          CALL push_i(OpenAD_Symbol_4)
         ELSE
           __value__(R) = __value__(B)
-          OpenAD_Symbol_7 = 0_w2f__i8
+          OpenAD_Symbol_5 = 0_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_7)
+          CALL push_i(OpenAD_Symbol_5)
         ENDIF
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 11
 C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_5)
-        IF(OpenAD_Symbol_5 .ne. 0) THEN
+        CALL pop_i(OpenAD_Symbol_3)
+        IF(OpenAD_Symbol_3 .ne. 0) THEN
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
           CALL IncDeriv(__deriv__(R), __deriv__(A))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
@@ -154,11 +154,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_Symbol_8
-C
 C     **** Parameters and Result ****
 C
       REAL(w2f__8) M1
@@ -167,20 +162,22 @@ C
 C     **** Local Variables and Functions ****
 C
       TYPE (OpenADTy_active) OAD_CTMP0
+      TYPE (OpenADTy_active) OpenAD_tyc_0
+      TYPE (OpenADTy_active) OpenAD_tyc_2
 C
 C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), M1)
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_0), __deriv__(M2),
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), M1)
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_0), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
       __value__(M2) = __value__(OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), M1)
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_0), __deriv__(M2),
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), M1)
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_0), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
       __value__(M2) = __value__(OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
@@ -189,7 +186,7 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(M2), __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(M2))
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_8), __deriv__(M2),
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_2), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -230,8 +227,8 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar(subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), M1)
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_0), __deriv__(M2),
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), M1)
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_0), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
       __value__(M2) = __value__(OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
@@ -240,7 +237,7 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(M2), __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(M2))
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_8), __deriv__(M2),
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_2), __deriv__(M2),
      >  __deriv__(OAD_CTMP0))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
@@ -251,11 +248,6 @@ C     $OpenAD$ END REPLACEMENT
       use oad_intrinsics
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_Symbol_10
 C
 C     **** Parameters and Result ****
 C
@@ -270,6 +262,8 @@ C
       REAL(w2f__8) P
       REAL(w2f__8) T
       TYPE (OpenADTy_active) T1
+      TYPE (OpenADTy_active) OpenAD_tyc_1
+      TYPE (OpenADTy_active) OpenAD_tyc_4
 C
 C     **** Top Level Pragmas ****
 C
@@ -283,11 +277,11 @@ C$OPENAD XXX Template ad_template.f
       T = 2.0D00
       P = SQRT(3.0D00)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_1), T)
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_1), __deriv__(X(1)),
+      CALL oad_convert(__deriv__(OpenAD_tyc_1), T)
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_1), __deriv__(X(1)),
      >  __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T, __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(T, __deriv__(OpenAD_tyc_1))
       __value__(T1) = __value__(OAD_CTMP0)
       CALL OAD_S_MIN_D(__deriv__(X(1)), __deriv__(T1), __deriv__(
      > OAD_CTMP1))
@@ -299,11 +293,11 @@ C$OPENAD XXX Template ad_template.f
       T = 2.0D00
       P = SQRT(3.0D00)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_1), T)
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_1), __deriv__(X(1)),
+      CALL oad_convert(__deriv__(OpenAD_tyc_1), T)
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_1), __deriv__(X(1)),
      >  __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T, __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(T, __deriv__(OpenAD_tyc_1))
       __value__(T1) = __value__(OAD_CTMP0)
       CALL OAD_S_MIN_D(__deriv__(X(1)), __deriv__(T1), __deriv__(
      > OAD_CTMP1))
@@ -322,7 +316,7 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(T1), __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(T1))
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_10), __deriv__(X(1)),
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_4), __deriv__(X(1)),
      >  __deriv__(OAD_CTMP0))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -342,11 +336,11 @@ C$OPENAD XXX Template ad_template.f
       T = 2.0D00
       P = SQRT(3.0D00)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_1), T)
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_1), __deriv__(X(1)),
+      CALL oad_convert(__deriv__(OpenAD_tyc_1), T)
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_1), __deriv__(X(1)),
      >  __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T, __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(T, __deriv__(OpenAD_tyc_1))
       __value__(T1) = __value__(OAD_CTMP0)
       CALL OAD_S_MIN_D(__deriv__(X(1)), __deriv__(T1), __deriv__(
      > OAD_CTMP1))
@@ -365,7 +359,7 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(T1), __deriv__(OAD_CTMP0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(T1))
-      CALL OAD_S_MIN_D(__deriv__(OpenAD_Symbol_10), __deriv__(X(1)),
+      CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_4), __deriv__(X(1)),
      >  __deriv__(OAD_CTMP0))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

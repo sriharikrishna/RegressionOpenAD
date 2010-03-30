@@ -41,10 +41,6 @@ C$OPENAD XXX Template ad_template.f
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
@@ -54,6 +50,7 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       LOGICAL(w2f__i4) L
+      REAL(w2f__8) OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -64,10 +61,10 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0, __deriv__(X(1)))
-      CALL foo(OpenAD_Symbol_0, L)
+      CALL oad_convert(OpenAD_tyc_0, __deriv__(X(1)))
+      CALL foo(OpenAD_tyc_0, L)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(X(1)), OpenAD_Symbol_0)
+      CALL oad_convert(__deriv__(X(1)), OpenAD_tyc_0)
       IF(L) THEN
         __value__(Y(1)) = __value__(X(1))
         CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))

@@ -25,11 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0(:)
-      ALLOCATABLE OpenAD_Symbol_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 :)
@@ -38,6 +33,8 @@ C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL barext
+      REAL(w2f__8) OpenAD_tyc_0(:)
+      ALLOCATABLE OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -48,14 +45,14 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
-      CALL oad_AllocateMatching(OpenAD_Symbol_0, __deriv__(X))
+      CALL oad_AllocateMatching(OpenAD_tyc_0, __deriv__(X))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0, __deriv__(X))
-      CALL barext(OpenAD_Symbol_0)
+      CALL oad_convert(OpenAD_tyc_0, __deriv__(X))
+      CALL barext(OpenAD_tyc_0)
 C     $OpenAD$ INLINE oad_ShapeTest(subst,subst)
-      CALL oad_ShapeTest(OpenAD_Symbol_0, __deriv__(X))
+      CALL oad_ShapeTest(OpenAD_tyc_0, __deriv__(X))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(X), OpenAD_Symbol_0)
+      CALL oad_convert(__deriv__(X), OpenAD_tyc_0)
       __value__(Y(1)) = (__value__(X(1)) + __value__(X(2)))
       CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
       CALL inc_deriv(__deriv__(Y(1)), __deriv__(X(2)))

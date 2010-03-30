@@ -25,12 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_5
-      TYPE (OpenADTy_active) OpenAD_prop_0
-      TYPE (OpenADTy_active) OpenAD_prop_1
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
@@ -41,12 +35,15 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_dly_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      TYPE (OpenADTy_active) OpenAD_prp_0
+      TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -60,19 +57,19 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
 C$OPENAD XXX Simple loop
       DO I = 2, 6, 1
-        OpenAD_Symbol_0 = (__value__(X(1)) * __value__(Y(1)))
-        OpenAD_Symbol_5 = (I * OpenAD_Symbol_0)
-        OpenAD_Symbol_3 = __value__(Y(1))
-        OpenAD_Symbol_4 = __value__(X(1))
-        OpenAD_Symbol_2 = I
-        __value__(Y(1)) = OpenAD_Symbol_5
-        OpenAD_Symbol_6 = (OpenAD_Symbol_3 * OpenAD_Symbol_2)
-        OpenAD_Symbol_7 = (OpenAD_Symbol_4 * OpenAD_Symbol_2)
-        CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y(1)))
-        CALL sax(OpenAD_Symbol_6, __deriv__(X(1)), __deriv__(Y(1)))
-        CALL saxpy(OpenAD_Symbol_7, __deriv__(OpenAD_prop_0), __deriv__
-     > (Y(1)))
+        OpenAD_lin_0 = (__value__(X(1)) * __value__(Y(1)))
+        OpenAD_dly_0 = (I * OpenAD_lin_0)
+        OpenAD_lin_3 = __value__(Y(1))
+        OpenAD_lin_4 = __value__(X(1))
+        OpenAD_lin_2 = I
+        __value__(Y(1)) = OpenAD_dly_0
+        OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_2)
+        OpenAD_acc_1 = (OpenAD_lin_4 * OpenAD_lin_2)
+        CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
+        CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(1)))
+        CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prp_0), __deriv__(Y(1
+     > )))
       END DO
-      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(Y(1)))
-      CALL setderiv(__deriv__(Y(1)), __deriv__(OpenAD_prop_1))
+      CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
+      CALL setderiv(__deriv__(Y(1)), __deriv__(OpenAD_prp_1))
       END SUBROUTINE

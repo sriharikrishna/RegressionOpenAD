@@ -27,13 +27,13 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_prop_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X
+C
+C     **** Local Variables and Functions ****
+C
+      TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Statements ****
 C
@@ -45,13 +45,13 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(X), __deriv__(OpenAD_prop_0))
+      CALL IncDeriv(__deriv__(X), __deriv__(OpenAD_prp_0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(X))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(OpenAD_prop_0), __deriv__(X))
+      CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(OpenAD_prop_0))
+      CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
@@ -82,13 +82,13 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(X), __deriv__(OpenAD_prop_0))
+      CALL IncDeriv(__deriv__(X), __deriv__(OpenAD_prp_0))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(X))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(OpenAD_prop_0), __deriv__(X))
+      CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(OpenAD_prop_0))
+      CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
@@ -99,13 +99,13 @@ C     $OpenAD$ END REPLACEMENT
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_prop_1
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
+C
+C     **** Local Variables and Functions ****
+C
+      TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C     **** Statements ****
 C
@@ -117,13 +117,13 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(X(1)), __deriv__(OpenAD_prop_1))
+      CALL IncDeriv(__deriv__(X(1)), __deriv__(OpenAD_prp_1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(X(1)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(OpenAD_prop_1), __deriv__(X(1)))
+      CALL IncDeriv(__deriv__(OpenAD_prp_1), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(OpenAD_prop_1))
+      CALL ZeroDeriv(__deriv__(OpenAD_prp_1))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ INLINE cp_arg_store_real_vector_a(subst)
@@ -154,13 +154,13 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(X(1)), __deriv__(OpenAD_prop_1))
+      CALL IncDeriv(__deriv__(X(1)), __deriv__(OpenAD_prp_1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(X(1)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(OpenAD_prop_1), __deriv__(X(1)))
+      CALL IncDeriv(__deriv__(OpenAD_prp_1), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(OpenAD_prop_1))
+      CALL ZeroDeriv(__deriv__(OpenAD_prp_1))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 

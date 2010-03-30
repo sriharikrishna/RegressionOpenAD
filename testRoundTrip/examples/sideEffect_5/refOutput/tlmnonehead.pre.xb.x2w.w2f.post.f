@@ -7,11 +7,6 @@ C$OPENAD XXX File_start [head.f]
       use all_globals_mod
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_1
-      type(active) :: OpenAD_prop_0
-C
 C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) N
@@ -20,15 +15,17 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
+      REAL(w2f__8) OpenAD_dly_0
+      type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, (N + 1), 1
-        OpenAD_Symbol_1 = (A(I)%v*2.0D00)
-        A(INT(I))%v = OpenAD_Symbol_1
-        CALL setderiv(OpenAD_prop_0,A(I))
-        CALL sax(2.0D00,OpenAD_prop_0,A(I))
+        OpenAD_dly_0 = (A(I)%v*2.0D00)
+        A(INT(I))%v = OpenAD_dly_0
+        CALL setderiv(OpenAD_prp_0,A(I))
+        CALL sax(2.0D00,OpenAD_prp_0,A(I))
       END DO
       END SUBROUTINE
 
@@ -39,10 +36,6 @@ C$OPENAD XXX Template ad_template.f
       use all_globals_mod
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_prop_1
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:3)
@@ -52,6 +45,7 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       INTEGER(w2f__i4) I
+      type(active) :: OpenAD_prp_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -69,8 +63,8 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(Y(1))
       DO I = 1,3,1
         Y(1)%v = (X(I)%v+Y(1)%v)
-        CALL setderiv(OpenAD_prop_1,Y(1))
+        CALL setderiv(OpenAD_prp_1,Y(1))
         CALL setderiv(Y(1),X(I))
-        CALL inc_deriv(Y(1),OpenAD_prop_1)
+        CALL inc_deriv(Y(1),OpenAD_prp_1)
       END DO
       END SUBROUTINE

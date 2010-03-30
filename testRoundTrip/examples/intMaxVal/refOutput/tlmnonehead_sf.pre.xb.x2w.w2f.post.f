@@ -38,10 +38,10 @@ C
       INTEGER(w2f__i4) I(1 : 3)
       INTEGER(w2f__i4) MAXI
       type(active) :: T
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
 C
 C     **** Top Level Pragmas ****
 C
@@ -56,14 +56,14 @@ C$OPENAD XXX Template ad_template.f
       I(3) = (-1)
       MAXI = MAXVAL(I)
       T%v = (X(MAXI)%v*X(2)%v)
-      OpenAD_Symbol_0 = X(2)%v
-      OpenAD_Symbol_1 = X(MAXI)%v
+      OpenAD_lin_0 = X(2)%v
+      OpenAD_lin_1 = X(MAXI)%v
       Y(INT(MAXI))%v = SIN(T%v)
-      OpenAD_Symbol_2 = COS(T%v)
-      CALL sax(OpenAD_Symbol_0,X(MAXI),T)
-      CALL saxpy(OpenAD_Symbol_1,X(2),T)
-      CALL sax(OpenAD_Symbol_2,T,Y(MAXI))
+      OpenAD_lin_2 = COS(T%v)
+      CALL sax(OpenAD_lin_0,X(MAXI),T)
+      CALL saxpy(OpenAD_lin_1,X(2),T)
+      CALL sax(OpenAD_lin_2,T,Y(MAXI))
       Y(2)%v = COS(T%v)
-      OpenAD_Symbol_3 = (-SIN(T%v))
-      CALL sax(OpenAD_Symbol_3,T,Y(2))
+      OpenAD_lin_3 = (-SIN(T%v))
+      CALL sax(OpenAD_lin_3,T,Y(2))
       END SUBROUTINE

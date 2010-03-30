@@ -28,23 +28,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_77
-      type(active) :: OpenAD_prop_0
-      type(active) :: OpenAD_prop_1
-      type(active) :: OpenAD_prop_10
-      type(active) :: OpenAD_prop_11
-      type(active) :: OpenAD_prop_12
-      type(active) :: OpenAD_prop_2
-      type(active) :: OpenAD_prop_3
-      type(active) :: OpenAD_prop_4
-      type(active) :: OpenAD_prop_5
-      type(active) :: OpenAD_prop_6
-      type(active) :: OpenAD_prop_7
-      type(active) :: OpenAD_prop_8
-      type(active) :: OpenAD_prop_9
-C
 C     **** Parameters and Result ****
 C
       INTEGER(w2f__i4) NX
@@ -95,73 +78,87 @@ C
       PARAMETER ( TWO = 2.0D00)
       REAL(w2f__8) ZERO
       PARAMETER ( ZERO = 0.0D00)
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_Symbol_13
-      REAL(w2f__8) OpenAD_Symbol_16
-      REAL(w2f__8) OpenAD_Symbol_17
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_20
-      REAL(w2f__8) OpenAD_Symbol_21
-      REAL(w2f__8) OpenAD_Symbol_24
-      REAL(w2f__8) OpenAD_Symbol_25
-      REAL(w2f__8) OpenAD_Symbol_28
-      REAL(w2f__8) OpenAD_Symbol_29
-      REAL(w2f__8) OpenAD_Symbol_32
-      REAL(w2f__8) OpenAD_Symbol_33
-      REAL(w2f__8) OpenAD_Symbol_36
-      REAL(w2f__8) OpenAD_Symbol_37
-      REAL(w2f__8) OpenAD_Symbol_4
-      REAL(w2f__8) OpenAD_Symbol_40
-      REAL(w2f__8) OpenAD_Symbol_41
-      REAL(w2f__8) OpenAD_Symbol_44
-      REAL(w2f__8) OpenAD_Symbol_45
-      REAL(w2f__8) OpenAD_Symbol_48
-      REAL(w2f__8) OpenAD_Symbol_49
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_52
-      REAL(w2f__8) OpenAD_Symbol_53
-      REAL(w2f__8) OpenAD_Symbol_56
-      REAL(w2f__8) OpenAD_Symbol_58
-      REAL(w2f__8) OpenAD_Symbol_59
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_60
-      REAL(w2f__8) OpenAD_Symbol_61
-      REAL(w2f__8) OpenAD_Symbol_63
-      REAL(w2f__8) OpenAD_Symbol_64
-      REAL(w2f__8) OpenAD_Symbol_65
-      REAL(w2f__8) OpenAD_Symbol_66
-      REAL(w2f__8) OpenAD_Symbol_67
-      REAL(w2f__8) OpenAD_Symbol_68
-      REAL(w2f__8) OpenAD_Symbol_70
-      REAL(w2f__8) OpenAD_Symbol_71
-      REAL(w2f__8) OpenAD_Symbol_72
-      REAL(w2f__8) OpenAD_Symbol_74
-      REAL(w2f__8) OpenAD_Symbol_75
-      REAL(w2f__8) OpenAD_Symbol_78
-      REAL(w2f__8) OpenAD_Symbol_79
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_80
-      REAL(w2f__8) OpenAD_Symbol_81
-      REAL(w2f__8) OpenAD_Symbol_82
-      REAL(w2f__8) OpenAD_Symbol_83
-      REAL(w2f__8) OpenAD_Symbol_84
-      REAL(w2f__8) OpenAD_Symbol_85
-      REAL(w2f__8) OpenAD_Symbol_86
-      REAL(w2f__8) OpenAD_Symbol_87
-      REAL(w2f__8) OpenAD_Symbol_88
-      REAL(w2f__8) OpenAD_Symbol_89
-      REAL(w2f__8) OpenAD_Symbol_9
-      REAL(w2f__8) OpenAD_Symbol_90
-      REAL(w2f__8) OpenAD_Symbol_91
-      REAL(w2f__8) OpenAD_Symbol_92
-      REAL(w2f__8) OpenAD_Symbol_93
-      REAL(w2f__8) OpenAD_Symbol_94
-      REAL(w2f__8) OpenAD_Symbol_95
-      REAL(w2f__8) OpenAD_Symbol_96
-      REAL(w2f__8) OpenAD_Symbol_97
-      REAL(w2f__8) OpenAD_Symbol_98
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_10
+      REAL(w2f__8) OpenAD_acc_11
+      REAL(w2f__8) OpenAD_acc_12
+      REAL(w2f__8) OpenAD_acc_13
+      REAL(w2f__8) OpenAD_acc_14
+      REAL(w2f__8) OpenAD_acc_15
+      REAL(w2f__8) OpenAD_acc_16
+      REAL(w2f__8) OpenAD_acc_17
+      REAL(w2f__8) OpenAD_acc_18
+      REAL(w2f__8) OpenAD_acc_19
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_20
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_acc_4
+      REAL(w2f__8) OpenAD_acc_5
+      REAL(w2f__8) OpenAD_acc_6
+      REAL(w2f__8) OpenAD_acc_7
+      REAL(w2f__8) OpenAD_acc_8
+      REAL(w2f__8) OpenAD_acc_9
+      REAL(w2f__8) OpenAD_dly_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_12
+      REAL(w2f__8) OpenAD_lin_13
+      REAL(w2f__8) OpenAD_lin_16
+      REAL(w2f__8) OpenAD_lin_17
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_20
+      REAL(w2f__8) OpenAD_lin_21
+      REAL(w2f__8) OpenAD_lin_24
+      REAL(w2f__8) OpenAD_lin_25
+      REAL(w2f__8) OpenAD_lin_28
+      REAL(w2f__8) OpenAD_lin_29
+      REAL(w2f__8) OpenAD_lin_32
+      REAL(w2f__8) OpenAD_lin_33
+      REAL(w2f__8) OpenAD_lin_36
+      REAL(w2f__8) OpenAD_lin_37
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_40
+      REAL(w2f__8) OpenAD_lin_41
+      REAL(w2f__8) OpenAD_lin_44
+      REAL(w2f__8) OpenAD_lin_45
+      REAL(w2f__8) OpenAD_lin_48
+      REAL(w2f__8) OpenAD_lin_49
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_52
+      REAL(w2f__8) OpenAD_lin_53
+      REAL(w2f__8) OpenAD_lin_56
+      REAL(w2f__8) OpenAD_lin_58
+      REAL(w2f__8) OpenAD_lin_59
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_60
+      REAL(w2f__8) OpenAD_lin_61
+      REAL(w2f__8) OpenAD_lin_63
+      REAL(w2f__8) OpenAD_lin_64
+      REAL(w2f__8) OpenAD_lin_65
+      REAL(w2f__8) OpenAD_lin_66
+      REAL(w2f__8) OpenAD_lin_67
+      REAL(w2f__8) OpenAD_lin_68
+      REAL(w2f__8) OpenAD_lin_70
+      REAL(w2f__8) OpenAD_lin_71
+      REAL(w2f__8) OpenAD_lin_72
+      REAL(w2f__8) OpenAD_lin_74
+      REAL(w2f__8) OpenAD_lin_75
+      REAL(w2f__8) OpenAD_lin_8
+      REAL(w2f__8) OpenAD_lin_9
+      type(active) :: OpenAD_prp_0
+      type(active) :: OpenAD_prp_1
+      type(active) :: OpenAD_prp_10
+      type(active) :: OpenAD_prp_11
+      type(active) :: OpenAD_prp_12
+      type(active) :: OpenAD_prp_2
+      type(active) :: OpenAD_prp_3
+      type(active) :: OpenAD_prp_4
+      type(active) :: OpenAD_prp_5
+      type(active) :: OpenAD_prp_6
+      type(active) :: OpenAD_prp_7
+      type(active) :: OpenAD_prp_8
+      type(active) :: OpenAD_prp_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -283,142 +280,138 @@ C$OPENAD XXX Template ad_template.f
             PTR%v = X(NX+K+1)%v
             CALL setderiv(PTR,X(NX+K+1))
           ENDIF
-          OpenAD_Symbol_0 = (PT%v-PB%v)
-          OpenAD_Symbol_1 = (HY*2.0D00)
-          DPDY%v = (OpenAD_Symbol_0/OpenAD_Symbol_1)
-          OpenAD_Symbol_2 = (INT(1_w2f__i8)/OpenAD_Symbol_1)
-          OpenAD_Symbol_4 = (PR%v-PL%v)
-          OpenAD_Symbol_5 = (HX*2.0D00)
-          DPDX%v = (OpenAD_Symbol_4/OpenAD_Symbol_5)
-          OpenAD_Symbol_6 = (INT(1_w2f__i8)/OpenAD_Symbol_5)
-          OpenAD_Symbol_8 = (PBB%v+P%v-PB%v*2.0D00)
-          OpenAD_Symbol_12 = (PBL%v+PBR%v-PB%v*2.0D00)
-          PBLAP%v = ((OpenAD_Symbol_8/HY2)+(OpenAD_Symbol_12/HX2))
-          OpenAD_Symbol_9 = (INT(1_w2f__i8)/HY2)
-          OpenAD_Symbol_13 = (INT(1_w2f__i8)/HX2)
-          OpenAD_Symbol_16 = (PBL%v+PTL%v-PL%v*2.0D00)
-          OpenAD_Symbol_20 = (PLL%v+P%v-PL%v*2.0D00)
-          PLLAP%v = ((OpenAD_Symbol_16/HY2)+(OpenAD_Symbol_20/HX2))
-          OpenAD_Symbol_17 = (INT(1_w2f__i8)/HY2)
-          OpenAD_Symbol_21 = (INT(1_w2f__i8)/HX2)
-          OpenAD_Symbol_24 = (PB%v+PT%v-P%v*2.0D00)
-          OpenAD_Symbol_28 = (PL%v+PR%v-P%v*2.0D00)
-          PLAP%v = ((OpenAD_Symbol_24/HY2)+(OpenAD_Symbol_28/HX2))
-          OpenAD_Symbol_25 = (INT(1_w2f__i8)/HY2)
-          OpenAD_Symbol_29 = (INT(1_w2f__i8)/HX2)
-          OpenAD_Symbol_32 = (P%v+PRR%v-PR%v*2.0D00)
-          OpenAD_Symbol_36 = (PBR%v+PTR%v-PR%v*2.0D00)
-          PRLAP%v = ((OpenAD_Symbol_32/HX2)+(OpenAD_Symbol_36/HY2))
-          OpenAD_Symbol_33 = (INT(1_w2f__i8)/HX2)
-          OpenAD_Symbol_37 = (INT(1_w2f__i8)/HY2)
-          OpenAD_Symbol_40 = (P%v+PTT%v-PT%v*2.0D00)
-          OpenAD_Symbol_44 = (PTL%v+PTR%v-PT%v*2.0D00)
-          PTLAP%v = ((OpenAD_Symbol_40/HY2)+(OpenAD_Symbol_44/HX2))
-          OpenAD_Symbol_41 = (INT(1_w2f__i8)/HY2)
-          OpenAD_Symbol_45 = (INT(1_w2f__i8)/HX2)
-          OpenAD_Symbol_48 = (PBLAP%v+PTLAP%v-PLAP%v*2.0D00)
-          OpenAD_Symbol_52 = (PLLAP%v+PRLAP%v-PLAP%v*2.0D00)
-          OpenAD_Symbol_63 = (PRLAP%v-PLLAP%v)
-          OpenAD_Symbol_59 = (DPDY%v*OpenAD_Symbol_63)
-          OpenAD_Symbol_60 = (HX*2.0D00)
-          OpenAD_Symbol_70 = (PTLAP%v-PBLAP%v)
-          OpenAD_Symbol_66 = (DPDX%v*OpenAD_Symbol_70)
-          OpenAD_Symbol_67 = (HY*2.0D00)
-          OpenAD_Symbol_56 = ((OpenAD_Symbol_59/OpenAD_Symbol_60)-(OpenA
-     +D_Symbol_66/OpenAD_Symbol_67))
-          FVEC(INT(K))%v = ((OpenAD_Symbol_48/HY2)+(OpenAD_Symbol_52/HX2
-     +)-R*OpenAD_Symbol_56)
-          OpenAD_Symbol_49 = (INT(1_w2f__i8)/HY2)
-          OpenAD_Symbol_53 = (INT(1_w2f__i8)/HX2)
-          OpenAD_Symbol_64 = OpenAD_Symbol_63
-          OpenAD_Symbol_65 = DPDY%v
-          OpenAD_Symbol_61 = (INT(1_w2f__i8)/OpenAD_Symbol_60)
-          OpenAD_Symbol_71 = OpenAD_Symbol_70
-          OpenAD_Symbol_72 = DPDX%v
-          OpenAD_Symbol_68 = (INT(1_w2f__i8)/OpenAD_Symbol_67)
-          OpenAD_Symbol_58 = R
-          OpenAD_Symbol_78 = (OpenAD_Symbol_58*INT((-1_w2f__i8)))
-          OpenAD_Symbol_79 = (INT((-1_w2f__i8))*OpenAD_Symbol_78)
-          OpenAD_Symbol_80 = (OpenAD_Symbol_72*OpenAD_Symbol_68*OpenAD_S
-     +ymbol_79)
-          OpenAD_Symbol_81 = (OpenAD_Symbol_6*OpenAD_Symbol_71*OpenAD_Sy
-     +mbol_68*OpenAD_Symbol_79)
-          OpenAD_Symbol_82 = (OpenAD_Symbol_65*OpenAD_Symbol_61*OpenAD_S
-     +ymbol_78)
-          OpenAD_Symbol_83 = (OpenAD_Symbol_2*OpenAD_Symbol_64*OpenAD_Sy
-     +mbol_61*OpenAD_Symbol_78)
-          OpenAD_Symbol_84 = (OpenAD_Symbol_53+OpenAD_Symbol_82)
-          OpenAD_Symbol_85 = (OpenAD_Symbol_53+INT((-1_w2f__i8))*OpenAD_
-     +Symbol_82)
-          OpenAD_Symbol_86 = (2.0D00*INT((-1_w2f__i8))*OpenAD_Symbol_53+
-     +2.0D00*INT((-1_w2f__i8))*OpenAD_Symbol_49)
-          OpenAD_Symbol_87 = (OpenAD_Symbol_49+OpenAD_Symbol_80)
-          OpenAD_Symbol_88 = (OpenAD_Symbol_49+INT((-1_w2f__i8))*OpenAD_
-     +Symbol_80)
-          OpenAD_Symbol_89 = (OpenAD_Symbol_45*OpenAD_Symbol_87)
-          OpenAD_Symbol_90 = (OpenAD_Symbol_41*OpenAD_Symbol_87)
-          OpenAD_Symbol_91 = (OpenAD_Symbol_37*OpenAD_Symbol_84)
-          OpenAD_Symbol_92 = (OpenAD_Symbol_33*OpenAD_Symbol_84)
-          OpenAD_Symbol_93 = (OpenAD_Symbol_29*OpenAD_Symbol_86)
-          OpenAD_Symbol_94 = (OpenAD_Symbol_25*OpenAD_Symbol_86)
-          OpenAD_Symbol_95 = (OpenAD_Symbol_21*OpenAD_Symbol_85)
-          OpenAD_Symbol_96 = (OpenAD_Symbol_17*OpenAD_Symbol_85)
-          OpenAD_Symbol_97 = (OpenAD_Symbol_13*OpenAD_Symbol_88)
-          OpenAD_Symbol_98 = (OpenAD_Symbol_9*OpenAD_Symbol_88)
-          CALL setderiv(OpenAD_prop_0,PT)
-          CALL dec_deriv(OpenAD_prop_0,PB)
-          CALL setderiv(OpenAD_prop_1,PR)
-          CALL dec_deriv(OpenAD_prop_1,PL)
-          CALL setderiv(OpenAD_prop_2,PBB)
-          CALL inc_deriv(OpenAD_prop_2,P)
-          CALL saxpy(-2.0D00,PB,OpenAD_prop_2)
-          CALL setderiv(OpenAD_prop_3,PBL)
-          CALL inc_deriv(OpenAD_prop_3,PBR)
-          CALL saxpy(-2.0D00,PB,OpenAD_prop_3)
-          CALL setderiv(OpenAD_prop_4,PBL)
-          CALL inc_deriv(OpenAD_prop_4,PTL)
-          CALL saxpy(-2.0D00,PL,OpenAD_prop_4)
-          CALL setderiv(OpenAD_prop_5,PLL)
-          CALL inc_deriv(OpenAD_prop_5,P)
-          CALL saxpy(-2.0D00,PL,OpenAD_prop_5)
-          CALL setderiv(OpenAD_prop_6,PB)
-          CALL inc_deriv(OpenAD_prop_6,PT)
-          CALL saxpy(-2.0D00,P,OpenAD_prop_6)
-          CALL setderiv(OpenAD_prop_7,PL)
-          CALL inc_deriv(OpenAD_prop_7,PR)
-          CALL saxpy(-2.0D00,P,OpenAD_prop_7)
-          CALL setderiv(OpenAD_prop_8,P)
-          CALL inc_deriv(OpenAD_prop_8,PRR)
-          CALL saxpy(-2.0D00,PR,OpenAD_prop_8)
-          CALL setderiv(OpenAD_prop_9,PBR)
-          CALL inc_deriv(OpenAD_prop_9,PTR)
-          CALL saxpy(-2.0D00,PR,OpenAD_prop_9)
-          CALL setderiv(OpenAD_prop_10,P)
-          CALL inc_deriv(OpenAD_prop_10,PTT)
-          CALL saxpy(-2.0D00,PT,OpenAD_prop_10)
-          CALL setderiv(OpenAD_prop_11,PTL)
-          CALL inc_deriv(OpenAD_prop_11,PTR)
-          CALL saxpy(-2.0D00,PT,OpenAD_prop_11)
-          CALL sax(OpenAD_Symbol_81,OpenAD_prop_1,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_83,OpenAD_prop_0,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_89,OpenAD_prop_11,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_90,OpenAD_prop_10,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_91,OpenAD_prop_9,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_92,OpenAD_prop_8,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_93,OpenAD_prop_7,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_94,OpenAD_prop_6,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_95,OpenAD_prop_5,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_96,OpenAD_prop_4,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_97,OpenAD_prop_3,FVEC(K))
-          CALL saxpy(OpenAD_Symbol_98,OpenAD_prop_2,FVEC(K))
+          OpenAD_lin_0 = (PT%v-PB%v)
+          OpenAD_lin_1 = (HY*2.0D00)
+          DPDY%v = (OpenAD_lin_0/OpenAD_lin_1)
+          OpenAD_lin_2 = (INT(1_w2f__i8)/OpenAD_lin_1)
+          OpenAD_lin_4 = (PR%v-PL%v)
+          OpenAD_lin_5 = (HX*2.0D00)
+          DPDX%v = (OpenAD_lin_4/OpenAD_lin_5)
+          OpenAD_lin_6 = (INT(1_w2f__i8)/OpenAD_lin_5)
+          OpenAD_lin_8 = (PBB%v+P%v-PB%v*2.0D00)
+          OpenAD_lin_12 = (PBL%v+PBR%v-PB%v*2.0D00)
+          PBLAP%v = ((OpenAD_lin_8/HY2)+(OpenAD_lin_12/HX2))
+          OpenAD_lin_9 = (INT(1_w2f__i8)/HY2)
+          OpenAD_lin_13 = (INT(1_w2f__i8)/HX2)
+          OpenAD_lin_16 = (PBL%v+PTL%v-PL%v*2.0D00)
+          OpenAD_lin_20 = (PLL%v+P%v-PL%v*2.0D00)
+          PLLAP%v = ((OpenAD_lin_16/HY2)+(OpenAD_lin_20/HX2))
+          OpenAD_lin_17 = (INT(1_w2f__i8)/HY2)
+          OpenAD_lin_21 = (INT(1_w2f__i8)/HX2)
+          OpenAD_lin_24 = (PB%v+PT%v-P%v*2.0D00)
+          OpenAD_lin_28 = (PL%v+PR%v-P%v*2.0D00)
+          PLAP%v = ((OpenAD_lin_24/HY2)+(OpenAD_lin_28/HX2))
+          OpenAD_lin_25 = (INT(1_w2f__i8)/HY2)
+          OpenAD_lin_29 = (INT(1_w2f__i8)/HX2)
+          OpenAD_lin_32 = (P%v+PRR%v-PR%v*2.0D00)
+          OpenAD_lin_36 = (PBR%v+PTR%v-PR%v*2.0D00)
+          PRLAP%v = ((OpenAD_lin_32/HX2)+(OpenAD_lin_36/HY2))
+          OpenAD_lin_33 = (INT(1_w2f__i8)/HX2)
+          OpenAD_lin_37 = (INT(1_w2f__i8)/HY2)
+          OpenAD_lin_40 = (P%v+PTT%v-PT%v*2.0D00)
+          OpenAD_lin_44 = (PTL%v+PTR%v-PT%v*2.0D00)
+          PTLAP%v = ((OpenAD_lin_40/HY2)+(OpenAD_lin_44/HX2))
+          OpenAD_lin_41 = (INT(1_w2f__i8)/HY2)
+          OpenAD_lin_45 = (INT(1_w2f__i8)/HX2)
+          OpenAD_lin_48 = (PBLAP%v+PTLAP%v-PLAP%v*2.0D00)
+          OpenAD_lin_52 = (PLLAP%v+PRLAP%v-PLAP%v*2.0D00)
+          OpenAD_lin_63 = (PRLAP%v-PLLAP%v)
+          OpenAD_lin_59 = (DPDY%v*OpenAD_lin_63)
+          OpenAD_lin_60 = (HX*2.0D00)
+          OpenAD_lin_70 = (PTLAP%v-PBLAP%v)
+          OpenAD_lin_66 = (DPDX%v*OpenAD_lin_70)
+          OpenAD_lin_67 = (HY*2.0D00)
+          OpenAD_lin_56 = ((OpenAD_lin_59/OpenAD_lin_60)-(OpenAD_lin_66/
+     +OpenAD_lin_67))
+          FVEC(INT(K))%v = ((OpenAD_lin_48/HY2)+(OpenAD_lin_52/HX2)-R*Op
+     +enAD_lin_56)
+          OpenAD_lin_49 = (INT(1_w2f__i8)/HY2)
+          OpenAD_lin_53 = (INT(1_w2f__i8)/HX2)
+          OpenAD_lin_64 = OpenAD_lin_63
+          OpenAD_lin_65 = DPDY%v
+          OpenAD_lin_61 = (INT(1_w2f__i8)/OpenAD_lin_60)
+          OpenAD_lin_71 = OpenAD_lin_70
+          OpenAD_lin_72 = DPDX%v
+          OpenAD_lin_68 = (INT(1_w2f__i8)/OpenAD_lin_67)
+          OpenAD_lin_58 = R
+          OpenAD_acc_0 = (OpenAD_lin_58*INT((-1_w2f__i8)))
+          OpenAD_acc_1 = (INT((-1_w2f__i8))*OpenAD_acc_0)
+          OpenAD_acc_2 = (OpenAD_lin_72*OpenAD_lin_68*OpenAD_acc_1)
+          OpenAD_acc_3 = (OpenAD_lin_6*OpenAD_lin_71*OpenAD_lin_68*OpenA
+     +D_acc_1)
+          OpenAD_acc_4 = (OpenAD_lin_65*OpenAD_lin_61*OpenAD_acc_0)
+          OpenAD_acc_5 = (OpenAD_lin_2*OpenAD_lin_64*OpenAD_lin_61*OpenA
+     +D_acc_0)
+          OpenAD_acc_6 = (OpenAD_lin_53+OpenAD_acc_4)
+          OpenAD_acc_7 = (OpenAD_lin_53+INT((-1_w2f__i8))*OpenAD_acc_4)
+          OpenAD_acc_8 = (2.0D00*INT((-1_w2f__i8))*OpenAD_lin_53+2.0D00*
+     +INT((-1_w2f__i8))*OpenAD_lin_49)
+          OpenAD_acc_9 = (OpenAD_lin_49+OpenAD_acc_2)
+          OpenAD_acc_10 = (OpenAD_lin_49+INT((-1_w2f__i8))*OpenAD_acc_2)
+          OpenAD_acc_11 = (OpenAD_lin_45*OpenAD_acc_9)
+          OpenAD_acc_12 = (OpenAD_lin_41*OpenAD_acc_9)
+          OpenAD_acc_13 = (OpenAD_lin_37*OpenAD_acc_6)
+          OpenAD_acc_14 = (OpenAD_lin_33*OpenAD_acc_6)
+          OpenAD_acc_15 = (OpenAD_lin_29*OpenAD_acc_8)
+          OpenAD_acc_16 = (OpenAD_lin_25*OpenAD_acc_8)
+          OpenAD_acc_17 = (OpenAD_lin_21*OpenAD_acc_7)
+          OpenAD_acc_18 = (OpenAD_lin_17*OpenAD_acc_7)
+          OpenAD_acc_19 = (OpenAD_lin_13*OpenAD_acc_10)
+          OpenAD_acc_20 = (OpenAD_lin_9*OpenAD_acc_10)
+          CALL setderiv(OpenAD_prp_0,PT)
+          CALL dec_deriv(OpenAD_prp_0,PB)
+          CALL setderiv(OpenAD_prp_1,PR)
+          CALL dec_deriv(OpenAD_prp_1,PL)
+          CALL setderiv(OpenAD_prp_2,PBB)
+          CALL inc_deriv(OpenAD_prp_2,P)
+          CALL saxpy(-2.0D00,PB,OpenAD_prp_2)
+          CALL setderiv(OpenAD_prp_3,PBL)
+          CALL inc_deriv(OpenAD_prp_3,PBR)
+          CALL saxpy(-2.0D00,PB,OpenAD_prp_3)
+          CALL setderiv(OpenAD_prp_4,PBL)
+          CALL inc_deriv(OpenAD_prp_4,PTL)
+          CALL saxpy(-2.0D00,PL,OpenAD_prp_4)
+          CALL setderiv(OpenAD_prp_5,PLL)
+          CALL inc_deriv(OpenAD_prp_5,P)
+          CALL saxpy(-2.0D00,PL,OpenAD_prp_5)
+          CALL setderiv(OpenAD_prp_6,PB)
+          CALL inc_deriv(OpenAD_prp_6,PT)
+          CALL saxpy(-2.0D00,P,OpenAD_prp_6)
+          CALL setderiv(OpenAD_prp_7,PL)
+          CALL inc_deriv(OpenAD_prp_7,PR)
+          CALL saxpy(-2.0D00,P,OpenAD_prp_7)
+          CALL setderiv(OpenAD_prp_8,P)
+          CALL inc_deriv(OpenAD_prp_8,PRR)
+          CALL saxpy(-2.0D00,PR,OpenAD_prp_8)
+          CALL setderiv(OpenAD_prp_9,PBR)
+          CALL inc_deriv(OpenAD_prp_9,PTR)
+          CALL saxpy(-2.0D00,PR,OpenAD_prp_9)
+          CALL setderiv(OpenAD_prp_10,P)
+          CALL inc_deriv(OpenAD_prp_10,PTT)
+          CALL saxpy(-2.0D00,PT,OpenAD_prp_10)
+          CALL setderiv(OpenAD_prp_11,PTL)
+          CALL inc_deriv(OpenAD_prp_11,PTR)
+          CALL saxpy(-2.0D00,PT,OpenAD_prp_11)
+          CALL sax(OpenAD_acc_3,OpenAD_prp_1,FVEC(K))
+          CALL saxpy(OpenAD_acc_5,OpenAD_prp_0,FVEC(K))
+          CALL saxpy(OpenAD_acc_11,OpenAD_prp_11,FVEC(K))
+          CALL saxpy(OpenAD_acc_12,OpenAD_prp_10,FVEC(K))
+          CALL saxpy(OpenAD_acc_13,OpenAD_prp_9,FVEC(K))
+          CALL saxpy(OpenAD_acc_14,OpenAD_prp_8,FVEC(K))
+          CALL saxpy(OpenAD_acc_15,OpenAD_prp_7,FVEC(K))
+          CALL saxpy(OpenAD_acc_16,OpenAD_prp_6,FVEC(K))
+          CALL saxpy(OpenAD_acc_17,OpenAD_prp_5,FVEC(K))
+          CALL saxpy(OpenAD_acc_18,OpenAD_prp_4,FVEC(K))
+          CALL saxpy(OpenAD_acc_19,OpenAD_prp_3,FVEC(K))
+          CALL saxpy(OpenAD_acc_20,OpenAD_prp_2,FVEC(K))
         END DO
       END DO
       DO K = 1,N,1
-        OpenAD_Symbol_74 = (HX2*HY2)
-        OpenAD_Symbol_77 = (FVEC(K)%v*OpenAD_Symbol_74)
-        OpenAD_Symbol_75 = OpenAD_Symbol_74
-        FVEC(INT(K))%v = OpenAD_Symbol_77
-        CALL setderiv(OpenAD_prop_12,FVEC(K))
-        CALL sax(OpenAD_Symbol_75,OpenAD_prop_12,FVEC(K))
+        OpenAD_lin_74 = (HX2*HY2)
+        OpenAD_dly_0 = (FVEC(K)%v*OpenAD_lin_74)
+        OpenAD_lin_75 = OpenAD_lin_74
+        FVEC(INT(K))%v = OpenAD_dly_0
+        CALL setderiv(OpenAD_prp_12,FVEC(K))
+        CALL sax(OpenAD_lin_75,OpenAD_prp_12,FVEC(K))
       END DO
       END SUBROUTINE

@@ -39,12 +39,12 @@ CONTAINS
 !
 !       **** Global Variables & Derived Type Definitions ****
 !
+  INTEGER(w2f__i8) OpenAD_Symbol_0
+  INTEGER(w2f__i8) OpenAD_Symbol_1
   INTEGER(w2f__i8) OpenAD_Symbol_2
   INTEGER(w2f__i8) OpenAD_Symbol_3
   INTEGER(w2f__i8) OpenAD_Symbol_4
   INTEGER(w2f__i8) OpenAD_Symbol_5
-  INTEGER(w2f__i8) OpenAD_Symbol_6
-  INTEGER(w2f__i8) OpenAD_Symbol_7
 !
 !       **** Parameters and Result ****
 !
@@ -74,21 +74,21 @@ CONTAINS
 ! taping
   IF(A .GT. B) THEN
     R = A
-    OpenAD_Symbol_3 = 1_w2f__i8
-    integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
+    OpenAD_Symbol_1 = 1_w2f__i8
+    integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
     integer_tape_pointer = integer_tape_pointer+1
   ELSE
     R = B
-    OpenAD_Symbol_4 = 0_w2f__i8
-    integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
+    OpenAD_Symbol_2 = 0_w2f__i8
+    integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
     integer_tape_pointer = integer_tape_pointer+1
   ENDIF
     end if
     if (our_rev_mode%adjoint) then
 ! adjoint
   integer_tape_pointer = integer_tape_pointer-1
-  OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
-  IF(OpenAD_Symbol_2 .ne. 0) THEN
+  OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
+  IF(OpenAD_Symbol_0 .ne. 0) THEN
   ENDIF
     end if
   end subroutine OAD_S_MAX_D
@@ -114,8 +114,8 @@ CONTAINS
 !
   INTEGER(w2f__i8) OpenAD_Symbol_10
   INTEGER(w2f__i8) OpenAD_Symbol_11
-  INTEGER(w2f__i8) OpenAD_Symbol_12
-  INTEGER(w2f__i8) OpenAD_Symbol_13
+  INTEGER(w2f__i8) OpenAD_Symbol_6
+  INTEGER(w2f__i8) OpenAD_Symbol_7
   INTEGER(w2f__i8) OpenAD_Symbol_8
   INTEGER(w2f__i8) OpenAD_Symbol_9
 !
@@ -144,21 +144,21 @@ CONTAINS
 ! taping
   IF (A%v.LT.B%v) THEN
     R%v = A%v
-    OpenAD_Symbol_9 = 1_w2f__i8
-    integer_tape(integer_tape_pointer) = OpenAD_Symbol_9
+    OpenAD_Symbol_7 = 1_w2f__i8
+    integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
     integer_tape_pointer = integer_tape_pointer+1
   ELSE
     R%v = B%v
-    OpenAD_Symbol_10 = 0_w2f__i8
-    integer_tape(integer_tape_pointer) = OpenAD_Symbol_10
+    OpenAD_Symbol_8 = 0_w2f__i8
+    integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
     integer_tape_pointer = integer_tape_pointer+1
   ENDIF
     end if
     if (our_rev_mode%adjoint) then
 ! adjoint
   integer_tape_pointer = integer_tape_pointer-1
-  OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
-  IF (OpenAD_Symbol_8.ne.0) THEN
+  OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
+  IF (OpenAD_Symbol_6.ne.0) THEN
     A%d = A%d+R%d
     R%d = 0.0d0
   ELSE
@@ -212,8 +212,8 @@ C
       REAL(w2f__8) OAD_CTMP1
       REAL(w2f__8) P1
       REAL(w2f__8) P2
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_14
+      REAL(w2f__8) OpenAD_Symbol_12
+      REAL(w2f__8) OpenAD_lin_0
 
 
           integer iaddr
@@ -244,15 +244,15 @@ C$OPENAD XXX Template ad_template.f
       CALL OAD_S_MIN_D(X(1),X(2),OAD_CTMP0)
       CALL OAD_S_MAX_D(P1,P2,OAD_CTMP1)
       Y(1)%v = (OAD_CTMP0%v*OAD_CTMP1)
-      OpenAD_Symbol_0 = OAD_CTMP1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_0
+      OpenAD_lin_0 = OAD_CTMP1
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_14 = double_tape(double_tape_pointer)
-      OAD_CTMP0%d = OAD_CTMP0%d+Y(1)%d*(OpenAD_Symbol_14)
+      OpenAD_Symbol_12 = double_tape(double_tape_pointer)
+      OAD_CTMP0%d = OAD_CTMP0%d+Y(1)%d*(OpenAD_Symbol_12)
       Y(1)%d = 0.0d0
       CALL OAD_S_MAX_D(P1,P2,OAD_CTMP1)
       CALL OAD_S_MIN_D(X(1),X(2),OAD_CTMP0)

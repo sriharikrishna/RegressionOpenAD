@@ -42,12 +42,6 @@ C$OPENAD XXX Template ad_template.f
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_prop_0
-      TYPE (OpenADTy_active) OpenAD_prop_1
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 2)
@@ -60,6 +54,9 @@ C
       INTEGER(w2f__i4) L
       REAL(w2f__8) P(1 : 2)
       TYPE (OpenADTy_active) Q(1 : 2)
+      TYPE (OpenADTy_active) OpenAD_prp_0
+      TYPE (OpenADTy_active) OpenAD_prp_1
+      TYPE (OpenADTy_active) OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -72,16 +69,16 @@ C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(__deriv__(X(K)), __deriv__(Y))
       __value__(Q(1)) = __value__(Y)
-      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y))
-      CALL setderiv(__deriv__(Q(1)), __deriv__(OpenAD_prop_0))
+      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y))
+      CALL setderiv(__deriv__(Q(1)), __deriv__(OpenAD_prp_0))
       __value__(Y) = __value__(Q(1))
       P(1) = 1.0
       L = 1
-      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(Q(1)))
-      CALL setderiv(__deriv__(Y), __deriv__(OpenAD_prop_1))
+      CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Q(1)))
+      CALL setderiv(__deriv__(Y), __deriv__(OpenAD_prp_1))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), P(K))
-      CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(Q(L)))
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), P(K))
+      CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(Q(L)))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(P(K), __deriv__(OpenAD_Symbol_0))
+      CALL oad_convert(P(K), __deriv__(OpenAD_tyc_0))
       END SUBROUTINE

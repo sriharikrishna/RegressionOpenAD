@@ -53,10 +53,10 @@ C
       REAL(w2f__8) PI
       PARAMETER ( PI = 3.141592653589793116D00)
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_Symbol_6
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
 C
 C     **** Top Level Pragmas ****
 C
@@ -116,12 +116,12 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_Symbol_2 = (X(1)%v*2.0D00)
-      OpenAD_Symbol_0 = (OpenAD_Symbol_2*3.141592653589793116D00)
-      Y(1)%v = SIN(OpenAD_Symbol_0)
-      OpenAD_Symbol_1 = COS(OpenAD_Symbol_0)
-      OpenAD_Symbol_5 = (2.0D00*3.141592653589793116D00*OpenAD_Symbol_1)
-      double_tape(double_tape_pointer) = OpenAD_Symbol_5
+      OpenAD_lin_2 = (X(1)%v*2.0D00)
+      OpenAD_lin_0 = (OpenAD_lin_2*3.141592653589793116D00)
+      Y(1)%v = SIN(OpenAD_lin_0)
+      OpenAD_lin_1 = COS(OpenAD_lin_0)
+      OpenAD_acc_0 = (2.0D00*3.141592653589793116D00*OpenAD_lin_1)
+      double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
 
 C taping end
@@ -140,8 +140,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_6 = double_tape(double_tape_pointer)
-      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_6)
+      OpenAD_Symbol_0 = double_tape(double_tape_pointer)
+      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_0)
       Y(1)%d = 0.0d0
 
 C adjoint end

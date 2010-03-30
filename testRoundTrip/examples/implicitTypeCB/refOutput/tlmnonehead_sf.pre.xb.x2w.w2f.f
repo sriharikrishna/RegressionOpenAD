@@ -34,14 +34,14 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_lin_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(T) = SIN(__value__(S))
-      OpenAD_Symbol_0 = COS(__value__(S))
-      CALL sax(OpenAD_Symbol_0, __deriv__(S), __deriv__(T))
+      OpenAD_lin_0 = COS(__value__(S))
+      CALL sax(OpenAD_lin_0, __deriv__(S), __deriv__(T))
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

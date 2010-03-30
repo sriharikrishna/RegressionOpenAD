@@ -46,21 +46,21 @@ C
         use oad_intrinsics
         IMPLICIT NONE
 C
-C       **** Global Variables & Derived Type Definitions ****
-C
-        REAL(w2f__8) OpenAD_Symbol_1
-        type(active) :: OpenAD_prop_0
-C
 C       **** Parameters and Result ****
 C
         type(active) :: X
 C
+C       **** Local Variables and Functions ****
+C
+        REAL(w2f__8) OpenAD_dly_0
+        type(active) :: OpenAD_prp_0
+C
 C       **** Statements ****
 C
-        OpenAD_Symbol_1 = (X%v*2.0D00)
-        X%v = OpenAD_Symbol_1
-        CALL setderiv(OpenAD_prop_0,X)
-        CALL sax(2.0D00,OpenAD_prop_0,X)
+        OpenAD_dly_0 = (X%v*2.0D00)
+        X%v = OpenAD_dly_0
+        CALL setderiv(OpenAD_prp_0,X)
+        CALL sax(2.0D00,OpenAD_prp_0,X)
         END SUBROUTINE
       END
 

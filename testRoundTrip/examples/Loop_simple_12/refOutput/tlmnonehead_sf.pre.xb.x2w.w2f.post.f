@@ -28,10 +28,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_prop_0
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
@@ -41,8 +37,9 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      type(active) :: OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -62,12 +59,12 @@ C$OPENAD XXX Simple loop
         J = 1
         do while (J.LT.3)
           Y(INT(I))%v = (Y(I)%v+X(I)%v*X(J)%v)
-          OpenAD_Symbol_0 = X(J)%v
-          OpenAD_Symbol_1 = X(I)%v
-          CALL setderiv(OpenAD_prop_0,Y(I))
-          CALL setderiv(Y(I),OpenAD_prop_0)
-          CALL saxpy(OpenAD_Symbol_0,X(I),Y(I))
-          CALL saxpy(OpenAD_Symbol_1,X(J),Y(I))
+          OpenAD_lin_0 = X(J)%v
+          OpenAD_lin_1 = X(I)%v
+          CALL setderiv(OpenAD_prp_0,Y(I))
+          CALL setderiv(Y(I),OpenAD_prp_0)
+          CALL saxpy(OpenAD_lin_0,X(I),Y(I))
+          CALL saxpy(OpenAD_lin_1,X(J),Y(I))
           J = (J+1)
         END DO
       END DO

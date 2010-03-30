@@ -32,17 +32,17 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(B) = (__value__(A) * __value__(A))
-      OpenAD_Symbol_0 = __value__(A)
-      OpenAD_Symbol_1 = __value__(A)
-      CALL sax(OpenAD_Symbol_0, __deriv__(A), __deriv__(B))
-      CALL saxpy(OpenAD_Symbol_1, __deriv__(A), __deriv__(B))
+      OpenAD_lin_0 = __value__(A)
+      OpenAD_lin_1 = __value__(A)
+      CALL sax(OpenAD_lin_0, __deriv__(A), __deriv__(B))
+      CALL saxpy(OpenAD_lin_1, __deriv__(A), __deriv__(B))
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

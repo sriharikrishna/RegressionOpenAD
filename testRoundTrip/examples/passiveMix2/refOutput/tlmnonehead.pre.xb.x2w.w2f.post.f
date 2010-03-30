@@ -6,14 +6,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_Symbol_0
-      type(active) :: OpenAD_Symbol_1
-      type(active) :: OpenAD_Symbol_2
-      type(active) :: OpenAD_Symbol_3
-      type(active) :: OpenAD_Symbol_4
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:1)
@@ -27,6 +19,11 @@ C
       REAL(w2f__8) T
       type(active) :: T1
       REAL(w2f__8) T2
+      type(active) :: OpenAD_tyc_0
+      type(active) :: OpenAD_tyc_1
+      type(active) :: OpenAD_tyc_2
+      type(active) :: OpenAD_tyc_3
+      type(active) :: OpenAD_tyc_4
 C
 C     **** Top Level Pragmas ****
 C
@@ -38,29 +35,29 @@ C
 C$OPENAD XXX Template ad_template.f
       T = 2.0D00
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0,T)
-      CALL OAD_S_MIN_D(OpenAD_Symbol_0,X(1),OAD_CTMP0)
+      CALL oad_convert(OpenAD_tyc_0,T)
+      CALL OAD_S_MIN_D(OpenAD_tyc_0,X(1),OAD_CTMP0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T,OpenAD_Symbol_0)
+      CALL oad_convert(T,OpenAD_tyc_0)
       T1%v = OAD_CTMP0%v
       CALL setderiv(T1,OAD_CTMP0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_1,T)
-      CALL OAD_S_MIN_D(T1,OpenAD_Symbol_1,OAD_CTMP1)
+      CALL oad_convert(OpenAD_tyc_1,T)
+      CALL OAD_S_MIN_D(T1,OpenAD_tyc_1,OAD_CTMP1)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T,OpenAD_Symbol_1)
+      CALL oad_convert(T,OpenAD_tyc_1)
       Y(1)%v = OAD_CTMP1%v
       CALL setderiv(Y(1),OAD_CTMP1)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_2,T)
+      CALL oad_convert(OpenAD_tyc_2,T)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_3,2.5D00)
+      CALL oad_convert(OpenAD_tyc_3,2.5D00)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_4,OAD_CTMP2)
-      CALL OAD_S_MIN_D(OpenAD_Symbol_2,OpenAD_Symbol_3,OpenAD_Symbol_4)
+      CALL oad_convert(OpenAD_tyc_4,OAD_CTMP2)
+      CALL OAD_S_MIN_D(OpenAD_tyc_2,OpenAD_tyc_3,OpenAD_tyc_4)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T,OpenAD_Symbol_2)
+      CALL oad_convert(T,OpenAD_tyc_2)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OAD_CTMP2,OpenAD_Symbol_4)
+      CALL oad_convert(OAD_CTMP2,OpenAD_tyc_4)
       T2 = OAD_CTMP2
       END SUBROUTINE

@@ -6,10 +6,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0(1 : 2, 1 : 3)
-C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
@@ -20,6 +16,7 @@ C
       EXTERNAL barext
       INTEGER(w2f__i4) I
       type(active) :: T(1:2,1:3)
+      REAL(w2f__8) OpenAD_tyc_0(1 : 2, 1 : 3)
 C
 C     **** Top Level Pragmas ****
 C
@@ -34,10 +31,10 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(T(I,2),X(I))
       END DO
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0,T)
-      CALL barext(OpenAD_Symbol_0(1,2))
+      CALL oad_convert(OpenAD_tyc_0,T)
+      CALL barext(OpenAD_tyc_0(1,2))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T,OpenAD_Symbol_0)
+      CALL oad_convert(T,OpenAD_tyc_0)
       Y(1)%v = T(1,2)%v
       CALL setderiv(Y(1),T(1,2))
       END SUBROUTINE

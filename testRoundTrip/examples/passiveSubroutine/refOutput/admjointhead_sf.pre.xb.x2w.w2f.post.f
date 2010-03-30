@@ -176,8 +176,8 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Statements ****
 C
@@ -238,11 +238,11 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
       B%v = (A%v*A%v)
-      OpenAD_Symbol_0 = A%v
-      OpenAD_Symbol_1 = A%v
-      double_tape(double_tape_pointer) = OpenAD_Symbol_0
+      OpenAD_lin_0 = A%v
+      OpenAD_lin_1 = A%v
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_Symbol_1
+      double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
 
 C taping end
@@ -261,11 +261,11 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_2 = double_tape(double_tape_pointer)
+      OpenAD_Symbol_0 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_3 = double_tape(double_tape_pointer)
-      A%d = A%d+B%d*(OpenAD_Symbol_2)
-      A%d = A%d+B%d*(OpenAD_Symbol_3)
+      OpenAD_Symbol_1 = double_tape(double_tape_pointer)
+      A%d = A%d+B%d*(OpenAD_Symbol_0)
+      A%d = A%d+B%d*(OpenAD_Symbol_1)
       B%d = 0.0d0
 
 C adjoint end

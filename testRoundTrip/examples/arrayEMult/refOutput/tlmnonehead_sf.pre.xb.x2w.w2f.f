@@ -35,8 +35,8 @@ C
       INTEGER(w2f__i4) N
       SAVE N
       TYPE (OpenADTy_active) Z(1 : INT(SIZE(__value__(X))))
-      REAL(w2f__8) OpenAD_Symbol_0(1 : 2)
-      REAL(w2f__8) OpenAD_Symbol_1(1 : 2)
+      REAL(w2f__8) OpenAD_lin_0(1 : 2)
+      REAL(w2f__8) OpenAD_lin_1(1 : 2)
 C
 C     **** Initializers ****
 C
@@ -55,10 +55,9 @@ C$OPENAD XXX Template ad_template.f
      > )
       __value__(Y(1 : 2)) = (__value__(X(1 : 2)) * __value__(Z(1 : INT(
      > SIZE(X)))))
-      OpenAD_Symbol_0 = __value__(Z(1 : INT(SIZE(X))))
-      OpenAD_Symbol_1 = __value__(X(1 : 2))
-      CALL sax(OpenAD_Symbol_0, __deriv__(X(1 : 2)), __deriv__(Y(1 : 2)
-     > ))
-      CALL saxpy(OpenAD_Symbol_1, __deriv__(Z(1 : INT(SIZE(X)))),
+      OpenAD_lin_0 = __value__(Z(1 : INT(SIZE(X))))
+      OpenAD_lin_1 = __value__(X(1 : 2))
+      CALL sax(OpenAD_lin_0, __deriv__(X(1 : 2)), __deriv__(Y(1 : 2)))
+      CALL saxpy(OpenAD_lin_1, __deriv__(Z(1 : INT(SIZE(X)))),
      >  __deriv__(Y(1 : 2)))
       END SUBROUTINE

@@ -91,13 +91,6 @@ C     $OpenAD$ END REPLACEMENT
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_Symbol_2
-      TYPE (OpenADTy_active) OpenAD_Symbol_3
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X
@@ -108,6 +101,10 @@ C
       EXTERNAL foo
       REAL(w2f__4) OAD_CTMP0
       REAL(w2f__8) PY
+      TYPE (OpenADTy_active) OpenAD_tyc_0
+      TYPE (OpenADTy_active) OpenAD_tyc_1
+      TYPE (OpenADTy_active) OpenAD_tyc_2
+      TYPE (OpenADTy_active) OpenAD_tyc_3
 C
 C     **** Top Level Pragmas ****
 C
@@ -121,31 +118,31 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(__deriv__(X), __deriv__(Y))
       OAD_CTMP0 = 2.0
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), OAD_CTMP0)
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), OAD_CTMP0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_1), PY)
-      CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(__deriv__(OpenAD_tyc_1), PY)
+      CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(OpenAD_tyc_1))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OAD_CTMP0, __deriv__(OpenAD_Symbol_0))
+      CALL oad_convert(OAD_CTMP0, __deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(PY, __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       CALL foo(__deriv__(X), __deriv__(Y))
       OAD_CTMP0 = 2.0
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), OAD_CTMP0)
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), OAD_CTMP0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_1), PY)
-      CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(__deriv__(OpenAD_tyc_1), PY)
+      CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(OpenAD_tyc_1))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OAD_CTMP0, __deriv__(OpenAD_Symbol_0))
+      CALL oad_convert(OAD_CTMP0, __deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(PY, __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-      CALL foo(__deriv__(OpenAD_Symbol_2), __deriv__(OpenAD_Symbol_3))
+      CALL foo(__deriv__(OpenAD_tyc_2), __deriv__(OpenAD_tyc_3))
       CALL foo(__deriv__(X), __deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -165,17 +162,17 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(__deriv__(X), __deriv__(Y))
       OAD_CTMP0 = 2.0
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_0), OAD_CTMP0)
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), OAD_CTMP0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_Symbol_1), PY)
-      CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(__deriv__(OpenAD_tyc_1), PY)
+      CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(OpenAD_tyc_1))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OAD_CTMP0, __deriv__(OpenAD_Symbol_0))
+      CALL oad_convert(OAD_CTMP0, __deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(PY, __deriv__(OpenAD_Symbol_1))
+      CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-      CALL foo(__deriv__(OpenAD_Symbol_2), __deriv__(OpenAD_Symbol_3))
+      CALL foo(__deriv__(OpenAD_tyc_2), __deriv__(OpenAD_tyc_3))
       CALL foo(__deriv__(X), __deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

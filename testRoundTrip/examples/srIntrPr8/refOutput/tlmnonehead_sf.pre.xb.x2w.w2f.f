@@ -96,7 +96,7 @@ C
       REAL(w2f__8) OAD_CTMP1
       REAL(w2f__8) P1
       REAL(w2f__8) P2
-      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_lin_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -112,6 +112,6 @@ C$OPENAD XXX Template ad_template.f
      > OAD_CTMP0))
       CALL OAD_S_MAX_D(P1, P2, OAD_CTMP1)
       __value__(Y(1)) = (__value__(OAD_CTMP0) * OAD_CTMP1)
-      OpenAD_Symbol_0 = OAD_CTMP1
-      CALL sax(OpenAD_Symbol_0, __deriv__(OAD_CTMP0), __deriv__(Y(1)))
+      OpenAD_lin_0 = OAD_CTMP1
+      CALL sax(OpenAD_lin_0, __deriv__(OAD_CTMP0), __deriv__(Y(1)))
       END SUBROUTINE

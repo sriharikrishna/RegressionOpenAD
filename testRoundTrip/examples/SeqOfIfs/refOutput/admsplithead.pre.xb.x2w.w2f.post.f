@@ -34,12 +34,15 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_7
       INTEGER(w2f__i8) OpenAD_Symbol_8
       INTEGER(w2f__i8) OpenAD_Symbol_9
-      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
       type(active) :: X(1:2)
       type(active) :: Y(1:2)
+C
+C     **** Local Variables and Functions ****
+C
+      type(active) :: OpenAD_prp_0
 
 
           integer iaddr
@@ -101,10 +104,10 @@ C adjoint
         X(1)%d = X(1)%d+Y(2)%d
         Y(2)%d = 0.0d0
       ELSE
-        OpenAD_prop_0%d = OpenAD_prop_0%d+Y(2)%d
+        OpenAD_prp_0%d = OpenAD_prp_0%d+Y(2)%d
         Y(2)%d = 0.0d0
-        Y(1)%d = Y(1)%d+OpenAD_prop_0%d
-        OpenAD_prop_0%d = 0.0d0
+        Y(1)%d = Y(1)%d+OpenAD_prp_0%d
+        OpenAD_prp_0%d = 0.0d0
       ENDIF
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_1 = integer_tape(integer_tape_pointer)

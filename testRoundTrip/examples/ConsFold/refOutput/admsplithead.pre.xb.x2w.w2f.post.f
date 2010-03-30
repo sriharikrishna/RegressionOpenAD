@@ -35,10 +35,10 @@ C
       type(active) :: T6
       type(active) :: T7
       type(active) :: Y1
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_Symbol_0
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_7
 C
 C     **** Top Level Pragmas ****
 C
@@ -75,19 +75,19 @@ C taping
       T5%v = (T4%v+4.0D00)
       T6%v = (T5%v+3.0D00)
       T7%v = (T6%v+(-9.0D00))
-      OpenAD_Symbol_6 = EXP(T7%v)
-      OpenAD_Symbol_7 = OpenAD_Symbol_6
-      Y1%v = OpenAD_Symbol_6
+      OpenAD_lin_6 = EXP(T7%v)
+      OpenAD_lin_7 = OpenAD_lin_6
+      Y1%v = OpenAD_lin_6
       Y(1)%v = Y1%v
-      OpenAD_Symbol_8 = (1.0D00*OpenAD_Symbol_7)
-      double_tape(double_tape_pointer) = OpenAD_Symbol_8
+      OpenAD_acc_0 = (1.0D00*OpenAD_lin_7)
+      double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
       double_tape_pointer = double_tape_pointer-1
-      OpenAD_Symbol_9 = double_tape(double_tape_pointer)
-      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_9)
+      OpenAD_Symbol_0 = double_tape(double_tape_pointer)
+      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_0)
       Y(1)%d = 0.0d0
           end if
         end subroutine head

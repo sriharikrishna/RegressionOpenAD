@@ -21,22 +21,22 @@ C
       use globals
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_3
-      type(active) :: OpenAD_prop_0
-C
 C     **** Parameters and Result ****
 C
       type(active) :: P
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_dly_0
+      type(active) :: OpenAD_prp_0
+C
 C     **** Statements ****
 C
-      OpenAD_Symbol_3 = (P%v*2.0D00)
-      P%v = OpenAD_Symbol_3
+      OpenAD_dly_0 = (P%v*2.0D00)
+      P%v = OpenAD_dly_0
       I = (I+1)
-      CALL setderiv(OpenAD_prop_0,P)
-      CALL sax(2.0D00,OpenAD_prop_0,P)
+      CALL setderiv(OpenAD_prp_0,P)
+      CALL sax(2.0D00,OpenAD_prp_0,P)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -45,10 +45,6 @@ C
       use oad_intrinsics
       use globals
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_Symbol_0
 C
 C     **** Parameters and Result ****
 C
@@ -62,7 +58,8 @@ C
       REAL(w2f__8) A(1 : 1)
       EXTERNAL foo
       INTEGER(w2f__i4) J
-      INTEGER(w2f__i8) OpenAD_Symbol_1
+      INTEGER(w2f__i8) OpenAD_Symbol_0
+      type(active) :: OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -75,12 +72,12 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       J = 0
       A(1) = 9.085830301E-03
-      OpenAD_Symbol_1 = I
+      OpenAD_Symbol_0 = I
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(OpenAD_Symbol_0,A(J+I))
-      CALL foo(OpenAD_Symbol_0)
+      CALL oad_convert(OpenAD_tyc_0,A(J+I))
+      CALL foo(OpenAD_tyc_0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(A(J+INT(OpenAD_Symbol_1)),OpenAD_Symbol_0)
+      CALL oad_convert(A(J+INT(OpenAD_Symbol_0)),OpenAD_tyc_0)
       CALL foo(X(1))
       Y(1)%v = X(1)%v
       CALL setderiv(Y(1),X(1))

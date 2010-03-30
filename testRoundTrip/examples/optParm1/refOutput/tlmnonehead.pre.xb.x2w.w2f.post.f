@@ -6,13 +6,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_3
-      type(active) :: OpenAD_prop_0
-      type(active) :: OpenAD_prop_1
-C
 C     **** Parameters and Result ****
 C
       type(active) :: A
@@ -25,13 +18,17 @@ C
 C     **** Local Variables and Functions ****
 C
       LOGICAL(w2f__i4) t__1
+      REAL(w2f__8) OpenAD_dly_0
+      REAL(w2f__8) OpenAD_dly_1
+      type(active) :: OpenAD_prp_0
+      type(active) :: OpenAD_prp_1
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_1 = (A%v*2.0D00)
-      C%v = OpenAD_Symbol_1
-      CALL setderiv(OpenAD_prop_0,A)
-      CALL sax(2.0D00,OpenAD_prop_0,C)
+      OpenAD_dly_0 = (A%v*2.0D00)
+      C%v = OpenAD_dly_0
+      CALL setderiv(OpenAD_prp_0,A)
+      CALL sax(2.0D00,OpenAD_prp_0,C)
       t__1 = .TRUE.
       IF (.not. PRESENT(B)) THEN
         t__1 = .FALSE.
@@ -41,10 +38,10 @@ C
         ENDIF
       ENDIF
       IF(t__1) THEN
-        OpenAD_Symbol_3 = (B%v*3.0D00)
-        D%v = OpenAD_Symbol_3
-        CALL setderiv(OpenAD_prop_1,B)
-        CALL sax(3.0D00,OpenAD_prop_1,D)
+        OpenAD_dly_1 = (B%v*3.0D00)
+        D%v = OpenAD_dly_1
+        CALL setderiv(OpenAD_prp_1,B)
+        CALL sax(3.0D00,OpenAD_prp_1,D)
       ENDIF
       END SUBROUTINE
 
