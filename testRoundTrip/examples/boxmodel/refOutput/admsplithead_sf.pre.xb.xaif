@@ -648,11 +648,11 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_Symbol_152" kind="variable" type="integer" feType="" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_Symbol_153" kind="variable" type="integer" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_Symbol_153" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_Symbol_154" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_acc_0" kind="variable" type="integer" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_acc_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_lin_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
@@ -685,13 +685,13 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id="L_8" kind="variable" type="integer" feType="I4" shape="scalar" annotation="{Sym_Id#8}" active="0" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_Symbol_155" kind="variable" type="integer" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_Symbol_155" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_Symbol_156" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_Symbol_157" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_acc_1" kind="variable" type="integer" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_acc_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_lin_10" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
@@ -864,9 +864,9 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_Symbol_165" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_Symbol_166" kind="variable" type="integer" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_Symbol_166" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_Symbol_167" kind="variable" type="integer" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_Symbol_167" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_Symbol_168" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
@@ -896,9 +896,9 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_acc_17" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_acc_18" kind="variable" type="integer" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_acc_18" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_acc_19" kind="variable" type="integer" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_acc_19" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_acc_2" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
@@ -5633,7 +5633,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -5652,7 +5652,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
@@ -5677,7 +5677,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
@@ -5697,7 +5697,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -5717,7 +5717,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -6076,7 +6076,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -6095,7 +6095,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
@@ -6120,7 +6120,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
@@ -6140,7 +6140,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -6160,7 +6160,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="10"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="10"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -8617,7 +8617,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -8664,7 +8664,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -8684,7 +8684,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -8704,7 +8704,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -8783,7 +8783,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -8830,7 +8830,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -8850,7 +8850,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -8870,7 +8870,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -8949,7 +8949,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -8996,7 +8996,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -9016,7 +9016,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -9036,7 +9036,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -9077,7 +9077,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -9124,7 +9124,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -9144,7 +9144,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -9164,7 +9164,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -9243,7 +9243,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -9290,7 +9290,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -9310,7 +9310,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -9330,7 +9330,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -9409,7 +9409,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -9456,7 +9456,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -9476,7 +9476,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -9496,7 +9496,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -11598,7 +11598,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -11645,7 +11645,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -11665,7 +11665,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -11685,7 +11685,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_6" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -11764,7 +11764,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -11811,7 +11811,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -11831,7 +11831,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -11851,7 +11851,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_5" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -11930,7 +11930,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -11977,7 +11977,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -11997,7 +11997,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -12017,7 +12017,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_4" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -12058,7 +12058,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -12105,7 +12105,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -12125,7 +12125,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -12145,7 +12145,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_3" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -12224,7 +12224,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -12271,7 +12271,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -12291,7 +12291,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -12311,7 +12311,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_2" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -12390,7 +12390,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -12437,7 +12437,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="DecDeriv" statement_id="inline_DecDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -12457,7 +12457,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -12477,7 +12477,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="14"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="14"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -12957,7 +12957,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -12979,7 +12979,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -13006,19 +13006,19 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -13040,7 +13040,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -13062,14 +13062,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -13091,14 +13091,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -13120,7 +13120,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -13623,7 +13623,7 @@
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -13645,7 +13645,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -13672,19 +13672,19 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -13706,7 +13706,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -13728,14 +13728,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::createNewPropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_9" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::createNewPropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -13757,14 +13757,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_8" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -13786,7 +13786,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="11"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_7" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="11"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -14331,7 +14331,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -14355,7 +14355,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -14377,7 +14377,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -14455,7 +14455,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -14479,7 +14479,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -14501,7 +14501,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -15085,7 +15085,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -15109,7 +15109,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -15131,7 +15131,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_11" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -15209,7 +15209,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -15233,7 +15233,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -15255,7 +15255,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="12"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_10" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="12"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -18513,7 +18513,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -18584,7 +18584,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -18608,7 +18608,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -18630,14 +18630,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -18659,7 +18659,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -20880,7 +20880,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -20951,7 +20951,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -20975,7 +20975,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -20997,14 +20997,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_13" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -21026,7 +21026,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::LinearizedComputationalGraphVertex::replacePropagationVariable" scope_id="6"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_12" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
