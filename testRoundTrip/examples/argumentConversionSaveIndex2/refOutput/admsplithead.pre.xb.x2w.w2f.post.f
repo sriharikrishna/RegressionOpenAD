@@ -152,10 +152,6 @@ C!! requested inline of 'oad_convert' has no defn
       CALL foo(OpenAD_Symbol_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(A(J+INT(OpenAD_Symbol_1)),OpenAD_Symbol_0)
-      integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
-      integer_tape_pointer = integer_tape_pointer+1
-      integer_tape(integer_tape_pointer) = J
-      integer_tape_pointer = integer_tape_pointer+1
       CALL foo(X(1))
       Y(1)%v = X(1)%v
           end if
@@ -164,10 +160,6 @@ C adjoint
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
       CALL foo(X(1))
-      integer_tape_pointer = integer_tape_pointer-1
-      J = integer_tape(integer_tape_pointer)
-      integer_tape_pointer = integer_tape_pointer-1
-      I = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_4)
           end if
         end subroutine head

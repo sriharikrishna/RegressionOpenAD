@@ -239,10 +239,6 @@ C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(P(K),OpenAD_Symbol_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(Q(L),OpenAD_Symbol_1)
-      integer_tape(integer_tape_pointer) = K
-      integer_tape_pointer = integer_tape_pointer+1
-      integer_tape(integer_tape_pointer) = L
-      integer_tape_pointer = integer_tape_pointer+1
 
 C taping end
             our_rev_mode%arg_store=.FALSE.
@@ -259,10 +255,6 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
-      integer_tape_pointer = integer_tape_pointer-1
-      L = integer_tape(integer_tape_pointer)
-      integer_tape_pointer = integer_tape_pointer-1
-      K = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_3,OpenAD_Symbol_4)
       integer_tape_pointer = integer_tape_pointer-1
       K = integer_tape(integer_tape_pointer)

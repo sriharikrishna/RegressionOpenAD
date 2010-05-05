@@ -235,8 +235,6 @@ C!! requested inline of 'oad_convert' has no defn
       CALL foo(OpenAD_Symbol_0,Q(L))
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(P(K),OpenAD_Symbol_0)
-      integer_tape(integer_tape_pointer) = K
-      integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = L
       integer_tape_pointer = integer_tape_pointer+1
 
@@ -257,8 +255,6 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       L = integer_tape(integer_tape_pointer)
-      integer_tape_pointer = integer_tape_pointer-1
-      K = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_Symbol_2,Q(L))
       OpenAD_prop_1%d = OpenAD_prop_1%d+Y%d
       Y%d = 0.0d0
