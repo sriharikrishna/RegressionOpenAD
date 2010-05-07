@@ -744,7 +744,7 @@
           </xaif:Assignment>
           <xaif:Assignment statement_id="assignment_to_temporary_for_saving_value_across_statement">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterSaveValuesAcross::SaveValuesAcross::saveValue" scope_id="6"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="false" alias="4" du_ud="3" deriv="0" constant="0">
@@ -789,7 +789,7 @@
                   <xaif:IndexTriplet>
                     <xaif:Index>
                       <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                        <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
+                        <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterSaveValuesAcross::SaveValuesAcross::saveValue" scope_id="6"/>
                       </xaif:VariableReference>
                     </xaif:Index>
                   </xaif:IndexTriplet>
@@ -882,7 +882,7 @@
           </xaif:Assignment>
           <xaif:Assignment statement_id="assignment_to_temporary_for_saving_value_across_statement">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterSaveValuesAcross::SaveValuesAcross::saveValue" scope_id="6"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="false" alias="4" du_ud="3" deriv="0" constant="0">
@@ -927,7 +927,7 @@
                   <xaif:IndexTriplet>
                     <xaif:Index>
                       <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                        <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
+                        <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterSaveValuesAcross::SaveValuesAcross::saveValue" scope_id="6"/>
                       </xaif:VariableReference>
                     </xaif:Index>
                   </xaif:IndexTriplet>
@@ -941,7 +941,6 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
           <xaif:SubroutineCall statement_id="27" symbol_id="foo__27" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1" annotation="">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">
@@ -1184,7 +1183,7 @@
           </xaif:Assignment>
           <xaif:Assignment statement_id="assignment_to_temporary_for_saving_value_across_statement">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterSaveValuesAcross::SaveValuesAcross::saveValue" scope_id="6"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="false" alias="4" du_ud="3" deriv="0" constant="0">
@@ -1229,7 +1228,7 @@
                   <xaif:IndexTriplet>
                     <xaif:Index>
                       <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                        <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
+                        <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterSaveValuesAcross::SaveValuesAcross::saveValue" scope_id="6"/>
                       </xaif:VariableReference>
                     </xaif:Index>
                   </xaif:IndexTriplet>
@@ -1243,7 +1242,6 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
           <xaif:SubroutineCall statement_id="27" symbol_id="foo__27" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1" annotation="">
               <xaif:VariableReference vertex_id="1" active="true" alias="1" deriv="0" constant="0">

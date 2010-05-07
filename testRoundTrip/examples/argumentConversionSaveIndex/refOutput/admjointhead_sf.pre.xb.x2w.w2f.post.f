@@ -279,7 +279,6 @@ C!! requested inline of 'oad_convert' has no defn
       CALL foo(OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(A(INT(OpenAD_Symbol_0)),OpenAD_tyc_0)
-      integer_tape(integer_tape_pointer) = OpenAD_Symbol_0
       CALL foo(X(1))
       Y(1)%v = X(1)%v
 

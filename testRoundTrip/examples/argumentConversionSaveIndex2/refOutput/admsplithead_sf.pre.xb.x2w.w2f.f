@@ -181,7 +181,6 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(A(J + INT(OpenAD_Symbol_0)), __deriv__(
      > OpenAD_tyc_0))
-      CALL push_i(OpenAD_Symbol_0)
       CALL foo(__deriv__(X(1)))
       __value__(Y(1)) = __value__(X(1))
 C     $OpenAD$ END REPLACEMENT
@@ -229,7 +228,6 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(A(J + INT(OpenAD_Symbol_0)), __deriv__(
      > OpenAD_tyc_0))
-      CALL push_i(OpenAD_Symbol_0)
       CALL foo(__deriv__(X(1)))
       __value__(Y(1)) = __value__(X(1))
 C     $OpenAD$ END REPLACEMENT
