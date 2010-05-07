@@ -54,8 +54,8 @@ C
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
@@ -78,10 +78,10 @@ C$OPENAD XXX Simple loop
           OpenAD_lin_2 = (__value__(X(I)) * __value__(X(I)))
           __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_lin_2 *
      >  2.0D00)
+          OpenAD_lin_3 = __value__(X(I))
           OpenAD_lin_4 = __value__(X(I))
-          OpenAD_lin_5 = __value__(X(I))
-          OpenAD_acc_0 = (OpenAD_lin_4 * 2.0D00)
-          OpenAD_acc_1 = (OpenAD_lin_5 * 2.0D00)
+          OpenAD_acc_0 = (OpenAD_lin_3 * 2.0D00)
+          OpenAD_acc_1 = (OpenAD_lin_4 * 2.0D00)
           CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(I)))
           CALL setderiv(__deriv__(Y(I)), __deriv__(OpenAD_prp_1))
           CALL saxpy(OpenAD_acc_0, __deriv__(X(I)), __deriv__(Y(I)))

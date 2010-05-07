@@ -18,15 +18,12 @@ C
 C     **** Local Variables and Functions ****
 C
       LOGICAL(w2f__i4) t__1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
 C
 C     **** Statements ****
 C
-      OpenAD_dly_0 = (A%v*2.0D00)
-      C%v = OpenAD_dly_0
+      C%v = (A%v*2.0D00)
       CALL setderiv(OpenAD_prp_0,A)
       CALL sax(2.0D00,OpenAD_prp_0,C)
       t__1 = .TRUE.
@@ -38,8 +35,7 @@ C
         ENDIF
       ENDIF
       IF(t__1) THEN
-        OpenAD_dly_1 = (B%v*3.0D00)
-        D%v = OpenAD_dly_1
+        D%v = (B%v*3.0D00)
         CALL setderiv(OpenAD_prp_1,B)
         CALL sax(3.0D00,OpenAD_prp_1,D)
       ENDIF

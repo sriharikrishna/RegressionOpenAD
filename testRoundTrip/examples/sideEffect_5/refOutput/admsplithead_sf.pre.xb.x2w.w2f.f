@@ -52,7 +52,6 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i8) OpenAD_Symbol_12
-      REAL(w2f__8) OpenAD_dly_0
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Statements ****
@@ -67,8 +66,7 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_2 = 0_w2f__i8
       DO I = 1, (N + 1), 1
-        OpenAD_dly_0 = (__value__(A(I)) * 2.0D00)
-        __value__(A(INT(I))) = OpenAD_dly_0
+        __value__(A(INT(I))) = (__value__(A(I)) * 2.0D00)
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(I)
         OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2) + INT(1_w2f__i8))
@@ -140,8 +138,7 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_5 = 0_w2f__i8
       DO I = 1, (N + 1), 1
-        OpenAD_dly_0 = (__value__(A(I)) * 2.0D00)
-        __value__(A(INT(I))) = OpenAD_dly_0
+        __value__(A(INT(I))) = (__value__(A(I)) * 2.0D00)
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(I)
         OpenAD_Symbol_5 = (INT(OpenAD_Symbol_5) + INT(1_w2f__i8))

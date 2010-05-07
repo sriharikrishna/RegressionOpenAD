@@ -75,8 +75,6 @@ C
 C     **** Local Variables and Functions ****
 C
       LOGICAL(w2f__i4) t__1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
 C
@@ -104,8 +102,7 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-      OpenAD_dly_0 = (A%v*2.0D00)
-      C%v = OpenAD_dly_0
+      C%v = (A%v*2.0D00)
       t__1 = .TRUE.
       IF (.not. PRESENT(B)) THEN
         t__1 = .FALSE.
@@ -128,8 +125,7 @@ C taping
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
       IF(t__1) THEN
-        OpenAD_dly_1 = (B%v*3.0D00)
-        D%v = OpenAD_dly_1
+        D%v = (B%v*3.0D00)
         OpenAD_Symbol_7 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
         integer_tape_pointer = integer_tape_pointer+1

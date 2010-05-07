@@ -34,7 +34,7 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_lin_0
       INTEGER(w2f__i4) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
+      INTEGER(w2f__i4) OpenAD_lin_2
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****

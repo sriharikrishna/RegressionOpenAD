@@ -36,19 +36,17 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (K*X%v)
-      OpenAD_lin_1 = K
-      Y%v = OpenAD_dly_0
+      Y%v = (K*X%v)
+      OpenAD_lin_0 = K
       K = (K*2)
       CALL setderiv(OpenAD_prp_0,X)
-      CALL sax(OpenAD_lin_1,OpenAD_prp_0,Y)
+      CALL sax(OpenAD_lin_0,OpenAD_prp_0,Y)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

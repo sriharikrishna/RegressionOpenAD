@@ -67,7 +67,6 @@ C
       PARAMETER ( ZERO = 0.0D00)
       INTEGER(w2f__i8) OpenAD_Symbol_106
       REAL(w2f__8) OpenAD_Symbol_107
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       TYPE (OpenADTy_active) OpenAD_prp_0
@@ -112,9 +111,8 @@ C     $OpenAD$ INLINE push_i(subst)
       OpenAD_Symbol_2 = 0_w2f__i8
       DO K = 1, N, 1
         OpenAD_lin_0 = (HX2 * HY2)
-        OpenAD_dly_0 = (__value__(FVEC(K)) * OpenAD_lin_0)
+        __value__(FVEC(INT(K))) = (__value__(FVEC(K)) * OpenAD_lin_0)
         OpenAD_lin_1 = OpenAD_lin_0
-        __value__(FVEC(INT(K))) = OpenAD_dly_0
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_1)
 C       $OpenAD$ INLINE push_i(subst)
@@ -182,9 +180,8 @@ C     $OpenAD$ INLINE push_i(subst)
       OpenAD_Symbol_5 = 0_w2f__i8
       DO K = 1, N, 1
         OpenAD_lin_0 = (HX2 * HY2)
-        OpenAD_dly_0 = (__value__(FVEC(K)) * OpenAD_lin_0)
+        __value__(FVEC(INT(K))) = (__value__(FVEC(K)) * OpenAD_lin_0)
         OpenAD_lin_1 = OpenAD_lin_0
-        __value__(FVEC(INT(K))) = OpenAD_dly_0
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_1)
 C       $OpenAD$ INLINE push_i(subst)
@@ -419,27 +416,27 @@ C
       REAL(w2f__8) OpenAD_acc_3
       REAL(w2f__8) OpenAD_acc_4
       REAL(w2f__8) OpenAD_acc_5
+      REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
       REAL(w2f__8) OpenAD_lin_12
+      REAL(w2f__8) OpenAD_lin_13
+      REAL(w2f__8) OpenAD_lin_14
       REAL(w2f__8) OpenAD_lin_15
       REAL(w2f__8) OpenAD_lin_16
+      REAL(w2f__8) OpenAD_lin_17
+      REAL(w2f__8) OpenAD_lin_18
       REAL(w2f__8) OpenAD_lin_19
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_20
       REAL(w2f__8) OpenAD_lin_21
       REAL(w2f__8) OpenAD_lin_22
       REAL(w2f__8) OpenAD_lin_23
       REAL(w2f__8) OpenAD_lin_24
-      REAL(w2f__8) OpenAD_lin_26
-      REAL(w2f__8) OpenAD_lin_27
-      REAL(w2f__8) OpenAD_lin_28
-      REAL(w2f__8) OpenAD_lin_29
+      REAL(w2f__8) OpenAD_lin_25
       REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_30
-      REAL(w2f__8) OpenAD_lin_31
-      REAL(w2f__8) OpenAD_lin_33
-      REAL(w2f__8) OpenAD_lin_34
-      REAL(w2f__8) OpenAD_lin_35
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
       REAL(w2f__8) OpenAD_lin_8
       REAL(w2f__8) OpenAD_lin_9
@@ -751,53 +748,53 @@ C           $OpenAD$ INLINE push_i(subst)
 C           $OpenAD$ INLINE push_i(subst)
             CALL push_i(OpenAD_Symbol_47)
           ENDIF
-          OpenAD_lin_3 = (__value__(PT) - __value__(PB))
-          OpenAD_lin_4 = (HY * 2.0D00)
-          __value__(DPDY) = (OpenAD_lin_3 / OpenAD_lin_4)
-          OpenAD_lin_5 = (INT(1_w2f__i8) / OpenAD_lin_4)
-          OpenAD_lin_7 = (__value__(PR) - __value__(PL))
-          OpenAD_lin_8 = (HX * 2.0D00)
-          __value__(DPDX) = (OpenAD_lin_7 / OpenAD_lin_8)
-          OpenAD_lin_9 = (INT(1_w2f__i8) / OpenAD_lin_8)
+          OpenAD_lin_2 = (__value__(PT) - __value__(PB))
+          OpenAD_lin_3 = (HY * 2.0D00)
+          __value__(DPDY) = (OpenAD_lin_2 / OpenAD_lin_3)
+          OpenAD_lin_4 = (INT(1_w2f__i8) / OpenAD_lin_3)
+          OpenAD_lin_5 = (__value__(PR) - __value__(PL))
+          OpenAD_lin_6 = (HX * 2.0D00)
+          __value__(DPDX) = (OpenAD_lin_5 / OpenAD_lin_6)
+          OpenAD_lin_7 = (INT(1_w2f__i8) / OpenAD_lin_6)
 C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_5)
+          CALL push_s0(OpenAD_lin_4)
 C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_9)
+          CALL push_s0(OpenAD_lin_7)
           CALL bar(__deriv__(PBB), __deriv__(PBL), __deriv__(PB),
      >  __deriv__(PBR), __deriv__(PLL), __deriv__(PL), __deriv__(P),
      >  __deriv__(PR), __deriv__(PRR), __deriv__(PTL), __deriv__(PT),
      >  __deriv__(PTR), __deriv__(PTT), HY2, HX2, __deriv__(PLAP),
      >  __deriv__(PBLAP), __deriv__(PLLAP), __deriv__(PRLAP), __deriv__
      > (PTLAP))
-          OpenAD_lin_11 = (__value__(PBLAP) + __value__(PTLAP) -
+          OpenAD_lin_8 = (__value__(PBLAP) + __value__(PTLAP) -
      >  __value__(PLAP) * 2.0D00)
-          OpenAD_lin_15 = (__value__(PLLAP) + __value__(PRLAP) -
+          OpenAD_lin_10 = (__value__(PLLAP) + __value__(PRLAP) -
      >  __value__(PLAP) * 2.0D00)
-          OpenAD_lin_26 = (__value__(PRLAP) - __value__(PLLAP))
-          OpenAD_lin_22 = (__value__(DPDY) * OpenAD_lin_26)
-          OpenAD_lin_23 = (HX * 2.0D00)
-          OpenAD_lin_33 = (__value__(PTLAP) - __value__(PBLAP))
-          OpenAD_lin_29 = (__value__(DPDX) * OpenAD_lin_33)
-          OpenAD_lin_30 = (HY * 2.0D00)
-          OpenAD_lin_19 = ((OpenAD_lin_22 / OpenAD_lin_23) -(
-     > OpenAD_lin_29 / OpenAD_lin_30))
-          __value__(FVEC(INT(K))) = ((OpenAD_lin_11 / HY2) +(
-     > OpenAD_lin_15 / HX2) - R * OpenAD_lin_19)
-          OpenAD_lin_12 = (INT(1_w2f__i8) / HY2)
-          OpenAD_lin_16 = (INT(1_w2f__i8) / HX2)
-          OpenAD_lin_27 = OpenAD_lin_26
-          OpenAD_lin_28 = __value__(DPDY)
-          OpenAD_lin_24 = (INT(1_w2f__i8) / OpenAD_lin_23)
-          OpenAD_lin_34 = OpenAD_lin_33
-          OpenAD_lin_35 = __value__(DPDX)
-          OpenAD_lin_31 = (INT(1_w2f__i8) / OpenAD_lin_30)
-          OpenAD_lin_21 = R
-          OpenAD_acc_0 = (OpenAD_lin_21 * INT((-1_w2f__i8)))
+          OpenAD_lin_17 = (__value__(PRLAP) - __value__(PLLAP))
+          OpenAD_lin_14 = (__value__(DPDY) * OpenAD_lin_17)
+          OpenAD_lin_15 = (HX * 2.0D00)
+          OpenAD_lin_23 = (__value__(PTLAP) - __value__(PBLAP))
+          OpenAD_lin_20 = (__value__(DPDX) * OpenAD_lin_23)
+          OpenAD_lin_21 = (HY * 2.0D00)
+          OpenAD_lin_12 = ((OpenAD_lin_14 / OpenAD_lin_15) -(
+     > OpenAD_lin_20 / OpenAD_lin_21))
+          __value__(FVEC(INT(K))) = ((OpenAD_lin_8 / HY2) +(
+     > OpenAD_lin_10 / HX2) - R * OpenAD_lin_12)
+          OpenAD_lin_9 = (INT(1_w2f__i8) / HY2)
+          OpenAD_lin_11 = (INT(1_w2f__i8) / HX2)
+          OpenAD_lin_18 = OpenAD_lin_17
+          OpenAD_lin_19 = __value__(DPDY)
+          OpenAD_lin_16 = (INT(1_w2f__i8) / OpenAD_lin_15)
+          OpenAD_lin_24 = OpenAD_lin_23
+          OpenAD_lin_25 = __value__(DPDX)
+          OpenAD_lin_22 = (INT(1_w2f__i8) / OpenAD_lin_21)
+          OpenAD_lin_13 = R
+          OpenAD_acc_0 = (OpenAD_lin_13 * INT((-1_w2f__i8)))
           OpenAD_acc_1 = (INT((-1_w2f__i8)) * OpenAD_acc_0)
-          OpenAD_acc_2 = (OpenAD_lin_34 * OpenAD_lin_31 * OpenAD_acc_1)
-          OpenAD_acc_3 = (OpenAD_lin_35 * OpenAD_lin_31 * OpenAD_acc_1)
-          OpenAD_acc_4 = (OpenAD_lin_27 * OpenAD_lin_24 * OpenAD_acc_0)
-          OpenAD_acc_5 = (OpenAD_lin_28 * OpenAD_lin_24 * OpenAD_acc_0)
+          OpenAD_acc_2 = (OpenAD_lin_24 * OpenAD_lin_22 * OpenAD_acc_1)
+          OpenAD_acc_3 = (OpenAD_lin_25 * OpenAD_lin_22 * OpenAD_acc_1)
+          OpenAD_acc_4 = (OpenAD_lin_18 * OpenAD_lin_16 * OpenAD_acc_0)
+          OpenAD_acc_5 = (OpenAD_lin_19 * OpenAD_lin_16 * OpenAD_acc_0)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_2)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -807,9 +804,9 @@ C         $OpenAD$ INLINE push_s0(subst)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_5)
 C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_12)
+          CALL push_s0(OpenAD_lin_9)
 C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_16)
+          CALL push_s0(OpenAD_lin_11)
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(K)
           OpenAD_Symbol_23 = (INT(OpenAD_Symbol_23) + INT(1_w2f__i8))
@@ -1446,53 +1443,53 @@ C           $OpenAD$ INLINE push_i(subst)
 C           $OpenAD$ INLINE push_i(subst)
             CALL push_i(OpenAD_Symbol_89)
           ENDIF
-          OpenAD_lin_3 = (__value__(PT) - __value__(PB))
-          OpenAD_lin_4 = (HY * 2.0D00)
-          __value__(DPDY) = (OpenAD_lin_3 / OpenAD_lin_4)
-          OpenAD_lin_5 = (INT(1_w2f__i8) / OpenAD_lin_4)
-          OpenAD_lin_7 = (__value__(PR) - __value__(PL))
-          OpenAD_lin_8 = (HX * 2.0D00)
-          __value__(DPDX) = (OpenAD_lin_7 / OpenAD_lin_8)
-          OpenAD_lin_9 = (INT(1_w2f__i8) / OpenAD_lin_8)
+          OpenAD_lin_2 = (__value__(PT) - __value__(PB))
+          OpenAD_lin_3 = (HY * 2.0D00)
+          __value__(DPDY) = (OpenAD_lin_2 / OpenAD_lin_3)
+          OpenAD_lin_4 = (INT(1_w2f__i8) / OpenAD_lin_3)
+          OpenAD_lin_5 = (__value__(PR) - __value__(PL))
+          OpenAD_lin_6 = (HX * 2.0D00)
+          __value__(DPDX) = (OpenAD_lin_5 / OpenAD_lin_6)
+          OpenAD_lin_7 = (INT(1_w2f__i8) / OpenAD_lin_6)
 C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_5)
+          CALL push_s0(OpenAD_lin_4)
 C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_9)
+          CALL push_s0(OpenAD_lin_7)
           CALL bar(__deriv__(PBB), __deriv__(PBL), __deriv__(PB),
      >  __deriv__(PBR), __deriv__(PLL), __deriv__(PL), __deriv__(P),
      >  __deriv__(PR), __deriv__(PRR), __deriv__(PTL), __deriv__(PT),
      >  __deriv__(PTR), __deriv__(PTT), HY2, HX2, __deriv__(PLAP),
      >  __deriv__(PBLAP), __deriv__(PLLAP), __deriv__(PRLAP), __deriv__
      > (PTLAP))
-          OpenAD_lin_11 = (__value__(PBLAP) + __value__(PTLAP) -
+          OpenAD_lin_8 = (__value__(PBLAP) + __value__(PTLAP) -
      >  __value__(PLAP) * 2.0D00)
-          OpenAD_lin_15 = (__value__(PLLAP) + __value__(PRLAP) -
+          OpenAD_lin_10 = (__value__(PLLAP) + __value__(PRLAP) -
      >  __value__(PLAP) * 2.0D00)
-          OpenAD_lin_26 = (__value__(PRLAP) - __value__(PLLAP))
-          OpenAD_lin_22 = (__value__(DPDY) * OpenAD_lin_26)
-          OpenAD_lin_23 = (HX * 2.0D00)
-          OpenAD_lin_33 = (__value__(PTLAP) - __value__(PBLAP))
-          OpenAD_lin_29 = (__value__(DPDX) * OpenAD_lin_33)
-          OpenAD_lin_30 = (HY * 2.0D00)
-          OpenAD_lin_19 = ((OpenAD_lin_22 / OpenAD_lin_23) -(
-     > OpenAD_lin_29 / OpenAD_lin_30))
-          __value__(FVEC(INT(K))) = ((OpenAD_lin_11 / HY2) +(
-     > OpenAD_lin_15 / HX2) - R * OpenAD_lin_19)
-          OpenAD_lin_12 = (INT(1_w2f__i8) / HY2)
-          OpenAD_lin_16 = (INT(1_w2f__i8) / HX2)
-          OpenAD_lin_27 = OpenAD_lin_26
-          OpenAD_lin_28 = __value__(DPDY)
-          OpenAD_lin_24 = (INT(1_w2f__i8) / OpenAD_lin_23)
-          OpenAD_lin_34 = OpenAD_lin_33
-          OpenAD_lin_35 = __value__(DPDX)
-          OpenAD_lin_31 = (INT(1_w2f__i8) / OpenAD_lin_30)
-          OpenAD_lin_21 = R
-          OpenAD_acc_0 = (OpenAD_lin_21 * INT((-1_w2f__i8)))
+          OpenAD_lin_17 = (__value__(PRLAP) - __value__(PLLAP))
+          OpenAD_lin_14 = (__value__(DPDY) * OpenAD_lin_17)
+          OpenAD_lin_15 = (HX * 2.0D00)
+          OpenAD_lin_23 = (__value__(PTLAP) - __value__(PBLAP))
+          OpenAD_lin_20 = (__value__(DPDX) * OpenAD_lin_23)
+          OpenAD_lin_21 = (HY * 2.0D00)
+          OpenAD_lin_12 = ((OpenAD_lin_14 / OpenAD_lin_15) -(
+     > OpenAD_lin_20 / OpenAD_lin_21))
+          __value__(FVEC(INT(K))) = ((OpenAD_lin_8 / HY2) +(
+     > OpenAD_lin_10 / HX2) - R * OpenAD_lin_12)
+          OpenAD_lin_9 = (INT(1_w2f__i8) / HY2)
+          OpenAD_lin_11 = (INT(1_w2f__i8) / HX2)
+          OpenAD_lin_18 = OpenAD_lin_17
+          OpenAD_lin_19 = __value__(DPDY)
+          OpenAD_lin_16 = (INT(1_w2f__i8) / OpenAD_lin_15)
+          OpenAD_lin_24 = OpenAD_lin_23
+          OpenAD_lin_25 = __value__(DPDX)
+          OpenAD_lin_22 = (INT(1_w2f__i8) / OpenAD_lin_21)
+          OpenAD_lin_13 = R
+          OpenAD_acc_0 = (OpenAD_lin_13 * INT((-1_w2f__i8)))
           OpenAD_acc_1 = (INT((-1_w2f__i8)) * OpenAD_acc_0)
-          OpenAD_acc_2 = (OpenAD_lin_34 * OpenAD_lin_31 * OpenAD_acc_1)
-          OpenAD_acc_3 = (OpenAD_lin_35 * OpenAD_lin_31 * OpenAD_acc_1)
-          OpenAD_acc_4 = (OpenAD_lin_27 * OpenAD_lin_24 * OpenAD_acc_0)
-          OpenAD_acc_5 = (OpenAD_lin_28 * OpenAD_lin_24 * OpenAD_acc_0)
+          OpenAD_acc_2 = (OpenAD_lin_24 * OpenAD_lin_22 * OpenAD_acc_1)
+          OpenAD_acc_3 = (OpenAD_lin_25 * OpenAD_lin_22 * OpenAD_acc_1)
+          OpenAD_acc_4 = (OpenAD_lin_18 * OpenAD_lin_16 * OpenAD_acc_0)
+          OpenAD_acc_5 = (OpenAD_lin_19 * OpenAD_lin_16 * OpenAD_acc_0)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_2)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -1502,9 +1499,9 @@ C         $OpenAD$ INLINE push_s0(subst)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_5)
 C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_12)
+          CALL push_s0(OpenAD_lin_9)
 C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_16)
+          CALL push_s0(OpenAD_lin_11)
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(K)
           OpenAD_Symbol_65 = (INT(OpenAD_Symbol_65) + INT(1_w2f__i8))
@@ -1910,26 +1907,26 @@ C
       REAL(w2f__8) OpenAD_Symbol_145
       REAL(w2f__8) OpenAD_Symbol_146
       REAL(w2f__8) OpenAD_Symbol_147
+      REAL(w2f__8) OpenAD_lin_26
+      REAL(w2f__8) OpenAD_lin_27
+      REAL(w2f__8) OpenAD_lin_28
+      REAL(w2f__8) OpenAD_lin_29
+      REAL(w2f__8) OpenAD_lin_30
+      REAL(w2f__8) OpenAD_lin_31
+      REAL(w2f__8) OpenAD_lin_32
+      REAL(w2f__8) OpenAD_lin_33
+      REAL(w2f__8) OpenAD_lin_34
+      REAL(w2f__8) OpenAD_lin_35
+      REAL(w2f__8) OpenAD_lin_36
       REAL(w2f__8) OpenAD_lin_37
       REAL(w2f__8) OpenAD_lin_38
+      REAL(w2f__8) OpenAD_lin_39
+      REAL(w2f__8) OpenAD_lin_40
       REAL(w2f__8) OpenAD_lin_41
       REAL(w2f__8) OpenAD_lin_42
+      REAL(w2f__8) OpenAD_lin_43
+      REAL(w2f__8) OpenAD_lin_44
       REAL(w2f__8) OpenAD_lin_45
-      REAL(w2f__8) OpenAD_lin_46
-      REAL(w2f__8) OpenAD_lin_49
-      REAL(w2f__8) OpenAD_lin_50
-      REAL(w2f__8) OpenAD_lin_53
-      REAL(w2f__8) OpenAD_lin_54
-      REAL(w2f__8) OpenAD_lin_57
-      REAL(w2f__8) OpenAD_lin_58
-      REAL(w2f__8) OpenAD_lin_61
-      REAL(w2f__8) OpenAD_lin_62
-      REAL(w2f__8) OpenAD_lin_65
-      REAL(w2f__8) OpenAD_lin_66
-      REAL(w2f__8) OpenAD_lin_69
-      REAL(w2f__8) OpenAD_lin_70
-      REAL(w2f__8) OpenAD_lin_73
-      REAL(w2f__8) OpenAD_lin_74
       TYPE (OpenADTy_active) OpenAD_prp_10
       TYPE (OpenADTy_active) OpenAD_prp_11
       TYPE (OpenADTy_active) OpenAD_prp_12
@@ -1963,61 +1960,61 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_37 = (__value__(PBB) + __value__(P) - __value__(PB) *
+      OpenAD_lin_26 = (__value__(PBB) + __value__(P) - __value__(PB) *
      >  2.0D00)
-      OpenAD_lin_41 = (__value__(PBL) + __value__(PBR) - __value__(PB)
+      OpenAD_lin_28 = (__value__(PBL) + __value__(PBR) - __value__(PB)
      >  * 2.0D00)
-      __value__(PBLAP) = ((OpenAD_lin_37 / HY2) +(OpenAD_lin_41 / HX2))
-      OpenAD_lin_38 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_42 = (INT(1_w2f__i8) / HX2)
-      OpenAD_lin_45 = (__value__(PBL) + __value__(PTL) - __value__(PL)
+      __value__(PBLAP) = ((OpenAD_lin_26 / HY2) +(OpenAD_lin_28 / HX2))
+      OpenAD_lin_27 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_29 = (INT(1_w2f__i8) / HX2)
+      OpenAD_lin_30 = (__value__(PBL) + __value__(PTL) - __value__(PL)
      >  * 2.0D00)
-      OpenAD_lin_49 = (__value__(PLL) + __value__(P) - __value__(PL) *
+      OpenAD_lin_32 = (__value__(PLL) + __value__(P) - __value__(PL) *
      >  2.0D00)
-      __value__(PLLAP) = ((OpenAD_lin_45 / HY2) +(OpenAD_lin_49 / HX2))
-      OpenAD_lin_46 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_50 = (INT(1_w2f__i8) / HX2)
-      OpenAD_lin_53 = (__value__(PB) + __value__(PT) - __value__(P) *
+      __value__(PLLAP) = ((OpenAD_lin_30 / HY2) +(OpenAD_lin_32 / HX2))
+      OpenAD_lin_31 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_33 = (INT(1_w2f__i8) / HX2)
+      OpenAD_lin_34 = (__value__(PB) + __value__(PT) - __value__(P) *
      >  2.0D00)
-      OpenAD_lin_57 = (__value__(PL) + __value__(PR) - __value__(P) *
+      OpenAD_lin_36 = (__value__(PL) + __value__(PR) - __value__(P) *
      >  2.0D00)
-      __value__(PLAP) = ((OpenAD_lin_53 / HY2) +(OpenAD_lin_57 / HX2))
-      OpenAD_lin_54 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_58 = (INT(1_w2f__i8) / HX2)
-      OpenAD_lin_61 = (__value__(PBR) + __value__(PTR) - __value__(PR)
+      __value__(PLAP) = ((OpenAD_lin_34 / HY2) +(OpenAD_lin_36 / HX2))
+      OpenAD_lin_35 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_37 = (INT(1_w2f__i8) / HX2)
+      OpenAD_lin_38 = (__value__(PBR) + __value__(PTR) - __value__(PR)
      >  * 2.0D00)
-      OpenAD_lin_65 = (__value__(P) + __value__(PRR) - __value__(PR) *
+      OpenAD_lin_40 = (__value__(P) + __value__(PRR) - __value__(PR) *
      >  2.0D00)
-      __value__(PRLAP) = ((OpenAD_lin_61 / HY2) +(OpenAD_lin_65 / HX2))
-      OpenAD_lin_62 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_66 = (INT(1_w2f__i8) / HX2)
-      OpenAD_lin_69 = (__value__(P) + __value__(PTT) - __value__(PT) *
+      __value__(PRLAP) = ((OpenAD_lin_38 / HY2) +(OpenAD_lin_40 / HX2))
+      OpenAD_lin_39 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_41 = (INT(1_w2f__i8) / HX2)
+      OpenAD_lin_42 = (__value__(P) + __value__(PTT) - __value__(PT) *
      >  2.0D00)
-      OpenAD_lin_73 = (__value__(PTL) + __value__(PTR) - __value__(PT)
+      OpenAD_lin_44 = (__value__(PTL) + __value__(PTR) - __value__(PT)
      >  * 2.0D00)
-      __value__(PTLAP) = ((OpenAD_lin_69 / HY2) +(OpenAD_lin_73 / HX2))
-      OpenAD_lin_70 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_74 = (INT(1_w2f__i8) / HX2)
+      __value__(PTLAP) = ((OpenAD_lin_42 / HY2) +(OpenAD_lin_44 / HX2))
+      OpenAD_lin_43 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_45 = (INT(1_w2f__i8) / HX2)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_38)
+      CALL push_s0(OpenAD_lin_27)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_42)
+      CALL push_s0(OpenAD_lin_29)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_46)
+      CALL push_s0(OpenAD_lin_31)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_50)
+      CALL push_s0(OpenAD_lin_33)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_54)
+      CALL push_s0(OpenAD_lin_35)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_58)
+      CALL push_s0(OpenAD_lin_37)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_62)
+      CALL push_s0(OpenAD_lin_39)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_66)
+      CALL push_s0(OpenAD_lin_41)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_70)
+      CALL push_s0(OpenAD_lin_43)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_74)
+      CALL push_s0(OpenAD_lin_45)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE pop_s0(subst)
@@ -2315,61 +2312,61 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_37 = (__value__(PBB) + __value__(P) - __value__(PB) *
+      OpenAD_lin_26 = (__value__(PBB) + __value__(P) - __value__(PB) *
      >  2.0D00)
-      OpenAD_lin_41 = (__value__(PBL) + __value__(PBR) - __value__(PB)
+      OpenAD_lin_28 = (__value__(PBL) + __value__(PBR) - __value__(PB)
      >  * 2.0D00)
-      __value__(PBLAP) = ((OpenAD_lin_37 / HY2) +(OpenAD_lin_41 / HX2))
-      OpenAD_lin_38 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_42 = (INT(1_w2f__i8) / HX2)
-      OpenAD_lin_45 = (__value__(PBL) + __value__(PTL) - __value__(PL)
+      __value__(PBLAP) = ((OpenAD_lin_26 / HY2) +(OpenAD_lin_28 / HX2))
+      OpenAD_lin_27 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_29 = (INT(1_w2f__i8) / HX2)
+      OpenAD_lin_30 = (__value__(PBL) + __value__(PTL) - __value__(PL)
      >  * 2.0D00)
-      OpenAD_lin_49 = (__value__(PLL) + __value__(P) - __value__(PL) *
+      OpenAD_lin_32 = (__value__(PLL) + __value__(P) - __value__(PL) *
      >  2.0D00)
-      __value__(PLLAP) = ((OpenAD_lin_45 / HY2) +(OpenAD_lin_49 / HX2))
-      OpenAD_lin_46 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_50 = (INT(1_w2f__i8) / HX2)
-      OpenAD_lin_53 = (__value__(PB) + __value__(PT) - __value__(P) *
+      __value__(PLLAP) = ((OpenAD_lin_30 / HY2) +(OpenAD_lin_32 / HX2))
+      OpenAD_lin_31 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_33 = (INT(1_w2f__i8) / HX2)
+      OpenAD_lin_34 = (__value__(PB) + __value__(PT) - __value__(P) *
      >  2.0D00)
-      OpenAD_lin_57 = (__value__(PL) + __value__(PR) - __value__(P) *
+      OpenAD_lin_36 = (__value__(PL) + __value__(PR) - __value__(P) *
      >  2.0D00)
-      __value__(PLAP) = ((OpenAD_lin_53 / HY2) +(OpenAD_lin_57 / HX2))
-      OpenAD_lin_54 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_58 = (INT(1_w2f__i8) / HX2)
-      OpenAD_lin_61 = (__value__(PBR) + __value__(PTR) - __value__(PR)
+      __value__(PLAP) = ((OpenAD_lin_34 / HY2) +(OpenAD_lin_36 / HX2))
+      OpenAD_lin_35 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_37 = (INT(1_w2f__i8) / HX2)
+      OpenAD_lin_38 = (__value__(PBR) + __value__(PTR) - __value__(PR)
      >  * 2.0D00)
-      OpenAD_lin_65 = (__value__(P) + __value__(PRR) - __value__(PR) *
+      OpenAD_lin_40 = (__value__(P) + __value__(PRR) - __value__(PR) *
      >  2.0D00)
-      __value__(PRLAP) = ((OpenAD_lin_61 / HY2) +(OpenAD_lin_65 / HX2))
-      OpenAD_lin_62 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_66 = (INT(1_w2f__i8) / HX2)
-      OpenAD_lin_69 = (__value__(P) + __value__(PTT) - __value__(PT) *
+      __value__(PRLAP) = ((OpenAD_lin_38 / HY2) +(OpenAD_lin_40 / HX2))
+      OpenAD_lin_39 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_41 = (INT(1_w2f__i8) / HX2)
+      OpenAD_lin_42 = (__value__(P) + __value__(PTT) - __value__(PT) *
      >  2.0D00)
-      OpenAD_lin_73 = (__value__(PTL) + __value__(PTR) - __value__(PT)
+      OpenAD_lin_44 = (__value__(PTL) + __value__(PTR) - __value__(PT)
      >  * 2.0D00)
-      __value__(PTLAP) = ((OpenAD_lin_69 / HY2) +(OpenAD_lin_73 / HX2))
-      OpenAD_lin_70 = (INT(1_w2f__i8) / HY2)
-      OpenAD_lin_74 = (INT(1_w2f__i8) / HX2)
+      __value__(PTLAP) = ((OpenAD_lin_42 / HY2) +(OpenAD_lin_44 / HX2))
+      OpenAD_lin_43 = (INT(1_w2f__i8) / HY2)
+      OpenAD_lin_45 = (INT(1_w2f__i8) / HX2)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_38)
+      CALL push_s0(OpenAD_lin_27)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_42)
+      CALL push_s0(OpenAD_lin_29)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_46)
+      CALL push_s0(OpenAD_lin_31)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_50)
+      CALL push_s0(OpenAD_lin_33)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_54)
+      CALL push_s0(OpenAD_lin_35)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_58)
+      CALL push_s0(OpenAD_lin_37)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_62)
+      CALL push_s0(OpenAD_lin_39)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_66)
+      CALL push_s0(OpenAD_lin_41)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_70)
+      CALL push_s0(OpenAD_lin_43)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_74)
+      CALL push_s0(OpenAD_lin_45)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE pop_s0(subst)

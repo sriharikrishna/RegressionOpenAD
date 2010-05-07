@@ -92,17 +92,9 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_dly_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_dly_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_dly_2" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
-          </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_lin_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_lin_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_lin_2" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_lin_3" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_prp_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
           </xaif:Symbol>
@@ -589,9 +581,17 @@
         </xaif:BasicBlock>
         <xaif:BasicBlock vertex_id="12" annotation="" scope_id="4">
           <xaif:Marker statement_id="28" annotation="{WHIRL_Id#28}{StmtLabel#2}"/>
-          <xaif:Assignment statement_id="_replacement_1_for_29">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_dly_1" annotation="xaifBoosterLinearization::AssignmentAlg::makeSSACodeList" scope_id="4"/>
+          <xaif:Assignment statement_id="29">
+            <xaif:AssignmentLHS active="true" alias="2" du_ud="7" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+              <xaif:ArrayElementReference vertex_id="2">
+                <xaif:IndexTriplet>
+                  <xaif:Index>
+                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                  </xaif:Index>
+                </xaif:IndexTriplet>
+              </xaif:ArrayElementReference>
+              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
@@ -611,8 +611,12 @@
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:Assignment statement_id="29: delayed LHS assignment for correct partials">
-            <xaif:AssignmentLHS active="true" alias="2" du_ud="7" deriv="0" constant="0">
+          <xaif:Marker statement_id="41" annotation="{WHIRL_Id#41}{StmtGoto#3}"/>
+        </xaif:BasicBlock>
+        <xaif:BasicBlock vertex_id="10" annotation="" scope_id="4">
+          <xaif:Marker statement_id="14" annotation="{WHIRL_Id#14}{StmtLabel#3}"/>
+          <xaif:Assignment statement_id="15">
+            <xaif:AssignmentLHS active="true" alias="2" du_ud="6" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
               <xaif:ArrayElementReference vertex_id="2">
                 <xaif:IndexTriplet>
@@ -622,20 +626,6 @@
                 </xaif:IndexTriplet>
               </xaif:ArrayElementReference>
               <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_dly_1" annotation="xaifBoosterLinearization::AssignmentAlg::makeSSACodeList" scope_id="4"/>
-              </xaif:VariableReference>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Marker statement_id="41" annotation="{WHIRL_Id#41}{StmtGoto#3}"/>
-        </xaif:BasicBlock>
-        <xaif:BasicBlock vertex_id="10" annotation="" scope_id="4">
-          <xaif:Marker statement_id="14" annotation="{WHIRL_Id#14}{StmtLabel#3}"/>
-          <xaif:Assignment statement_id="_replacement_1_for_15">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_dly_2" annotation="xaifBoosterLinearization::AssignmentAlg::makeSSACodeList" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
@@ -653,24 +643,6 @@
               <xaif:Constant vertex_id="3" type="real" feType="F8" value="2.00000000000000000000e+00"/>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Assignment statement_id="15: delayed LHS assignment for correct partials">
-            <xaif:AssignmentLHS active="true" alias="2" du_ud="6" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-              <xaif:ArrayElementReference vertex_id="2">
-                <xaif:IndexTriplet>
-                  <xaif:Index>
-                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                  </xaif:Index>
-                </xaif:IndexTriplet>
-              </xaif:ArrayElementReference>
-              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_dly_2" annotation="xaifBoosterLinearization::AssignmentAlg::makeSSACodeList" scope_id="4"/>
-              </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Marker statement_id="27" annotation="{WHIRL_Id#27}{StmtGoto#4}"/>
@@ -1358,9 +1330,17 @@
         </xaif:BasicBlock>
         <xaif:BasicBlock vertex_id="12" annotation="" scope_id="4">
           <xaif:Marker statement_id="28" annotation="{WHIRL_Id#28}{StmtLabel#2}"/>
-          <xaif:Assignment statement_id="_replacement_1_for_29">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_dly_1" annotation="xaifBoosterLinearization::AssignmentAlg::makeSSACodeList" scope_id="4"/>
+          <xaif:Assignment statement_id="29">
+            <xaif:AssignmentLHS active="true" alias="2" du_ud="7" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+              <xaif:ArrayElementReference vertex_id="2">
+                <xaif:IndexTriplet>
+                  <xaif:Index>
+                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                  </xaif:Index>
+                </xaif:IndexTriplet>
+              </xaif:ArrayElementReference>
+              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
@@ -1380,8 +1360,12 @@
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:Assignment statement_id="29: delayed LHS assignment for correct partials">
-            <xaif:AssignmentLHS active="true" alias="2" du_ud="7" deriv="0" constant="0">
+          <xaif:Marker statement_id="41" annotation="{WHIRL_Id#41}{StmtGoto#3}"/>
+        </xaif:BasicBlock>
+        <xaif:BasicBlock vertex_id="10" annotation="" scope_id="4">
+          <xaif:Marker statement_id="14" annotation="{WHIRL_Id#14}{StmtLabel#3}"/>
+          <xaif:Assignment statement_id="15">
+            <xaif:AssignmentLHS active="true" alias="2" du_ud="6" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
               <xaif:ArrayElementReference vertex_id="2">
                 <xaif:IndexTriplet>
@@ -1391,20 +1375,6 @@
                 </xaif:IndexTriplet>
               </xaif:ArrayElementReference>
               <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_dly_1" annotation="xaifBoosterLinearization::AssignmentAlg::makeSSACodeList" scope_id="4"/>
-              </xaif:VariableReference>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Marker statement_id="41" annotation="{WHIRL_Id#41}{StmtGoto#3}"/>
-        </xaif:BasicBlock>
-        <xaif:BasicBlock vertex_id="10" annotation="" scope_id="4">
-          <xaif:Marker statement_id="14" annotation="{WHIRL_Id#14}{StmtLabel#3}"/>
-          <xaif:Assignment statement_id="_replacement_1_for_15">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_dly_2" annotation="xaifBoosterLinearization::AssignmentAlg::makeSSACodeList" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
@@ -1422,24 +1392,6 @@
               <xaif:Constant vertex_id="3" type="real" feType="F8" value="2.00000000000000000000e+00"/>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Assignment statement_id="15: delayed LHS assignment for correct partials">
-            <xaif:AssignmentLHS active="true" alias="2" du_ud="6" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-              <xaif:ArrayElementReference vertex_id="2">
-                <xaif:IndexTriplet>
-                  <xaif:Index>
-                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                  </xaif:Index>
-                </xaif:IndexTriplet>
-              </xaif:ArrayElementReference>
-              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_dly_2" annotation="xaifBoosterLinearization::AssignmentAlg::makeSSACodeList" scope_id="4"/>
-              </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Marker statement_id="27" annotation="{WHIRL_Id#27}{StmtGoto#4}"/>

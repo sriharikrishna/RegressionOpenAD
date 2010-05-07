@@ -48,13 +48,11 @@ C
 C
 C       **** Local Variables and Functions ****
 C
-        REAL(w2f__8) OpenAD_dly_0
         TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C       **** Statements ****
 C
-        OpenAD_dly_0 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_dly_0
+        __value__(X) = (__value__(X) * 2.0D00)
         CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X))
         CALL sax(2.0D00, __deriv__(OpenAD_prp_0), __deriv__(X))
         END SUBROUTINE

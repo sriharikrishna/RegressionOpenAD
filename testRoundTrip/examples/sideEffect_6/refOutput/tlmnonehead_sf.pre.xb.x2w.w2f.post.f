@@ -35,8 +35,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
 C
@@ -44,14 +42,12 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'two') THEN
-        OpenAD_dly_0 = (X%v*2.0D00)
-        X%v = OpenAD_dly_0
+        X%v = (X%v*2.0D00)
         CALL setderiv(OpenAD_prp_0,X)
         CALL sax(2.0D00,OpenAD_prp_0,X)
       ENDIF
       IF (A(1:LEN(A)).EQ.'three') THEN
-        OpenAD_dly_1 = (X%v*3.0D00)
-        X%v = OpenAD_dly_1
+        X%v = (X%v*3.0D00)
         CALL setderiv(OpenAD_prp_1,X)
         CALL sax(3.0D00,OpenAD_prp_1,X)
       ENDIF

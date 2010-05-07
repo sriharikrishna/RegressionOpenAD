@@ -34,9 +34,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_Symbol_0
+      INTEGER(w2f__i4) OpenAD_lin_0
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Statements ****
@@ -47,11 +46,10 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (K * __value__(A))
-      OpenAD_lin_1 = K
-      __value__(A) = OpenAD_dly_0
+      __value__(A) = (K * __value__(A))
+      OpenAD_lin_0 = K
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_1)
+      CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE pop_s0(subst)
@@ -100,11 +98,10 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (K * __value__(A))
-      OpenAD_lin_1 = K
-      __value__(A) = OpenAD_dly_0
+      __value__(A) = (K * __value__(A))
+      OpenAD_lin_0 = K
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_1)
+      CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE pop_s0(subst)
@@ -139,8 +136,8 @@ C
       INTEGER(w2f__i4) K
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
 C
 C     **** Top Level Pragmas ****
 C
@@ -162,12 +159,12 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(K)
       __value__(Y) = (__value__(X(1)) * __value__(X(2)))
-      OpenAD_lin_2 = __value__(X(2))
-      OpenAD_lin_3 = __value__(X(1))
+      OpenAD_lin_1 = __value__(X(2))
+      OpenAD_lin_2 = __value__(X(1))
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_1)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
-C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE pop_s0(subst)
@@ -203,12 +200,12 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(K)
       __value__(Y) = (__value__(X(1)) * __value__(X(2)))
-      OpenAD_lin_2 = __value__(X(2))
-      OpenAD_lin_3 = __value__(X(1))
+      OpenAD_lin_1 = __value__(X(2))
+      OpenAD_lin_2 = __value__(X(1))
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_1)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
-C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE pop_s0(subst)

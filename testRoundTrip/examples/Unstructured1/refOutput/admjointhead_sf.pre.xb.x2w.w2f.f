@@ -53,11 +53,9 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i8) OpenAD_Symbol_15
-      REAL(w2f__8) OpenAD_Symbol_16
+      INTEGER(w2f__i4) OpenAD_Symbol_16
       INTEGER(w2f__i8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_0
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
@@ -133,8 +131,7 @@ C     $OpenAD$ INLINE push_i(subst)
 20    CONTINUE
       GO TO 21
 21    CONTINUE
-      OpenAD_dly_1 = (__value__(Y(1)) * 2.0D00)
-      __value__(Y(1)) = OpenAD_dly_1
+      __value__(Y(1)) = (__value__(Y(1)) * 2.0D00)
       GO TO 22
 22    CONTINUE
       OpenAD_Symbol_6 = 6_w2f__i8
@@ -143,9 +140,9 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 27
 23    CONTINUE
       __value__(Y(1)) = (I * __value__(X(1)))
-      OpenAD_lin_1 = I
+      OpenAD_lin_0 = I
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_1)
+      CALL push_s0(OpenAD_lin_0)
       GO TO 24
 24    CONTINUE
       OpenAD_Symbol_2 = 2_w2f__i8
@@ -153,8 +150,7 @@ C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_2)
       GO TO 25
 25    CONTINUE
-      OpenAD_dly_0 = (__value__(Y(1)) * 3.0D00)
-      __value__(Y(1)) = OpenAD_dly_0
+      __value__(Y(1)) = (__value__(Y(1)) * 3.0D00)
       GO TO 26
 26    CONTINUE
       OpenAD_Symbol_3 = 3_w2f__i8
@@ -266,8 +262,7 @@ C     $OpenAD$ INLINE push_i(subst)
 168   CONTINUE
       GO TO 169
 169   CONTINUE
-      OpenAD_dly_1 = (__value__(Y(1)) * 2.0D00)
-      __value__(Y(1)) = OpenAD_dly_1
+      __value__(Y(1)) = (__value__(Y(1)) * 2.0D00)
       GO TO 170
 170   CONTINUE
       OpenAD_Symbol_14 = 6_w2f__i8
@@ -276,9 +271,9 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 175
 171   CONTINUE
       __value__(Y(1)) = (I * __value__(X(1)))
-      OpenAD_lin_1 = I
+      OpenAD_lin_0 = I
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_1)
+      CALL push_s0(OpenAD_lin_0)
       GO TO 172
 172   CONTINUE
       OpenAD_Symbol_10 = 2_w2f__i8
@@ -286,8 +281,7 @@ C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_10)
       GO TO 173
 173   CONTINUE
-      OpenAD_dly_0 = (__value__(Y(1)) * 3.0D00)
-      __value__(Y(1)) = OpenAD_dly_0
+      __value__(Y(1)) = (__value__(Y(1)) * 3.0D00)
       GO TO 174
 174   CONTINUE
       OpenAD_Symbol_11 = 3_w2f__i8

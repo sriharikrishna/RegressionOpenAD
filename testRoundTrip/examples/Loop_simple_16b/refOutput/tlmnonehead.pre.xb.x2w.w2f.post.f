@@ -29,8 +29,8 @@ C
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
       type(active) :: OpenAD_prp_2
@@ -67,10 +67,10 @@ C$OPENAD XXX Simple loop
         ENDIF
       END DO
       LAG%v = (NUMER%v/DENOM%v)
-      OpenAD_lin_7 = (INT(1_w2f__i8)/DENOM%v)
-      OpenAD_lin_8 = (-(NUMER%v/(DENOM%v*DENOM%v)))
-      CALL sax(OpenAD_lin_7,NUMER,LAG)
-      CALL saxpy(OpenAD_lin_8,DENOM,LAG)
+      OpenAD_lin_6 = (INT(1_w2f__i8)/DENOM%v)
+      OpenAD_lin_7 = (-(NUMER%v/(DENOM%v*DENOM%v)))
+      CALL sax(OpenAD_lin_6,NUMER,LAG)
+      CALL saxpy(OpenAD_lin_7,DENOM,LAG)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

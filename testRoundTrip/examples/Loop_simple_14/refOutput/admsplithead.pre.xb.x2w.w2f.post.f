@@ -44,7 +44,6 @@ C
       INTEGER(w2f__i8) OpenAD_Symbol_10
       INTEGER(w2f__i8) OpenAD_Symbol_11
       INTEGER(w2f__i8) OpenAD_Symbol_9
-      REAL(w2f__8) OpenAD_dly_0
       type(active) :: OpenAD_prp_0
 
 
@@ -86,8 +85,7 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         S%v = X(I)%v
         IF (S%v.LT.0.0D00) THEN
-          OpenAD_dly_0 = (X(I)%v*2.0D00)
-          X(INT(I))%v = OpenAD_dly_0
+          X(INT(I))%v = (X(I)%v*2.0D00)
           OpenAD_Symbol_1 = 1_w2f__i8
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
           integer_tape_pointer = integer_tape_pointer+1

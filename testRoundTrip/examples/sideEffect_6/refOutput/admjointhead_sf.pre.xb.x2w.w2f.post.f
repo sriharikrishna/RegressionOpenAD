@@ -65,8 +65,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
 
@@ -138,8 +136,7 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       IF (A(1:LEN(A)).EQ.'two') THEN
-        OpenAD_dly_0 = (X%v*2.0D00)
-        X%v = OpenAD_dly_0
+        X%v = (X%v*2.0D00)
         OpenAD_Symbol_2 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
         integer_tape_pointer = integer_tape_pointer+1
@@ -149,8 +146,7 @@ C$OPENAD XXX Template ad_template.f
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
       IF (A(1:LEN(A)).EQ.'three') THEN
-        OpenAD_dly_1 = (X%v*3.0D00)
-        X%v = OpenAD_dly_1
+        X%v = (X%v*3.0D00)
         OpenAD_Symbol_4 = 1_w2f__i8
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
         integer_tape_pointer = integer_tape_pointer+1

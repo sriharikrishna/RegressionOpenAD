@@ -39,11 +39,15 @@ C
       TYPE (OpenADTy_active) Z(1 : INT(SIZE(__value__(X))))
       INTEGER(w2f__i8) OpenAD_Symbol_0
       INTEGER(w2f__i8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2(1 : 2)
-      REAL(w2f__8) OpenAD_Symbol_3(1 : 2)
-      INTEGER(w2f__i8) OpenAD_Symbol_4
-      INTEGER(w2f__i8) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_lin_0(1 : 2)
+      INTEGER(w2f__i8) OpenAD_Symbol_3
+      REAL(w2f__8) OpenAD_Symbol_4(1 : 2)
+      REAL(w2f__8) OpenAD_Symbol_5(:)
+      ALLOCATABLE OpenAD_Symbol_5
+      INTEGER(w2f__i8) OpenAD_Symbol_6
+      INTEGER(w2f__i8) OpenAD_Symbol_8
+      INTEGER(w2f__i8) OpenAD_Symbol_9
+      REAL(w2f__8) OpenAD_lin_0(:)
+      ALLOCATABLE OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1(1 : 2)
 C
 C     **** Initializers ****
@@ -69,40 +73,50 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = SIZE(__value__(X))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
+      CALL oad_AllocateMatching(OpenAD_lin_0, __deriv__(Z(1 : INT(SIZE(
+     > X)))))
       __value__(Y(1 : 2)) = (__value__(X(1 : 2)) * __value__(Z(1 : INT(
      > SIZE(X)))))
       OpenAD_lin_0 = __value__(Z(1 : INT(SIZE(X))))
       OpenAD_lin_1 = __value__(X(1 : 2))
+      OpenAD_Symbol_1 = SIZE(OpenAD_lin_0, INT(1_w2f__i8))
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(OpenAD_Symbol_1)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_lin_1)
-      OpenAD_Symbol_1 = SIZE(__value__(X))
+      OpenAD_Symbol_3 = SIZE(__value__(X))
 C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_1)
+      CALL push_i(OpenAD_Symbol_3)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE pop_s1(subst)
-      CALL pop_s1(OpenAD_Symbol_2)
-C     $OpenAD$ INLINE pop_s1(subst)
-      CALL pop_s1(OpenAD_Symbol_3)
+      CALL pop_s1(OpenAD_Symbol_4)
 C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_4)
+      CALL pop_i(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE oad_AllocateShape(subst,subst)
+      CALL oad_AllocateShape(OpenAD_Symbol_5, OpenAD_Symbol_6)
+C     $OpenAD$ INLINE pop_s1(subst)
+      CALL pop_s1(OpenAD_Symbol_5)
+C     $OpenAD$ INLINE pop_i(subst)
+      CALL pop_i(OpenAD_Symbol_8)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_2, __deriv__(Y(1 : 2)), __deriv__(Z(1 :
-     >  INT(OpenAD_Symbol_4))))
+      CALL Saxpy(OpenAD_Symbol_4, __deriv__(Y(1 : 2)), __deriv__(Z(1 :
+     >  INT(OpenAD_Symbol_8))))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_3, __deriv__(Y(1 : 2)), __deriv__(X(1 :
+      CALL Saxpy(OpenAD_Symbol_5, __deriv__(Y(1 : 2)), __deriv__(X(1 :
      >  2)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1 : 2)))
 C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_5)
+      CALL pop_i(OpenAD_Symbol_9)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Z(1 : INT(OpenAD_Symbol_5))), __deriv__(X
+      CALL IncDeriv(__deriv__(Z(1 : INT(OpenAD_Symbol_9))), __deriv__(X
      > (1 : 2)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(Z(1 : INT(OpenAD_Symbol_5))))
+      CALL ZeroDeriv(__deriv__(Z(1 : INT(OpenAD_Symbol_9))))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ END REPLACEMENT
@@ -122,39 +136,49 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = SIZE(__value__(X))
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
+      CALL oad_AllocateMatching(OpenAD_lin_0, __deriv__(Z(1 : INT(SIZE(
+     > X)))))
       __value__(Y(1 : 2)) = (__value__(X(1 : 2)) * __value__(Z(1 : INT(
      > SIZE(X)))))
       OpenAD_lin_0 = __value__(Z(1 : INT(SIZE(X))))
       OpenAD_lin_1 = __value__(X(1 : 2))
+      OpenAD_Symbol_1 = SIZE(OpenAD_lin_0, INT(1_w2f__i8))
+C     $OpenAD$ INLINE push_i(subst)
+      CALL push_i(OpenAD_Symbol_1)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_lin_1)
-      OpenAD_Symbol_1 = SIZE(__value__(X))
+      OpenAD_Symbol_3 = SIZE(__value__(X))
 C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_1)
+      CALL push_i(OpenAD_Symbol_3)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE pop_s1(subst)
-      CALL pop_s1(OpenAD_Symbol_2)
-C     $OpenAD$ INLINE pop_s1(subst)
-      CALL pop_s1(OpenAD_Symbol_3)
+      CALL pop_s1(OpenAD_Symbol_4)
 C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_4)
+      CALL pop_i(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE oad_AllocateShape(subst,subst)
+      CALL oad_AllocateShape(OpenAD_Symbol_5, OpenAD_Symbol_6)
+C     $OpenAD$ INLINE pop_s1(subst)
+      CALL pop_s1(OpenAD_Symbol_5)
+C     $OpenAD$ INLINE pop_i(subst)
+      CALL pop_i(OpenAD_Symbol_8)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_2, __deriv__(Y(1 : 2)), __deriv__(Z(1 :
-     >  INT(OpenAD_Symbol_4))))
+      CALL Saxpy(OpenAD_Symbol_4, __deriv__(Y(1 : 2)), __deriv__(Z(1 :
+     >  INT(OpenAD_Symbol_8))))
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
-      CALL Saxpy(OpenAD_Symbol_3, __deriv__(Y(1 : 2)), __deriv__(X(1 :
+      CALL Saxpy(OpenAD_Symbol_5, __deriv__(Y(1 : 2)), __deriv__(X(1 :
      >  2)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1 : 2)))
 C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_5)
+      CALL pop_i(OpenAD_Symbol_9)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Z(1 : INT(OpenAD_Symbol_5))), __deriv__(X
+      CALL IncDeriv(__deriv__(Z(1 : INT(OpenAD_Symbol_9))), __deriv__(X
      > (1 : 2)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(Z(1 : INT(OpenAD_Symbol_5))))
+      CALL ZeroDeriv(__deriv__(Z(1 : INT(OpenAD_Symbol_9))))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

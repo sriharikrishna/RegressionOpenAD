@@ -38,15 +38,13 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_dly_0
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, (N + 1), 1
-        OpenAD_dly_0 = (__value__(A(I)) * 2.0D00)
-        __value__(A(INT(I))) = OpenAD_dly_0
+        __value__(A(INT(I))) = (__value__(A(I)) * 2.0D00)
         CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(A(I)))
         CALL sax(2.0D00, __deriv__(OpenAD_prp_0), __deriv__(A(I)))
       END DO

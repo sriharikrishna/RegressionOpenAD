@@ -68,13 +68,13 @@ C
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
       REAL(w2f__8) OpenAD_lin_9
 C
 C     **** Top Level Pragmas ****
@@ -132,19 +132,19 @@ C taping
       double_tape(double_tape_pointer) = OpenAD_lin_7
       double_tape_pointer = double_tape_pointer+1
       Y(2)%v = (1.0D00/T3%v)
-      OpenAD_lin_9 = (-(1.0D00/(T3%v*T3%v)))
-      double_tape(double_tape_pointer) = OpenAD_lin_9
+      OpenAD_lin_8 = (-(1.0D00/(T3%v*T3%v)))
+      double_tape(double_tape_pointer) = OpenAD_lin_8
       double_tape_pointer = double_tape_pointer+1
       Y(3)%v = SIN(T3%v)
-      OpenAD_lin_10 = COS(T3%v)
-      double_tape(double_tape_pointer) = OpenAD_lin_10
+      OpenAD_lin_9 = COS(T3%v)
+      double_tape(double_tape_pointer) = OpenAD_lin_9
       double_tape_pointer = double_tape_pointer+1
       Y(4)%v = (T2%v*T3%v)
-      OpenAD_lin_11 = T3%v
-      OpenAD_lin_12 = T2%v
-      double_tape(double_tape_pointer) = OpenAD_lin_11
+      OpenAD_lin_10 = T3%v
+      OpenAD_lin_11 = T2%v
+      double_tape(double_tape_pointer) = OpenAD_lin_10
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_12
+      double_tape(double_tape_pointer) = OpenAD_lin_11
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then

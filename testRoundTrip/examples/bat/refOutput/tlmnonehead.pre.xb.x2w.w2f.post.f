@@ -20,13 +20,13 @@ C
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
       REAL(w2f__8) OpenAD_lin_9
 C
 C     **** Top Level Pragmas ****
@@ -58,14 +58,14 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_6,T1,Y(1))
       CALL saxpy(OpenAD_lin_7,T3,Y(1))
       Y(2)%v = (1.0D00/T3%v)
-      OpenAD_lin_9 = (-(1.0D00/(T3%v*T3%v)))
-      CALL sax(OpenAD_lin_9,T3,Y(2))
+      OpenAD_lin_8 = (-(1.0D00/(T3%v*T3%v)))
+      CALL sax(OpenAD_lin_8,T3,Y(2))
       Y(3)%v = SIN(T3%v)
-      OpenAD_lin_10 = COS(T3%v)
-      CALL sax(OpenAD_lin_10,T3,Y(3))
+      OpenAD_lin_9 = COS(T3%v)
+      CALL sax(OpenAD_lin_9,T3,Y(3))
       Y(4)%v = (T2%v*T3%v)
-      OpenAD_lin_11 = T3%v
-      OpenAD_lin_12 = T2%v
-      CALL sax(OpenAD_lin_11,T2,Y(4))
-      CALL saxpy(OpenAD_lin_12,T3,Y(4))
+      OpenAD_lin_10 = T3%v
+      OpenAD_lin_11 = T2%v
+      CALL sax(OpenAD_lin_10,T2,Y(4))
+      CALL saxpy(OpenAD_lin_11,T3,Y(4))
       END SUBROUTINE

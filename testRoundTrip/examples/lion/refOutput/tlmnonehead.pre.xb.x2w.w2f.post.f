@@ -28,9 +28,9 @@ C
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
 C
 C     **** Top Level Pragmas ****
 C
@@ -50,14 +50,14 @@ C$OPENAD XXX Template ad_template.f
       Y1%v = OpenAD_lin_3
       Y2%v = (T2%v*3.14000010490417480469D00)
       Y3%v = SIN(T2%v)
-      OpenAD_lin_6 = COS(T2%v)
+      OpenAD_lin_5 = COS(T2%v)
       Y4%v = (T1%v*T2%v)
-      OpenAD_lin_7 = T2%v
-      OpenAD_lin_8 = T1%v
+      OpenAD_lin_6 = T2%v
+      OpenAD_lin_7 = T1%v
       Y(1)%v = Y1%v
-      OpenAD_acc_0 = (OpenAD_lin_7+OpenAD_lin_2*OpenAD_lin_8)
+      OpenAD_acc_0 = (OpenAD_lin_6+OpenAD_lin_2*OpenAD_lin_7)
       OpenAD_acc_1 = (OpenAD_lin_2*3.14000010490417480469D00)
-      OpenAD_acc_2 = (OpenAD_lin_2*OpenAD_lin_6)
+      OpenAD_acc_2 = (OpenAD_lin_2*OpenAD_lin_5)
       OpenAD_acc_3 = (OpenAD_lin_2*OpenAD_lin_4)
       CALL sax(OpenAD_lin_0,X(1),T1)
       CALL saxpy(OpenAD_lin_1,X(2),T1)

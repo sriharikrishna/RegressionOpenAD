@@ -42,11 +42,11 @@ C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
 C
@@ -63,22 +63,22 @@ C$OPENAD XXX Template ad_template.f
         IF(I .GT. 5) THEN
           OpenAD_lin_0 = SIN(X(I)%v)
           Y(INT(I))%v = (PI*OpenAD_lin_0)
-          OpenAD_lin_3 = COS(X(I)%v)
-          OpenAD_lin_2 = PI
-          OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_2)
+          OpenAD_lin_2 = COS(X(I)%v)
+          OpenAD_lin_1 = PI
+          OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
           CALL sax(OpenAD_acc_0,X(I),Y(I))
         ELSE
           Y(INT(I))%v = (PI+COS(X(I)%v))
-          OpenAD_lin_5 = (-SIN(X(I)%v))
-          CALL sax(OpenAD_lin_5,X(I),Y(I))
+          OpenAD_lin_3 = (-SIN(X(I)%v))
+          CALL sax(OpenAD_lin_3,X(I),Y(I))
         ENDIF
       END DO
       OpenAD_dly_0 = (Y(1)%v*Y(9)%v)
-      OpenAD_lin_6 = Y(9)%v
-      OpenAD_lin_7 = Y(1)%v
+      OpenAD_lin_4 = Y(9)%v
+      OpenAD_lin_5 = Y(1)%v
       Y(10)%v = OpenAD_dly_0
       CALL setderiv(OpenAD_prp_0,Y(1))
       CALL setderiv(OpenAD_prp_1,Y(9))
-      CALL sax(OpenAD_lin_6,OpenAD_prp_0,Y(10))
-      CALL saxpy(OpenAD_lin_7,OpenAD_prp_1,Y(10))
+      CALL sax(OpenAD_lin_4,OpenAD_prp_0,Y(10))
+      CALL saxpy(OpenAD_lin_5,OpenAD_prp_1,Y(10))
       END SUBROUTINE

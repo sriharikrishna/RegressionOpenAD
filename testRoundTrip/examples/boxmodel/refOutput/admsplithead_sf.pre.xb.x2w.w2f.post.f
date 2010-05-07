@@ -1164,7 +1164,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_154
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_1
 
 
           integer iaddr
@@ -1187,8 +1187,8 @@ C$OPENAD XXX Template ad_template.f
       DO L = 1,3,1
         RHOLOC(INT(L))%v = (SLOC(L)%v*BETA-TLOC(L)%v*ALPHA)
         OpenAD_lin_0 = BETA
-        OpenAD_lin_2 = ALPHA
-        OpenAD_acc_0 = (OpenAD_lin_2*INT((-1_w2f__i8)))
+        OpenAD_lin_1 = ALPHA
+        OpenAD_acc_0 = (OpenAD_lin_1*INT((-1_w2f__i8)))
         double_tape(double_tape_pointer) = OpenAD_lin_0
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_0
@@ -1262,11 +1262,11 @@ C
       REAL(w2f__8) OpenAD_Symbol_156
       REAL(w2f__8) OpenAD_Symbol_157
       REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_lin_10
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
       REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_9
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
@@ -1285,17 +1285,17 @@ C original function
           if (our_rev_mode%tape) then
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_9 = (1.0D00-DELTA)
-      OpenAD_lin_4 = (RHOLOC(1)%v*DELTA+RHOLOC(3)%v*OpenAD_lin_9-RHOLOC(
+      OpenAD_lin_5 = (1.0D00-DELTA)
+      OpenAD_lin_2 = (RHOLOC(1)%v*DELTA+RHOLOC(3)%v*OpenAD_lin_5-RHOLOC(
      +2)%v)
-      UVELLOC%v = (-(U0*OpenAD_lin_4))
-      OpenAD_lin_7 = DELTA
-      OpenAD_lin_10 = OpenAD_lin_9
-      OpenAD_lin_6 = U0
-      OpenAD_acc_1 = (OpenAD_lin_6*INT((-1_w2f__i8)))
-      double_tape(double_tape_pointer) = OpenAD_lin_7
+      UVELLOC%v = (-(U0*OpenAD_lin_2))
+      OpenAD_lin_4 = DELTA
+      OpenAD_lin_6 = OpenAD_lin_5
+      OpenAD_lin_3 = U0
+      OpenAD_acc_1 = (OpenAD_lin_3*INT((-1_w2f__i8)))
+      double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_10
+      double_tape(double_tape_pointer) = OpenAD_lin_6
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
@@ -1366,9 +1366,8 @@ C
       PARAMETER ( NLEV2 = 50)
       INTEGER(w2f__i8) OpenAD_Symbol_174
       REAL(w2f__8) OpenAD_Symbol_175
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_lin_80
-      REAL(w2f__8) OpenAD_lin_82
+      REAL(w2f__8) OpenAD_lin_53
+      REAL(w2f__8) OpenAD_lin_54
       type(active) :: OpenAD_prp_7
       type(active) :: OpenAD_prp_8
       type(active) :: OpenAD_prp_9
@@ -1393,11 +1392,11 @@ C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_26 = 0_w2f__i8
       DO L = 1,3,1
-        OpenAD_lin_80 = (FLDOLD(L)%v+FLDNEW(L)%v-FLDNOW(L)%v*2.0D00)
-        OpenAD_dly_0 = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*OpenAD_lin_80)
-        OpenAD_lin_82 = ROBERT_FILTER_COEFF
-        FLDNOW(INT(L))%v = OpenAD_dly_0
-        double_tape(double_tape_pointer) = OpenAD_lin_82
+        OpenAD_lin_53 = (FLDOLD(L)%v+FLDNEW(L)%v-FLDNOW(L)%v*2.0D00)
+        FLDNOW(INT(L))%v = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*OpenAD_lin_5
+     +3)
+        OpenAD_lin_54 = ROBERT_FILTER_COEFF
+        double_tape(double_tape_pointer) = OpenAD_lin_54
         double_tape_pointer = double_tape_pointer+1
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
@@ -1598,8 +1597,8 @@ C
       PARAMETER ( NLEV2 = 50)
       INTEGER(w2f__i8) OpenAD_Symbol_184
       REAL(w2f__8) OpenAD_Symbol_185
-      REAL(w2f__8) OpenAD_lin_84
-      REAL(w2f__8) OpenAD_lin_85
+      REAL(w2f__8) OpenAD_lin_55
+      REAL(w2f__8) OpenAD_lin_56
 
 
           integer iaddr
@@ -1620,10 +1619,10 @@ C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_147 = 0_w2f__i8
       DO L = 1,3,1
-        OpenAD_lin_84 = (DELTA_T*2.0D00)
-        FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*OpenAD_lin_84)
-        OpenAD_lin_85 = OpenAD_lin_84
-        double_tape(double_tape_pointer) = OpenAD_lin_85
+        OpenAD_lin_55 = (DELTA_T*2.0D00)
+        FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*OpenAD_lin_55)
+        OpenAD_lin_56 = OpenAD_lin_55
+        double_tape(double_tape_pointer) = OpenAD_lin_56
         double_tape_pointer = double_tape_pointer+1
         integer_tape(integer_tape_pointer) = L
         integer_tape_pointer = integer_tape_pointer+1
@@ -1739,52 +1738,52 @@ C
       REAL(w2f__8) OpenAD_acc_7
       REAL(w2f__8) OpenAD_acc_8
       REAL(w2f__8) OpenAD_acc_9
+      REAL(w2f__8) OpenAD_lin_10
+      REAL(w2f__8) OpenAD_lin_11
       REAL(w2f__8) OpenAD_lin_12
       REAL(w2f__8) OpenAD_lin_13
+      REAL(w2f__8) OpenAD_lin_14
+      REAL(w2f__8) OpenAD_lin_15
       REAL(w2f__8) OpenAD_lin_16
+      REAL(w2f__8) OpenAD_lin_17
       REAL(w2f__8) OpenAD_lin_18
       REAL(w2f__8) OpenAD_lin_19
+      REAL(w2f__8) OpenAD_lin_20
       REAL(w2f__8) OpenAD_lin_21
+      REAL(w2f__8) OpenAD_lin_22
       REAL(w2f__8) OpenAD_lin_23
       REAL(w2f__8) OpenAD_lin_24
       REAL(w2f__8) OpenAD_lin_25
       REAL(w2f__8) OpenAD_lin_26
       REAL(w2f__8) OpenAD_lin_27
+      REAL(w2f__8) OpenAD_lin_28
+      REAL(w2f__8) OpenAD_lin_29
       REAL(w2f__8) OpenAD_lin_30
+      REAL(w2f__8) OpenAD_lin_31
       REAL(w2f__8) OpenAD_lin_32
       REAL(w2f__8) OpenAD_lin_33
+      REAL(w2f__8) OpenAD_lin_34
       REAL(w2f__8) OpenAD_lin_35
+      REAL(w2f__8) OpenAD_lin_36
       REAL(w2f__8) OpenAD_lin_37
       REAL(w2f__8) OpenAD_lin_38
       REAL(w2f__8) OpenAD_lin_39
       REAL(w2f__8) OpenAD_lin_40
       REAL(w2f__8) OpenAD_lin_41
+      REAL(w2f__8) OpenAD_lin_42
       REAL(w2f__8) OpenAD_lin_43
       REAL(w2f__8) OpenAD_lin_44
       REAL(w2f__8) OpenAD_lin_45
       REAL(w2f__8) OpenAD_lin_46
       REAL(w2f__8) OpenAD_lin_47
+      REAL(w2f__8) OpenAD_lin_48
+      REAL(w2f__8) OpenAD_lin_49
       REAL(w2f__8) OpenAD_lin_50
+      REAL(w2f__8) OpenAD_lin_51
       REAL(w2f__8) OpenAD_lin_52
-      REAL(w2f__8) OpenAD_lin_53
-      REAL(w2f__8) OpenAD_lin_55
-      REAL(w2f__8) OpenAD_lin_57
-      REAL(w2f__8) OpenAD_lin_58
-      REAL(w2f__8) OpenAD_lin_59
-      REAL(w2f__8) OpenAD_lin_60
-      REAL(w2f__8) OpenAD_lin_61
-      REAL(w2f__8) OpenAD_lin_64
-      REAL(w2f__8) OpenAD_lin_66
-      REAL(w2f__8) OpenAD_lin_67
-      REAL(w2f__8) OpenAD_lin_69
-      REAL(w2f__8) OpenAD_lin_71
-      REAL(w2f__8) OpenAD_lin_72
-      REAL(w2f__8) OpenAD_lin_73
-      REAL(w2f__8) OpenAD_lin_74
-      REAL(w2f__8) OpenAD_lin_75
-      REAL(w2f__8) OpenAD_lin_77
-      REAL(w2f__8) OpenAD_lin_78
-      REAL(w2f__8) OpenAD_lin_79
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
+      REAL(w2f__8) OpenAD_lin_9
       type(active) :: OpenAD_prp_1
       type(active) :: OpenAD_prp_2
       type(active) :: OpenAD_prp_3
@@ -1821,56 +1820,56 @@ C$OPENAD XXX Template ad_template.f
 C taping
 C$OPENAD XXX Template ad_template.f
       IF (UVELLOC%v.GE.0.0D00) THEN
-        OpenAD_lin_19 = (FLDSTAR(1)-FLDNOW(1)%v)
-        OpenAD_lin_16 = (GAMMALOC*OpenAD_lin_19)
-        OpenAD_lin_23 = (FLDNOW(3)%v-FLDNOW(1)%v)
-        OpenAD_lin_12 = (EXTFORLOC(1)+VOL(1)*OpenAD_lin_16+UVELLOC%v*Ope
-     +nAD_lin_23)
-        DFLDDT(1)%v = (OpenAD_lin_12/VOL(1))
-        OpenAD_lin_21 = GAMMALOC
-        OpenAD_lin_18 = VOL(1)
-        OpenAD_lin_24 = OpenAD_lin_23
-        OpenAD_lin_25 = UVELLOC%v
-        OpenAD_lin_13 = (INT(1_w2f__i8)/VOL(1))
-        OpenAD_acc_2 = (OpenAD_lin_24*OpenAD_lin_13)
-        OpenAD_acc_3 = (OpenAD_lin_25*OpenAD_lin_13)
-        OpenAD_acc_4 = (INT((-1_w2f__i8))*OpenAD_lin_21*OpenAD_lin_18*Op
-     +enAD_lin_13)
+        OpenAD_lin_11 = (FLDSTAR(1)-FLDNOW(1)%v)
+        OpenAD_lin_9 = (GAMMALOC*OpenAD_lin_11)
+        OpenAD_lin_13 = (FLDNOW(3)%v-FLDNOW(1)%v)
+        OpenAD_lin_7 = (EXTFORLOC(1)+VOL(1)*OpenAD_lin_9+UVELLOC%v*OpenA
+     +D_lin_13)
+        DFLDDT(1)%v = (OpenAD_lin_7/VOL(1))
+        OpenAD_lin_12 = GAMMALOC
+        OpenAD_lin_10 = VOL(1)
+        OpenAD_lin_14 = OpenAD_lin_13
+        OpenAD_lin_15 = UVELLOC%v
+        OpenAD_lin_8 = (INT(1_w2f__i8)/VOL(1))
+        OpenAD_acc_2 = (OpenAD_lin_14*OpenAD_lin_8)
+        OpenAD_acc_3 = (OpenAD_lin_15*OpenAD_lin_8)
+        OpenAD_acc_4 = (INT((-1_w2f__i8))*OpenAD_lin_12*OpenAD_lin_10*Op
+     +enAD_lin_8)
         double_tape(double_tape_pointer) = OpenAD_acc_2
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_3
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_4
         double_tape_pointer = double_tape_pointer+1
-        OpenAD_lin_33 = (FLDSTAR(2)-FLDNOW(2)%v)
-        OpenAD_lin_30 = (GAMMALOC*OpenAD_lin_33)
-        OpenAD_lin_37 = (FLDNOW(1)%v-FLDNOW(2)%v)
-        OpenAD_lin_26 = (EXTFORLOC(2)+VOL(2)*OpenAD_lin_30+UVELLOC%v*Ope
-     +nAD_lin_37)
-        DFLDDT(2)%v = (OpenAD_lin_26/VOL(2))
-        OpenAD_lin_35 = GAMMALOC
-        OpenAD_lin_32 = VOL(2)
-        OpenAD_lin_38 = OpenAD_lin_37
-        OpenAD_lin_39 = UVELLOC%v
-        OpenAD_lin_27 = (INT(1_w2f__i8)/VOL(2))
-        OpenAD_acc_5 = (OpenAD_lin_38*OpenAD_lin_27)
-        OpenAD_acc_6 = (OpenAD_lin_39*OpenAD_lin_27)
-        OpenAD_acc_7 = (INT((-1_w2f__i8))*OpenAD_lin_35*OpenAD_lin_32*Op
-     +enAD_lin_27)
+        OpenAD_lin_20 = (FLDSTAR(2)-FLDNOW(2)%v)
+        OpenAD_lin_18 = (GAMMALOC*OpenAD_lin_20)
+        OpenAD_lin_22 = (FLDNOW(1)%v-FLDNOW(2)%v)
+        OpenAD_lin_16 = (EXTFORLOC(2)+VOL(2)*OpenAD_lin_18+UVELLOC%v*Ope
+     +nAD_lin_22)
+        DFLDDT(2)%v = (OpenAD_lin_16/VOL(2))
+        OpenAD_lin_21 = GAMMALOC
+        OpenAD_lin_19 = VOL(2)
+        OpenAD_lin_23 = OpenAD_lin_22
+        OpenAD_lin_24 = UVELLOC%v
+        OpenAD_lin_17 = (INT(1_w2f__i8)/VOL(2))
+        OpenAD_acc_5 = (OpenAD_lin_23*OpenAD_lin_17)
+        OpenAD_acc_6 = (OpenAD_lin_24*OpenAD_lin_17)
+        OpenAD_acc_7 = (INT((-1_w2f__i8))*OpenAD_lin_21*OpenAD_lin_19*Op
+     +enAD_lin_17)
         double_tape(double_tape_pointer) = OpenAD_acc_5
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_6
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_7
         double_tape_pointer = double_tape_pointer+1
-        OpenAD_lin_43 = (FLDNOW(2)%v-FLDNOW(3)%v)
-        OpenAD_lin_40 = (UVELLOC%v*OpenAD_lin_43)
-        DFLDDT(3)%v = (OpenAD_lin_40/VOL(3))
-        OpenAD_lin_44 = OpenAD_lin_43
-        OpenAD_lin_45 = UVELLOC%v
-        OpenAD_lin_41 = (INT(1_w2f__i8)/VOL(3))
-        OpenAD_acc_8 = (OpenAD_lin_44*OpenAD_lin_41)
-        OpenAD_acc_9 = (OpenAD_lin_45*OpenAD_lin_41)
+        OpenAD_lin_27 = (FLDNOW(2)%v-FLDNOW(3)%v)
+        OpenAD_lin_25 = (UVELLOC%v*OpenAD_lin_27)
+        DFLDDT(3)%v = (OpenAD_lin_25/VOL(3))
+        OpenAD_lin_28 = OpenAD_lin_27
+        OpenAD_lin_29 = UVELLOC%v
+        OpenAD_lin_26 = (INT(1_w2f__i8)/VOL(3))
+        OpenAD_acc_8 = (OpenAD_lin_28*OpenAD_lin_26)
+        OpenAD_acc_9 = (OpenAD_lin_29*OpenAD_lin_26)
         double_tape(double_tape_pointer) = OpenAD_acc_8
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_9
@@ -1879,58 +1878,58 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_19
         integer_tape_pointer = integer_tape_pointer+1
       ELSE
-        OpenAD_lin_53 = (FLDSTAR(1)-FLDNOW(1)%v)
-        OpenAD_lin_50 = (GAMMALOC*OpenAD_lin_53)
-        OpenAD_lin_57 = (FLDNOW(2)%v-FLDNOW(1)%v)
-        OpenAD_lin_46 = (EXTFORLOC(1)+VOL(1)*OpenAD_lin_50-UVELLOC%v*Ope
-     +nAD_lin_57)
-        DFLDDT(1)%v = (OpenAD_lin_46/VOL(1))
-        OpenAD_lin_55 = GAMMALOC
-        OpenAD_lin_52 = VOL(1)
-        OpenAD_lin_58 = OpenAD_lin_57
-        OpenAD_lin_59 = UVELLOC%v
-        OpenAD_lin_47 = (INT(1_w2f__i8)/VOL(1))
-        OpenAD_acc_10 = (INT((-1_w2f__i8))*OpenAD_lin_47)
-        OpenAD_acc_11 = (OpenAD_lin_58*OpenAD_acc_10)
-        OpenAD_acc_12 = (OpenAD_lin_59*OpenAD_acc_10)
-        OpenAD_acc_13 = (INT((-1_w2f__i8))*OpenAD_lin_55*OpenAD_lin_52*O
-     +penAD_lin_47)
+        OpenAD_lin_34 = (FLDSTAR(1)-FLDNOW(1)%v)
+        OpenAD_lin_32 = (GAMMALOC*OpenAD_lin_34)
+        OpenAD_lin_36 = (FLDNOW(2)%v-FLDNOW(1)%v)
+        OpenAD_lin_30 = (EXTFORLOC(1)+VOL(1)*OpenAD_lin_32-UVELLOC%v*Ope
+     +nAD_lin_36)
+        DFLDDT(1)%v = (OpenAD_lin_30/VOL(1))
+        OpenAD_lin_35 = GAMMALOC
+        OpenAD_lin_33 = VOL(1)
+        OpenAD_lin_37 = OpenAD_lin_36
+        OpenAD_lin_38 = UVELLOC%v
+        OpenAD_lin_31 = (INT(1_w2f__i8)/VOL(1))
+        OpenAD_acc_10 = (INT((-1_w2f__i8))*OpenAD_lin_31)
+        OpenAD_acc_11 = (OpenAD_lin_37*OpenAD_acc_10)
+        OpenAD_acc_12 = (OpenAD_lin_38*OpenAD_acc_10)
+        OpenAD_acc_13 = (INT((-1_w2f__i8))*OpenAD_lin_35*OpenAD_lin_33*O
+     +penAD_lin_31)
         double_tape(double_tape_pointer) = OpenAD_acc_11
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_12
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_13
         double_tape_pointer = double_tape_pointer+1
-        OpenAD_lin_67 = (FLDSTAR(2)-FLDNOW(2)%v)
-        OpenAD_lin_64 = (GAMMALOC*OpenAD_lin_67)
-        OpenAD_lin_71 = (FLDNOW(3)%v-FLDNOW(2)%v)
-        OpenAD_lin_60 = (EXTFORLOC(2)+VOL(2)*OpenAD_lin_64-UVELLOC%v*Ope
-     +nAD_lin_71)
-        DFLDDT(2)%v = (OpenAD_lin_60/VOL(2))
-        OpenAD_lin_69 = GAMMALOC
-        OpenAD_lin_66 = VOL(2)
-        OpenAD_lin_72 = OpenAD_lin_71
-        OpenAD_lin_73 = UVELLOC%v
-        OpenAD_lin_61 = (INT(1_w2f__i8)/VOL(2))
-        OpenAD_acc_14 = (INT((-1_w2f__i8))*OpenAD_lin_61)
-        OpenAD_acc_15 = (OpenAD_lin_72*OpenAD_acc_14)
-        OpenAD_acc_16 = (OpenAD_lin_73*OpenAD_acc_14)
-        OpenAD_acc_17 = (INT((-1_w2f__i8))*OpenAD_lin_69*OpenAD_lin_66*O
-     +penAD_lin_61)
+        OpenAD_lin_43 = (FLDSTAR(2)-FLDNOW(2)%v)
+        OpenAD_lin_41 = (GAMMALOC*OpenAD_lin_43)
+        OpenAD_lin_45 = (FLDNOW(3)%v-FLDNOW(2)%v)
+        OpenAD_lin_39 = (EXTFORLOC(2)+VOL(2)*OpenAD_lin_41-UVELLOC%v*Ope
+     +nAD_lin_45)
+        DFLDDT(2)%v = (OpenAD_lin_39/VOL(2))
+        OpenAD_lin_44 = GAMMALOC
+        OpenAD_lin_42 = VOL(2)
+        OpenAD_lin_46 = OpenAD_lin_45
+        OpenAD_lin_47 = UVELLOC%v
+        OpenAD_lin_40 = (INT(1_w2f__i8)/VOL(2))
+        OpenAD_acc_14 = (INT((-1_w2f__i8))*OpenAD_lin_40)
+        OpenAD_acc_15 = (OpenAD_lin_46*OpenAD_acc_14)
+        OpenAD_acc_16 = (OpenAD_lin_47*OpenAD_acc_14)
+        OpenAD_acc_17 = (INT((-1_w2f__i8))*OpenAD_lin_44*OpenAD_lin_42*O
+     +penAD_lin_40)
         double_tape(double_tape_pointer) = OpenAD_acc_15
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_16
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_17
         double_tape_pointer = double_tape_pointer+1
-        OpenAD_lin_77 = (FLDNOW(1)%v-FLDNOW(3)%v)
-        OpenAD_lin_74 = (UVELLOC%v*OpenAD_lin_77)
-        DFLDDT(3)%v = (-(OpenAD_lin_74/VOL(3)))
-        OpenAD_lin_78 = OpenAD_lin_77
-        OpenAD_lin_79 = UVELLOC%v
-        OpenAD_lin_75 = (INT(1_w2f__i8)/VOL(3))
-        OpenAD_acc_18 = (OpenAD_lin_78*OpenAD_lin_75*INT((-1_w2f__i8)))
-        OpenAD_acc_19 = (OpenAD_lin_79*OpenAD_lin_75*INT((-1_w2f__i8)))
+        OpenAD_lin_50 = (FLDNOW(1)%v-FLDNOW(3)%v)
+        OpenAD_lin_48 = (UVELLOC%v*OpenAD_lin_50)
+        DFLDDT(3)%v = (-(OpenAD_lin_48/VOL(3)))
+        OpenAD_lin_51 = OpenAD_lin_50
+        OpenAD_lin_52 = UVELLOC%v
+        OpenAD_lin_49 = (INT(1_w2f__i8)/VOL(3))
+        OpenAD_acc_18 = (OpenAD_lin_51*OpenAD_lin_49*INT((-1_w2f__i8)))
+        OpenAD_acc_19 = (OpenAD_lin_52*OpenAD_lin_49*INT((-1_w2f__i8)))
         double_tape(double_tape_pointer) = OpenAD_acc_18
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_19

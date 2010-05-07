@@ -66,7 +66,6 @@ C
 C
 C       **** Local Variables and Functions ****
 C
-        REAL(w2f__8) OpenAD_dly_0
         type(active) :: OpenAD_prp_0
 C
 C       **** Statements ****
@@ -125,8 +124,7 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-        OpenAD_dly_0 = (X%v*2.0D00)
-        X%v = OpenAD_dly_0
+        X%v = (X%v*2.0D00)
 
 C taping end
             our_rev_mode%arg_store=.FALSE.

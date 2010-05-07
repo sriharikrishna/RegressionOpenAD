@@ -47,9 +47,9 @@ C
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
 C
 C     **** Top Level Pragmas ****
 C
@@ -70,14 +70,14 @@ C$OPENAD XXX Template ad_template.f
       __value__(Y1) = OpenAD_lin_3
       __value__(Y2) = (__value__(T2) * 3.14000010490417480469D00)
       __value__(Y3) = SIN(__value__(T2))
-      OpenAD_lin_6 = COS(__value__(T2))
+      OpenAD_lin_5 = COS(__value__(T2))
       __value__(Y4) = (__value__(T1) * __value__(T2))
-      OpenAD_lin_7 = __value__(T2)
-      OpenAD_lin_8 = __value__(T1)
+      OpenAD_lin_6 = __value__(T2)
+      OpenAD_lin_7 = __value__(T1)
       __value__(Y(1)) = __value__(Y1)
-      OpenAD_acc_0 = (OpenAD_lin_7 + OpenAD_lin_2 * OpenAD_lin_8)
+      OpenAD_acc_0 = (OpenAD_lin_6 + OpenAD_lin_2 * OpenAD_lin_7)
       OpenAD_acc_1 = (OpenAD_lin_2 * 3.14000010490417480469D00)
-      OpenAD_acc_2 = (OpenAD_lin_2 * OpenAD_lin_6)
+      OpenAD_acc_2 = (OpenAD_lin_2 * OpenAD_lin_5)
       OpenAD_acc_3 = (OpenAD_lin_2 * OpenAD_lin_4)
       CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(T1))
       CALL saxpy(OpenAD_lin_1, __deriv__(X(2)), __deriv__(T1))

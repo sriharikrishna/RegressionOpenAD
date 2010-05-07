@@ -95,7 +95,8 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_1 = OpenAD_lin_0
       Y(1:2)%v = OpenAD_lin_0
       OpenAD_acc_0 = (5.0D-01*OpenAD_lin_1)
-      double_tape(double_tape_pointer:) = OpenAD_acc_0(:)
+      double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
+     +c_0)-1) = OpenAD_acc_0(:)
       double_tape_pointer = double_tape_pointer+size(OpenAD_acc_0)
 
 C taping end

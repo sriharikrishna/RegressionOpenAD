@@ -50,7 +50,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
@@ -80,6 +79,7 @@ C strings 'S'
 C external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then
@@ -115,9 +115,7 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (X%v*2.0D00)
-      Y%v = OpenAD_dly_0
+      Y%v = (X%v*2.0D00)
 
 C taping end
             our_rev_mode%arg_store=.FALSE.

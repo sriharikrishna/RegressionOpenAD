@@ -27,13 +27,11 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
-      OpenAD_dly_0 = (P%v*2.0D00)
-      P%v = OpenAD_dly_0
+      P%v = (P%v*2.0D00)
       I = (I+1)
       CALL setderiv(OpenAD_prp_0,P)
       CALL sax(2.0D00,OpenAD_prp_0,P)

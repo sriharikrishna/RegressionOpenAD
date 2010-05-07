@@ -35,9 +35,7 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_0
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
@@ -65,19 +63,17 @@ C$OPENAD XXX Template ad_template.f
 6     CONTINUE
       GO TO 7
 7     CONTINUE
-      OpenAD_dly_1 = (__value__(Y(1)) * 2.0D00)
-      __value__(Y(1)) = OpenAD_dly_1
+      __value__(Y(1)) = (__value__(Y(1)) * 2.0D00)
       CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
       CALL sax(2.0D00, __deriv__(OpenAD_prp_1), __deriv__(Y(1)))
       GO TO 10
 8     CONTINUE
       __value__(Y(1)) = (I * __value__(X(1)))
-      OpenAD_lin_1 = I
-      CALL sax(OpenAD_lin_1, __deriv__(X(1)), __deriv__(Y(1)))
+      OpenAD_lin_0 = I
+      CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
       GO TO 9
 9     CONTINUE
-      OpenAD_dly_0 = (__value__(Y(1)) * 3.0D00)
-      __value__(Y(1)) = OpenAD_dly_0
+      __value__(Y(1)) = (__value__(Y(1)) * 3.0D00)
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
       CALL sax(3.0D00, __deriv__(OpenAD_prp_0), __deriv__(Y(1)))
       GO TO 10

@@ -15,15 +15,13 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_dly_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, (N + 1), 1
-        OpenAD_dly_0 = (A(I)%v*2.0D00)
-        A(INT(I))%v = OpenAD_dly_0
+        A(INT(I))%v = (A(I)%v*2.0D00)
         CALL setderiv(OpenAD_prp_0,A(I))
         CALL sax(2.0D00,OpenAD_prp_0,A(I))
       END DO

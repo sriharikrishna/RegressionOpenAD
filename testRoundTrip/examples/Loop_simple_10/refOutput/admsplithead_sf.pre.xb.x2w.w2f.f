@@ -52,9 +52,9 @@ C
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
+      INTEGER(w2f__i4) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
@@ -84,12 +84,12 @@ C$OPENAD XXX Simple loop
         IF(A(I, J) .ne. 0) THEN
           OpenAD_lin_0 = (__value__(X(1)) * __value__(Y(1)))
           OpenAD_dly_0 = (A(I, J) * OpenAD_lin_0)
-          OpenAD_lin_3 = __value__(Y(1))
-          OpenAD_lin_4 = __value__(X(1))
-          OpenAD_lin_2 = A(I, J)
+          OpenAD_lin_2 = __value__(Y(1))
+          OpenAD_lin_3 = __value__(X(1))
+          OpenAD_lin_1 = A(I, J)
           __value__(Y(1)) = OpenAD_dly_0
-          OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_2)
-          OpenAD_acc_1 = (OpenAD_lin_4 * OpenAD_lin_2)
+          OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
+          OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_0)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -195,12 +195,12 @@ C$OPENAD XXX Simple loop
         IF(A(I, J) .ne. 0) THEN
           OpenAD_lin_0 = (__value__(X(1)) * __value__(Y(1)))
           OpenAD_dly_0 = (A(I, J) * OpenAD_lin_0)
-          OpenAD_lin_3 = __value__(Y(1))
-          OpenAD_lin_4 = __value__(X(1))
-          OpenAD_lin_2 = A(I, J)
+          OpenAD_lin_2 = __value__(Y(1))
+          OpenAD_lin_3 = __value__(X(1))
+          OpenAD_lin_1 = A(I, J)
           __value__(Y(1)) = OpenAD_dly_0
-          OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_2)
-          OpenAD_acc_1 = (OpenAD_lin_4 * OpenAD_lin_2)
+          OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
+          OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_0)
 C         $OpenAD$ INLINE push_s0(subst)

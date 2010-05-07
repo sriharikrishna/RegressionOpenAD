@@ -50,7 +50,6 @@ C
 C
 C       **** Local Variables and Functions ****
 C
-        REAL(w2f__8) OpenAD_dly_0
         TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C       **** Statements ****
@@ -59,8 +58,7 @@ C       $OpenAD$ BEGIN REPLACEMENT 1
         __value__(X) = (__value__(X) * 2.0D00)
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 2
-        OpenAD_dly_0 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_dly_0
+        __value__(X) = (__value__(X) * 2.0D00)
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 3
 C       $OpenAD$ INLINE Saxpy(subst,subst,subst)
@@ -97,8 +95,7 @@ C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
         CALL cp_arg_restore_real_scalar_a(__deriv__(X))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 10
-        OpenAD_dly_0 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_dly_0
+        __value__(X) = (__value__(X) * 2.0D00)
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 11
 C       $OpenAD$ INLINE Saxpy(subst,subst,subst)

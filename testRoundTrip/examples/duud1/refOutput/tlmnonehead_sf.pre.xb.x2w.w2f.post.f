@@ -35,9 +35,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
+      REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
       type(active) :: OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
@@ -48,13 +47,12 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (X(1)%v*2.0D00)
-      X(1)%v = OpenAD_dly_0
+      X(1)%v = (X(1)%v*2.0D00)
       CALL setderiv(OpenAD_prp_0,X(1))
       CALL sax(2.0D00,OpenAD_prp_0,X(1))
       Y(1)%v = (X(1)%v*X(2)%v)
-      OpenAD_lin_1 = X(2)%v
-      OpenAD_lin_2 = X(1)%v
-      CALL sax(OpenAD_lin_1,X(1),Y(1))
-      CALL saxpy(OpenAD_lin_2,X(2),Y(1))
+      OpenAD_lin_0 = X(2)%v
+      OpenAD_lin_1 = X(1)%v
+      CALL sax(OpenAD_lin_0,X(1),Y(1))
+      CALL saxpy(OpenAD_lin_1,X(2),Y(1))
       END SUBROUTINE

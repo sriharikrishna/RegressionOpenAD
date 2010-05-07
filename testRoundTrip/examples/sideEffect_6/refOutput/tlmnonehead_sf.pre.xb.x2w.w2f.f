@@ -32,8 +32,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
@@ -41,14 +39,12 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'two') THEN
-        OpenAD_dly_0 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_dly_0
+        __value__(X) = (__value__(X) * 2.0D00)
         CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X))
         CALL sax(2.0D00, __deriv__(OpenAD_prp_0), __deriv__(X))
       ENDIF
       IF(A(1 : LEN(A)) .EQ. 'three') THEN
-        OpenAD_dly_1 = (__value__(X) * 3.0D00)
-        __value__(X) = OpenAD_dly_1
+        __value__(X) = (__value__(X) * 3.0D00)
         CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(X))
         CALL sax(3.0D00, __deriv__(OpenAD_prp_1), __deriv__(X))
       ENDIF

@@ -49,7 +49,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Statements ****
@@ -59,8 +58,7 @@ C     $OpenAD$ BEGIN REPLACEMENT 1
       I = (I + 1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
-      OpenAD_dly_0 = (__value__(P) * 2.0D00)
-      __value__(P) = OpenAD_dly_0
+      __value__(P) = (__value__(P) * 2.0D00)
       I = (I + 1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
@@ -110,8 +108,7 @@ C     $OpenAD$ INLINE cp_arg_restore_integer_scalar(subst)
       CALL cp_arg_restore_integer_scalar(I)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
-      OpenAD_dly_0 = (__value__(P) * 2.0D00)
-      __value__(P) = OpenAD_dly_0
+      __value__(P) = (__value__(P) * 2.0D00)
       I = (I + 1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11

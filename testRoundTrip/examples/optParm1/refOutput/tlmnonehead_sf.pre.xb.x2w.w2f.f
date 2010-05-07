@@ -37,15 +37,12 @@ C
 C     **** Local Variables and Functions ****
 C
       LOGICAL(w2f__i4) t__1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C     **** Statements ****
 C
-      OpenAD_dly_0 = (__value__(A) * 2.0D00)
-      __value__(C) = OpenAD_dly_0
+      __value__(C) = (__value__(A) * 2.0D00)
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(A))
       CALL sax(2.0D00, __deriv__(OpenAD_prp_0), __deriv__(C))
       t__1 = .TRUE.
@@ -57,8 +54,7 @@ C
         ENDIF
       ENDIF
       IF(t__1) THEN
-        OpenAD_dly_1 = (__value__(B) * 3.0D00)
-        __value__(D) = OpenAD_dly_1
+        __value__(D) = (__value__(B) * 3.0D00)
         CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(B))
         CALL sax(3.0D00, __deriv__(OpenAD_prp_1), __deriv__(D))
       ENDIF

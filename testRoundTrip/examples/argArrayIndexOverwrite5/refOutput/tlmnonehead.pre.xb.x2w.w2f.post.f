@@ -13,19 +13,17 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (K*A%v)
-      OpenAD_lin_1 = K
-      A%v = OpenAD_dly_0
+      A%v = (K*A%v)
+      OpenAD_lin_0 = K
       K = (K*2)
       CALL setderiv(OpenAD_prp_0,A)
-      CALL sax(OpenAD_lin_1,OpenAD_prp_0,A)
+      CALL sax(OpenAD_lin_0,OpenAD_prp_0,A)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -44,8 +42,8 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
+      REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
 C
 C     **** Top Level Pragmas ****
 C
@@ -60,8 +58,8 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X(I+J),I)
       CALL foo(X(I-J),I)
       Y%v = (X(1)%v*X(2)%v)
-      OpenAD_lin_2 = X(2)%v
-      OpenAD_lin_3 = X(1)%v
-      CALL sax(OpenAD_lin_2,X(1),Y)
-      CALL saxpy(OpenAD_lin_3,X(2),Y)
+      OpenAD_lin_1 = X(2)%v
+      OpenAD_lin_2 = X(1)%v
+      CALL sax(OpenAD_lin_1,X(1),Y)
+      CALL saxpy(OpenAD_lin_2,X(2),Y)
       END SUBROUTINE

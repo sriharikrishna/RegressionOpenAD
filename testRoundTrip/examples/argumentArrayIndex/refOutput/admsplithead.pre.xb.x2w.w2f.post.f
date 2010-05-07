@@ -27,7 +27,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
@@ -37,6 +36,7 @@ C
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 C original function
@@ -44,9 +44,7 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (X%v*2.0D00)
-      Y%v = OpenAD_dly_0
+      Y%v = (X%v*2.0D00)
           end if
           if (our_rev_mode%adjoint) then
 C adjoint

@@ -54,8 +54,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_15
       INTEGER(w2f__i8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_dly_2
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       TYPE (OpenADTy_active) OpenAD_prp_0
@@ -124,8 +122,7 @@ C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_2)
       GO TO 16
 16    CONTINUE
-      OpenAD_dly_1 = (__value__(X(1)) * 3.0D00)
-      __value__(X(1)) = OpenAD_dly_1
+      __value__(X(1)) = (__value__(X(1)) * 3.0D00)
       GO TO 17
 17    CONTINUE
       OpenAD_Symbol_3 = 3_w2f__i8
@@ -133,8 +130,7 @@ C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_3)
       GO TO 18
 18    CONTINUE
-      OpenAD_dly_2 = (__value__(X(1)) * 2.0D00)
-      __value__(X(1)) = OpenAD_dly_2
+      __value__(X(1)) = (__value__(X(1)) * 2.0D00)
       GO TO 19
 19    CONTINUE
       OpenAD_Symbol_4 = 4_w2f__i8
@@ -261,8 +257,7 @@ C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_9)
       GO TO 139
 139   CONTINUE
-      OpenAD_dly_1 = (__value__(X(1)) * 3.0D00)
-      __value__(X(1)) = OpenAD_dly_1
+      __value__(X(1)) = (__value__(X(1)) * 3.0D00)
       GO TO 140
 140   CONTINUE
       OpenAD_Symbol_10 = 3_w2f__i8
@@ -270,8 +265,7 @@ C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_10)
       GO TO 141
 141   CONTINUE
-      OpenAD_dly_2 = (__value__(X(1)) * 2.0D00)
-      __value__(X(1)) = OpenAD_dly_2
+      __value__(X(1)) = (__value__(X(1)) * 2.0D00)
       GO TO 142
 142   CONTINUE
       OpenAD_Symbol_11 = 4_w2f__i8

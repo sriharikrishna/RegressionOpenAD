@@ -68,11 +68,9 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i8) OpenAD_Symbol_15
-      REAL(w2f__8) OpenAD_Symbol_16
+      INTEGER(w2f__i4) OpenAD_Symbol_16
       INTEGER(w2f__i8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_0
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
 
@@ -155,8 +153,7 @@ C$OPENAD XXX Template ad_template.f
  20   CONTINUE
       GO TO 21
  21   CONTINUE
-      OpenAD_dly_1 = (Y(1)%v*2.0D00)
-      Y(1)%v = OpenAD_dly_1
+      Y(1)%v = (Y(1)%v*2.0D00)
       GO TO 22
  22   CONTINUE
       OpenAD_Symbol_6 = 6_w2f__i8
@@ -165,8 +162,8 @@ C$OPENAD XXX Template ad_template.f
       GO TO 27
  23   CONTINUE
       Y(1)%v = (I*X(1)%v)
-      OpenAD_lin_1 = I
-      double_tape(double_tape_pointer) = OpenAD_lin_1
+      OpenAD_lin_0 = I
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       GO TO 24
  24   CONTINUE
@@ -175,8 +172,7 @@ C$OPENAD XXX Template ad_template.f
       integer_tape_pointer = integer_tape_pointer+1
       GO TO 25
  25   CONTINUE
-      OpenAD_dly_0 = (Y(1)%v*3.0D00)
-      Y(1)%v = OpenAD_dly_0
+      Y(1)%v = (Y(1)%v*3.0D00)
       GO TO 26
  26   CONTINUE
       OpenAD_Symbol_3 = 3_w2f__i8

@@ -26,7 +26,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
@@ -36,6 +35,7 @@ C
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 C original function
@@ -43,9 +43,7 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (A%v*2.0D00)
-      A%v = OpenAD_dly_0
+      A%v = (A%v*2.0D00)
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -83,9 +81,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_6
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_lin_2
+      INTEGER(w2f__i4) OpenAD_Symbol_6
+      INTEGER(w2f__i4) OpenAD_lin_0
       type(active) :: OpenAD_prp_1
 
 
@@ -105,10 +102,9 @@ C$OPENAD XXX Template ad_template.f
 C taping
 C$OPENAD XXX Template ad_template.f
       K = (K*2)
-      OpenAD_dly_1 = (K*A%v)
-      OpenAD_lin_2 = K
-      A%v = OpenAD_dly_1
-      double_tape(double_tape_pointer) = OpenAD_lin_2
+      A%v = (K*A%v)
+      OpenAD_lin_0 = K
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then
@@ -164,8 +160,8 @@ C
       INTEGER(w2f__i4) J
       REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
 
 
           integer iaddr
@@ -206,11 +202,11 @@ C$OPENAD XXX Template ad_template.f
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
       Y%v = (X(1)%v*X(2)%v)
-      OpenAD_lin_3 = X(2)%v
-      OpenAD_lin_4 = X(1)%v
-      double_tape(double_tape_pointer) = OpenAD_lin_3
+      OpenAD_lin_1 = X(2)%v
+      OpenAD_lin_2 = X(1)%v
+      double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_4
+      double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then

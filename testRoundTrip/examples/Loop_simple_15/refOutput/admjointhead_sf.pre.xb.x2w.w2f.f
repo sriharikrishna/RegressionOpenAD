@@ -50,7 +50,6 @@ C
       REAL(w2f__8) S
       INTEGER(w2f__i8) OpenAD_Symbol_10
       INTEGER(w2f__i8) OpenAD_Symbol_9
-      REAL(w2f__8) OpenAD_dly_0
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
@@ -85,8 +84,7 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         IF(S .LT. 0.0D00) THEN
-          OpenAD_dly_0 = (__value__(X(I)) * 2.0D00)
-          __value__(X(INT(I))) = OpenAD_dly_0
+          __value__(X(INT(I))) = (__value__(X(I)) * 2.0D00)
           OpenAD_Symbol_1 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(OpenAD_Symbol_1)
@@ -147,8 +145,7 @@ C$OPENAD XXX Simple loop
       OpenAD_Symbol_6 = 0_w2f__i8
       DO I = 1, 2, 1
         IF(S .LT. 0.0D00) THEN
-          OpenAD_dly_0 = (__value__(X(I)) * 2.0D00)
-          __value__(X(INT(I))) = OpenAD_dly_0
+          __value__(X(INT(I))) = (__value__(X(I)) * 2.0D00)
 C         $OpenAD$ INLINE push_i(subst)
           CALL push_i(I)
           OpenAD_Symbol_7 = 1_w2f__i8

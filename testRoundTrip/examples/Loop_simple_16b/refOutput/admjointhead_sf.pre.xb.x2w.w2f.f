@@ -66,8 +66,8 @@ C
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
       TYPE (OpenADTy_active) OpenAD_prp_2
@@ -121,13 +121,13 @@ C     $OpenAD$ INLINE push_i(subst)
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(I)
       __value__(LAG) = (__value__(NUMER) / __value__(DENOM))
-      OpenAD_lin_7 = (INT(1_w2f__i8) / __value__(DENOM))
-      OpenAD_lin_8 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
+      OpenAD_lin_6 = (INT(1_w2f__i8) / __value__(DENOM))
+      OpenAD_lin_7 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
      > (DENOM))))
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_7)
+      CALL push_s0(OpenAD_lin_6)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_8)
+      CALL push_s0(OpenAD_lin_7)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE pop_s0(subst)
@@ -285,13 +285,13 @@ C         $OpenAD$ INLINE push_i(subst)
 C     $OpenAD$ INLINE push_i(subst)
       CALL push_i(OpenAD_Symbol_3)
       __value__(LAG) = (__value__(NUMER) / __value__(DENOM))
-      OpenAD_lin_7 = (INT(1_w2f__i8) / __value__(DENOM))
-      OpenAD_lin_8 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
+      OpenAD_lin_6 = (INT(1_w2f__i8) / __value__(DENOM))
+      OpenAD_lin_7 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
      > (DENOM))))
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_7)
+      CALL push_s0(OpenAD_lin_6)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_8)
+      CALL push_s0(OpenAD_lin_7)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE pop_s0(subst)

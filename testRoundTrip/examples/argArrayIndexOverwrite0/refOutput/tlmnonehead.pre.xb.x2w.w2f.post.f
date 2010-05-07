@@ -14,15 +14,15 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       Y%v = (K*X%v)
-      OpenAD_lin_1 = K
+      OpenAD_lin_0 = K
       K = (K+2)
-      CALL sax(OpenAD_lin_1,X,Y)
+      CALL sax(OpenAD_lin_0,X,Y)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

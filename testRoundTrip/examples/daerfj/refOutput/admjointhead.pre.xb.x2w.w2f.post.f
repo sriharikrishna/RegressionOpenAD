@@ -51,14 +51,14 @@ C
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
-      REAL(w2f__8) OpenAD_lin_13
+      REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
       REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_9
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
 
 
 C checkpointing stacks and offsets
@@ -170,21 +170,21 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1,11,1
         OpenAD_lin_0 = (X(2)%v+V(I))
         TEMP1%v = (V(I)*OpenAD_lin_0)
-        OpenAD_lin_2 = V(I)
-        OpenAD_lin_4 = (X(3)%v+V(I))
-        TEMP2%v = (X(4)%v+V(I)*OpenAD_lin_4)
-        OpenAD_lin_6 = V(I)
-        OpenAD_lin_9 = (X(1)%v*TEMP1%v)
-        FVEC(INT(I))%v = (Y(I)-(OpenAD_lin_9/TEMP2%v))
-        OpenAD_lin_12 = TEMP1%v
-        OpenAD_lin_13 = X(1)%v
-        OpenAD_lin_10 = (INT(1_w2f__i8)/TEMP2%v)
-        OpenAD_lin_11 = (-(OpenAD_lin_9/(TEMP2%v*TEMP2%v)))
-        OpenAD_acc_0 = (OpenAD_lin_11*INT((-1_w2f__i8)))
-        OpenAD_acc_1 = (OpenAD_lin_12*OpenAD_lin_10*INT((-1_w2f__i8)))
-        OpenAD_acc_2 = (OpenAD_lin_2*OpenAD_lin_13*OpenAD_lin_10*INT((-1
-     +_w2f__i8)))
-        double_tape(double_tape_pointer) = OpenAD_lin_6
+        OpenAD_lin_1 = V(I)
+        OpenAD_lin_2 = (X(3)%v+V(I))
+        TEMP2%v = (X(4)%v+V(I)*OpenAD_lin_2)
+        OpenAD_lin_3 = V(I)
+        OpenAD_lin_4 = (X(1)%v*TEMP1%v)
+        FVEC(INT(I))%v = (Y(I)-(OpenAD_lin_4/TEMP2%v))
+        OpenAD_lin_7 = TEMP1%v
+        OpenAD_lin_8 = X(1)%v
+        OpenAD_lin_5 = (INT(1_w2f__i8)/TEMP2%v)
+        OpenAD_lin_6 = (-(OpenAD_lin_4/(TEMP2%v*TEMP2%v)))
+        OpenAD_acc_0 = (OpenAD_lin_6*INT((-1_w2f__i8)))
+        OpenAD_acc_1 = (OpenAD_lin_7*OpenAD_lin_5*INT((-1_w2f__i8)))
+        OpenAD_acc_2 = (OpenAD_lin_1*OpenAD_lin_8*OpenAD_lin_5*INT((-1_w
+     +2f__i8)))
+        double_tape(double_tape_pointer) = OpenAD_lin_3
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_acc_0
         double_tape_pointer = double_tape_pointer+1

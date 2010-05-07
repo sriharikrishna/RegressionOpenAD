@@ -36,8 +36,8 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) select_expr_temp_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_3
+      INTEGER(w2f__i4) OpenAD_lin_0
+      INTEGER(w2f__i4) OpenAD_lin_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -77,14 +77,14 @@ C$OPENAD XXX Template ad_template.f
       ENDIF
 10    CONTINUE
       __value__(Y(1)) = (I * __value__(X(1)))
-      OpenAD_lin_3 = I
-      CALL sax(OpenAD_lin_3, __deriv__(X(1)), __deriv__(Y(1)))
+      OpenAD_lin_1 = I
+      CALL sax(OpenAD_lin_1, __deriv__(X(1)), __deriv__(Y(1)))
       GO TO 1
       GO TO 12
 11    CONTINUE
       __value__(Y(1)) = (I * __value__(X(1)))
-      OpenAD_lin_1 = I
-      CALL sax(OpenAD_lin_1, __deriv__(X(1)), __deriv__(Y(1)))
+      OpenAD_lin_0 = I
+      CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
       GO TO 1
       GO TO 12
 12    CONTINUE

@@ -58,8 +58,8 @@ C
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
 C
@@ -80,10 +80,10 @@ C$OPENAD XXX Simple loop
         IF (GLOBALSTRING.EQ.'no') THEN
           OpenAD_lin_2 = (X(I)%v*X(I)%v)
           Y(INT(I))%v = (Y(I)%v+OpenAD_lin_2*2.0D00)
+          OpenAD_lin_3 = X(I)%v
           OpenAD_lin_4 = X(I)%v
-          OpenAD_lin_5 = X(I)%v
-          OpenAD_acc_0 = (OpenAD_lin_4*2.0D00)
-          OpenAD_acc_1 = (OpenAD_lin_5*2.0D00)
+          OpenAD_acc_0 = (OpenAD_lin_3*2.0D00)
+          OpenAD_acc_1 = (OpenAD_lin_4*2.0D00)
           CALL setderiv(OpenAD_prp_1,Y(I))
           CALL setderiv(Y(I),OpenAD_prp_1)
           CALL saxpy(OpenAD_acc_0,X(I),Y(I))

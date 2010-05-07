@@ -28,9 +28,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_Symbol_0
+      INTEGER(w2f__i4) OpenAD_lin_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
@@ -60,6 +59,7 @@ C strings 'S'
 C external C function used in inlined code
           integer iaddr
           external iaddr
+C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then
@@ -95,11 +95,9 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (K*A%v)
-      OpenAD_lin_1 = K
-      A%v = OpenAD_dly_0
-      double_tape(double_tape_pointer) = OpenAD_lin_1
+      A%v = (K*A%v)
+      OpenAD_lin_0 = K
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
 
 C taping end
@@ -165,8 +163,8 @@ C
       INTEGER(w2f__i4) K
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
 
 
 C checkpointing stacks and offsets
@@ -233,11 +231,11 @@ C$OPENAD XXX Template ad_template.f
       integer_tape(integer_tape_pointer) = K
       integer_tape_pointer = integer_tape_pointer+1
       Y%v = (X(1)%v*X(2)%v)
-      OpenAD_lin_2 = X(2)%v
-      OpenAD_lin_3 = X(1)%v
-      double_tape(double_tape_pointer) = OpenAD_lin_2
+      OpenAD_lin_1 = X(2)%v
+      OpenAD_lin_2 = X(1)%v
+      double_tape(double_tape_pointer) = OpenAD_lin_1
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_3
+      double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
 
 C taping end

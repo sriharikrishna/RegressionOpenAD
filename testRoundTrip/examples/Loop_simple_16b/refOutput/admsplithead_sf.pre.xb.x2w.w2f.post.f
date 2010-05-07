@@ -81,8 +81,8 @@ C
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
       type(active) :: OpenAD_prp_2
@@ -142,11 +142,11 @@ C$OPENAD XXX Simple loop
       integer_tape(integer_tape_pointer) = I
       integer_tape_pointer = integer_tape_pointer+1
       LAG%v = (NUMER%v/DENOM%v)
-      OpenAD_lin_7 = (INT(1_w2f__i8)/DENOM%v)
-      OpenAD_lin_8 = (-(NUMER%v/(DENOM%v*DENOM%v)))
-      double_tape(double_tape_pointer) = OpenAD_lin_7
+      OpenAD_lin_6 = (INT(1_w2f__i8)/DENOM%v)
+      OpenAD_lin_7 = (-(NUMER%v/(DENOM%v*DENOM%v)))
+      double_tape(double_tape_pointer) = OpenAD_lin_6
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_8
+      double_tape(double_tape_pointer) = OpenAD_lin_7
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then

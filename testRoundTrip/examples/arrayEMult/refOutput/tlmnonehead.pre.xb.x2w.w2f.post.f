@@ -16,7 +16,8 @@ C
       INTEGER(w2f__i4) N
       SAVE N
       type(active) :: Z(1:INT(SIZE(X)))
-      REAL(w2f__8) OpenAD_lin_0(1 : 2)
+      REAL(w2f__8) OpenAD_lin_0(:)
+      ALLOCATABLE OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1(1 : 2)
 C
 C     **** Initializers ****
@@ -33,6 +34,8 @@ C
 C$OPENAD XXX Template ad_template.f
       Z(1:INT(SIZE(X)))%v = X(1:2)%v
       CALL setderiv(Z(1:INT(SIZE(X))),X(1:2))
+C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
+      CALL oad_AllocateMatching(OpenAD_lin_0,Z(1:INT(SIZE(X))))
       Y(1:2)%v = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
       OpenAD_lin_0 = Z(1:INT(SIZE(X)))%v
       OpenAD_lin_1 = X(1:2)%v

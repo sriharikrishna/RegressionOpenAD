@@ -65,7 +65,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
@@ -82,8 +81,7 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-      OpenAD_dly_0 = (P%v*2.0D00)
-      P%v = OpenAD_dly_0
+      P%v = (P%v*2.0D00)
       I = (I+1)
           end if
           if (our_rev_mode%adjoint) then

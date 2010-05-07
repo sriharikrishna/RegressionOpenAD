@@ -60,8 +60,6 @@ C
 C     **** Local Variables and Functions ****
 C
       LOGICAL(w2f__i4) t__1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
@@ -82,8 +80,7 @@ C     $OpenAD$ BEGIN REPLACEMENT 1
       ENDIF
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
-      OpenAD_dly_0 = (__value__(A) * 2.0D00)
-      __value__(C) = OpenAD_dly_0
+      __value__(C) = (__value__(A) * 2.0D00)
       t__1 = .TRUE.
       IF(.NOT. PRESENT(__value__(B))) THEN
         t__1 = .FALSE.
@@ -106,8 +103,7 @@ C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_6)
       ENDIF
       IF(t__1) THEN
-        OpenAD_dly_1 = (__value__(B) * 3.0D00)
-        __value__(D) = OpenAD_dly_1
+        __value__(D) = (__value__(B) * 3.0D00)
         OpenAD_Symbol_7 = 1_w2f__i8
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_7)
@@ -209,8 +205,7 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
       CALL cp_arg_restore_real_scalar_a(__deriv__(A))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
-      OpenAD_dly_0 = (__value__(A) * 2.0D00)
-      __value__(C) = OpenAD_dly_0
+      __value__(C) = (__value__(A) * 2.0D00)
       t__1 = .TRUE.
       IF(.NOT. PRESENT(__value__(B))) THEN
         t__1 = .FALSE.
@@ -233,8 +228,7 @@ C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_15)
       ENDIF
       IF(t__1) THEN
-        OpenAD_dly_1 = (__value__(B) * 3.0D00)
-        __value__(D) = OpenAD_dly_1
+        __value__(D) = (__value__(B) * 3.0D00)
         OpenAD_Symbol_16 = 1_w2f__i8
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_16)

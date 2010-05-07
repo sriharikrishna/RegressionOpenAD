@@ -49,8 +49,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
@@ -68,8 +66,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'two') THEN
-        OpenAD_dly_0 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_dly_0
+        __value__(X) = (__value__(X) * 2.0D00)
         OpenAD_Symbol_2 = 1_w2f__i8
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_2)
@@ -79,8 +76,7 @@ C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_3)
       ENDIF
       IF(A(1 : LEN(A)) .EQ. 'three') THEN
-        OpenAD_dly_1 = (__value__(X) * 3.0D00)
-        __value__(X) = OpenAD_dly_1
+        __value__(X) = (__value__(X) * 3.0D00)
         OpenAD_Symbol_4 = 1_w2f__i8
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_4)
@@ -151,8 +147,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       IF(A(1 : LEN(A)) .EQ. 'two') THEN
-        OpenAD_dly_0 = (__value__(X) * 2.0D00)
-        __value__(X) = OpenAD_dly_0
+        __value__(X) = (__value__(X) * 2.0D00)
         OpenAD_Symbol_8 = 1_w2f__i8
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_8)
@@ -162,8 +157,7 @@ C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_9)
       ENDIF
       IF(A(1 : LEN(A)) .EQ. 'three') THEN
-        OpenAD_dly_1 = (__value__(X) * 3.0D00)
-        __value__(X) = OpenAD_dly_1
+        __value__(X) = (__value__(X) * 3.0D00)
         OpenAD_Symbol_10 = 1_w2f__i8
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(OpenAD_Symbol_10)
