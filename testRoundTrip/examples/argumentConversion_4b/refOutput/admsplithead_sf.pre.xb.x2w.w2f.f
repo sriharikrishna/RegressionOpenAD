@@ -289,8 +289,6 @@ C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(APX, __deriv__(OpenAD_tyc_0))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(I)
         OpenAD_Symbol_8 = (INT(OpenAD_Symbol_8) + INT(1_w2f__i8))
       END DO
 C     $OpenAD$ INLINE push_i(subst)
@@ -301,8 +299,6 @@ C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = 1
       DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(I)
         CALL foo(__deriv__(OpenAD_tyc_2(I, 1 : 2)), __deriv__(
      > OpenAD_tyc_3))
 C       $OpenAD$ INLINE pop_i(subst)

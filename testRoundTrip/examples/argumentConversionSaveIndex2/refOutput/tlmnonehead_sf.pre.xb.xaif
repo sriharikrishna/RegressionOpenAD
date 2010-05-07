@@ -360,7 +360,7 @@
             <xaif:Constant vertex_id="1" type="real" feType="F4" value="9.08583030100000056672e-03"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
-        <xaif:Assignment statement_id="index_expression_assignment_for_taping">
+        <xaif:Assignment statement_id="assignment_to_temporary_for_saving_value_across_statement">
           <xaif:AssignmentLHS active="false" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::handleArrayAccessIndices" scope_id="6"/>
           </xaif:AssignmentLHS>
