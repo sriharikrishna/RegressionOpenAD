@@ -94,14 +94,10 @@ C$OPENAD XXX Template ad_template.f
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_0,T)
       CALL OAD_S_MIN_D(OpenAD_tyc_0,X(1),OAD_CTMP0)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(T,OpenAD_tyc_0)
       T1%v = OAD_CTMP0%v
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_1,T)
       CALL OAD_S_MIN_D(T1,OpenAD_tyc_1,OAD_CTMP1)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(T,OpenAD_tyc_1)
       Y(1)%v = OAD_CTMP1%v
       OAD_CTMP3 = 2.5D00
 C!! requested inline of 'oad_convert' has no defn
@@ -111,10 +107,6 @@ C!! requested inline of 'oad_convert' has no defn
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_4,OAD_CTMP2)
       CALL OAD_S_MIN_D(OpenAD_tyc_2,OpenAD_tyc_3,OpenAD_tyc_4)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(T,OpenAD_tyc_2)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(OAD_CTMP3,OpenAD_tyc_3)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OAD_CTMP2,OpenAD_tyc_4)
       T2 = OAD_CTMP2
@@ -135,14 +127,10 @@ C$OPENAD XXX Template ad_template.f
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_0,T)
       CALL OAD_S_MIN_D(OpenAD_tyc_0,X(1),OAD_CTMP0)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(T,OpenAD_tyc_0)
       T1%v = OAD_CTMP0%v
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_1,T)
       CALL OAD_S_MIN_D(T1,OpenAD_tyc_1,OAD_CTMP1)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(T,OpenAD_tyc_1)
       Y(1)%v = OAD_CTMP1%v
       OAD_CTMP3 = 2.5D00
 C!! requested inline of 'oad_convert' has no defn
@@ -152,10 +140,6 @@ C!! requested inline of 'oad_convert' has no defn
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_4,OAD_CTMP2)
       CALL OAD_S_MIN_D(OpenAD_tyc_2,OpenAD_tyc_3,OpenAD_tyc_4)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(T,OpenAD_tyc_2)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(OAD_CTMP3,OpenAD_tyc_3)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OAD_CTMP2,OpenAD_tyc_4)
       T2 = OAD_CTMP2

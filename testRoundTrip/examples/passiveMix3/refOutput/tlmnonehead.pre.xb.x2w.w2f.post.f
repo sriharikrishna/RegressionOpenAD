@@ -60,8 +60,6 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(OpenAD_tyc_1,T)
       CALL OAD_S_MIN_D(OpenAD_tyc_1,X(1),OAD_CTMP0)
-C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T,OpenAD_tyc_1)
       T1%v = OAD_CTMP0%v
       CALL setderiv(T1,OAD_CTMP0)
       CALL OAD_S_MIN_D(X(1),T1,OAD_CTMP1)

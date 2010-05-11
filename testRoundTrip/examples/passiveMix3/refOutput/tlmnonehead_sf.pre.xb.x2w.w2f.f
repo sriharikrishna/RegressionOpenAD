@@ -113,8 +113,6 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(__deriv__(OpenAD_tyc_1), T)
       CALL OAD_S_MIN_D(__deriv__(OpenAD_tyc_1), __deriv__(X(1)),
      >  __deriv__(OAD_CTMP0))
-C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(T, __deriv__(OpenAD_tyc_1))
       __value__(T1) = __value__(OAD_CTMP0)
       CALL setderiv(__deriv__(T1), __deriv__(OAD_CTMP0))
       CALL OAD_S_MIN_D(__deriv__(X(1)), __deriv__(T1), __deriv__(

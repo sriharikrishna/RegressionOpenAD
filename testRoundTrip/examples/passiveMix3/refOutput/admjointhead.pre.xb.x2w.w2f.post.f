@@ -215,8 +215,6 @@ C$OPENAD XXX Template ad_template.f
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_1,T)
       CALL OAD_S_MIN_D(OpenAD_tyc_1,X(1),OAD_CTMP0)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(T,OpenAD_tyc_1)
       T1%v = OAD_CTMP0%v
       CALL OAD_S_MIN_D(X(1),T1,OAD_CTMP1)
       Y(1)%v = OAD_CTMP1%v
@@ -239,8 +237,6 @@ C$OPENAD XXX Template ad_template.f
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_1,T)
       CALL OAD_S_MIN_D(OpenAD_tyc_1,X(1),OAD_CTMP0)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(T,OpenAD_tyc_1)
       T1%v = OAD_CTMP0%v
       CALL OAD_S_MIN_D(X(1),T1,OAD_CTMP1)
       Y(1)%v = OAD_CTMP1%v
