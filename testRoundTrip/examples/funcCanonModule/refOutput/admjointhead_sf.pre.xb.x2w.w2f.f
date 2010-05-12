@@ -275,8 +275,6 @@ C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
       CALL OAD_S_BAR(__deriv__(X(1)), __deriv__(OAD_CTMP0))
       __value__(Y(1)) = (__value__(OAD_CTMP0) * 2.0D00)
-C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_tyc_0), OAD_CTMP1)
       CALL OAD_S_BAR(__deriv__(Y(1)), __deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(OAD_CTMP1, __deriv__(OpenAD_tyc_0))
@@ -286,8 +284,6 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       CALL OAD_S_BAR(__deriv__(X(1)), __deriv__(OAD_CTMP0))
       __value__(Y(1)) = (__value__(OAD_CTMP0) * 2.0D00)
-C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_tyc_0), OAD_CTMP1)
       CALL OAD_S_BAR(__deriv__(Y(1)), __deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(OAD_CTMP1, __deriv__(OpenAD_tyc_0))
@@ -317,8 +313,6 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       CALL OAD_S_BAR(__deriv__(X(1)), __deriv__(OAD_CTMP0))
       __value__(Y(1)) = (__value__(OAD_CTMP0) * 2.0D00)
-C     $OpenAD$ INLINE oad_convert(subst,subst)
-      CALL oad_convert(__deriv__(OpenAD_tyc_0), OAD_CTMP1)
       CALL OAD_S_BAR(__deriv__(Y(1)), __deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(OAD_CTMP1, __deriv__(OpenAD_tyc_0))

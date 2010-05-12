@@ -1017,18 +1017,6 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_4" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-            <xaif:Argument position="2" annotation="">
-              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP2_5" annotation="" scope_id="5"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
           <xaif:SubroutineCall statement_id="42" symbol_id="OAD_S_MIN_D_20" scope_id="1" active="undefined" formalArgCount="3">
             <xaif:Argument position="1" annotation="">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
@@ -1211,18 +1199,6 @@
             <xaif:Argument position="2" annotation="">
               <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP3_6" annotation="" scope_id="5"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_4" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-            <xaif:Argument position="2" annotation="">
-              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP2_5" annotation="" scope_id="5"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1577,18 +1553,6 @@
             <xaif:Argument position="2" annotation="">
               <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP3_6" annotation="" scope_id="5"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_4" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-            <xaif:Argument position="2" annotation="">
-              <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OAD_CTMP2_5" annotation="" scope_id="5"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>

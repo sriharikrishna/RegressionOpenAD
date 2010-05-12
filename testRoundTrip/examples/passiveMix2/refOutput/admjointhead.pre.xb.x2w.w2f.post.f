@@ -104,8 +104,6 @@ C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_2,T)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_3,OAD_CTMP3)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(OpenAD_tyc_4,OAD_CTMP2)
       CALL OAD_S_MIN_D(OpenAD_tyc_2,OpenAD_tyc_3,OpenAD_tyc_4)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OAD_CTMP2,OpenAD_tyc_4)
@@ -137,8 +135,6 @@ C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_2,T)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OpenAD_tyc_3,OAD_CTMP3)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(OpenAD_tyc_4,OAD_CTMP2)
       CALL OAD_S_MIN_D(OpenAD_tyc_2,OpenAD_tyc_3,OpenAD_tyc_4)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OAD_CTMP2,OpenAD_tyc_4)

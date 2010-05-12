@@ -230,8 +230,6 @@ C original function
 C$OPENAD XXX Template ad_template.f
       CALL OAD_S_BAR(X(1),OAD_CTMP0)
       Y(1)%v = (OAD_CTMP0%v*2.0D00)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(OpenAD_tyc_0,OAD_CTMP1)
       CALL OAD_S_BAR(Y(1),OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OAD_CTMP1,OpenAD_tyc_0)
@@ -251,8 +249,6 @@ C taping
 C$OPENAD XXX Template ad_template.f
       CALL OAD_S_BAR(X(1),OAD_CTMP0)
       Y(1)%v = (OAD_CTMP0%v*2.0D00)
-C!! requested inline of 'oad_convert' has no defn
-      CALL oad_convert(OpenAD_tyc_0,OAD_CTMP1)
       CALL OAD_S_BAR(Y(1),OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(OAD_CTMP1,OpenAD_tyc_0)
