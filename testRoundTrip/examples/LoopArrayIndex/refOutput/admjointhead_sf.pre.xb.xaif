@@ -1212,7 +1212,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="push_i" statement_id="SRcall_inline_push_i">
+          <xaif:InlinableSubroutineCall subroutine_name="push_i" statement_id="SubroutineCallAlg::checkAndPush">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="6" du_ud="5" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="J_6" annotation="" scope_id="6"/>
@@ -1241,7 +1241,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="push_i" statement_id="SRcall_inline_push_i">
+          <xaif:InlinableSubroutineCall subroutine_name="push_i" statement_id="SubroutineCallAlg::checkAndPush">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="6" du_ud="5" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="J_6" annotation="" scope_id="6"/>
@@ -1492,7 +1492,7 @@
           </xaif:Update>
         </xaif:ForLoop>
         <xaif:BasicBlock vertex_id="16" annotation="" scope_id="6">
-          <xaif:InlinableSubroutineCall subroutine_name="pop_i" statement_id="inline_pop_i">
+          <xaif:InlinableSubroutineCall subroutine_name="pop_i" statement_id="SubroutineCallAlg::handleArrayAccessIndices">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="6" du_ud="5" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="J_6" annotation="" scope_id="6"/>
@@ -1521,7 +1521,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="pop_i" statement_id="inline_pop_i">
+          <xaif:InlinableSubroutineCall subroutine_name="pop_i" statement_id="SubroutineCallAlg::handleArrayAccessIndices">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="6" du_ud="5" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="J_6" annotation="" scope_id="6"/>
@@ -1682,7 +1682,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="push_i" statement_id="SRcall_inline_push_i">
+          <xaif:InlinableSubroutineCall subroutine_name="push_i" statement_id="SubroutineCallAlg::checkAndPush">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="6" du_ud="5" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="J_6" annotation="" scope_id="6"/>
@@ -1711,7 +1711,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="push_i" statement_id="SRcall_inline_push_i">
+          <xaif:InlinableSubroutineCall subroutine_name="push_i" statement_id="SubroutineCallAlg::checkAndPush">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="6" du_ud="5" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="J_6" annotation="" scope_id="6"/>
@@ -1962,7 +1962,7 @@
           </xaif:Update>
         </xaif:ForLoop>
         <xaif:BasicBlock vertex_id="16" annotation="" scope_id="6">
-          <xaif:InlinableSubroutineCall subroutine_name="pop_i" statement_id="inline_pop_i">
+          <xaif:InlinableSubroutineCall subroutine_name="pop_i" statement_id="SubroutineCallAlg::handleArrayAccessIndices">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="6" du_ud="5" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="J_6" annotation="" scope_id="6"/>
@@ -1991,7 +1991,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:SubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="pop_i" statement_id="inline_pop_i">
+          <xaif:InlinableSubroutineCall subroutine_name="pop_i" statement_id="SubroutineCallAlg::handleArrayAccessIndices">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" alias="6" du_ud="5" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="J_6" annotation="" scope_id="6"/>
