@@ -34,27 +34,27 @@ C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, 3, 1
         select_expr_temp_0 = I
-        IF ( select_expr_temp_0 .EQ. 1) GO TO 19
-        IF ( select_expr_temp_0 .EQ. 2) GO TO 23
-        GO TO 24
- 24     CONTINUE
+        IF ( select_expr_temp_0 .EQ. 1) GO TO 20
+        IF ( select_expr_temp_0 .EQ. 2) GO TO 24
+        GO TO 25
+ 25     CONTINUE
         Y(INT(I))%v = (X(I)%v*2.0D00)
         CALL sax(2.0D00,X(I),Y(I))
-        GO TO 21
- 19     CONTINUE
+        GO TO 22
+ 20     CONTINUE
         OpenAD_dly_0 = SIN(X(I)%v)
         OpenAD_lin_0 = COS(X(I)%v)
         Y(INT(I))%v = OpenAD_dly_0
         CALL setderiv(OpenAD_prp_0,X(I))
         CALL sax(OpenAD_lin_0,OpenAD_prp_0,Y(I))
-        GO TO 21
- 23     CONTINUE
+        GO TO 22
+ 24     CONTINUE
         OpenAD_dly_1 = COS(X(I)%v)
         OpenAD_lin_1 = (-SIN(X(I)%v))
         Y(INT(I))%v = OpenAD_dly_1
         CALL setderiv(OpenAD_prp_1,X(I))
         CALL sax(OpenAD_lin_1,OpenAD_prp_1,Y(I))
-        GO TO 21
- 21     CONTINUE
+        GO TO 22
+ 22     CONTINUE
       END DO
       END SUBROUTINE
