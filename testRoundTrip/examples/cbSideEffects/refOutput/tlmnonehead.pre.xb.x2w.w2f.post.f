@@ -1,5 +1,22 @@
 
 C$OPENAD XXX File_start [head.f]
+      SUBROUTINE bar()
+      use w2f__types
+      use OAD_active
+      use oad_intrinsics
+      IMPLICIT NONE
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL foo
+      EXTERNAL foo1
+C
+C     **** Statements ****
+C
+      CALL foo()
+      CALL foo1()
+      END SUBROUTINE
+
       SUBROUTINE foo()
       use w2f__types
       use OAD_active
@@ -44,23 +61,6 @@ C
       G%v = (G%v*3.0D00)
       CALL setderiv(OpenAD_prp_1,G)
       CALL sax(3.0D00,OpenAD_prp_1,G)
-      END SUBROUTINE
-
-      SUBROUTINE bar()
-      use w2f__types
-      use OAD_active
-      use oad_intrinsics
-      IMPLICIT NONE
-C
-C     **** Local Variables and Functions ****
-C
-      EXTERNAL foo
-      EXTERNAL foo1
-C
-C     **** Statements ****
-C
-      CALL foo()
-      CALL foo1()
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

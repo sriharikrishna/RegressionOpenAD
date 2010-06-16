@@ -20,6 +20,22 @@ C
       END MODULE
 
 C$OPENAD XXX File_start [head.f]
+      SUBROUTINE bar()
+      use w2f__types
+      use oad_intrinsics
+      IMPLICIT NONE
+C
+C     **** Local Variables and Functions ****
+C
+      EXTERNAL foo
+      EXTERNAL foo1
+C
+C     **** Statements ****
+C
+      CALL foo()
+      CALL foo1()
+      END SUBROUTINE
+
       SUBROUTINE foo()
       use w2f__types
       use oad_intrinsics
@@ -62,22 +78,6 @@ C
       __value__(G) = (__value__(G) * 3.0D00)
       CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(G))
       CALL sax(3.0D00, __deriv__(OpenAD_prp_1), __deriv__(G))
-      END SUBROUTINE
-
-      SUBROUTINE bar()
-      use w2f__types
-      use oad_intrinsics
-      IMPLICIT NONE
-C
-C     **** Local Variables and Functions ****
-C
-      EXTERNAL foo
-      EXTERNAL foo1
-C
-C     **** Statements ****
-C
-      CALL foo()
-      CALL foo1()
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

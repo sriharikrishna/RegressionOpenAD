@@ -7,6 +7,11 @@
       end module
 
 !$openad xxx file_start [head.f]
+      subroutine bar()
+      use OAD_intrinsics
+      call foo()
+      call foo1()
+      end subroutine
       subroutine foo()
       use OAD_intrinsics
       common /cb/ g
@@ -18,13 +23,6 @@
       common /cb/ g
       double precision g
       g = g*3.0
-      end subroutine
-      subroutine bar()
-      use OAD_intrinsics
-      common /cb/ g
-      double precision g
-      call foo()
-      call foo1()
       end subroutine
       subroutine head(x,y)
       use OAD_intrinsics

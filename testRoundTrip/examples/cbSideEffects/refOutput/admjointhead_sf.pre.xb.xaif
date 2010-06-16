@@ -40,23 +40,21 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id=".preg_return_val_19" kind="variable" type="opaque" feType="" shape="scalar" annotation="{Sym_Id#19}" active="0" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="G_26" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#26}" active="1" temp="0">
+          <xaif:Symbol symbol_id="G_29" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#29}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="G_32" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#32}" active="1" temp="0">
+          <xaif:Symbol symbol_id="G_33" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#33}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="G_37" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#37}" active="1" temp="0">
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="G_40" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#40}" active="1" temp="0">
+          <xaif:Symbol symbol_id="G_38" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#38}" active="1" temp="0">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="all_globals_mod__22" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#22}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="bar__35" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#35}" active="1" temp="0">
+          <xaif:Symbol symbol_id="bar__24" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#24}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="foo1__30" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#30}" active="1" temp="0">
+          <xaif:Symbol symbol_id="foo1__26" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#26}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="foo__24" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#24}" active="1" temp="0">
+          <xaif:Symbol symbol_id="foo__25" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#25}" active="1" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="head__38" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#38}" active="1" temp="0">
+          <xaif:Symbol symbol_id="head__36" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#36}" active="1" temp="0">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="oad_intrinsics__20" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#20}" active="1" temp="0">
           </xaif:Symbol>
@@ -72,21 +70,21 @@
       </xaif:Scope>
       <xaif:Scope vertex_id="4" annotation="{SymTab_Id#4}">
         <xaif:SymbolTable>
-          <xaif:Symbol symbol_id="OpenAD_prp_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
+          <xaif:Symbol symbol_id="foo1__2" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#2}" active="1" temp="0">
+          </xaif:Symbol>
+          <xaif:Symbol symbol_id="foo__1" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#1}" active="1" temp="0">
           </xaif:Symbol>
         </xaif:SymbolTable>
       </xaif:Scope>
       <xaif:Scope vertex_id="5" annotation="{SymTab_Id#5}">
         <xaif:SymbolTable>
-          <xaif:Symbol symbol_id="OpenAD_prp_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
+          <xaif:Symbol symbol_id="OpenAD_prp_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
           </xaif:Symbol>
         </xaif:SymbolTable>
       </xaif:Scope>
       <xaif:Scope vertex_id="6" annotation="{SymTab_Id#6}">
         <xaif:SymbolTable>
-          <xaif:Symbol symbol_id="foo1__2" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#2}" active="1" temp="0">
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="foo__1" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#1}" active="1" temp="0">
+          <xaif:Symbol symbol_id="OpenAD_prp_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
           </xaif:Symbol>
         </xaif:SymbolTable>
       </xaif:Scope>
@@ -277,27 +275,17 @@
       <xaif:Replacement placeholder="11">
       </xaif:Replacement>
     </xaif:ReplacementList>
-    <xaif:ReplacementList vertex_id="21" symbol_id="foo__24" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" template_name="reverse_subroutine_template">
+    <xaif:ReplacementList vertex_id="21" symbol_id="bar__24" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" template_name="reverse_subroutine_template">
       <xaif:Replacement placeholder="1">
         <xaif:Entry vertex_id="7" annotation=""/>
         <xaif:BasicBlock vertex_id="8" annotation="" scope_id="4">
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_USE]"/>
-          <xaif:Assignment statement_id="8">
-            <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
-              <xaif:VariableReference vertex_id="2" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-              <xaif:Constant vertex_id="3" type="real" feType="F8" value="2.00000000000000000000e+00"/>
-              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
+          <xaif:SubroutineCall statement_id="8" symbol_id="foo__25" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
+          <xaif:SubroutineCall statement_id="9" symbol_id="foo1__26" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="9" annotation=""/>
         <xaif:ControlFlowEdge edge_id="1" source="7" target="8" has_condition_value="0"/>
@@ -309,20 +297,10 @@
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_USE]"/>
-          <xaif:Assignment statement_id="8">
-            <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
-              <xaif:VariableReference vertex_id="2" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-              <xaif:Constant vertex_id="3" type="real" feType="F8" value="2.00000000000000000000e+00"/>
-              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
+          <xaif:SubroutineCall statement_id="8" symbol_id="foo__25" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
+          <xaif:SubroutineCall statement_id="9" symbol_id="foo1__26" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="9" annotation=""/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="7" target="8" has_condition_value="0"/>
@@ -331,47 +309,10 @@
       <xaif:Replacement placeholder="3">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="8" annotation="" scope_id="4">
-          <xaif:InlinableSubroutineCall subroutine_name="Saxpy" statement_id="inline_saxpy">
-            <xaif:Argument position="1">
-              <xaif:Constant vertex_id="1" type="real" feType="" value="2.00000000000000000000e+00"/>
-            </xaif:Argument>
-            <xaif:Argument position="2">
-              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-            <xaif:Argument position="3">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="4"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="4"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-            <xaif:Argument position="2">
-              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="4"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo1__26" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__25" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="_adj__cfr_v_2" annotation="_cfr_"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="_adj__cfr_v_1" target="8" has_condition_value="0"/>
@@ -384,7 +325,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -407,7 +355,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -430,14 +385,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -452,14 +407,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -473,20 +428,10 @@
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_USE]"/>
-          <xaif:Assignment statement_id="8">
-            <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
-              <xaif:VariableReference vertex_id="2" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-              <xaif:Constant vertex_id="3" type="real" feType="F8" value="2.00000000000000000000e+00"/>
-              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
+          <xaif:SubroutineCall statement_id="8" symbol_id="foo__25" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
+          <xaif:SubroutineCall statement_id="9" symbol_id="foo1__26" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="9" annotation=""/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="7" target="8" has_condition_value="0"/>
@@ -495,69 +440,32 @@
       <xaif:Replacement placeholder="11">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="8" annotation="" scope_id="4">
-          <xaif:InlinableSubroutineCall subroutine_name="Saxpy" statement_id="inline_saxpy">
-            <xaif:Argument position="1">
-              <xaif:Constant vertex_id="1" type="real" feType="" value="2.00000000000000000000e+00"/>
-            </xaif:Argument>
-            <xaif:Argument position="2">
-              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-            <xaif:Argument position="3">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="4"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="4"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-            <xaif:Argument position="2">
-              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="" scope_id="1"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="4"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo1__26" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__25" scope_id="1" active="undefined" formalArgCount="0">
+          </xaif:SubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="_adj__cfr_v_2" annotation="_cfr_"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="_adj__cfr_v_1" target="8" has_condition_value="0"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_2" source="8" target="_adj__cfr_v_2" has_condition_value="0"/>
       </xaif:Replacement>
     </xaif:ReplacementList>
-    <xaif:ReplacementList vertex_id="22" symbol_id="foo1__30" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" template_name="reverse_subroutine_template">
+    <xaif:ReplacementList vertex_id="22" symbol_id="foo__25" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" template_name="reverse_subroutine_template">
       <xaif:Replacement placeholder="1">
         <xaif:Entry vertex_id="10" annotation=""/>
         <xaif:BasicBlock vertex_id="11" annotation="" scope_id="5">
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_USE]"/>
           <xaif:Assignment statement_id="7">
-            <xaif:AssignmentLHS active="true" alias="3" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+            <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
-              <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="2" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
-              <xaif:Constant vertex_id="3" type="real" feType="F8" value="3.00000000000000000000e+00"/>
+              <xaif:Constant vertex_id="3" type="real" feType="F8" value="2.00000000000000000000e+00"/>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
             </xaif:AssignmentRHS>
@@ -573,15 +481,15 @@
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_USE]"/>
           <xaif:Assignment statement_id="7">
-            <xaif:AssignmentLHS active="true" alias="3" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+            <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
-              <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="2" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
-              <xaif:Constant vertex_id="3" type="real" feType="F8" value="3.00000000000000000000e+00"/>
+              <xaif:Constant vertex_id="3" type="real" feType="F8" value="2.00000000000000000000e+00"/>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
             </xaif:AssignmentRHS>
@@ -596,42 +504,42 @@
         <xaif:BasicBlock vertex_id="11" annotation="" scope_id="5">
           <xaif:InlinableSubroutineCall subroutine_name="Saxpy" statement_id="inline_saxpy">
             <xaif:Argument position="1">
-              <xaif:Constant vertex_id="1" type="real" feType="" value="3.00000000000000000000e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="" value="2.00000000000000000000e+00"/>
             </xaif:Argument>
             <xaif:Argument position="2">
-              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
-              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -647,7 +555,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -670,7 +578,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -693,14 +601,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -715,14 +623,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -736,15 +644,15 @@
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_USE]"/>
           <xaif:Assignment statement_id="7">
-            <xaif:AssignmentLHS active="true" alias="3" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+            <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
-              <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="2" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
-              <xaif:Constant vertex_id="3" type="real" feType="F8" value="3.00000000000000000000e+00"/>
+              <xaif:Constant vertex_id="3" type="real" feType="F8" value="2.00000000000000000000e+00"/>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
             </xaif:AssignmentRHS>
@@ -759,42 +667,42 @@
         <xaif:BasicBlock vertex_id="11" annotation="" scope_id="5">
           <xaif:InlinableSubroutineCall subroutine_name="Saxpy" statement_id="inline_saxpy">
             <xaif:Argument position="1">
-              <xaif:Constant vertex_id="1" type="real" feType="" value="3.00000000000000000000e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="" value="2.00000000000000000000e+00"/>
             </xaif:Argument>
             <xaif:Argument position="2">
-              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="3">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
-              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="" scope_id="1"/>
+              <xaif:VariableReference vertex_id="1" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="5"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -804,16 +712,26 @@
         <xaif:ControlFlowEdge edge_id="_cfr_e_2" source="11" target="_adj__cfr_v_2" has_condition_value="0"/>
       </xaif:Replacement>
     </xaif:ReplacementList>
-    <xaif:ReplacementList vertex_id="23" symbol_id="bar__35" scope_id="1" controlflowgraph_scope_id="6" annotation="{PU_Id#5}" template_name="reverse_subroutine_template">
+    <xaif:ReplacementList vertex_id="23" symbol_id="foo1__26" scope_id="1" controlflowgraph_scope_id="6" annotation="{PU_Id#5}" template_name="reverse_subroutine_template">
       <xaif:Replacement placeholder="1">
         <xaif:Entry vertex_id="13" annotation=""/>
         <xaif:BasicBlock vertex_id="14" annotation="" scope_id="6">
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_USE]"/>
-          <xaif:SubroutineCall statement_id="7" symbol_id="foo__24" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="8" symbol_id="foo1__30" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
+          <xaif:Assignment statement_id="7">
+            <xaif:AssignmentLHS active="true" alias="3" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
+              <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+              <xaif:Constant vertex_id="3" type="real" feType="F8" value="3.00000000000000000000e+00"/>
+              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="15" annotation=""/>
         <xaif:ControlFlowEdge edge_id="1" source="13" target="14" has_condition_value="0"/>
@@ -824,10 +742,20 @@
         <xaif:BasicBlock vertex_id="14" annotation="" scope_id="6">
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_USE]"/>
-          <xaif:SubroutineCall statement_id="7" symbol_id="foo__24" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="8" symbol_id="foo1__30" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
+          <xaif:Assignment statement_id="7">
+            <xaif:AssignmentLHS active="true" alias="3" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
+              <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+              <xaif:Constant vertex_id="3" type="real" feType="F8" value="3.00000000000000000000e+00"/>
+              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="15" annotation=""/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="13" target="14" has_condition_value="0"/>
@@ -836,10 +764,47 @@
       <xaif:Replacement placeholder="3">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="14" annotation="" scope_id="6">
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo1__30" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__24" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="Saxpy" statement_id="inline_saxpy">
+            <xaif:Argument position="1">
+              <xaif:Constant vertex_id="1" type="real" feType="" value="3.00000000000000000000e+00"/>
+            </xaif:Argument>
+            <xaif:Argument position="2">
+              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="3">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="2">
+              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="_adj__cfr_v_2" annotation="_cfr_"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="_adj__cfr_v_1" target="14" has_condition_value="0"/>
@@ -852,14 +817,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -882,14 +840,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
-              </xaif:VariableReference>
-            </xaif:Argument>
-          </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
-            <xaif:Argument position="1">
-              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -912,14 +863,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -934,14 +885,14 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -954,10 +905,20 @@
         <xaif:BasicBlock vertex_id="14" annotation="" scope_id="6">
           <xaif:Marker statement_id="5" annotation="{WHIRL_Id#5} [passive: OPR_PRAGMA]"/>
           <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_USE]"/>
-          <xaif:SubroutineCall statement_id="7" symbol_id="foo__24" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="8" symbol_id="foo1__30" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
+          <xaif:Assignment statement_id="7">
+            <xaif:AssignmentLHS active="true" alias="3" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
+              <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+              <xaif:Constant vertex_id="3" type="real" feType="F8" value="3.00000000000000000000e+00"/>
+              <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+              <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="15" annotation=""/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="13" target="14" has_condition_value="0"/>
@@ -966,17 +927,54 @@
       <xaif:Replacement placeholder="11">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="14" annotation="" scope_id="6">
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo1__30" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="foo__24" scope_id="1" active="undefined" formalArgCount="0">
-          </xaif:SubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="Saxpy" statement_id="inline_saxpy">
+            <xaif:Argument position="1">
+              <xaif:Constant vertex_id="1" type="real" feType="" value="3.00000000000000000000e+00"/>
+            </xaif:Argument>
+            <xaif:Argument position="2">
+              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="3">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="2">
+              <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_1" annotation="xaifBoosterBasicBlockPreaccumulation::RemainderGraphVertex::replacePropagationVariable" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
         </xaif:BasicBlock>
         <xaif:Exit vertex_id="_adj__cfr_v_2" annotation="_cfr_"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="_adj__cfr_v_1" target="14" has_condition_value="0"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_2" source="14" target="_adj__cfr_v_2" has_condition_value="0"/>
       </xaif:Replacement>
     </xaif:ReplacementList>
-    <xaif:ReplacementList vertex_id="24" symbol_id="head__38" scope_id="1" controlflowgraph_scope_id="7" annotation="{PU_Id#6}" template_name="reverse_subroutine_template">
+    <xaif:ReplacementList vertex_id="24" symbol_id="head__36" scope_id="1" controlflowgraph_scope_id="7" annotation="{PU_Id#6}" template_name="reverse_subroutine_template">
       <xaif:ArgumentList>
         <xaif:ArgumentSymbolReference position="1" symbol_id="X_1" scope_id="7" annotation="{WHIRL_Id#2}" intent="inout"/>
         <xaif:ArgumentSymbolReference position="2" symbol_id="Y_2" scope_id="7" annotation="{WHIRL_Id#3}" intent="inout"/>
@@ -988,7 +986,7 @@
           <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_USE]"/>
           <xaif:Assignment statement_id="11">
             <xaif:AssignmentLHS active="true" alias="4" du_ud="4" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="true" alias="5" du_ud="2" deriv="0" constant="0">
@@ -1004,7 +1002,7 @@
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="17" symbol_id="bar__35" scope_id="1" active="undefined" formalArgCount="0">
+          <xaif:SubroutineCall statement_id="17" symbol_id="bar__24" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:Assignment statement_id="18">
             <xaif:AssignmentLHS active="true" alias="6" du_ud="2" deriv="0" constant="0">
@@ -1020,7 +1018,7 @@
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
@@ -1036,7 +1034,7 @@
           <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_USE]"/>
           <xaif:Assignment statement_id="11">
             <xaif:AssignmentLHS active="true" alias="4" du_ud="4" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="true" alias="5" du_ud="2" deriv="0" constant="0">
@@ -1052,7 +1050,7 @@
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="17" symbol_id="bar__35" scope_id="1" active="undefined" formalArgCount="0">
+          <xaif:SubroutineCall statement_id="17" symbol_id="bar__24" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:Assignment statement_id="18">
             <xaif:AssignmentLHS active="true" alias="6" du_ud="2" deriv="0" constant="0">
@@ -1068,7 +1066,7 @@
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
@@ -1096,7 +1094,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1115,12 +1113,12 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="bar__35" scope_id="1" active="undefined" formalArgCount="0">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="bar__24" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="4" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -1140,7 +1138,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="4" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1156,21 +1154,21 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1193,21 +1191,21 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1230,28 +1228,28 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a" statement_id="cp_arg_store_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1266,28 +1264,28 @@
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_33" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a" statement_id="cp_arg_restore_real_scalar_a">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_26" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_29" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1302,7 +1300,7 @@
           <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_USE]"/>
           <xaif:Assignment statement_id="11">
             <xaif:AssignmentLHS active="true" alias="4" du_ud="4" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="true" alias="5" du_ud="2" deriv="0" constant="0">
@@ -1318,7 +1316,7 @@
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
-          <xaif:SubroutineCall statement_id="17" symbol_id="bar__35" scope_id="1" active="undefined" formalArgCount="0">
+          <xaif:SubroutineCall statement_id="17" symbol_id="bar__24" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:Assignment statement_id="18">
             <xaif:AssignmentLHS active="true" alias="6" du_ud="2" deriv="0" constant="0">
@@ -1334,7 +1332,7 @@
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
@@ -1362,7 +1360,7 @@
             </xaif:Argument>
             <xaif:Argument position="2">
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1381,12 +1379,12 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="bar__35" scope_id="1" active="undefined" formalArgCount="0">
+          <xaif:SubroutineCall statement_id="reverse_call" symbol_id="bar__24" scope_id="1" active="undefined" formalArgCount="0">
           </xaif:SubroutineCall>
           <xaif:InlinableSubroutineCall subroutine_name="IncDeriv" statement_id="inline_IncDeriv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="4" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
             <xaif:Argument position="2">
@@ -1406,7 +1404,7 @@
           <xaif:InlinableSubroutineCall subroutine_name="ZeroDeriv" statement_id="inline_zeroderiv">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="4" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="G_40" annotation="" scope_id="1"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="G_38" annotation="" scope_id="1"/>
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
@@ -1416,7 +1414,7 @@
         <xaif:ControlFlowEdge edge_id="_cfr_e_2" source="17" target="_adj__cfr_v_2" has_condition_value="0"/>
       </xaif:Replacement>
     </xaif:ReplacementList>
-    <xaif:CallGraphEdge edge_id="1" source="23" target="21"/>
-    <xaif:CallGraphEdge edge_id="2" source="23" target="22"/>
-    <xaif:CallGraphEdge edge_id="3" source="24" target="23"/>
+    <xaif:CallGraphEdge edge_id="1" source="21" target="22"/>
+    <xaif:CallGraphEdge edge_id="2" source="21" target="23"/>
+    <xaif:CallGraphEdge edge_id="3" source="24" target="21"/>
   </xaif:CallGraph>
