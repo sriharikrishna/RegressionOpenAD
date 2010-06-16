@@ -1,3 +1,7 @@
+      subroutine bar()
+      call foo()
+      call foo1()
+      end subroutine
       subroutine foo()
       common /cb/ g
       double precision g
@@ -7,12 +11,6 @@
       common /cb/ g
       double precision g
       g=g*3.0
-      end subroutine
-      subroutine bar()
-      common /cb/ g
-      double precision g
-      call foo()
-      call foo1()
       end subroutine
       subroutine head(x,y) 
       common /cb/ g
