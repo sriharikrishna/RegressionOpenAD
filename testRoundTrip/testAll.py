@@ -464,16 +464,12 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     elif (majorMode == "trace"):
 	overridableLink(exDir + "/ad_template.trace.f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template.trace.f","ad_template.f")
     # transform head_sf
-    if (scalarOrVector=="scalar" and majorMode=="tlm"):
-        if ('OAD_active.f90' in exOpts):
-            fPath=os.path.join(os.environ["OPENADROOT"],'runTimeSupport',exOpts['OAD_active.f90'],'OAD_active.f90')
-            if (not os.path.exists(fPath)) :
-                raise ConfigError, "example options file specifies to use "+fPath+" which does not exist"
-            os.environ["SCALAR_OR_VECTOR"] = exOpts['OAD_active.f90']
-        else: 
-            os.environ["SCALAR_OR_VECTOR"] = "scalar"
-    else : 
-       os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
+    os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
+    if ('OAD_active.f90' in exOpts):
+        fPath=os.path.join(os.environ["OPENADROOT"],'runTimeSupport',exOpts['OAD_active.f90'],'OAD_active.f90')
+        if (not os.path.exists(fPath)) :
+            raise ConfigError, "example options file specifies to use "+fPath+" which does not exist"
+        os.environ["SCALAR_OR_VECTOR"] = exOpts['OAD_active.f90']
     os.environ["MAJOR_MODE"] = majorMode
     os.environ["MINOR_MODE"] = ctrMode
     xaifBoosterSpecialOpts=''
