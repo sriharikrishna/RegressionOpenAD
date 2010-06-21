@@ -17,26 +17,26 @@ C     **** Statements ****
 C
       CONTAINS
 
-        SUBROUTINE OAD_S_MAX_D(A, B, R)
+        SUBROUTINE OAD_S_MAX_D(A0, A1, R)
         use w2f__types
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
 C
-        TYPE (OpenADTy_active) A
-        INTENT(IN)  A
-        REAL(w2f__8) B
-        INTENT(IN)  B
+        TYPE (OpenADTy_active) A0
+        INTENT(IN)  A0
+        REAL(w2f__8) A1
+        INTENT(IN)  A1
         TYPE (OpenADTy_active) R
         INTENT(OUT)  R
 C
 C       **** Statements ****
 C
-        IF(__value__(A) .GT. B) THEN
-          __value__(R) = __value__(A)
-          CALL setderiv(__deriv__(R), __deriv__(A))
+        IF(__value__(A0) .GT. A1) THEN
+          __value__(R) = __value__(A0)
+          CALL setderiv(__deriv__(R), __deriv__(A0))
         ELSE
-          __value__(R) = B
+          __value__(R) = A1
           CALL zero_deriv(__deriv__(R))
         ENDIF
         END SUBROUTINE

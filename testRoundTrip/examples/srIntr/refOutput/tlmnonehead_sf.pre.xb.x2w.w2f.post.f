@@ -18,28 +18,28 @@ end interface
 !
 CONTAINS
 
-  SUBROUTINE OAD_S_MIN_D(A, B, R)
+  SUBROUTINE OAD_S_MIN_D(A0, A1, R)
   use w2f__types
   use OAD_active
   IMPLICIT NONE
 !
 !       **** Parameters and Result ****
 !
-  type(active) :: A
-  INTENT(IN) A
-  type(active) :: B
-  INTENT(IN) B
+  type(active) :: A0
+  INTENT(IN) A0
+  type(active) :: A1
+  INTENT(IN) A1
   type(active) :: R
   INTENT(OUT) R
 !
 !       **** Statements ****
 !
-  IF (A%v.LT.B%v) THEN
-    R%v = A%v
-    CALL setderiv(R,A)
+  IF (A0%v.LT.A1%v) THEN
+    R%v = A0%v
+    CALL setderiv(R,A0)
   ELSE
-    R%v = B%v
-    CALL setderiv(R,B)
+    R%v = A1%v
+    CALL setderiv(R,A1)
   ENDIF
   END SUBROUTINE
 END
