@@ -22,7 +22,7 @@ CONTAINS
 ! level directory of the OpenAD distribution             #
 !#########################################################
 
-  SUBROUTINE OAD_S_MAX_D(A, B, R)
+  SUBROUTINE OAD_S_MAX_D(A0, A1, R)
     use OAD_tape
     use OAD_rev
     use OAD_cp
@@ -46,8 +46,8 @@ CONTAINS
 !
 !       **** Parameters and Result ****
 !
-  type(active) :: A
-  REAL(w2f__8) B
+  type(active) :: A0
+  REAL(w2f__8) A1
   type(active) :: R
 
 
@@ -79,28 +79,28 @@ CONTAINS
 
     if (our_rev_mode%arg_store) then
 ! store arguments
-  call cp_store_real_scalar(A%v,theArgFStack,theArgFStackoffset,theArgFStackSize&
-     &)
+  call cp_store_real_scalar(A0%v,theArgFStack,theArgFStackoffset,theArgFStackSiz&
+     &e)
 
-  call cp_store_real_scalar(B,theArgFStack,theArgFStackoffset,theArgFStackSize)
+  call cp_store_real_scalar(A1,theArgFStack,theArgFStackoffset,theArgFStackSize)
     end if
     if (our_rev_mode%arg_restore) then
 ! restore arguments
-  B = theArgFStack(theArgFStackoffset)
-!        write(*,'(A,EN26.16E3)') "restore(s)  ", B
+  A1 = theArgFStack(theArgFStackoffset)
+!        write(*,'(A,EN26.16E3)') "restore(s)  ", A1
   theArgFStackoffset = theArgFStackoffset-1
-  A%v = theArgFStack(theArgFStackoffset)
-!        write(*,'(A,EN26.16E3)') "restore(s)  ", A%v
+  A0%v = theArgFStack(theArgFStackoffset)
+!        write(*,'(A,EN26.16E3)') "restore(s)  ", A0%v
   theArgFStackoffset = theArgFStackoffset-1
     end if
     if (our_rev_mode%plain) then
       our_orig_mode=our_rev_mode
       our_rev_mode%arg_store=.FALSE.
 ! original function
-  IF (A%v.GT.B) THEN
-    R%v = A%v
+  IF (A0%v.GT.A1) THEN
+    R%v = A0%v
   ELSE
-    R%v = B
+    R%v = A1
   ENDIF
 
 ! original function end
@@ -114,13 +114,13 @@ CONTAINS
       our_rev_mode%tape=.FALSE.
       our_rev_mode%adjoint=.FALSE.
 ! taping
-  IF (A%v.GT.B) THEN
-    R%v = A%v
+  IF (A0%v.GT.A1) THEN
+    R%v = A0%v
     OpenAD_Symbol_1 = 1_w2f__i8
     integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
     integer_tape_pointer = integer_tape_pointer+1
   ELSE
-    R%v = B
+    R%v = A1
     OpenAD_Symbol_2 = 0_w2f__i8
     integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
     integer_tape_pointer = integer_tape_pointer+1
@@ -144,7 +144,7 @@ CONTAINS
   integer_tape_pointer = integer_tape_pointer-1
   OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
   IF (OpenAD_Symbol_0.ne.0) THEN
-    A%d = A%d+R%d
+    A0%d = A0%d+R%d
     R%d = 0.0d0
   ELSE
     R%d = 0.0d0
