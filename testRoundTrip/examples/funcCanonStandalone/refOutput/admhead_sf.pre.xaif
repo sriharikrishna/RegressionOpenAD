@@ -34,9 +34,9 @@
 
     <xaif:Scope vertex_id="2" annotation="{SymTab_Id#2}">
       <xaif:SymbolTable>
-        <xaif:Symbol symbol_id="A_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#1}" active="0">
+        <xaif:Symbol symbol_id="A0_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#1}" active="0">
         </xaif:Symbol>
-        <xaif:Symbol symbol_id="B_2" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#2}" active="0">
+        <xaif:Symbol symbol_id="A1_2" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#2}" active="0">
         </xaif:Symbol>
         <xaif:Symbol symbol_id="R_3" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#3}" active="0">
         </xaif:Symbol>
@@ -49,9 +49,9 @@
 
     <xaif:Scope vertex_id="3" annotation="{SymTab_Id#3}">
       <xaif:SymbolTable>
-        <xaif:Symbol symbol_id="A_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#1}" active="1">
+        <xaif:Symbol symbol_id="A0_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#1}" active="1">
         </xaif:Symbol>
-        <xaif:Symbol symbol_id="B_2" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#2}" active="0">
+        <xaif:Symbol symbol_id="A1_2" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#2}" active="0">
         </xaif:Symbol>
         <xaif:Symbol symbol_id="R_3" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#3}" active="1">
         </xaif:Symbol>
@@ -205,8 +205,8 @@
   <!-- ******************************************************************** -->
   <xaif:ControlFlowGraph vertex_id="23" scope_id="1" symbol_id="OAD_S_MAX_D_20" annotation="{PU_Id#2}" controlflowgraph_scope_id="3">
     <xaif:ArgumentList>
-      <xaif:ArgumentSymbolReference position="1" scope_id="3" symbol_id="A_1" intent="in" annotation="{WHIRL_Id#2}"/>
-      <xaif:ArgumentSymbolReference position="2" scope_id="3" symbol_id="B_2" intent="in" annotation="{WHIRL_Id#3}"/>
+      <xaif:ArgumentSymbolReference position="1" scope_id="3" symbol_id="A0_1" intent="in" annotation="{WHIRL_Id#2}"/>
+      <xaif:ArgumentSymbolReference position="2" scope_id="3" symbol_id="A1_2" intent="in" annotation="{WHIRL_Id#3}"/>
       <xaif:ArgumentSymbolReference position="3" scope_id="3" symbol_id="R_3" intent="out" annotation="{WHIRL_Id#4}"/>
     </xaif:ArgumentList>
     <xaif:ModLocal>
@@ -221,18 +221,18 @@
     </xaif:Mod>
     <xaif:ReadLocal>
       <xaif:SideEffectReference vertex_id="1">
-        <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_1"/>
+        <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A0_1"/>
       </xaif:SideEffectReference>
       <xaif:SideEffectReference vertex_id="1">
-        <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="B_2"/>
+        <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A1_2"/>
       </xaif:SideEffectReference>
     </xaif:ReadLocal>
     <xaif:Read>
       <xaif:SideEffectReference vertex_id="1">
-        <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_1"/>
+        <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A0_1"/>
       </xaif:SideEffectReference>
       <xaif:SideEffectReference vertex_id="1">
-        <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="B_2"/>
+        <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A1_2"/>
       </xaif:SideEffectReference>
     </xaif:Read>
 
@@ -246,10 +246,10 @@
       <xaif:Condition>
         <xaif:BooleanOperation vertex_id="1" name="greater_than"/>
         <xaif:VariableReference vertex_id="2" du_ud="2" alias="2">
-          <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_1"/>
+          <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A0_1"/>
         </xaif:VariableReference>
         <xaif:VariableReference vertex_id="3" du_ud="2" alias="3">
-          <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="B_2"/>
+          <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A1_2"/>
         </xaif:VariableReference>
         <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
         <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
@@ -263,7 +263,7 @@
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="2">
-            <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A_1"/>
+            <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A0_1"/>
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
@@ -282,7 +282,7 @@
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
           <xaif:VariableReference vertex_id="1" du_ud="2" alias="3">
-            <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="B_2"/>
+            <xaif:SymbolReference vertex_id="1" scope_id="3" symbol_id="A1_2"/>
           </xaif:VariableReference>
         </xaif:AssignmentRHS>
       </xaif:Assignment>

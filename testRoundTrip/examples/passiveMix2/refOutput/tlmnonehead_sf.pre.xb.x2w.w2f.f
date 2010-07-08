@@ -17,27 +17,27 @@ C     **** Statements ****
 C
       CONTAINS
 
-        SUBROUTINE OAD_S_MIN_D(A, B, R)
+        SUBROUTINE OAD_S_MIN_D(A0, A1, R)
         use w2f__types
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
 C
-        TYPE (OpenADTy_active) A
-        INTENT(IN)  A
-        TYPE (OpenADTy_active) B
-        INTENT(IN)  B
+        TYPE (OpenADTy_active) A0
+        INTENT(IN)  A0
+        TYPE (OpenADTy_active) A1
+        INTENT(IN)  A1
         TYPE (OpenADTy_active) R
         INTENT(OUT)  R
 C
 C       **** Statements ****
 C
-        IF(__value__(A) .LT. __value__(B)) THEN
-          __value__(R) = __value__(A)
-          CALL setderiv(__deriv__(R), __deriv__(A))
+        IF(__value__(A0) .LT. __value__(A1)) THEN
+          __value__(R) = __value__(A0)
+          CALL setderiv(__deriv__(R), __deriv__(A0))
         ELSE
-          __value__(R) = __value__(B)
-          CALL setderiv(__deriv__(R), __deriv__(B))
+          __value__(R) = __value__(A1)
+          CALL setderiv(__deriv__(R), __deriv__(A1))
         ENDIF
         END SUBROUTINE
       END

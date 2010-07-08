@@ -18,27 +18,27 @@ end interface
 !
 CONTAINS
 
-  SUBROUTINE OAD_S_MAX_D(A, B, R)
+  SUBROUTINE OAD_S_MAX_D(A0, A1, R)
   use w2f__types
   use OAD_active
   IMPLICIT NONE
 !
 !       **** Parameters and Result ****
 !
-  type(active) :: A
-  INTENT(IN) A
-  REAL(w2f__8) B
-  INTENT(IN) B
+  type(active) :: A0
+  INTENT(IN) A0
+  REAL(w2f__8) A1
+  INTENT(IN) A1
   type(active) :: R
   INTENT(OUT) R
 !
 !       **** Statements ****
 !
-  IF (A%v.GT.B) THEN
-    R%v = A%v
-    CALL setderiv(R,A)
+  IF (A0%v.GT.A1) THEN
+    R%v = A0%v
+    CALL setderiv(R,A0)
   ELSE
-    R%v = B
+    R%v = A1
     CALL zero_deriv(R)
   ENDIF
   END SUBROUTINE

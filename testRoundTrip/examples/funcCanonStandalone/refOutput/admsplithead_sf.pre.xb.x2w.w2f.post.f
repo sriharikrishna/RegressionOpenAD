@@ -22,7 +22,7 @@ CONTAINS
 ! level directory of the OpenAD distribution             #
 !#########################################################
 
-  SUBROUTINE OAD_S_MAX_D(A, B, R)
+  SUBROUTINE OAD_S_MAX_D(A0, A1, R)
     use OAD_tape
     use OAD_rev
 
@@ -45,9 +45,9 @@ CONTAINS
 !
 !       **** Parameters and Result ****
 !
-  type(active) :: A
-  REAL(w2f__8) B
-  INTENT(IN) B
+  type(active) :: A0
+  REAL(w2f__8) A1
+  INTENT(IN) A1
   type(active) :: R
 
 
@@ -59,21 +59,21 @@ CONTAINS
 
    if (our_rev_mode%plain) then
 ! original function
-  IF (A%v.GT.B) THEN
-    R%v = A%v
+  IF (A0%v.GT.A1) THEN
+    R%v = A0%v
   ELSE
-    R%v = B
+    R%v = A1
   ENDIF
     end if
     if (our_rev_mode%tape) then
 ! taping
-  IF (A%v.GT.B) THEN
-    R%v = A%v
+  IF (A0%v.GT.A1) THEN
+    R%v = A0%v
     OpenAD_Symbol_1 = 1_w2f__i8
     integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
     integer_tape_pointer = integer_tape_pointer+1
   ELSE
-    R%v = B
+    R%v = A1
     OpenAD_Symbol_2 = 0_w2f__i8
     integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
     integer_tape_pointer = integer_tape_pointer+1
@@ -84,7 +84,7 @@ CONTAINS
   integer_tape_pointer = integer_tape_pointer-1
   OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
   IF (OpenAD_Symbol_0.ne.0) THEN
-    A%d = A%d+R%d
+    A0%d = A0%d+R%d
     R%d = 0.0d0
   ELSE
     R%d = 0.0d0
