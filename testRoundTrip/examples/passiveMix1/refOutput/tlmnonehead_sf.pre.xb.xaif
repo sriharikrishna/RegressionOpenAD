@@ -487,7 +487,10 @@
         </xaif:DerivativePropagator>
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="9" annotation=""/>
-      <xaif:ControlFlowEdge edge_id="1" source="7" target="8" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="2" source="8" target="9" has_condition_value="0"/>
+      <xaif:BasicBlock vertex_id="_bbp_v_1" annotation="_bbp_" scope_id="1">
+      </xaif:BasicBlock>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="7" target="8" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="8" target="9" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_3" source="_bbp_v_1" target="7" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
   </xaif:CallGraph>
