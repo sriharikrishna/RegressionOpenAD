@@ -721,8 +721,6 @@
       <xaif:BasicBlock vertex_id="15" annotation="" scope_id="4">
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="16" annotation=""/>
-      <xaif:BasicBlock vertex_id="_bbp_v_1" annotation="_bbp_" scope_id="1">
-      </xaif:BasicBlock>
       <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="7" target="8" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="8" target="9" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_3" source="9" target="10" has_condition_value="1" condition_value="1"/>
@@ -734,7 +732,6 @@
       <xaif:ControlFlowEdge edge_id="_bbp_e_9" source="13" target="90" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_10" source="15" target="16" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_11" source="90" target="9" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="_bbp_e_12" source="_bbp_v_1" target="7" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
     <xaif:ControlFlowGraph vertex_id="39" symbol_id="head__29" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1">
       <xaif:ArgumentList>
@@ -939,8 +936,6 @@
       <xaif:BasicBlock vertex_id="34" annotation="" scope_id="5">
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="35" annotation=""/>
-      <xaif:BasicBlock vertex_id="_bbp_v_1" annotation="_bbp_" scope_id="1">
-      </xaif:BasicBlock>
       <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="17" target="18" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="18" target="19" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_3" source="19" target="20" has_condition_value="1" condition_value="1"/>
@@ -961,7 +956,6 @@
       <xaif:ControlFlowEdge edge_id="_bbp_e_18" source="34" target="35" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_19" source="91" target="21" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_20" source="92" target="29" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="_bbp_e_21" source="_bbp_v_1" target="17" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
     <xaif:CallGraphEdge edge_id="1" source="39" target="38"/>
   </xaif:CallGraph>

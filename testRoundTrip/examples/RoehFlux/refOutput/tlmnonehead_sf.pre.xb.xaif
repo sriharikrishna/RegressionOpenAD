@@ -14251,8 +14251,6 @@
           </xaif:ZeroDeriv>
         </xaif:DerivativePropagator>
       </xaif:BasicBlock>
-      <xaif:BasicBlock vertex_id="_bbp_v_1" annotation="_bbp_" scope_id="1">
-      </xaif:BasicBlock>
       <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="7" target="8" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="8" target="115" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_3" source="9" target="11" has_condition_value="0"/>
@@ -14279,6 +14277,5 @@
       <xaif:ControlFlowEdge edge_id="_bbp_e_24" source="120" target="117" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_25" source="121" target="118" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_26" source="122" target="21" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="_bbp_e_27" source="_bbp_v_1" target="7" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
   </xaif:CallGraph>

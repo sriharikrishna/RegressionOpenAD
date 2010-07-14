@@ -424,8 +424,6 @@
           </xaif:SetDeriv>
         </xaif:DerivativePropagator>
       </xaif:BasicBlock>
-      <xaif:BasicBlock vertex_id="_bbp_v_1" annotation="_bbp_" scope_id="1">
-      </xaif:BasicBlock>
       <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="7" target="8" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="8" target="53" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_3" source="9" target="10" has_condition_value="1" condition_value="1"/>
@@ -438,7 +436,6 @@
       <xaif:ControlFlowEdge edge_id="_bbp_e_10" source="53" target="9" has_condition_value="1" condition_value="1"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_11" source="53" target="13" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_12" source="54" target="15" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="_bbp_e_13" source="_bbp_v_1" target="7" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
     <xaif:ControlFlowGraph vertex_id="22" symbol_id="head__30" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1">
       <xaif:ArgumentList>
@@ -576,11 +573,8 @@
         </xaif:SubroutineCall>
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="18" annotation=""/>
-      <xaif:BasicBlock vertex_id="_bbp_v_1" annotation="_bbp_" scope_id="1">
-      </xaif:BasicBlock>
       <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="16" target="17" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="17" target="18" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="_bbp_e_3" source="_bbp_v_1" target="16" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
     <xaif:CallGraphEdge edge_id="1" source="22" target="21"/>
   </xaif:CallGraph>

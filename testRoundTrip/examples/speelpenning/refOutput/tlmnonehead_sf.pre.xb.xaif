@@ -450,8 +450,6 @@
       <xaif:BasicBlock vertex_id="15" annotation="" scope_id="4">
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="16" annotation=""/>
-      <xaif:BasicBlock vertex_id="_bbp_v_1" annotation="_bbp_" scope_id="1">
-      </xaif:BasicBlock>
       <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="7" target="8" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="8" target="9" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_3" source="9" target="10" has_condition_value="1" condition_value="1"/>
@@ -463,6 +461,5 @@
       <xaif:ControlFlowEdge edge_id="_bbp_e_9" source="13" target="39" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_10" source="15" target="16" has_condition_value="0"/>
       <xaif:ControlFlowEdge edge_id="_bbp_e_11" source="39" target="9" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="_bbp_e_12" source="_bbp_v_1" target="7" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
   </xaif:CallGraph>
