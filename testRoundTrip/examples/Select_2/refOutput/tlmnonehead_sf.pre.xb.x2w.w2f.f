@@ -53,29 +53,29 @@ C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, 3, 1
         select_expr_temp_0 = I
-        IF ( select_expr_temp_0  .EQ.  1)  GO TO  20
-        IF ( select_expr_temp_0  .EQ.  2)  GO TO  24
-        GO TO 25
-25      CONTINUE
+        IF ( select_expr_temp_0  .EQ.  1)  GO TO  19
+        IF ( select_expr_temp_0  .EQ.  2)  GO TO  23
+        GO TO 24
+24      CONTINUE
         __value__(Y(INT(I))) = (__value__(X(I)) * 2.0D00)
         CALL sax(2.0D00, __deriv__(X(I)), __deriv__(Y(I)))
-        GO TO 22
-20      CONTINUE
+        GO TO 21
+19      CONTINUE
         OpenAD_dly_0 = SIN(__value__(X(I)))
         OpenAD_lin_0 = COS(__value__(X(I)))
         __value__(Y(INT(I))) = OpenAD_dly_0
         CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X(I)))
         CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prp_0), __deriv__(Y(I))
      > )
-        GO TO 22
-24      CONTINUE
+        GO TO 21
+23      CONTINUE
         OpenAD_dly_1 = COS(__value__(X(I)))
         OpenAD_lin_1 = (- SIN(__value__(X(I))))
         __value__(Y(INT(I))) = OpenAD_dly_1
         CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(X(I)))
         CALL sax(OpenAD_lin_1, __deriv__(OpenAD_prp_1), __deriv__(Y(I))
      > )
-        GO TO 22
-22      CONTINUE
+        GO TO 21
+21      CONTINUE
       END DO
       END SUBROUTINE
