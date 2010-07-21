@@ -131,6 +131,8 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(__deriv__(Y), OpenAD_tyc_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
+C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
+      CALL oad_AllocateMatching(OpenAD_tyc_1, __deriv__(Y))
       CALL FOOI(OpenAD_tyc_1)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y(1 : )), __deriv__(X(1 : )))
@@ -163,6 +165,8 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(__deriv__(Y), OpenAD_tyc_0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
+C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
+      CALL oad_AllocateMatching(OpenAD_tyc_1, __deriv__(Y))
       CALL FOOI(OpenAD_tyc_1)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y(1 : )), __deriv__(X(1 : )))

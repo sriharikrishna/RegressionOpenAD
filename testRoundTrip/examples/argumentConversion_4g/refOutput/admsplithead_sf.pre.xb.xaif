@@ -614,6 +614,18 @@
       <xaif:Replacement placeholder="3">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="14" annotation="" scope_id="6">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_AllocateMatching" statement_id="TypeChange::SubroutineCallAlg::addAllocation">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="2" annotation="">
+              <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
           <xaif:SubroutineCall statement_id="reverse_call" symbol_id="FOOI_24" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1" annotation="">
               <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
@@ -828,6 +840,18 @@
       <xaif:Replacement placeholder="11">
         <xaif:Entry vertex_id="_adj__cfr_v_1" annotation="_cfr_"/>
         <xaif:BasicBlock vertex_id="14" annotation="" scope_id="6">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_AllocateMatching" statement_id="TypeChange::SubroutineCallAlg::addAllocation">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+            <xaif:Argument position="2" annotation="">
+              <xaif:VariableReference vertex_id="1" active="true" alias="4" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="6"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
           <xaif:SubroutineCall statement_id="reverse_call" symbol_id="FOOI_24" scope_id="1" active="undefined" formalArgCount="1">
             <xaif:Argument position="1" annotation="">
               <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">

@@ -242,6 +242,8 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_tyc_1,Y)
       CALL FOOI(OpenAD_tyc_1)
       X(1:)%d = X(1:)%d+Y(1:)%d
       Y(1:)%d = 0.0d0
