@@ -99,11 +99,11 @@ MODULES+=		\
 OAD_cp.o		\
 OAD_rev.o		\
 OAD_tape.o		\
-iaddr.o                         
+iaddr.o
 endif
 
 ifeq ($(MAJOR_MODE),trace)
-MODULES+=OAD_rev.o OAD_trace.o                   
+MODULES+=OAD_rev.o OAD_trace.o
 endif
 
 ifeq ($(MAJOR_MODE),dd)
