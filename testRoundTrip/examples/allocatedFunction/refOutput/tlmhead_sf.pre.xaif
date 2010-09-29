@@ -80,9 +80,6 @@
     <xaif:AliasSet key="5">
       <xaif:AliasRange from_virtual_address="3" to_virtual_address="4" partial="1"/>
     </xaif:AliasSet>
-    <xaif:AliasSet key="6">
-      <xaif:AliasRange from_virtual_address="8" to_virtual_address="9" partial="1"/>
-    </xaif:AliasSet>
   </xaif:AliasSetMap>
 
   <xaif:DUUDSetMap>
@@ -98,8 +95,14 @@
       <xaif:StatementId idRef="33"/>
     </xaif:StmtIdSet>
     <xaif:StmtIdSet key="4">
+      <xaif:StatementId idRef="13"/>
+      <xaif:StatementId idRef="21"/>
+      <xaif:StatementId idRef="33"/>
+    </xaif:StmtIdSet>
+    <xaif:StmtIdSet key="5">
       <xaif:StatementId idRef="45"/>
       <xaif:StatementId idRef="51"/>
+      <xaif:StatementId idRef="74"/>
     </xaif:StmtIdSet>
   </xaif:DUUDSetMap>
 
@@ -158,7 +161,7 @@
       <xaif:Marker statement_id="12" annotation="{WHIRL_Id#12} [passive: OPR_USE]"/>
       <xaif:Marker statement_id="13" annotation="{WHIRL_Id#13} [passive: OPR_CALL]"/>
       <xaif:Assignment statement_id="21" lineNumber="19" do_chain="3">
-        <xaif:AssignmentLHS du_ud="4" alias="3">
+        <xaif:AssignmentLHS du_ud="5" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="A_3"/>
           <xaif:ArrayElementReference vertex_id="2">
             <xaif:IndexTriplet>
@@ -188,7 +191,7 @@
         </xaif:AssignmentRHS>
       </xaif:Assignment>
       <xaif:Assignment statement_id="33" lineNumber="20" do_chain="1">
-        <xaif:AssignmentLHS du_ud="4" alias="3">
+        <xaif:AssignmentLHS du_ud="5" alias="3">
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="A_3"/>
           <xaif:ArrayElementReference vertex_id="2">
             <xaif:IndexTriplet>

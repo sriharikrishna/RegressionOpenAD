@@ -103,9 +103,6 @@
       <xaif:AliasSet key="5">
         <xaif:AliasRange from_virtual_address="3" to_virtual_address="4" partial="1"/>
       </xaif:AliasSet>
-      <xaif:AliasSet key="6">
-        <xaif:AliasRange from_virtual_address="8" to_virtual_address="9" partial="1"/>
-      </xaif:AliasSet>
     </xaif:AliasSetMap>
     <xaif:DUUDSetMap>
       <xaif:StmtIdSet key="0">
@@ -122,8 +119,14 @@
         <xaif:StatementId idRef="33"/>
       </xaif:StmtIdSet>
       <xaif:StmtIdSet key="4">
+        <xaif:StatementId idRef="13"/>
+        <xaif:StatementId idRef="21"/>
+        <xaif:StatementId idRef="33"/>
+      </xaif:StmtIdSet>
+      <xaif:StmtIdSet key="5">
         <xaif:StatementId idRef="45"/>
         <xaif:StatementId idRef="51"/>
+        <xaif:StatementId idRef="74"/>
       </xaif:StmtIdSet>
     </xaif:DUUDSetMap>
     <xaif:DOSetMap>
@@ -175,7 +178,7 @@
         <xaif:Marker statement_id="12" annotation="{WHIRL_Id#12} [passive: OPR_USE]"/>
         <xaif:Marker statement_id="13" annotation="{WHIRL_Id#13} [passive: OPR_CALL]"/>
         <xaif:Assignment statement_id="21">
-          <xaif:AssignmentLHS active="true" alias="3" du_ud="4" deriv="0" constant="0">
+          <xaif:AssignmentLHS active="true" alias="3" du_ud="5" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="A_3" annotation="" scope_id="4"/>
             <xaif:ArrayElementReference vertex_id="2">
               <xaif:IndexTriplet>
@@ -236,7 +239,7 @@
           </xaif:Sax>
         </xaif:DerivativePropagator>
         <xaif:Assignment statement_id="33">
-          <xaif:AssignmentLHS active="true" alias="3" du_ud="4" deriv="0" constant="0">
+          <xaif:AssignmentLHS active="true" alias="3" du_ud="5" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="A_3" annotation="" scope_id="4"/>
             <xaif:ArrayElementReference vertex_id="2">
               <xaif:IndexTriplet>
