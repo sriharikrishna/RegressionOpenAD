@@ -14,7 +14,7 @@
          end interface
       contains
           subroutine foo_i(x)
-      use OAD_intrinsics
+          use OAD_intrinsics
            double precision :: x
            x = x*2
          end subroutine
