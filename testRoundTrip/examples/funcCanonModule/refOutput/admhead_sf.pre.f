@@ -35,10 +35,10 @@
           bar = max(x,4.0D0)
         end function
         subroutine oad_s_bar(x,bar)
-          double precision,intent(out) :: bar
           double precision,intent(in) :: x
           double precision :: oad_ctmp0
           double precision :: oad_ctmp1
+          double precision,intent(out) :: bar
           oad_ctmp1 = 4.0D0
           call oad_s_max(x,oad_ctmp1,oad_ctmp0)
           bar = oad_ctmp0
