@@ -88,8 +88,8 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       Y(1)%v = 2.0
       select_expr_temp_0 = I
-      IF (select_expr_temp_0.EQ.1) GO TO 4
-      IF (select_expr_temp_0.EQ.2) GO TO 8
+      IF (select_expr_temp_0.EQ.1) go to 4
+      IF (select_expr_temp_0.EQ.2) go to 8
       GO TO 9
  9    CONTINUE
       Y(1)%v = X(1)%v
@@ -109,8 +109,8 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       Y(1)%v = 2.0
       select_expr_temp_0 = I
-      IF (select_expr_temp_0.EQ.1) GO TO 40
-      IF (select_expr_temp_0.EQ.2) GO TO 44
+      IF (select_expr_temp_0.EQ.1) go to 40
+      IF (select_expr_temp_0.EQ.2) go to 44
       GO TO 45
  45   CONTINUE
       Y(1)%v = X(1)%v
@@ -155,9 +155,9 @@ C adjoint
       OpenAD_prp_0%d = 0.0d0
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
-      IF (OpenAD_Symbol_0.EQ.1) GO TO 94
-      IF (OpenAD_Symbol_0.EQ.2) GO TO 93
-      IF (OpenAD_Symbol_0.EQ.3) GO TO 92
+      IF (OpenAD_Symbol_0.EQ.1) go to 94
+      IF (OpenAD_Symbol_0.EQ.2) go to 93
+      IF (OpenAD_Symbol_0.EQ.3) go to 92
  94   CONTINUE
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0

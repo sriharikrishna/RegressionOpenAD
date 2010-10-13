@@ -35,8 +35,8 @@ C$OPENAD XXX Template ad_template.f
       Y(1)%v = 2.0
       CALL zero_deriv(Y(1))
       select_expr_temp_0 = I
-      IF (select_expr_temp_0.EQ.1) GO TO 4
-      IF (select_expr_temp_0.EQ.2) GO TO 8
+      IF (select_expr_temp_0.EQ.1) go to 4
+      IF (select_expr_temp_0.EQ.2) go to 8
       GO TO 9
  9    CONTINUE
       Y(1)%v = X(1)%v
