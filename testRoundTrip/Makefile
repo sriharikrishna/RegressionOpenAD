@@ -267,6 +267,9 @@ w2f__types.f90 iaddr.c:
 ad_inline.f OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90:
 	@$(LN) ${OPENADROOT}/runTimeSupport/simple/$@ .
 
+# extra module dependency
+OAD_cp.o: OAD_cp.f90 OAD_active.o
+
 OAD_active.f90:
 	$(COMPLAIN)
 	@$(LN) ${OPENADROOT}/runTimeSupport/${SCALAR_OR_VECTOR}/$@ .
