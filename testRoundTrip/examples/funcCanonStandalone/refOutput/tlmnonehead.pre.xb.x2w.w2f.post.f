@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       Function bar(X)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -19,8 +19,8 @@ C
       END FUNCTION
 
       SUBROUTINE oad_s_bar(X, BAR)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -43,8 +43,8 @@ C
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C

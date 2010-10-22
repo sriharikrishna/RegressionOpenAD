@@ -9,7 +9,7 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine foo(x,y,k)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(2), intent(in) :: x
         double precision, dimension(2), intent(inout) :: y
           integer i,j,k
@@ -22,7 +22,7 @@ C$openad xxx simple loop
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(2), intent(in) :: x
         double precision, dimension(2), intent(out) :: y
         integer :: oad_ctmp0

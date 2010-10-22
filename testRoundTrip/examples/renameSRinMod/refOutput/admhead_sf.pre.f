@@ -8,13 +8,13 @@
 
 !$openad xxx file_start [head.f]
       module m
+      use OAD_intrinsics
       public :: foo
          interface foo
            module procedure foo_i
          end interface
       contains
           subroutine foo_i(x)
-          use OAD_intrinsics
            double precision :: x
            x = x*2
          end subroutine

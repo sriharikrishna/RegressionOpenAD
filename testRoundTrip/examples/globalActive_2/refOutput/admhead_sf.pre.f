@@ -16,8 +16,8 @@
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-
           use OAD_intrinsics
+
           use globals
 
         double precision, dimension(2) :: x

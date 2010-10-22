@@ -174,8 +174,7 @@
       <xaif:Entry vertex_id="10" annotation=""/>
       <xaif:BasicBlock vertex_id="11" annotation="" scope_id="5">
         <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_PRAGMA]"/>
-        <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_USE]"/>
-        <xaif:Assignment statement_id="8">
+        <xaif:Assignment statement_id="7">
           <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="5"/>
           </xaif:AssignmentLHS>

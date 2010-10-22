@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(J, X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -34,7 +34,6 @@ C$OPENAD XXX Template ad_template.f
 
         SUBROUTINE FOO()
         use w2f__types
-        use OAD_active
         IMPLICIT NONE
 C
 C       **** Local Variables and Functions ****

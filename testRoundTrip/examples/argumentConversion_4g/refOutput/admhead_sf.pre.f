@@ -8,6 +8,7 @@
 
 !$openad xxx file_start [head.f]
       module m
+      use OAD_intrinsics
         interface foo
            module procedure fooI
         end interface

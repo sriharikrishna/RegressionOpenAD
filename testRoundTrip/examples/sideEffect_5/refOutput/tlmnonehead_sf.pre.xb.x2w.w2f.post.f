@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -27,8 +27,8 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(A, N)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use all_globals_mod
       IMPLICIT NONE
@@ -54,8 +54,8 @@ C$OPENAD XXX Template ad_template.f
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use all_globals_mod
       IMPLICIT NONE

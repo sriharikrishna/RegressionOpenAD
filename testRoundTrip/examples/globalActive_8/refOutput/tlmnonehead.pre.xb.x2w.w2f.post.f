@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       MODULE globals
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -15,8 +15,8 @@ C
       END MODULE
 
       SUBROUTINE foo(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use globals
       IMPLICIT NONE
@@ -44,8 +44,8 @@ C$OPENAD XXX Template ad_template.f
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use globals
       IMPLICIT NONE
@@ -76,8 +76,8 @@ C$OPENAD XXX Template ad_template.f
       END SUBROUTINE
 
       SUBROUTINE bar(AP)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use globals
       IMPLICIT NONE

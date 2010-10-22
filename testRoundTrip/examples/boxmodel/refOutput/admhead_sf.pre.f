@@ -81,9 +81,9 @@ C-- dependent and independent variables
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_forward ( ilev1 )
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -151,9 +151,9 @@ CADJ STORE tNow = comlev1, key = ikey, byte = isbyte
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_final_state
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -203,9 +203,9 @@ Cph      print *, 'ph-check uvel ', uvel
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_ini_fields
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -290,9 +290,9 @@ C-- map onto model state
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_ini_params
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -457,9 +457,9 @@ C-- **************
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_model_body
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -555,9 +555,9 @@ C$openad DEPENDENT(snew)
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_density ( tLoc, sLoc, rhoLoc )
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -595,9 +595,9 @@ C-- linear equation of state
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_transport ( rhoLoc, uVelLoc )
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -630,8 +630,8 @@ C-- local variables:
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_robert_filter ( fldNow, fldOld, fldNew )
-C-----------------------------------------------------------------------
       use OAD_intrinsics
+C-----------------------------------------------------------------------
       use all_globals_mod
 
       implicit none
@@ -670,8 +670,8 @@ C-- routine body
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_cycle_fields
-C-----------------------------------------------------------------------
       use OAD_intrinsics
+C-----------------------------------------------------------------------
       use all_globals_mod
 
       implicit none
@@ -709,8 +709,8 @@ C-- routine body
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_update ( fldNew, fldOld, dFldDt )
-C-----------------------------------------------------------------------
       use OAD_intrinsics
+C-----------------------------------------------------------------------
       use all_globals_mod
 
 
@@ -751,8 +751,8 @@ C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_timestep ( gammaLoc, fldStar, extForLoc, uVelLoc, f
      +ldNow, fldOld, fldNew )
-C-----------------------------------------------------------------------
       use OAD_intrinsics
+C-----------------------------------------------------------------------
       use all_globals_mod
 
       implicit none

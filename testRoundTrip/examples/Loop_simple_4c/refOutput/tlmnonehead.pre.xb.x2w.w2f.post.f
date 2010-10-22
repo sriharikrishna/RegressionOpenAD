@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       MODULE aglobalmodule
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -15,8 +15,8 @@ C
       END MODULE
 
       SUBROUTINE foo(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use aglobalmodule
       IMPLICIT NONE
@@ -73,8 +73,8 @@ C$OPENAD XXX Simple loop
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use aglobalmodule
       IMPLICIT NONE

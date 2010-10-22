@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -30,8 +30,8 @@ C
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -46,8 +46,8 @@ C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
       interface
         SUBROUTINE foo(X, Y)
+        use OAD_active
         use w2f__types
-      use OAD_active
         type(active) :: X(1:2)
         INTENT(in) X
         type(active) :: Y(1:1)

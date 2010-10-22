@@ -8,6 +8,7 @@
 
 !$openad xxx file_start [head.f]
       module m
+      use OAD_intrinsics
       public :: foo, mx
          interface oad_s_foo
            module procedure oad_s_foo_i
@@ -20,25 +21,21 @@
          double precision :: mx
       contains
          double precision function foo_i(x)
-         use OAD_intrinsics
            double precision :: x
            mx = mx+x
            foo_i=mx
          end function
          integer function foo_ii(x)
-         use OAD_intrinsics
            integer :: x
            foo_ii = x+1
          end function
          subroutine oad_s_foo_i(x,foo_i)
-         use OAD_intrinsics
            double precision :: x
            double precision,intent(out) :: foo_i
            mx = mx+x
            foo_i=mx
          end subroutine oad_s_foo_i
          subroutine oad_s_foo_ii(x,foo_ii)
-         use OAD_intrinsics
            integer :: x
            integer,intent(out) :: foo_ii
            foo_ii = x+1

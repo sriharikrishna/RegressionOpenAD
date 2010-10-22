@@ -22,6 +22,7 @@ C
 C$OPENAD XXX File_start [head.f]
       MODULE m
       use w2f__types
+      use oad_intrinsics
       IMPLICIT NONE
       SAVE
 C
@@ -39,7 +40,6 @@ C
 
         SUBROUTINE OpenAD_FOO_I(X)
         use w2f__types
-        use oad_intrinsics
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****

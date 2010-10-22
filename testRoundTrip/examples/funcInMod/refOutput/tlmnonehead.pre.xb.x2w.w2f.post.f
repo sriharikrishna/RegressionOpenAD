@@ -1,8 +1,9 @@
 
 C$OPENAD XXX File_start [head.f]
       MODULE m
-      use w2f__types
       use OAD_active
+      use w2f__types
+      use oad_intrinsics
       IMPLICIT NONE
       SAVE
 C
@@ -31,8 +32,6 @@ C
 
         Function FOO_I(X)
         use w2f__types
-        use OAD_active
-        use oad_intrinsics
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
@@ -49,8 +48,6 @@ C
 
         Function FOO_II(X)
         use w2f__types
-        use OAD_active
-        use oad_intrinsics
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
@@ -66,8 +63,6 @@ C
 
         SUBROUTINE OAD_S_FOO_I(X, FOO_I)
         use w2f__types
-        use OAD_active
-        use oad_intrinsics
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
@@ -94,8 +89,6 @@ C
 
         SUBROUTINE OAD_S_FOO_II(X, FOO_II)
         use w2f__types
-        use OAD_active
-        use oad_intrinsics
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
@@ -111,8 +104,8 @@ C
       END
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use m
       IMPLICIT NONE

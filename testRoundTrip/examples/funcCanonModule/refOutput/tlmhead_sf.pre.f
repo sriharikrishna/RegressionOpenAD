@@ -22,7 +22,7 @@
 
 !$openad xxx file_start [head.f]
       module foo
-        use OAD_intrinsics
+      use OAD_intrinsics
         implicit none
         private
         public :: bar

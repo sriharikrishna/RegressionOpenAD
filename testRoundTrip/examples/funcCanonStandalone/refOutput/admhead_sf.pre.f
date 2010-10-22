@@ -22,12 +22,12 @@
 
 !$openad xxx file_start [head.f]
       double precision function bar(x)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision,intent(in) :: x
         bar = max(x,4.0D0)
       end function bar
       subroutine oad_s_bar(x,bar)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision,intent(in) :: x
         double precision :: oad_ctmp0
         double precision :: oad_ctmp1

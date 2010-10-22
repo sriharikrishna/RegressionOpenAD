@@ -16,7 +16,7 @@
 
 C$openad XXX Template ad_template.f
       subroutine foo(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
 
         double precision, dimension(1) :: x
         double precision y

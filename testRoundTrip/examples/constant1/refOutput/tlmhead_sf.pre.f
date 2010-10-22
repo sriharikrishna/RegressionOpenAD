@@ -7,7 +7,6 @@
       end module
 !$openad xxx file_start [head.f]
       module anotherModule
-          use OAD_intrinsics
           use all_globals_mod
         double precision, parameter :: pi2=PI
       end module

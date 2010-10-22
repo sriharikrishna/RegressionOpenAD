@@ -2,8 +2,8 @@
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE ad_roehf5(NRM, PRIML, PRIMR, GAMMA, GM1, GM1INV, NLEFIX
      +, LEFIX, MCHEPS, FLUX)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C

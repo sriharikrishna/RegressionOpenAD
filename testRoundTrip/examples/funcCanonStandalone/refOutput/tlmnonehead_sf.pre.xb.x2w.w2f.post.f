@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -20,7 +20,6 @@ CONTAINS
 
   SUBROUTINE OAD_S_MAX_D(A0, A1, R)
   use w2f__types
-  use OAD_active
   IMPLICIT NONE
 !
 !       **** Parameters and Result ****
@@ -46,8 +45,8 @@ END
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -57,8 +56,8 @@ C
 
 C$OPENAD XXX File_start [head.f]
       Function bar(X)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -75,8 +74,8 @@ C
       END FUNCTION
 
       SUBROUTINE oad_s_bar(X, BAR)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -99,8 +98,8 @@ C
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C

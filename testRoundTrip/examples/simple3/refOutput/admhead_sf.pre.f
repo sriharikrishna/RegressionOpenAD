@@ -9,7 +9,7 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine head(x1,x2,y1,y2)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision v3,v4,x1,x2,y1,y2
 C$openad INDEPENDENT(x1)
 C$openad INDEPENDENT(x2)

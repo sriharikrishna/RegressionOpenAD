@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE opt(REQARG, OPTARG, OUTARG)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -53,8 +53,8 @@ C$OPENAD XXX Template ad_template.f
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -69,8 +69,8 @@ C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
       interface
         SUBROUTINE opt(REQARG, OPTARG, OUTARG)
+        use OAD_active
         use w2f__types
-      use OAD_active
         type(active) :: REQARG
         INTENT(in) REQARG
         type(active) :: OPTARG

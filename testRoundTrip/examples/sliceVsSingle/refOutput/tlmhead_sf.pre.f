@@ -8,19 +8,19 @@
 
 !$openad xxx file_start [head.f]
       subroutine foo(x)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision :: x
         x = x+1.0
       end subroutine
       
       subroutine bar(x)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision :: x(1)
         x(1) = x(1)+1.0
       end subroutine
       
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         interface
            subroutine foo(x)
              double precision :: x

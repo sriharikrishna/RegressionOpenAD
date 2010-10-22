@@ -23,9 +23,9 @@
       end subroutine
 
       SUBROUTINE foo( )
+      use OAD_intrinsics
 C foo is never called
 C but gx and gy are active
-      use OAD_intrinsics
       use globals
 C here we need the conversion
       call bar(gx,gy)

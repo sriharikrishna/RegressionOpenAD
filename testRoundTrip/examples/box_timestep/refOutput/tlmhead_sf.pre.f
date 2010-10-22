@@ -11,9 +11,9 @@ C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_timestep ( gammaLoc, fldStar, extForLoc, uVelLoc, f
      +ldNow, fldOld, fldNew )
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       implicit none
 
       integer l

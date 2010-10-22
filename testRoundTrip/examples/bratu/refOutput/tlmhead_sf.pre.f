@@ -9,7 +9,7 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine head(x,F)
-      use OAD_intrinsics
+          use OAD_intrinsics
           double precision :: x(9)
           double precision :: F(7)
           integer i

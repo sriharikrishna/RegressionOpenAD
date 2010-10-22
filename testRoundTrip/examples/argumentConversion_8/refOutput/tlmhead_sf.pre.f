@@ -8,7 +8,7 @@
 
 !$openad xxx file_start [head.f]
       subroutine bar(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(4) :: x,y
         integer :: i
         do i=1,4
@@ -19,7 +19,7 @@
       end subroutine
 
       subroutine foo(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(:) :: x,y
         call bar(x,y)
       end subroutine

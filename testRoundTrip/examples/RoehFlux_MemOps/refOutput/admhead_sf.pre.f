@@ -11,6 +11,7 @@ C$openad XXX Template ad_template.f
       SUBROUTINE ad_roehf5 (nrm1, nrm2, nrm3, priml1, priml2, priml3,pri
      +ml4, priml5, primr1, primr2, primr3, primr4, primr5, gamma,gm1, gm
      +1inv, nlefix, lefix, mcheps, flux1, flux2, flux3, flux4,flux5)
+      use OAD_intrinsics
 C     !*****************************************************************
 C     !  SUBROUTINE: AD_ROE_HARTEN_FLUX5_EXP                            
 C     !      AUTHOR: Shaun Forth                                        
@@ -24,7 +25,6 @@ C     !    MODIFIED: Uwe Naumann, Feb 04
 C       
 C     !                                                                 
 C     !*****************************************************************
-      use OAD_intrinsics
       IMPLICIT none
 C     AUGUMENTS(in):                                                    
 C     nrm    : cell face normal                                         

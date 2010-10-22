@@ -27,7 +27,6 @@ C
 C$OPENAD XXX File_start [head.f]
       MODULE anothermodule
       use w2f__types
-      use oad_intrinsics
       use all_globals_mod
       IMPLICIT NONE
       SAVE

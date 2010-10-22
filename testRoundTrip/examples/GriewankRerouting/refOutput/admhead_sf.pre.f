@@ -9,7 +9,7 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine ad_reroute (x1, x2, y1, y2)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, intent(in):: x1,x2
         double precision, intent(inout) :: y1,y2
         double precision t1,t2,t3,t4
