@@ -216,7 +216,7 @@ head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 # postprocess F'
 OAD_intrinsics.pre.xb.x2w.w2f.post.f90 :  head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
 	$(COMPLAIN)
-	./postProcess.py $(POSTPROCESS_FLAGS) --timing --abstractType OpenADTy_active $< --separateOutput --filenameSuffix=".pre.xb.x2w.w2f.post" --pathSuffix='./' $(postProcessVerbFlag)
+	./postProcess.py $(POSTPROCESS_FLAGS) --timing --abstractType OpenADTy_active $< --separateOutput --filenameSuffix=".pre.xb.x2w.w2f.post" --pathSuffix='./' $(postProcessVerbFlag) ${EXAMPLE_SPECIFIC_POSTPROCESS_OPTIONS}
 
 all_globals_mod.pre.xb.x2w.w2f.post.f head.pre.xb.x2w.w2f.post.f : OAD_intrinsics.pre.xb.x2w.w2f.post.f90
 
