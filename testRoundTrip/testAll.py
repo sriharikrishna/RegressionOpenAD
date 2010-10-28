@@ -485,13 +485,14 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         except Exception, e: 
             raise ConfigError, "example options file does not specify a Python dictionary for xaifBooster options"+str(e)
     os.environ['EXAMPLE_SPECIFIC_XAIFBOOSTER_OPTIONS']=xaifBoosterSpecialOpts
-    postProcessSpecialOpts=''
-    if ('postProcess.py' in exOpts):
-        optsDict=exOpts['postProcess.py']
-        print str(optsDict)
-        if 'opts' in optsDict:
-            postProcessSpecialOpts+=optsDict['opts']
-    os.environ['EXAMPLE_SPECIFIC_POSTPROCESS_OPTIONS']=postProcessSpecialOpts
+    if majorMode == 'adm':
+        postProcessSpecialOpts=''
+        if ('postProcess.py' in exOpts):
+            optsDict=exOpts['postProcess.py']
+            print str(optsDict)
+            if 'opts' in optsDict:
+                postProcessSpecialOpts+=optsDict['opts']
+        os.environ['EXAMPLE_SPECIFIC_POSTPROCESS_OPTIONS']=postProcessSpecialOpts
     if globalVerbose:
         os.environ["VERBOSE"]='true'
         sys.stdout.write("environment settings:\n")
