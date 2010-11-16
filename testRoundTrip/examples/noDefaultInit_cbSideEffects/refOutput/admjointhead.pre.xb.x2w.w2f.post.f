@@ -228,6 +228,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
+      OpenAD_prp_0%d = 0.0d0
       OpenAD_prp_0%d = OpenAD_prp_0%d+G%d*(2.0D00)
       G%d = 0.0d0
       G%d = G%d+OpenAD_prp_0%d
@@ -346,6 +347,7 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%tape=.TRUE.
             our_rev_mode%adjoint=.FALSE.
 C adjoint
+      OpenAD_prp_1%d = 0.0d0
       OpenAD_prp_1%d = OpenAD_prp_1%d+G%d*(3.0D00)
       G%d = 0.0d0
       G%d = G%d+OpenAD_prp_1%d
