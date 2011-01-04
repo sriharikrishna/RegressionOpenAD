@@ -119,3 +119,12 @@ C
       Y(1)%v = G%v
       CALL setderiv(Y(1),G)
       END SUBROUTINE
+      subroutine common_cb_init()
+      	use OAD_active
+      	common/cb/ G
+      	type(active) :: G
+      	G%d = 0
+      end subroutine
+      subroutine OAD_globalVar_init()
+      	call common_cb_init()
+      end subroutine

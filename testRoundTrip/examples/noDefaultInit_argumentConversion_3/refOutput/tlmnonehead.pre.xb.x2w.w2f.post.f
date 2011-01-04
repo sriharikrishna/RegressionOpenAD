@@ -10,6 +10,12 @@ C     **** Global Variables & Derived Type Definitions ****
 C
       type(active) :: GX
       type(active) :: GY
+      contains
+      subroutine mod_globals_init()
+      	use OAD_active
+      	GX%d = 0
+      	GY%d = 0
+      end subroutine
 C
 C     **** Statements ****
 C
@@ -90,3 +96,7 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(GY,GX)
       CALL setderiv(Y(1),GY)
       END SUBROUTINE
+      subroutine OAD_globalVar_init()
+      	use globals
+      	call mod_globals_init()
+      end subroutine
