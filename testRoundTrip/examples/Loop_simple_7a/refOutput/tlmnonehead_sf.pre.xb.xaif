@@ -222,7 +222,7 @@
           <xaif:VariableReference vertex_id="2" active="false" alias="4" du_ud="3" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="I_4" annotation="" scope_id="4"/>
           </xaif:VariableReference>
-          <xaif:Intrinsic vertex_id="3" annotation="" name="bogus_min_scal_scal"/>
+          <xaif:Intrinsic vertex_id="3" annotation="" name="nc_min_scal_scal"/>
           <xaif:VariableReference vertex_id="4" active="false" alias="3" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="K_3" annotation="" scope_id="4"/>
           </xaif:VariableReference>
