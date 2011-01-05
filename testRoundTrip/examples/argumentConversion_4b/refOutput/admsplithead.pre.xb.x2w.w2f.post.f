@@ -113,11 +113,11 @@ C
       REAL(w2f__8) PY
       INTEGER(w2f__i8) OpenAD_Symbol_11
       INTEGER(w2f__i8) OpenAD_Symbol_12
-      type(active) :: OpenAD_tyc_0(1:2,1:2)
+      type(active) :: OpenAD_tyc_0(1:2)
       type(active) :: OpenAD_tyc_1
-      type(active) :: OpenAD_tyc_2(1:2,1:2)
+      type(active) :: OpenAD_tyc_2(1:2)
       type(active) :: OpenAD_tyc_3
-      type(active) :: OpenAD_tyc_4(1:2,1:2)
+      type(active) :: OpenAD_tyc_4(1:2)
       type(active) :: OpenAD_tyc_5
 C
 C     **** Top Level Pragmas ****
@@ -154,12 +154,12 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(AX(I,1:2),Y(1))
 C!! requested inline of 'oad_convert' has no defn
-        CALL oad_convert(OpenAD_tyc_0,APX)
+        CALL oad_convert(OpenAD_tyc_0,APX(I,1:2))
 C!! requested inline of 'oad_convert' has no defn
         CALL oad_convert(OpenAD_tyc_1,PY)
-        CALL foo(OpenAD_tyc_0(I,1:2),OpenAD_tyc_1)
+        CALL foo(OpenAD_tyc_0,OpenAD_tyc_1)
 C!! requested inline of 'oad_convert' has no defn
-        CALL oad_convert(APX,OpenAD_tyc_0)
+        CALL oad_convert(APX(I,1:2),OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
         CALL oad_convert(PY,OpenAD_tyc_1)
       END DO
@@ -178,12 +178,12 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(AX(I,1:2),Y(1))
 C!! requested inline of 'oad_convert' has no defn
-        CALL oad_convert(OpenAD_tyc_0,APX)
+        CALL oad_convert(OpenAD_tyc_0,APX(I,1:2))
 C!! requested inline of 'oad_convert' has no defn
         CALL oad_convert(OpenAD_tyc_1,PY)
-        CALL foo(OpenAD_tyc_0(I,1:2),OpenAD_tyc_1)
+        CALL foo(OpenAD_tyc_0,OpenAD_tyc_1)
 C!! requested inline of 'oad_convert' has no defn
-        CALL oad_convert(APX,OpenAD_tyc_0)
+        CALL oad_convert(APX(I,1:2),OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
         CALL oad_convert(PY,OpenAD_tyc_1)
       END DO
@@ -192,7 +192,7 @@ C!! requested inline of 'oad_convert' has no defn
 C adjoint
       I = 1+1*((2-1)/1)
       do while (I.GE.1)
-        CALL foo(OpenAD_tyc_4(I,1:2),OpenAD_tyc_5)
+        CALL foo(OpenAD_tyc_4,OpenAD_tyc_5)
         CALL foo(AX(I,1:2),Y(1))
         I = I-1
       END DO

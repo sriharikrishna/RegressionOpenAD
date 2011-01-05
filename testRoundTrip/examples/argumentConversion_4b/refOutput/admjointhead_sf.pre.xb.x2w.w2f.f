@@ -148,11 +148,11 @@ C
       REAL(w2f__8) PY
       INTEGER(w2f__i8) OpenAD_Symbol_11
       INTEGER(w2f__i8) OpenAD_Symbol_12
-      TYPE (OpenADTy_active) OpenAD_tyc_0(1 : 2, 1 : 2)
+      TYPE (OpenADTy_active) OpenAD_tyc_0(1 : 2)
       TYPE (OpenADTy_active) OpenAD_tyc_1
-      TYPE (OpenADTy_active) OpenAD_tyc_2(1 : 2, 1 : 2)
+      TYPE (OpenADTy_active) OpenAD_tyc_2(1 : 2)
       TYPE (OpenADTy_active) OpenAD_tyc_3
-      TYPE (OpenADTy_active) OpenAD_tyc_4(1 : 2, 1 : 2)
+      TYPE (OpenADTy_active) OpenAD_tyc_4(1 : 2)
       TYPE (OpenADTy_active) OpenAD_tyc_5
 C
 C     **** Top Level Pragmas ****
@@ -184,13 +184,12 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(__deriv__(AX(I, 1 : 2)), __deriv__(Y(1)))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(__deriv__(OpenAD_tyc_0), APX)
+        CALL oad_convert(__deriv__(OpenAD_tyc_0), APX(I, 1 : 2))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(__deriv__(OpenAD_tyc_1), PY)
-        CALL foo(__deriv__(OpenAD_tyc_0(I, 1 : 2)), __deriv__(
-     > OpenAD_tyc_1))
+        CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(OpenAD_tyc_1))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(APX, __deriv__(OpenAD_tyc_0))
+        CALL oad_convert(APX(I, 1 : 2), __deriv__(OpenAD_tyc_0))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
       END DO
@@ -208,13 +207,12 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(__deriv__(AX(I, 1 : 2)), __deriv__(Y(1)))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(__deriv__(OpenAD_tyc_0), APX)
+        CALL oad_convert(__deriv__(OpenAD_tyc_0), APX(I, 1 : 2))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(__deriv__(OpenAD_tyc_1), PY)
-        CALL foo(__deriv__(OpenAD_tyc_0(I, 1 : 2)), __deriv__(
-     > OpenAD_tyc_1))
+        CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(OpenAD_tyc_1))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(APX, __deriv__(OpenAD_tyc_0))
+        CALL oad_convert(APX(I, 1 : 2), __deriv__(OpenAD_tyc_0))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
       END DO
@@ -222,8 +220,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-        CALL foo(__deriv__(OpenAD_tyc_4(I, 1 : 2)), __deriv__(
-     > OpenAD_tyc_5))
+        CALL foo(__deriv__(OpenAD_tyc_4), __deriv__(OpenAD_tyc_5))
         CALL foo(__deriv__(AX(I, 1 : 2)), __deriv__(Y(1)))
         I = I - 1
       END DO
@@ -280,13 +277,12 @@ C$OPENAD XXX Simple loop
 C       $OpenAD$ INLINE push_i(subst)
         CALL push_i(I)
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(__deriv__(OpenAD_tyc_0), APX)
+        CALL oad_convert(__deriv__(OpenAD_tyc_0), APX(I, 1 : 2))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(__deriv__(OpenAD_tyc_1), PY)
-        CALL foo(__deriv__(OpenAD_tyc_0(I, 1 : 2)), __deriv__(
-     > OpenAD_tyc_1))
+        CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(OpenAD_tyc_1))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(APX, __deriv__(OpenAD_tyc_0))
+        CALL oad_convert(APX(I, 1 : 2), __deriv__(OpenAD_tyc_0))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
         OpenAD_Symbol_8 = (INT(OpenAD_Symbol_8) + INT(1_w2f__i8))
@@ -299,8 +295,7 @@ C     $OpenAD$ INLINE pop_i(subst)
       CALL pop_i(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = 1
       DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
-        CALL foo(__deriv__(OpenAD_tyc_2(I, 1 : 2)), __deriv__(
-     > OpenAD_tyc_3))
+        CALL foo(__deriv__(OpenAD_tyc_2), __deriv__(OpenAD_tyc_3))
 C       $OpenAD$ INLINE pop_i(subst)
         CALL pop_i(I)
         CALL foo(__deriv__(AX(I, 1 : 2)), __deriv__(Y(1)))

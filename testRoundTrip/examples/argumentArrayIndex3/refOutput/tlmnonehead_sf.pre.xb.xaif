@@ -77,7 +77,6 @@
           <xaif:Symbol symbol_id="OpenAD_prp_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="OpenAD_tyc_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
-            <xaif:DimensionBounds lower="1" upper="2"/>
           </xaif:Symbol>
           <xaif:Symbol symbol_id="P_6" kind="variable" type="real" feType="F8" shape="vector" annotation="{Sym_Id#6}" active="0" temp="0">
             <xaif:DimensionBounds lower="1" upper="2"/>

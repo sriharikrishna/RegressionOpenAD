@@ -44,7 +44,7 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       REAL(w2f__8) PY
-      type(active) :: OpenAD_tyc_0(1:2,1:2)
+      type(active) :: OpenAD_tyc_0(1:2)
       type(active) :: OpenAD_tyc_1
 C
 C     **** Top Level Pragmas ****
@@ -77,12 +77,12 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         CALL foo(AX(I,1:2),Y(1))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(OpenAD_tyc_0,APX)
+        CALL oad_convert(OpenAD_tyc_0,APX(I,1:2))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(OpenAD_tyc_1,PY)
-        CALL foo(OpenAD_tyc_0(I,1:2),OpenAD_tyc_1)
+        CALL foo(OpenAD_tyc_0,OpenAD_tyc_1)
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(APX,OpenAD_tyc_0)
+        CALL oad_convert(APX(I,1:2),OpenAD_tyc_0)
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(PY,OpenAD_tyc_1)
       END DO

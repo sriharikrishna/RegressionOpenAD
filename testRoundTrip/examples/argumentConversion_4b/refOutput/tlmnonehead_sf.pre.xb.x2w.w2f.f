@@ -62,7 +62,7 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       REAL(w2f__8) PY
-      TYPE (OpenADTy_active) OpenAD_tyc_0(1 : 2, 1 : 2)
+      TYPE (OpenADTy_active) OpenAD_tyc_0(1 : 2)
       TYPE (OpenADTy_active) OpenAD_tyc_1
 C
 C     **** Top Level Pragmas ****
@@ -94,13 +94,12 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         CALL foo(__deriv__(AX(I, 1 : 2)), __deriv__(Y(1)))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(__deriv__(OpenAD_tyc_0), APX)
+        CALL oad_convert(__deriv__(OpenAD_tyc_0), APX(I, 1 : 2))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(__deriv__(OpenAD_tyc_1), PY)
-        CALL foo(__deriv__(OpenAD_tyc_0(I, 1 : 2)), __deriv__(
-     > OpenAD_tyc_1))
+        CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(OpenAD_tyc_1))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
-        CALL oad_convert(APX, __deriv__(OpenAD_tyc_0))
+        CALL oad_convert(APX(I, 1 : 2), __deriv__(OpenAD_tyc_0))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
       END DO
