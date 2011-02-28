@@ -92,30 +92,30 @@ C$OPENAD XXX Template ad_template.f
         __value__(Y(1)) = __value__(X(1))
         IF(__value__(X(1)) .GT. 1.0D00) THEN
           OpenAD_Symbol_5 = 1_w2f__i8
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_5)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(OpenAD_Symbol_5)
         ELSE
           IF(__value__(X(1)) .GT. 0.0D00) THEN
             __value__(Y(1)) = __value__(X(1))
             OpenAD_Symbol_3 = 1_w2f__i8
-C           $OpenAD$ INLINE push_i(subst)
-            CALL push_i(OpenAD_Symbol_3)
+C           $OpenAD$ INLINE push_i_s0(subst)
+            CALL push_i_s0(OpenAD_Symbol_3)
           ELSE
             OpenAD_Symbol_4 = 0_w2f__i8
-C           $OpenAD$ INLINE push_i(subst)
-            CALL push_i(OpenAD_Symbol_4)
+C           $OpenAD$ INLINE push_i_s0(subst)
+            CALL push_i_s0(OpenAD_Symbol_4)
           ENDIF
           OpenAD_Symbol_6 = 0_w2f__i8
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_6)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(OpenAD_Symbol_6)
         ENDIF
         OpenAD_Symbol_8 = 1_w2f__i8
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_8)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_8)
       ELSE
         OpenAD_Symbol_7 = 0_w2f__i8
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_7)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_7)
       ENDIF
       OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(1)))
       OpenAD_lin_0 = __value__(Y(1))
@@ -147,11 +147,11 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_1))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_0)
       IF(OpenAD_Symbol_0 .ne. 0) THEN
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_1)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_1)
         IF(OpenAD_Symbol_1 .ne. 0) THEN
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
           CALL IncDeriv(__deriv__(Y(1)), __deriv__(OpenAD_prp_0))
@@ -162,8 +162,8 @@ C         $OpenAD$ INLINE IncDeriv(subst,subst)
 C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
         ELSE
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_2)
+C         $OpenAD$ INLINE pop_i_s0(subst)
+          CALL pop_i_s0(OpenAD_Symbol_2)
           IF(OpenAD_Symbol_2 .ne. 0) THEN
 C           $OpenAD$ INLINE IncDeriv(subst,subst)
             CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(1)))
@@ -198,30 +198,30 @@ C$OPENAD XXX Template ad_template.f
         __value__(Y(1)) = __value__(X(1))
         IF(__value__(X(1)) .GT. 1.0D00) THEN
           OpenAD_Symbol_14 = 1_w2f__i8
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_14)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(OpenAD_Symbol_14)
         ELSE
           IF(__value__(X(1)) .GT. 0.0D00) THEN
             __value__(Y(1)) = __value__(X(1))
             OpenAD_Symbol_12 = 1_w2f__i8
-C           $OpenAD$ INLINE push_i(subst)
-            CALL push_i(OpenAD_Symbol_12)
+C           $OpenAD$ INLINE push_i_s0(subst)
+            CALL push_i_s0(OpenAD_Symbol_12)
           ELSE
             OpenAD_Symbol_13 = 0_w2f__i8
-C           $OpenAD$ INLINE push_i(subst)
-            CALL push_i(OpenAD_Symbol_13)
+C           $OpenAD$ INLINE push_i_s0(subst)
+            CALL push_i_s0(OpenAD_Symbol_13)
           ENDIF
           OpenAD_Symbol_15 = 0_w2f__i8
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_15)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(OpenAD_Symbol_15)
         ENDIF
         OpenAD_Symbol_17 = 1_w2f__i8
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_17)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_17)
       ELSE
         OpenAD_Symbol_16 = 0_w2f__i8
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_16)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_16)
       ENDIF
       OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(1)))
       OpenAD_lin_0 = __value__(Y(1))
@@ -253,11 +253,11 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_1))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_9)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_9)
       IF(OpenAD_Symbol_9 .ne. 0) THEN
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_10)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_10)
         IF(OpenAD_Symbol_10 .ne. 0) THEN
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
           CALL IncDeriv(__deriv__(Y(1)), __deriv__(OpenAD_prp_0))
@@ -268,8 +268,8 @@ C         $OpenAD$ INLINE IncDeriv(subst,subst)
 C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
         ELSE
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_11)
+C         $OpenAD$ INLINE pop_i_s0(subst)
+          CALL pop_i_s0(OpenAD_Symbol_11)
           IF(OpenAD_Symbol_11 .ne. 0) THEN
 C           $OpenAD$ INLINE IncDeriv(subst,subst)
             CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(1)))

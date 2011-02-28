@@ -145,7 +145,7 @@ C
       PARAMETER ( NLEV1 = 73)
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_151
+      INTEGER(w2f__i4) OpenAD_Symbol_151
 
 
 C checkpointing stacks and offsets
@@ -409,7 +409,7 @@ C adjoint
         IF (OpenAD_Symbol_2.ne.0) THEN
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_151 = integer_tape(integer_tape_pointer)
-          TNOW(INT(OpenAD_Symbol_151))%d = 0.0d0
+          TNOW(OpenAD_Symbol_151)%d = 0.0d0
         ENDIF
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO
@@ -661,13 +661,13 @@ C
       PARAMETER ( NLEV1 = 73)
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_178
-      INTEGER(w2f__i8) OpenAD_Symbol_179
-      INTEGER(w2f__i8) OpenAD_Symbol_180
-      INTEGER(w2f__i8) OpenAD_Symbol_181
-      INTEGER(w2f__i8) OpenAD_Symbol_182
-      INTEGER(w2f__i8) OpenAD_Symbol_183
-      INTEGER(w2f__i8) OpenAD_Symbol_66
+      INTEGER(w2f__i4) OpenAD_Symbol_178
+      INTEGER(w2f__i4) OpenAD_Symbol_179
+      INTEGER(w2f__i4) OpenAD_Symbol_180
+      INTEGER(w2f__i4) OpenAD_Symbol_181
+      INTEGER(w2f__i4) OpenAD_Symbol_182
+      INTEGER(w2f__i4) OpenAD_Symbol_183
+      INTEGER(w2f__i4) OpenAD_Symbol_66
       type(active) :: OpenAD_prp_12
       type(active) :: OpenAD_prp_13
 
@@ -913,30 +913,30 @@ C adjoint
       do while (INT(OpenAD_Symbol_49).LE.INT(OpenAD_Symbol_48))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_180 = integer_tape(integer_tape_pointer)
-        S(INT(OpenAD_Symbol_180))%d = S(INT(OpenAD_Symbol_180))%d+SNOW(I
-     +NT(OpenAD_Symbol_180))%d
-        SNOW(INT(OpenAD_Symbol_180))%d = 0.0d0
+        S(OpenAD_Symbol_180)%d = S(OpenAD_Symbol_180)%d+SNOW(OpenAD_Symb
+     +ol_180)%d
+        SNOW(OpenAD_Symbol_180)%d = 0.0d0
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_181 = integer_tape(integer_tape_pointer)
-        T(INT(OpenAD_Symbol_181))%d = T(INT(OpenAD_Symbol_181))%d+TNOW(I
-     +NT(OpenAD_Symbol_181))%d
-        TNOW(INT(OpenAD_Symbol_181))%d = 0.0d0
-        S(INT(OpenAD_Symbol_181))%d = S(INT(OpenAD_Symbol_181))%d+SOLD(I
-     +NT(OpenAD_Symbol_181))%d
-        SOLD(INT(OpenAD_Symbol_181))%d = 0.0d0
+        T(OpenAD_Symbol_181)%d = T(OpenAD_Symbol_181)%d+TNOW(OpenAD_Symb
+     +ol_181)%d
+        TNOW(OpenAD_Symbol_181)%d = 0.0d0
+        S(OpenAD_Symbol_181)%d = S(OpenAD_Symbol_181)%d+SOLD(OpenAD_Symb
+     +ol_181)%d
+        SOLD(OpenAD_Symbol_181)%d = 0.0d0
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_182 = integer_tape(integer_tape_pointer)
-        T(INT(OpenAD_Symbol_182))%d = T(INT(OpenAD_Symbol_182))%d+TOLD(I
-     +NT(OpenAD_Symbol_182))%d
-        TOLD(INT(OpenAD_Symbol_182))%d = 0.0d0
-        S(INT(OpenAD_Symbol_182))%d = S(INT(OpenAD_Symbol_182))%d+SNEW(I
-     +NT(OpenAD_Symbol_182))%d
-        SNEW(INT(OpenAD_Symbol_182))%d = 0.0d0
+        T(OpenAD_Symbol_182)%d = T(OpenAD_Symbol_182)%d+TOLD(OpenAD_Symb
+     +ol_182)%d
+        TOLD(OpenAD_Symbol_182)%d = 0.0d0
+        S(OpenAD_Symbol_182)%d = S(OpenAD_Symbol_182)%d+SNEW(OpenAD_Symb
+     +ol_182)%d
+        SNEW(OpenAD_Symbol_182)%d = 0.0d0
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_183 = integer_tape(integer_tape_pointer)
-        T(INT(OpenAD_Symbol_183))%d = T(INT(OpenAD_Symbol_183))%d+TNEW(I
-     +NT(OpenAD_Symbol_183))%d
-        TNEW(INT(OpenAD_Symbol_183))%d = 0.0d0
+        T(OpenAD_Symbol_183)%d = T(OpenAD_Symbol_183)%d+TNEW(OpenAD_Symb
+     +ol_183)%d
+        TNEW(OpenAD_Symbol_183)%d = 0.0d0
         OpenAD_Symbol_49 = INT(OpenAD_Symbol_49)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1
@@ -947,19 +947,17 @@ C adjoint
         OpenAD_Symbol_178 = integer_tape(integer_tape_pointer)
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_179 = integer_tape(integer_tape_pointer)
-        XX(INT(OpenAD_Symbol_179))%d = XX(INT(OpenAD_Symbol_179))%d+S(IN
-     +T(OpenAD_Symbol_178))%d
-        OpenAD_prp_13%d = OpenAD_prp_13%d+S(INT(OpenAD_Symbol_178))%d
-        S(INT(OpenAD_Symbol_178))%d = 0.0d0
-        XX(INT(OpenAD_Symbol_178))%d = XX(INT(OpenAD_Symbol_178))%d+T(IN
-     +T(OpenAD_Symbol_178))%d
-        OpenAD_prp_12%d = OpenAD_prp_12%d+T(INT(OpenAD_Symbol_178))%d
-        T(INT(OpenAD_Symbol_178))%d = 0.0d0
-        S(INT(OpenAD_Symbol_178))%d = S(INT(OpenAD_Symbol_178))%d+OpenAD
-     +_prp_13%d
+        XX(OpenAD_Symbol_179)%d = XX(OpenAD_Symbol_179)%d+S(OpenAD_Symbo
+     +l_178)%d
+        OpenAD_prp_13%d = OpenAD_prp_13%d+S(OpenAD_Symbol_178)%d
+        S(OpenAD_Symbol_178)%d = 0.0d0
+        XX(OpenAD_Symbol_178)%d = XX(OpenAD_Symbol_178)%d+T(OpenAD_Symbo
+     +l_178)%d
+        OpenAD_prp_12%d = OpenAD_prp_12%d+T(OpenAD_Symbol_178)%d
+        T(OpenAD_Symbol_178)%d = 0.0d0
+        S(OpenAD_Symbol_178)%d = S(OpenAD_Symbol_178)%d+OpenAD_prp_13%d
         OpenAD_prp_13%d = 0.0d0
-        T(INT(OpenAD_Symbol_178))%d = T(INT(OpenAD_Symbol_178))%d+OpenAD
-     +_prp_12%d
+        T(OpenAD_Symbol_178)%d = T(OpenAD_Symbol_178)%d+OpenAD_prp_12%d
         OpenAD_prp_12%d = 0.0d0
         OpenAD_Symbol_51 = INT(OpenAD_Symbol_51)+1
       END DO
@@ -2008,7 +2006,7 @@ C
       PARAMETER ( NLEV1 = 73)
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_152
+      INTEGER(w2f__i4) OpenAD_Symbol_152
       REAL(w2f__8) OpenAD_Symbol_153
       REAL(w2f__8) OpenAD_Symbol_154
       REAL(w2f__8) OpenAD_acc_0
@@ -2138,11 +2136,11 @@ C adjoint
         OpenAD_Symbol_153 = double_tape(double_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_154 = double_tape(double_tape_pointer)
-        TLOC(INT(OpenAD_Symbol_152))%d = TLOC(INT(OpenAD_Symbol_152))%d+
-     +RHOLOC(INT(OpenAD_Symbol_152))%d*(OpenAD_Symbol_153)
-        SLOC(INT(OpenAD_Symbol_152))%d = SLOC(INT(OpenAD_Symbol_152))%d+
-     +RHOLOC(INT(OpenAD_Symbol_152))%d*(OpenAD_Symbol_154)
-        RHOLOC(INT(OpenAD_Symbol_152))%d = 0.0d0
+        TLOC(OpenAD_Symbol_152)%d = TLOC(OpenAD_Symbol_152)%d+RHOLOC(Ope
+     +nAD_Symbol_152)%d*(OpenAD_Symbol_153)
+        SLOC(OpenAD_Symbol_152)%d = SLOC(OpenAD_Symbol_152)%d+RHOLOC(Ope
+     +nAD_Symbol_152)%d*(OpenAD_Symbol_154)
+        RHOLOC(OpenAD_Symbol_152)%d = 0.0d0
         OpenAD_Symbol_13 = INT(OpenAD_Symbol_13)+1
       END DO
 
@@ -2375,7 +2373,7 @@ C
       PARAMETER ( NLEV1 = 73)
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_174
+      INTEGER(w2f__i4) OpenAD_Symbol_174
       REAL(w2f__8) OpenAD_Symbol_175
       REAL(w2f__8) OpenAD_lin_53
       REAL(w2f__8) OpenAD_lin_54
@@ -2506,21 +2504,21 @@ C adjoint
         OpenAD_Symbol_174 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_175 = double_tape(double_tape_pointer)
-        OpenAD_prp_9%d = OpenAD_prp_9%d+FLDNOW(INT(OpenAD_Symbol_174))%d
-     +*(OpenAD_Symbol_175)
-        OpenAD_prp_7%d = OpenAD_prp_7%d+FLDNOW(INT(OpenAD_Symbol_174))%d
-        FLDNOW(INT(OpenAD_Symbol_174))%d = 0.0d0
+        OpenAD_prp_9%d = OpenAD_prp_9%d+FLDNOW(OpenAD_Symbol_174)%d*(Ope
+     +nAD_Symbol_175)
+        OpenAD_prp_7%d = OpenAD_prp_7%d+FLDNOW(OpenAD_Symbol_174)%d
+        FLDNOW(OpenAD_Symbol_174)%d = 0.0d0
         OpenAD_prp_8%d = OpenAD_prp_8%d+OpenAD_prp_9%d*(-2.0D00)
-        FLDNEW(INT(OpenAD_Symbol_174))%d = FLDNEW(INT(OpenAD_Symbol_174)
-     +)%d+OpenAD_prp_9%d
-        FLDOLD(INT(OpenAD_Symbol_174))%d = FLDOLD(INT(OpenAD_Symbol_174)
-     +)%d+OpenAD_prp_9%d
+        FLDNEW(OpenAD_Symbol_174)%d = FLDNEW(OpenAD_Symbol_174)%d+OpenAD
+     +_prp_9%d
+        FLDOLD(OpenAD_Symbol_174)%d = FLDOLD(OpenAD_Symbol_174)%d+OpenAD
+     +_prp_9%d
         OpenAD_prp_9%d = 0.0d0
-        FLDNOW(INT(OpenAD_Symbol_174))%d = FLDNOW(INT(OpenAD_Symbol_174)
-     +)%d+OpenAD_prp_8%d
+        FLDNOW(OpenAD_Symbol_174)%d = FLDNOW(OpenAD_Symbol_174)%d+OpenAD
+     +_prp_8%d
         OpenAD_prp_8%d = 0.0d0
-        FLDNOW(INT(OpenAD_Symbol_174))%d = FLDNOW(INT(OpenAD_Symbol_174)
-     +)%d+OpenAD_prp_7%d
+        FLDNOW(OpenAD_Symbol_174)%d = FLDNOW(OpenAD_Symbol_174)%d+OpenAD
+     +_prp_7%d
         OpenAD_prp_7%d = 0.0d0
         OpenAD_Symbol_25 = INT(OpenAD_Symbol_25)+1
       END DO
@@ -2576,8 +2574,8 @@ C
       PARAMETER ( NLEV1 = 73)
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_176
-      INTEGER(w2f__i8) OpenAD_Symbol_177
+      INTEGER(w2f__i4) OpenAD_Symbol_176
+      INTEGER(w2f__i4) OpenAD_Symbol_177
       type(active) :: OpenAD_prp_10
       type(active) :: OpenAD_prp_11
 
@@ -2707,23 +2705,23 @@ C adjoint
       do while (INT(OpenAD_Symbol_31).LE.INT(OpenAD_Symbol_30))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_176 = integer_tape(integer_tape_pointer)
-        SNEW(INT(OpenAD_Symbol_176))%d = SNEW(INT(OpenAD_Symbol_176))%d+
-     +SNOW(INT(OpenAD_Symbol_176))%d
-        SNOW(INT(OpenAD_Symbol_176))%d = 0.0d0
-        OpenAD_prp_11%d = OpenAD_prp_11%d+SOLD(INT(OpenAD_Symbol_176))%d
-        SOLD(INT(OpenAD_Symbol_176))%d = 0.0d0
-        SNOW(INT(OpenAD_Symbol_176))%d = SNOW(INT(OpenAD_Symbol_176))%d+
-     +OpenAD_prp_11%d
+        SNEW(OpenAD_Symbol_176)%d = SNEW(OpenAD_Symbol_176)%d+SNOW(OpenA
+     +D_Symbol_176)%d
+        SNOW(OpenAD_Symbol_176)%d = 0.0d0
+        OpenAD_prp_11%d = OpenAD_prp_11%d+SOLD(OpenAD_Symbol_176)%d
+        SOLD(OpenAD_Symbol_176)%d = 0.0d0
+        SNOW(OpenAD_Symbol_176)%d = SNOW(OpenAD_Symbol_176)%d+OpenAD_prp
+     +_11%d
         OpenAD_prp_11%d = 0.0d0
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_177 = integer_tape(integer_tape_pointer)
-        TNEW(INT(OpenAD_Symbol_177))%d = TNEW(INT(OpenAD_Symbol_177))%d+
-     +TNOW(INT(OpenAD_Symbol_177))%d
-        TNOW(INT(OpenAD_Symbol_177))%d = 0.0d0
-        OpenAD_prp_10%d = OpenAD_prp_10%d+TOLD(INT(OpenAD_Symbol_177))%d
-        TOLD(INT(OpenAD_Symbol_177))%d = 0.0d0
-        TNOW(INT(OpenAD_Symbol_177))%d = TNOW(INT(OpenAD_Symbol_177))%d+
-     +OpenAD_prp_10%d
+        TNEW(OpenAD_Symbol_177)%d = TNEW(OpenAD_Symbol_177)%d+TNOW(OpenA
+     +D_Symbol_177)%d
+        TNOW(OpenAD_Symbol_177)%d = 0.0d0
+        OpenAD_prp_10%d = OpenAD_prp_10%d+TOLD(OpenAD_Symbol_177)%d
+        TOLD(OpenAD_Symbol_177)%d = 0.0d0
+        TNOW(OpenAD_Symbol_177)%d = TNOW(OpenAD_Symbol_177)%d+OpenAD_prp
+     +_10%d
         OpenAD_prp_10%d = 0.0d0
         OpenAD_Symbol_31 = INT(OpenAD_Symbol_31)+1
       END DO
@@ -2785,7 +2783,7 @@ C
       PARAMETER ( NLEV1 = 73)
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
-      INTEGER(w2f__i8) OpenAD_Symbol_184
+      INTEGER(w2f__i4) OpenAD_Symbol_184
       REAL(w2f__8) OpenAD_Symbol_185
       REAL(w2f__8) OpenAD_lin_55
       REAL(w2f__8) OpenAD_lin_56
@@ -2903,11 +2901,11 @@ C adjoint
         OpenAD_Symbol_184 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_185 = double_tape(double_tape_pointer)
-        DFLDDT(INT(OpenAD_Symbol_184))%d = DFLDDT(INT(OpenAD_Symbol_184)
-     +)%d+FLDNEW(INT(OpenAD_Symbol_184))%d*(OpenAD_Symbol_185)
-        FLDOLD(INT(OpenAD_Symbol_184))%d = FLDOLD(INT(OpenAD_Symbol_184)
-     +)%d+FLDNEW(INT(OpenAD_Symbol_184))%d
-        FLDNEW(INT(OpenAD_Symbol_184))%d = 0.0d0
+        DFLDDT(OpenAD_Symbol_184)%d = DFLDDT(OpenAD_Symbol_184)%d+FLDNEW
+     +(OpenAD_Symbol_184)%d*(OpenAD_Symbol_185)
+        FLDOLD(OpenAD_Symbol_184)%d = FLDOLD(OpenAD_Symbol_184)%d+FLDNEW
+     +(OpenAD_Symbol_184)%d
+        FLDNEW(OpenAD_Symbol_184)%d = 0.0d0
         OpenAD_Symbol_146 = INT(OpenAD_Symbol_146)+1
       END DO
 

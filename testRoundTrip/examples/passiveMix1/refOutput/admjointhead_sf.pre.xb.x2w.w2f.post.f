@@ -54,10 +54,10 @@ C
       type(active) :: T
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      INTEGER(w2f__i8) OpenAD_Symbol_2
+      INTEGER(w2f__i4) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
-      INTEGER(w2f__i8) OpenAD_Symbol_5
+      INTEGER(w2f__i4) OpenAD_Symbol_5
       REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
@@ -184,14 +184,13 @@ C adjoint
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_4 = double_tape(double_tape_pointer)
       OpenAD_prp_0%d = OpenAD_prp_0%d+T%d*(OpenAD_Symbol_3)
-      X(INT(OpenAD_Symbol_2))%d = X(INT(OpenAD_Symbol_2))%d+T%d*(OpenAD_
-     +Symbol_4)
+      X(OpenAD_Symbol_2)%d = X(OpenAD_Symbol_2)%d+T%d*(OpenAD_Symbol_4)
       T%d = 0.0d0
       T%d = T%d+OpenAD_prp_0%d
       OpenAD_prp_0%d = 0.0d0
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_5 = integer_tape(integer_tape_pointer)
-      X(INT(OpenAD_Symbol_5))%d = X(INT(OpenAD_Symbol_5))%d+T%d
+      X(OpenAD_Symbol_5)%d = X(OpenAD_Symbol_5)%d+T%d
       T%d = 0.0d0
 
 C adjoint end

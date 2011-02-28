@@ -35,7 +35,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_0
+      INTEGER(w2f__i4) OpenAD_Symbol_0
 C
 C     **** Statements ****
 C
@@ -46,17 +46,17 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       __value__(Y(INT(A))) = __value__(X(A))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(A)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(A)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_0)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_0))), __deriv__(X(INT
-     > (OpenAD_Symbol_0))))
+      CALL IncDeriv(__deriv__(Y(OpenAD_Symbol_0)), __deriv__(X(
+     > OpenAD_Symbol_0)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_0))))
+      CALL ZeroDeriv(__deriv__(Y(OpenAD_Symbol_0)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ INLINE cp_arg_store_integer_scalar(subst)
@@ -93,17 +93,17 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       __value__(Y(INT(A))) = __value__(X(A))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(A)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(A)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_0)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_0))), __deriv__(X(INT
-     > (OpenAD_Symbol_0))))
+      CALL IncDeriv(__deriv__(Y(OpenAD_Symbol_0)), __deriv__(X(
+     > OpenAD_Symbol_0)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_0))))
+      CALL ZeroDeriv(__deriv__(Y(OpenAD_Symbol_0)))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 

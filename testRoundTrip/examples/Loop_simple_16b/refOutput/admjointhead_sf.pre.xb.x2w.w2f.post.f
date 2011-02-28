@@ -69,8 +69,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_11
       REAL(w2f__8) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
-      INTEGER(w2f__i8) OpenAD_Symbol_6
-      INTEGER(w2f__i8) OpenAD_Symbol_7
+      INTEGER(w2f__i4) OpenAD_Symbol_6
+      INTEGER(w2f__i4) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_8
       REAL(w2f__8) OpenAD_Symbol_9
       REAL(w2f__8) OpenAD_acc_0

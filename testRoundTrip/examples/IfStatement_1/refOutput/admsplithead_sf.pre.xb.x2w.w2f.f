@@ -72,12 +72,12 @@ C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .GT. 0.0D00) THEN
         __value__(Y(1)) = __value__(X(1))
         OpenAD_Symbol_1 = 1_w2f__i8
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_1)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_1)
       ELSE
         OpenAD_Symbol_2 = 0_w2f__i8
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_2)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_2)
       ENDIF
       OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(1)))
       OpenAD_lin_0 = __value__(Y(1))
@@ -109,8 +109,8 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_0)
       IF(OpenAD_Symbol_0 .ne. 0) THEN
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
         CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(1)))
@@ -138,12 +138,12 @@ C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .GT. 0.0D00) THEN
         __value__(Y(1)) = __value__(X(1))
         OpenAD_Symbol_4 = 1_w2f__i8
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_4)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_4)
       ELSE
         OpenAD_Symbol_5 = 0_w2f__i8
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_5)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_5)
       ENDIF
       OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(1)))
       OpenAD_lin_0 = __value__(Y(1))
@@ -175,8 +175,8 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_3)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_3)
       IF(OpenAD_Symbol_3 .ne. 0) THEN
 C       $OpenAD$ INLINE IncDeriv(subst,subst)
         CALL IncDeriv(__deriv__(Y(1)), __deriv__(X(1)))

@@ -51,7 +51,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      INTEGER(w2f__i8) OpenAD_Symbol_0
+      INTEGER(w2f__i4) OpenAD_Symbol_0
 C
 C     **** Statements ****
 C
@@ -140,9 +140,8 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
-      X(INT(OpenAD_Symbol_0))%d = X(INT(OpenAD_Symbol_0))%d+Y(INT(OpenAD
-     +_Symbol_0))%d
-      Y(INT(OpenAD_Symbol_0))%d = 0.0d0
+      X(OpenAD_Symbol_0)%d = X(OpenAD_Symbol_0)%d+Y(OpenAD_Symbol_0)%d
+      Y(OpenAD_Symbol_0)%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

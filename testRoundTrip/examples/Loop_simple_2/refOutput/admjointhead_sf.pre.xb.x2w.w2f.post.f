@@ -77,9 +77,9 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       INTEGER(w2f__i4) K
-      INTEGER(w2f__i8) OpenAD_Symbol_21
-      INTEGER(w2f__i8) OpenAD_Symbol_22
-      INTEGER(w2f__i8) OpenAD_Symbol_23
+      INTEGER(w2f__i4) OpenAD_Symbol_21
+      INTEGER(w2f__i4) OpenAD_Symbol_22
+      INTEGER(w2f__i4) OpenAD_Symbol_23
       REAL(w2f__8) OpenAD_Symbol_24
       REAL(w2f__8) OpenAD_Symbol_25
       REAL(w2f__8) OpenAD_dly_0
@@ -225,13 +225,12 @@ C adjoint
             OpenAD_Symbol_24 = double_tape(double_tape_pointer)
             double_tape_pointer = double_tape_pointer-1
             OpenAD_Symbol_25 = double_tape(double_tape_pointer)
-            OpenAD_prp_0%d = OpenAD_prp_0%d+Y(INT(OpenAD_Symbol_23))%d*(
-     +OpenAD_Symbol_24)
-            X(INT(OpenAD_Symbol_22))%d = X(INT(OpenAD_Symbol_22))%d+Y(IN
-     +T(OpenAD_Symbol_23))%d*(OpenAD_Symbol_25)
-            Y(INT(OpenAD_Symbol_23))%d = 0.0d0
-            Y(INT(OpenAD_Symbol_23))%d = Y(INT(OpenAD_Symbol_23))%d+Open
-     +AD_prp_0%d
+            OpenAD_prp_0%d = OpenAD_prp_0%d+Y(OpenAD_Symbol_23)%d*(OpenA
+     +D_Symbol_24)
+            X(OpenAD_Symbol_22)%d = X(OpenAD_Symbol_22)%d+Y(OpenAD_Symbo
+     +l_23)%d*(OpenAD_Symbol_25)
+            Y(OpenAD_Symbol_23)%d = 0.0d0
+            Y(OpenAD_Symbol_23)%d = Y(OpenAD_Symbol_23)%d+OpenAD_prp_0%d
             OpenAD_prp_0%d = 0.0d0
             OpenAD_Symbol_5 = INT(OpenAD_Symbol_5)+1
           END DO

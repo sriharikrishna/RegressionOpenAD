@@ -133,8 +133,8 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(__deriv__(X(K)), __deriv__(Y))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(K)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(K)
       __value__(Q(1)) = __value__(Y)
       __value__(Y) = __value__(Q(1))
       P(1) = 1.0
@@ -144,12 +144,12 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(Q(L)))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(P(K), __deriv__(OpenAD_tyc_0))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(L)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(L)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(L)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(L)
       CALL foo(__deriv__(OpenAD_tyc_1), __deriv__(Q(L)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y), __deriv__(OpenAD_prp_1))
@@ -167,8 +167,8 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(Y))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(K)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(K)
       CALL foo(__deriv__(X(K)), __deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -187,8 +187,8 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(__deriv__(X(K)), __deriv__(Y))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(K)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(K)
       __value__(Q(1)) = __value__(Y)
       __value__(Y) = __value__(Q(1))
       P(1) = 1.0
@@ -198,12 +198,12 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(Q(L)))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(P(K), __deriv__(OpenAD_tyc_0))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(L)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(L)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(L)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(L)
       CALL foo(__deriv__(OpenAD_tyc_1), __deriv__(Q(L)))
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y), __deriv__(OpenAD_prp_1))
@@ -221,8 +221,8 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(Y))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(K)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(K)
       CALL foo(__deriv__(X(K)), __deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

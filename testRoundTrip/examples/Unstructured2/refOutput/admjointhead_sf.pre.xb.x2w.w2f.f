@@ -125,15 +125,15 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
       GO TO 23
 23    CONTINUE
       OpenAD_Symbol_0 = 0_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_0)
       GO TO 24
 24    CONTINUE
       GO TO 25
 25    CONTINUE
       OpenAD_Symbol_1 = 1_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_1)
       GO TO 26
 26    CONTINUE
       J = 1
@@ -150,8 +150,8 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 29
 29    CONTINUE
       OpenAD_Symbol_2 = 2_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_2)
       GO TO 30
 30    CONTINUE
       II = 1
@@ -168,15 +168,15 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 33
 33    CONTINUE
       OpenAD_Symbol_3 = 3_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_3)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_3)
       GO TO 34
 34    CONTINUE
       GO TO 35
 35    CONTINUE
       OpenAD_Symbol_4 = 4_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_4)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_4)
       GO TO 36
 36    CONTINUE
       II = 1
@@ -194,8 +194,8 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 39
 39    CONTINUE
       OpenAD_Symbol_5 = 5_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_5)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_5)
       GO TO 40
 40    CONTINUE
       GO TO 37
@@ -205,16 +205,16 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 43
 43    CONTINUE
       OpenAD_Symbol_6 = 6_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_6)
       GO TO 44
 44    CONTINUE
       GO TO 21
 21    CONTINUE
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_7)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_7)
       DO WHILE(INT(OpenAD_Symbol_7) .ne. INT(0_w2f__i8))
         IF ( OpenAD_Symbol_7  .EQ.  1)  GO TO  70
         IF ( OpenAD_Symbol_7  .EQ.  2)  GO TO  71
@@ -239,8 +239,8 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
 75      CONTINUE
         GO TO 67
 67      CONTINUE
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_7)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_7)
       END DO
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -260,15 +260,15 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
       GO TO 180
 180   CONTINUE
       OpenAD_Symbol_8 = 0_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_8)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_8)
       GO TO 181
 181   CONTINUE
       GO TO 182
 182   CONTINUE
       OpenAD_Symbol_9 = 1_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_9)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_9)
       GO TO 183
 183   CONTINUE
       J = 1
@@ -285,8 +285,8 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 186
 186   CONTINUE
       OpenAD_Symbol_10 = 2_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_10)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_10)
       GO TO 187
 187   CONTINUE
       II = 1
@@ -303,15 +303,15 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 190
 190   CONTINUE
       OpenAD_Symbol_11 = 3_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_11)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_11)
       GO TO 191
 191   CONTINUE
       GO TO 192
 192   CONTINUE
       OpenAD_Symbol_12 = 4_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_12)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_12)
       GO TO 193
 193   CONTINUE
       II = 1
@@ -329,8 +329,8 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 196
 196   CONTINUE
       OpenAD_Symbol_13 = 5_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_13)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_13)
       GO TO 197
 197   CONTINUE
       GO TO 194
@@ -340,16 +340,16 @@ C     $OpenAD$ INLINE push_i(subst)
       GO TO 200
 200   CONTINUE
       OpenAD_Symbol_14 = 6_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_14)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_14)
       GO TO 201
 201   CONTINUE
       GO TO 178
 178   CONTINUE
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_15)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_15)
       DO WHILE(INT(OpenAD_Symbol_15) .ne. INT(0_w2f__i8))
         IF ( OpenAD_Symbol_15  .EQ.  1)  GO TO  227
         IF ( OpenAD_Symbol_15  .EQ.  2)  GO TO  228
@@ -374,8 +374,8 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
 232     CONTINUE
         GO TO 224
 224     CONTINUE
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_15)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_15)
       END DO
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

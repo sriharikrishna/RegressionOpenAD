@@ -59,7 +59,7 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      INTEGER(w2f__i8) OpenAD_Symbol_12
+      INTEGER(w2f__i4) OpenAD_Symbol_12
       type(active) :: OpenAD_prp_0
 
 
@@ -95,11 +95,9 @@ C adjoint
       do while (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
-        OpenAD_prp_0%d = OpenAD_prp_0%d+A(INT(OpenAD_Symbol_12))%d*(2.0D
-     +00)
-        A(INT(OpenAD_Symbol_12))%d = 0.0d0
-        A(INT(OpenAD_Symbol_12))%d = A(INT(OpenAD_Symbol_12))%d+OpenAD_p
-     +rp_0%d
+        OpenAD_prp_0%d = OpenAD_prp_0%d+A(OpenAD_Symbol_12)%d*(2.0D00)
+        A(OpenAD_Symbol_12)%d = 0.0d0
+        A(OpenAD_Symbol_12)%d = A(OpenAD_Symbol_12)%d+OpenAD_prp_0%d
         OpenAD_prp_0%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO

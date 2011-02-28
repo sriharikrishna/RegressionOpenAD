@@ -93,20 +93,20 @@ C$OPENAD XXX Template ad_template.f
 45    CONTINUE
       __value__(Y(1)) = __value__(X(1))
       OpenAD_Symbol_3 = 3_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_3)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_3)
       GO TO 49
 40    CONTINUE
       __value__(Y(1)) = __value__(X(1))
       OpenAD_Symbol_1 = 1_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_1)
       GO TO 49
 44    CONTINUE
       __value__(Y(1)) = __value__(X(1))
       OpenAD_Symbol_2 = 2_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_2)
       GO TO 49
 49    CONTINUE
       OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(1)))
@@ -139,8 +139,8 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_0)
       IF ( OpenAD_Symbol_0  .EQ.  1)  GO TO  94
       IF ( OpenAD_Symbol_0  .EQ.  2)  GO TO  93
       IF ( OpenAD_Symbol_0  .EQ.  3)  GO TO  92
@@ -189,20 +189,20 @@ C$OPENAD XXX Template ad_template.f
 155   CONTINUE
       __value__(Y(1)) = __value__(X(1))
       OpenAD_Symbol_7 = 3_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_7)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_7)
       GO TO 159
 150   CONTINUE
       __value__(Y(1)) = __value__(X(1))
       OpenAD_Symbol_5 = 1_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_5)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_5)
       GO TO 159
 154   CONTINUE
       __value__(Y(1)) = __value__(X(1))
       OpenAD_Symbol_6 = 2_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_6)
       GO TO 159
 159   CONTINUE
       OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(1)))
@@ -235,8 +235,8 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_4)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_4)
       IF ( OpenAD_Symbol_4  .EQ.  1)  GO TO  204
       IF ( OpenAD_Symbol_4  .EQ.  2)  GO TO  203
       IF ( OpenAD_Symbol_4  .EQ.  3)  GO TO  202

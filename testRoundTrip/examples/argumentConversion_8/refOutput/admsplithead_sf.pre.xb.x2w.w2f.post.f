@@ -65,7 +65,7 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      INTEGER(w2f__i8) OpenAD_Symbol_12
+      INTEGER(w2f__i4) OpenAD_Symbol_12
       type(active) :: OpenAD_prp_0
 
 
@@ -115,11 +115,9 @@ C adjoint
         IF (OpenAD_Symbol_2.ne.0) THEN
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
-          OpenAD_prp_0%d = OpenAD_prp_0%d+Y(INT(OpenAD_Symbol_12))%d*(2.
-     +0D00)
-          Y(INT(OpenAD_Symbol_12))%d = 0.0d0
-          Y(INT(OpenAD_Symbol_12))%d = Y(INT(OpenAD_Symbol_12))%d+OpenAD
-     +_prp_0%d
+          OpenAD_prp_0%d = OpenAD_prp_0%d+Y(OpenAD_Symbol_12)%d*(2.0D00)
+          Y(OpenAD_Symbol_12)%d = 0.0d0
+          Y(OpenAD_Symbol_12)%d = Y(OpenAD_Symbol_12)%d+OpenAD_prp_0%d
           OpenAD_prp_0%d = 0.0d0
         ENDIF
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1

@@ -71,9 +71,9 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       INTEGER(w2f__i4) K
-      INTEGER(w2f__i8) OpenAD_Symbol_15
-      INTEGER(w2f__i8) OpenAD_Symbol_16
-      INTEGER(w2f__i8) OpenAD_Symbol_17
+      INTEGER(w2f__i4) OpenAD_Symbol_15
+      INTEGER(w2f__i4) OpenAD_Symbol_16
+      INTEGER(w2f__i4) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_18
       REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_dly_0
@@ -216,9 +216,9 @@ C adjoint
       do while (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_15 = integer_tape(integer_tape_pointer)
-        X(INT(OpenAD_Symbol_15))%d = X(INT(OpenAD_Symbol_15))%d+Y(INT(Op
-     +enAD_Symbol_15))%d
-        Y(INT(OpenAD_Symbol_15))%d = 0.0d0
+        X(OpenAD_Symbol_15)%d = X(OpenAD_Symbol_15)%d+Y(OpenAD_Symbol_15
+     +)%d
+        Y(OpenAD_Symbol_15)%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO
 

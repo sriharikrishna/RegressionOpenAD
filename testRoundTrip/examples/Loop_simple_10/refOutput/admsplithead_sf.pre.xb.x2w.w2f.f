@@ -97,19 +97,19 @@ C         $OpenAD$ INLINE push_s0(subst)
         ELSE
           __value__(Y(1)) = 0.0
         ENDIF
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(A(I, J))
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(A(I, J))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(J)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(J)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(J)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(J)
       I = 1 + 1 *((2 - 1) / 1)
       DO WHILE(I .GE. 1)
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(A(I, J))
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(A(I, J))
         IF(A(I, J) .ne. 0) THEN
 C         $OpenAD$ INLINE pop_s0(subst)
           CALL pop_s0(OpenAD_Symbol_30)
@@ -206,26 +206,26 @@ C         $OpenAD$ INLINE push_s0(subst)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_1)
           OpenAD_Symbol_4 = 1_w2f__i8
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_4)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(OpenAD_Symbol_4)
         ELSE
           __value__(Y(1)) = 0.0
           OpenAD_Symbol_5 = 0_w2f__i8
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(OpenAD_Symbol_5)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(OpenAD_Symbol_5)
         ENDIF
         OpenAD_Symbol_3 = (INT(OpenAD_Symbol_3) + INT(1_w2f__i8))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_3)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_3)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = 1
       DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_2)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_2)
         IF(OpenAD_Symbol_2 .ne. 0) THEN
 C         $OpenAD$ INLINE pop_s0(subst)
           CALL pop_s0(OpenAD_Symbol_30)
@@ -334,12 +334,12 @@ C$OPENAD XXX Template ad_template.f
           A(I, J) = (I + J)
           OpenAD_Symbol_15 = (INT(OpenAD_Symbol_15) + INT(1_w2f__i8))
         END DO
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_15)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_15)
         OpenAD_Symbol_14 = (INT(OpenAD_Symbol_14) + INT(1_w2f__i8))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_14)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_14)
       OAD_CTMP0 = 2
       CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
       OpenAD_Symbol_16 = 0_w2f__i8
@@ -349,20 +349,20 @@ C     $OpenAD$ INLINE push_i(subst)
           A(I, J) = 0
           OpenAD_Symbol_17 = (INT(OpenAD_Symbol_17) + INT(1_w2f__i8))
         END DO
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_17)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_17)
         OpenAD_Symbol_16 = (INT(OpenAD_Symbol_16) + INT(1_w2f__i8))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_16)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_16)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_6)
       OpenAD_Symbol_7 = 1
       DO WHILE(INT(OpenAD_Symbol_7) .LE. INT(OpenAD_Symbol_6))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_8)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_8)
         OpenAD_Symbol_9 = 1
         DO WHILE(INT(OpenAD_Symbol_9) .LE. INT(OpenAD_Symbol_8))
           OpenAD_Symbol_9 = INT(OpenAD_Symbol_9) + 1
@@ -370,12 +370,12 @@ C       $OpenAD$ INLINE pop_i(subst)
         OpenAD_Symbol_7 = INT(OpenAD_Symbol_7) + 1
       END DO
       CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_10)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_10)
       OpenAD_Symbol_11 = 1
       DO WHILE(INT(OpenAD_Symbol_11) .LE. INT(OpenAD_Symbol_10))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_12)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_12)
         OpenAD_Symbol_13 = 1
         DO WHILE(INT(OpenAD_Symbol_13) .LE. INT(OpenAD_Symbol_12))
           OpenAD_Symbol_13 = INT(OpenAD_Symbol_13) + 1
@@ -404,12 +404,12 @@ C$OPENAD XXX Template ad_template.f
           A(I, J) = (I + J)
           OpenAD_Symbol_27 = (INT(OpenAD_Symbol_27) + INT(1_w2f__i8))
         END DO
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_27)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_27)
         OpenAD_Symbol_26 = (INT(OpenAD_Symbol_26) + INT(1_w2f__i8))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_26)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_26)
       OAD_CTMP0 = 2
       CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
       OpenAD_Symbol_28 = 0_w2f__i8
@@ -419,20 +419,20 @@ C     $OpenAD$ INLINE push_i(subst)
           A(I, J) = 0
           OpenAD_Symbol_29 = (INT(OpenAD_Symbol_29) + INT(1_w2f__i8))
         END DO
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_29)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_29)
         OpenAD_Symbol_28 = (INT(OpenAD_Symbol_28) + INT(1_w2f__i8))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_28)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_28)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_18)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_18)
       OpenAD_Symbol_19 = 1
       DO WHILE(INT(OpenAD_Symbol_19) .LE. INT(OpenAD_Symbol_18))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_20)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_20)
         OpenAD_Symbol_21 = 1
         DO WHILE(INT(OpenAD_Symbol_21) .LE. INT(OpenAD_Symbol_20))
           OpenAD_Symbol_21 = INT(OpenAD_Symbol_21) + 1
@@ -440,12 +440,12 @@ C       $OpenAD$ INLINE pop_i(subst)
         OpenAD_Symbol_19 = INT(OpenAD_Symbol_19) + 1
       END DO
       CALL foo(__deriv__(X), __deriv__(Y), A, OAD_CTMP0)
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_22)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_22)
       OpenAD_Symbol_23 = 1
       DO WHILE(INT(OpenAD_Symbol_23) .LE. INT(OpenAD_Symbol_22))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_24)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_24)
         OpenAD_Symbol_25 = 1
         DO WHILE(INT(OpenAD_Symbol_25) .LE. INT(OpenAD_Symbol_24))
           OpenAD_Symbol_25 = INT(OpenAD_Symbol_25) + 1

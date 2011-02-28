@@ -44,8 +44,8 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
-      INTEGER(w2f__i8) OpenAD_Symbol_12
-      INTEGER(w2f__i8) OpenAD_Symbol_13
+      INTEGER(w2f__i4) OpenAD_Symbol_12
+      INTEGER(w2f__i4) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_lin_0
@@ -117,11 +117,11 @@ C adjoint
           OpenAD_Symbol_14 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-          X(INT(OpenAD_Symbol_12))%d = X(INT(OpenAD_Symbol_12))%d+Y(INT(
-     +OpenAD_Symbol_13))%d*(OpenAD_Symbol_14)
-          X(INT(OpenAD_Symbol_13))%d = X(INT(OpenAD_Symbol_13))%d+Y(INT(
-     +OpenAD_Symbol_13))%d*(OpenAD_Symbol_15)
-          Y(INT(OpenAD_Symbol_13))%d = 0.0d0
+          X(OpenAD_Symbol_12)%d = X(OpenAD_Symbol_12)%d+Y(OpenAD_Symbol_
+     +13)%d*(OpenAD_Symbol_14)
+          X(OpenAD_Symbol_13)%d = X(OpenAD_Symbol_13)%d+Y(OpenAD_Symbol_
+     +13)%d*(OpenAD_Symbol_15)
+          Y(OpenAD_Symbol_13)%d = 0.0d0
           OpenAD_Symbol_3 = INT(OpenAD_Symbol_3)+1
         END DO
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1

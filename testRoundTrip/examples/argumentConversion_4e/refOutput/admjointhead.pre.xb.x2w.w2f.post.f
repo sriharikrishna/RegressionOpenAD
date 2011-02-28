@@ -40,7 +40,7 @@ C
       EXTERNAL barext
       INTEGER(w2f__i4) I
       type(active) :: T(1:2,1:3)
-      INTEGER(w2f__i8) OpenAD_Symbol_6
+      INTEGER(w2f__i4) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_tyc_0(1 : 2, 1 : 3)
 
 
@@ -148,9 +148,9 @@ C adjoint
       do while (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
-        X(INT(OpenAD_Symbol_6))%d = X(INT(OpenAD_Symbol_6))%d+T(INT(Open
-     +AD_Symbol_6),2)%d
-        T(INT(OpenAD_Symbol_6),2)%d = 0.0d0
+        X(OpenAD_Symbol_6)%d = X(OpenAD_Symbol_6)%d+T(OpenAD_Symbol_6,2)
+     +%d
+        T(OpenAD_Symbol_6,2)%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO
 

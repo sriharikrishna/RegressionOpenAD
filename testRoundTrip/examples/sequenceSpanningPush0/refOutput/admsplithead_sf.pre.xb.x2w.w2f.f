@@ -151,8 +151,8 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       TYPE (OpenADTy_active) T
-      INTEGER(w2f__i8) OpenAD_Symbol_2
-      INTEGER(w2f__i8) OpenAD_Symbol_3
+      INTEGER(w2f__i4) OpenAD_Symbol_2
+      INTEGER(w2f__i4) OpenAD_Symbol_3
 C
 C     **** Top Level Pragmas ****
 C
@@ -172,29 +172,29 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       I = 1
       __value__(T) = __value__(X(I))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
       CALL foo(__deriv__(X(I)), __deriv__(T))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
       __value__(Y(INT(I))) = __value__(T)
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_2)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_2))), __deriv__(T))
+      CALL IncDeriv(__deriv__(Y(OpenAD_Symbol_2)), __deriv__(T))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_2))))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(I)
+      CALL ZeroDeriv(__deriv__(Y(OpenAD_Symbol_2)))
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(I)
       CALL foo(__deriv__(X(I)), __deriv__(T))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_3)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_3)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(T), __deriv__(X(INT(OpenAD_Symbol_3))))
+      CALL IncDeriv(__deriv__(T), __deriv__(X(OpenAD_Symbol_3)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(T))
 C     $OpenAD$ END REPLACEMENT
@@ -214,29 +214,29 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       I = 1
       __value__(T) = __value__(X(I))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
       CALL foo(__deriv__(X(I)), __deriv__(T))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
       __value__(Y(INT(I))) = __value__(T)
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_2)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(Y(INT(OpenAD_Symbol_2))), __deriv__(T))
+      CALL IncDeriv(__deriv__(Y(OpenAD_Symbol_2)), __deriv__(T))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
-      CALL ZeroDeriv(__deriv__(Y(INT(OpenAD_Symbol_2))))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(I)
+      CALL ZeroDeriv(__deriv__(Y(OpenAD_Symbol_2)))
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(I)
       CALL foo(__deriv__(X(I)), __deriv__(T))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_3)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_3)
 C     $OpenAD$ INLINE IncDeriv(subst,subst)
-      CALL IncDeriv(__deriv__(T), __deriv__(X(INT(OpenAD_Symbol_3))))
+      CALL IncDeriv(__deriv__(T), __deriv__(X(OpenAD_Symbol_3)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(T))
 C     $OpenAD$ END REPLACEMENT

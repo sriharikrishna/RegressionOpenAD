@@ -95,16 +95,16 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
       GO TO 11
 11    CONTINUE
       OpenAD_Symbol_0 = 0_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_0)
       GO TO 12
 12    CONTINUE
 C$OPENAD XXX Template ad_template.f
       GO TO 13
 13    CONTINUE
       OpenAD_Symbol_1 = 1_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_1)
       GO TO 14
 14    CONTINUE
       OpenAD_dly_0 = (__value__(X(1)) * __value__(X(1)))
@@ -118,40 +118,40 @@ C     $OpenAD$ INLINE push_s0(subst)
       GO TO 15
 15    CONTINUE
       OpenAD_Symbol_2 = 2_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_2)
       GO TO 16
 16    CONTINUE
       __value__(X(1)) = (__value__(X(1)) * 3.0D00)
       GO TO 17
 17    CONTINUE
       OpenAD_Symbol_3 = 3_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_3)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_3)
       GO TO 18
 18    CONTINUE
       __value__(X(1)) = (__value__(X(1)) * 2.0D00)
       GO TO 19
 19    CONTINUE
       OpenAD_Symbol_4 = 4_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_4)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_4)
       GO TO 20
 20    CONTINUE
       __value__(Y(1)) = __value__(X(1))
       GO TO 21
 21    CONTINUE
       OpenAD_Symbol_5 = 5_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_5)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_5)
       GO TO 22
 22    CONTINUE
       GO TO 9
 9     CONTINUE
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_6)
       DO WHILE(INT(OpenAD_Symbol_6) .ne. INT(0_w2f__i8))
         IF ( OpenAD_Symbol_6  .EQ.  1)  GO TO  44
         IF ( OpenAD_Symbol_6  .EQ.  2)  GO TO  45
@@ -209,8 +209,8 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(Y(1)))
         GO TO 41
 41      CONTINUE
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_6)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_6)
       END DO
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -230,16 +230,16 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
       GO TO 134
 134   CONTINUE
       OpenAD_Symbol_7 = 0_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_7)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_7)
       GO TO 135
 135   CONTINUE
 C$OPENAD XXX Template ad_template.f
       GO TO 136
 136   CONTINUE
       OpenAD_Symbol_8 = 1_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_8)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_8)
       GO TO 137
 137   CONTINUE
       OpenAD_dly_0 = (__value__(X(1)) * __value__(X(1)))
@@ -253,40 +253,40 @@ C     $OpenAD$ INLINE push_s0(subst)
       GO TO 138
 138   CONTINUE
       OpenAD_Symbol_9 = 2_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_9)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_9)
       GO TO 139
 139   CONTINUE
       __value__(X(1)) = (__value__(X(1)) * 3.0D00)
       GO TO 140
 140   CONTINUE
       OpenAD_Symbol_10 = 3_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_10)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_10)
       GO TO 141
 141   CONTINUE
       __value__(X(1)) = (__value__(X(1)) * 2.0D00)
       GO TO 142
 142   CONTINUE
       OpenAD_Symbol_11 = 4_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_11)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_11)
       GO TO 143
 143   CONTINUE
       __value__(Y(1)) = __value__(X(1))
       GO TO 144
 144   CONTINUE
       OpenAD_Symbol_12 = 5_w2f__i8
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_12)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_12)
       GO TO 145
 145   CONTINUE
       GO TO 132
 132   CONTINUE
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_13)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_13)
       DO WHILE(INT(OpenAD_Symbol_13) .ne. INT(0_w2f__i8))
         IF ( OpenAD_Symbol_13  .EQ.  1)  GO TO  167
         IF ( OpenAD_Symbol_13  .EQ.  2)  GO TO  168
@@ -344,8 +344,8 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(Y(1)))
         GO TO 164
 164     CONTINUE
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_13)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_13)
       END DO
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

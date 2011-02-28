@@ -146,8 +146,8 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       REAL(w2f__8) PY
-      INTEGER(w2f__i8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
+      INTEGER(w2f__i4) OpenAD_Symbol_11
+      INTEGER(w2f__i4) OpenAD_Symbol_12
       TYPE (OpenADTy_active) OpenAD_tyc_0(1 : 2)
       TYPE (OpenADTy_active) OpenAD_tyc_1
       TYPE (OpenADTy_active) OpenAD_tyc_2(1 : 2)
@@ -258,24 +258,24 @@ C$OPENAD XXX Simple loop
         DO J = 1, 2, 1
           __value__(AX(INT(I), INT(J))) = __value__(X(I))
           APX(INT(I), INT(J)) = (I * DBLE(4.0))
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(I)
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(J)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(I)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(J)
           OpenAD_Symbol_7 = (INT(OpenAD_Symbol_7) + INT(1_w2f__i8))
         END DO
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_7)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_7)
         OpenAD_Symbol_6 = (INT(OpenAD_Symbol_6) + INT(1_w2f__i8))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_6)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_6)
 C$OPENAD XXX Simple loop
       OpenAD_Symbol_8 = 0_w2f__i8
       DO I = 1, 2, 1
         CALL foo(__deriv__(AX(I, 1 : 2)), __deriv__(Y(1)))
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(I)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(I)
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(__deriv__(OpenAD_tyc_0), APX(I, 1 : 2))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
@@ -287,38 +287,38 @@ C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
         OpenAD_Symbol_8 = (INT(OpenAD_Symbol_8) + INT(1_w2f__i8))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_8)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_8)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = 1
       DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
         CALL foo(__deriv__(OpenAD_tyc_2), __deriv__(OpenAD_tyc_3))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(I)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(I)
         CALL foo(__deriv__(AX(I, 1 : 2)), __deriv__(Y(1)))
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1) + 1
       END DO
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_2)
       OpenAD_Symbol_3 = 1
       DO WHILE(INT(OpenAD_Symbol_3) .LE. INT(OpenAD_Symbol_2))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_4)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_4)
         OpenAD_Symbol_5 = 1
         DO WHILE(INT(OpenAD_Symbol_5) .LE. INT(OpenAD_Symbol_4))
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_11)
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_12)
+C         $OpenAD$ INLINE pop_i_s0(subst)
+          CALL pop_i_s0(OpenAD_Symbol_11)
+C         $OpenAD$ INLINE pop_i_s0(subst)
+          CALL pop_i_s0(OpenAD_Symbol_12)
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
-          CALL IncDeriv(__deriv__(AX(INT(OpenAD_Symbol_12), INT(
-     > OpenAD_Symbol_11))), __deriv__(X(INT(OpenAD_Symbol_12))))
+          CALL IncDeriv(__deriv__(AX(OpenAD_Symbol_12, OpenAD_Symbol_11
+     > )), __deriv__(X(OpenAD_Symbol_12)))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
-          CALL ZeroDeriv(__deriv__(AX(INT(OpenAD_Symbol_12), INT(
-     > OpenAD_Symbol_11))))
+          CALL ZeroDeriv(__deriv__(AX(OpenAD_Symbol_12,
+     >  OpenAD_Symbol_11)))
           OpenAD_Symbol_5 = INT(OpenAD_Symbol_5) + 1
         END DO
         OpenAD_Symbol_3 = INT(OpenAD_Symbol_3) + 1

@@ -82,10 +82,10 @@ C
       CHARACTER(3) LOCALSTRING
       REAL(w2f__8) OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_11
-      INTEGER(w2f__i8) OpenAD_Symbol_12
+      INTEGER(w2f__i4) OpenAD_Symbol_12
       REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_9
+      INTEGER(w2f__i4) OpenAD_Symbol_9
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_lin_0

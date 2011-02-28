@@ -53,12 +53,12 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       I = 1
       CALL foo(__deriv__(X(I)), __deriv__(X(I + 1)), __deriv__(Y(1)))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(I)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(I)
       CALL foo(__deriv__(X(I)), __deriv__(X(I + 1)), __deriv__(Y(1)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -77,12 +77,12 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       I = 1
       CALL foo(__deriv__(X(I)), __deriv__(X(I + 1)), __deriv__(Y(1)))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(I)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(I)
       CALL foo(__deriv__(X(I)), __deriv__(X(I + 1)), __deriv__(Y(1)))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

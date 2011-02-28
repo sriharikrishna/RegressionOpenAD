@@ -60,8 +60,8 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      INTEGER(w2f__i8) OpenAD_Symbol_6
-      INTEGER(w2f__i8) OpenAD_Symbol_7
+      INTEGER(w2f__i4) OpenAD_Symbol_6
+      INTEGER(w2f__i4) OpenAD_Symbol_7
 
 
 C checkpointing stacks and offsets

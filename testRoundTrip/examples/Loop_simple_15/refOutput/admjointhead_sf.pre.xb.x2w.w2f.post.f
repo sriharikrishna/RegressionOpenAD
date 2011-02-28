@@ -64,8 +64,8 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       REAL(w2f__8) S
-      INTEGER(w2f__i8) OpenAD_Symbol_10
-      INTEGER(w2f__i8) OpenAD_Symbol_9
+      INTEGER(w2f__i4) OpenAD_Symbol_10
+      INTEGER(w2f__i4) OpenAD_Symbol_9
       type(active) :: OpenAD_prp_0
 
 

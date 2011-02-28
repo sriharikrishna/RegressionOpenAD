@@ -80,7 +80,7 @@ C
           CALL sax(2.0D00, __deriv__(OpenAD_prp_0), __deriv__(X(I)))
         END DO
         I = 2
-        OAD_CTMP0 = (SIZE(__value__(X)) - I)
+        OAD_CTMP0 = (SIZE(X) - I)
 C       $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
         CALL oad_AllocateMatching(OpenAD_tyc_0, __deriv__(X))
 C       $OpenAD$ INLINE oad_convert(subst,subst)

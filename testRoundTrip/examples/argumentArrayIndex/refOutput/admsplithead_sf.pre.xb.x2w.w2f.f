@@ -142,18 +142,18 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(__deriv__(X(K)), __deriv__(X(K + 1)))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(K)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(K)
       CALL foo(__deriv__(X(K)), __deriv__(Y))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(K)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(K)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(K)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(K)
       CALL foo(__deriv__(X(K)), __deriv__(Y))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(K)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(K)
       CALL foo(__deriv__(X(K)), __deriv__(X(K + 1)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -172,18 +172,18 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       K = 1
       CALL foo(__deriv__(X(K)), __deriv__(X(K + 1)))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(K)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(K)
       CALL foo(__deriv__(X(K)), __deriv__(Y))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(K)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(K)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(K)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(K)
       CALL foo(__deriv__(X(K)), __deriv__(Y))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(K)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(K)
       CALL foo(__deriv__(X(K)), __deriv__(X(K + 1)))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

@@ -119,7 +119,7 @@ C       **** Local Variables and Functions ****
 C
         INTEGER(w2f__i4) I
         INTEGER(w2f__i4) OAD_CTMP0
-        INTEGER(w2f__i8) OpenAD_Symbol_6
+        INTEGER(w2f__i4) OpenAD_Symbol_6
         type(active) :: OpenAD_prp_0
         REAL(w2f__8) OpenAD_tyc_0(:)
         ALLOCATABLE OpenAD_tyc_0
@@ -192,11 +192,9 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
         do while (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
-          OpenAD_prp_0%d = OpenAD_prp_0%d+X(INT(OpenAD_Symbol_6))%d*(2.0
-     +D00)
-          X(INT(OpenAD_Symbol_6))%d = 0.0d0
-          X(INT(OpenAD_Symbol_6))%d = X(INT(OpenAD_Symbol_6))%d+OpenAD_p
-     +rp_0%d
+          OpenAD_prp_0%d = OpenAD_prp_0%d+X(OpenAD_Symbol_6)%d*(2.0D00)
+          X(OpenAD_Symbol_6)%d = 0.0d0
+          X(OpenAD_Symbol_6)%d = X(OpenAD_Symbol_6)%d+OpenAD_prp_0%d
           OpenAD_prp_0%d = 0.0d0
           OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
         END DO

@@ -183,12 +183,12 @@ C$OPENAD XXX Template ad_template.f
       CALL barext(T(I))
       I = 1
       CALL foo(__deriv__(X), __deriv__(Y(I)))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(I)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(I)
       CALL foo(__deriv__(X), __deriv__(Y(I)))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -209,12 +209,12 @@ C$OPENAD XXX Template ad_template.f
       CALL barext(T(I))
       I = 1
       CALL foo(__deriv__(X), __deriv__(Y(I)))
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(I)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(I)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(I)
       CALL foo(__deriv__(X), __deriv__(Y(I)))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

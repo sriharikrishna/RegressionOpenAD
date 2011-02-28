@@ -79,7 +79,7 @@ C
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_Symbol_16
-      INTEGER(w2f__i8) OpenAD_Symbol_17
+      INTEGER(w2f__i4) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_Symbol_18
       REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_Symbol_20
@@ -305,9 +305,9 @@ C adjoint
         OpenAD_Symbol_17 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_18 = double_tape(double_tape_pointer)
-        DFLDDT(INT(OpenAD_Symbol_17))%d = DFLDDT(INT(OpenAD_Symbol_17))%
-     +d+FLDNEW(INT(OpenAD_Symbol_17))%d*(OpenAD_Symbol_18)
-        FLDNEW(INT(OpenAD_Symbol_17))%d = 0.0d0
+        DFLDDT(OpenAD_Symbol_17)%d = DFLDDT(OpenAD_Symbol_17)%d+FLDNEW(O
+     +penAD_Symbol_17)%d*(OpenAD_Symbol_18)
+        FLDNEW(OpenAD_Symbol_17)%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO
       integer_tape_pointer = integer_tape_pointer-1

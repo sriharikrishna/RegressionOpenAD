@@ -176,7 +176,7 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       REAL(w2f__8) PY
-      INTEGER(w2f__i8) OpenAD_Symbol_8
+      INTEGER(w2f__i4) OpenAD_Symbol_8
       type(active) :: OpenAD_tyc_0(1:2,1:3)
       type(active) :: OpenAD_tyc_1
       type(active) :: OpenAD_tyc_2(1:2,1:3)
@@ -295,9 +295,9 @@ C adjoint
       do while (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
-        X(INT(OpenAD_Symbol_8))%d = X(INT(OpenAD_Symbol_8))%d+AX(INT(Ope
-     +nAD_Symbol_8),2)%d
-        AX(INT(OpenAD_Symbol_8),2)%d = 0.0d0
+        X(OpenAD_Symbol_8)%d = X(OpenAD_Symbol_8)%d+AX(OpenAD_Symbol_8,2
+     +)%d
+        AX(OpenAD_Symbol_8,2)%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO
 

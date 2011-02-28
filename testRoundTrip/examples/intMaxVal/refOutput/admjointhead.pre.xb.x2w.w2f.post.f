@@ -32,7 +32,7 @@ C
       INTEGER(w2f__i4) MAXI
       type(active) :: T
       REAL(w2f__8) OpenAD_Symbol_0
-      INTEGER(w2f__i8) OpenAD_Symbol_1
+      INTEGER(w2f__i4) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
@@ -154,11 +154,10 @@ C adjoint
       OpenAD_Symbol_3 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_4 = double_tape(double_tape_pointer)
-      T%d = T%d+Y(INT(OpenAD_Symbol_1))%d*(OpenAD_Symbol_2)
-      Y(INT(OpenAD_Symbol_1))%d = 0.0d0
+      T%d = T%d+Y(OpenAD_Symbol_1)%d*(OpenAD_Symbol_2)
+      Y(OpenAD_Symbol_1)%d = 0.0d0
       X(2)%d = X(2)%d+T%d*(OpenAD_Symbol_3)
-      X(INT(OpenAD_Symbol_1))%d = X(INT(OpenAD_Symbol_1))%d+T%d*(OpenAD_
-     +Symbol_4)
+      X(OpenAD_Symbol_1)%d = X(OpenAD_Symbol_1)%d+T%d*(OpenAD_Symbol_4)
       T%d = 0.0d0
 
 C adjoint end

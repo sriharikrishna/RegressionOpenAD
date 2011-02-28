@@ -64,7 +64,7 @@ C
       REAL(w2f__8) V(1 : 11)
       REAL(w2f__8) Y(1 : 11)
       REAL(w2f__8) OpenAD_Symbol_10
-      INTEGER(w2f__i8) OpenAD_Symbol_6
+      INTEGER(w2f__i4) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_8
       REAL(w2f__8) OpenAD_Symbol_9
@@ -198,10 +198,10 @@ C adjoint
         OpenAD_Symbol_9 = double_tape(double_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_10 = double_tape(double_tape_pointer)
-        X(2)%d = X(2)%d+FVEC(INT(OpenAD_Symbol_6))%d*(OpenAD_Symbol_7)
-        X(1)%d = X(1)%d+FVEC(INT(OpenAD_Symbol_6))%d*(OpenAD_Symbol_8)
-        TEMP2%d = TEMP2%d+FVEC(INT(OpenAD_Symbol_6))%d*(OpenAD_Symbol_9)
-        FVEC(INT(OpenAD_Symbol_6))%d = 0.0d0
+        X(2)%d = X(2)%d+FVEC(OpenAD_Symbol_6)%d*(OpenAD_Symbol_7)
+        X(1)%d = X(1)%d+FVEC(OpenAD_Symbol_6)%d*(OpenAD_Symbol_8)
+        TEMP2%d = TEMP2%d+FVEC(OpenAD_Symbol_6)%d*(OpenAD_Symbol_9)
+        FVEC(OpenAD_Symbol_6)%d = 0.0d0
         X(3)%d = X(3)%d+TEMP2%d*(OpenAD_Symbol_10)
         X(4)%d = X(4)%d+TEMP2%d
         TEMP2%d = 0.0d0

@@ -164,18 +164,18 @@ C
       PARAMETER ( TWO = 2.0D00)
       REAL(w2f__8) ZERO
       PARAMETER ( ZERO = 0.0D00)
-      INTEGER(w2f__i8) OpenAD_Symbol_100
-      INTEGER(w2f__i8) OpenAD_Symbol_101
-      INTEGER(w2f__i8) OpenAD_Symbol_102
-      INTEGER(w2f__i8) OpenAD_Symbol_103
-      INTEGER(w2f__i8) OpenAD_Symbol_104
-      INTEGER(w2f__i8) OpenAD_Symbol_105
-      INTEGER(w2f__i8) OpenAD_Symbol_106
-      INTEGER(w2f__i8) OpenAD_Symbol_107
-      INTEGER(w2f__i8) OpenAD_Symbol_108
-      INTEGER(w2f__i8) OpenAD_Symbol_109
-      INTEGER(w2f__i8) OpenAD_Symbol_110
-      INTEGER(w2f__i8) OpenAD_Symbol_111
+      INTEGER(w2f__i4) OpenAD_Symbol_100
+      INTEGER(w2f__i4) OpenAD_Symbol_101
+      INTEGER(w2f__i4) OpenAD_Symbol_102
+      INTEGER(w2f__i4) OpenAD_Symbol_103
+      INTEGER(w2f__i4) OpenAD_Symbol_104
+      INTEGER(w2f__i4) OpenAD_Symbol_105
+      INTEGER(w2f__i4) OpenAD_Symbol_106
+      INTEGER(w2f__i4) OpenAD_Symbol_107
+      INTEGER(w2f__i4) OpenAD_Symbol_108
+      INTEGER(w2f__i4) OpenAD_Symbol_109
+      INTEGER(w2f__i4) OpenAD_Symbol_110
+      INTEGER(w2f__i4) OpenAD_Symbol_111
       REAL(w2f__8) OpenAD_Symbol_112
       REAL(w2f__8) OpenAD_Symbol_113
       REAL(w2f__8) OpenAD_Symbol_114
@@ -188,34 +188,34 @@ C
       REAL(w2f__8) OpenAD_Symbol_121
       REAL(w2f__8) OpenAD_Symbol_122
       REAL(w2f__8) OpenAD_Symbol_123
-      INTEGER(w2f__i8) OpenAD_Symbol_124
-      INTEGER(w2f__i8) OpenAD_Symbol_125
-      INTEGER(w2f__i8) OpenAD_Symbol_126
-      INTEGER(w2f__i8) OpenAD_Symbol_127
-      INTEGER(w2f__i8) OpenAD_Symbol_128
-      INTEGER(w2f__i8) OpenAD_Symbol_129
-      INTEGER(w2f__i8) OpenAD_Symbol_130
-      INTEGER(w2f__i8) OpenAD_Symbol_131
-      INTEGER(w2f__i8) OpenAD_Symbol_132
-      INTEGER(w2f__i8) OpenAD_Symbol_133
-      INTEGER(w2f__i8) OpenAD_Symbol_134
-      INTEGER(w2f__i8) OpenAD_Symbol_135
-      INTEGER(w2f__i8) OpenAD_Symbol_136
-      INTEGER(w2f__i8) OpenAD_Symbol_137
-      INTEGER(w2f__i8) OpenAD_Symbol_138
-      INTEGER(w2f__i8) OpenAD_Symbol_139
-      INTEGER(w2f__i8) OpenAD_Symbol_140
+      INTEGER(w2f__i4) OpenAD_Symbol_124
+      INTEGER(w2f__i4) OpenAD_Symbol_125
+      INTEGER(w2f__i4) OpenAD_Symbol_126
+      INTEGER(w2f__i4) OpenAD_Symbol_127
+      INTEGER(w2f__i4) OpenAD_Symbol_128
+      INTEGER(w2f__i4) OpenAD_Symbol_129
+      INTEGER(w2f__i4) OpenAD_Symbol_130
+      INTEGER(w2f__i4) OpenAD_Symbol_131
+      INTEGER(w2f__i4) OpenAD_Symbol_132
+      INTEGER(w2f__i4) OpenAD_Symbol_133
+      INTEGER(w2f__i4) OpenAD_Symbol_134
+      INTEGER(w2f__i4) OpenAD_Symbol_135
+      INTEGER(w2f__i4) OpenAD_Symbol_136
+      INTEGER(w2f__i4) OpenAD_Symbol_137
+      INTEGER(w2f__i4) OpenAD_Symbol_138
+      INTEGER(w2f__i4) OpenAD_Symbol_139
+      INTEGER(w2f__i4) OpenAD_Symbol_140
       REAL(w2f__8) OpenAD_Symbol_141
-      INTEGER(w2f__i8) OpenAD_Symbol_90
-      INTEGER(w2f__i8) OpenAD_Symbol_91
-      INTEGER(w2f__i8) OpenAD_Symbol_92
-      INTEGER(w2f__i8) OpenAD_Symbol_93
-      INTEGER(w2f__i8) OpenAD_Symbol_94
-      INTEGER(w2f__i8) OpenAD_Symbol_95
-      INTEGER(w2f__i8) OpenAD_Symbol_96
-      INTEGER(w2f__i8) OpenAD_Symbol_97
-      INTEGER(w2f__i8) OpenAD_Symbol_98
-      INTEGER(w2f__i8) OpenAD_Symbol_99
+      INTEGER(w2f__i4) OpenAD_Symbol_90
+      INTEGER(w2f__i4) OpenAD_Symbol_91
+      INTEGER(w2f__i4) OpenAD_Symbol_92
+      INTEGER(w2f__i4) OpenAD_Symbol_93
+      INTEGER(w2f__i4) OpenAD_Symbol_94
+      INTEGER(w2f__i4) OpenAD_Symbol_95
+      INTEGER(w2f__i4) OpenAD_Symbol_96
+      INTEGER(w2f__i4) OpenAD_Symbol_97
+      INTEGER(w2f__i4) OpenAD_Symbol_98
+      INTEGER(w2f__i4) OpenAD_Symbol_99
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_10
@@ -813,11 +813,11 @@ C adjoint
         OpenAD_Symbol_140 = integer_tape(integer_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_141 = double_tape(double_tape_pointer)
-        OpenAD_prp_12%d = OpenAD_prp_12%d+FVEC(INT(OpenAD_Symbol_140))%d
-     +*(OpenAD_Symbol_141)
-        FVEC(INT(OpenAD_Symbol_140))%d = 0.0d0
-        FVEC(INT(OpenAD_Symbol_140))%d = FVEC(INT(OpenAD_Symbol_140))%d+
-     +OpenAD_prp_12%d
+        OpenAD_prp_12%d = OpenAD_prp_12%d+FVEC(OpenAD_Symbol_140)%d*(Ope
+     +nAD_Symbol_141)
+        FVEC(OpenAD_Symbol_140)%d = 0.0d0
+        FVEC(OpenAD_Symbol_140)%d = FVEC(OpenAD_Symbol_140)%d+OpenAD_prp
+     +_12%d
         OpenAD_prp_12%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO
@@ -855,31 +855,31 @@ C adjoint
           OpenAD_Symbol_122 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_123 = double_tape(double_tape_pointer)
-          OpenAD_prp_2%d = OpenAD_prp_2%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_112)
-          OpenAD_prp_3%d = OpenAD_prp_3%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_113)
-          OpenAD_prp_4%d = OpenAD_prp_4%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_114)
-          OpenAD_prp_5%d = OpenAD_prp_5%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_115)
-          OpenAD_prp_6%d = OpenAD_prp_6%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_116)
-          OpenAD_prp_7%d = OpenAD_prp_7%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_117)
-          OpenAD_prp_8%d = OpenAD_prp_8%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_118)
-          OpenAD_prp_9%d = OpenAD_prp_9%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_119)
-          OpenAD_prp_10%d = OpenAD_prp_10%d+FVEC(INT(OpenAD_Symbol_111))
-     +%d*(OpenAD_Symbol_120)
-          OpenAD_prp_11%d = OpenAD_prp_11%d+FVEC(INT(OpenAD_Symbol_111))
-     +%d*(OpenAD_Symbol_121)
-          OpenAD_prp_0%d = OpenAD_prp_0%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_122)
-          OpenAD_prp_1%d = OpenAD_prp_1%d+FVEC(INT(OpenAD_Symbol_111))%d
-     +*(OpenAD_Symbol_123)
-          FVEC(INT(OpenAD_Symbol_111))%d = 0.0d0
+          OpenAD_prp_2%d = OpenAD_prp_2%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_112)
+          OpenAD_prp_3%d = OpenAD_prp_3%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_113)
+          OpenAD_prp_4%d = OpenAD_prp_4%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_114)
+          OpenAD_prp_5%d = OpenAD_prp_5%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_115)
+          OpenAD_prp_6%d = OpenAD_prp_6%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_116)
+          OpenAD_prp_7%d = OpenAD_prp_7%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_117)
+          OpenAD_prp_8%d = OpenAD_prp_8%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_118)
+          OpenAD_prp_9%d = OpenAD_prp_9%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_119)
+          OpenAD_prp_10%d = OpenAD_prp_10%d+FVEC(OpenAD_Symbol_111)%d*(O
+     +penAD_Symbol_120)
+          OpenAD_prp_11%d = OpenAD_prp_11%d+FVEC(OpenAD_Symbol_111)%d*(O
+     +penAD_Symbol_121)
+          OpenAD_prp_0%d = OpenAD_prp_0%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_122)
+          OpenAD_prp_1%d = OpenAD_prp_1%d+FVEC(OpenAD_Symbol_111)%d*(Ope
+     +nAD_Symbol_123)
+          FVEC(OpenAD_Symbol_111)%d = 0.0d0
           PT%d = PT%d+OpenAD_prp_11%d*(-2.0D00)
           PTR%d = PTR%d+OpenAD_prp_11%d
           PTL%d = PTL%d+OpenAD_prp_11%d
@@ -933,8 +933,7 @@ C adjoint
           ELSE
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_124 = integer_tape(integer_tape_pointer)
-            X(INT(OpenAD_Symbol_124))%d = X(INT(OpenAD_Symbol_124))%d+PT
-     +R%d
+            X(OpenAD_Symbol_124)%d = X(OpenAD_Symbol_124)%d+PTR%d
             PTR%d = 0.0d0
           ENDIF
           integer_tape_pointer = integer_tape_pointer-1
@@ -942,8 +941,7 @@ C adjoint
           IF (OpenAD_Symbol_7.ne.0) THEN
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_110 = integer_tape(integer_tape_pointer)
-            X(INT(OpenAD_Symbol_110))%d = X(INT(OpenAD_Symbol_110))%d+PT
-     +%d
+            X(OpenAD_Symbol_110)%d = X(OpenAD_Symbol_110)%d+PT%d
             PT%d = 0.0d0
             PTT%d = 0.0d0
           ELSE
@@ -952,20 +950,17 @@ C adjoint
             IF (OpenAD_Symbol_8.ne.0) THEN
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_125 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_125))%d = X(INT(OpenAD_Symbol_125))%d+
-     +PTT%d
+              X(OpenAD_Symbol_125)%d = X(OpenAD_Symbol_125)%d+PTT%d
               PTT%d = 0.0d0
               PT%d = 0.0d0
             ELSE
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_126 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_126))%d = X(INT(OpenAD_Symbol_126))%d+
-     +PTT%d
+              X(OpenAD_Symbol_126)%d = X(OpenAD_Symbol_126)%d+PTT%d
               PTT%d = 0.0d0
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_127 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_127))%d = X(INT(OpenAD_Symbol_127))%d+
-     +PT%d
+              X(OpenAD_Symbol_127)%d = X(OpenAD_Symbol_127)%d+PT%d
               PT%d = 0.0d0
             ENDIF
           ENDIF
@@ -976,8 +971,7 @@ C adjoint
           ELSE
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_128 = integer_tape(integer_tape_pointer)
-            X(INT(OpenAD_Symbol_128))%d = X(INT(OpenAD_Symbol_128))%d+PT
-     +L%d
+            X(OpenAD_Symbol_128)%d = X(OpenAD_Symbol_128)%d+PTL%d
             PTL%d = 0.0d0
           ENDIF
           integer_tape_pointer = integer_tape_pointer-1
@@ -985,8 +979,7 @@ C adjoint
           IF (OpenAD_Symbol_10.ne.0) THEN
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_109 = integer_tape(integer_tape_pointer)
-            X(INT(OpenAD_Symbol_109))%d = X(INT(OpenAD_Symbol_109))%d+PR
-     +%d
+            X(OpenAD_Symbol_109)%d = X(OpenAD_Symbol_109)%d+PR%d
             PR%d = 0.0d0
             PRR%d = 0.0d0
           ELSE
@@ -995,34 +988,30 @@ C adjoint
             IF (OpenAD_Symbol_11.ne.0) THEN
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_129 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_129))%d = X(INT(OpenAD_Symbol_129))%d+
-     +PRR%d
+              X(OpenAD_Symbol_129)%d = X(OpenAD_Symbol_129)%d+PRR%d
               PRR%d = 0.0d0
               PR%d = 0.0d0
             ELSE
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_130 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_130))%d = X(INT(OpenAD_Symbol_130))%d+
-     +PRR%d
+              X(OpenAD_Symbol_130)%d = X(OpenAD_Symbol_130)%d+PRR%d
               PRR%d = 0.0d0
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_131 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_131))%d = X(INT(OpenAD_Symbol_131))%d+
-     +PR%d
+              X(OpenAD_Symbol_131)%d = X(OpenAD_Symbol_131)%d+PR%d
               PR%d = 0.0d0
             ENDIF
           ENDIF
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_108 = integer_tape(integer_tape_pointer)
-          X(INT(OpenAD_Symbol_108))%d = X(INT(OpenAD_Symbol_108))%d+P%d
+          X(OpenAD_Symbol_108)%d = X(OpenAD_Symbol_108)%d+P%d
           P%d = 0.0d0
           integer_tape_pointer = integer_tape_pointer-1
           OpenAD_Symbol_12 = integer_tape(integer_tape_pointer)
           IF (OpenAD_Symbol_12.ne.0) THEN
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_107 = integer_tape(integer_tape_pointer)
-            X(INT(OpenAD_Symbol_107))%d = X(INT(OpenAD_Symbol_107))%d+PL
-     +L%d
+            X(OpenAD_Symbol_107)%d = X(OpenAD_Symbol_107)%d+PLL%d
             PLL%d = 0.0d0
             PL%d = 0.0d0
           ELSE
@@ -1031,20 +1020,17 @@ C adjoint
             IF (OpenAD_Symbol_13.ne.0) THEN
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_132 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_132))%d = X(INT(OpenAD_Symbol_132))%d+
-     +PL%d
+              X(OpenAD_Symbol_132)%d = X(OpenAD_Symbol_132)%d+PL%d
               PL%d = 0.0d0
               PLL%d = 0.0d0
             ELSE
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_133 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_133))%d = X(INT(OpenAD_Symbol_133))%d+
-     +PLL%d
+              X(OpenAD_Symbol_133)%d = X(OpenAD_Symbol_133)%d+PLL%d
               PLL%d = 0.0d0
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_134 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_134))%d = X(INT(OpenAD_Symbol_134))%d+
-     +PL%d
+              X(OpenAD_Symbol_134)%d = X(OpenAD_Symbol_134)%d+PL%d
               PL%d = 0.0d0
             ENDIF
           ENDIF
@@ -1055,8 +1041,7 @@ C adjoint
           ELSE
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_135 = integer_tape(integer_tape_pointer)
-            X(INT(OpenAD_Symbol_135))%d = X(INT(OpenAD_Symbol_135))%d+PB
-     +R%d
+            X(OpenAD_Symbol_135)%d = X(OpenAD_Symbol_135)%d+PBR%d
             PBR%d = 0.0d0
           ENDIF
           integer_tape_pointer = integer_tape_pointer-1
@@ -1064,8 +1049,7 @@ C adjoint
           IF (OpenAD_Symbol_15.ne.0) THEN
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_106 = integer_tape(integer_tape_pointer)
-            X(INT(OpenAD_Symbol_106))%d = X(INT(OpenAD_Symbol_106))%d+PB
-     +B%d
+            X(OpenAD_Symbol_106)%d = X(OpenAD_Symbol_106)%d+PBB%d
             PBB%d = 0.0d0
             PB%d = 0.0d0
           ELSE
@@ -1074,20 +1058,17 @@ C adjoint
             IF (OpenAD_Symbol_16.ne.0) THEN
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_136 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_136))%d = X(INT(OpenAD_Symbol_136))%d+
-     +PB%d
+              X(OpenAD_Symbol_136)%d = X(OpenAD_Symbol_136)%d+PB%d
               PB%d = 0.0d0
               PBB%d = 0.0d0
             ELSE
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_137 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_137))%d = X(INT(OpenAD_Symbol_137))%d+
-     +PBB%d
+              X(OpenAD_Symbol_137)%d = X(OpenAD_Symbol_137)%d+PBB%d
               PBB%d = 0.0d0
               integer_tape_pointer = integer_tape_pointer-1
               OpenAD_Symbol_138 = integer_tape(integer_tape_pointer)
-              X(INT(OpenAD_Symbol_138))%d = X(INT(OpenAD_Symbol_138))%d+
-     +PB%d
+              X(OpenAD_Symbol_138)%d = X(OpenAD_Symbol_138)%d+PB%d
               PB%d = 0.0d0
             ENDIF
           ENDIF
@@ -1098,8 +1079,7 @@ C adjoint
           ELSE
             integer_tape_pointer = integer_tape_pointer-1
             OpenAD_Symbol_139 = integer_tape(integer_tape_pointer)
-            X(INT(OpenAD_Symbol_139))%d = X(INT(OpenAD_Symbol_139))%d+PB
-     +L%d
+            X(OpenAD_Symbol_139)%d = X(OpenAD_Symbol_139)%d+PBL%d
             PBL%d = 0.0d0
           ENDIF
           OpenAD_Symbol_5 = INT(OpenAD_Symbol_5)+1

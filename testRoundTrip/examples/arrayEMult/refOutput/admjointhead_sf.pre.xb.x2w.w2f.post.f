@@ -138,7 +138,7 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       Y(1:2)%v = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
       OpenAD_lin_0 = Z(1:INT(SIZE(X)))%v
       OpenAD_lin_1 = X(1:2)%v
-      OpenAD_Symbol_1 = SIZE(OpenAD_lin_0,INT(1_w2f__i8))
+      OpenAD_Symbol_1 = SIZE(OpenAD_lin_0,1_w2f__i8)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li

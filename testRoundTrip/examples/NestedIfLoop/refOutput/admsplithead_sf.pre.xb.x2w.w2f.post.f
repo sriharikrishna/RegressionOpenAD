@@ -71,10 +71,10 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      INTEGER(w2f__i8) OpenAD_Symbol_18
+      INTEGER(w2f__i4) OpenAD_Symbol_18
       REAL(w2f__8) OpenAD_Symbol_19
       REAL(w2f__8) OpenAD_Symbol_20
-      INTEGER(w2f__i8) OpenAD_Symbol_21
+      INTEGER(w2f__i4) OpenAD_Symbol_21
       REAL(w2f__8) OpenAD_Symbol_22
       REAL(w2f__8) OpenAD_Symbol_23
       REAL(w2f__8) OpenAD_lin_0
@@ -165,11 +165,11 @@ C adjoint
           OpenAD_Symbol_19 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_20 = double_tape(double_tape_pointer)
-          X(INT(OpenAD_Symbol_18))%d = X(INT(OpenAD_Symbol_18))%d+Y(INT(
-     +OpenAD_Symbol_18))%d*(OpenAD_Symbol_19)
-          X(INT(OpenAD_Symbol_18))%d = X(INT(OpenAD_Symbol_18))%d+Y(INT(
-     +OpenAD_Symbol_18))%d*(OpenAD_Symbol_20)
-          Y(INT(OpenAD_Symbol_18))%d = 0.0d0
+          X(OpenAD_Symbol_18)%d = X(OpenAD_Symbol_18)%d+Y(OpenAD_Symbol_
+     +18)%d*(OpenAD_Symbol_19)
+          X(OpenAD_Symbol_18)%d = X(OpenAD_Symbol_18)%d+Y(OpenAD_Symbol_
+     +18)%d*(OpenAD_Symbol_20)
+          Y(OpenAD_Symbol_18)%d = 0.0d0
           OpenAD_Symbol_4 = INT(OpenAD_Symbol_4)+1
         END DO
       ELSE
@@ -183,11 +183,11 @@ C adjoint
           OpenAD_Symbol_22 = double_tape(double_tape_pointer)
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_23 = double_tape(double_tape_pointer)
-          X(INT(OpenAD_Symbol_21))%d = X(INT(OpenAD_Symbol_21))%d+Y(INT(
-     +OpenAD_Symbol_21))%d*(OpenAD_Symbol_22)
-          X(INT(OpenAD_Symbol_21))%d = X(INT(OpenAD_Symbol_21))%d+Y(INT(
-     +OpenAD_Symbol_21))%d*(OpenAD_Symbol_23)
-          Y(INT(OpenAD_Symbol_21))%d = 0.0d0
+          X(OpenAD_Symbol_21)%d = X(OpenAD_Symbol_21)%d+Y(OpenAD_Symbol_
+     +21)%d*(OpenAD_Symbol_22)
+          X(OpenAD_Symbol_21)%d = X(OpenAD_Symbol_21)%d+Y(OpenAD_Symbol_
+     +21)%d*(OpenAD_Symbol_23)
+          Y(OpenAD_Symbol_21)%d = 0.0d0
           OpenAD_Symbol_2 = INT(OpenAD_Symbol_2)+1
         END DO
       ENDIF

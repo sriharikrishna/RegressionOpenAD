@@ -180,8 +180,8 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       REAL(w2f__8) PY
-      INTEGER(w2f__i8) OpenAD_Symbol_14
-      INTEGER(w2f__i8) OpenAD_Symbol_15
+      INTEGER(w2f__i4) OpenAD_Symbol_14
+      INTEGER(w2f__i4) OpenAD_Symbol_15
       type(active) :: OpenAD_tyc_0
       type(active) :: OpenAD_tyc_1
       type(active) :: OpenAD_tyc_2

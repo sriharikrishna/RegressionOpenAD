@@ -107,7 +107,7 @@ C       **** Local Variables and Functions ****
 C
         INTEGER(w2f__i4) I
         INTEGER(w2f__i4) OAD_CTMP0
-        INTEGER(w2f__i8) OpenAD_Symbol_6
+        INTEGER(w2f__i4) OpenAD_Symbol_6
         TYPE (OpenADTy_active) OpenAD_prp_0
         REAL(w2f__8) OpenAD_tyc_0(:)
         ALLOCATABLE OpenAD_tyc_0
@@ -121,7 +121,7 @@ C       $OpenAD$ BEGIN REPLACEMENT 1
           __value__(X(INT(I))) = (__value__(X(I)) * 2.0D00)
         END DO
         I = 2
-        OAD_CTMP0 = (SIZE(__value__(X)) - I)
+        OAD_CTMP0 = (SIZE(X) - I)
 C       $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
         CALL oad_AllocateMatching(OpenAD_tyc_0, __deriv__(X))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
@@ -136,14 +136,14 @@ C       $OpenAD$ BEGIN REPLACEMENT 2
         OpenAD_Symbol_2 = 0_w2f__i8
         DO I = 1, N, 1
           __value__(X(INT(I))) = (__value__(X(I)) * 2.0D00)
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(I)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(I)
           OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2) + INT(1_w2f__i8))
         END DO
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_2)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_2)
         I = 2
-        OAD_CTMP0 = (SIZE(__value__(X)) - I)
+        OAD_CTMP0 = (SIZE(X) - I)
 C       $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
         CALL oad_AllocateMatching(OpenAD_tyc_0, __deriv__(X))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
@@ -153,33 +153,33 @@ C       $OpenAD$ INLINE oad_ShapeTest(subst,subst)
         CALL oad_ShapeTest(OpenAD_tyc_0, __deriv__(X))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(__deriv__(X), OpenAD_tyc_0)
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(I)
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OAD_CTMP0)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(I)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OAD_CTMP0)
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 3
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OAD_CTMP0)
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(I)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OAD_CTMP0)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(I)
 C       $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
         CALL oad_AllocateMatching(OpenAD_tyc_1, __deriv__(X))
         CALL FOO(OpenAD_tyc_1(I), OAD_CTMP0)
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_0)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_0)
         OpenAD_Symbol_1 = 1
         DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_6)
+C         $OpenAD$ INLINE pop_i_s0(subst)
+          CALL pop_i_s0(OpenAD_Symbol_6)
 C         $OpenAD$ INLINE Saxpy(subst,subst,subst)
-          CALL Saxpy(2.0D00, __deriv__(X(INT(OpenAD_Symbol_6))),
-     >  __deriv__(OpenAD_prp_0))
+          CALL Saxpy(2.0D00, __deriv__(X(OpenAD_Symbol_6)), __deriv__(
+     > OpenAD_prp_0))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
-          CALL ZeroDeriv(__deriv__(X(INT(OpenAD_Symbol_6))))
+          CALL ZeroDeriv(__deriv__(X(OpenAD_Symbol_6)))
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
-          CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X(INT(
-     > OpenAD_Symbol_6))))
+          CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X(
+     > OpenAD_Symbol_6)))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
           OpenAD_Symbol_1 = INT(OpenAD_Symbol_1) + 1
@@ -221,14 +221,14 @@ C       $OpenAD$ BEGIN REPLACEMENT 10
         OpenAD_Symbol_5 = 0_w2f__i8
         DO I = 1, N, 1
           __value__(X(INT(I))) = (__value__(X(I)) * 2.0D00)
-C         $OpenAD$ INLINE push_i(subst)
-          CALL push_i(I)
+C         $OpenAD$ INLINE push_i_s0(subst)
+          CALL push_i_s0(I)
           OpenAD_Symbol_5 = (INT(OpenAD_Symbol_5) + INT(1_w2f__i8))
         END DO
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OpenAD_Symbol_5)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OpenAD_Symbol_5)
         I = 2
-        OAD_CTMP0 = (SIZE(__value__(X)) - I)
+        OAD_CTMP0 = (SIZE(X) - I)
 C       $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
         CALL oad_AllocateMatching(OpenAD_tyc_0, __deriv__(X))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
@@ -238,33 +238,33 @@ C       $OpenAD$ INLINE oad_ShapeTest(subst,subst)
         CALL oad_ShapeTest(OpenAD_tyc_0, __deriv__(X))
 C       $OpenAD$ INLINE oad_convert(subst,subst)
         CALL oad_convert(__deriv__(X), OpenAD_tyc_0)
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(I)
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(OAD_CTMP0)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(I)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(OAD_CTMP0)
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 11
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OAD_CTMP0)
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(I)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OAD_CTMP0)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(I)
 C       $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
         CALL oad_AllocateMatching(OpenAD_tyc_1, __deriv__(X))
         CALL FOO(OpenAD_tyc_1(I), OAD_CTMP0)
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(OpenAD_Symbol_3)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(OpenAD_Symbol_3)
         OpenAD_Symbol_4 = 1
         DO WHILE(INT(OpenAD_Symbol_4) .LE. INT(OpenAD_Symbol_3))
-C         $OpenAD$ INLINE pop_i(subst)
-          CALL pop_i(OpenAD_Symbol_6)
+C         $OpenAD$ INLINE pop_i_s0(subst)
+          CALL pop_i_s0(OpenAD_Symbol_6)
 C         $OpenAD$ INLINE Saxpy(subst,subst,subst)
-          CALL Saxpy(2.0D00, __deriv__(X(INT(OpenAD_Symbol_6))),
-     >  __deriv__(OpenAD_prp_0))
+          CALL Saxpy(2.0D00, __deriv__(X(OpenAD_Symbol_6)), __deriv__(
+     > OpenAD_prp_0))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
-          CALL ZeroDeriv(__deriv__(X(INT(OpenAD_Symbol_6))))
+          CALL ZeroDeriv(__deriv__(X(OpenAD_Symbol_6)))
 C         $OpenAD$ INLINE IncDeriv(subst,subst)
-          CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X(INT(
-     > OpenAD_Symbol_6))))
+          CALL IncDeriv(__deriv__(OpenAD_prp_0), __deriv__(X(
+     > OpenAD_Symbol_6)))
 C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
           OpenAD_Symbol_4 = INT(OpenAD_Symbol_4) + 1
@@ -307,8 +307,8 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
       OAD_CTMP0 = 4
       CALL BAR(__deriv__(X), OAD_CTMP0)
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OAD_CTMP0)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OAD_CTMP0)
       __value__(Y(1 : 4)) = __value__(X(1 : 4))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
@@ -316,8 +316,8 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y(1 : 4)), __deriv__(X(1 : 4)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1 : 4)))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OAD_CTMP0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OAD_CTMP0)
       CALL BAR(__deriv__(X), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -335,8 +335,8 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
       OAD_CTMP0 = 4
       CALL BAR(__deriv__(X), OAD_CTMP0)
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OAD_CTMP0)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OAD_CTMP0)
       __value__(Y(1 : 4)) = __value__(X(1 : 4))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
@@ -344,8 +344,8 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y(1 : 4)), __deriv__(X(1 : 4)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1 : 4)))
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OAD_CTMP0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OAD_CTMP0)
       CALL BAR(__deriv__(X), OAD_CTMP0)
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

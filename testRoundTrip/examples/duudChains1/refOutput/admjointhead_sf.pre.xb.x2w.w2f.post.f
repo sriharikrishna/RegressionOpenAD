@@ -61,8 +61,8 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       type(active) :: T(1:2)
-      INTEGER(w2f__i8) OpenAD_Symbol_6
-      INTEGER(w2f__i8) OpenAD_Symbol_7
+      INTEGER(w2f__i4) OpenAD_Symbol_6
+      INTEGER(w2f__i4) OpenAD_Symbol_7
 
 
 C checkpointing stacks and offsets
@@ -159,14 +159,14 @@ C adjoint
       do while (INT(OpenAD_Symbol_1).LE.INT(OpenAD_Symbol_0))
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
-        T(INT(OpenAD_Symbol_6))%d = T(INT(OpenAD_Symbol_6))%d+Y(INT(Open
-     +AD_Symbol_6))%d*(4.0D00)
-        Y(INT(OpenAD_Symbol_6))%d = 0.0d0
+        T(OpenAD_Symbol_6)%d = T(OpenAD_Symbol_6)%d+Y(OpenAD_Symbol_6)%d
+     +*(4.0D00)
+        Y(OpenAD_Symbol_6)%d = 0.0d0
         integer_tape_pointer = integer_tape_pointer-1
         OpenAD_Symbol_7 = integer_tape(integer_tape_pointer)
-        X(INT(OpenAD_Symbol_7))%d = X(INT(OpenAD_Symbol_7))%d+T(INT(Open
-     +AD_Symbol_7))%d*(2.0D00)
-        T(INT(OpenAD_Symbol_7))%d = 0.0d0
+        X(OpenAD_Symbol_7)%d = X(OpenAD_Symbol_7)%d+T(OpenAD_Symbol_7)%d
+     +*(2.0D00)
+        T(OpenAD_Symbol_7)%d = 0.0d0
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO
 

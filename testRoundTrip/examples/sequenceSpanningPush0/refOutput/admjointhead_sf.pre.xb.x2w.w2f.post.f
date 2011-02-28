@@ -192,8 +192,8 @@ C
       EXTERNAL foo
       INTEGER(w2f__i4) I
       type(active) :: T
-      INTEGER(w2f__i8) OpenAD_Symbol_2
-      INTEGER(w2f__i8) OpenAD_Symbol_3
+      INTEGER(w2f__i4) OpenAD_Symbol_2
+      INTEGER(w2f__i4) OpenAD_Symbol_3
 
 
 C checkpointing stacks and offsets
@@ -284,14 +284,14 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_2 = integer_tape(integer_tape_pointer)
-      T%d = T%d+Y(INT(OpenAD_Symbol_2))%d
-      Y(INT(OpenAD_Symbol_2))%d = 0.0d0
+      T%d = T%d+Y(OpenAD_Symbol_2)%d
+      Y(OpenAD_Symbol_2)%d = 0.0d0
       integer_tape_pointer = integer_tape_pointer-1
       I = integer_tape(integer_tape_pointer)
       CALL foo(X(I),T)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_3 = integer_tape(integer_tape_pointer)
-      X(INT(OpenAD_Symbol_3))%d = X(INT(OpenAD_Symbol_3))%d+T%d
+      X(OpenAD_Symbol_3)%d = X(OpenAD_Symbol_3)%d+T%d
       T%d = 0.0d0
 
 C adjoint end
