@@ -35,16 +35,12 @@ C
       EXTERNAL foo
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
-      TYPE (OpenADTy_active) OpenAD_prp_0
-      TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -65,16 +61,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
       CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(2)))
       CALL saxpy(OpenAD_acc_1, __deriv__(X(2)), __deriv__(Y(2)))
-      OpenAD_dly_0 = SIN(__value__(X(3)))
+      __value__(Y(3)) = SIN(__value__(X(3)))
       OpenAD_lin_4 = COS(__value__(X(3)))
-      __value__(Y(3)) = OpenAD_dly_0
-      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X(3)))
-      CALL sax(OpenAD_lin_4, __deriv__(OpenAD_prp_0), __deriv__(Y(3)))
-      OpenAD_dly_1 = COS(__value__(X(4)))
+      CALL sax(OpenAD_lin_4, __deriv__(X(3)), __deriv__(Y(3)))
+      __value__(Y(4)) = COS(__value__(X(4)))
       OpenAD_lin_5 = (- SIN(__value__(X(4))))
-      __value__(Y(4)) = OpenAD_dly_1
-      CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(X(4)))
-      CALL sax(OpenAD_lin_5, __deriv__(OpenAD_prp_1), __deriv__(Y(4)))
+      CALL sax(OpenAD_lin_5, __deriv__(X(4)), __deriv__(Y(4)))
       END SUBROUTINE
 
       SUBROUTINE foo(A, B, C)
@@ -119,27 +111,27 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_dly_2
+      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
       REAL(w2f__8) OpenAD_lin_8
       REAL(w2f__8) OpenAD_lin_9
-      TYPE (OpenADTy_active) OpenAD_prp_2
-      TYPE (OpenADTy_active) OpenAD_prp_3
+      TYPE (OpenADTy_active) OpenAD_prp_0
+      TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       OpenAD_lin_8 = (__value__(A) * __value__(A))
-      OpenAD_dly_2 = COS(OpenAD_lin_8)
+      OpenAD_dly_0 = COS(OpenAD_lin_8)
       OpenAD_lin_10 = __value__(A)
       OpenAD_lin_11 = __value__(A)
       OpenAD_lin_9 = (- SIN(OpenAD_lin_8))
-      __value__(A) = OpenAD_dly_2
+      __value__(A) = OpenAD_dly_0
       OpenAD_acc_2 = (OpenAD_lin_10 * OpenAD_lin_9)
       OpenAD_acc_3 = (OpenAD_lin_11 * OpenAD_lin_9)
-      CALL setderiv(__deriv__(OpenAD_prp_2), __deriv__(A))
-      CALL setderiv(__deriv__(OpenAD_prp_3), __deriv__(A))
-      CALL sax(OpenAD_acc_2, __deriv__(OpenAD_prp_2), __deriv__(A))
-      CALL saxpy(OpenAD_acc_3, __deriv__(OpenAD_prp_3), __deriv__(A))
+      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(A))
+      CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(A))
+      CALL sax(OpenAD_acc_2, __deriv__(OpenAD_prp_0), __deriv__(A))
+      CALL saxpy(OpenAD_acc_3, __deriv__(OpenAD_prp_1), __deriv__(A))
       END SUBROUTINE

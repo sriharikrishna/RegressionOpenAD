@@ -37,7 +37,6 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
-      type(active) :: OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -50,6 +49,5 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = EXP(X(1)%v)
       OpenAD_lin_1 = OpenAD_lin_0
       Y(1)%v = OpenAD_lin_0
-      CALL setderiv(OpenAD_prp_0,X(1))
-      CALL sax(OpenAD_lin_1,OpenAD_prp_0,Y(1))
+      CALL sax(OpenAD_lin_1,X(1),Y(1))
       END SUBROUTINE

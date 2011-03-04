@@ -16,16 +16,12 @@ C
       EXTERNAL foo
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
-      type(active) :: OpenAD_prp_0
-      type(active) :: OpenAD_prp_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -45,16 +41,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
       CALL sax(OpenAD_acc_0,X(1),Y(2))
       CALL saxpy(OpenAD_acc_1,X(2),Y(2))
-      OpenAD_dly_0 = SIN(X(3)%v)
+      Y(3)%v = SIN(X(3)%v)
       OpenAD_lin_4 = COS(X(3)%v)
-      Y(3)%v = OpenAD_dly_0
-      CALL setderiv(OpenAD_prp_0,X(3))
-      CALL sax(OpenAD_lin_4,OpenAD_prp_0,Y(3))
-      OpenAD_dly_1 = COS(X(4)%v)
+      CALL sax(OpenAD_lin_4,X(3),Y(3))
+      Y(4)%v = COS(X(4)%v)
       OpenAD_lin_5 = (-SIN(X(4)%v))
-      Y(4)%v = OpenAD_dly_1
-      CALL setderiv(OpenAD_prp_1,X(4))
-      CALL sax(OpenAD_lin_5,OpenAD_prp_1,Y(4))
+      CALL sax(OpenAD_lin_5,X(4),Y(4))
       END SUBROUTINE
 
       SUBROUTINE foo(A, B, C)
@@ -101,27 +93,27 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_dly_2
+      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
       REAL(w2f__8) OpenAD_lin_8
       REAL(w2f__8) OpenAD_lin_9
-      type(active) :: OpenAD_prp_2
-      type(active) :: OpenAD_prp_3
+      type(active) :: OpenAD_prp_0
+      type(active) :: OpenAD_prp_1
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       OpenAD_lin_8 = (A%v*A%v)
-      OpenAD_dly_2 = COS(OpenAD_lin_8)
+      OpenAD_dly_0 = COS(OpenAD_lin_8)
       OpenAD_lin_10 = A%v
       OpenAD_lin_11 = A%v
       OpenAD_lin_9 = (-SIN(OpenAD_lin_8))
-      A%v = OpenAD_dly_2
+      A%v = OpenAD_dly_0
       OpenAD_acc_2 = (OpenAD_lin_10*OpenAD_lin_9)
       OpenAD_acc_3 = (OpenAD_lin_11*OpenAD_lin_9)
-      CALL setderiv(OpenAD_prp_2,A)
-      CALL setderiv(OpenAD_prp_3,A)
-      CALL sax(OpenAD_acc_2,OpenAD_prp_2,A)
-      CALL saxpy(OpenAD_acc_3,OpenAD_prp_3,A)
+      CALL setderiv(OpenAD_prp_0,A)
+      CALL setderiv(OpenAD_prp_1,A)
+      CALL sax(OpenAD_acc_2,OpenAD_prp_0,A)
+      CALL saxpy(OpenAD_acc_3,OpenAD_prp_1,A)
       END SUBROUTINE

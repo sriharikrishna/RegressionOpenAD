@@ -32,9 +32,7 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
-      TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -44,10 +42,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = ASIN(__value__(X(1)))
+      __value__(Y(1)) = ASIN(__value__(X(1)))
       OpenAD_lin_0 = (INT(1_w2f__i8) / SQRT(INT(1_w2f__i8) - __value__(
      > X(1)) * __value__(X(1))))
-      __value__(Y(1)) = OpenAD_dly_0
-      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X(1)))
-      CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prp_0), __deriv__(Y(1)))
+      CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE

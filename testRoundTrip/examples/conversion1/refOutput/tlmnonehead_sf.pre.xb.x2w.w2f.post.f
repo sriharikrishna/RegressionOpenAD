@@ -38,7 +38,6 @@ C
       REAL(w2f__8) OpenAD_lin_0
       INTEGER(w2f__i4) OpenAD_lin_1
       INTEGER(w2f__i4) OpenAD_lin_2
-      type(active) :: OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -52,6 +51,5 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_1 = DBLE(2)
       Y(1)%v = (OpenAD_lin_0*OpenAD_lin_1)
       OpenAD_lin_2 = OpenAD_lin_1
-      CALL setderiv(OpenAD_prp_0,X(1))
-      CALL sax(OpenAD_lin_2,OpenAD_prp_0,Y(1))
+      CALL sax(OpenAD_lin_2,X(1),Y(1))
       END SUBROUTINE

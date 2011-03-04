@@ -80,8 +80,6 @@ C
         REAL(w2f__8) OpenAD_lin_8
         REAL(w2f__8) OpenAD_lin_9
         TYPE (OpenADTy_active) OpenAD_prp_0
-        TYPE (OpenADTy_active) OpenAD_prp_1
-        TYPE (OpenADTy_active) OpenAD_prp_2
 C
 C       **** Statements ****
 C
@@ -99,14 +97,10 @@ C
         OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_4)
         OpenAD_acc_1 = (OpenAD_lin_8 * OpenAD_lin_5)
         OpenAD_acc_2 = (OpenAD_lin_10 * OpenAD_lin_9 * OpenAD_lin_5)
-        CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X(2)))
-        CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
-        CALL setderiv(__deriv__(OpenAD_prp_2), __deriv__(X(1)))
-        CALL sax(OpenAD_acc_0, __deriv__(OpenAD_prp_0), __deriv__(Y(1))
-     > )
-        CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prp_1), __deriv__(Y(1
+        CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
+        CALL sax(OpenAD_acc_0, __deriv__(X(2)), __deriv__(Y(1)))
+        CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prp_0), __deriv__(Y(1
      > )))
-        CALL saxpy(OpenAD_acc_2, __deriv__(OpenAD_prp_2), __deriv__(Y(1
-     > )))
+        CALL saxpy(OpenAD_acc_2, __deriv__(X(1)), __deriv__(Y(1)))
         END SUBROUTINE
       END
