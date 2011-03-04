@@ -51,9 +51,7 @@ C
 C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
-      type(active) :: OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -88,6 +86,7 @@ C external C function used in inlined code
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
+C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then
 C store arguments
@@ -112,10 +111,8 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = ASIN(X(1)%v)
+      Y(1)%v = ASIN(X(1)%v)
       OpenAD_lin_0 = (INT(1_w2f__i8)/SQRT(INT(1_w2f__i8)-X(1)%v*X(1)%v))
-      Y(1)%v = OpenAD_dly_0
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
 
@@ -136,10 +133,8 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_0 = double_tape(double_tape_pointer)
-      OpenAD_prp_0%d = OpenAD_prp_0%d+Y(1)%d*(OpenAD_Symbol_0)
+      X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_0)
       Y(1)%d = 0.0d0
-      X(1)%d = X(1)%d+OpenAD_prp_0%d
-      OpenAD_prp_0%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

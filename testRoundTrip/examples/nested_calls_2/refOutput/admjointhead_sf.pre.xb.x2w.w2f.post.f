@@ -57,16 +57,12 @@ C
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
-      type(active) :: OpenAD_prp_0
-      type(active) :: OpenAD_prp_1
 
 
 C checkpointing stacks and offsets
@@ -143,14 +139,12 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_dly_0 = SIN(X(3)%v)
+      Y(3)%v = SIN(X(3)%v)
       OpenAD_lin_4 = COS(X(3)%v)
-      Y(3)%v = OpenAD_dly_0
       double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_dly_1 = COS(X(4)%v)
+      Y(4)%v = COS(X(4)%v)
       OpenAD_lin_5 = (-SIN(X(4)%v))
-      Y(4)%v = OpenAD_dly_1
       double_tape(double_tape_pointer) = OpenAD_lin_5
       double_tape_pointer = double_tape_pointer+1
 
@@ -171,16 +165,12 @@ C            print*, " adjoint    ", our_rev_mode
 C adjoint
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_0 = double_tape(double_tape_pointer)
-      OpenAD_prp_1%d = OpenAD_prp_1%d+Y(4)%d*(OpenAD_Symbol_0)
+      X(4)%d = X(4)%d+Y(4)%d*(OpenAD_Symbol_0)
       Y(4)%d = 0.0d0
-      X(4)%d = X(4)%d+OpenAD_prp_1%d
-      OpenAD_prp_1%d = 0.0d0
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_1 = double_tape(double_tape_pointer)
-      OpenAD_prp_0%d = OpenAD_prp_0%d+Y(3)%d*(OpenAD_Symbol_1)
+      X(3)%d = X(3)%d+Y(3)%d*(OpenAD_Symbol_1)
       Y(3)%d = 0.0d0
-      X(3)%d = X(3)%d+OpenAD_prp_0%d
-      OpenAD_prp_0%d = 0.0d0
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_2 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
@@ -373,13 +363,13 @@ C
       REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_dly_2
+      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
       REAL(w2f__8) OpenAD_lin_8
       REAL(w2f__8) OpenAD_lin_9
-      type(active) :: OpenAD_prp_2
-      type(active) :: OpenAD_prp_3
+      type(active) :: OpenAD_prp_0
+      type(active) :: OpenAD_prp_1
 C
 C     **** Statements ****
 C
@@ -440,11 +430,11 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_lin_8 = (A%v*A%v)
-      OpenAD_dly_2 = COS(OpenAD_lin_8)
+      OpenAD_dly_0 = COS(OpenAD_lin_8)
       OpenAD_lin_10 = A%v
       OpenAD_lin_11 = A%v
       OpenAD_lin_9 = (-SIN(OpenAD_lin_8))
-      A%v = OpenAD_dly_2
+      A%v = OpenAD_dly_0
       OpenAD_acc_2 = (OpenAD_lin_10*OpenAD_lin_9)
       OpenAD_acc_3 = (OpenAD_lin_11*OpenAD_lin_9)
       double_tape(double_tape_pointer) = OpenAD_acc_2
@@ -471,13 +461,13 @@ C adjoint
       OpenAD_Symbol_6 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_7 = double_tape(double_tape_pointer)
-      OpenAD_prp_3%d = OpenAD_prp_3%d+A%d*(OpenAD_Symbol_6)
-      OpenAD_prp_2%d = OpenAD_prp_2%d+A%d*(OpenAD_Symbol_7)
+      OpenAD_prp_1%d = OpenAD_prp_1%d+A%d*(OpenAD_Symbol_6)
+      OpenAD_prp_0%d = OpenAD_prp_0%d+A%d*(OpenAD_Symbol_7)
       A%d = 0.0d0
-      A%d = A%d+OpenAD_prp_3%d
-      OpenAD_prp_3%d = 0.0d0
-      A%d = A%d+OpenAD_prp_2%d
-      OpenAD_prp_2%d = 0.0d0
+      A%d = A%d+OpenAD_prp_1%d
+      OpenAD_prp_1%d = 0.0d0
+      A%d = A%d+OpenAD_prp_0%d
+      OpenAD_prp_0%d = 0.0d0
 
 C adjoint end
             our_rev_mode%arg_store=.FALSE.

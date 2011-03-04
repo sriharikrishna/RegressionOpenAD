@@ -49,16 +49,12 @@ C
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
       REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_dly_2
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
-      type(active) :: OpenAD_prp_2
-      type(active) :: OpenAD_prp_3
 
 
 C checkpointing stacks and offsets
@@ -131,18 +127,16 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_3 = 0_w2f__i8
       do while (I.LT.3)
         IF (I.LT.2) THEN
-          OpenAD_dly_0 = SIN(X(1)%v)
+          Y(2)%v = SIN(X(1)%v)
           OpenAD_lin_0 = COS(X(1)%v)
-          Y(2)%v = OpenAD_dly_0
           double_tape(double_tape_pointer) = OpenAD_lin_0
           double_tape_pointer = double_tape_pointer+1
           OpenAD_Symbol_4 = 1_w2f__i8
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
           integer_tape_pointer = integer_tape_pointer+1
         ELSE
-          OpenAD_dly_1 = COS(X(2)%v)
+          Y(1)%v = COS(X(2)%v)
           OpenAD_lin_1 = (-SIN(X(2)%v))
-          Y(1)%v = OpenAD_dly_1
           double_tape(double_tape_pointer) = OpenAD_lin_1
           double_tape_pointer = double_tape_pointer+1
           OpenAD_Symbol_5 = 0_w2f__i8
@@ -154,10 +148,10 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-      OpenAD_dly_2 = (Y(1)%v*Y(2)%v)
+      OpenAD_dly_0 = (Y(1)%v*Y(2)%v)
       OpenAD_lin_2 = Y(2)%v
       OpenAD_lin_3 = Y(1)%v
-      Y(2)%v = OpenAD_dly_2
+      Y(2)%v = OpenAD_dly_0
       double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_3
@@ -182,13 +176,13 @@ C adjoint
       OpenAD_Symbol_14 = double_tape(double_tape_pointer)
       double_tape_pointer = double_tape_pointer-1
       OpenAD_Symbol_15 = double_tape(double_tape_pointer)
-      OpenAD_prp_3%d = OpenAD_prp_3%d+Y(2)%d*(OpenAD_Symbol_14)
-      OpenAD_prp_2%d = OpenAD_prp_2%d+Y(2)%d*(OpenAD_Symbol_15)
+      OpenAD_prp_1%d = OpenAD_prp_1%d+Y(2)%d*(OpenAD_Symbol_14)
+      OpenAD_prp_0%d = OpenAD_prp_0%d+Y(2)%d*(OpenAD_Symbol_15)
       Y(2)%d = 0.0d0
-      Y(2)%d = Y(2)%d+OpenAD_prp_3%d
-      OpenAD_prp_3%d = 0.0d0
-      Y(1)%d = Y(1)%d+OpenAD_prp_2%d
-      OpenAD_prp_2%d = 0.0d0
+      Y(2)%d = Y(2)%d+OpenAD_prp_1%d
+      OpenAD_prp_1%d = 0.0d0
+      Y(1)%d = Y(1)%d+OpenAD_prp_0%d
+      OpenAD_prp_0%d = 0.0d0
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_0 = integer_tape(integer_tape_pointer)
       OpenAD_Symbol_1 = 1
@@ -198,17 +192,13 @@ C adjoint
         IF (OpenAD_Symbol_2.ne.0) THEN
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_12 = double_tape(double_tape_pointer)
-          OpenAD_prp_0%d = OpenAD_prp_0%d+Y(2)%d*(OpenAD_Symbol_12)
+          X(1)%d = X(1)%d+Y(2)%d*(OpenAD_Symbol_12)
           Y(2)%d = 0.0d0
-          X(1)%d = X(1)%d+OpenAD_prp_0%d
-          OpenAD_prp_0%d = 0.0d0
         ELSE
           double_tape_pointer = double_tape_pointer-1
           OpenAD_Symbol_13 = double_tape(double_tape_pointer)
-          OpenAD_prp_1%d = OpenAD_prp_1%d+Y(1)%d*(OpenAD_Symbol_13)
+          X(2)%d = X(2)%d+Y(1)%d*(OpenAD_Symbol_13)
           Y(1)%d = 0.0d0
-          X(2)%d = X(2)%d+OpenAD_prp_1%d
-          OpenAD_prp_1%d = 0.0d0
         ENDIF
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1)+1
       END DO

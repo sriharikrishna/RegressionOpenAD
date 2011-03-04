@@ -275,8 +275,6 @@ C
         REAL(w2f__8) OpenAD_lin_8
         REAL(w2f__8) OpenAD_lin_9
         type(active) :: OpenAD_prp_0
-        type(active) :: OpenAD_prp_1
-        type(active) :: OpenAD_prp_2
 C
 C       **** Statements ****
 C
@@ -387,15 +385,11 @@ C adjoint
         OpenAD_Symbol_3 = double_tape(double_tape_pointer)
         double_tape_pointer = double_tape_pointer-1
         OpenAD_Symbol_4 = double_tape(double_tape_pointer)
-        OpenAD_prp_2%d = OpenAD_prp_2%d+Y(1)%d*(OpenAD_Symbol_2)
-        OpenAD_prp_1%d = OpenAD_prp_1%d+Y(1)%d*(OpenAD_Symbol_3)
-        OpenAD_prp_0%d = OpenAD_prp_0%d+Y(1)%d*(OpenAD_Symbol_4)
+        X(1)%d = X(1)%d+Y(1)%d*(OpenAD_Symbol_2)
+        OpenAD_prp_0%d = OpenAD_prp_0%d+Y(1)%d*(OpenAD_Symbol_3)
+        X(2)%d = X(2)%d+Y(1)%d*(OpenAD_Symbol_4)
         Y(1)%d = 0.0d0
-        X(1)%d = X(1)%d+OpenAD_prp_2%d
-        OpenAD_prp_2%d = 0.0d0
-        Y(1)%d = Y(1)%d+OpenAD_prp_1%d
-        OpenAD_prp_1%d = 0.0d0
-        X(2)%d = X(2)%d+OpenAD_prp_0%d
+        Y(1)%d = Y(1)%d+OpenAD_prp_0%d
         OpenAD_prp_0%d = 0.0d0
 
 C adjoint end
