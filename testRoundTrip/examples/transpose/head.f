@@ -4,6 +4,7 @@ c$openad XXX Template ad_template.f
 	  double precision, dimension(2), intent(inout) :: y
 	  double precision, dimension(2,2) :: A,B
 c$openad INDEPENDENT(x)
+          A=0.0
 	  A(1,1) = x(1)
 	  A(1,2) = x(2)
 	  B = transpose(A)
