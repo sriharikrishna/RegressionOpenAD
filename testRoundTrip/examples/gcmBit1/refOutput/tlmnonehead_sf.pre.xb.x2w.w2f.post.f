@@ -379,7 +379,7 @@ C$OPENAD XXX Template ad_template.f
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       DO I = 1,2,1
         DO J = 1,2,1
-          Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
+          Y(J+I*2+(-2))%v = BULKMOD(I,J)%v
           CALL setderiv(Y(J+I*2+(-2)),BULKMOD(I,J))
         END DO
       END DO

@@ -159,7 +159,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       DO L = 1, 3, 1
         TSVEC(INT(L)) = __value__(TNOW(L))
-        TSVEC(INT(L + 3)) = __value__(SNOW(L))
+        TSVEC(L + 3) = __value__(SNOW(L))
       END DO
       END SUBROUTINE
 

@@ -231,8 +231,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_41 = (H*H)
         OpenAD_lin_39 = (X(8)%v*OpenAD_lin_41)
         OpenAD_lin_30 = (OpenAD_lin_39/1.2D+01)
-        F(INT(I+(-1)))%v = (X(I)%v+F(I+(-1))%v+OpenAD_lin_29*OpenAD_lin_
-     +30)
+        F(I+(-1))%v = (X(I)%v+F(I+(-1))%v+OpenAD_lin_29*OpenAD_lin_30)
         OpenAD_lin_35 = (INT(1_w2f__i8)/OpenAD_lin_34)
         OpenAD_lin_37 = X(9)%v
         OpenAD_lin_38 = X(I)%v
@@ -288,7 +287,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_69 = (H*H)
         OpenAD_lin_67 = (X(8)%v*OpenAD_lin_69)
         OpenAD_lin_58 = (OpenAD_lin_67/1.2D+01)
-        F(INT(I+1))%v = (X(I)%v+OpenAD_lin_57*OpenAD_lin_58)
+        F(I+1)%v = (X(I)%v+OpenAD_lin_57*OpenAD_lin_58)
         OpenAD_lin_63 = (INT(1_w2f__i8)/OpenAD_lin_62)
         OpenAD_lin_65 = X(9)%v
         OpenAD_lin_66 = X(I)%v

@@ -265,16 +265,16 @@ C$OPENAD XXX Template ad_template.f
      > __value__(X(1)) * __value__(X(9)) + 1.0D00)) *((__value__(X(8))
      >  * H * H) / 1.2D+01))
       DO I = 2, 6, 1
-        __value__(F(INT(I +(-1)))) = (__value__(X(I)) + __value__(F(I +
-     >  (-1))) + EXP(__value__(X(I)) /(__value__(X(I)) * __value__(X(9)
-     > ) + 1.0D00)) *((__value__(X(8)) * H * H) / 1.2D+01))
+        __value__(F(I + (-1))) = (__value__(X(I)) + __value__(F(I + (-1
+     > ))) + EXP(__value__(X(I)) /(__value__(X(I)) * __value__(X(9)) +
+     >  1.0D00)) *((__value__(X(8)) * H * H) / 1.2D+01))
         __value__(F(INT(I))) = (EXP(__value__(X(I)) /(__value__(X(I)) *
      >  __value__(X(9)) + 1.0D00)) *((__value__(X(8)) * H * H) /
      >  1.19999999999999995559D00) + __value__(F(I)) - __value__(X(I))
      >  * 2.0D00)
-        __value__(F(INT(I + 1))) = (__value__(X(I)) + EXP(__value__(X(I
-     > )) /(__value__(X(I)) * __value__(X(9)) + 1.0D00)) *((__value__(X
-     > (8)) * H * H) / 1.2D+01))
+        __value__(F(I + 1)) = (__value__(X(I)) + EXP(__value__(X(I)) /(
+     > __value__(X(I)) * __value__(X(9)) + 1.0D00)) *((__value__(X(8))
+     >  * H * H) / 1.2D+01))
       END DO
       __value__(F(6)) = (__value__(X(7)) + __value__(F(6)) + EXP(
      > __value__(X(7)) /(__value__(X(7)) * __value__(X(9)) + 1.0D00)) *
@@ -357,8 +357,8 @@ C     $OpenAD$ INLINE push_s0(subst)
         OpenAD_lin_41 = (H * H)
         OpenAD_lin_39 = (__value__(X(8)) * OpenAD_lin_41)
         OpenAD_lin_30 = (OpenAD_lin_39 / 1.2D+01)
-        __value__(F(INT(I +(-1)))) = (__value__(X(I)) + __value__(F(I +
-     >  (-1))) + OpenAD_lin_29 * OpenAD_lin_30)
+        __value__(F(I + (-1))) = (__value__(X(I)) + __value__(F(I + (-1
+     > ))) + OpenAD_lin_29 * OpenAD_lin_30)
         OpenAD_lin_35 = (INT(1_w2f__i8) / OpenAD_lin_34)
         OpenAD_lin_37 = __value__(X(9))
         OpenAD_lin_38 = __value__(X(I))
@@ -444,7 +444,7 @@ C       $OpenAD$ INLINE push_i_s0(subst)
         OpenAD_lin_69 = (H * H)
         OpenAD_lin_67 = (__value__(X(8)) * OpenAD_lin_69)
         OpenAD_lin_58 = (OpenAD_lin_67 / 1.2D+01)
-        __value__(F(INT(I + 1))) = (__value__(X(I)) + OpenAD_lin_57 *
+        __value__(F(I + 1)) = (__value__(X(I)) + OpenAD_lin_57 *
      >  OpenAD_lin_58)
         OpenAD_lin_63 = (INT(1_w2f__i8) / OpenAD_lin_62)
         OpenAD_lin_65 = __value__(X(9))
@@ -870,8 +870,8 @@ C     $OpenAD$ INLINE push_s0(subst)
         OpenAD_lin_41 = (H * H)
         OpenAD_lin_39 = (__value__(X(8)) * OpenAD_lin_41)
         OpenAD_lin_30 = (OpenAD_lin_39 / 1.2D+01)
-        __value__(F(INT(I +(-1)))) = (__value__(X(I)) + __value__(F(I +
-     >  (-1))) + OpenAD_lin_29 * OpenAD_lin_30)
+        __value__(F(I + (-1))) = (__value__(X(I)) + __value__(F(I + (-1
+     > ))) + OpenAD_lin_29 * OpenAD_lin_30)
         OpenAD_lin_35 = (INT(1_w2f__i8) / OpenAD_lin_34)
         OpenAD_lin_37 = __value__(X(9))
         OpenAD_lin_38 = __value__(X(I))
@@ -957,7 +957,7 @@ C       $OpenAD$ INLINE push_i_s0(subst)
         OpenAD_lin_69 = (H * H)
         OpenAD_lin_67 = (__value__(X(8)) * OpenAD_lin_69)
         OpenAD_lin_58 = (OpenAD_lin_67 / 1.2D+01)
-        __value__(F(INT(I + 1))) = (__value__(X(I)) + OpenAD_lin_57 *
+        __value__(F(I + 1)) = (__value__(X(I)) + OpenAD_lin_57 *
      >  OpenAD_lin_58)
         OpenAD_lin_63 = (INT(1_w2f__i8) / OpenAD_lin_62)
         OpenAD_lin_65 = __value__(X(9))

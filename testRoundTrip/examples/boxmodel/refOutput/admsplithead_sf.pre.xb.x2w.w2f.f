@@ -468,7 +468,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       DO L = 1, 3, 1
         TSVEC(INT(L)) = __value__(TNOW(L))
-        TSVEC(INT(L + 3)) = __value__(SNOW(L))
+        TSVEC(L + 3) = __value__(SNOW(L))
       END DO
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
@@ -483,7 +483,7 @@ C     $OpenAD$ INLINE push_i_s0(subst)
       OpenAD_Symbol_41 = 0_w2f__i8
       DO L = 1, 3, 1
         TSVEC(INT(L)) = __value__(TNOW(L))
-        TSVEC(INT(L + 3)) = __value__(SNOW(L))
+        TSVEC(L + 3) = __value__(SNOW(L))
         OpenAD_Symbol_41 = (INT(OpenAD_Symbol_41) + INT(1_w2f__i8))
       END DO
 C     $OpenAD$ INLINE push_i_s0(subst)
@@ -547,7 +547,7 @@ C     $OpenAD$ INLINE push_i_s0(subst)
       OpenAD_Symbol_47 = 0_w2f__i8
       DO L = 1, 3, 1
         TSVEC(INT(L)) = __value__(TNOW(L))
-        TSVEC(INT(L + 3)) = __value__(SNOW(L))
+        TSVEC(L + 3) = __value__(SNOW(L))
         OpenAD_Symbol_47 = (INT(OpenAD_Symbol_47) + INT(1_w2f__i8))
       END DO
 C     $OpenAD$ INLINE push_i_s0(subst)

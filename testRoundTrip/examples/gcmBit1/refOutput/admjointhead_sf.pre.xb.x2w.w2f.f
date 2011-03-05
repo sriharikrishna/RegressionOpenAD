@@ -1303,8 +1303,7 @@ C$OPENAD XXX Template ad_template.f
      > SFLD), __deriv__(BULKMOD))
       DO I = 1, 2, 1
         DO J = 1, 2, 1
-          __value__(Y(INT(J + INT((I * 2)) +(-2)))) = __value__(BULKMOD
-     > (I, J))
+          __value__(Y(J + I * 2 + (-2))) = __value__(BULKMOD(I, J))
         END DO
       END DO
 C     $OpenAD$ END REPLACEMENT
@@ -1374,8 +1373,7 @@ C     $OpenAD$ INLINE push_i_s0(subst)
       DO I = 1, 2, 1
         OpenAD_Symbol_38 = 0_w2f__i8
         DO J = 1, 2, 1
-          __value__(Y(INT(J + INT((I * 2)) +(-2)))) = __value__(BULKMOD
-     > (I, J))
+          __value__(Y(J + I * 2 + (-2))) = __value__(BULKMOD(I, J))
           OpenAD_Symbol_60 = (J + I * 2 +(-2))
 C         $OpenAD$ INLINE push_i_s0(subst)
           CALL push_i_s0(OpenAD_Symbol_60)
@@ -1568,8 +1566,7 @@ C     $OpenAD$ INLINE push_i_s0(subst)
       DO I = 1, 2, 1
         OpenAD_Symbol_59 = 0_w2f__i8
         DO J = 1, 2, 1
-          __value__(Y(INT(J + INT((I * 2)) +(-2)))) = __value__(BULKMOD
-     > (I, J))
+          __value__(Y(J + I * 2 + (-2))) = __value__(BULKMOD(I, J))
           OpenAD_Symbol_60 = (J + I * 2 +(-2))
 C         $OpenAD$ INLINE push_i_s0(subst)
           CALL push_i_s0(OpenAD_Symbol_60)

@@ -452,7 +452,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       DO L = 1, 3, 1
         TSVEC(INT(L)) = TNOW(L)%v
-        TSVEC(INT(L+3)) = SNOW(L)%v
+        TSVEC(L+3) = SNOW(L)%v
       END DO
 
 C original function end
@@ -477,7 +477,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_41 = 0_w2f__i8
       DO L = 1,3,1
         TSVEC(INT(L)) = TNOW(L)%v
-        TSVEC(INT(L+3)) = SNOW(L)%v
+        TSVEC(L+3) = SNOW(L)%v
         OpenAD_Symbol_41 = (INT(OpenAD_Symbol_41)+INT(1_w2f__i8))
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_41

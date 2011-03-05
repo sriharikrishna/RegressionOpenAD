@@ -56,7 +56,7 @@ C original function
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 0, 3, 1
-        Y(INT(I+1))%v = X(I+1)%v
+        Y(I+1)%v = X(I+1)%v
       END DO
           end if
           if (our_rev_mode%tape) then
@@ -64,7 +64,7 @@ C taping
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 0,3,1
-        Y(INT(I+1))%v = X(I+1)%v
+        Y(I+1)%v = X(I+1)%v
       END DO
           end if
           if (our_rev_mode%adjoint) then

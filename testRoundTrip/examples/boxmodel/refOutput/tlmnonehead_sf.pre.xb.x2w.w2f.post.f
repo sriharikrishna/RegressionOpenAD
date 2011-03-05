@@ -158,7 +158,7 @@ C$OPENAD XXX Template ad_template.f
       END DO
       DO L = 1, 3, 1
         TSVEC(INT(L)) = TNOW(L)%v
-        TSVEC(INT(L+3)) = SNOW(L)%v
+        TSVEC(L+3) = SNOW(L)%v
       END DO
       END SUBROUTINE
 

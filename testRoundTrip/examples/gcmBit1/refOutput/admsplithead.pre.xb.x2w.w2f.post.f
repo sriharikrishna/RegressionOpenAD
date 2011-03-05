@@ -788,7 +788,7 @@ C$OPENAD XXX Template ad_template.f
       CALL find_bulkmod(LOCPRES,TFLD,SFLD,BULKMOD)
       DO I = 1,2,1
         DO J = 1,2,1
-          Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
+          Y(J+I*2+(-2))%v = BULKMOD(I,J)%v
         END DO
       END DO
           end if
@@ -856,7 +856,7 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1,2,1
         OpenAD_Symbol_38 = 0_w2f__i8
         DO J = 1,2,1
-          Y(INT(J+INT((I*2))+(-2)))%v = BULKMOD(I,J)%v
+          Y(J+I*2+(-2))%v = BULKMOD(I,J)%v
           OpenAD_Symbol_60 = (J+I*2+(-2))
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_60
           integer_tape_pointer = integer_tape_pointer+1

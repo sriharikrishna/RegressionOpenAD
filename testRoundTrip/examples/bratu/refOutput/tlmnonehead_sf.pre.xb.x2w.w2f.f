@@ -254,8 +254,8 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_41 = (H * H)
         OpenAD_lin_39 = (__value__(X(8)) * OpenAD_lin_41)
         OpenAD_lin_30 = (OpenAD_lin_39 / 1.2D+01)
-        __value__(F(INT(I +(-1)))) = (__value__(X(I)) + __value__(F(I +
-     >  (-1))) + OpenAD_lin_29 * OpenAD_lin_30)
+        __value__(F(I + (-1))) = (__value__(X(I)) + __value__(F(I + (-1
+     > ))) + OpenAD_lin_29 * OpenAD_lin_30)
         OpenAD_lin_35 = (INT(1_w2f__i8) / OpenAD_lin_34)
         OpenAD_lin_37 = __value__(X(9))
         OpenAD_lin_38 = __value__(X(I))
@@ -318,7 +318,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_69 = (H * H)
         OpenAD_lin_67 = (__value__(X(8)) * OpenAD_lin_69)
         OpenAD_lin_58 = (OpenAD_lin_67 / 1.2D+01)
-        __value__(F(INT(I + 1))) = (__value__(X(I)) + OpenAD_lin_57 *
+        __value__(F(I + 1)) = (__value__(X(I)) + OpenAD_lin_57 *
      >  OpenAD_lin_58)
         OpenAD_lin_63 = (INT(1_w2f__i8) / OpenAD_lin_62)
         OpenAD_lin_65 = __value__(X(9))

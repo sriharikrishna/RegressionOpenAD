@@ -292,12 +292,12 @@ C$OPENAD XXX Template ad_template.f
       F(2)%v = (X(1)%v+EXP(X(1)%v/(X(1)%v*X(9)%v+1.0D00))*((X(8)%v*H*H)/
      +1.2D+01))
       DO I = 2,6,1
-        F(INT(I+(-1)))%v = (X(I)%v+F(I+(-1))%v+EXP(X(I)%v/(X(I)%v*X(9)%v
-     ++1.0D00))*((X(8)%v*H*H)/1.2D+01))
+        F(I+(-1))%v = (X(I)%v+F(I+(-1))%v+EXP(X(I)%v/(X(I)%v*X(9)%v+1.0D
+     +00))*((X(8)%v*H*H)/1.2D+01))
         F(INT(I))%v = (EXP(X(I)%v/(X(I)%v*X(9)%v+1.0D00))*((X(8)%v*H*H)/
      +1.19999999999999995559D00)+F(I)%v-X(I)%v*2.0D00)
-        F(INT(I+1))%v = (X(I)%v+EXP(X(I)%v/(X(I)%v*X(9)%v+1.0D00))*((X(8
-     +)%v*H*H)/1.2D+01))
+        F(I+1)%v = (X(I)%v+EXP(X(I)%v/(X(I)%v*X(9)%v+1.0D00))*((X(8)%v*H
+     +*H)/1.2D+01))
       END DO
       F(6)%v = (X(7)%v+F(6)%v+EXP(X(7)%v/(X(7)%v*X(9)%v+1.0D00))*((X(8)%
      +v*H*H)/1.2D+01))
@@ -384,8 +384,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_41 = (H*H)
         OpenAD_lin_39 = (X(8)%v*OpenAD_lin_41)
         OpenAD_lin_30 = (OpenAD_lin_39/1.2D+01)
-        F(INT(I+(-1)))%v = (X(I)%v+F(I+(-1))%v+OpenAD_lin_29*OpenAD_lin_
-     +30)
+        F(I+(-1))%v = (X(I)%v+F(I+(-1))%v+OpenAD_lin_29*OpenAD_lin_30)
         OpenAD_lin_35 = (INT(1_w2f__i8)/OpenAD_lin_34)
         OpenAD_lin_37 = X(9)%v
         OpenAD_lin_38 = X(I)%v
@@ -468,7 +467,7 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_lin_69 = (H*H)
         OpenAD_lin_67 = (X(8)%v*OpenAD_lin_69)
         OpenAD_lin_58 = (OpenAD_lin_67/1.2D+01)
-        F(INT(I+1))%v = (X(I)%v+OpenAD_lin_57*OpenAD_lin_58)
+        F(I+1)%v = (X(I)%v+OpenAD_lin_57*OpenAD_lin_58)
         OpenAD_lin_63 = (INT(1_w2f__i8)/OpenAD_lin_62)
         OpenAD_lin_65 = X(9)%v
         OpenAD_lin_66 = X(I)%v

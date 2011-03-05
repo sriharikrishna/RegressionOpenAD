@@ -409,8 +409,7 @@ C$OPENAD XXX Template ad_template.f
      > SFLD), __deriv__(BULKMOD))
       DO I = 1, 2, 1
         DO J = 1, 2, 1
-          __value__(Y(INT(J + INT((I * 2)) +(-2)))) = __value__(BULKMOD
-     > (I, J))
+          __value__(Y(J + I * 2 + (-2))) = __value__(BULKMOD(I, J))
           CALL setderiv(__deriv__(Y(J + I * 2 + (-2))), __deriv__(
      > BULKMOD(I, J)))
         END DO
