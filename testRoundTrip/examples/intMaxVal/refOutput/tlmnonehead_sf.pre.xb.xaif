@@ -206,7 +206,7 @@
             <xaif:SymbolReference vertex_id="1" symbol_id="MAXI_4" annotation="" scope_id="4"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
-            <xaif:Intrinsic vertex_id="1" annotation="" name="maxval"/>
+            <xaif:Intrinsic vertex_id="1" annotation="" name="nc_maxval"/>
             <xaif:VariableReference vertex_id="2" active="false" alias="4" du_ud="3" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
             </xaif:VariableReference>
