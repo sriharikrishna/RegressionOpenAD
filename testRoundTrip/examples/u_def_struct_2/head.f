@@ -22,8 +22,8 @@ c$openad XXX Template ad_template.f
 	  integer i
 c$openad INDEPENDENT(x)
 	  do i=1,2
-	     typed_x(i)%field1 = x((i-1)*2+1.0D0)
-	     typed_x(i)%field2 = x((i-1)*2+2.0D0)
+	     typed_x(i)%field1 = x(int((i-1)*2+1.0D0))
+	     typed_x(i)%field2 = x(int((i-1)*2+2.0D0))
 	  end do
 	  y(1)=.0D0
 	  do i=1,2
