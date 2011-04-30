@@ -167,13 +167,15 @@ C            print*, " adjoint    ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C adjoint
       double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_4)
-      OpenAD_Symbol_4(:) = double_tape(double_tape_pointer:)
+      OpenAD_Symbol_4(:) = double_tape(double_tape_pointer:double_tape_p
+     +ointer+size(OpenAD_Symbol_4)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
 C!! requested inline of 'oad_AllocateShape' has no defn
       CALL oad_AllocateShape(OpenAD_Symbol_5,OpenAD_Symbol_6)
       double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_5)
-      OpenAD_Symbol_5(:) = double_tape(double_tape_pointer:)
+      OpenAD_Symbol_5(:) = double_tape(double_tape_pointer:double_tape_p
+     +ointer+size(OpenAD_Symbol_5)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
       Z(1:INT(OpenAD_Symbol_8))%d = Z(1:INT(OpenAD_Symbol_8))%d+Y(1:2)%d

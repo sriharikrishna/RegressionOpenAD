@@ -124,12 +124,14 @@ C taping
       OpenAD_lin_0 = T(1:1,1:2)%v
       OpenAD_lin_1 = T(1:1,1:2)%v
       T(1:1,1:2)%v = OpenAD_dly_0
-      double_tape(double_tape_pointer:) = reshape(OpenAD_lin_0,(/size(Op
-     +enAD_lin_0,1)*size(OpenAD_lin_0,2)/))
+      double_tape(double_tape_pointer:double_tape_pointer+(size(OpenAD_l
+     +in_0,1)*size(OpenAD_lin_0,2))-1) = reshape(OpenAD_lin_0,(/size(Ope
+     +nAD_lin_0,1)*size(OpenAD_lin_0,2)/))
       double_tape_pointer = double_tape_pointer+(size(OpenAD_lin_0,1)*si
      +ze(OpenAD_lin_0,2))
-      double_tape(double_tape_pointer:) = reshape(OpenAD_lin_1,(/size(Op
-     +enAD_lin_1,1)*size(OpenAD_lin_1,2)/))
+      double_tape(double_tape_pointer:double_tape_pointer+(size(OpenAD_l
+     +in_1,1)*size(OpenAD_lin_1,2))-1) = reshape(OpenAD_lin_1,(/size(Ope
+     +nAD_lin_1,1)*size(OpenAD_lin_1,2)/))
       double_tape_pointer = double_tape_pointer+(size(OpenAD_lin_1,1)*si
      +ze(OpenAD_lin_1,2))
       Y(1:2)%v = T(1,1:2)%v

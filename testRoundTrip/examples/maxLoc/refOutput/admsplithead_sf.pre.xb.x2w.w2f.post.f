@@ -81,7 +81,8 @@ C taping
           if (our_rev_mode%adjoint) then
 C adjoint
       integer_tape_pointer = integer_tape_pointer-size(OpenAD_Symbol_1)
-      OpenAD_Symbol_1(:) = integer_tape(integer_tape_pointer:)
+      OpenAD_Symbol_1(:) = integer_tape(integer_tape_pointer:integer_tap
+     +e_pointer+size(OpenAD_Symbol_1)-1)
       X(INT(OpenAD_Symbol_1))%d = X(INT(OpenAD_Symbol_1))%d+Y(1:1)%d
       Y(1:1)%d = 0.0d0
           end if
