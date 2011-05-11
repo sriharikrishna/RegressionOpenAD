@@ -44,27 +44,27 @@ C     open(3,file='data.tmp')
       OPEN(UNIT = 3, FILE = 'data.tmp')
       WRITE(3,'(EN26.16E3)') X(1)%v
 C     close(3)
-      CLOSE(UNIT = 3)
+      close(unit=3)
 C     open(3,file='data.tmp')
-      OPEN(UNIT = 3, FILE = 'data.tmp')
+      open(unit=3,file='data.tmp')
       READ(3,'(EN26.16E3)') X(1)%v
 C     close(3)
-      CLOSE(UNIT = 3)
+      close(unit=3)
       Y(1)%v = X(1)%v
           end if
           if (our_rev_mode%tape) then
 C taping
 C$OPENAD XXX Template ad_template.f
 C     open(3,file='data.tmp')
-      OPEN(UNIT = 3, FILE = 'data.tmp')
+      open(unit=3,file='data.tmp')
       WRITE(3,'(EN26.16E3)') X(1)%v
 C     close(3)
-      CLOSE(UNIT = 3)
+      close(unit=3)
 C     open(3,file='data.tmp')
-      OPEN(UNIT = 3, FILE = 'data.tmp')
+      open(unit=3,file='data.tmp')
       READ(3,'(EN26.16E3)') X(1)%v
 C     close(3)
-      CLOSE(UNIT = 3)
+      close(unit=3)
       Y(1)%v = X(1)%v
           end if
           if (our_rev_mode%adjoint) then
