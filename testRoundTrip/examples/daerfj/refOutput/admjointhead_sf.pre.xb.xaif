@@ -1485,7 +1485,7 @@
         <xaif:BasicBlock vertex_id="10" annotation="" scope_id="4">
           <xaif:Assignment statement_id="_replacement_1_for_157">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="3" annotation="" name="add_scal_scal"/>
@@ -1537,7 +1537,7 @@
                 <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
               </xaif:VariableReference>
               <xaif:VariableReference vertex_id="3" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="3" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="4" source="3" target="1" position="2"/>
@@ -1565,7 +1565,7 @@
           </xaif:Assignment>
           <xaif:Assignment statement_id="_replacement_1_for_176">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="5" annotation="" name="add_scal_scal"/>
@@ -1629,7 +1629,7 @@
                 <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
               </xaif:VariableReference>
               <xaif:VariableReference vertex_id="5" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="5" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="6" source="3" target="1" position="2"/>
@@ -1659,7 +1659,7 @@
           </xaif:Assignment>
           <xaif:Assignment statement_id="_replacement_1_for_201">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="4" annotation="" name="mul_scal_scal"/>
@@ -1712,7 +1712,7 @@
               </xaif:VariableReference>
               <xaif:Intrinsic vertex_id="3" annotation="" name="div_scal_scal"/>
               <xaif:VariableReference vertex_id="4" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:VariableReference vertex_id="7" active="true" alias="7" du_ud="7" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="TEMP2_5" annotation="" scope_id="4"/>
@@ -1777,7 +1777,7 @@
                 <xaif:SymbolReference vertex_id="1" symbol_id="TEMP2_5" annotation="" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:VariableReference vertex_id="5" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="1" source="4" target="3" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="4" target="3" position="2"/>
@@ -1889,7 +1889,7 @@
         <xaif:BasicBlock vertex_id="_aug__cfr_v_6" annotation="_cfr_" scope_id="1">
           <xaif:Assignment statement_id="_cfr_init">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_2" annotation="xaifBoosterControlFlowReversal::ReversibleControlFlowGraph::makeAuxilliaryIntegerLHS" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_2" annotation="xaifBoosterControlFlowReversal::ReversibleControlFlowGraph::makeAuxiliaryIntegerLHS" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Constant vertex_id="1" type="integer" feType="" value="0"/>
@@ -1939,7 +1939,7 @@
         <xaif:ForLoop vertex_id="_adj__cfr_v_2" annotation="_cfr_" reversal="anonymous">
           <xaif:Initialization statement_id="_cfr_147">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterControlFlowReversal::ReversibleControlFlowGraph::makeAuxilliaryIntegerLHS" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterControlFlowReversal::ReversibleControlFlowGraph::makeAuxiliaryIntegerLHS" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Constant vertex_id="1" type="integer" feType="" value="1"/>
@@ -2640,7 +2640,7 @@
         <xaif:BasicBlock vertex_id="10" annotation="" scope_id="4">
           <xaif:Assignment statement_id="_replacement_1_for_157">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="3" annotation="" name="add_scal_scal"/>
@@ -2692,7 +2692,7 @@
                 <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
               </xaif:VariableReference>
               <xaif:VariableReference vertex_id="3" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="3" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="4" source="3" target="1" position="2"/>
@@ -2720,7 +2720,7 @@
           </xaif:Assignment>
           <xaif:Assignment statement_id="_replacement_1_for_176">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="5" annotation="" name="add_scal_scal"/>
@@ -2784,7 +2784,7 @@
                 <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
               </xaif:VariableReference>
               <xaif:VariableReference vertex_id="5" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="5" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="6" source="3" target="1" position="2"/>
@@ -2814,7 +2814,7 @@
           </xaif:Assignment>
           <xaif:Assignment statement_id="_replacement_1_for_201">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Intrinsic vertex_id="4" annotation="" name="mul_scal_scal"/>
@@ -2867,7 +2867,7 @@
               </xaif:VariableReference>
               <xaif:Intrinsic vertex_id="3" annotation="" name="div_scal_scal"/>
               <xaif:VariableReference vertex_id="4" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:VariableReference vertex_id="7" active="true" alias="7" du_ud="7" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="TEMP2_5" annotation="" scope_id="4"/>
@@ -2932,7 +2932,7 @@
                 <xaif:SymbolReference vertex_id="1" symbol_id="TEMP2_5" annotation="" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:VariableReference vertex_id="5" active="false" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="4"/>
+                <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_4" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="4"/>
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="1" source="4" target="3" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="4" target="3" position="2"/>
@@ -3044,7 +3044,7 @@
         <xaif:BasicBlock vertex_id="_aug__cfr_v_6" annotation="_cfr_" scope_id="1">
           <xaif:Assignment statement_id="_cfr_init">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_5" annotation="xaifBoosterControlFlowReversal::ReversibleControlFlowGraph::makeAuxilliaryIntegerLHS" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_5" annotation="xaifBoosterControlFlowReversal::ReversibleControlFlowGraph::makeAuxiliaryIntegerLHS" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Constant vertex_id="1" type="integer" feType="" value="0"/>
@@ -3094,7 +3094,7 @@
         <xaif:ForLoop vertex_id="_adj__cfr_v_2" annotation="_cfr_" reversal="anonymous">
           <xaif:Initialization statement_id="_cfr_147">
             <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_4" annotation="xaifBoosterControlFlowReversal::ReversibleControlFlowGraph::makeAuxilliaryIntegerLHS" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_4" annotation="xaifBoosterControlFlowReversal::ReversibleControlFlowGraph::makeAuxiliaryIntegerLHS" scope_id="1"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
               <xaif:Constant vertex_id="1" type="integer" feType="" value="1"/>

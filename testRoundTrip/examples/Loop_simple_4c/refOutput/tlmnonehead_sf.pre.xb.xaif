@@ -543,7 +543,7 @@
       <xaif:BasicBlock vertex_id="17" annotation="" scope_id="5">
         <xaif:Assignment statement_id="_replacement_1_for_75">
           <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="5"/>
+            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="5"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
             <xaif:Intrinsic vertex_id="4" annotation="" name="mul_scal_scal"/>
@@ -608,7 +608,7 @@
             </xaif:VariableReference>
             <xaif:Intrinsic vertex_id="3" annotation="" name="mul_scal_scal"/>
             <xaif:VariableReference vertex_id="4" active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxilliaryVariable" scope_id="5"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_2" annotation="xaifBoosterLinearization::ExpressionVertexAlg::makeAuxiliaryVariable" scope_id="5"/>
             </xaif:VariableReference>
             <xaif:Constant vertex_id="7" type="real" feType="F8" value="2.00000000000000000000e+00"/>
             <xaif:ExpressionEdge edge_id="5" source="2" target="1" position="1"/>
