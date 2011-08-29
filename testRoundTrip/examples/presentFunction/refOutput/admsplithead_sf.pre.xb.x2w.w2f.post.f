@@ -72,7 +72,6 @@ C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_aux_0
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -103,12 +102,11 @@ C$OPENAD XXX Template ad_template.f
       IF (PRESENT(OPTARG)) THEN
         IF (OPTARG%v.LE.2.0D00) THEN
           OpenAD_aux_0 = (OPTARG%v*OUTARG%v)
-          OpenAD_dly_0 = (REQARG%v*OpenAD_aux_0)
           OpenAD_lin_0 = OpenAD_aux_0
           OpenAD_lin_2 = OUTARG%v
           OpenAD_lin_3 = OPTARG%v
           OpenAD_lin_1 = REQARG%v
-          OUTARG%v = OpenAD_dly_0
+          OUTARG%v = (REQARG%v*OpenAD_aux_0)
           OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
           OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
           double_tape(double_tape_pointer) = OpenAD_lin_0

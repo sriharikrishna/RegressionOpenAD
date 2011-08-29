@@ -14,7 +14,6 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -33,20 +32,19 @@ C$OPENAD XXX Template ad_template.f
       I = 1
       DO WHILE(I .LT. 3)
         IF(I .LT. 2) THEN
-          Y(2)%v = SIN(X(1)%v)
           OpenAD_lin_0 = COS(X(1)%v)
+          Y(2)%v = SIN(X(1)%v)
           CALL sax(OpenAD_lin_0,X(1),Y(2))
         ELSE
-          Y(1)%v = COS(X(2)%v)
           OpenAD_lin_1 = (-SIN(X(2)%v))
+          Y(1)%v = COS(X(2)%v)
           CALL sax(OpenAD_lin_1,X(2),Y(1))
         ENDIF
         I = (I+1)
       END DO
-      OpenAD_dly_0 = (Y(1)%v*Y(2)%v)
       OpenAD_lin_2 = Y(2)%v
       OpenAD_lin_3 = Y(1)%v
-      Y(2)%v = OpenAD_dly_0
+      Y(2)%v = (Y(1)%v*Y(2)%v)
       CALL setderiv(OpenAD_prp_0,Y(1))
       CALL setderiv(OpenAD_prp_1,Y(2))
       CALL sax(OpenAD_lin_2,OpenAD_prp_0,Y(2))

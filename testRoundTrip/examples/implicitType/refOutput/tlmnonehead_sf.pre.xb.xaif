@@ -186,6 +186,18 @@
             </xaif:VariableReference>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
+        <xaif:Assignment statement_id="_elementary_partial_0">
+          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:Intrinsic vertex_id="1" name="cos_scal"/>
+            <xaif:VariableReference vertex_id="2" active="true" alias="4" du_ud="4" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
+            </xaif:VariableReference>
+            <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
         <xaif:Assignment statement_id="21">
           <xaif:AssignmentLHS active="true" alias="5" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
@@ -200,18 +212,6 @@
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
             <xaif:Intrinsic vertex_id="1" annotation="{IntrinsicKey#0_SIN}" name="sin_scal"/>
-            <xaif:VariableReference vertex_id="2" active="true" alias="4" du_ud="4" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
-            </xaif:VariableReference>
-            <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-          </xaif:AssignmentRHS>
-        </xaif:Assignment>
-        <xaif:Assignment statement_id="_elementary_partial_0">
-          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-          </xaif:AssignmentLHS>
-          <xaif:AssignmentRHS>
-            <xaif:Intrinsic vertex_id="1" name="cos_scal"/>
             <xaif:VariableReference vertex_id="2" active="true" alias="4" du_ud="4" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="T_4" annotation="" scope_id="4"/>
             </xaif:VariableReference>

@@ -477,6 +477,16 @@
           </xaif:Condition>
         </xaif:Branch>
         <xaif:BasicBlock vertex_id="9" annotation="" scope_id="4">
+          <xaif:Assignment statement_id="_elementary_partial_0">
+            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:Assignment statement_id="24">
             <xaif:AssignmentLHS active="true" alias="4" du_ud="6" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
@@ -507,16 +517,6 @@
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Assignment statement_id="_elementary_partial_0">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
-              </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:InlinableSubroutineCall subroutine_name="push_s0" statement_id="inline_push">
@@ -1080,6 +1080,16 @@
           </xaif:Condition>
         </xaif:Branch>
         <xaif:BasicBlock vertex_id="9" annotation="" scope_id="4">
+          <xaif:Assignment statement_id="_elementary_partial_0">
+            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
+              </xaif:VariableReference>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:Assignment statement_id="24">
             <xaif:AssignmentLHS active="true" alias="4" du_ud="6" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
@@ -1110,16 +1120,6 @@
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Assignment statement_id="_elementary_partial_0">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
-              </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:InlinableSubroutineCall subroutine_name="push_s0" statement_id="inline_push">

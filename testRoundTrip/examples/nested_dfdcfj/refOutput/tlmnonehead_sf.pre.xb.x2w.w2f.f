@@ -77,8 +77,8 @@ C$OPENAD XXX Template ad_template.f
      > , HX2)
       DO K = 1, N, 1
         OpenAD_aux_0 = (HX2 * HY2)
-        __value__(FVEC(INT(K))) = (__value__(FVEC(K)) * OpenAD_aux_0)
         OpenAD_lin_0 = OpenAD_aux_0
+        __value__(FVEC(INT(K))) = (__value__(FVEC(K)) * OpenAD_aux_0)
         CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(FVEC(K)))
         CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prp_0), __deriv__(FVEC(
      > K)))
@@ -286,12 +286,12 @@ C$OPENAD XXX Template ad_template.f
           ENDIF
           OpenAD_aux_1 = (__value__(PT) - __value__(PB))
           OpenAD_aux_2 = (HY * 2.0D00)
-          __value__(DPDY) = (OpenAD_aux_1 / OpenAD_aux_2)
           OpenAD_lin_1 = (INT(1_w2f__i8) / OpenAD_aux_2)
+          __value__(DPDY) = (OpenAD_aux_1 / OpenAD_aux_2)
           OpenAD_aux_3 = (__value__(PR) - __value__(PL))
           OpenAD_aux_4 = (HX * 2.0D00)
-          __value__(DPDX) = (OpenAD_aux_3 / OpenAD_aux_4)
           OpenAD_lin_2 = (INT(1_w2f__i8) / OpenAD_aux_4)
+          __value__(DPDX) = (OpenAD_aux_3 / OpenAD_aux_4)
           CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(PT))
           CALL dec_deriv(__deriv__(OpenAD_prp_1), __deriv__(PB))
           CALL setderiv(__deriv__(OpenAD_prp_2), __deriv__(PR))
@@ -318,8 +318,6 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_aux_12 = (HY * 2.0D00)
           OpenAD_aux_7 = ((OpenAD_aux_8 / OpenAD_aux_9) -(OpenAD_aux_11
      >  / OpenAD_aux_12))
-          __value__(FVEC(INT(K))) = ((OpenAD_aux_5 / HY2) +(
-     > OpenAD_aux_6 / HX2) - R * OpenAD_aux_7)
           OpenAD_lin_3 = (INT(1_w2f__i8) / HY2)
           OpenAD_lin_4 = (INT(1_w2f__i8) / HX2)
           OpenAD_lin_7 = OpenAD_aux_10
@@ -329,6 +327,8 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_11 = __value__(DPDX)
           OpenAD_lin_9 = (INT(1_w2f__i8) / OpenAD_aux_12)
           OpenAD_lin_5 = R
+          __value__(FVEC(INT(K))) = ((OpenAD_aux_5 / HY2) +(
+     > OpenAD_aux_6 / HX2) - R * OpenAD_aux_7)
           OpenAD_acc_0 = (OpenAD_lin_5 * INT((-1_w2f__i8)))
           OpenAD_acc_1 = (INT((-1_w2f__i8)) * OpenAD_acc_0)
           OpenAD_acc_2 = (OpenAD_lin_10 * OpenAD_lin_9 * OpenAD_acc_1)
@@ -438,37 +438,37 @@ C$OPENAD XXX Template ad_template.f
      >  2.0D00)
       OpenAD_aux_15 = (__value__(PBL) + __value__(PBR) - __value__(PB)
      >  * 2.0D00)
-      __value__(PBLAP) = ((OpenAD_aux_14 / HY2) +(OpenAD_aux_15 / HX2))
       OpenAD_lin_12 = (INT(1_w2f__i8) / HY2)
       OpenAD_lin_13 = (INT(1_w2f__i8) / HX2)
+      __value__(PBLAP) = ((OpenAD_aux_14 / HY2) +(OpenAD_aux_15 / HX2))
       OpenAD_aux_16 = (__value__(PBL) + __value__(PTL) - __value__(PL)
      >  * 2.0D00)
       OpenAD_aux_17 = (__value__(PLL) + __value__(P) - __value__(PL) *
      >  2.0D00)
-      __value__(PLLAP) = ((OpenAD_aux_16 / HY2) +(OpenAD_aux_17 / HX2))
       OpenAD_lin_14 = (INT(1_w2f__i8) / HY2)
       OpenAD_lin_15 = (INT(1_w2f__i8) / HX2)
+      __value__(PLLAP) = ((OpenAD_aux_16 / HY2) +(OpenAD_aux_17 / HX2))
       OpenAD_aux_18 = (__value__(PB) + __value__(PT) - __value__(P) *
      >  2.0D00)
       OpenAD_aux_19 = (__value__(PL) + __value__(PR) - __value__(P) *
      >  2.0D00)
-      __value__(PLAP) = ((OpenAD_aux_18 / HY2) +(OpenAD_aux_19 / HX2))
       OpenAD_lin_16 = (INT(1_w2f__i8) / HY2)
       OpenAD_lin_17 = (INT(1_w2f__i8) / HX2)
+      __value__(PLAP) = ((OpenAD_aux_18 / HY2) +(OpenAD_aux_19 / HX2))
       OpenAD_aux_20 = (__value__(PBR) + __value__(PTR) - __value__(PR)
      >  * 2.0D00)
       OpenAD_aux_21 = (__value__(P) + __value__(PRR) - __value__(PR) *
      >  2.0D00)
-      __value__(PRLAP) = ((OpenAD_aux_20 / HY2) +(OpenAD_aux_21 / HX2))
       OpenAD_lin_18 = (INT(1_w2f__i8) / HY2)
       OpenAD_lin_19 = (INT(1_w2f__i8) / HX2)
+      __value__(PRLAP) = ((OpenAD_aux_20 / HY2) +(OpenAD_aux_21 / HX2))
       OpenAD_aux_22 = (__value__(P) + __value__(PTT) - __value__(PT) *
      >  2.0D00)
       OpenAD_aux_23 = (__value__(PTL) + __value__(PTR) - __value__(PT)
      >  * 2.0D00)
-      __value__(PTLAP) = ((OpenAD_aux_22 / HY2) +(OpenAD_aux_23 / HX2))
       OpenAD_lin_20 = (INT(1_w2f__i8) / HY2)
       OpenAD_lin_21 = (INT(1_w2f__i8) / HX2)
+      __value__(PTLAP) = ((OpenAD_aux_22 / HY2) +(OpenAD_aux_23 / HX2))
       CALL setderiv(__deriv__(OpenAD_prp_7), __deriv__(PBB))
       CALL inc_deriv(__deriv__(OpenAD_prp_7), __deriv__(P))
       CALL saxpy(-2.0D00, __deriv__(PB), __deriv__(OpenAD_prp_7))

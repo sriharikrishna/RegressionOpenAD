@@ -77,9 +77,9 @@ C$OPENAD XXX Template ad_template.f
       A(4) = 3
       I = 1
       CALL foo(X(A(A(A(A(A(A(A(A(A(A(A(4)))))))))))))
-      Y%v = (X(1)%v*X(2)%v)
       OpenAD_lin_0 = X(2)%v
       OpenAD_lin_1 = X(1)%v
+      Y%v = (X(1)%v*X(2)%v)
       CALL sax(OpenAD_lin_0,X(1),Y)
       CALL saxpy(OpenAD_lin_1,X(2),Y)
       END SUBROUTINE

@@ -37,8 +37,6 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       INTEGER(w2f__i4) K
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -61,10 +59,9 @@ C$OPENAD XXX Template ad_template.f
           DO J = 1, 3, 1
             DO K = 1, 3, 1
               IF(__value__(X(1)) .GT. 0.0D00) THEN
-                OpenAD_dly_0 = (__value__(X(1)) * __value__(Y(1)))
                 OpenAD_lin_0 = __value__(Y(1))
                 OpenAD_lin_1 = __value__(X(1))
-                __value__(Y(1)) = OpenAD_dly_0
+                __value__(Y(1)) = (__value__(X(1)) * __value__(Y(1)))
                 CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
                 CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1))
      > )
@@ -74,11 +71,10 @@ C$OPENAD XXX Template ad_template.f
             END DO
           END DO
         ELSE
-          OpenAD_dly_1 = (__value__(Y(1)) / __value__(X(1)))
           OpenAD_lin_2 = (INT(1_w2f__i8) / __value__(X(1)))
           OpenAD_lin_3 = (-(__value__(Y(1)) /(__value__(X(1)) *
      >  __value__(X(1)))))
-          __value__(Y(1)) = OpenAD_dly_1
+          __value__(Y(1)) = (__value__(Y(1)) / __value__(X(1)))
           CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
           CALL sax(OpenAD_lin_2, __deriv__(OpenAD_prp_1), __deriv__(Y(1
      > )))

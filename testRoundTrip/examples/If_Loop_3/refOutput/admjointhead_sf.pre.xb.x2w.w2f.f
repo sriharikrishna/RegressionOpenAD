@@ -74,8 +74,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_31
       REAL(w2f__8) OpenAD_Symbol_32
       REAL(w2f__8) OpenAD_Symbol_33
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -124,10 +122,9 @@ C$OPENAD XXX Template ad_template.f
             DO K = 1, 3, 1
               __value__(Y(1)) = __value__(X(1))
               IF(__value__(X(1)) .GT. 0.0D00) THEN
-                OpenAD_dly_0 = (__value__(X(1)) * __value__(Y(1)))
                 OpenAD_lin_0 = __value__(Y(1))
                 OpenAD_lin_1 = __value__(X(1))
-                __value__(Y(1)) = OpenAD_dly_0
+                __value__(Y(1)) = (__value__(X(1)) * __value__(Y(1)))
 C               $OpenAD$ INLINE push_s0(subst)
                 CALL push_s0(OpenAD_lin_0)
 C               $OpenAD$ INLINE push_s0(subst)
@@ -153,11 +150,10 @@ C         $OpenAD$ INLINE push_i_s0(subst)
 C         $OpenAD$ INLINE push_i_s0(subst)
           CALL push_i_s0(OpenAD_Symbol_14)
         ELSE
-          OpenAD_dly_1 = (__value__(Y(1)) / __value__(X(1)))
           OpenAD_lin_2 = (INT(1_w2f__i8) / __value__(X(1)))
           OpenAD_lin_3 = (-(__value__(Y(1)) /(__value__(X(1)) *
      >  __value__(X(1)))))
-          __value__(Y(1)) = OpenAD_dly_1
+          __value__(Y(1)) = (__value__(Y(1)) / __value__(X(1)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_2)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -274,10 +270,9 @@ C$OPENAD XXX Template ad_template.f
             DO K = 1, 3, 1
               __value__(Y(1)) = __value__(X(1))
               IF(__value__(X(1)) .GT. 0.0D00) THEN
-                OpenAD_dly_0 = (__value__(X(1)) * __value__(Y(1)))
                 OpenAD_lin_0 = __value__(Y(1))
                 OpenAD_lin_1 = __value__(X(1))
-                __value__(Y(1)) = OpenAD_dly_0
+                __value__(Y(1)) = (__value__(X(1)) * __value__(Y(1)))
 C               $OpenAD$ INLINE push_s0(subst)
                 CALL push_s0(OpenAD_lin_0)
 C               $OpenAD$ INLINE push_s0(subst)
@@ -303,11 +298,10 @@ C         $OpenAD$ INLINE push_i_s0(subst)
 C         $OpenAD$ INLINE push_i_s0(subst)
           CALL push_i_s0(OpenAD_Symbol_29)
         ELSE
-          OpenAD_dly_1 = (__value__(Y(1)) / __value__(X(1)))
           OpenAD_lin_2 = (INT(1_w2f__i8) / __value__(X(1)))
           OpenAD_lin_3 = (-(__value__(Y(1)) /(__value__(X(1)) *
      >  __value__(X(1)))))
-          __value__(Y(1)) = OpenAD_dly_1
+          __value__(Y(1)) = (__value__(Y(1)) / __value__(X(1)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_2)
 C         $OpenAD$ INLINE push_s0(subst)

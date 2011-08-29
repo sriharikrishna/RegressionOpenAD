@@ -57,7 +57,6 @@ C
       REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_aux_2
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -96,14 +95,14 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (__value__(X1) / __value__(X2))
-      __value__(A) = (1.0D00 / OpenAD_aux_0)
       OpenAD_lin_1 = (INT(1_w2f__i8) / __value__(X2))
       OpenAD_lin_2 = (-(__value__(X1) /(__value__(X2) * __value__(X2)))
      > )
       OpenAD_lin_0 = (-(1.0D00 /(OpenAD_aux_0 * OpenAD_aux_0)))
-      __value__(B) = (__value__(X2) * __value__(A))
+      __value__(A) = (1.0D00 / OpenAD_aux_0)
       OpenAD_lin_3 = __value__(A)
       OpenAD_lin_4 = __value__(X2)
+      __value__(B) = (__value__(X2) * __value__(A))
       __value__(C) = __value__(X2)
       OpenAD_acc_0 = (OpenAD_lin_1 * OpenAD_lin_0)
       OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_0)
@@ -115,9 +114,8 @@ C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_4)
-      OpenAD_dly_0 = SIN(__value__(C))
       OpenAD_lin_5 = COS(__value__(C))
-      __value__(C) = OpenAD_dly_0
+      __value__(C) = SIN(__value__(C))
       __value__(D) = __value__(A)
       __value__(F) = __value__(A)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -126,12 +124,12 @@ C     $OpenAD$ INLINE push_s0(subst)
       __value__(F) = (OpenAD_aux_1 * 5.0D-01)
       OpenAD_aux_2 = (__value__(D) - __value__(A))
       __value__(E) = (OpenAD_aux_2 * 5.0D-01)
-      __value__(Y) = (__value__(B) * __value__(F) + __value__(C) *
-     >  __value__(E))
       OpenAD_lin_6 = __value__(F)
       OpenAD_lin_7 = __value__(B)
       OpenAD_lin_8 = __value__(E)
       OpenAD_lin_9 = __value__(C)
+      __value__(Y) = (__value__(B) * __value__(F) + __value__(C) *
+     >  __value__(E))
       OpenAD_acc_2 = (5.0D-01 * OpenAD_lin_7)
       OpenAD_acc_3 = (5.0D-01 * OpenAD_lin_9)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -235,14 +233,14 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (__value__(X1) / __value__(X2))
-      __value__(A) = (1.0D00 / OpenAD_aux_0)
       OpenAD_lin_1 = (INT(1_w2f__i8) / __value__(X2))
       OpenAD_lin_2 = (-(__value__(X1) /(__value__(X2) * __value__(X2)))
      > )
       OpenAD_lin_0 = (-(1.0D00 /(OpenAD_aux_0 * OpenAD_aux_0)))
-      __value__(B) = (__value__(X2) * __value__(A))
+      __value__(A) = (1.0D00 / OpenAD_aux_0)
       OpenAD_lin_3 = __value__(A)
       OpenAD_lin_4 = __value__(X2)
+      __value__(B) = (__value__(X2) * __value__(A))
       __value__(C) = __value__(X2)
       OpenAD_acc_0 = (OpenAD_lin_1 * OpenAD_lin_0)
       OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_0)
@@ -254,9 +252,8 @@ C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_4)
-      OpenAD_dly_0 = SIN(__value__(C))
       OpenAD_lin_5 = COS(__value__(C))
-      __value__(C) = OpenAD_dly_0
+      __value__(C) = SIN(__value__(C))
       __value__(D) = __value__(A)
       __value__(F) = __value__(A)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -265,12 +262,12 @@ C     $OpenAD$ INLINE push_s0(subst)
       __value__(F) = (OpenAD_aux_1 * 5.0D-01)
       OpenAD_aux_2 = (__value__(D) - __value__(A))
       __value__(E) = (OpenAD_aux_2 * 5.0D-01)
-      __value__(Y) = (__value__(B) * __value__(F) + __value__(C) *
-     >  __value__(E))
       OpenAD_lin_6 = __value__(F)
       OpenAD_lin_7 = __value__(B)
       OpenAD_lin_8 = __value__(E)
       OpenAD_lin_9 = __value__(C)
+      __value__(Y) = (__value__(B) * __value__(F) + __value__(C) *
+     >  __value__(E))
       OpenAD_acc_2 = (5.0D-01 * OpenAD_lin_7)
       OpenAD_acc_3 = (5.0D-01 * OpenAD_lin_9)
 C     $OpenAD$ INLINE push_s0(subst)

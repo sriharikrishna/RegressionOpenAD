@@ -67,7 +67,6 @@ C
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 C original function
@@ -81,18 +80,19 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-      T1%v = (X(1)%v/X(2)%v)
+C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = (INT(1_w2f__i8)/X(2)%v)
       OpenAD_lin_1 = (-(X(1)%v/(X(2)%v*X(2)%v)))
-      T2%v = (X(3)%v*X(4)%v)
+      T1%v = (X(1)%v/X(2)%v)
       OpenAD_lin_2 = X(4)%v
       OpenAD_lin_3 = X(3)%v
-      T3%v = (T1%v*T2%v)
+      T2%v = (X(3)%v*X(4)%v)
       OpenAD_lin_4 = T2%v
       OpenAD_lin_5 = T1%v
-      Y(1)%v = (T1%v*T3%v)
+      T3%v = (T1%v*T2%v)
       OpenAD_lin_6 = T3%v
       OpenAD_lin_7 = T1%v
+      Y(1)%v = (T1%v*T3%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
@@ -109,17 +109,17 @@ C taping
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_7
       double_tape_pointer = double_tape_pointer+1
-      Y(2)%v = (1.0D00/T3%v)
       OpenAD_lin_8 = (-(1.0D00/(T3%v*T3%v)))
+      Y(2)%v = (1.0D00/T3%v)
       double_tape(double_tape_pointer) = OpenAD_lin_8
       double_tape_pointer = double_tape_pointer+1
-      Y(3)%v = SIN(T3%v)
       OpenAD_lin_9 = COS(T3%v)
+      Y(3)%v = SIN(T3%v)
       double_tape(double_tape_pointer) = OpenAD_lin_9
       double_tape_pointer = double_tape_pointer+1
-      Y(4)%v = (T2%v*T3%v)
       OpenAD_lin_10 = T3%v
       OpenAD_lin_11 = T2%v
+      Y(4)%v = (T2%v*T3%v)
       double_tape(double_tape_pointer) = OpenAD_lin_10
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_11

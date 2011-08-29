@@ -42,8 +42,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      T%v = SIN(S%v)
       OpenAD_lin_0 = COS(S%v)
+      T%v = SIN(S%v)
       CALL sax(OpenAD_lin_0,S,T)
       END SUBROUTINE
 

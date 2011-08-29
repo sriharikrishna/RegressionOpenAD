@@ -23,8 +23,6 @@ C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_aux_1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -46,15 +44,13 @@ C$OPENAD XXX Simple loop
       DO K = 1,SP,1
         IF (I.ne.K) THEN
           OpenAD_aux_0 = (A(I)%v-A(K)%v)
-          OpenAD_dly_0 = (DENOM%v*OpenAD_aux_0)
           OpenAD_lin_0 = OpenAD_aux_0
           OpenAD_lin_1 = DENOM%v
-          DENOM%v = OpenAD_dly_0
+          DENOM%v = (DENOM%v*OpenAD_aux_0)
           OpenAD_aux_1 = (X-A(K)%v)
-          OpenAD_dly_1 = (NUMER%v*OpenAD_aux_1)
           OpenAD_lin_2 = OpenAD_aux_1
           OpenAD_lin_3 = NUMER%v
-          NUMER%v = OpenAD_dly_1
+          NUMER%v = (NUMER%v*OpenAD_aux_1)
           OpenAD_acc_0 = (INT((-1_w2f__i8))*OpenAD_lin_3)
           CALL setderiv(OpenAD_prp_0,DENOM)
           CALL setderiv(OpenAD_prp_1,NUMER)
@@ -66,9 +62,9 @@ C$OPENAD XXX Simple loop
           CALL saxpy(OpenAD_acc_0,A(K),NUMER)
         ENDIF
       END DO
-      LAG%v = (NUMER%v/DENOM%v)
       OpenAD_lin_4 = (INT(1_w2f__i8)/DENOM%v)
       OpenAD_lin_5 = (-(NUMER%v/(DENOM%v*DENOM%v)))
+      LAG%v = (NUMER%v/DENOM%v)
       CALL sax(OpenAD_lin_4,NUMER,LAG)
       CALL saxpy(OpenAD_lin_5,DENOM,LAG)
       END SUBROUTINE

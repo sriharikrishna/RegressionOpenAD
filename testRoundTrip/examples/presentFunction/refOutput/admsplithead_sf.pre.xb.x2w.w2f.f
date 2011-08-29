@@ -57,7 +57,6 @@ C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_aux_0
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -82,12 +81,11 @@ C$OPENAD XXX Template ad_template.f
       IF(PRESENT(__value__(OPTARG))) THEN
         IF(__value__(OPTARG) .LE. 2.0D00) THEN
           OpenAD_aux_0 = (__value__(OPTARG) * __value__(OUTARG))
-          OpenAD_dly_0 = (__value__(REQARG) * OpenAD_aux_0)
           OpenAD_lin_0 = OpenAD_aux_0
           OpenAD_lin_2 = __value__(OUTARG)
           OpenAD_lin_3 = __value__(OPTARG)
           OpenAD_lin_1 = __value__(REQARG)
-          __value__(OUTARG) = OpenAD_dly_0
+          __value__(OUTARG) = (__value__(REQARG) * OpenAD_aux_0)
           OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
           OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -195,12 +193,11 @@ C$OPENAD XXX Template ad_template.f
       IF(PRESENT(__value__(OPTARG))) THEN
         IF(__value__(OPTARG) .LE. 2.0D00) THEN
           OpenAD_aux_0 = (__value__(OPTARG) * __value__(OUTARG))
-          OpenAD_dly_0 = (__value__(REQARG) * OpenAD_aux_0)
           OpenAD_lin_0 = OpenAD_aux_0
           OpenAD_lin_2 = __value__(OUTARG)
           OpenAD_lin_3 = __value__(OPTARG)
           OpenAD_lin_1 = __value__(REQARG)
-          __value__(OUTARG) = OpenAD_dly_0
+          __value__(OUTARG) = (__value__(REQARG) * OpenAD_aux_0)
           OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
           OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
 C         $OpenAD$ INLINE push_s0(subst)

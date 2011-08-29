@@ -2495,10 +2495,10 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_14 = 0_w2f__i8
       DO L = 1, 3, 1
-        __value__(RHOLOC(INT(L))) = (__value__(SLOC(L)) * BETA -
-     >  __value__(TLOC(L)) * ALPHA)
         OpenAD_lin_0 = BETA
         OpenAD_lin_1 = ALPHA
+        __value__(RHOLOC(INT(L))) = (__value__(SLOC(L)) * BETA -
+     >  __value__(TLOC(L)) * ALPHA)
         OpenAD_acc_0 = (OpenAD_lin_1 * INT((-1_w2f__i8)))
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_0)
@@ -2585,10 +2585,10 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_17 = 0_w2f__i8
       DO L = 1, 3, 1
-        __value__(RHOLOC(INT(L))) = (__value__(SLOC(L)) * BETA -
-     >  __value__(TLOC(L)) * ALPHA)
         OpenAD_lin_0 = BETA
         OpenAD_lin_1 = ALPHA
+        __value__(RHOLOC(INT(L))) = (__value__(SLOC(L)) * BETA -
+     >  __value__(TLOC(L)) * ALPHA)
         OpenAD_acc_0 = (OpenAD_lin_1 * INT((-1_w2f__i8)))
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_0)
@@ -2672,10 +2672,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_aux_1 = (1.0D00 - DELTA)
       OpenAD_aux_0 = (__value__(RHOLOC(1)) * DELTA + __value__(RHOLOC(3
      > )) * OpenAD_aux_1 - __value__(RHOLOC(2)))
-      __value__(UVELLOC) = (-(U0 * OpenAD_aux_0))
       OpenAD_lin_3 = DELTA
       OpenAD_lin_4 = OpenAD_aux_1
       OpenAD_lin_2 = U0
+      __value__(UVELLOC) = (-(U0 * OpenAD_aux_0))
       OpenAD_acc_1 = (OpenAD_lin_2 * INT((-1_w2f__i8)))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_3)
@@ -2752,10 +2752,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_aux_1 = (1.0D00 - DELTA)
       OpenAD_aux_0 = (__value__(RHOLOC(1)) * DELTA + __value__(RHOLOC(3
      > )) * OpenAD_aux_1 - __value__(RHOLOC(2)))
-      __value__(UVELLOC) = (-(U0 * OpenAD_aux_0))
       OpenAD_lin_3 = DELTA
       OpenAD_lin_4 = OpenAD_aux_1
       OpenAD_lin_2 = U0
+      __value__(UVELLOC) = (-(U0 * OpenAD_aux_0))
       OpenAD_acc_1 = (OpenAD_lin_2 * INT((-1_w2f__i8)))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_3)
@@ -2847,9 +2847,9 @@ C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
         OpenAD_aux_22 = (__value__(FLDOLD(L)) + __value__(FLDNEW(L)) -
      >  __value__(FLDNOW(L)) * 2.0D00)
+        OpenAD_lin_31 = ROBERT_FILTER_COEFF
         __value__(FLDNOW(INT(L))) = (__value__(FLDNOW(L)) +
      >  ROBERT_FILTER_COEFF * OpenAD_aux_22)
-        OpenAD_lin_31 = ROBERT_FILTER_COEFF
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_31)
 C       $OpenAD$ INLINE push_i_s0(subst)
@@ -2954,9 +2954,9 @@ C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
         OpenAD_aux_22 = (__value__(FLDOLD(L)) + __value__(FLDNEW(L)) -
      >  __value__(FLDNOW(L)) * 2.0D00)
+        OpenAD_lin_31 = ROBERT_FILTER_COEFF
         __value__(FLDNOW(INT(L))) = (__value__(FLDNOW(L)) +
      >  ROBERT_FILTER_COEFF * OpenAD_aux_22)
-        OpenAD_lin_31 = ROBERT_FILTER_COEFF
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_31)
 C       $OpenAD$ INLINE push_i_s0(subst)
@@ -3286,9 +3286,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_147 = 0_w2f__i8
       DO L = 1, 3, 1
         OpenAD_aux_23 = (DELTA_T * 2.0D00)
+        OpenAD_lin_32 = OpenAD_aux_23
         __value__(FLDNEW(INT(L))) = (__value__(FLDOLD(L)) + __value__(
      > DFLDDT(L)) * OpenAD_aux_23)
-        OpenAD_lin_32 = OpenAD_aux_23
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_32)
 C       $OpenAD$ INLINE push_i_s0(subst)
@@ -3363,9 +3363,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_150 = 0_w2f__i8
       DO L = 1, 3, 1
         OpenAD_aux_23 = (DELTA_T * 2.0D00)
+        OpenAD_lin_32 = OpenAD_aux_23
         __value__(FLDNEW(INT(L))) = (__value__(FLDOLD(L)) + __value__(
      > DFLDDT(L)) * OpenAD_aux_23)
-        OpenAD_lin_32 = OpenAD_aux_23
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_32)
 C       $OpenAD$ INLINE push_i_s0(subst)
@@ -3558,12 +3558,12 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_aux_5 = (__value__(FLDNOW(3)) - __value__(FLDNOW(1)))
         OpenAD_aux_2 = (EXTFORLOC(1) + VOL(1) * OpenAD_aux_3 +
      >  __value__(UVELLOC) * OpenAD_aux_5)
-        __value__(DFLDDT(1)) = (OpenAD_aux_2 / VOL(1))
         OpenAD_lin_7 = GAMMALOC
         OpenAD_lin_6 = VOL(1)
         OpenAD_lin_8 = OpenAD_aux_5
         OpenAD_lin_9 = __value__(UVELLOC)
         OpenAD_lin_5 = (INT(1_w2f__i8) / VOL(1))
+        __value__(DFLDDT(1)) = (OpenAD_aux_2 / VOL(1))
         OpenAD_acc_2 = (OpenAD_lin_8 * OpenAD_lin_5)
         OpenAD_acc_3 = (OpenAD_lin_9 * OpenAD_lin_5)
         OpenAD_acc_4 = (INT((-1_w2f__i8)) * OpenAD_lin_7 * OpenAD_lin_6
@@ -3579,12 +3579,12 @@ C       $OpenAD$ INLINE push_s0(subst)
         OpenAD_aux_9 = (__value__(FLDNOW(1)) - __value__(FLDNOW(2)))
         OpenAD_aux_6 = (EXTFORLOC(2) + VOL(2) * OpenAD_aux_7 +
      >  __value__(UVELLOC) * OpenAD_aux_9)
-        __value__(DFLDDT(2)) = (OpenAD_aux_6 / VOL(2))
         OpenAD_lin_12 = GAMMALOC
         OpenAD_lin_11 = VOL(2)
         OpenAD_lin_13 = OpenAD_aux_9
         OpenAD_lin_14 = __value__(UVELLOC)
         OpenAD_lin_10 = (INT(1_w2f__i8) / VOL(2))
+        __value__(DFLDDT(2)) = (OpenAD_aux_6 / VOL(2))
         OpenAD_acc_5 = (OpenAD_lin_13 * OpenAD_lin_10)
         OpenAD_acc_6 = (OpenAD_lin_14 * OpenAD_lin_10)
         OpenAD_acc_7 = (INT((-1_w2f__i8)) * OpenAD_lin_12 *
@@ -3597,10 +3597,10 @@ C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_acc_7)
         OpenAD_aux_11 = (__value__(FLDNOW(2)) - __value__(FLDNOW(3)))
         OpenAD_aux_10 = (__value__(UVELLOC) * OpenAD_aux_11)
-        __value__(DFLDDT(3)) = (OpenAD_aux_10 / VOL(3))
         OpenAD_lin_16 = OpenAD_aux_11
         OpenAD_lin_17 = __value__(UVELLOC)
         OpenAD_lin_15 = (INT(1_w2f__i8) / VOL(3))
+        __value__(DFLDDT(3)) = (OpenAD_aux_10 / VOL(3))
         OpenAD_acc_8 = (OpenAD_lin_16 * OpenAD_lin_15)
         OpenAD_acc_9 = (OpenAD_lin_17 * OpenAD_lin_15)
 C       $OpenAD$ INLINE push_s0(subst)
@@ -3616,12 +3616,12 @@ C       $OpenAD$ INLINE push_i_s0(subst)
         OpenAD_aux_15 = (__value__(FLDNOW(2)) - __value__(FLDNOW(1)))
         OpenAD_aux_12 = (EXTFORLOC(1) + VOL(1) * OpenAD_aux_13 -
      >  __value__(UVELLOC) * OpenAD_aux_15)
-        __value__(DFLDDT(1)) = (OpenAD_aux_12 / VOL(1))
         OpenAD_lin_20 = GAMMALOC
         OpenAD_lin_19 = VOL(1)
         OpenAD_lin_21 = OpenAD_aux_15
         OpenAD_lin_22 = __value__(UVELLOC)
         OpenAD_lin_18 = (INT(1_w2f__i8) / VOL(1))
+        __value__(DFLDDT(1)) = (OpenAD_aux_12 / VOL(1))
         OpenAD_acc_10 = (INT((-1_w2f__i8)) * OpenAD_lin_18)
         OpenAD_acc_11 = (OpenAD_lin_21 * OpenAD_acc_10)
         OpenAD_acc_12 = (OpenAD_lin_22 * OpenAD_acc_10)
@@ -3638,12 +3638,12 @@ C       $OpenAD$ INLINE push_s0(subst)
         OpenAD_aux_19 = (__value__(FLDNOW(3)) - __value__(FLDNOW(2)))
         OpenAD_aux_16 = (EXTFORLOC(2) + VOL(2) * OpenAD_aux_17 -
      >  __value__(UVELLOC) * OpenAD_aux_19)
-        __value__(DFLDDT(2)) = (OpenAD_aux_16 / VOL(2))
         OpenAD_lin_25 = GAMMALOC
         OpenAD_lin_24 = VOL(2)
         OpenAD_lin_26 = OpenAD_aux_19
         OpenAD_lin_27 = __value__(UVELLOC)
         OpenAD_lin_23 = (INT(1_w2f__i8) / VOL(2))
+        __value__(DFLDDT(2)) = (OpenAD_aux_16 / VOL(2))
         OpenAD_acc_14 = (INT((-1_w2f__i8)) * OpenAD_lin_23)
         OpenAD_acc_15 = (OpenAD_lin_26 * OpenAD_acc_14)
         OpenAD_acc_16 = (OpenAD_lin_27 * OpenAD_acc_14)
@@ -3657,10 +3657,10 @@ C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_acc_17)
         OpenAD_aux_21 = (__value__(FLDNOW(1)) - __value__(FLDNOW(3)))
         OpenAD_aux_20 = (__value__(UVELLOC) * OpenAD_aux_21)
-        __value__(DFLDDT(3)) = (-(OpenAD_aux_20 / VOL(3)))
         OpenAD_lin_29 = OpenAD_aux_21
         OpenAD_lin_30 = __value__(UVELLOC)
         OpenAD_lin_28 = (INT(1_w2f__i8) / VOL(3))
+        __value__(DFLDDT(3)) = (-(OpenAD_aux_20 / VOL(3)))
         OpenAD_acc_18 = (OpenAD_lin_29 * OpenAD_lin_28 * INT((
      > -1_w2f__i8)))
         OpenAD_acc_19 = (OpenAD_lin_30 * OpenAD_lin_28 * INT((
@@ -3905,12 +3905,12 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_aux_5 = (__value__(FLDNOW(3)) - __value__(FLDNOW(1)))
         OpenAD_aux_2 = (EXTFORLOC(1) + VOL(1) * OpenAD_aux_3 +
      >  __value__(UVELLOC) * OpenAD_aux_5)
-        __value__(DFLDDT(1)) = (OpenAD_aux_2 / VOL(1))
         OpenAD_lin_7 = GAMMALOC
         OpenAD_lin_6 = VOL(1)
         OpenAD_lin_8 = OpenAD_aux_5
         OpenAD_lin_9 = __value__(UVELLOC)
         OpenAD_lin_5 = (INT(1_w2f__i8) / VOL(1))
+        __value__(DFLDDT(1)) = (OpenAD_aux_2 / VOL(1))
         OpenAD_acc_2 = (OpenAD_lin_8 * OpenAD_lin_5)
         OpenAD_acc_3 = (OpenAD_lin_9 * OpenAD_lin_5)
         OpenAD_acc_4 = (INT((-1_w2f__i8)) * OpenAD_lin_7 * OpenAD_lin_6
@@ -3926,12 +3926,12 @@ C       $OpenAD$ INLINE push_s0(subst)
         OpenAD_aux_9 = (__value__(FLDNOW(1)) - __value__(FLDNOW(2)))
         OpenAD_aux_6 = (EXTFORLOC(2) + VOL(2) * OpenAD_aux_7 +
      >  __value__(UVELLOC) * OpenAD_aux_9)
-        __value__(DFLDDT(2)) = (OpenAD_aux_6 / VOL(2))
         OpenAD_lin_12 = GAMMALOC
         OpenAD_lin_11 = VOL(2)
         OpenAD_lin_13 = OpenAD_aux_9
         OpenAD_lin_14 = __value__(UVELLOC)
         OpenAD_lin_10 = (INT(1_w2f__i8) / VOL(2))
+        __value__(DFLDDT(2)) = (OpenAD_aux_6 / VOL(2))
         OpenAD_acc_5 = (OpenAD_lin_13 * OpenAD_lin_10)
         OpenAD_acc_6 = (OpenAD_lin_14 * OpenAD_lin_10)
         OpenAD_acc_7 = (INT((-1_w2f__i8)) * OpenAD_lin_12 *
@@ -3944,10 +3944,10 @@ C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_acc_7)
         OpenAD_aux_11 = (__value__(FLDNOW(2)) - __value__(FLDNOW(3)))
         OpenAD_aux_10 = (__value__(UVELLOC) * OpenAD_aux_11)
-        __value__(DFLDDT(3)) = (OpenAD_aux_10 / VOL(3))
         OpenAD_lin_16 = OpenAD_aux_11
         OpenAD_lin_17 = __value__(UVELLOC)
         OpenAD_lin_15 = (INT(1_w2f__i8) / VOL(3))
+        __value__(DFLDDT(3)) = (OpenAD_aux_10 / VOL(3))
         OpenAD_acc_8 = (OpenAD_lin_16 * OpenAD_lin_15)
         OpenAD_acc_9 = (OpenAD_lin_17 * OpenAD_lin_15)
 C       $OpenAD$ INLINE push_s0(subst)
@@ -3963,12 +3963,12 @@ C       $OpenAD$ INLINE push_i_s0(subst)
         OpenAD_aux_15 = (__value__(FLDNOW(2)) - __value__(FLDNOW(1)))
         OpenAD_aux_12 = (EXTFORLOC(1) + VOL(1) * OpenAD_aux_13 -
      >  __value__(UVELLOC) * OpenAD_aux_15)
-        __value__(DFLDDT(1)) = (OpenAD_aux_12 / VOL(1))
         OpenAD_lin_20 = GAMMALOC
         OpenAD_lin_19 = VOL(1)
         OpenAD_lin_21 = OpenAD_aux_15
         OpenAD_lin_22 = __value__(UVELLOC)
         OpenAD_lin_18 = (INT(1_w2f__i8) / VOL(1))
+        __value__(DFLDDT(1)) = (OpenAD_aux_12 / VOL(1))
         OpenAD_acc_10 = (INT((-1_w2f__i8)) * OpenAD_lin_18)
         OpenAD_acc_11 = (OpenAD_lin_21 * OpenAD_acc_10)
         OpenAD_acc_12 = (OpenAD_lin_22 * OpenAD_acc_10)
@@ -3985,12 +3985,12 @@ C       $OpenAD$ INLINE push_s0(subst)
         OpenAD_aux_19 = (__value__(FLDNOW(3)) - __value__(FLDNOW(2)))
         OpenAD_aux_16 = (EXTFORLOC(2) + VOL(2) * OpenAD_aux_17 -
      >  __value__(UVELLOC) * OpenAD_aux_19)
-        __value__(DFLDDT(2)) = (OpenAD_aux_16 / VOL(2))
         OpenAD_lin_25 = GAMMALOC
         OpenAD_lin_24 = VOL(2)
         OpenAD_lin_26 = OpenAD_aux_19
         OpenAD_lin_27 = __value__(UVELLOC)
         OpenAD_lin_23 = (INT(1_w2f__i8) / VOL(2))
+        __value__(DFLDDT(2)) = (OpenAD_aux_16 / VOL(2))
         OpenAD_acc_14 = (INT((-1_w2f__i8)) * OpenAD_lin_23)
         OpenAD_acc_15 = (OpenAD_lin_26 * OpenAD_acc_14)
         OpenAD_acc_16 = (OpenAD_lin_27 * OpenAD_acc_14)
@@ -4004,10 +4004,10 @@ C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_acc_17)
         OpenAD_aux_21 = (__value__(FLDNOW(1)) - __value__(FLDNOW(3)))
         OpenAD_aux_20 = (__value__(UVELLOC) * OpenAD_aux_21)
-        __value__(DFLDDT(3)) = (-(OpenAD_aux_20 / VOL(3)))
         OpenAD_lin_29 = OpenAD_aux_21
         OpenAD_lin_30 = __value__(UVELLOC)
         OpenAD_lin_28 = (INT(1_w2f__i8) / VOL(3))
+        __value__(DFLDDT(3)) = (-(OpenAD_aux_20 / VOL(3)))
         OpenAD_acc_18 = (OpenAD_lin_29 * OpenAD_lin_28 * INT((
      > -1_w2f__i8)))
         OpenAD_acc_19 = (OpenAD_lin_30 * OpenAD_lin_28 * INT((

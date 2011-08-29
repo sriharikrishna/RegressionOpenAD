@@ -79,8 +79,8 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(NX,NY,X,FVEC,R,N,HX,HY,HY2,HX2)
       DO K = 1,N,1
         OpenAD_aux_0 = (HX2*HY2)
-        FVEC(INT(K))%v = (FVEC(K)%v*OpenAD_aux_0)
         OpenAD_lin_0 = OpenAD_aux_0
+        FVEC(INT(K))%v = (FVEC(K)%v*OpenAD_aux_0)
         CALL setderiv(OpenAD_prp_0,FVEC(K))
         CALL sax(OpenAD_lin_0,OpenAD_prp_0,FVEC(K))
       END DO
@@ -288,12 +288,12 @@ C$OPENAD XXX Template ad_template.f
           ENDIF
           OpenAD_aux_1 = (PT%v-PB%v)
           OpenAD_aux_2 = (HY*2.0D00)
-          DPDY%v = (OpenAD_aux_1/OpenAD_aux_2)
           OpenAD_lin_1 = (INT(1_w2f__i8)/OpenAD_aux_2)
+          DPDY%v = (OpenAD_aux_1/OpenAD_aux_2)
           OpenAD_aux_3 = (PR%v-PL%v)
           OpenAD_aux_4 = (HX*2.0D00)
-          DPDX%v = (OpenAD_aux_3/OpenAD_aux_4)
           OpenAD_lin_2 = (INT(1_w2f__i8)/OpenAD_aux_4)
+          DPDX%v = (OpenAD_aux_3/OpenAD_aux_4)
           CALL setderiv(OpenAD_prp_1,PT)
           CALL dec_deriv(OpenAD_prp_1,PB)
           CALL setderiv(OpenAD_prp_2,PR)
@@ -312,8 +312,6 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_aux_12 = (HY*2.0D00)
           OpenAD_aux_7 = ((OpenAD_aux_8/OpenAD_aux_9)-(OpenAD_aux_11/Ope
      +nAD_aux_12))
-          FVEC(INT(K))%v = ((OpenAD_aux_5/HY2)+(OpenAD_aux_6/HX2)-R*Open
-     +AD_aux_7)
           OpenAD_lin_3 = (INT(1_w2f__i8)/HY2)
           OpenAD_lin_4 = (INT(1_w2f__i8)/HX2)
           OpenAD_lin_7 = OpenAD_aux_10
@@ -323,6 +321,8 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_11 = DPDX%v
           OpenAD_lin_9 = (INT(1_w2f__i8)/OpenAD_aux_12)
           OpenAD_lin_5 = R
+          FVEC(INT(K))%v = ((OpenAD_aux_5/HY2)+(OpenAD_aux_6/HX2)-R*Open
+     +AD_aux_7)
           OpenAD_acc_0 = (OpenAD_lin_5*INT((-1_w2f__i8)))
           OpenAD_acc_1 = (INT((-1_w2f__i8))*OpenAD_acc_0)
           OpenAD_acc_2 = (OpenAD_lin_10*OpenAD_lin_9*OpenAD_acc_1)
@@ -427,29 +427,29 @@ C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_14 = (PBB%v+P%v-PB%v*2.0D00)
       OpenAD_aux_15 = (PBL%v+PBR%v-PB%v*2.0D00)
-      PBLAP%v = ((OpenAD_aux_14/HY2)+(OpenAD_aux_15/HX2))
       OpenAD_lin_12 = (INT(1_w2f__i8)/HY2)
       OpenAD_lin_13 = (INT(1_w2f__i8)/HX2)
+      PBLAP%v = ((OpenAD_aux_14/HY2)+(OpenAD_aux_15/HX2))
       OpenAD_aux_16 = (PBL%v+PTL%v-PL%v*2.0D00)
       OpenAD_aux_17 = (PLL%v+P%v-PL%v*2.0D00)
-      PLLAP%v = ((OpenAD_aux_16/HY2)+(OpenAD_aux_17/HX2))
       OpenAD_lin_14 = (INT(1_w2f__i8)/HY2)
       OpenAD_lin_15 = (INT(1_w2f__i8)/HX2)
+      PLLAP%v = ((OpenAD_aux_16/HY2)+(OpenAD_aux_17/HX2))
       OpenAD_aux_18 = (PB%v+PT%v-P%v*2.0D00)
       OpenAD_aux_19 = (PL%v+PR%v-P%v*2.0D00)
-      PLAP%v = ((OpenAD_aux_18/HY2)+(OpenAD_aux_19/HX2))
       OpenAD_lin_16 = (INT(1_w2f__i8)/HY2)
       OpenAD_lin_17 = (INT(1_w2f__i8)/HX2)
+      PLAP%v = ((OpenAD_aux_18/HY2)+(OpenAD_aux_19/HX2))
       OpenAD_aux_20 = (PBR%v+PTR%v-PR%v*2.0D00)
       OpenAD_aux_21 = (P%v+PRR%v-PR%v*2.0D00)
-      PRLAP%v = ((OpenAD_aux_20/HY2)+(OpenAD_aux_21/HX2))
       OpenAD_lin_18 = (INT(1_w2f__i8)/HY2)
       OpenAD_lin_19 = (INT(1_w2f__i8)/HX2)
+      PRLAP%v = ((OpenAD_aux_20/HY2)+(OpenAD_aux_21/HX2))
       OpenAD_aux_22 = (P%v+PTT%v-PT%v*2.0D00)
       OpenAD_aux_23 = (PTL%v+PTR%v-PT%v*2.0D00)
-      PTLAP%v = ((OpenAD_aux_22/HY2)+(OpenAD_aux_23/HX2))
       OpenAD_lin_20 = (INT(1_w2f__i8)/HY2)
       OpenAD_lin_21 = (INT(1_w2f__i8)/HX2)
+      PTLAP%v = ((OpenAD_aux_22/HY2)+(OpenAD_aux_23/HX2))
       CALL setderiv(OpenAD_prp_7,PBB)
       CALL inc_deriv(OpenAD_prp_7,P)
       CALL saxpy(-2.0D00,PB,OpenAD_prp_7)

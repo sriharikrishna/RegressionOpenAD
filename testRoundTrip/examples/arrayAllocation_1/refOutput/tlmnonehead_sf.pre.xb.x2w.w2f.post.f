@@ -41,7 +41,6 @@ C
       REAL(w2f__8) OpenAD_acc_2(1 : 2)
       REAL(w2f__8) OpenAD_aux_0(1 : 2)
       REAL(w2f__8) OpenAD_aux_1(1 : 2)
-      REAL(w2f__8) OpenAD_dly_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_1(:)
       ALLOCATABLE OpenAD_lin_1
@@ -63,25 +62,24 @@ C
 C$OPENAD XXX Template ad_template.f
       Z(1:INT(SIZE(X)))%v = X(1:2)%v
       CALL setderiv(Z(1:INT(SIZE(X))),X(1:2))
-C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
-      CALL oad_AllocateMatching(OpenAD_lin_1,Z(1:INT(SIZE(X))))
       OpenAD_aux_0 = COS(X%v)
-      Y(1:2)%v = (Z(1:INT(SIZE(X)))%v*OpenAD_aux_0)
       OpenAD_lin_0 = OpenAD_aux_0
       OpenAD_lin_2 = (-SIN(X%v))
+C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
+      CALL oad_AllocateMatching(OpenAD_lin_1,Z(1:INT(SIZE(X))))
       OpenAD_lin_1 = Z(1:INT(SIZE(X)))%v
+      Y(1:2)%v = (Z(1:INT(SIZE(X)))%v*OpenAD_aux_0)
       OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
       CALL sax(OpenAD_lin_0,Z(1:INT(SIZE(X))),Y(1:2))
       CALL saxpy(OpenAD_acc_0,X,Y(1:2))
+      OpenAD_aux_1 = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_5,Z(1:INT(SIZE(X))))
-      OpenAD_aux_1 = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
-      OpenAD_dly_0 = (OpenAD_aux_1/Y(1:2)%v)
       OpenAD_lin_5 = Z(1:INT(SIZE(X)))%v
       OpenAD_lin_6 = X(1:2)%v
       OpenAD_lin_3 = (INT(1_w2f__i8)/Y(1:2)%v)
       OpenAD_lin_4 = (-(OpenAD_aux_1/(Y(1:2)%v*Y(1:2)%v)))
-      Y(1:2)%v = OpenAD_dly_0
+      Y(1:2)%v = (OpenAD_aux_1/Y(1:2)%v)
       OpenAD_acc_1 = (OpenAD_lin_5*OpenAD_lin_3)
       OpenAD_acc_2 = (OpenAD_lin_6*OpenAD_lin_3)
       CALL setderiv(OpenAD_prp_0,Y(1:2))

@@ -52,9 +52,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_0 = __value__(X(2))
       OpenAD_lin_1 = __value__(X(1))
+      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       __value__(Y) = __value__(AGLOBAL)
       CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(AGLOBAL))
       CALL saxpy(OpenAD_lin_1, __deriv__(X(2)), __deriv__(AGLOBAL))
@@ -109,7 +109,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(AP) = (__value__(AGLOBAL) ** 3)
       OpenAD_lin_2 = (3 *(__value__(AGLOBAL) **(3 - INT(1_w2f__i8))))
+      __value__(AP) = (__value__(AGLOBAL) ** 3)
       CALL sax(OpenAD_lin_2, __deriv__(AGLOBAL), __deriv__(AP))
       END SUBROUTINE

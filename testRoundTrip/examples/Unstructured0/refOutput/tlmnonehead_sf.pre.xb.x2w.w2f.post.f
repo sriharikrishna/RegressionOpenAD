@@ -35,7 +35,6 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
@@ -56,10 +55,9 @@ C
 C$OPENAD XXX Template ad_template.f
       GO TO 4
  4    CONTINUE
-      OpenAD_dly_0 = (X(1)%v*X(1)%v)
       OpenAD_lin_0 = X(1)%v
       OpenAD_lin_1 = X(1)%v
-      X(1)%v = OpenAD_dly_0
+      X(1)%v = (X(1)%v*X(1)%v)
       CALL setderiv(OpenAD_prp_0,X(1))
       CALL setderiv(OpenAD_prp_1,X(1))
       CALL sax(OpenAD_lin_0,OpenAD_prp_0,X(1))

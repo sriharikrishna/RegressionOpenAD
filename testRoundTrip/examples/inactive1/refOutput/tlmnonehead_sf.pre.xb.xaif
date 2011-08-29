@@ -287,6 +287,16 @@
             </xaif:VariableReference>
           </xaif:Argument>
         </xaif:InlinableSubroutineCall>
+        <xaif:Assignment statement_id="_elementary_partial_0">
+          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="7"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="THEINT_2" annotation="" scope_id="7"/>
+            </xaif:VariableReference>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
         <xaif:Assignment statement_id="14">
           <xaif:AssignmentLHS active="true" alias="3" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="7"/>
@@ -301,16 +311,6 @@
             </xaif:VariableReference>
             <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
             <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-          </xaif:AssignmentRHS>
-        </xaif:Assignment>
-        <xaif:Assignment statement_id="_elementary_partial_0">
-          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="7"/>
-          </xaif:AssignmentLHS>
-          <xaif:AssignmentRHS>
-            <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="THEINT_2" annotation="" scope_id="7"/>
-            </xaif:VariableReference>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:DerivativePropagator>

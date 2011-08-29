@@ -51,17 +51,15 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
-      OpenAD_dly_0 = (P%v*Q%v)
       OpenAD_lin_0 = Q%v
       OpenAD_lin_1 = P%v
-      Q%v = OpenAD_dly_0
+      Q%v = (P%v*Q%v)
       I = (I+1)
       CALL setderiv(OpenAD_prp_0,Q)
       CALL sax(OpenAD_lin_0,P,Q)
@@ -86,7 +84,6 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       type(active) :: V(1:2)
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       type(active) :: OpenAD_prp_1
@@ -109,10 +106,9 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(V(2))
       CALL foo(X(1),Y(1))
       CALL foo(X(I),V(I))
-      OpenAD_dly_1 = (Y(1)%v*V(2)%v)
       OpenAD_lin_2 = V(2)%v
       OpenAD_lin_3 = Y(1)%v
-      Y(1)%v = OpenAD_dly_1
+      Y(1)%v = (Y(1)%v*V(2)%v)
       CALL setderiv(OpenAD_prp_1,Y(1))
       CALL setderiv(OpenAD_prp_2,V(2))
       CALL sax(OpenAD_lin_2,OpenAD_prp_1,Y(1))

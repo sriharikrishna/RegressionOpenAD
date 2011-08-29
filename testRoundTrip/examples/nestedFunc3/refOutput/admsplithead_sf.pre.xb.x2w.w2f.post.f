@@ -115,9 +115,9 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-        Y(1)%v = (X(1)%v*X(2)%v)
         OpenAD_lin_0 = X(2)%v
         OpenAD_lin_1 = X(1)%v
+        Y(1)%v = (X(1)%v*X(2)%v)
         double_tape(double_tape_pointer) = OpenAD_lin_0
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_lin_1
@@ -162,7 +162,6 @@ C
         REAL(w2f__8) OpenAD_aux_0
         REAL(w2f__8) OpenAD_aux_1
         REAL(w2f__8) OpenAD_aux_2
-        REAL(w2f__8) OpenAD_dly_0
         REAL(w2f__8) OpenAD_lin_2
         REAL(w2f__8) OpenAD_lin_3
         REAL(w2f__8) OpenAD_lin_4
@@ -187,14 +186,13 @@ C taping
         OpenAD_aux_0 = COS(X(2)%v)
         OpenAD_aux_2 = SIN(X(1)%v)
         OpenAD_aux_1 = (Y(1)%v*OpenAD_aux_2)
-        OpenAD_dly_0 = (OpenAD_aux_0*OpenAD_aux_1)
         OpenAD_lin_4 = (-SIN(X(2)%v))
         OpenAD_lin_2 = OpenAD_aux_1
         OpenAD_lin_5 = OpenAD_aux_2
         OpenAD_lin_7 = COS(X(1)%v)
         OpenAD_lin_6 = Y(1)%v
         OpenAD_lin_3 = OpenAD_aux_0
-        Y(1)%v = OpenAD_dly_0
+        Y(1)%v = (OpenAD_aux_0*OpenAD_aux_1)
         OpenAD_acc_0 = (OpenAD_lin_4*OpenAD_lin_2)
         OpenAD_acc_1 = (OpenAD_lin_5*OpenAD_lin_3)
         OpenAD_acc_2 = (OpenAD_lin_7*OpenAD_lin_6*OpenAD_lin_3)

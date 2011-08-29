@@ -161,9 +161,9 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
         IF (GLOBALSTRING.EQ.'yes') THEN
-          Y(INT(I))%v = (Y(I)%v+X(I)%v*X(I)%v)
           OpenAD_lin_0 = X(I)%v
           OpenAD_lin_1 = X(I)%v
+          Y(INT(I))%v = (Y(I)%v+X(I)%v*X(I)%v)
           double_tape(double_tape_pointer) = OpenAD_lin_0
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_lin_1
@@ -171,9 +171,9 @@ C$OPENAD XXX Simple loop
         ENDIF
         IF (GLOBALSTRING.EQ.'no') THEN
           OpenAD_aux_0 = (X(I)%v*X(I)%v)
-          Y(INT(I))%v = (Y(I)%v+OpenAD_aux_0*2.0D00)
           OpenAD_lin_2 = X(I)%v
           OpenAD_lin_3 = X(I)%v
+          Y(INT(I))%v = (Y(I)%v+OpenAD_aux_0*2.0D00)
           OpenAD_acc_0 = (OpenAD_lin_2*2.0D00)
           OpenAD_acc_1 = (OpenAD_lin_3*2.0D00)
           double_tape(double_tape_pointer) = OpenAD_acc_0

@@ -52,15 +52,15 @@ C$OPENAD XXX Template ad_template.f
       I(2) = 0
       I(3) = (-1)
       MAXI = MAXVAL(I)
-      __value__(T) = (__value__(X(MAXI)) * __value__(X(2)))
       OpenAD_lin_0 = __value__(X(2))
       OpenAD_lin_1 = __value__(X(MAXI))
-      __value__(Y(INT(MAXI))) = SIN(__value__(T))
+      __value__(T) = (__value__(X(MAXI)) * __value__(X(2)))
       OpenAD_lin_2 = COS(__value__(T))
+      __value__(Y(INT(MAXI))) = SIN(__value__(T))
       CALL sax(OpenAD_lin_0, __deriv__(X(MAXI)), __deriv__(T))
       CALL saxpy(OpenAD_lin_1, __deriv__(X(2)), __deriv__(T))
       CALL sax(OpenAD_lin_2, __deriv__(T), __deriv__(Y(MAXI)))
-      __value__(Y(2)) = COS(__value__(T))
       OpenAD_lin_3 = (- SIN(__value__(T)))
+      __value__(Y(2)) = COS(__value__(T))
       CALL sax(OpenAD_lin_3, __deriv__(T), __deriv__(Y(2)))
       END SUBROUTINE

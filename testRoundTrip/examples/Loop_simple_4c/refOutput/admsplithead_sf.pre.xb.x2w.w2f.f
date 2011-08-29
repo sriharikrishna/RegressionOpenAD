@@ -103,10 +103,10 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         IF(GLOBALSTRING .EQ. 'yes') THEN
-          __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
-     >  __value__(X(I)))
           OpenAD_lin_0 = __value__(X(I))
           OpenAD_lin_1 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
+     >  __value__(X(I)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -114,10 +114,10 @@ C         $OpenAD$ INLINE push_s0(subst)
         ENDIF
         IF(GLOBALSTRING .EQ. 'no') THEN
           OpenAD_aux_0 = (__value__(X(I)) * __value__(X(I)))
-          __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_aux_0 *
-     >  2.0D00)
           OpenAD_lin_2 = __value__(X(I))
           OpenAD_lin_3 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_aux_0 *
+     >  2.0D00)
           OpenAD_acc_0 = (OpenAD_lin_2 * 2.0D00)
           OpenAD_acc_1 = (OpenAD_lin_3 * 2.0D00)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -229,10 +229,10 @@ C$OPENAD XXX Simple loop
       OpenAD_Symbol_4 = 0_w2f__i8
       DO I = 1, 2, 1
         IF(GLOBALSTRING .EQ. 'yes') THEN
-          __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
-     >  __value__(X(I)))
           OpenAD_lin_0 = __value__(X(I))
           OpenAD_lin_1 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
+     >  __value__(X(I)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -249,10 +249,10 @@ C         $OpenAD$ INLINE push_i_s0(subst)
         ENDIF
         IF(GLOBALSTRING .EQ. 'no') THEN
           OpenAD_aux_0 = (__value__(X(I)) * __value__(X(I)))
-          __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_aux_0 *
-     >  2.0D00)
           OpenAD_lin_2 = __value__(X(I))
           OpenAD_lin_3 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_aux_0 *
+     >  2.0D00)
           OpenAD_acc_0 = (OpenAD_lin_2 * 2.0D00)
           OpenAD_acc_1 = (OpenAD_lin_3 * 2.0D00)
 C         $OpenAD$ INLINE push_s0(subst)

@@ -53,9 +53,9 @@ C
 C
 C       **** Statements ****
 C
-        __value__(Y(1)) = (__value__(X(1)) * __value__(X(2)))
         OpenAD_lin_0 = __value__(X(2))
         OpenAD_lin_1 = __value__(X(1))
+        __value__(Y(1)) = (__value__(X(1)) * __value__(X(2)))
         CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
         CALL saxpy(OpenAD_lin_1, __deriv__(X(2)), __deriv__(Y(1)))
         END SUBROUTINE
@@ -72,7 +72,6 @@ C
         REAL(w2f__8) OpenAD_aux_0
         REAL(w2f__8) OpenAD_aux_1
         REAL(w2f__8) OpenAD_aux_2
-        REAL(w2f__8) OpenAD_dly_0
         REAL(w2f__8) OpenAD_lin_2
         REAL(w2f__8) OpenAD_lin_3
         REAL(w2f__8) OpenAD_lin_4
@@ -86,14 +85,13 @@ C
         OpenAD_aux_0 = COS(__value__(X(2)))
         OpenAD_aux_2 = SIN(__value__(X(1)))
         OpenAD_aux_1 = (__value__(Y(1)) * OpenAD_aux_2)
-        OpenAD_dly_0 = (OpenAD_aux_0 * OpenAD_aux_1)
         OpenAD_lin_4 = (- SIN(__value__(X(2))))
         OpenAD_lin_2 = OpenAD_aux_1
         OpenAD_lin_5 = OpenAD_aux_2
         OpenAD_lin_7 = COS(__value__(X(1)))
         OpenAD_lin_6 = __value__(Y(1))
         OpenAD_lin_3 = OpenAD_aux_0
-        __value__(Y(1)) = OpenAD_dly_0
+        __value__(Y(1)) = (OpenAD_aux_0 * OpenAD_aux_1)
         OpenAD_acc_0 = (OpenAD_lin_4 * OpenAD_lin_2)
         OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
         OpenAD_acc_2 = (OpenAD_lin_7 * OpenAD_lin_6 * OpenAD_lin_3)

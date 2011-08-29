@@ -47,7 +47,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (-X(2)%v)
-      Y(1)%v = SIGN(X(1)%v,OpenAD_aux_0)
       OpenAD_lin_0 = (SIGN(1.0D00,X(1)%v)*SIGN(1.0D00,OpenAD_aux_0))
+      Y(1)%v = SIGN(X(1)%v,OpenAD_aux_0)
       CALL sax(OpenAD_lin_0,X(1),Y(1))
       END SUBROUTINE

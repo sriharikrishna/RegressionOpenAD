@@ -45,7 +45,6 @@ C
       REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_aux_2
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -92,11 +91,11 @@ C taping
       V%v = OpenAD_aux_0
       OpenAD_aux_1 = (NU%v*V%v)
       OpenAD_aux_2 = (GAMMA%v-V%v)
-      Y(1)%v = (OpenAD_aux_1/OpenAD_aux_2)
       OpenAD_lin_5 = V%v
       OpenAD_lin_6 = NU%v
       OpenAD_lin_3 = (INT(1_w2f__i8)/OpenAD_aux_2)
       OpenAD_lin_4 = (-(OpenAD_aux_1/(OpenAD_aux_2*OpenAD_aux_2)))
+      Y(1)%v = (OpenAD_aux_1/OpenAD_aux_2)
       OpenAD_acc_0 = (OpenAD_lin_6*OpenAD_lin_3+INT((-1_w2f__i8))*OpenAD
      +_lin_4)
       OpenAD_acc_1 = (OpenAD_lin_5*OpenAD_lin_3)
@@ -110,10 +109,9 @@ C taping
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_dly_0 = (Y(1)%v*GAMMA%v)
       OpenAD_lin_7 = GAMMA%v
       OpenAD_lin_8 = Y(1)%v
-      Y(2)%v = OpenAD_dly_0
+      Y(2)%v = (Y(1)%v*GAMMA%v)
       double_tape(double_tape_pointer) = OpenAD_lin_7
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_8

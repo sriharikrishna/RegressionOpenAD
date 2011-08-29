@@ -476,7 +476,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="oad_AllocateMatching" statement_id="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_AllocateMatching" statement_id="xaifBoosterLinearization::ExpressionEdgeAlg::makePartialAllocation">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
@@ -506,6 +506,58 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
+          <xaif:Assignment statement_id="_elementary_partial_0">
+            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:VariableReference vertex_id="1" active="true" alias="5" du_ud="3" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="Z_8" annotation="" scope_id="4"/>
+                <xaif:ArrayElementReference vertex_id="2">
+                  <xaif:IndexTriplet>
+                    <xaif:Index>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                    </xaif:Index>
+                    <xaif:Bound>
+                      <xaif:Intrinsic vertex_id="1" annotation="" name="size"/>
+                      <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                        <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+                      </xaif:VariableReference>
+                      <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+                    </xaif:Bound>
+                    <xaif:Stride>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                    </xaif:Stride>
+                  </xaif:IndexTriplet>
+                </xaif:ArrayElementReference>
+                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+              </xaif:VariableReference>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
+          <xaif:Assignment statement_id="_elementary_partial_1">
+            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:VariableReference vertex_id="1" active="true" alias="6" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+                <xaif:ArrayElementReference vertex_id="2">
+                  <xaif:IndexTriplet>
+                    <xaif:Index>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                    </xaif:Index>
+                    <xaif:Bound>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="2"/>
+                    </xaif:Bound>
+                    <xaif:Stride>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                    </xaif:Stride>
+                  </xaif:IndexTriplet>
+                </xaif:ArrayElementReference>
+                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+              </xaif:VariableReference>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:Assignment statement_id="61">
             <xaif:AssignmentLHS active="true" alias="7" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
@@ -566,58 +618,6 @@
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Assignment statement_id="_elementary_partial_0">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="true" alias="5" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="Z_8" annotation="" scope_id="4"/>
-                <xaif:ArrayElementReference vertex_id="2">
-                  <xaif:IndexTriplet>
-                    <xaif:Index>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Index>
-                    <xaif:Bound>
-                      <xaif:Intrinsic vertex_id="1" annotation="" name="size"/>
-                      <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                        <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                      </xaif:VariableReference>
-                      <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-                    </xaif:Bound>
-                    <xaif:Stride>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Stride>
-                  </xaif:IndexTriplet>
-                </xaif:ArrayElementReference>
-                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-              </xaif:VariableReference>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Assignment statement_id="_elementary_partial_1">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="true" alias="6" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                <xaif:ArrayElementReference vertex_id="2">
-                  <xaif:IndexTriplet>
-                    <xaif:Index>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Index>
-                    <xaif:Bound>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="2"/>
-                    </xaif:Bound>
-                    <xaif:Stride>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Stride>
-                  </xaif:IndexTriplet>
-                </xaif:ArrayElementReference>
-                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-              </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="size_assignment_for_taping">
@@ -1032,7 +1032,7 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
-          <xaif:InlinableSubroutineCall subroutine_name="oad_AllocateMatching" statement_id="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions">
+          <xaif:InlinableSubroutineCall subroutine_name="oad_AllocateMatching" statement_id="xaifBoosterLinearization::ExpressionEdgeAlg::makePartialAllocation">
             <xaif:Argument position="1">
               <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
                 <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
@@ -1062,6 +1062,58 @@
               </xaif:VariableReference>
             </xaif:Argument>
           </xaif:InlinableSubroutineCall>
+          <xaif:Assignment statement_id="_elementary_partial_0">
+            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:VariableReference vertex_id="1" active="true" alias="5" du_ud="3" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="Z_8" annotation="" scope_id="4"/>
+                <xaif:ArrayElementReference vertex_id="2">
+                  <xaif:IndexTriplet>
+                    <xaif:Index>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                    </xaif:Index>
+                    <xaif:Bound>
+                      <xaif:Intrinsic vertex_id="1" annotation="" name="size"/>
+                      <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                        <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+                      </xaif:VariableReference>
+                      <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+                    </xaif:Bound>
+                    <xaif:Stride>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                    </xaif:Stride>
+                  </xaif:IndexTriplet>
+                </xaif:ArrayElementReference>
+                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+              </xaif:VariableReference>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
+          <xaif:Assignment statement_id="_elementary_partial_1">
+            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+            </xaif:AssignmentLHS>
+            <xaif:AssignmentRHS>
+              <xaif:VariableReference vertex_id="1" active="true" alias="6" du_ud="2" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+                <xaif:ArrayElementReference vertex_id="2">
+                  <xaif:IndexTriplet>
+                    <xaif:Index>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                    </xaif:Index>
+                    <xaif:Bound>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="2"/>
+                    </xaif:Bound>
+                    <xaif:Stride>
+                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                    </xaif:Stride>
+                  </xaif:IndexTriplet>
+                </xaif:ArrayElementReference>
+                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+              </xaif:VariableReference>
+            </xaif:AssignmentRHS>
+          </xaif:Assignment>
           <xaif:Assignment statement_id="61">
             <xaif:AssignmentLHS active="true" alias="7" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
@@ -1122,58 +1174,6 @@
               </xaif:VariableReference>
               <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
               <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Assignment statement_id="_elementary_partial_0">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="true" alias="5" du_ud="3" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="Z_8" annotation="" scope_id="4"/>
-                <xaif:ArrayElementReference vertex_id="2">
-                  <xaif:IndexTriplet>
-                    <xaif:Index>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Index>
-                    <xaif:Bound>
-                      <xaif:Intrinsic vertex_id="1" annotation="" name="size"/>
-                      <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                        <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                      </xaif:VariableReference>
-                      <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-                    </xaif:Bound>
-                    <xaif:Stride>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Stride>
-                  </xaif:IndexTriplet>
-                </xaif:ArrayElementReference>
-                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-              </xaif:VariableReference>
-            </xaif:AssignmentRHS>
-          </xaif:Assignment>
-          <xaif:Assignment statement_id="_elementary_partial_1">
-            <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-            </xaif:AssignmentLHS>
-            <xaif:AssignmentRHS>
-              <xaif:VariableReference vertex_id="1" active="true" alias="6" du_ud="2" deriv="0" constant="0">
-                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                <xaif:ArrayElementReference vertex_id="2">
-                  <xaif:IndexTriplet>
-                    <xaif:Index>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Index>
-                    <xaif:Bound>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="2"/>
-                    </xaif:Bound>
-                    <xaif:Stride>
-                      <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                    </xaif:Stride>
-                  </xaif:IndexTriplet>
-                </xaif:ArrayElementReference>
-                <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-              </xaif:VariableReference>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="size_assignment_for_taping">

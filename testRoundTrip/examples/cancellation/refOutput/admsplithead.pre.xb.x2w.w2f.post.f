@@ -50,7 +50,6 @@ C
       REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_aux_2
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -95,13 +94,13 @@ C original function
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (X1%v/X2%v)
-      A%v = (1.0D00/OpenAD_aux_0)
       OpenAD_lin_1 = (INT(1_w2f__i8)/X2%v)
       OpenAD_lin_2 = (-(X1%v/(X2%v*X2%v)))
       OpenAD_lin_0 = (-(1.0D00/(OpenAD_aux_0*OpenAD_aux_0)))
-      B%v = (X2%v*A%v)
+      A%v = (1.0D00/OpenAD_aux_0)
       OpenAD_lin_3 = A%v
       OpenAD_lin_4 = X2%v
+      B%v = (X2%v*A%v)
       C%v = X2%v
       OpenAD_acc_0 = (OpenAD_lin_1*OpenAD_lin_0)
       OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
@@ -113,9 +112,8 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_dly_0 = SIN(C%v)
       OpenAD_lin_5 = COS(C%v)
-      C%v = OpenAD_dly_0
+      C%v = SIN(C%v)
       D%v = A%v
       F%v = A%v
       double_tape(double_tape_pointer) = OpenAD_lin_5
@@ -124,11 +122,11 @@ C$OPENAD XXX Template ad_template.f
       F%v = (OpenAD_aux_1*5.0D-01)
       OpenAD_aux_2 = (D%v-A%v)
       E%v = (OpenAD_aux_2*5.0D-01)
-      Y%v = (B%v*F%v+C%v*E%v)
       OpenAD_lin_6 = F%v
       OpenAD_lin_7 = B%v
       OpenAD_lin_8 = E%v
       OpenAD_lin_9 = C%v
+      Y%v = (B%v*F%v+C%v*E%v)
       OpenAD_acc_2 = (5.0D-01*OpenAD_lin_7)
       OpenAD_acc_3 = (5.0D-01*OpenAD_lin_9)
       double_tape(double_tape_pointer) = OpenAD_lin_6

@@ -38,9 +38,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(Y) = (__value__(X(2)) * __value__(X(4)))
       OpenAD_lin_0 = __value__(X(4))
       OpenAD_lin_1 = __value__(X(2))
+      __value__(Y) = (__value__(X(2)) * __value__(X(4)))
       CALL sax(OpenAD_lin_0, __deriv__(X(2)), __deriv__(Y))
       CALL saxpy(OpenAD_lin_1, __deriv__(X(4)), __deriv__(Y))
       END SUBROUTINE

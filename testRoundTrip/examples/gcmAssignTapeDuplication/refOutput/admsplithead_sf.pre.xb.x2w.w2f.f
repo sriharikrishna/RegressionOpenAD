@@ -93,7 +93,6 @@ C$OPENAD XXX Template ad_template.f
      > (9)) + __value__(X(10)))
       OpenAD_aux_2 = (__value__(X(2)) + __value__(X(1)) * OpenAD_aux_4)
       OpenAD_aux_0 = (OpenAD_aux_1 / OpenAD_aux_2)
-      __value__(Y(1)) = (__value__(X(3)) * OpenAD_aux_0)
       OpenAD_lin_0 = OpenAD_aux_0
       OpenAD_lin_4 = OpenAD_aux_3
       OpenAD_lin_5 = __value__(X(1))
@@ -104,6 +103,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_9 = __value__(X(1))
       OpenAD_lin_3 = (-(OpenAD_aux_1 /(OpenAD_aux_2 * OpenAD_aux_2)))
       OpenAD_lin_1 = __value__(X(3))
+      __value__(Y(1)) = (__value__(X(3)) * OpenAD_aux_0)
       OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
       OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
       OpenAD_acc_2 = (OpenAD_lin_8 * OpenAD_acc_1)
@@ -209,7 +209,6 @@ C$OPENAD XXX Template ad_template.f
      > (9)) + __value__(X(10)))
       OpenAD_aux_2 = (__value__(X(2)) + __value__(X(1)) * OpenAD_aux_4)
       OpenAD_aux_0 = (OpenAD_aux_1 / OpenAD_aux_2)
-      __value__(Y(1)) = (__value__(X(3)) * OpenAD_aux_0)
       OpenAD_lin_0 = OpenAD_aux_0
       OpenAD_lin_4 = OpenAD_aux_3
       OpenAD_lin_5 = __value__(X(1))
@@ -220,6 +219,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_9 = __value__(X(1))
       OpenAD_lin_3 = (-(OpenAD_aux_1 /(OpenAD_aux_2 * OpenAD_aux_2)))
       OpenAD_lin_1 = __value__(X(3))
+      __value__(Y(1)) = (__value__(X(3)) * OpenAD_aux_0)
       OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
       OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
       OpenAD_acc_2 = (OpenAD_lin_8 * OpenAD_acc_1)

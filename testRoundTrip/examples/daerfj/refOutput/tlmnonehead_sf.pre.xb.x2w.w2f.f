@@ -82,19 +82,19 @@ C$OPENAD XXX Template ad_template.f
       Y(11) = 2.46000000000000003386D-02
       DO I = 1, 11, 1
         OpenAD_aux_0 = (__value__(X(2)) + V(I))
-        __value__(TEMP1) = (V(I) * OpenAD_aux_0)
         OpenAD_lin_0 = V(I)
+        __value__(TEMP1) = (V(I) * OpenAD_aux_0)
         OpenAD_aux_1 = (__value__(X(3)) + V(I))
-        __value__(TEMP2) = (__value__(X(4)) + V(I) * OpenAD_aux_1)
         OpenAD_lin_1 = V(I)
+        __value__(TEMP2) = (__value__(X(4)) + V(I) * OpenAD_aux_1)
         OpenAD_aux_2 = (__value__(X(1)) * __value__(TEMP1))
-        __value__(FVEC(INT(I))) = (Y(I) -(OpenAD_aux_2 / __value__(
-     > TEMP2)))
         OpenAD_lin_4 = __value__(TEMP1)
         OpenAD_lin_5 = __value__(X(1))
         OpenAD_lin_2 = (INT(1_w2f__i8) / __value__(TEMP2))
         OpenAD_lin_3 = (-(OpenAD_aux_2 /(__value__(TEMP2) * __value__(
      > TEMP2))))
+        __value__(FVEC(INT(I))) = (Y(I) -(OpenAD_aux_2 / __value__(
+     > TEMP2)))
         OpenAD_acc_0 = (OpenAD_lin_3 * INT((-1_w2f__i8)))
         OpenAD_acc_1 = (OpenAD_lin_4 * OpenAD_lin_2 * INT((-1_w2f__i8))
      > )

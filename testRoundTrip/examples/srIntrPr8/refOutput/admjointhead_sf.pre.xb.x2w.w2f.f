@@ -296,8 +296,8 @@ C$OPENAD XXX Template ad_template.f
       CALL OAD_S_MIN_D(__deriv__(X(1)), __deriv__(X(2)), __deriv__(
      > OAD_CTMP0))
       CALL OAD_S_MAX_D(P1, P2, OAD_CTMP1)
-      __value__(Y(1)) = (__value__(OAD_CTMP0) * OAD_CTMP1)
       OpenAD_lin_0 = OAD_CTMP1
+      __value__(Y(1)) = (__value__(OAD_CTMP0) * OAD_CTMP1)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ END REPLACEMENT
@@ -332,8 +332,8 @@ C$OPENAD XXX Template ad_template.f
       CALL OAD_S_MIN_D(__deriv__(X(1)), __deriv__(X(2)), __deriv__(
      > OAD_CTMP0))
       CALL OAD_S_MAX_D(P1, P2, OAD_CTMP1)
-      __value__(Y(1)) = (__value__(OAD_CTMP0) * OAD_CTMP1)
       OpenAD_lin_0 = OAD_CTMP1
+      __value__(Y(1)) = (__value__(OAD_CTMP0) * OAD_CTMP1)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ END REPLACEMENT

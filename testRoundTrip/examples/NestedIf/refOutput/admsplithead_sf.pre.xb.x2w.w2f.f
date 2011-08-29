@@ -79,9 +79,9 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .LE. __value__(X(2))) THEN
         IF(__value__(X(1)) .eq. __value__(X(2))) THEN
-          __value__(Y(1)) = (__value__(X(1)) * __value__(X(1)))
           OpenAD_lin_0 = __value__(X(1))
           OpenAD_lin_1 = __value__(X(1))
+          __value__(Y(1)) = (__value__(X(1)) * __value__(X(1)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -166,9 +166,9 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .LE. __value__(X(2))) THEN
         IF(__value__(X(1)) .eq. __value__(X(2))) THEN
-          __value__(Y(1)) = (__value__(X(1)) * __value__(X(1)))
           OpenAD_lin_0 = __value__(X(1))
           OpenAD_lin_1 = __value__(X(1))
+          __value__(Y(1)) = (__value__(X(1)) * __value__(X(1)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)

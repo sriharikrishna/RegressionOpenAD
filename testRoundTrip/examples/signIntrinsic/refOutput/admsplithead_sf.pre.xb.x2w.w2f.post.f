@@ -74,8 +74,8 @@ C original function
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (-X(2)%v)
-      Y(1)%v = SIGN(X(1)%v,OpenAD_aux_0)
       OpenAD_lin_0 = (SIGN(1.0D00,X(1)%v)*SIGN(1.0D00,OpenAD_aux_0))
+      Y(1)%v = SIGN(X(1)%v,OpenAD_aux_0)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
           end if

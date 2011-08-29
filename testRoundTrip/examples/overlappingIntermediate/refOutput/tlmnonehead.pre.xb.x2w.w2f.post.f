@@ -22,7 +22,6 @@ C
       REAL(w2f__8) OpenAD_acc_3
       REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_aux_1
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
@@ -45,13 +44,13 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (X(1)%v*X(2)%v)
-      T%v = (X(3)%v*OpenAD_aux_0)
       OpenAD_lin_0 = OpenAD_aux_0
       OpenAD_lin_2 = X(2)%v
       OpenAD_lin_3 = X(1)%v
       OpenAD_lin_1 = X(3)%v
-      Y(1)%v = SIN(T%v)
+      T%v = (X(3)%v*OpenAD_aux_0)
       OpenAD_lin_4 = COS(T%v)
+      Y(1)%v = SIN(T%v)
       OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
       OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
       CALL sax(OpenAD_lin_0,X(3),T)
@@ -59,14 +58,13 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_1,X(2),T)
       CALL sax(OpenAD_lin_4,T,Y(1))
       OpenAD_aux_1 = (X(4)%v*T%v)
-      OpenAD_dly_0 = (X(5)%v*OpenAD_aux_1)
       OpenAD_lin_5 = OpenAD_aux_1
       OpenAD_lin_7 = T%v
       OpenAD_lin_8 = X(4)%v
       OpenAD_lin_6 = X(5)%v
-      T%v = OpenAD_dly_0
-      Y(2)%v = SIN(T%v)
+      T%v = (X(5)%v*OpenAD_aux_1)
       OpenAD_lin_9 = COS(T%v)
+      Y(2)%v = SIN(T%v)
       OpenAD_acc_2 = (OpenAD_lin_7*OpenAD_lin_6)
       OpenAD_acc_3 = (OpenAD_lin_8*OpenAD_lin_6)
       CALL setderiv(OpenAD_prp_0,T)
@@ -74,7 +72,7 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_2,X(4),T)
       CALL saxpy(OpenAD_acc_3,OpenAD_prp_0,T)
       CALL sax(OpenAD_lin_9,T,Y(2))
-      Y(3)%v = COS(T%v)
       OpenAD_lin_10 = (-SIN(T%v))
+      Y(3)%v = COS(T%v)
       CALL sax(OpenAD_lin_10,T,Y(3))
       END SUBROUTINE

@@ -253,8 +253,6 @@ C taping
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
       OpenAD_aux_1 = (U(1)%v*2.0D00)
-      V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
-     +)%v**3)+U(2)%v*OpenAD_aux_1)
       OpenAD_lin_3 = (3*(U(1)%v**(3-INT(1_w2f__i8))))
       OpenAD_lin_4 = COS(U(2)%v)
       OpenAD_lin_5 = (INT(1_w2f__i8)/U(1)%v)
@@ -263,6 +261,8 @@ C taping
       OpenAD_lin_8 = (3*(U(2)%v**(3-INT(1_w2f__i8))))
       OpenAD_lin_9 = OpenAD_aux_1
       OpenAD_lin_10 = U(2)%v
+      V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
+     +)%v**3)+U(2)%v*OpenAD_aux_1)
       OpenAD_acc_2 = (OpenAD_lin_7*INT((-1_w2f__i8)))
       OpenAD_acc_3 = (2.0D00*OpenAD_lin_10)
       double_tape(double_tape_pointer) = OpenAD_lin_8

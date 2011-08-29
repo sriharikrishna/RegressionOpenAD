@@ -67,7 +67,6 @@ C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_aux_0
-      REAL(w2f__8) OpenAD_dly_0
       INTEGER(w2f__i4) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -175,11 +174,10 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         IF (A(I,J).ne.0) THEN
           OpenAD_aux_0 = (X(1)%v*Y(1)%v)
-          OpenAD_dly_0 = (A(I,J)*OpenAD_aux_0)
           OpenAD_lin_1 = Y(1)%v
           OpenAD_lin_2 = X(1)%v
           OpenAD_lin_0 = A(I,J)
-          Y(1)%v = OpenAD_dly_0
+          Y(1)%v = (A(I,J)*OpenAD_aux_0)
           OpenAD_acc_0 = (OpenAD_lin_1*OpenAD_lin_0)
           OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
           double_tape(double_tape_pointer) = OpenAD_acc_0

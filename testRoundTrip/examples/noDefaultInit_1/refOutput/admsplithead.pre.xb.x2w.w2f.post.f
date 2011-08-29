@@ -47,9 +47,9 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-      T%v = (X(1)%v*X(2)%v)
       OpenAD_lin_0 = X(2)%v
       OpenAD_lin_1 = X(1)%v
+      T%v = (X(1)%v*X(2)%v)
       Y(1)%v = T%v
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1

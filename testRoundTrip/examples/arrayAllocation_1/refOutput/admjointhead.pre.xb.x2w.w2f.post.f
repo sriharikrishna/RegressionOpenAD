@@ -45,7 +45,6 @@ C
       REAL(w2f__8) OpenAD_acc_2(1 : 2)
       REAL(w2f__8) OpenAD_aux_0(1 : 2)
       REAL(w2f__8) OpenAD_aux_1(1 : 2)
-      REAL(w2f__8) OpenAD_dly_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_1(:)
       ALLOCATABLE OpenAD_lin_1
@@ -121,13 +120,13 @@ C taping
       OpenAD_Symbol_0 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_0
       integer_tape_pointer = integer_tape_pointer+1
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_1,Z(1:INT(SIZE(X))))
       OpenAD_aux_0 = COS(X%v)
-      Y(1:2)%v = (Z(1:INT(SIZE(X)))%v*OpenAD_aux_0)
       OpenAD_lin_0 = OpenAD_aux_0
       OpenAD_lin_2 = (-SIN(X%v))
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_1,Z(1:INT(SIZE(X))))
       OpenAD_lin_1 = Z(1:INT(SIZE(X)))%v
+      Y(1:2)%v = (Z(1:INT(SIZE(X)))%v*OpenAD_aux_0)
       OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
      +n_0)-1) = OpenAD_lin_0(:)
@@ -138,15 +137,14 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
      +c_0)-1) = OpenAD_acc_0(:)
       double_tape_pointer = double_tape_pointer+size(OpenAD_acc_0)
+      OpenAD_aux_1 = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_lin_5,Z(1:INT(SIZE(X))))
-      OpenAD_aux_1 = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
-      OpenAD_dly_0 = (OpenAD_aux_1/Y(1:2)%v)
       OpenAD_lin_5 = Z(1:INT(SIZE(X)))%v
       OpenAD_lin_6 = X(1:2)%v
       OpenAD_lin_3 = (INT(1_w2f__i8)/Y(1:2)%v)
       OpenAD_lin_4 = (-(OpenAD_aux_1/(Y(1:2)%v*Y(1:2)%v)))
-      Y(1:2)%v = OpenAD_dly_0
+      Y(1:2)%v = (OpenAD_aux_1/Y(1:2)%v)
       OpenAD_acc_1 = (OpenAD_lin_5*OpenAD_lin_3)
       OpenAD_acc_2 = (OpenAD_lin_6*OpenAD_lin_3)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li

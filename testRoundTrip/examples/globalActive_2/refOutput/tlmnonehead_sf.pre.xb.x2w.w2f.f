@@ -60,11 +60,11 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       APASSIVEGLOBAL = 2.0D00
-      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_0 = __value__(X(2))
       OpenAD_lin_1 = __value__(X(1))
-      __value__(Y(1)) = (__value__(AGLOBAL) * APASSIVEGLOBAL)
+      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_2 = APASSIVEGLOBAL
+      __value__(Y(1)) = (__value__(AGLOBAL) * APASSIVEGLOBAL)
       CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(AGLOBAL))
       CALL saxpy(OpenAD_lin_1, __deriv__(X(2)), __deriv__(AGLOBAL))
       CALL sax(OpenAD_lin_2, __deriv__(AGLOBAL), __deriv__(Y(1)))

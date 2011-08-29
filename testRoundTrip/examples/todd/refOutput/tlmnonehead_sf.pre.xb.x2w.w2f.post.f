@@ -107,8 +107,8 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(MATR(0),X(2))
       CALL dec_deriv(MATR(0),X(1))
       OpenAD_aux_0 = (X(3)%v*2.0D00-X(2)%v-X(1)%v)
-      MATR(1)%v = (SQRT3*OpenAD_aux_0)
       OpenAD_lin_0 = SQRT3
+      MATR(1)%v = (SQRT3*OpenAD_aux_0)
       CALL set_neg_deriv(OpenAD_prp_0,X(1))
       CALL dec_deriv(OpenAD_prp_0,X(2))
       CALL saxpy(2.0D00,X(3),OpenAD_prp_0)
@@ -117,47 +117,47 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(MATR(2),X(5))
       CALL dec_deriv(MATR(2),X(4))
       OpenAD_aux_1 = (X(6)%v*2.0D00-X(5)%v-X(4)%v)
-      MATR(3)%v = (SQRT3*OpenAD_aux_1)
       OpenAD_lin_1 = SQRT3
+      MATR(3)%v = (SQRT3*OpenAD_aux_1)
       CALL set_neg_deriv(OpenAD_prp_1,X(4))
       CALL dec_deriv(OpenAD_prp_1,X(5))
       CALL saxpy(2.0D00,X(6),OpenAD_prp_1)
       CALL sax(OpenAD_lin_1,OpenAD_prp_1,MATR(3))
-      M03%v = (MATR(0)%v*MATR(3)%v)
       OpenAD_lin_2 = MATR(3)%v
       OpenAD_lin_3 = MATR(0)%v
-      M12%v = (MATR(1)%v*MATR(2)%v)
+      M03%v = (MATR(0)%v*MATR(3)%v)
       OpenAD_lin_4 = MATR(2)%v
       OpenAD_lin_5 = MATR(1)%v
+      M12%v = (MATR(1)%v*MATR(2)%v)
       G%v = (M03%v-M12%v)
       D00 = (M03%v*2.0D00)
       D11 = (M12%v*2.0D00)
-      M00%v = (MATR(0)%v*MATR(0)%v)
       OpenAD_lin_6 = MATR(0)%v
       OpenAD_lin_7 = MATR(0)%v
-      M11%v = (MATR(1)%v*MATR(1)%v)
+      M00%v = (MATR(0)%v*MATR(0)%v)
       OpenAD_lin_8 = MATR(1)%v
       OpenAD_lin_9 = MATR(1)%v
-      M22%v = (MATR(2)%v*MATR(2)%v)
+      M11%v = (MATR(1)%v*MATR(1)%v)
       OpenAD_lin_10 = MATR(2)%v
       OpenAD_lin_11 = MATR(2)%v
-      M33%v = (MATR(3)%v*MATR(3)%v)
+      M22%v = (MATR(2)%v*MATR(2)%v)
       OpenAD_lin_12 = MATR(3)%v
       OpenAD_lin_13 = MATR(3)%v
-      D12%v = (M00%v*M33%v)
+      M33%v = (MATR(3)%v*MATR(3)%v)
       OpenAD_lin_14 = M33%v
       OpenAD_lin_15 = M00%v
-      D03%v = (M11%v*M22%v)
+      D12%v = (M00%v*M33%v)
       OpenAD_lin_16 = M22%v
       OpenAD_lin_17 = M11%v
+      D03%v = (M11%v*M22%v)
       F%v = (D03%v+D12%v)
       OpenAD_aux_2 = (1.0D00/G%v)
-      LOC1%v = (A*OpenAD_aux_2)
       OpenAD_lin_19 = (-(1.0D00/(G%v*G%v)))
       OpenAD_lin_18 = A
-      OBJ(1)%v = (F%v*LOC1%v)
+      LOC1%v = (A*OpenAD_aux_2)
       OpenAD_lin_20 = LOC1%v
       OpenAD_lin_21 = F%v
+      OBJ(1)%v = (F%v*LOC1%v)
       OpenAD_acc_0 = (OpenAD_lin_19*OpenAD_lin_18*OpenAD_lin_21)
       OpenAD_acc_1 = (OpenAD_lin_10*OpenAD_lin_17*OpenAD_lin_20)
       OpenAD_acc_2 = (OpenAD_lin_11*OpenAD_lin_17*OpenAD_lin_20)

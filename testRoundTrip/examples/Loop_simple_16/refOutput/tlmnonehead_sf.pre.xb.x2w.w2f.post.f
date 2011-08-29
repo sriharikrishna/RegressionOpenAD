@@ -40,7 +40,6 @@ C
 C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
@@ -50,10 +49,9 @@ C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = L, U, S
-        OpenAD_dly_0 = (X(I)%v*Y%v)
         OpenAD_lin_0 = Y%v
         OpenAD_lin_1 = X(I)%v
-        Y%v = OpenAD_dly_0
+        Y%v = (X(I)%v*Y%v)
         CALL setderiv(OpenAD_prp_0,Y)
         CALL sax(OpenAD_lin_0,X(I),Y)
         CALL saxpy(OpenAD_lin_1,OpenAD_prp_0,Y)

@@ -52,8 +52,8 @@ C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_1 = (X(1)%v*2.0D00)
       OpenAD_aux_0 = (OpenAD_aux_1*3.141592653589793116D00)
-      Y(1)%v = SIN(OpenAD_aux_0)
       OpenAD_lin_0 = COS(OpenAD_aux_0)
+      Y(1)%v = SIN(OpenAD_aux_0)
       OpenAD_acc_0 = (2.0D00*3.141592653589793116D00*OpenAD_lin_0)
       CALL sax(OpenAD_acc_0,X(1),Y(1))
       END SUBROUTINE

@@ -91,8 +91,8 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = FLOAT(6)
-      Y(1)%v = (OpenAD_aux_0*X(1)%v)
       OpenAD_lin_0 = OpenAD_aux_0
+      Y(1)%v = (OpenAD_aux_0*X(1)%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
 

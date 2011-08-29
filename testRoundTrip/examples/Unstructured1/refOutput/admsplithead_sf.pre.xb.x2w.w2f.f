@@ -139,8 +139,8 @@ C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_6)
       GO TO 27
 23    CONTINUE
-      __value__(Y(1)) = (I * __value__(X(1)))
       OpenAD_lin_0 = I
+      __value__(Y(1)) = (I * __value__(X(1)))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
       GO TO 24
@@ -270,8 +270,8 @@ C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_14)
       GO TO 175
 171   CONTINUE
-      __value__(Y(1)) = (I * __value__(X(1)))
       OpenAD_lin_0 = I
+      __value__(Y(1)) = (I * __value__(X(1)))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
       GO TO 172

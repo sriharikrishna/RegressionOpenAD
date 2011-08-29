@@ -58,9 +58,9 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(Z(1:INT(SIZE(X))),X(1:2))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_0,Z(1:INT(SIZE(X))))
-      Y(1:2)%v = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
       OpenAD_lin_0 = Z(1:INT(SIZE(X)))%v
       OpenAD_lin_1 = X(1:2)%v
+      Y(1:2)%v = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
       CALL sax(OpenAD_lin_0,X(1:2),Y(1:2))
       CALL saxpy(OpenAD_lin_1,Z(1:INT(SIZE(X))),Y(1:2))
       END SUBROUTINE

@@ -493,12 +493,6 @@ C
       REAL(w2f__8) OpenAD_aux_7
       REAL(w2f__8) OpenAD_aux_8
       REAL(w2f__8) OpenAD_aux_9
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_dly_2
-      REAL(w2f__8) OpenAD_dly_3
-      REAL(w2f__8) OpenAD_dly_4
-      REAL(w2f__8) OpenAD_dly_5
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
@@ -910,87 +904,87 @@ C            print*, " tape       ", our_rev_mode
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = ((NRM1%v**2)+(NRM2%v**2)+(NRM3%v**2))
-      NSIZE%v = SIN(OpenAD_aux_0)
       OpenAD_lin_1 = (2*(NRM1%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_2 = (2*(NRM2%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_3 = (2*(NRM3%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_0 = COS(OpenAD_aux_0)
-      NSIZEI%v = (1.0D00/NSIZE%v)
+      NSIZE%v = SIN(OpenAD_aux_0)
       OpenAD_lin_4 = (-(1.0D00/(NSIZE%v*NSIZE%v)))
-      NXHAT%v = (NRM1%v*NSIZEI%v)
+      NSIZEI%v = (1.0D00/NSIZE%v)
       OpenAD_lin_5 = NSIZEI%v
       OpenAD_lin_6 = NRM1%v
-      NYHAT%v = (NRM2%v*NSIZEI%v)
+      NXHAT%v = (NRM1%v*NSIZEI%v)
       OpenAD_lin_7 = NSIZEI%v
       OpenAD_lin_8 = NRM2%v
-      NZHAT%v = (NRM3%v*NSIZEI%v)
+      NYHAT%v = (NRM2%v*NSIZEI%v)
       OpenAD_lin_9 = NSIZEI%v
       OpenAD_lin_10 = NRM3%v
+      NZHAT%v = (NRM3%v*NSIZEI%v)
       OpenAD_aux_2 = (PRIMR2%v/PRIML2%v)
       OpenAD_aux_1 = (SIN(OpenAD_aux_2)+1.0D00)
-      ROEL%v = (1.0D00/OpenAD_aux_1)
       OpenAD_lin_13 = (INT(1_w2f__i8)/PRIML2%v)
       OpenAD_lin_14 = (-(PRIMR2%v/(PRIML2%v*PRIML2%v)))
       OpenAD_lin_12 = COS(OpenAD_aux_2)
       OpenAD_lin_11 = (-(1.0D00/(OpenAD_aux_1*OpenAD_aux_1)))
+      ROEL%v = (1.0D00/OpenAD_aux_1)
       ROER%v = (1.0D00-ROEL%v)
       OpenAD_aux_3 = ((PRIML3%v**2)+(PRIML4%v**2)+(PRIML5%v**2))
-      THETAL%v = (OpenAD_aux_3*5.0D-01)
       OpenAD_lin_15 = (2*(PRIML3%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_16 = (2*(PRIML4%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_17 = (2*(PRIML5%v**(2-INT(1_w2f__i8))))
+      THETAL%v = (OpenAD_aux_3*5.0D-01)
       OpenAD_aux_4 = ((PRIMR3%v**2)+(PRIMR4%v**2)+(PRIMR5%v**2))
-      THETAR%v = (OpenAD_aux_4*5.0D-01)
       OpenAD_lin_18 = (2*(PRIMR3%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_19 = (2*(PRIMR4%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_20 = (2*(PRIMR5%v**(2-INT(1_w2f__i8))))
+      THETAR%v = (OpenAD_aux_4*5.0D-01)
       OpenAD_aux_6 = (GAMMA%v*GM1INV%v)
       OpenAD_aux_5 = (PRIML1%v*OpenAD_aux_6)
-      HL%v = (THETAL%v+(OpenAD_aux_5/PRIML2%v))
       OpenAD_lin_23 = OpenAD_aux_6
       OpenAD_lin_25 = GM1INV%v
       OpenAD_lin_26 = GAMMA%v
       OpenAD_lin_24 = PRIML1%v
       OpenAD_lin_21 = (INT(1_w2f__i8)/PRIML2%v)
       OpenAD_lin_22 = (-(OpenAD_aux_5/(PRIML2%v*PRIML2%v)))
+      HL%v = (THETAL%v+(OpenAD_aux_5/PRIML2%v))
       OpenAD_aux_8 = (GAMMA%v*GM1INV%v)
       OpenAD_aux_7 = (PRIMR1%v*OpenAD_aux_8)
-      HR%v = (THETAR%v+(OpenAD_aux_7/PRIMR2%v))
       OpenAD_lin_29 = OpenAD_aux_8
       OpenAD_lin_31 = GM1INV%v
       OpenAD_lin_32 = GAMMA%v
       OpenAD_lin_30 = PRIMR1%v
       OpenAD_lin_27 = (INT(1_w2f__i8)/PRIMR2%v)
       OpenAD_lin_28 = (-(OpenAD_aux_7/(PRIMR2%v*PRIMR2%v)))
-      UAVE%v = (PRIML3%v*ROEL%v+PRIMR3%v*ROER%v)
+      HR%v = (THETAR%v+(OpenAD_aux_7/PRIMR2%v))
       OpenAD_lin_33 = ROEL%v
       OpenAD_lin_34 = PRIML3%v
       OpenAD_lin_35 = ROER%v
       OpenAD_lin_36 = PRIMR3%v
-      VAVE%v = (PRIML4%v*ROEL%v+PRIMR4%v*ROER%v)
+      UAVE%v = (PRIML3%v*ROEL%v+PRIMR3%v*ROER%v)
       OpenAD_lin_37 = ROEL%v
       OpenAD_lin_38 = PRIML4%v
       OpenAD_lin_39 = ROER%v
       OpenAD_lin_40 = PRIMR4%v
-      WAVE%v = (PRIML5%v*ROEL%v+PRIMR5%v*ROER%v)
+      VAVE%v = (PRIML4%v*ROEL%v+PRIMR4%v*ROER%v)
       OpenAD_lin_41 = ROEL%v
       OpenAD_lin_42 = PRIML5%v
       OpenAD_lin_43 = ROER%v
       OpenAD_lin_44 = PRIMR5%v
-      HAVE%v = (HL%v*ROEL%v+HR%v*ROER%v)
+      WAVE%v = (PRIML5%v*ROEL%v+PRIMR5%v*ROER%v)
       OpenAD_lin_45 = ROEL%v
       OpenAD_lin_46 = HL%v
       OpenAD_lin_47 = ROER%v
       OpenAD_lin_48 = HR%v
+      HAVE%v = (HL%v*ROEL%v+HR%v*ROER%v)
       OpenAD_aux_9 = ((UAVE%v**2)+(VAVE%v**2)+(WAVE%v**2))
-      THTAVE%v = (OpenAD_aux_9*5.0D-01)
       OpenAD_lin_49 = (2*(UAVE%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_50 = (2*(VAVE%v**(2-INT(1_w2f__i8))))
       OpenAD_lin_51 = (2*(WAVE%v**(2-INT(1_w2f__i8))))
+      THTAVE%v = (OpenAD_aux_9*5.0D-01)
       OpenAD_aux_10 = (HAVE%v-THTAVE%v)
-      CAVE%v = (GM1%v*OpenAD_aux_10)
       OpenAD_lin_52 = OpenAD_aux_10
       OpenAD_lin_53 = GM1%v
+      CAVE%v = (GM1%v*OpenAD_aux_10)
       OpenAD_acc_0 = (OpenAD_lin_30*OpenAD_lin_27)
       OpenAD_acc_1 = (OpenAD_lin_24*OpenAD_lin_21)
       OpenAD_acc_2 = (OpenAD_lin_4*OpenAD_lin_6)
@@ -1101,31 +1095,30 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_8
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_dly_0 = SIN(CAVE%v)
       OpenAD_lin_54 = COS(CAVE%v)
-      CAVE%v = OpenAD_dly_0
-      UHAT%v = (NXHAT%v*UAVE%v+NYHAT%v*VAVE%v+NZHAT%v*WAVE%v)
+      CAVE%v = SIN(CAVE%v)
       OpenAD_lin_55 = UAVE%v
       OpenAD_lin_56 = NXHAT%v
       OpenAD_lin_57 = VAVE%v
       OpenAD_lin_58 = NYHAT%v
       OpenAD_lin_59 = WAVE%v
       OpenAD_lin_60 = NZHAT%v
-      UTILDE%v = (NYHAT%v*WAVE%v-NZHAT%v*VAVE%v)
+      UHAT%v = (NXHAT%v*UAVE%v+NYHAT%v*VAVE%v+NZHAT%v*WAVE%v)
       OpenAD_lin_61 = WAVE%v
       OpenAD_lin_62 = NYHAT%v
       OpenAD_lin_63 = VAVE%v
       OpenAD_lin_64 = NZHAT%v
-      VTILDE%v = (NZHAT%v*UAVE%v-NXHAT%v*WAVE%v)
+      UTILDE%v = (NYHAT%v*WAVE%v-NZHAT%v*VAVE%v)
       OpenAD_lin_65 = UAVE%v
       OpenAD_lin_66 = NZHAT%v
       OpenAD_lin_67 = WAVE%v
       OpenAD_lin_68 = NXHAT%v
-      WTILDE%v = (NXHAT%v*VAVE%v-NYHAT%v*UAVE%v)
+      VTILDE%v = (NZHAT%v*UAVE%v-NXHAT%v*WAVE%v)
       OpenAD_lin_69 = VAVE%v
       OpenAD_lin_70 = NXHAT%v
       OpenAD_lin_71 = UAVE%v
       OpenAD_lin_72 = NYHAT%v
+      WTILDE%v = (NXHAT%v*VAVE%v-NYHAT%v*UAVE%v)
       LAMCM%v = (UHAT%v-CAVE%v)
       LAMU%v = UHAT%v
       LAMCP%v = (CAVE%v+UHAT%v)
@@ -1182,70 +1175,68 @@ C$OPENAD XXX Template ad_template.f
       ALAMCP%v = (OpenAD_aux_12*5.0D-01)
       OpenAD_aux_13 = (LAMU%v-ALAMU%v)
       ALAMU%v = (OpenAD_aux_13*5.0D-01)
-      EL%v = (PRIML1%v*GM1INV%v+PRIML2%v*THETAL%v)
       OpenAD_lin_73 = GM1INV%v
       OpenAD_lin_74 = PRIML1%v
       OpenAD_lin_75 = THETAL%v
       OpenAD_lin_76 = PRIML2%v
-      RUL%v = (PRIML2%v*PRIML3%v)
+      EL%v = (PRIML1%v*GM1INV%v+PRIML2%v*THETAL%v)
       OpenAD_lin_77 = PRIML3%v
       OpenAD_lin_78 = PRIML2%v
-      RVL%v = (PRIML2%v*PRIML4%v)
+      RUL%v = (PRIML2%v*PRIML3%v)
       OpenAD_lin_79 = PRIML4%v
       OpenAD_lin_80 = PRIML2%v
-      RWL%v = (PRIML2%v*PRIML5%v)
+      RVL%v = (PRIML2%v*PRIML4%v)
       OpenAD_lin_81 = PRIML5%v
       OpenAD_lin_82 = PRIML2%v
-      ER%v = (PRIMR1%v*GM1INV%v+PRIMR2%v*THETAR%v)
+      RWL%v = (PRIML2%v*PRIML5%v)
       OpenAD_lin_83 = GM1INV%v
       OpenAD_lin_84 = PRIMR1%v
       OpenAD_lin_85 = THETAR%v
       OpenAD_lin_86 = PRIMR2%v
-      RUR%v = (PRIMR2%v*PRIMR3%v)
+      ER%v = (PRIMR1%v*GM1INV%v+PRIMR2%v*THETAR%v)
       OpenAD_lin_87 = PRIMR3%v
       OpenAD_lin_88 = PRIMR2%v
-      RVR%v = (PRIMR2%v*PRIMR4%v)
+      RUR%v = (PRIMR2%v*PRIMR3%v)
       OpenAD_lin_89 = PRIMR4%v
       OpenAD_lin_90 = PRIMR2%v
-      RWR%v = (PRIMR2%v*PRIMR5%v)
+      RVR%v = (PRIMR2%v*PRIMR4%v)
       OpenAD_lin_91 = PRIMR5%v
       OpenAD_lin_92 = PRIMR2%v
+      RWR%v = (PRIMR2%v*PRIMR5%v)
       DE%v = (ER%v-EL%v)
       DR%v = (PRIMR2%v-PRIML2%v)
       DRU%v = (RUR%v-RUL%v)
       DRV%v = (RVR%v-RVL%v)
       DRW%v = (RWR%v-RWL%v)
-      UDDRU%v = (DRU%v*UAVE%v+DRV%v*VAVE%v+DRW%v*WAVE%v)
       OpenAD_lin_93 = UAVE%v
       OpenAD_lin_94 = DRU%v
       OpenAD_lin_95 = VAVE%v
       OpenAD_lin_96 = DRV%v
       OpenAD_lin_97 = WAVE%v
       OpenAD_lin_98 = DRW%v
+      UDDRU%v = (DRU%v*UAVE%v+DRV%v*VAVE%v+DRW%v*WAVE%v)
       OpenAD_aux_14 = (GM1%v/CAVE%v)
       OpenAD_aux_15 = (DE%v+DR%v*THTAVE%v-UDDRU%v)
-      OMEGA%v = (OpenAD_aux_14*OpenAD_aux_15)
       OpenAD_lin_101 = (INT(1_w2f__i8)/CAVE%v)
       OpenAD_lin_102 = (-(GM1%v/(CAVE%v*CAVE%v)))
       OpenAD_lin_99 = OpenAD_aux_15
       OpenAD_lin_103 = THTAVE%v
       OpenAD_lin_104 = DR%v
       OpenAD_lin_100 = OpenAD_aux_14
-      NDDRU%v = (DRU%v*NXHAT%v+DRV%v*NYHAT%v+DRW%v*NZHAT%v)
+      OMEGA%v = (OpenAD_aux_14*OpenAD_aux_15)
       OpenAD_lin_105 = NXHAT%v
       OpenAD_lin_106 = DRU%v
       OpenAD_lin_107 = NYHAT%v
       OpenAD_lin_108 = DRV%v
       OpenAD_lin_109 = NZHAT%v
       OpenAD_lin_110 = DRW%v
+      NDDRU%v = (DRU%v*NXHAT%v+DRV%v*NYHAT%v+DRW%v*NZHAT%v)
       OpenAD_aux_16 = (OMEGA%v+DR%v*UHAT%v-NDDRU%v)
-      ALP1%v = (OpenAD_aux_16*5.0D-01)
       OpenAD_lin_111 = UHAT%v
       OpenAD_lin_112 = DR%v
+      ALP1%v = (OpenAD_aux_16*5.0D-01)
       OpenAD_aux_17 = (CAVE%v*NXHAT%v-UTILDE%v)
       OpenAD_aux_18 = (-NXHAT%v)
-      ALP2%v = (DRW%v*NYHAT%v+DR%v*OpenAD_aux_17+OMEGA%v*OpenAD_aux_18-D
-     +RV%v*NZHAT%v)
       OpenAD_lin_113 = NYHAT%v
       OpenAD_lin_114 = DRW%v
       OpenAD_lin_115 = OpenAD_aux_17
@@ -1256,10 +1247,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_120 = OMEGA%v
       OpenAD_lin_121 = NZHAT%v
       OpenAD_lin_122 = DRV%v
+      ALP2%v = (DRW%v*NYHAT%v+DR%v*OpenAD_aux_17+OMEGA%v*OpenAD_aux_18-D
+     +RV%v*NZHAT%v)
       OpenAD_aux_19 = (CAVE%v*NYHAT%v-VTILDE%v)
       OpenAD_aux_20 = (-NYHAT%v)
-      ALP3%v = (DRU%v*NZHAT%v+DR%v*OpenAD_aux_19+OMEGA%v*OpenAD_aux_20-D
-     +RW%v*NXHAT%v)
       OpenAD_lin_123 = NZHAT%v
       OpenAD_lin_124 = DRU%v
       OpenAD_lin_125 = OpenAD_aux_19
@@ -1270,10 +1261,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_130 = OMEGA%v
       OpenAD_lin_131 = NXHAT%v
       OpenAD_lin_132 = DRW%v
+      ALP3%v = (DRU%v*NZHAT%v+DR%v*OpenAD_aux_19+OMEGA%v*OpenAD_aux_20-D
+     +RW%v*NXHAT%v)
       OpenAD_aux_21 = (CAVE%v*NZHAT%v-WTILDE%v)
       OpenAD_aux_22 = (-NZHAT%v)
-      ALP4%v = (DRV%v*NXHAT%v+DR%v*OpenAD_aux_21+OMEGA%v*OpenAD_aux_22-D
-     +RU%v*NYHAT%v)
       OpenAD_lin_133 = NXHAT%v
       OpenAD_lin_134 = DRV%v
       OpenAD_lin_135 = OpenAD_aux_21
@@ -1284,10 +1275,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_140 = OMEGA%v
       OpenAD_lin_141 = NYHAT%v
       OpenAD_lin_142 = DRU%v
+      ALP4%v = (DRV%v*NXHAT%v+DR%v*OpenAD_aux_21+OMEGA%v*OpenAD_aux_22-D
+     +RU%v*NYHAT%v)
       OpenAD_aux_23 = (NDDRU%v+OMEGA%v-DR%v*UHAT%v)
-      ALP5%v = (OpenAD_aux_23*5.0D-01)
       OpenAD_lin_143 = UHAT%v
       OpenAD_lin_144 = DR%v
+      ALP5%v = (OpenAD_aux_23*5.0D-01)
       OpenAD_acc_26 = (OpenAD_lin_101*OpenAD_lin_99)
       OpenAD_acc_27 = (OpenAD_lin_102*OpenAD_lin_99)
       OpenAD_acc_28 = (OpenAD_lin_144*(-5.0D-01))
@@ -1458,30 +1451,23 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_54
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_dly_1 = (ALAMCM%v*ALP1%v)
       OpenAD_lin_145 = ALP1%v
       OpenAD_lin_146 = ALAMCM%v
-      ALP1%v = OpenAD_dly_1
-      OpenAD_dly_2 = (ALAMU%v*ALP2%v)
+      ALP1%v = (ALAMCM%v*ALP1%v)
       OpenAD_lin_147 = ALP2%v
       OpenAD_lin_148 = ALAMU%v
-      ALP2%v = OpenAD_dly_2
-      OpenAD_dly_3 = (ALAMU%v*ALP3%v)
+      ALP2%v = (ALAMU%v*ALP2%v)
       OpenAD_lin_149 = ALP3%v
       OpenAD_lin_150 = ALAMU%v
-      ALP3%v = OpenAD_dly_3
-      OpenAD_dly_4 = (ALAMU%v*ALP4%v)
+      ALP3%v = (ALAMU%v*ALP3%v)
       OpenAD_lin_151 = ALP4%v
       OpenAD_lin_152 = ALAMU%v
-      ALP4%v = OpenAD_dly_4
-      OpenAD_dly_5 = (ALAMCP%v*ALP5%v)
+      ALP4%v = (ALAMU%v*ALP4%v)
       OpenAD_lin_153 = ALP5%v
       OpenAD_lin_154 = ALAMCP%v
-      ALP5%v = OpenAD_dly_5
+      ALP5%v = (ALAMCP%v*ALP5%v)
       ALP15P%v = (ALP1%v+ALP5%v)
       ALP15M%v = (ALP1%v-ALP5%v)
-      MU%v = ((ALP15P%v/CAVE%v)+ALP2%v*NXHAT%v+ALP3%v*NYHAT%v+ALP4%v*NZH
-     +AT%v)
       OpenAD_lin_155 = (INT(1_w2f__i8)/CAVE%v)
       OpenAD_lin_156 = (-(ALP15P%v/(CAVE%v*CAVE%v)))
       OpenAD_lin_157 = NXHAT%v
@@ -1490,9 +1476,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_160 = ALP3%v
       OpenAD_lin_161 = NZHAT%v
       OpenAD_lin_162 = ALP4%v
+      MU%v = ((ALP15P%v/CAVE%v)+ALP2%v*NXHAT%v+ALP3%v*NYHAT%v+ALP4%v*NZH
+     +AT%v)
       OpenAD_aux_24 = (GM1INV%v*CAVE%v)
-      DSS1%v = (MU%v*THTAVE%v+ALP15P%v*OpenAD_aux_24-ALP15M%v*UHAT%v+ALP
-     +2%v*UTILDE%v+ALP3%v*VTILDE%v+ALP4%v*WTILDE%v)
       OpenAD_lin_163 = THTAVE%v
       OpenAD_lin_164 = MU%v
       OpenAD_lin_165 = OpenAD_aux_24
@@ -1507,9 +1493,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_174 = ALP3%v
       OpenAD_lin_175 = WTILDE%v
       OpenAD_lin_176 = ALP4%v
+      DSS1%v = (MU%v*THTAVE%v+ALP15P%v*OpenAD_aux_24-ALP15M%v*UHAT%v+ALP
+     +2%v*UTILDE%v+ALP3%v*VTILDE%v+ALP4%v*WTILDE%v)
       DSS2%v = MU%v
-      DSS3%v = (ALP3%v*NZHAT%v+MU%v*UAVE%v-ALP15M%v*NXHAT%v-ALP4%v*NYHAT
-     +%v)
       OpenAD_lin_177 = NZHAT%v
       OpenAD_lin_178 = ALP3%v
       OpenAD_lin_179 = UAVE%v
@@ -1518,7 +1504,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_182 = ALP15M%v
       OpenAD_lin_183 = NYHAT%v
       OpenAD_lin_184 = ALP4%v
-      DSS4%v = (ALP4%v*NXHAT%v+MU%v*VAVE%v-ALP15M%v*NYHAT%v-ALP2%v*NZHAT
+      DSS3%v = (ALP3%v*NZHAT%v+MU%v*UAVE%v-ALP15M%v*NXHAT%v-ALP4%v*NYHAT
      +%v)
       OpenAD_lin_185 = NXHAT%v
       OpenAD_lin_186 = ALP4%v
@@ -1528,7 +1514,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_190 = ALP15M%v
       OpenAD_lin_191 = NZHAT%v
       OpenAD_lin_192 = ALP2%v
-      DSS5%v = (ALP2%v*NYHAT%v+MU%v*WAVE%v-ALP15M%v*NZHAT%v-ALP3%v*NXHAT
+      DSS4%v = (ALP4%v*NXHAT%v+MU%v*VAVE%v-ALP15M%v*NYHAT%v-ALP2%v*NZHAT
      +%v)
       OpenAD_lin_193 = NYHAT%v
       OpenAD_lin_194 = ALP2%v
@@ -1538,50 +1524,52 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_198 = ALP15M%v
       OpenAD_lin_199 = NXHAT%v
       OpenAD_lin_200 = ALP3%v
-      UHATL%v = (PRIML3%v*NXHAT%v+PRIML4%v*NYHAT%v+PRIML5%v*NZHAT%v)
+      DSS5%v = (ALP2%v*NYHAT%v+MU%v*WAVE%v-ALP15M%v*NZHAT%v-ALP3%v*NXHAT
+     +%v)
       OpenAD_lin_201 = NXHAT%v
       OpenAD_lin_202 = PRIML3%v
       OpenAD_lin_203 = NYHAT%v
       OpenAD_lin_204 = PRIML4%v
       OpenAD_lin_205 = NZHAT%v
       OpenAD_lin_206 = PRIML5%v
+      UHATL%v = (PRIML3%v*NXHAT%v+PRIML4%v*NYHAT%v+PRIML5%v*NZHAT%v)
       OpenAD_aux_26 = (PRIML1%v+EL%v)
       OpenAD_aux_25 = (DSS1%v+UHATL%v*OpenAD_aux_26)
-      FLUX1%v = (NSIZE%v*OpenAD_aux_25)
       OpenAD_lin_207 = OpenAD_aux_25
       OpenAD_lin_209 = OpenAD_aux_26
       OpenAD_lin_210 = UHATL%v
       OpenAD_lin_208 = NSIZE%v
+      FLUX1%v = (NSIZE%v*OpenAD_aux_25)
       OpenAD_aux_27 = (DSS2%v+PRIML2%v*UHATL%v)
-      FLUX2%v = (NSIZE%v*OpenAD_aux_27)
       OpenAD_lin_211 = OpenAD_aux_27
       OpenAD_lin_213 = UHATL%v
       OpenAD_lin_214 = PRIML2%v
       OpenAD_lin_212 = NSIZE%v
+      FLUX2%v = (NSIZE%v*OpenAD_aux_27)
       OpenAD_aux_28 = (DSS3%v+PRIML1%v*NXHAT%v+RUL%v*UHATL%v)
-      FLUX3%v = (NSIZE%v*OpenAD_aux_28)
       OpenAD_lin_215 = OpenAD_aux_28
       OpenAD_lin_217 = NXHAT%v
       OpenAD_lin_218 = PRIML1%v
       OpenAD_lin_219 = UHATL%v
       OpenAD_lin_220 = RUL%v
       OpenAD_lin_216 = NSIZE%v
+      FLUX3%v = (NSIZE%v*OpenAD_aux_28)
       OpenAD_aux_29 = (DSS4%v+PRIML1%v*NYHAT%v+RVL%v*UHATL%v)
-      FLUX4%v = (NSIZE%v*OpenAD_aux_29)
       OpenAD_lin_221 = OpenAD_aux_29
       OpenAD_lin_223 = NYHAT%v
       OpenAD_lin_224 = PRIML1%v
       OpenAD_lin_225 = UHATL%v
       OpenAD_lin_226 = RVL%v
       OpenAD_lin_222 = NSIZE%v
+      FLUX4%v = (NSIZE%v*OpenAD_aux_29)
       OpenAD_aux_30 = (DSS5%v+PRIML1%v*NZHAT%v+RWL%v*UHATL%v)
-      FLUX5%v = (NSIZE%v*OpenAD_aux_30)
       OpenAD_lin_227 = OpenAD_aux_30
       OpenAD_lin_229 = NZHAT%v
       OpenAD_lin_230 = PRIML1%v
       OpenAD_lin_231 = UHATL%v
       OpenAD_lin_232 = RWL%v
       OpenAD_lin_228 = NSIZE%v
+      FLUX5%v = (NSIZE%v*OpenAD_aux_30)
       OpenAD_acc_59 = (OpenAD_lin_209*OpenAD_lin_208)
       OpenAD_acc_60 = (OpenAD_lin_210*OpenAD_lin_208)
       OpenAD_acc_61 = (OpenAD_lin_175*OpenAD_lin_208)

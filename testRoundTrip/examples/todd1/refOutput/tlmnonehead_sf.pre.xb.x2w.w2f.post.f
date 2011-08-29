@@ -321,66 +321,66 @@ C$OPENAD XXX Template ad_template.f
       BM1 = (-2.0D00)
       MATR0%v = (X1%v-X0%v)
       OpenAD_aux_0 = (X2%v*2.0D00-X1%v-X0%v)
-      MATR1%v = (SQRT3*OpenAD_aux_0)
       OpenAD_lin_0 = SQRT3
+      MATR1%v = (SQRT3*OpenAD_aux_0)
       MATR2%v = (X4%v-X3%v)
       OpenAD_aux_1 = (X5%v*2.0D00-X4%v-X3%v)
-      MATR3%v = (SQRT3*OpenAD_aux_1)
       OpenAD_lin_1 = SQRT3
-      M03%v = (MATR0%v*MATR3%v)
+      MATR3%v = (SQRT3*OpenAD_aux_1)
       OpenAD_lin_2 = MATR3%v
       OpenAD_lin_3 = MATR0%v
-      M12%v = (MATR1%v*MATR2%v)
+      M03%v = (MATR0%v*MATR3%v)
       OpenAD_lin_4 = MATR2%v
       OpenAD_lin_5 = MATR1%v
+      M12%v = (MATR1%v*MATR2%v)
       G%v = (M03%v-M12%v)
       D00%v = (M03%v*2.0D00)
       D11%v = (M12%v*2.0D00)
-      M00%v = (MATR0%v*MATR0%v)
       OpenAD_lin_6 = MATR0%v
       OpenAD_lin_7 = MATR0%v
-      M11%v = (MATR1%v*MATR1%v)
+      M00%v = (MATR0%v*MATR0%v)
       OpenAD_lin_8 = MATR1%v
       OpenAD_lin_9 = MATR1%v
-      M22%v = (MATR2%v*MATR2%v)
+      M11%v = (MATR1%v*MATR1%v)
       OpenAD_lin_10 = MATR2%v
       OpenAD_lin_11 = MATR2%v
-      M33%v = (MATR3%v*MATR3%v)
+      M22%v = (MATR2%v*MATR2%v)
       OpenAD_lin_12 = MATR3%v
       OpenAD_lin_13 = MATR3%v
-      D12%v = (M00%v*M33%v)
+      M33%v = (MATR3%v*MATR3%v)
       OpenAD_lin_14 = M33%v
       OpenAD_lin_15 = M00%v
-      D03%v = (M11%v*M22%v)
+      D12%v = (M00%v*M33%v)
       OpenAD_lin_16 = M22%v
       OpenAD_lin_17 = M11%v
+      D03%v = (M11%v*M22%v)
       F%v = (D03%v+D12%v)
       NORM = F%v
       OpenAD_aux_2 = (1.0D00/G%v)
-      LOC1%v = (A*OpenAD_aux_2)
       OpenAD_lin_19 = (-(1.0D00/(G%v*G%v)))
       OpenAD_lin_18 = A
-      OBJ%v = (F%v*LOC1%v)
+      LOC1%v = (A*OpenAD_aux_2)
       OpenAD_lin_20 = LOC1%v
       OpenAD_lin_21 = F%v
+      OBJ%v = (F%v*LOC1%v)
       OpenAD_aux_4 = (G%v*G%v)
       OpenAD_aux_3 = (1.0D00/OpenAD_aux_4)
-      LOC2%v = (AB*OpenAD_aux_3)
       OpenAD_lin_24 = G%v
       OpenAD_lin_25 = G%v
       OpenAD_lin_23 = (-(1.0D00/(OpenAD_aux_4*OpenAD_aux_4)))
       OpenAD_lin_22 = AB
+      LOC2%v = (AB*OpenAD_aux_3)
       OpenAD_aux_5 = (AB*B)
       OpenAD_aux_8 = (G%v*G%v)
       OpenAD_aux_7 = (G%v*OpenAD_aux_8)
       OpenAD_aux_6 = (1.0D00/OpenAD_aux_7)
-      GG%v = (OpenAD_aux_5*OpenAD_aux_6)
       OpenAD_lin_28 = OpenAD_aux_8
       OpenAD_lin_30 = G%v
       OpenAD_lin_31 = G%v
       OpenAD_lin_29 = G%v
       OpenAD_lin_27 = (-(1.0D00/(OpenAD_aux_7*OpenAD_aux_7)))
       OpenAD_lin_26 = OpenAD_aux_5
+      GG%v = (OpenAD_aux_5*OpenAD_aux_6)
       OpenAD_acc_0 = (OpenAD_lin_19*OpenAD_lin_18)
       OpenAD_acc_1 = (OpenAD_lin_6+OpenAD_lin_7)
       OpenAD_acc_2 = (OpenAD_lin_8+OpenAD_lin_9)
@@ -425,32 +425,32 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_lin_21,LOC1,OBJ)
       CALL sax(OpenAD_acc_6,G,LOC2)
       CALL sax(OpenAD_acc_5,G,GG)
-      G%v = (F%v*LOC2%v)
       OpenAD_lin_32 = LOC2%v
       OpenAD_lin_33 = F%v
+      G%v = (F%v*LOC2%v)
       F%v = (LOC1%v*2.0D00)
-      ADJ_M0%v = (F%v*MATR0%v+G%v*MATR3%v)
       OpenAD_lin_34 = MATR0%v
       OpenAD_lin_35 = F%v
       OpenAD_lin_36 = MATR3%v
       OpenAD_lin_37 = G%v
-      ADJ_M1%v = (F%v*MATR1%v-G%v*MATR2%v)
+      ADJ_M0%v = (F%v*MATR0%v+G%v*MATR3%v)
       OpenAD_lin_38 = MATR1%v
       OpenAD_lin_39 = F%v
       OpenAD_lin_40 = MATR2%v
       OpenAD_lin_41 = G%v
-      ADJ_M2%v = (F%v*MATR2%v-G%v*MATR1%v)
+      ADJ_M1%v = (F%v*MATR1%v-G%v*MATR2%v)
       OpenAD_lin_42 = MATR2%v
       OpenAD_lin_43 = F%v
       OpenAD_lin_44 = MATR1%v
       OpenAD_lin_45 = G%v
-      ADJ_M3%v = (F%v*MATR3%v+G%v*MATR0%v)
+      ADJ_M2%v = (F%v*MATR2%v-G%v*MATR1%v)
       OpenAD_lin_46 = MATR3%v
       OpenAD_lin_47 = F%v
       OpenAD_lin_48 = MATR0%v
       OpenAD_lin_49 = G%v
-      LOC1%v = (ADJ_M1%v*SQRT3)
+      ADJ_M3%v = (F%v*MATR3%v+G%v*MATR0%v)
       OpenAD_lin_50 = SQRT3
+      LOC1%v = (ADJ_M1%v*SQRT3)
       G_OBJ0%v = (-(ADJ_M0%v+LOC1%v))
       G_OBJ1%v = (ADJ_M0%v-LOC1%v)
       G_OBJ2%v = (LOC1%v*2.0D00)
@@ -487,43 +487,43 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(2.0D00,LOC1,G_OBJ2)
       CALL set_neg_deriv(G_OBJ0,ADJ_M0)
       CALL dec_deriv(G_OBJ0,LOC1)
-      LOC1%v = (ADJ_M3%v*SQRT3)
       OpenAD_lin_51 = SQRT3
+      LOC1%v = (ADJ_M3%v*SQRT3)
       G_OBJ3%v = (-(ADJ_M2%v+LOC1%v))
       G_OBJ4%v = (ADJ_M2%v-LOC1%v)
       G_OBJ5%v = (LOC1%v*2.0D00)
       LOC2%v = (LOC2%v*2.0D00)
-      R00%v = (D00%v*LOC2%v+GG%v*M33%v)
       OpenAD_lin_52 = LOC2%v
       OpenAD_lin_53 = D00%v
       OpenAD_lin_54 = M33%v
       OpenAD_lin_55 = GG%v
-      R11%v = (D11%v*LOC2%v+GG%v*M22%v)
+      R00%v = (D00%v*LOC2%v+GG%v*M33%v)
       OpenAD_lin_56 = LOC2%v
       OpenAD_lin_57 = D11%v
       OpenAD_lin_58 = M22%v
       OpenAD_lin_59 = GG%v
+      R11%v = (D11%v*LOC2%v+GG%v*M22%v)
       R22 = (D11%v*LOC2%v+GG%v*M11%v)
       R33 = (D00%v*LOC2%v+GG%v*M00%v)
-      M01%v = (MATR0%v*MATR1%v)
       OpenAD_lin_60 = MATR1%v
       OpenAD_lin_61 = MATR0%v
-      M02%v = (MATR0%v*MATR2%v)
+      M01%v = (MATR0%v*MATR1%v)
       OpenAD_lin_62 = MATR2%v
       OpenAD_lin_63 = MATR0%v
-      M12%v = (MATR1%v*MATR2%v)
+      M02%v = (MATR0%v*MATR2%v)
       OpenAD_lin_64 = MATR2%v
       OpenAD_lin_65 = MATR1%v
-      M13%v = (MATR1%v*MATR3%v)
+      M12%v = (MATR1%v*MATR2%v)
       OpenAD_lin_66 = MATR3%v
       OpenAD_lin_67 = MATR1%v
-      M23%v = (MATR2%v*MATR3%v)
+      M13%v = (MATR1%v*MATR3%v)
       OpenAD_lin_68 = MATR3%v
       OpenAD_lin_69 = MATR2%v
+      M23%v = (MATR2%v*MATR3%v)
       OpenAD_aux_9 = (M02%v+M13%v)
-      D01%v = (LOC2%v*OpenAD_aux_9)
       OpenAD_lin_70 = OpenAD_aux_9
       OpenAD_lin_71 = LOC2%v
+      D01%v = (LOC2%v*OpenAD_aux_9)
       CALL setderiv(OpenAD_prp_3,LOC2)
       CALL sax(OpenAD_lin_51,ADJ_M3,LOC1)
       CALL setderiv(G_OBJ4,ADJ_M2)
@@ -554,13 +554,13 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_lin_59,M22,R11)
       CALL sax(OpenAD_lin_70,LOC2,D01)
       CALL saxpy(OpenAD_lin_71,OpenAD_prp_4,D01)
-      LOC1%v = (R11%v*THIRD)
       OpenAD_lin_72 = THIRD
+      LOC1%v = (R11%v*THIRD)
       OpenAD_aux_10 = (D01%v+GG%v*M23%v)
-      F%v = (TWOSQRT3*OpenAD_aux_10)
       OpenAD_lin_74 = M23%v
       OpenAD_lin_75 = GG%v
       OpenAD_lin_73 = TWOSQRT3
+      F%v = (TWOSQRT3*OpenAD_aux_10)
       G%v = (LOC1%v+R00%v)
       H_OBJ1%v = (LOC1%v-R00%v)
       H_OBJ0%v = (F%v+G%v)
@@ -578,12 +578,12 @@ C$OPENAD XXX Template ad_template.f
       CALL inc_deriv(H_OBJ0,G)
       CALL setderiv(H_OBJ3,G)
       CALL dec_deriv(H_OBJ3,F)
-      LOC1%v = (-(R11%v*TWO3RD))
       OpenAD_lin_76 = TWO3RD
+      LOC1%v = (-(R11%v*TWO3RD))
       H_OBJ2%v = (LOC1%v-F%v)
       H_OBJ4%v = (F%v+LOC1%v)
-      H_OBJ5%v = (FOUR3RD*R11%v)
       OpenAD_lin_77 = FOUR3RD
+      H_OBJ5%v = (FOUR3RD*R11%v)
       OpenAD_acc_15 = (OpenAD_lin_76*INT((-1_w2f__i8)))
       CALL sax(OpenAD_lin_77,R11,H_OBJ5)
       CALL sax(OpenAD_acc_15,R11,LOC1)
@@ -591,13 +591,13 @@ C$OPENAD XXX Template ad_template.f
       CALL dec_deriv(H_OBJ2,F)
       CALL setderiv(H_OBJ4,F)
       CALL inc_deriv(H_OBJ4,LOC1)
-      LOC1%v = (R00%v*THIRD)
       OpenAD_lin_78 = THIRD
+      LOC1%v = (R00%v*THIRD)
       OpenAD_aux_11 = (D01%v+GG%v*M01%v)
-      F%v = (TWOSQRT3*OpenAD_aux_11)
       OpenAD_lin_80 = M01%v
       OpenAD_lin_81 = GG%v
       OpenAD_lin_79 = TWOSQRT3
+      F%v = (TWOSQRT3*OpenAD_aux_11)
       G%v = (LOC1%v+R11%v)
       H_OBJ16%v = (LOC1%v-R11%v)
       H_OBJ15%v = (F%v+G%v)
@@ -615,12 +615,12 @@ C$OPENAD XXX Template ad_template.f
       CALL inc_deriv(H_OBJ15,G)
       CALL setderiv(H_OBJ18,G)
       CALL dec_deriv(H_OBJ18,F)
-      LOC1%v = (-(R00%v*TWO3RD))
       OpenAD_lin_82 = TWO3RD
+      LOC1%v = (-(R00%v*TWO3RD))
       H_OBJ17%v = (LOC1%v-F%v)
       H_OBJ19%v = (F%v+LOC1%v)
-      H_OBJ20%v = (FOUR3RD*R00%v)
       OpenAD_lin_83 = FOUR3RD
+      H_OBJ20%v = (FOUR3RD*R00%v)
       OpenAD_acc_16 = (OpenAD_lin_82*INT((-1_w2f__i8)))
       CALL sax(OpenAD_lin_83,R00,H_OBJ20)
       CALL sax(OpenAD_acc_16,R00,LOC1)
@@ -629,29 +629,29 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(H_OBJ19,F)
       CALL inc_deriv(H_OBJ19,LOC1)
       OpenAD_aux_12 = (M01%v+M23%v)
-      LOC1%v = (LOC2%v*OpenAD_aux_12)
       OpenAD_lin_84 = OpenAD_aux_12
       OpenAD_lin_85 = LOC2%v
-      R13%v = (LOC1%v+GG%v*M02%v)
+      LOC1%v = (LOC2%v*OpenAD_aux_12)
       OpenAD_lin_86 = M02%v
       OpenAD_lin_87 = GG%v
-      R02%v = (LOC1%v+GG%v*M13%v)
+      R13%v = (LOC1%v+GG%v*M02%v)
       OpenAD_lin_88 = M13%v
       OpenAD_lin_89 = GG%v
-      R03%v = (D03%v*LOC2%v+GG%v*M03%v)
+      R02%v = (LOC1%v+GG%v*M13%v)
       OpenAD_lin_90 = LOC2%v
       OpenAD_lin_91 = D03%v
       OpenAD_lin_92 = M03%v
       OpenAD_lin_93 = GG%v
-      R12%v = (D12%v*LOC2%v+GG%v*M12%v)
+      R03%v = (D03%v*LOC2%v+GG%v*M03%v)
       OpenAD_lin_94 = LOC2%v
       OpenAD_lin_95 = D12%v
       OpenAD_lin_96 = M12%v
       OpenAD_lin_97 = GG%v
-      G%v = (-(R13%v*TWO3RD))
+      R12%v = (D12%v*LOC2%v+GG%v*M12%v)
       OpenAD_lin_98 = TWO3RD
-      F%v = (R03%v*TWOSQRT3)
+      G%v = (-(R13%v*TWO3RD))
       OpenAD_lin_99 = TWOSQRT3
+      F%v = (R03%v*TWOSQRT3)
       H_OBJ8%v = (G%v-F%v)
       H_OBJ11%v = (F%v+G%v)
       OpenAD_acc_17 = (OpenAD_lin_98*INT((-1_w2f__i8)))
@@ -679,13 +679,13 @@ C$OPENAD XXX Template ad_template.f
       CALL dec_deriv(H_OBJ8,F)
       CALL setderiv(H_OBJ11,F)
       CALL inc_deriv(H_OBJ11,G)
-      F%v = (R12%v*TWOSQRT3)
       OpenAD_lin_100 = TWOSQRT3
+      F%v = (R12%v*TWOSQRT3)
       H_OBJ12%v = (G%v-F%v)
       H_OBJ13%v = (F%v+G%v)
       H_OBJ14%v = (R13%v*1.2D+01)
-      G%v = (FOUR3RD*R02%v)
       OpenAD_lin_101 = FOUR3RD
+      G%v = (FOUR3RD*R02%v)
       CALL setderiv(OpenAD_prp_8,G)
       CALL sax(OpenAD_lin_100,R12,F)
       CALL setderiv(H_OBJ12,OpenAD_prp_8)
@@ -695,12 +695,12 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(1.2D+01,R13,H_OBJ14)
       CALL sax(OpenAD_lin_101,R02,G)
       OpenAD_aux_13 = (R03%v+R12%v)
-      F%v = (SQRT3*OpenAD_aux_13)
       OpenAD_lin_102 = SQRT3
+      F%v = (SQRT3*OpenAD_aux_13)
       H_OBJ10%v = (G%v-F%v)
       H_OBJ6%v = (F%v+G%v)
-      G%v = (R02%v*TWO3RD)
       OpenAD_lin_103 = TWO3RD
+      G%v = (R02%v*TWO3RD)
       CALL setderiv(OpenAD_prp_9,G)
       CALL setderiv(OpenAD_prp_10,R03)
       CALL inc_deriv(OpenAD_prp_10,R12)
@@ -711,8 +711,8 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(H_OBJ6,F)
       CALL inc_deriv(H_OBJ6,OpenAD_prp_9)
       OpenAD_aux_14 = (R03%v-R12%v)
-      F%v = (SQRT3*OpenAD_aux_14)
       OpenAD_lin_104 = SQRT3
+      F%v = (SQRT3*OpenAD_aux_14)
       H_OBJ9%v = (G%v-F%v)
       H_OBJ7%v = (F%v+G%v)
       CALL setderiv(OpenAD_prp_11,R03)

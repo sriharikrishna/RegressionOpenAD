@@ -46,7 +46,7 @@ C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = DBLE(__value__(X(1)))
       OpenAD_aux_1 = DBLE(2)
-      __value__(Y(1)) = (OpenAD_aux_0 * OpenAD_aux_1)
       OpenAD_lin_0 = OpenAD_aux_1
+      __value__(Y(1)) = (OpenAD_aux_0 * OpenAD_aux_1)
       CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE

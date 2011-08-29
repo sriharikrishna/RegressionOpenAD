@@ -171,24 +171,24 @@
         <xaif:Marker statement_id="6" annotation="{WHIRL_Id#6} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="7" annotation="{WHIRL_Id#7} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_USE]"/>
-        <xaif:Assignment statement_id="9">
-          <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="T_27" annotation="" scope_id="1"/>
-          </xaif:AssignmentLHS>
-          <xaif:AssignmentRHS>
-            <xaif:Intrinsic vertex_id="1" annotation="{IntrinsicKey#0_SIN}" name="sin_scal"/>
-            <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="S_26" annotation="" scope_id="1"/>
-            </xaif:VariableReference>
-            <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-          </xaif:AssignmentRHS>
-        </xaif:Assignment>
         <xaif:Assignment statement_id="_elementary_partial_0">
           <xaif:AssignmentLHS active="false" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
           </xaif:AssignmentLHS>
           <xaif:AssignmentRHS>
             <xaif:Intrinsic vertex_id="1" name="cos_scal"/>
+            <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="S_26" annotation="" scope_id="1"/>
+            </xaif:VariableReference>
+            <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
+        <xaif:Assignment statement_id="9">
+          <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="T_27" annotation="" scope_id="1"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:Intrinsic vertex_id="1" annotation="{IntrinsicKey#0_SIN}" name="sin_scal"/>
             <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="S_26" annotation="" scope_id="1"/>
             </xaif:VariableReference>

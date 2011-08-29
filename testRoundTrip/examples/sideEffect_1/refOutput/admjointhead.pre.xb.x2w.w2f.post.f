@@ -75,7 +75,6 @@ C external C function used in inlined code
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then
 C store arguments
@@ -108,9 +107,10 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-      Y%v = (X(1)%v*X(1)%v)
+C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = X(1)%v
       OpenAD_lin_1 = X(1)%v
+      Y%v = (X(1)%v*X(1)%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
@@ -180,7 +180,6 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_Symbol_2
       REAL(w2f__8) OpenAD_Symbol_3
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       type(active) :: OpenAD_prp_0
@@ -248,10 +247,9 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_dly_0 = (X%v*AGLOBAL%v)
       OpenAD_lin_2 = AGLOBAL%v
       OpenAD_lin_3 = X%v
-      X%v = OpenAD_dly_0
+      X%v = (X%v*AGLOBAL%v)
       double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_3

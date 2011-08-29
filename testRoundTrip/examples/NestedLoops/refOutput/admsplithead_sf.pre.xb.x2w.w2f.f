@@ -79,9 +79,9 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
         OpenAD_Symbol_5 = 0_w2f__i8
         DO J = 1, 2, 1
-          __value__(Y(INT(I))) = (__value__(X(I)) * __value__(X(J)))
           OpenAD_lin_0 = __value__(X(J))
           OpenAD_lin_1 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(X(I)) * __value__(X(J)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -147,9 +147,9 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
         OpenAD_Symbol_11 = 0_w2f__i8
         DO J = 1, 2, 1
-          __value__(Y(INT(I))) = (__value__(X(I)) * __value__(X(J)))
           OpenAD_lin_0 = __value__(X(J))
           OpenAD_lin_1 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(X(I)) * __value__(X(J)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)

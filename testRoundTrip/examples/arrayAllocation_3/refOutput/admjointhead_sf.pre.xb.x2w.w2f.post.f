@@ -142,7 +142,6 @@ C
       ALLOCATABLE OpenAD_aux_7
       REAL(w2f__8) OpenAD_aux_8(:)
       ALLOCATABLE OpenAD_aux_8
-      REAL(w2f__8) OpenAD_dly_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_1(1 : 2)
       REAL(w2f__8) OpenAD_lin_10(:)
@@ -246,11 +245,11 @@ C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = TAN(X%v)
       OpenAD_aux_1 = SIN(X%v)
-      A(1:INT(SIZE(X)))%v = (OpenAD_aux_0/OpenAD_aux_1)
       OpenAD_lin_2 = (OpenAD_aux_0*OpenAD_aux_0+INT(1_w2f__i8))
       OpenAD_lin_0 = (INT(1_w2f__i8)/OpenAD_aux_1)
       OpenAD_lin_3 = COS(X%v)
       OpenAD_lin_1 = (-(OpenAD_aux_0/(OpenAD_aux_1*OpenAD_aux_1)))
+      A(1:INT(SIZE(X)))%v = (OpenAD_aux_0/OpenAD_aux_1)
       OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_1)
       OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
@@ -265,14 +264,14 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_1 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
+      OpenAD_aux_2 = (X%v*8.0D00)
+      OpenAD_lin_4 = (-SIN(OpenAD_aux_2))
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_lin_5,A(1:INT(SIZE(X))))
-      OpenAD_aux_2 = (X%v*8.0D00)
-      B(1:INT(SIZE(X)))%v = (COS(OpenAD_aux_2)+X(1:2)%v*A(1:INT(SIZE(X))
-     +)%v)
-      OpenAD_lin_4 = (-SIN(OpenAD_aux_2))
       OpenAD_lin_5 = A(1:INT(SIZE(X)))%v
       OpenAD_lin_6 = X(1:2)%v
+      B(1:INT(SIZE(X)))%v = (COS(OpenAD_aux_2)+X(1:2)%v*A(1:INT(SIZE(X))
+     +)%v)
       OpenAD_acc_2 = (8.0D00*OpenAD_lin_4)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
      +c_2)-1) = OpenAD_acc_2(:)
@@ -298,19 +297,18 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       OpenAD_Symbol_7 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_7
       integer_tape_pointer = integer_tape_pointer+1
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_8,B(1:INT(SIZE(X))))
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_10,A(1:INT(SIZE(X))))
       OpenAD_aux_4 = TAN(X%v)
       OpenAD_aux_3 = (A(1:INT(SIZE(X)))%v*OpenAD_aux_4)
-      OpenAD_dly_0 = (B(1:INT(SIZE(X)))%v*OpenAD_aux_3)
       OpenAD_lin_7 = OpenAD_aux_3
       OpenAD_lin_9 = OpenAD_aux_4
       OpenAD_lin_11 = (OpenAD_aux_4*OpenAD_aux_4+INT(1_w2f__i8))
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_10,A(1:INT(SIZE(X))))
       OpenAD_lin_10 = A(1:INT(SIZE(X)))%v
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_8,B(1:INT(SIZE(X))))
       OpenAD_lin_8 = B(1:INT(SIZE(X)))%v
-      B(1:INT(SIZE(X)))%v = OpenAD_dly_0
+      B(1:INT(SIZE(X)))%v = (B(1:INT(SIZE(X)))%v*OpenAD_aux_3)
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_prp_0,B(1:INT(SIZE(X))))
       OpenAD_acc_3 = (OpenAD_lin_9*OpenAD_lin_8)
@@ -341,45 +339,45 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape_pointer = integer_tape_pointer+1
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_aux_5,A(1:INT(SIZE(X))))
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_12,OpenAD_aux_5)
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_13,OpenAD_aux_5)
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_14,A(1:INT(SIZE(X))))
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_16,A)
+      OpenAD_aux_5 = (4.0D00/A(1:INT(SIZE(X)))%v)
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_aux_7,A)
+      OpenAD_aux_7 = COS(A%v)
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_aux_8,B)
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_18,OpenAD_aux_8)
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_19,OpenAD_aux_7)
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_20,A)
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_lin_21,OpenAD_aux_8)
-      OpenAD_aux_5 = (4.0D00/A(1:INT(SIZE(X)))%v)
-      OpenAD_aux_7 = COS(A%v)
       OpenAD_aux_8 = TAN(B%v)
       OpenAD_aux_6 = SQRT(X%v*A%v+OpenAD_aux_7*OpenAD_aux_8)
-      C(1:INT(SIZE(X)))%v = ((A(1:INT(SIZE(X)))%v**OpenAD_aux_5)-OpenAD_
-     +aux_6)
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_12,OpenAD_aux_5)
       OpenAD_lin_12 = (OpenAD_aux_5*(A(1:INT(SIZE(X)))%v**(OpenAD_aux_5-
      +INT(1_w2f__i8))))
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_14,A(1:INT(SIZE(X))))
       OpenAD_lin_14 = (-(4.0D00/(A(1:INT(SIZE(X)))%v*A(1:INT(SIZE(X)))%v
      +)))
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_13,OpenAD_aux_5)
       OpenAD_lin_13 = (LOG(A(1:INT(SIZE(X)))%v)*(A(1:INT(SIZE(X)))%v**Op
      +enAD_aux_5))
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_16,A)
       OpenAD_lin_16 = A%v
       OpenAD_lin_17 = X%v
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_20,A)
       OpenAD_lin_20 = (-SIN(A%v))
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_18,OpenAD_aux_8)
       OpenAD_lin_18 = OpenAD_aux_8
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_21,OpenAD_aux_8)
       OpenAD_lin_21 = (OpenAD_aux_8*OpenAD_aux_8+INT(1_w2f__i8))
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_lin_19,OpenAD_aux_7)
       OpenAD_lin_19 = OpenAD_aux_7
       OpenAD_lin_15 = (5.0D-01/OpenAD_aux_6)
+      C(1:INT(SIZE(X)))%v = ((A(1:INT(SIZE(X)))%v**OpenAD_aux_5)-OpenAD_
+     +aux_6)
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_acc_10,OpenAD_lin_13)
       OpenAD_acc_5 = (OpenAD_lin_15*INT((-1_w2f__i8)))

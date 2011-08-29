@@ -31,7 +31,6 @@ C
       type(active) :: T(1:1,1:2)
       REAL(w2f__8) OpenAD_Symbol_0(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_Symbol_1(1 : 1, 1 : 2)
-      REAL(w2f__8) OpenAD_dly_0(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_lin_0(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_lin_1(1 : 1, 1 : 2)
       type(active) :: OpenAD_prp_0(1:1,1:2)
@@ -98,10 +97,9 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%adjoint=.FALSE.
 C taping
       T(1,1:2)%v = X(1:2)%v
-      OpenAD_dly_0 = (T(1:1,1:2)%v*T(1:1,1:2)%v)
       OpenAD_lin_0 = T(1:1,1:2)%v
       OpenAD_lin_1 = T(1:1,1:2)%v
-      T(1:1,1:2)%v = OpenAD_dly_0
+      T(1:1,1:2)%v = (T(1:1,1:2)%v*T(1:1,1:2)%v)
       double_tape(double_tape_pointer:double_tape_pointer+(size(OpenAD_l
      +in_0,1)*size(OpenAD_lin_0,2))-1) = reshape(OpenAD_lin_0,(/size(Ope
      +nAD_lin_0,1)*size(OpenAD_lin_0,2)/))

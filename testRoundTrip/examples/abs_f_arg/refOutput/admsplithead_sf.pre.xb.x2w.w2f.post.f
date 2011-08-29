@@ -74,8 +74,8 @@ C original function
           if (our_rev_mode%tape) then
 C taping
       X(1)%v = (-1)
-      Y(1:2)%v = ABS(X%v)
       OpenAD_lin_0 = SIGN(1.0D00,X%v)
+      Y(1:2)%v = ABS(X%v)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
      +n_0)-1) = OpenAD_lin_0(:)
       double_tape_pointer = double_tape_pointer+size(OpenAD_lin_0)

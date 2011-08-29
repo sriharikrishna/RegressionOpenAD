@@ -75,9 +75,9 @@ C!! requested inline of 'oad_convert' has no defn
       CALL foo(X(1),OpenAD_tyc_0,C,D)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(P,OpenAD_tyc_0)
-      Y(3)%v = (C%v*D%v)
       OpenAD_lin_0 = D%v
       OpenAD_lin_1 = C%v
+      Y(3)%v = (C%v*D%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
@@ -166,13 +166,13 @@ C original function
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (A%v*B%v)
-      C%v = SIN(OpenAD_aux_0)
       OpenAD_lin_3 = B%v
       OpenAD_lin_4 = A%v
       OpenAD_lin_2 = COS(OpenAD_aux_0)
+      C%v = SIN(OpenAD_aux_0)
       OpenAD_aux_1 = (A%v+B%v)
-      D%v = COS(OpenAD_aux_1)
       OpenAD_lin_5 = (-SIN(OpenAD_aux_1))
+      D%v = COS(OpenAD_aux_1)
       OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_2)
       OpenAD_acc_1 = (OpenAD_lin_4*OpenAD_lin_2)
       double_tape(double_tape_pointer) = OpenAD_acc_0

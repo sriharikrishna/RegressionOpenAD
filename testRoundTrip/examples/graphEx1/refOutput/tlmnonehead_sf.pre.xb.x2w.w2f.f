@@ -288,12 +288,6 @@ C
       REAL(w2f__8) OpenAD_aux_7
       REAL(w2f__8) OpenAD_aux_8
       REAL(w2f__8) OpenAD_aux_9
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_dly_2
-      REAL(w2f__8) OpenAD_dly_3
-      REAL(w2f__8) OpenAD_dly_4
-      REAL(w2f__8) OpenAD_dly_5
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
@@ -578,47 +572,45 @@ C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = ((__value__(X01) ** 2) +(__value__(X02) ** 2) +(
      > __value__(X03) ** 2))
-      __value__(T01) = SIN(OpenAD_aux_0)
       OpenAD_lin_1 = (2 *(__value__(X01) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_2 = (2 *(__value__(X02) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_3 = (2 *(__value__(X03) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_0 = COS(OpenAD_aux_0)
-      __value__(T02) = (1.0D00 / __value__(T01))
+      __value__(T01) = SIN(OpenAD_aux_0)
       OpenAD_lin_4 = (-(1.0D00 /(__value__(T01) * __value__(T01))))
-      __value__(T03) = (__value__(X01) * __value__(T02))
+      __value__(T02) = (1.0D00 / __value__(T01))
       OpenAD_lin_5 = __value__(T02)
       OpenAD_lin_6 = __value__(X01)
-      __value__(T04) = (__value__(X02) * __value__(T02))
+      __value__(T03) = (__value__(X01) * __value__(T02))
       OpenAD_lin_7 = __value__(T02)
       OpenAD_lin_8 = __value__(X02)
-      __value__(T05) = (__value__(X03) * __value__(T02))
+      __value__(T04) = (__value__(X02) * __value__(T02))
       OpenAD_lin_9 = __value__(T02)
       OpenAD_lin_10 = __value__(X03)
+      __value__(T05) = (__value__(X03) * __value__(T02))
       OpenAD_aux_2 = (__value__(X10) / __value__(X05))
       OpenAD_aux_1 = (SIN(OpenAD_aux_2) + 1.0D00)
-      __value__(T06) = (1.0D00 / OpenAD_aux_1)
       OpenAD_lin_13 = (INT(1_w2f__i8) / __value__(X05))
       OpenAD_lin_14 = (-(__value__(X10) /(__value__(X05) * __value__(
      > X05))))
       OpenAD_lin_12 = COS(OpenAD_aux_2)
       OpenAD_lin_11 = (-(1.0D00 /(OpenAD_aux_1 * OpenAD_aux_1)))
+      __value__(T06) = (1.0D00 / OpenAD_aux_1)
       __value__(T07) = (1.0D00 - __value__(T06))
       OpenAD_aux_3 = ((__value__(X06) ** 2) +(__value__(X07) ** 2) +(
      > __value__(X08) ** 2))
-      __value__(T08) = (OpenAD_aux_3 * 5.0D-01)
       OpenAD_lin_15 = (2 *(__value__(X06) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_16 = (2 *(__value__(X07) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_17 = (2 *(__value__(X08) **(2 - INT(1_w2f__i8))))
+      __value__(T08) = (OpenAD_aux_3 * 5.0D-01)
       OpenAD_aux_4 = ((__value__(X11) ** 2) +(__value__(X12) ** 2) +(
      > __value__(X13) ** 2))
-      __value__(T09) = (OpenAD_aux_4 * 5.0D-01)
       OpenAD_lin_18 = (2 *(__value__(X11) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_19 = (2 *(__value__(X12) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_20 = (2 *(__value__(X13) **(2 - INT(1_w2f__i8))))
+      __value__(T09) = (OpenAD_aux_4 * 5.0D-01)
       OpenAD_aux_6 = (__value__(X14) * __value__(X16))
       OpenAD_aux_5 = (__value__(X04) * OpenAD_aux_6)
-      __value__(T10) = (__value__(T08) +(OpenAD_aux_5 / __value__(X05))
-     > )
       OpenAD_lin_23 = OpenAD_aux_6
       OpenAD_lin_25 = __value__(X16)
       OpenAD_lin_26 = __value__(X14)
@@ -626,10 +618,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_21 = (INT(1_w2f__i8) / __value__(X05))
       OpenAD_lin_22 = (-(OpenAD_aux_5 /(__value__(X05) * __value__(X05)
      > )))
+      __value__(T10) = (__value__(T08) +(OpenAD_aux_5 / __value__(X05))
+     > )
       OpenAD_aux_8 = (__value__(X14) * __value__(X16))
       OpenAD_aux_7 = (__value__(X09) * OpenAD_aux_8)
-      __value__(T11) = (__value__(T09) +(OpenAD_aux_7 / __value__(X10))
-     > )
       OpenAD_lin_29 = OpenAD_aux_8
       OpenAD_lin_31 = __value__(X16)
       OpenAD_lin_32 = __value__(X14)
@@ -637,40 +629,42 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_27 = (INT(1_w2f__i8) / __value__(X10))
       OpenAD_lin_28 = (-(OpenAD_aux_7 /(__value__(X10) * __value__(X10)
      > )))
-      __value__(T12) = (__value__(X06) * __value__(T06) + __value__(X11
-     > ) * __value__(T07))
+      __value__(T11) = (__value__(T09) +(OpenAD_aux_7 / __value__(X10))
+     > )
       OpenAD_lin_33 = __value__(T06)
       OpenAD_lin_34 = __value__(X06)
       OpenAD_lin_35 = __value__(T07)
       OpenAD_lin_36 = __value__(X11)
-      __value__(T13) = (__value__(X07) * __value__(T06) + __value__(X12
+      __value__(T12) = (__value__(X06) * __value__(T06) + __value__(X11
      > ) * __value__(T07))
       OpenAD_lin_37 = __value__(T06)
       OpenAD_lin_38 = __value__(X07)
       OpenAD_lin_39 = __value__(T07)
       OpenAD_lin_40 = __value__(X12)
-      __value__(T14) = (__value__(X08) * __value__(T06) + __value__(X13
+      __value__(T13) = (__value__(X07) * __value__(T06) + __value__(X12
      > ) * __value__(T07))
       OpenAD_lin_41 = __value__(T06)
       OpenAD_lin_42 = __value__(X08)
       OpenAD_lin_43 = __value__(T07)
       OpenAD_lin_44 = __value__(X13)
-      __value__(T15) = (__value__(T06) * __value__(T10) + __value__(T07
-     > ) * __value__(T11))
+      __value__(T14) = (__value__(X08) * __value__(T06) + __value__(X13
+     > ) * __value__(T07))
       OpenAD_lin_45 = __value__(T10)
       OpenAD_lin_46 = __value__(T06)
       OpenAD_lin_47 = __value__(T11)
       OpenAD_lin_48 = __value__(T07)
+      __value__(T15) = (__value__(T06) * __value__(T10) + __value__(T07
+     > ) * __value__(T11))
       OpenAD_aux_9 = ((__value__(T12) ** 2) +(__value__(T13) ** 2) +(
      > __value__(T14) ** 2))
-      __value__(T18) = (OpenAD_aux_9 * 5.0D-01)
       OpenAD_lin_49 = (2 *(__value__(T12) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_50 = (2 *(__value__(T13) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_51 = (2 *(__value__(T14) **(2 - INT(1_w2f__i8))))
+      __value__(T18) = (OpenAD_aux_9 * 5.0D-01)
       OpenAD_aux_10 = (__value__(T15) - __value__(T18))
-      __value__(T16) = (__value__(X15) * OpenAD_aux_10)
       OpenAD_lin_52 = OpenAD_aux_10
       OpenAD_lin_53 = __value__(X15)
+      __value__(T16) = (__value__(X15) * OpenAD_aux_10)
       OpenAD_acc_0 = (OpenAD_lin_30 * OpenAD_lin_27)
       OpenAD_acc_1 = (OpenAD_lin_24 * OpenAD_lin_21)
       OpenAD_acc_2 = (OpenAD_lin_4 * OpenAD_lin_6)
@@ -752,35 +746,34 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_6, __deriv__(T11), __deriv__(T16))
       CALL saxpy(OpenAD_acc_7, __deriv__(T10), __deriv__(T16))
       CALL saxpy(OpenAD_acc_8, __deriv__(OpenAD_prp_1), __deriv__(T16))
-      OpenAD_dly_0 = SIN(__value__(T16))
       OpenAD_lin_54 = COS(__value__(T16))
-      __value__(T16) = OpenAD_dly_0
-      __value__(T17) = (__value__(T03) * __value__(T12) + __value__(T04
-     > ) * __value__(T13) + __value__(T05) * __value__(T14))
+      __value__(T16) = SIN(__value__(T16))
       OpenAD_lin_55 = __value__(T12)
       OpenAD_lin_56 = __value__(T03)
       OpenAD_lin_57 = __value__(T13)
       OpenAD_lin_58 = __value__(T04)
       OpenAD_lin_59 = __value__(T14)
       OpenAD_lin_60 = __value__(T05)
-      __value__(T19) = (__value__(T04) * __value__(T14) - __value__(T05
-     > ) * __value__(T13))
+      __value__(T17) = (__value__(T03) * __value__(T12) + __value__(T04
+     > ) * __value__(T13) + __value__(T05) * __value__(T14))
       OpenAD_lin_61 = __value__(T14)
       OpenAD_lin_62 = __value__(T04)
       OpenAD_lin_63 = __value__(T13)
       OpenAD_lin_64 = __value__(T05)
-      __value__(T20) = (__value__(T05) * __value__(T12) - __value__(T03
-     > ) * __value__(T14))
+      __value__(T19) = (__value__(T04) * __value__(T14) - __value__(T05
+     > ) * __value__(T13))
       OpenAD_lin_65 = __value__(T12)
       OpenAD_lin_66 = __value__(T05)
       OpenAD_lin_67 = __value__(T14)
       OpenAD_lin_68 = __value__(T03)
-      __value__(T21) = (__value__(T03) * __value__(T13) - __value__(T04
-     > ) * __value__(T12))
+      __value__(T20) = (__value__(T05) * __value__(T12) - __value__(T03
+     > ) * __value__(T14))
       OpenAD_lin_69 = __value__(T13)
       OpenAD_lin_70 = __value__(T03)
       OpenAD_lin_71 = __value__(T12)
       OpenAD_lin_72 = __value__(T04)
+      __value__(T21) = (__value__(T03) * __value__(T13) - __value__(T04
+     > ) * __value__(T12))
       __value__(T22) = (__value__(T17) - __value__(T16))
       __value__(T24) = __value__(T17)
       __value__(T23) = (__value__(T16) + __value__(T17))
@@ -827,53 +820,52 @@ C$OPENAD XXX Template ad_template.f
       __value__(T26) = (OpenAD_aux_12 * 5.0D-01)
       OpenAD_aux_13 = (__value__(T24) - __value__(T27))
       __value__(T27) = (OpenAD_aux_13 * 5.0D-01)
-      __value__(T28) = (__value__(X04) * __value__(X16) + __value__(X05
-     > ) * __value__(T08))
       OpenAD_lin_73 = __value__(X16)
       OpenAD_lin_74 = __value__(X04)
       OpenAD_lin_75 = __value__(T08)
       OpenAD_lin_76 = __value__(X05)
-      __value__(T29) = (__value__(X05) * __value__(X06))
+      __value__(T28) = (__value__(X04) * __value__(X16) + __value__(X05
+     > ) * __value__(T08))
       OpenAD_lin_77 = __value__(X06)
       OpenAD_lin_78 = __value__(X05)
-      __value__(T30) = (__value__(X05) * __value__(X07))
+      __value__(T29) = (__value__(X05) * __value__(X06))
       OpenAD_lin_79 = __value__(X07)
       OpenAD_lin_80 = __value__(X05)
-      __value__(T31) = (__value__(X05) * __value__(X08))
+      __value__(T30) = (__value__(X05) * __value__(X07))
       OpenAD_lin_81 = __value__(X08)
       OpenAD_lin_82 = __value__(X05)
-      __value__(T32) = (__value__(X09) * __value__(X16) + __value__(X10
-     > ) * __value__(T09))
+      __value__(T31) = (__value__(X05) * __value__(X08))
       OpenAD_lin_83 = __value__(X16)
       OpenAD_lin_84 = __value__(X09)
       OpenAD_lin_85 = __value__(T09)
       OpenAD_lin_86 = __value__(X10)
-      __value__(T33) = (__value__(X10) * __value__(X11))
+      __value__(T32) = (__value__(X09) * __value__(X16) + __value__(X10
+     > ) * __value__(T09))
       OpenAD_lin_87 = __value__(X11)
       OpenAD_lin_88 = __value__(X10)
-      __value__(T34) = (__value__(X10) * __value__(X12))
+      __value__(T33) = (__value__(X10) * __value__(X11))
       OpenAD_lin_89 = __value__(X12)
       OpenAD_lin_90 = __value__(X10)
-      __value__(T35) = (__value__(X10) * __value__(X13))
+      __value__(T34) = (__value__(X10) * __value__(X12))
       OpenAD_lin_91 = __value__(X13)
       OpenAD_lin_92 = __value__(X10)
+      __value__(T35) = (__value__(X10) * __value__(X13))
       __value__(T36) = (__value__(T32) - __value__(T28))
       __value__(T37) = (__value__(X10) - __value__(X05))
       __value__(T38) = (__value__(T33) - __value__(T29))
       __value__(T39) = (__value__(T34) - __value__(T30))
       __value__(T40) = (__value__(T35) - __value__(T31))
-      __value__(T46) = (__value__(T12) * __value__(T38) + __value__(T13
-     > ) * __value__(T39) + __value__(T14) * __value__(T40))
       OpenAD_lin_93 = __value__(T38)
       OpenAD_lin_94 = __value__(T12)
       OpenAD_lin_95 = __value__(T39)
       OpenAD_lin_96 = __value__(T13)
       OpenAD_lin_97 = __value__(T40)
       OpenAD_lin_98 = __value__(T14)
+      __value__(T46) = (__value__(T12) * __value__(T38) + __value__(T13
+     > ) * __value__(T39) + __value__(T14) * __value__(T40))
       OpenAD_aux_14 = (__value__(X15) / __value__(T16))
       OpenAD_aux_15 = (__value__(T36) + __value__(T18) * __value__(T37)
      >  - __value__(T46))
-      __value__(T47) = (OpenAD_aux_14 * OpenAD_aux_15)
       OpenAD_lin_101 = (INT(1_w2f__i8) / __value__(T16))
       OpenAD_lin_102 = (-(__value__(X15) /(__value__(T16) * __value__(
      > T16))))
@@ -881,25 +873,23 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_103 = __value__(T37)
       OpenAD_lin_104 = __value__(T18)
       OpenAD_lin_100 = OpenAD_aux_14
-      __value__(T48) = (__value__(T03) * __value__(T38) + __value__(T04
-     > ) * __value__(T39) + __value__(T05) * __value__(T40))
+      __value__(T47) = (OpenAD_aux_14 * OpenAD_aux_15)
       OpenAD_lin_105 = __value__(T38)
       OpenAD_lin_106 = __value__(T03)
       OpenAD_lin_107 = __value__(T39)
       OpenAD_lin_108 = __value__(T04)
       OpenAD_lin_109 = __value__(T40)
       OpenAD_lin_110 = __value__(T05)
+      __value__(T48) = (__value__(T03) * __value__(T38) + __value__(T04
+     > ) * __value__(T39) + __value__(T05) * __value__(T40))
       OpenAD_aux_16 = (__value__(T47) + __value__(T17) * __value__(T37)
      >  - __value__(T48))
-      __value__(T41) = (OpenAD_aux_16 * 5.0D-01)
       OpenAD_lin_111 = __value__(T37)
       OpenAD_lin_112 = __value__(T17)
+      __value__(T41) = (OpenAD_aux_16 * 5.0D-01)
       OpenAD_aux_17 = (__value__(T03) * __value__(T16) - __value__(T19)
      > )
       OpenAD_aux_18 = (- __value__(T03))
-      __value__(T42) = (__value__(T04) * __value__(T40) + __value__(T37
-     > ) * OpenAD_aux_17 + __value__(T47) * OpenAD_aux_18 - __value__(
-     > T05) * __value__(T39))
       OpenAD_lin_113 = __value__(T40)
       OpenAD_lin_114 = __value__(T04)
       OpenAD_lin_115 = OpenAD_aux_17
@@ -910,12 +900,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_120 = __value__(T47)
       OpenAD_lin_121 = __value__(T39)
       OpenAD_lin_122 = __value__(T05)
+      __value__(T42) = (__value__(T04) * __value__(T40) + __value__(T37
+     > ) * OpenAD_aux_17 + __value__(T47) * OpenAD_aux_18 - __value__(
+     > T05) * __value__(T39))
       OpenAD_aux_19 = (__value__(T04) * __value__(T16) - __value__(T20)
      > )
       OpenAD_aux_20 = (- __value__(T04))
-      __value__(T43) = (__value__(T05) * __value__(T38) + __value__(T37
-     > ) * OpenAD_aux_19 + __value__(T47) * OpenAD_aux_20 - __value__(
-     > T03) * __value__(T40))
       OpenAD_lin_123 = __value__(T38)
       OpenAD_lin_124 = __value__(T05)
       OpenAD_lin_125 = OpenAD_aux_19
@@ -926,12 +916,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_130 = __value__(T47)
       OpenAD_lin_131 = __value__(T40)
       OpenAD_lin_132 = __value__(T03)
+      __value__(T43) = (__value__(T05) * __value__(T38) + __value__(T37
+     > ) * OpenAD_aux_19 + __value__(T47) * OpenAD_aux_20 - __value__(
+     > T03) * __value__(T40))
       OpenAD_aux_21 = (__value__(T05) * __value__(T16) - __value__(T21)
      > )
       OpenAD_aux_22 = (- __value__(T05))
-      __value__(T44) = (__value__(T03) * __value__(T39) + __value__(T37
-     > ) * OpenAD_aux_21 + __value__(T47) * OpenAD_aux_22 - __value__(
-     > T04) * __value__(T38))
       OpenAD_lin_133 = __value__(T39)
       OpenAD_lin_134 = __value__(T03)
       OpenAD_lin_135 = OpenAD_aux_21
@@ -942,11 +932,14 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_140 = __value__(T47)
       OpenAD_lin_141 = __value__(T38)
       OpenAD_lin_142 = __value__(T04)
+      __value__(T44) = (__value__(T03) * __value__(T39) + __value__(T37
+     > ) * OpenAD_aux_21 + __value__(T47) * OpenAD_aux_22 - __value__(
+     > T04) * __value__(T38))
       OpenAD_aux_23 = (__value__(T48) + __value__(T47) - __value__(T17)
      >  * __value__(T37))
-      __value__(T45) = (OpenAD_aux_23 * 5.0D-01)
       OpenAD_lin_143 = __value__(T37)
       OpenAD_lin_144 = __value__(T17)
+      __value__(T45) = (OpenAD_aux_23 * 5.0D-01)
       OpenAD_acc_26 = (OpenAD_lin_101 * OpenAD_lin_99)
       OpenAD_acc_27 = (OpenAD_lin_102 * OpenAD_lin_99)
       OpenAD_acc_28 = (OpenAD_lin_143 *(-5.0D-01))
@@ -1074,31 +1067,23 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_lin_134, __deriv__(T39), __deriv__(T44))
       CALL saxpy(OpenAD_acc_53, __deriv__(T04), __deriv__(T44))
       CALL saxpy(OpenAD_acc_54, __deriv__(T38), __deriv__(T44))
-      OpenAD_dly_1 = (__value__(T25) * __value__(T41))
       OpenAD_lin_145 = __value__(T41)
       OpenAD_lin_146 = __value__(T25)
-      __value__(T41) = OpenAD_dly_1
-      OpenAD_dly_2 = (__value__(T27) * __value__(T42))
+      __value__(T41) = (__value__(T25) * __value__(T41))
       OpenAD_lin_147 = __value__(T42)
       OpenAD_lin_148 = __value__(T27)
-      __value__(T42) = OpenAD_dly_2
-      OpenAD_dly_3 = (__value__(T27) * __value__(T43))
+      __value__(T42) = (__value__(T27) * __value__(T42))
       OpenAD_lin_149 = __value__(T43)
       OpenAD_lin_150 = __value__(T27)
-      __value__(T43) = OpenAD_dly_3
-      OpenAD_dly_4 = (__value__(T27) * __value__(T44))
+      __value__(T43) = (__value__(T27) * __value__(T43))
       OpenAD_lin_151 = __value__(T44)
       OpenAD_lin_152 = __value__(T27)
-      __value__(T44) = OpenAD_dly_4
-      OpenAD_dly_5 = (__value__(T26) * __value__(T45))
+      __value__(T44) = (__value__(T27) * __value__(T44))
       OpenAD_lin_153 = __value__(T45)
       OpenAD_lin_154 = __value__(T26)
-      __value__(T45) = OpenAD_dly_5
+      __value__(T45) = (__value__(T26) * __value__(T45))
       __value__(T49) = (__value__(T41) + __value__(T45))
       __value__(T50) = (__value__(T41) - __value__(T45))
-      __value__(T56) = ((__value__(T49) / __value__(T16)) + __value__(
-     > T03) * __value__(T42) + __value__(T04) * __value__(T43) +
-     >  __value__(T05) * __value__(T44))
       OpenAD_lin_155 = (INT(1_w2f__i8) / __value__(T16))
       OpenAD_lin_156 = (-(__value__(T49) /(__value__(T16) * __value__(
      > T16))))
@@ -1108,11 +1093,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_160 = __value__(T04)
       OpenAD_lin_161 = __value__(T44)
       OpenAD_lin_162 = __value__(T05)
+      __value__(T56) = ((__value__(T49) / __value__(T16)) + __value__(
+     > T03) * __value__(T42) + __value__(T04) * __value__(T43) +
+     >  __value__(T05) * __value__(T44))
       OpenAD_aux_24 = (__value__(X16) * __value__(T16))
-      __value__(T51) = (__value__(T18) * __value__(T56) + __value__(T49
-     > ) * OpenAD_aux_24 - __value__(T17) * __value__(T50) + __value__(
-     > T19) * __value__(T42) + __value__(T20) * __value__(T43) +
-     >  __value__(T21) * __value__(T44))
       OpenAD_lin_163 = __value__(T56)
       OpenAD_lin_164 = __value__(T18)
       OpenAD_lin_165 = OpenAD_aux_24
@@ -1127,10 +1111,11 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_174 = __value__(T20)
       OpenAD_lin_175 = __value__(T44)
       OpenAD_lin_176 = __value__(T21)
+      __value__(T51) = (__value__(T18) * __value__(T56) + __value__(T49
+     > ) * OpenAD_aux_24 - __value__(T17) * __value__(T50) + __value__(
+     > T19) * __value__(T42) + __value__(T20) * __value__(T43) +
+     >  __value__(T21) * __value__(T44))
       __value__(T52) = __value__(T56)
-      __value__(T53) = (__value__(T05) * __value__(T43) + __value__(T12
-     > ) * __value__(T56) - __value__(T03) * __value__(T50) - __value__
-     > (T04) * __value__(T44))
       OpenAD_lin_177 = __value__(T43)
       OpenAD_lin_178 = __value__(T05)
       OpenAD_lin_179 = __value__(T56)
@@ -1139,9 +1124,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_182 = __value__(T03)
       OpenAD_lin_183 = __value__(T44)
       OpenAD_lin_184 = __value__(T04)
-      __value__(T54) = (__value__(T03) * __value__(T44) + __value__(T13
-     > ) * __value__(T56) - __value__(T04) * __value__(T50) - __value__
-     > (T05) * __value__(T42))
+      __value__(T53) = (__value__(T05) * __value__(T43) + __value__(T12
+     > ) * __value__(T56) - __value__(T03) * __value__(T50) - __value__
+     > (T04) * __value__(T44))
       OpenAD_lin_185 = __value__(T44)
       OpenAD_lin_186 = __value__(T03)
       OpenAD_lin_187 = __value__(T56)
@@ -1150,9 +1135,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_190 = __value__(T04)
       OpenAD_lin_191 = __value__(T42)
       OpenAD_lin_192 = __value__(T05)
-      __value__(T55) = (__value__(T04) * __value__(T42) + __value__(T14
-     > ) * __value__(T56) - __value__(T05) * __value__(T50) - __value__
-     > (T03) * __value__(T43))
+      __value__(T54) = (__value__(T03) * __value__(T44) + __value__(T13
+     > ) * __value__(T56) - __value__(T04) * __value__(T50) - __value__
+     > (T05) * __value__(T42))
       OpenAD_lin_193 = __value__(T42)
       OpenAD_lin_194 = __value__(T04)
       OpenAD_lin_195 = __value__(T56)
@@ -1161,55 +1146,58 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_198 = __value__(T05)
       OpenAD_lin_199 = __value__(T43)
       OpenAD_lin_200 = __value__(T03)
-      __value__(T57) = (__value__(X06) * __value__(T03) + __value__(X07
-     > ) * __value__(T04) + __value__(X08) * __value__(T05))
+      __value__(T55) = (__value__(T04) * __value__(T42) + __value__(T14
+     > ) * __value__(T56) - __value__(T05) * __value__(T50) - __value__
+     > (T03) * __value__(T43))
       OpenAD_lin_201 = __value__(T03)
       OpenAD_lin_202 = __value__(X06)
       OpenAD_lin_203 = __value__(T04)
       OpenAD_lin_204 = __value__(X07)
       OpenAD_lin_205 = __value__(T05)
       OpenAD_lin_206 = __value__(X08)
+      __value__(T57) = (__value__(X06) * __value__(T03) + __value__(X07
+     > ) * __value__(T04) + __value__(X08) * __value__(T05))
       OpenAD_aux_26 = (__value__(X04) + __value__(T28))
       OpenAD_aux_25 = (__value__(T51) + __value__(T57) * OpenAD_aux_26)
-      __value__(Y1) = (__value__(T01) * OpenAD_aux_25)
       OpenAD_lin_207 = OpenAD_aux_25
       OpenAD_lin_209 = OpenAD_aux_26
       OpenAD_lin_210 = __value__(T57)
       OpenAD_lin_208 = __value__(T01)
+      __value__(Y1) = (__value__(T01) * OpenAD_aux_25)
       OpenAD_aux_27 = (__value__(T52) + __value__(X05) * __value__(T57)
      > )
-      __value__(Y2) = (__value__(T01) * OpenAD_aux_27)
       OpenAD_lin_211 = OpenAD_aux_27
       OpenAD_lin_213 = __value__(T57)
       OpenAD_lin_214 = __value__(X05)
       OpenAD_lin_212 = __value__(T01)
+      __value__(Y2) = (__value__(T01) * OpenAD_aux_27)
       OpenAD_aux_28 = (__value__(T53) + __value__(X04) * __value__(T03)
      >  + __value__(T29) * __value__(T57))
-      __value__(Y3) = (__value__(T01) * OpenAD_aux_28)
       OpenAD_lin_215 = OpenAD_aux_28
       OpenAD_lin_217 = __value__(T03)
       OpenAD_lin_218 = __value__(X04)
       OpenAD_lin_219 = __value__(T57)
       OpenAD_lin_220 = __value__(T29)
       OpenAD_lin_216 = __value__(T01)
+      __value__(Y3) = (__value__(T01) * OpenAD_aux_28)
       OpenAD_aux_29 = (__value__(T54) + __value__(X04) * __value__(T04)
      >  + __value__(T30) * __value__(T57))
-      __value__(Y4) = (__value__(T01) * OpenAD_aux_29)
       OpenAD_lin_221 = OpenAD_aux_29
       OpenAD_lin_223 = __value__(T04)
       OpenAD_lin_224 = __value__(X04)
       OpenAD_lin_225 = __value__(T57)
       OpenAD_lin_226 = __value__(T30)
       OpenAD_lin_222 = __value__(T01)
+      __value__(Y4) = (__value__(T01) * OpenAD_aux_29)
       OpenAD_aux_30 = (__value__(T55) + __value__(X04) * __value__(T05)
      >  + __value__(T31) * __value__(T57))
-      __value__(Y5) = (__value__(T01) * OpenAD_aux_30)
       OpenAD_lin_227 = OpenAD_aux_30
       OpenAD_lin_229 = __value__(T05)
       OpenAD_lin_230 = __value__(X04)
       OpenAD_lin_231 = __value__(T57)
       OpenAD_lin_232 = __value__(T31)
       OpenAD_lin_228 = __value__(T01)
+      __value__(Y5) = (__value__(T01) * OpenAD_aux_30)
       OpenAD_acc_59 = (OpenAD_lin_209 * OpenAD_lin_208)
       OpenAD_acc_60 = (OpenAD_lin_210 * OpenAD_lin_208)
       OpenAD_acc_61 = (OpenAD_lin_175 * OpenAD_lin_208)

@@ -51,7 +51,6 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       TYPE (OpenADTy_active) OpenAD_prp_0
@@ -63,10 +62,10 @@ C     $OpenAD$ BEGIN REPLACEMENT 1
      > AGLOBALACTIVE))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
-      OpenAD_dly_0 = (__value__(P) * __value__(AGLOBALACTIVE))
       OpenAD_lin_0 = __value__(AGLOBALACTIVE)
       OpenAD_lin_1 = __value__(P)
-      __value__(AGLOBALACTIVE) = OpenAD_dly_0
+      __value__(AGLOBALACTIVE) = (__value__(P) * __value__(
+     > AGLOBALACTIVE))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -123,10 +122,10 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
       CALL cp_arg_restore_real_scalar_a(__deriv__(AGLOBALACTIVE))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
-      OpenAD_dly_0 = (__value__(P) * __value__(AGLOBALACTIVE))
       OpenAD_lin_0 = __value__(AGLOBALACTIVE)
       OpenAD_lin_1 = __value__(P)
-      __value__(AGLOBALACTIVE) = OpenAD_dly_0
+      __value__(AGLOBALACTIVE) = (__value__(P) * __value__(
+     > AGLOBALACTIVE))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -205,8 +204,8 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL foo(__deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(ANINACTIVE, __deriv__(OpenAD_tyc_0))
-      __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
       OpenAD_lin_2 = COS(__value__(AGLOBALACTIVE))
+      __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
 C     $OpenAD$ END REPLACEMENT
@@ -257,8 +256,8 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL foo(__deriv__(OpenAD_tyc_0))
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(ANINACTIVE, __deriv__(OpenAD_tyc_0))
-      __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
       OpenAD_lin_2 = COS(__value__(AGLOBALACTIVE))
+      __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
 C     $OpenAD$ END REPLACEMENT

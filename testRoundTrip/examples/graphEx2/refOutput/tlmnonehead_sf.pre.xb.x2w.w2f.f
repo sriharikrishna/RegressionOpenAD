@@ -554,66 +554,66 @@ C$OPENAD XXX Template ad_template.f
       __value__(MATR0) = (__value__(X02) - __value__(X01))
       OpenAD_aux_0 = (__value__(X03) * 2.0D00 - __value__(X02) -
      >  __value__(X01))
-      __value__(MATR1) = (SQRT3 * OpenAD_aux_0)
       OpenAD_lin_0 = SQRT3
+      __value__(MATR1) = (SQRT3 * OpenAD_aux_0)
       __value__(MATR2) = (__value__(X05) - __value__(X04))
       OpenAD_aux_1 = (__value__(X06) * 2.0D00 - __value__(X05) -
      >  __value__(X04))
-      __value__(MATR3) = (SQRT3 * OpenAD_aux_1)
       OpenAD_lin_1 = SQRT3
-      __value__(M03) = (__value__(MATR0) * __value__(MATR3))
+      __value__(MATR3) = (SQRT3 * OpenAD_aux_1)
       OpenAD_lin_2 = __value__(MATR3)
       OpenAD_lin_3 = __value__(MATR0)
-      __value__(M12) = (__value__(MATR1) * __value__(MATR2))
+      __value__(M03) = (__value__(MATR0) * __value__(MATR3))
       OpenAD_lin_4 = __value__(MATR2)
       OpenAD_lin_5 = __value__(MATR1)
+      __value__(M12) = (__value__(MATR1) * __value__(MATR2))
       __value__(G) = (__value__(M03) - __value__(M12))
       __value__(D00) = (__value__(M03) * 2.0D00)
       __value__(D11) = (__value__(M12) * 2.0D00)
-      __value__(M00) = (__value__(MATR0) * __value__(MATR0))
       OpenAD_lin_6 = __value__(MATR0)
       OpenAD_lin_7 = __value__(MATR0)
-      __value__(M11) = (__value__(MATR1) * __value__(MATR1))
+      __value__(M00) = (__value__(MATR0) * __value__(MATR0))
       OpenAD_lin_8 = __value__(MATR1)
       OpenAD_lin_9 = __value__(MATR1)
-      __value__(M22) = (__value__(MATR2) * __value__(MATR2))
+      __value__(M11) = (__value__(MATR1) * __value__(MATR1))
       OpenAD_lin_10 = __value__(MATR2)
       OpenAD_lin_11 = __value__(MATR2)
-      __value__(M33) = (__value__(MATR3) * __value__(MATR3))
+      __value__(M22) = (__value__(MATR2) * __value__(MATR2))
       OpenAD_lin_12 = __value__(MATR3)
       OpenAD_lin_13 = __value__(MATR3)
-      __value__(D12) = (__value__(M00) * __value__(M33))
+      __value__(M33) = (__value__(MATR3) * __value__(MATR3))
       OpenAD_lin_14 = __value__(M33)
       OpenAD_lin_15 = __value__(M00)
-      __value__(D03) = (__value__(M11) * __value__(M22))
+      __value__(D12) = (__value__(M00) * __value__(M33))
       OpenAD_lin_16 = __value__(M22)
       OpenAD_lin_17 = __value__(M11)
+      __value__(D03) = (__value__(M11) * __value__(M22))
       __value__(F) = (__value__(D03) + __value__(D12))
       OpenAD_aux_2 = (1.0D00 / __value__(G))
-      __value__(LOC1) = (A * OpenAD_aux_2)
       OpenAD_lin_19 = (-(1.0D00 /(__value__(G) * __value__(G))))
       OpenAD_lin_18 = A
-      __value__(OBJ) = (__value__(F) * __value__(LOC1))
+      __value__(LOC1) = (A * OpenAD_aux_2)
       OpenAD_lin_20 = __value__(LOC1)
       OpenAD_lin_21 = __value__(F)
+      __value__(OBJ) = (__value__(F) * __value__(LOC1))
       OpenAD_aux_4 = (__value__(G) * __value__(G))
       OpenAD_aux_3 = (1.0D00 / OpenAD_aux_4)
-      __value__(LOC2) = (AB * OpenAD_aux_3)
       OpenAD_lin_24 = __value__(G)
       OpenAD_lin_25 = __value__(G)
       OpenAD_lin_23 = (-(1.0D00 /(OpenAD_aux_4 * OpenAD_aux_4)))
       OpenAD_lin_22 = AB
+      __value__(LOC2) = (AB * OpenAD_aux_3)
       OpenAD_aux_5 = (AB * B)
       OpenAD_aux_8 = (__value__(G) * __value__(G))
       OpenAD_aux_7 = (__value__(G) * OpenAD_aux_8)
       OpenAD_aux_6 = (1.0D00 / OpenAD_aux_7)
-      __value__(GG) = (OpenAD_aux_5 * OpenAD_aux_6)
       OpenAD_lin_28 = OpenAD_aux_8
       OpenAD_lin_30 = __value__(G)
       OpenAD_lin_31 = __value__(G)
       OpenAD_lin_29 = __value__(G)
       OpenAD_lin_27 = (-(1.0D00 /(OpenAD_aux_7 * OpenAD_aux_7)))
       OpenAD_lin_26 = OpenAD_aux_5
+      __value__(GG) = (OpenAD_aux_5 * OpenAD_aux_6)
       OpenAD_acc_0 = (OpenAD_lin_19 * OpenAD_lin_18)
       OpenAD_acc_1 = (OpenAD_lin_6 + OpenAD_lin_7)
       OpenAD_acc_2 = (OpenAD_lin_8 + OpenAD_lin_9)
@@ -658,36 +658,36 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_lin_21, __deriv__(LOC1), __deriv__(OBJ))
       CALL sax(OpenAD_acc_6, __deriv__(G), __deriv__(LOC2))
       CALL sax(OpenAD_acc_5, __deriv__(G), __deriv__(GG))
-      __value__(G) = (__value__(F) * __value__(LOC2))
       OpenAD_lin_32 = __value__(LOC2)
       OpenAD_lin_33 = __value__(F)
+      __value__(G) = (__value__(F) * __value__(LOC2))
       __value__(F) = (__value__(LOC1) * 2.0D00)
-      __value__(ADJ_M0) = (__value__(F) * __value__(MATR0) + __value__(
-     > G) * __value__(MATR3))
       OpenAD_lin_34 = __value__(MATR0)
       OpenAD_lin_35 = __value__(F)
       OpenAD_lin_36 = __value__(MATR3)
       OpenAD_lin_37 = __value__(G)
-      __value__(ADJ_M1) = (__value__(F) * __value__(MATR1) - __value__(
-     > G) * __value__(MATR2))
+      __value__(ADJ_M0) = (__value__(F) * __value__(MATR0) + __value__(
+     > G) * __value__(MATR3))
       OpenAD_lin_38 = __value__(MATR1)
       OpenAD_lin_39 = __value__(F)
       OpenAD_lin_40 = __value__(MATR2)
       OpenAD_lin_41 = __value__(G)
-      __value__(ADJ_M2) = (__value__(F) * __value__(MATR2) - __value__(
-     > G) * __value__(MATR1))
+      __value__(ADJ_M1) = (__value__(F) * __value__(MATR1) - __value__(
+     > G) * __value__(MATR2))
       OpenAD_lin_42 = __value__(MATR2)
       OpenAD_lin_43 = __value__(F)
       OpenAD_lin_44 = __value__(MATR1)
       OpenAD_lin_45 = __value__(G)
-      __value__(ADJ_M3) = (__value__(F) * __value__(MATR3) + __value__(
-     > G) * __value__(MATR0))
+      __value__(ADJ_M2) = (__value__(F) * __value__(MATR2) - __value__(
+     > G) * __value__(MATR1))
       OpenAD_lin_46 = __value__(MATR3)
       OpenAD_lin_47 = __value__(F)
       OpenAD_lin_48 = __value__(MATR0)
       OpenAD_lin_49 = __value__(G)
-      __value__(LOC1) = (__value__(ADJ_M1) * SQRT3)
+      __value__(ADJ_M3) = (__value__(F) * __value__(MATR3) + __value__(
+     > G) * __value__(MATR0))
       OpenAD_lin_50 = SQRT3
+      __value__(LOC1) = (__value__(ADJ_M1) * SQRT3)
       __value__(G_OBJ0) = (-(__value__(ADJ_M0) + __value__(LOC1)))
       __value__(G_OBJ1) = (__value__(ADJ_M0) - __value__(LOC1))
       __value__(G_OBJ2) = (__value__(LOC1) * 2.0D00)
@@ -728,47 +728,47 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(2.0D00, __deriv__(LOC1), __deriv__(G_OBJ2))
       CALL set_neg_deriv(__deriv__(G_OBJ0), __deriv__(ADJ_M0))
       CALL dec_deriv(__deriv__(G_OBJ0), __deriv__(LOC1))
-      __value__(LOC1) = (__value__(ADJ_M3) * SQRT3)
       OpenAD_lin_51 = SQRT3
+      __value__(LOC1) = (__value__(ADJ_M3) * SQRT3)
       __value__(G_OBJ3) = (-(__value__(ADJ_M2) + __value__(LOC1)))
       __value__(G_OBJ4) = (__value__(ADJ_M2) - __value__(LOC1))
       __value__(G_OBJ5) = (__value__(LOC1) * 2.0D00)
       __value__(LOC2) = (__value__(LOC2) * 2.0D00)
-      __value__(R00) = (__value__(D00) * __value__(LOC2) + __value__(GG
-     > ) * __value__(M33))
       OpenAD_lin_52 = __value__(LOC2)
       OpenAD_lin_53 = __value__(D00)
       OpenAD_lin_54 = __value__(M33)
       OpenAD_lin_55 = __value__(GG)
-      __value__(R11) = (__value__(D11) * __value__(LOC2) + __value__(GG
-     > ) * __value__(M22))
+      __value__(R00) = (__value__(D00) * __value__(LOC2) + __value__(GG
+     > ) * __value__(M33))
       OpenAD_lin_56 = __value__(LOC2)
       OpenAD_lin_57 = __value__(D11)
       OpenAD_lin_58 = __value__(M22)
       OpenAD_lin_59 = __value__(GG)
+      __value__(R11) = (__value__(D11) * __value__(LOC2) + __value__(GG
+     > ) * __value__(M22))
       R22 = (__value__(D11) * __value__(LOC2) + __value__(GG) *
      >  __value__(M11))
       R33 = (__value__(D00) * __value__(LOC2) + __value__(GG) *
      >  __value__(M00))
-      __value__(M01) = (__value__(MATR0) * __value__(MATR1))
       OpenAD_lin_60 = __value__(MATR1)
       OpenAD_lin_61 = __value__(MATR0)
-      __value__(M02) = (__value__(MATR0) * __value__(MATR2))
+      __value__(M01) = (__value__(MATR0) * __value__(MATR1))
       OpenAD_lin_62 = __value__(MATR2)
       OpenAD_lin_63 = __value__(MATR0)
-      __value__(M12) = (__value__(MATR1) * __value__(MATR2))
+      __value__(M02) = (__value__(MATR0) * __value__(MATR2))
       OpenAD_lin_64 = __value__(MATR2)
       OpenAD_lin_65 = __value__(MATR1)
-      __value__(M13) = (__value__(MATR1) * __value__(MATR3))
+      __value__(M12) = (__value__(MATR1) * __value__(MATR2))
       OpenAD_lin_66 = __value__(MATR3)
       OpenAD_lin_67 = __value__(MATR1)
-      __value__(M23) = (__value__(MATR2) * __value__(MATR3))
+      __value__(M13) = (__value__(MATR1) * __value__(MATR3))
       OpenAD_lin_68 = __value__(MATR3)
       OpenAD_lin_69 = __value__(MATR2)
+      __value__(M23) = (__value__(MATR2) * __value__(MATR3))
       OpenAD_aux_9 = (__value__(M02) + __value__(M13))
-      __value__(D01) = (__value__(LOC2) * OpenAD_aux_9)
       OpenAD_lin_70 = OpenAD_aux_9
       OpenAD_lin_71 = __value__(LOC2)
+      __value__(D01) = (__value__(LOC2) * OpenAD_aux_9)
       CALL setderiv(__deriv__(OpenAD_prp_3), __deriv__(LOC2))
       CALL sax(OpenAD_lin_51, __deriv__(ADJ_M3), __deriv__(LOC1))
       CALL setderiv(__deriv__(G_OBJ4), __deriv__(ADJ_M2))
@@ -800,13 +800,13 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_70, __deriv__(LOC2), __deriv__(D01))
       CALL saxpy(OpenAD_lin_71, __deriv__(OpenAD_prp_4), __deriv__(D01)
      > )
-      __value__(LOC1) = (__value__(R11) * THIRD)
       OpenAD_lin_72 = THIRD
+      __value__(LOC1) = (__value__(R11) * THIRD)
       OpenAD_aux_10 = (__value__(D01) + __value__(GG) * __value__(M23))
-      __value__(F) = (TWOSQRT3 * OpenAD_aux_10)
       OpenAD_lin_74 = __value__(M23)
       OpenAD_lin_75 = __value__(GG)
       OpenAD_lin_73 = TWOSQRT3
+      __value__(F) = (TWOSQRT3 * OpenAD_aux_10)
       __value__(G) = (__value__(LOC1) + __value__(R00))
       __value__(H_OBJ1) = (__value__(LOC1) - __value__(R00))
       __value__(H_OBJ0) = (__value__(F) + __value__(G))
@@ -825,12 +825,12 @@ C$OPENAD XXX Template ad_template.f
       CALL inc_deriv(__deriv__(H_OBJ0), __deriv__(G))
       CALL setderiv(__deriv__(H_OBJ3), __deriv__(G))
       CALL dec_deriv(__deriv__(H_OBJ3), __deriv__(F))
-      __value__(LOC1) = (-(__value__(R11) * TWO3RD))
       OpenAD_lin_76 = TWO3RD
+      __value__(LOC1) = (-(__value__(R11) * TWO3RD))
       __value__(H_OBJ2) = (__value__(LOC1) - __value__(F))
       __value__(H_OBJ4) = (__value__(F) + __value__(LOC1))
-      __value__(H_OBJ5) = (FOUR3RD * __value__(R11))
       OpenAD_lin_77 = FOUR3RD
+      __value__(H_OBJ5) = (FOUR3RD * __value__(R11))
       OpenAD_acc_15 = (OpenAD_lin_76 * INT((-1_w2f__i8)))
       CALL sax(OpenAD_lin_77, __deriv__(R11), __deriv__(H_OBJ5))
       CALL sax(OpenAD_acc_15, __deriv__(R11), __deriv__(LOC1))
@@ -838,13 +838,13 @@ C$OPENAD XXX Template ad_template.f
       CALL dec_deriv(__deriv__(H_OBJ2), __deriv__(F))
       CALL setderiv(__deriv__(H_OBJ4), __deriv__(F))
       CALL inc_deriv(__deriv__(H_OBJ4), __deriv__(LOC1))
-      __value__(LOC1) = (__value__(R00) * THIRD)
       OpenAD_lin_78 = THIRD
+      __value__(LOC1) = (__value__(R00) * THIRD)
       OpenAD_aux_11 = (__value__(D01) + __value__(GG) * __value__(M01))
-      __value__(F) = (TWOSQRT3 * OpenAD_aux_11)
       OpenAD_lin_80 = __value__(M01)
       OpenAD_lin_81 = __value__(GG)
       OpenAD_lin_79 = TWOSQRT3
+      __value__(F) = (TWOSQRT3 * OpenAD_aux_11)
       __value__(G) = (__value__(LOC1) + __value__(R11))
       __value__(H_OBJ16) = (__value__(LOC1) - __value__(R11))
       __value__(H_OBJ15) = (__value__(F) + __value__(G))
@@ -863,12 +863,12 @@ C$OPENAD XXX Template ad_template.f
       CALL inc_deriv(__deriv__(H_OBJ15), __deriv__(G))
       CALL setderiv(__deriv__(H_OBJ18), __deriv__(G))
       CALL dec_deriv(__deriv__(H_OBJ18), __deriv__(F))
-      __value__(LOC1) = (-(__value__(R00) * TWO3RD))
       OpenAD_lin_82 = TWO3RD
+      __value__(LOC1) = (-(__value__(R00) * TWO3RD))
       __value__(H_OBJ17) = (__value__(LOC1) - __value__(F))
       __value__(H_OBJ19) = (__value__(F) + __value__(LOC1))
-      __value__(H_OBJ20) = (FOUR3RD * __value__(R00))
       OpenAD_lin_83 = FOUR3RD
+      __value__(H_OBJ20) = (FOUR3RD * __value__(R00))
       OpenAD_acc_16 = (OpenAD_lin_82 * INT((-1_w2f__i8)))
       CALL sax(OpenAD_lin_83, __deriv__(R00), __deriv__(H_OBJ20))
       CALL sax(OpenAD_acc_16, __deriv__(R00), __deriv__(LOC1))
@@ -877,33 +877,33 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(H_OBJ19), __deriv__(F))
       CALL inc_deriv(__deriv__(H_OBJ19), __deriv__(LOC1))
       OpenAD_aux_12 = (__value__(M01) + __value__(M23))
-      __value__(LOC1) = (__value__(LOC2) * OpenAD_aux_12)
       OpenAD_lin_84 = OpenAD_aux_12
       OpenAD_lin_85 = __value__(LOC2)
-      __value__(R13) = (__value__(LOC1) + __value__(GG) * __value__(M02
-     > ))
+      __value__(LOC1) = (__value__(LOC2) * OpenAD_aux_12)
       OpenAD_lin_86 = __value__(M02)
       OpenAD_lin_87 = __value__(GG)
-      __value__(R02) = (__value__(LOC1) + __value__(GG) * __value__(M13
+      __value__(R13) = (__value__(LOC1) + __value__(GG) * __value__(M02
      > ))
       OpenAD_lin_88 = __value__(M13)
       OpenAD_lin_89 = __value__(GG)
-      __value__(R03) = (__value__(D03) * __value__(LOC2) + __value__(GG
-     > ) * __value__(M03))
+      __value__(R02) = (__value__(LOC1) + __value__(GG) * __value__(M13
+     > ))
       OpenAD_lin_90 = __value__(LOC2)
       OpenAD_lin_91 = __value__(D03)
       OpenAD_lin_92 = __value__(M03)
       OpenAD_lin_93 = __value__(GG)
-      __value__(R12) = (__value__(D12) * __value__(LOC2) + __value__(GG
-     > ) * __value__(M12))
+      __value__(R03) = (__value__(D03) * __value__(LOC2) + __value__(GG
+     > ) * __value__(M03))
       OpenAD_lin_94 = __value__(LOC2)
       OpenAD_lin_95 = __value__(D12)
       OpenAD_lin_96 = __value__(M12)
       OpenAD_lin_97 = __value__(GG)
-      __value__(G) = (-(__value__(R13) * TWO3RD))
+      __value__(R12) = (__value__(D12) * __value__(LOC2) + __value__(GG
+     > ) * __value__(M12))
       OpenAD_lin_98 = TWO3RD
-      __value__(F) = (__value__(R03) * TWOSQRT3)
+      __value__(G) = (-(__value__(R13) * TWO3RD))
       OpenAD_lin_99 = TWOSQRT3
+      __value__(F) = (__value__(R03) * TWOSQRT3)
       __value__(H_OBJ8) = (__value__(G) - __value__(F))
       __value__(H_OBJ11) = (__value__(F) + __value__(G))
       OpenAD_acc_17 = (OpenAD_lin_98 * INT((-1_w2f__i8)))
@@ -932,13 +932,13 @@ C$OPENAD XXX Template ad_template.f
       CALL dec_deriv(__deriv__(H_OBJ8), __deriv__(F))
       CALL setderiv(__deriv__(H_OBJ11), __deriv__(F))
       CALL inc_deriv(__deriv__(H_OBJ11), __deriv__(G))
-      __value__(F) = (__value__(R12) * TWOSQRT3)
       OpenAD_lin_100 = TWOSQRT3
+      __value__(F) = (__value__(R12) * TWOSQRT3)
       __value__(H_OBJ12) = (__value__(G) - __value__(F))
       __value__(H_OBJ13) = (__value__(F) + __value__(G))
       __value__(H_OBJ14) = (__value__(R13) * 1.2D+01)
-      __value__(G) = (FOUR3RD * __value__(R02))
       OpenAD_lin_101 = FOUR3RD
+      __value__(G) = (FOUR3RD * __value__(R02))
       CALL setderiv(__deriv__(OpenAD_prp_8), __deriv__(G))
       CALL sax(OpenAD_lin_100, __deriv__(R12), __deriv__(F))
       CALL setderiv(__deriv__(H_OBJ12), __deriv__(OpenAD_prp_8))
@@ -948,12 +948,12 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(1.2D+01, __deriv__(R13), __deriv__(H_OBJ14))
       CALL sax(OpenAD_lin_101, __deriv__(R02), __deriv__(G))
       OpenAD_aux_13 = (__value__(R03) + __value__(R12))
-      __value__(F) = (SQRT3 * OpenAD_aux_13)
       OpenAD_lin_102 = SQRT3
+      __value__(F) = (SQRT3 * OpenAD_aux_13)
       __value__(H_OBJ10) = (__value__(G) - __value__(F))
       __value__(H_OBJ6) = (__value__(F) + __value__(G))
-      __value__(G) = (__value__(R02) * TWO3RD)
       OpenAD_lin_103 = TWO3RD
+      __value__(G) = (__value__(R02) * TWO3RD)
       CALL setderiv(__deriv__(OpenAD_prp_9), __deriv__(G))
       CALL setderiv(__deriv__(OpenAD_prp_10), __deriv__(R03))
       CALL inc_deriv(__deriv__(OpenAD_prp_10), __deriv__(R12))
@@ -964,47 +964,47 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(H_OBJ6), __deriv__(F))
       CALL inc_deriv(__deriv__(H_OBJ6), __deriv__(OpenAD_prp_9))
       OpenAD_aux_14 = (__value__(R03) - __value__(R12))
-      __value__(F) = (SQRT3 * OpenAD_aux_14)
       OpenAD_lin_104 = SQRT3
+      __value__(F) = (SQRT3 * OpenAD_aux_14)
       __value__(H_OBJ9) = (__value__(G) - __value__(F))
       __value__(H_OBJ7) = (__value__(F) + __value__(G))
       __value__(MATR0) = (__value__(G_OBJ1) - __value__(G_OBJ0))
       OpenAD_aux_15 = (__value__(G_OBJ2) * 2.0D00 - __value__(G_OBJ1) -
      >  __value__(G_OBJ2))
-      __value__(MATR1) = (SQRT3 * OpenAD_aux_15)
       OpenAD_lin_105 = SQRT3
+      __value__(MATR1) = (SQRT3 * OpenAD_aux_15)
       __value__(MATR2) = (__value__(G_OBJ4) - __value__(G_OBJ3))
       OpenAD_aux_16 = (__value__(G_OBJ5) * 2.0D00 - __value__(G_OBJ4) -
      >  __value__(G_OBJ3))
-      __value__(MATR3) = (SQRT3 * OpenAD_aux_16)
       OpenAD_lin_106 = SQRT3
-      __value__(M03) = (__value__(MATR0) * __value__(MATR3))
+      __value__(MATR3) = (SQRT3 * OpenAD_aux_16)
       OpenAD_lin_107 = __value__(MATR3)
       OpenAD_lin_108 = __value__(MATR0)
-      __value__(M12) = (__value__(MATR1) * __value__(MATR2))
+      __value__(M03) = (__value__(MATR0) * __value__(MATR3))
       OpenAD_lin_109 = __value__(MATR2)
       OpenAD_lin_110 = __value__(MATR1)
+      __value__(M12) = (__value__(MATR1) * __value__(MATR2))
       __value__(G) = (__value__(M03) - __value__(M12))
       __value__(D00) = (__value__(M03) * 2.0D00)
       __value__(D11) = (__value__(M12) * 2.0D00)
-      __value__(M00) = (__value__(MATR0) * __value__(MATR0))
       OpenAD_lin_111 = __value__(MATR0)
       OpenAD_lin_112 = __value__(MATR0)
-      __value__(M11) = (__value__(MATR1) * __value__(MATR1))
+      __value__(M00) = (__value__(MATR0) * __value__(MATR0))
       OpenAD_lin_113 = __value__(MATR1)
       OpenAD_lin_114 = __value__(MATR1)
-      __value__(M22) = (__value__(MATR2) * __value__(MATR2))
+      __value__(M11) = (__value__(MATR1) * __value__(MATR1))
       OpenAD_lin_115 = __value__(MATR2)
       OpenAD_lin_116 = __value__(MATR2)
-      __value__(M33) = (__value__(MATR3) * __value__(MATR3))
+      __value__(M22) = (__value__(MATR2) * __value__(MATR2))
       OpenAD_lin_117 = __value__(MATR3)
       OpenAD_lin_118 = __value__(MATR3)
-      __value__(D12) = (__value__(M00) * __value__(M33))
+      __value__(M33) = (__value__(MATR3) * __value__(MATR3))
       OpenAD_lin_119 = __value__(M33)
       OpenAD_lin_120 = __value__(M00)
-      __value__(D03) = (__value__(M11) * __value__(M22))
+      __value__(D12) = (__value__(M00) * __value__(M33))
       OpenAD_lin_121 = __value__(M22)
       OpenAD_lin_122 = __value__(M11)
+      __value__(D03) = (__value__(M11) * __value__(M22))
       OpenAD_acc_18 = (OpenAD_lin_111 + OpenAD_lin_112)
       OpenAD_acc_19 = (OpenAD_lin_113 + OpenAD_lin_114)
       OpenAD_acc_20 = (OpenAD_lin_115 + OpenAD_lin_116)
@@ -1048,33 +1048,33 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_lin_122, __deriv__(M22), __deriv__(D03))
       __value__(F) = (__value__(D03) + __value__(D12))
       OpenAD_aux_17 = (1.0D00 / __value__(G))
-      __value__(LOC1) = (A * OpenAD_aux_17)
       OpenAD_lin_124 = (-(1.0D00 /(__value__(G) * __value__(G))))
       OpenAD_lin_123 = A
-      __value__(OBJ) = (__value__(F) * __value__(LOC1))
+      __value__(LOC1) = (A * OpenAD_aux_17)
       OpenAD_lin_125 = __value__(LOC1)
       OpenAD_lin_126 = __value__(F)
+      __value__(OBJ) = (__value__(F) * __value__(LOC1))
       OpenAD_aux_19 = (__value__(G) * __value__(G))
       OpenAD_aux_18 = (1.0D00 / OpenAD_aux_19)
-      __value__(LOC2) = (AB * OpenAD_aux_18)
       OpenAD_lin_129 = __value__(G)
       OpenAD_lin_130 = __value__(G)
       OpenAD_lin_128 = (-(1.0D00 /(OpenAD_aux_19 * OpenAD_aux_19)))
       OpenAD_lin_127 = AB
+      __value__(LOC2) = (AB * OpenAD_aux_18)
       OpenAD_aux_20 = (AB * B)
       OpenAD_aux_23 = (__value__(G) * __value__(G))
       OpenAD_aux_22 = (__value__(G) * OpenAD_aux_23)
       OpenAD_aux_21 = (1.0D00 / OpenAD_aux_22)
-      __value__(GG) = (OpenAD_aux_20 * OpenAD_aux_21)
       OpenAD_lin_133 = OpenAD_aux_23
       OpenAD_lin_135 = __value__(G)
       OpenAD_lin_136 = __value__(G)
       OpenAD_lin_134 = __value__(G)
       OpenAD_lin_132 = (-(1.0D00 /(OpenAD_aux_22 * OpenAD_aux_22)))
       OpenAD_lin_131 = OpenAD_aux_20
-      __value__(G) = (__value__(F) * __value__(LOC2))
+      __value__(GG) = (OpenAD_aux_20 * OpenAD_aux_21)
       OpenAD_lin_137 = __value__(LOC2)
       OpenAD_lin_138 = __value__(F)
+      __value__(G) = (__value__(F) * __value__(LOC2))
       OpenAD_acc_22 = (OpenAD_lin_124 * OpenAD_lin_123)
       OpenAD_acc_23 = ((OpenAD_lin_133 +(OpenAD_lin_135 +
      >  OpenAD_lin_136) * OpenAD_lin_134) * OpenAD_lin_132 *
@@ -1094,32 +1094,32 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_lin_138, __deriv__(LOC2), __deriv__(G))
       CALL sax(OpenAD_acc_23, __deriv__(OpenAD_prp_15), __deriv__(GG))
       __value__(F) = (__value__(LOC1) * 2.0D00)
-      __value__(ADJ_M0) = (__value__(F) * __value__(MATR0) + __value__(
-     > G) * __value__(MATR3))
       OpenAD_lin_139 = __value__(MATR0)
       OpenAD_lin_140 = __value__(F)
       OpenAD_lin_141 = __value__(MATR3)
       OpenAD_lin_142 = __value__(G)
-      __value__(ADJ_M1) = (__value__(F) * __value__(MATR1) - __value__(
-     > G) * __value__(MATR2))
+      __value__(ADJ_M0) = (__value__(F) * __value__(MATR0) + __value__(
+     > G) * __value__(MATR3))
       OpenAD_lin_143 = __value__(MATR1)
       OpenAD_lin_144 = __value__(F)
       OpenAD_lin_145 = __value__(MATR2)
       OpenAD_lin_146 = __value__(G)
-      __value__(ADJ_M2) = (__value__(F) * __value__(MATR2) - __value__(
-     > G) * __value__(MATR1))
+      __value__(ADJ_M1) = (__value__(F) * __value__(MATR1) - __value__(
+     > G) * __value__(MATR2))
       OpenAD_lin_147 = __value__(MATR2)
       OpenAD_lin_148 = __value__(F)
       OpenAD_lin_149 = __value__(MATR1)
       OpenAD_lin_150 = __value__(G)
-      __value__(ADJ_M3) = (__value__(F) * __value__(MATR3) + __value__(
-     > G) * __value__(MATR0))
+      __value__(ADJ_M2) = (__value__(F) * __value__(MATR2) - __value__(
+     > G) * __value__(MATR1))
       OpenAD_lin_151 = __value__(MATR3)
       OpenAD_lin_152 = __value__(F)
       OpenAD_lin_153 = __value__(MATR0)
       OpenAD_lin_154 = __value__(G)
-      __value__(LOC1) = (__value__(ADJ_M1) * SQRT3)
+      __value__(ADJ_M3) = (__value__(F) * __value__(MATR3) + __value__(
+     > G) * __value__(MATR0))
       OpenAD_lin_155 = SQRT3
+      __value__(LOC1) = (__value__(ADJ_M1) * SQRT3)
       __value__(G_OBJ0) = (__value__(G_OBJ0) - __value__(ADJ_M0) -
      >  __value__(LOC1))
       __value__(G_OBJ1) = (__value__(ADJ_M0) + __value__(G_OBJ1) -
@@ -1166,8 +1166,8 @@ C$OPENAD XXX Template ad_template.f
       CALL dec_deriv(__deriv__(G_OBJ1), __deriv__(LOC1))
       CALL setderiv(__deriv__(G_OBJ2), __deriv__(G_OBJ1))
       CALL saxpy(2.0D00, __deriv__(LOC1), __deriv__(G_OBJ2))
-      __value__(LOC1) = (__value__(ADJ_M3) * SQRT3)
       OpenAD_lin_156 = SQRT3
+      __value__(LOC1) = (__value__(ADJ_M3) * SQRT3)
       __value__(G_OBJ3) = (__value__(G_OBJ3) - __value__(ADJ_M2) -
      >  __value__(LOC1))
       __value__(G_OBJ4) = (__value__(ADJ_M2) + __value__(G_OBJ4) -
@@ -1175,41 +1175,41 @@ C$OPENAD XXX Template ad_template.f
       __value__(G_OBJ5) = (__value__(G_OBJ5) + __value__(LOC1) * 2.0D00
      > )
       __value__(LOC2) = (__value__(LOC2) * 2.0D00)
-      __value__(R00) = (__value__(D00) * __value__(LOC2) + __value__(GG
-     > ) * __value__(M33))
       OpenAD_lin_157 = __value__(LOC2)
       OpenAD_lin_158 = __value__(D00)
       OpenAD_lin_159 = __value__(M33)
       OpenAD_lin_160 = __value__(GG)
-      __value__(R11) = (__value__(D11) * __value__(LOC2) + __value__(GG
-     > ) * __value__(M22))
+      __value__(R00) = (__value__(D00) * __value__(LOC2) + __value__(GG
+     > ) * __value__(M33))
       OpenAD_lin_161 = __value__(LOC2)
       OpenAD_lin_162 = __value__(D11)
       OpenAD_lin_163 = __value__(M22)
       OpenAD_lin_164 = __value__(GG)
+      __value__(R11) = (__value__(D11) * __value__(LOC2) + __value__(GG
+     > ) * __value__(M22))
       R22 = (__value__(D11) * __value__(LOC2) + __value__(GG) *
      >  __value__(M11))
       R33 = (__value__(D00) * __value__(LOC2) + __value__(GG) *
      >  __value__(M00))
-      __value__(M01) = (__value__(MATR0) * __value__(MATR1))
       OpenAD_lin_165 = __value__(MATR1)
       OpenAD_lin_166 = __value__(MATR0)
-      __value__(M02) = (__value__(MATR0) * __value__(MATR2))
+      __value__(M01) = (__value__(MATR0) * __value__(MATR1))
       OpenAD_lin_167 = __value__(MATR2)
       OpenAD_lin_168 = __value__(MATR0)
-      __value__(M12) = (__value__(MATR1) * __value__(MATR2))
+      __value__(M02) = (__value__(MATR0) * __value__(MATR2))
       OpenAD_lin_169 = __value__(MATR2)
       OpenAD_lin_170 = __value__(MATR1)
-      __value__(M13) = (__value__(MATR1) * __value__(MATR3))
+      __value__(M12) = (__value__(MATR1) * __value__(MATR2))
       OpenAD_lin_171 = __value__(MATR3)
       OpenAD_lin_172 = __value__(MATR1)
-      __value__(M23) = (__value__(MATR2) * __value__(MATR3))
+      __value__(M13) = (__value__(MATR1) * __value__(MATR3))
       OpenAD_lin_173 = __value__(MATR3)
       OpenAD_lin_174 = __value__(MATR2)
+      __value__(M23) = (__value__(MATR2) * __value__(MATR3))
       OpenAD_aux_24 = (__value__(M02) + __value__(M13))
-      __value__(D01) = (__value__(LOC2) * OpenAD_aux_24)
       OpenAD_lin_175 = OpenAD_aux_24
       OpenAD_lin_176 = __value__(LOC2)
+      __value__(D01) = (__value__(LOC2) * OpenAD_aux_24)
       CALL setderiv(__deriv__(OpenAD_prp_19), __deriv__(G_OBJ3))
       CALL setderiv(__deriv__(OpenAD_prp_20), __deriv__(G_OBJ4))
       CALL setderiv(__deriv__(OpenAD_prp_21), __deriv__(G_OBJ5))
@@ -1247,13 +1247,13 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(OpenAD_lin_175, __deriv__(LOC2), __deriv__(D01))
       CALL saxpy(OpenAD_lin_176, __deriv__(OpenAD_prp_23), __deriv__(
      > D01))
-      __value__(LOC1) = (__value__(R11) * THIRD)
       OpenAD_lin_177 = THIRD
+      __value__(LOC1) = (__value__(R11) * THIRD)
       OpenAD_aux_25 = (__value__(D01) + __value__(GG) * __value__(M23))
-      __value__(F) = (TWOSQRT3 * OpenAD_aux_25)
       OpenAD_lin_179 = __value__(M23)
       OpenAD_lin_180 = __value__(GG)
       OpenAD_lin_178 = TWOSQRT3
+      __value__(F) = (TWOSQRT3 * OpenAD_aux_25)
       __value__(G) = (__value__(LOC1) + __value__(R00))
       __value__(H_OBJ1) = (__value__(H_OBJ1) + __value__(LOC1) -
      >  __value__(R00))
@@ -1282,15 +1282,15 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(H_OBJ3), __deriv__(G))
       CALL inc_deriv(__deriv__(H_OBJ3), __deriv__(OpenAD_prp_26))
       CALL dec_deriv(__deriv__(H_OBJ3), __deriv__(F))
-      __value__(LOC1) = (-(__value__(R11) * TWO3RD))
       OpenAD_lin_181 = TWO3RD
+      __value__(LOC1) = (-(__value__(R11) * TWO3RD))
       __value__(H_OBJ2) = (__value__(H_OBJ2) + __value__(LOC1) -
      >  __value__(F))
       __value__(H_OBJ4) = (__value__(F) + __value__(H_OBJ4) + __value__
      > (LOC1))
+      OpenAD_lin_182 = FOUR3RD
       __value__(H_OBJ5) = (__value__(H_OBJ5) + FOUR3RD * __value__(R11)
      > )
-      OpenAD_lin_182 = FOUR3RD
       OpenAD_acc_33 = (OpenAD_lin_181 * INT((-1_w2f__i8)))
       CALL setderiv(__deriv__(OpenAD_prp_28), __deriv__(H_OBJ2))
       CALL setderiv(__deriv__(OpenAD_prp_29), __deriv__(H_OBJ4))
@@ -1304,13 +1304,13 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(H_OBJ4), __deriv__(F))
       CALL inc_deriv(__deriv__(H_OBJ4), __deriv__(OpenAD_prp_29))
       CALL inc_deriv(__deriv__(H_OBJ4), __deriv__(LOC1))
-      __value__(LOC1) = (__value__(R00) * THIRD)
       OpenAD_lin_183 = THIRD
+      __value__(LOC1) = (__value__(R00) * THIRD)
       OpenAD_aux_26 = (__value__(D01) + __value__(GG) * __value__(M01))
-      __value__(F) = (TWOSQRT3 * OpenAD_aux_26)
       OpenAD_lin_185 = __value__(M01)
       OpenAD_lin_186 = __value__(GG)
       OpenAD_lin_184 = TWOSQRT3
+      __value__(F) = (TWOSQRT3 * OpenAD_aux_26)
       __value__(G) = (__value__(LOC1) + __value__(R11))
       __value__(H_OBJ16) = (__value__(H_OBJ16) + __value__(LOC1) -
      >  __value__(R11))
@@ -1339,15 +1339,15 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(H_OBJ18), __deriv__(G))
       CALL inc_deriv(__deriv__(H_OBJ18), __deriv__(OpenAD_prp_33))
       CALL dec_deriv(__deriv__(H_OBJ18), __deriv__(F))
-      __value__(LOC1) = (-(__value__(R00) * TWO3RD))
       OpenAD_lin_187 = TWO3RD
+      __value__(LOC1) = (-(__value__(R00) * TWO3RD))
       __value__(H_OBJ17) = (__value__(H_OBJ17) + __value__(LOC1) -
      >  __value__(F))
       __value__(H_OBJ19) = (__value__(F) + __value__(H_OBJ19) +
      >  __value__(LOC1))
+      OpenAD_lin_188 = FOUR3RD
       __value__(H_OBJ20) = (__value__(H_OBJ20) + FOUR3RD * __value__(
      > R00))
-      OpenAD_lin_188 = FOUR3RD
       OpenAD_acc_34 = (OpenAD_lin_187 * INT((-1_w2f__i8)))
       CALL setderiv(__deriv__(OpenAD_prp_35), __deriv__(H_OBJ17))
       CALL setderiv(__deriv__(OpenAD_prp_36), __deriv__(H_OBJ19))
@@ -1362,33 +1362,33 @@ C$OPENAD XXX Template ad_template.f
       CALL inc_deriv(__deriv__(H_OBJ19), __deriv__(OpenAD_prp_36))
       CALL inc_deriv(__deriv__(H_OBJ19), __deriv__(LOC1))
       OpenAD_aux_27 = (__value__(M01) + __value__(M23))
-      __value__(LOC1) = (__value__(LOC2) * OpenAD_aux_27)
       OpenAD_lin_189 = OpenAD_aux_27
       OpenAD_lin_190 = __value__(LOC2)
-      __value__(R13) = (__value__(LOC1) + __value__(GG) * __value__(M02
-     > ))
+      __value__(LOC1) = (__value__(LOC2) * OpenAD_aux_27)
       OpenAD_lin_191 = __value__(M02)
       OpenAD_lin_192 = __value__(GG)
-      __value__(R02) = (__value__(LOC1) + __value__(GG) * __value__(M13
+      __value__(R13) = (__value__(LOC1) + __value__(GG) * __value__(M02
      > ))
       OpenAD_lin_193 = __value__(M13)
       OpenAD_lin_194 = __value__(GG)
-      __value__(R03) = (__value__(D03) * __value__(LOC2) + __value__(GG
-     > ) * __value__(M03))
+      __value__(R02) = (__value__(LOC1) + __value__(GG) * __value__(M13
+     > ))
       OpenAD_lin_195 = __value__(LOC2)
       OpenAD_lin_196 = __value__(D03)
       OpenAD_lin_197 = __value__(M03)
       OpenAD_lin_198 = __value__(GG)
-      __value__(R12) = (__value__(D12) * __value__(LOC2) + __value__(GG
-     > ) * __value__(M12))
+      __value__(R03) = (__value__(D03) * __value__(LOC2) + __value__(GG
+     > ) * __value__(M03))
       OpenAD_lin_199 = __value__(LOC2)
       OpenAD_lin_200 = __value__(D12)
       OpenAD_lin_201 = __value__(M12)
       OpenAD_lin_202 = __value__(GG)
-      __value__(G) = (-(__value__(R13) * TWO3RD))
+      __value__(R12) = (__value__(D12) * __value__(LOC2) + __value__(GG
+     > ) * __value__(M12))
       OpenAD_lin_203 = TWO3RD
-      __value__(F) = (__value__(R03) * TWOSQRT3)
+      __value__(G) = (-(__value__(R13) * TWO3RD))
       OpenAD_lin_204 = TWOSQRT3
+      __value__(F) = (__value__(R03) * TWOSQRT3)
       __value__(H_OBJ8) = (__value__(G) + __value__(H_OBJ8) - __value__
      > (F))
       __value__(H_OBJ11) = (__value__(F) + __value__(G) + __value__(
@@ -1423,16 +1423,16 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(H_OBJ11), __deriv__(F))
       CALL inc_deriv(__deriv__(H_OBJ11), __deriv__(G))
       CALL inc_deriv(__deriv__(H_OBJ11), __deriv__(OpenAD_prp_39))
-      __value__(F) = (__value__(R12) * TWOSQRT3)
       OpenAD_lin_205 = TWOSQRT3
+      __value__(F) = (__value__(R12) * TWOSQRT3)
       __value__(H_OBJ12) = (__value__(G) + __value__(H_OBJ12) -
      >  __value__(F))
       __value__(H_OBJ13) = (__value__(F) + __value__(G) + __value__(
      > H_OBJ13))
       __value__(H_OBJ14) = (__value__(H_OBJ14) + __value__(R13) *
      >  1.2D+01)
-      __value__(G) = (FOUR3RD * __value__(R02))
       OpenAD_lin_206 = FOUR3RD
+      __value__(G) = (FOUR3RD * __value__(R02))
       CALL setderiv(__deriv__(OpenAD_prp_41), __deriv__(G))
       CALL setderiv(__deriv__(OpenAD_prp_42), __deriv__(H_OBJ12))
       CALL setderiv(__deriv__(OpenAD_prp_43), __deriv__(H_OBJ13))
@@ -1448,14 +1448,14 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(H_OBJ14), __deriv__(OpenAD_prp_44))
       CALL saxpy(1.2D+01, __deriv__(R13), __deriv__(H_OBJ14))
       OpenAD_aux_28 = (__value__(R03) + __value__(R12))
-      __value__(F) = (SQRT3 * OpenAD_aux_28)
       OpenAD_lin_207 = SQRT3
+      __value__(F) = (SQRT3 * OpenAD_aux_28)
       __value__(H_OBJ10) = (__value__(G) + __value__(H_OBJ10) -
      >  __value__(F))
       __value__(H_OBJ6) = (__value__(F) + __value__(G) + __value__(
      > H_OBJ6))
-      __value__(G) = (__value__(R02) * TWO3RD)
       OpenAD_lin_208 = TWO3RD
+      __value__(G) = (__value__(R02) * TWO3RD)
       CALL setderiv(__deriv__(OpenAD_prp_45), __deriv__(G))
       CALL setderiv(__deriv__(OpenAD_prp_46), __deriv__(H_OBJ10))
       CALL setderiv(__deriv__(OpenAD_prp_47), __deriv__(H_OBJ6))
@@ -1470,8 +1470,8 @@ C$OPENAD XXX Template ad_template.f
       CALL inc_deriv(__deriv__(H_OBJ6), __deriv__(OpenAD_prp_45))
       CALL inc_deriv(__deriv__(H_OBJ6), __deriv__(OpenAD_prp_47))
       OpenAD_aux_29 = (__value__(R03) - __value__(R12))
-      __value__(F) = (SQRT3 * OpenAD_aux_29)
       OpenAD_lin_209 = SQRT3
+      __value__(F) = (SQRT3 * OpenAD_aux_29)
       __value__(H_OBJ9) = (__value__(G) + __value__(H_OBJ9) - __value__
      > (F))
       __value__(H_OBJ7) = (__value__(F) + __value__(G) + __value__(

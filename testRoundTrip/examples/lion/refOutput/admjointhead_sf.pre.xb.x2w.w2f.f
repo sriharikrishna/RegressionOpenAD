@@ -81,21 +81,21 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      __value__(T1) = (__value__(X(1)) / __value__(X(2)))
       OpenAD_lin_0 = (INT(1_w2f__i8) / __value__(X(2)))
       OpenAD_lin_1 = (-(__value__(X(1)) /(__value__(X(2)) * __value__(X
      > (2)))))
-      __value__(T2) = COS(__value__(T1))
+      __value__(T1) = (__value__(X(1)) / __value__(X(2)))
       OpenAD_lin_2 = (- SIN(__value__(T1)))
+      __value__(T2) = COS(__value__(T1))
       OpenAD_aux_0 = EXP(__value__(T2))
       OpenAD_lin_3 = OpenAD_aux_0
       __value__(Y1) = OpenAD_aux_0
       __value__(Y2) = (__value__(T2) * 3.14000010490417480469D00)
-      __value__(Y3) = SIN(__value__(T2))
       OpenAD_lin_4 = COS(__value__(T2))
-      __value__(Y4) = (__value__(T1) * __value__(T2))
+      __value__(Y3) = SIN(__value__(T2))
       OpenAD_lin_5 = __value__(T2)
       OpenAD_lin_6 = __value__(T1)
+      __value__(Y4) = (__value__(T1) * __value__(T2))
       __value__(Y(1)) = __value__(Y1)
       OpenAD_acc_0 = (OpenAD_lin_5 + OpenAD_lin_2 * OpenAD_lin_6)
       OpenAD_acc_1 = (OpenAD_lin_2 * 3.14000010490417480469D00)
@@ -179,21 +179,21 @@ C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      __value__(T1) = (__value__(X(1)) / __value__(X(2)))
       OpenAD_lin_0 = (INT(1_w2f__i8) / __value__(X(2)))
       OpenAD_lin_1 = (-(__value__(X(1)) /(__value__(X(2)) * __value__(X
      > (2)))))
-      __value__(T2) = COS(__value__(T1))
+      __value__(T1) = (__value__(X(1)) / __value__(X(2)))
       OpenAD_lin_2 = (- SIN(__value__(T1)))
+      __value__(T2) = COS(__value__(T1))
       OpenAD_aux_0 = EXP(__value__(T2))
       OpenAD_lin_3 = OpenAD_aux_0
       __value__(Y1) = OpenAD_aux_0
       __value__(Y2) = (__value__(T2) * 3.14000010490417480469D00)
-      __value__(Y3) = SIN(__value__(T2))
       OpenAD_lin_4 = COS(__value__(T2))
-      __value__(Y4) = (__value__(T1) * __value__(T2))
+      __value__(Y3) = SIN(__value__(T2))
       OpenAD_lin_5 = __value__(T2)
       OpenAD_lin_6 = __value__(T1)
+      __value__(Y4) = (__value__(T1) * __value__(T2))
       __value__(Y(1)) = __value__(Y1)
       OpenAD_acc_0 = (OpenAD_lin_5 + OpenAD_lin_2 * OpenAD_lin_6)
       OpenAD_acc_1 = (OpenAD_lin_2 * 3.14000010490417480469D00)

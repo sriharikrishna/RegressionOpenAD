@@ -52,7 +52,6 @@ C
       REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_aux_2
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -93,11 +92,11 @@ C     $OpenAD$ BEGIN REPLACEMENT 2
       __value__(V) = OpenAD_aux_0
       OpenAD_aux_1 = (__value__(NU) * __value__(V))
       OpenAD_aux_2 = (__value__(GAMMA) - __value__(V))
-      __value__(Y(1)) = (OpenAD_aux_1 / OpenAD_aux_2)
       OpenAD_lin_5 = __value__(V)
       OpenAD_lin_6 = __value__(NU)
       OpenAD_lin_3 = (INT(1_w2f__i8) / OpenAD_aux_2)
       OpenAD_lin_4 = (-(OpenAD_aux_1 /(OpenAD_aux_2 * OpenAD_aux_2)))
+      __value__(Y(1)) = (OpenAD_aux_1 / OpenAD_aux_2)
       OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_3 + INT((-1_w2f__i8)) *
      >  OpenAD_lin_4)
       OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
@@ -111,10 +110,9 @@ C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_3)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_4)
-      OpenAD_dly_0 = (__value__(Y(1)) * __value__(GAMMA))
       OpenAD_lin_7 = __value__(GAMMA)
       OpenAD_lin_8 = __value__(Y(1))
-      __value__(Y(2)) = OpenAD_dly_0
+      __value__(Y(2)) = (__value__(Y(1)) * __value__(GAMMA))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_7)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -183,11 +181,11 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
       __value__(V) = OpenAD_aux_0
       OpenAD_aux_1 = (__value__(NU) * __value__(V))
       OpenAD_aux_2 = (__value__(GAMMA) - __value__(V))
-      __value__(Y(1)) = (OpenAD_aux_1 / OpenAD_aux_2)
       OpenAD_lin_5 = __value__(V)
       OpenAD_lin_6 = __value__(NU)
       OpenAD_lin_3 = (INT(1_w2f__i8) / OpenAD_aux_2)
       OpenAD_lin_4 = (-(OpenAD_aux_1 /(OpenAD_aux_2 * OpenAD_aux_2)))
+      __value__(Y(1)) = (OpenAD_aux_1 / OpenAD_aux_2)
       OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_3 + INT((-1_w2f__i8)) *
      >  OpenAD_lin_4)
       OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
@@ -201,10 +199,9 @@ C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_3)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_4)
-      OpenAD_dly_0 = (__value__(Y(1)) * __value__(GAMMA))
       OpenAD_lin_7 = __value__(GAMMA)
       OpenAD_lin_8 = __value__(Y(1))
-      __value__(Y(2)) = OpenAD_dly_0
+      __value__(Y(2)) = (__value__(Y(1)) * __value__(GAMMA))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_7)
 C     $OpenAD$ INLINE push_s0(subst)

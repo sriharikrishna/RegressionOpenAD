@@ -237,12 +237,6 @@ C
       REAL(w2f__8) OpenAD_aux_7
       REAL(w2f__8) OpenAD_aux_8
       REAL(w2f__8) OpenAD_aux_9
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
-      REAL(w2f__8) OpenAD_dly_2
-      REAL(w2f__8) OpenAD_dly_3
-      REAL(w2f__8) OpenAD_dly_4
-      REAL(w2f__8) OpenAD_dly_5
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
@@ -543,11 +537,11 @@ C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = ((__value__(NRM(1)) ** 2) +(__value__(NRM(2)) ** 2
      > ) +(__value__(NRM(3)) ** 2))
-      __value__(NSIZE) = SIN(OpenAD_aux_0)
       OpenAD_lin_1 = (2 *(__value__(NRM(1)) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_2 = (2 *(__value__(NRM(2)) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_3 = (2 *(__value__(NRM(3)) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_0 = COS(OpenAD_aux_0)
+      __value__(NSIZE) = SIN(OpenAD_aux_0)
       OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_0)
       OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_0)
       OpenAD_acc_2 = (OpenAD_lin_1 * OpenAD_lin_0)
@@ -555,48 +549,46 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_1, __deriv__(NRM(2)), __deriv__(NSIZE))
       CALL saxpy(OpenAD_acc_2, __deriv__(NRM(1)), __deriv__(NSIZE))
       IF(MCHEPS .LT. __value__(NSIZE)) THEN
-        __value__(NSIZEI) = (1.0D00 / __value__(NSIZE))
         OpenAD_lin_4 = (-(1.0D00 /(__value__(NSIZE) * __value__(NSIZE))
      > ))
+        __value__(NSIZEI) = (1.0D00 / __value__(NSIZE))
         CALL sax(OpenAD_lin_4, __deriv__(NSIZE), __deriv__(NSIZEI))
       ELSE
         __value__(NSIZEI) = 0.0D00
         CALL zero_deriv(__deriv__(NSIZEI))
       ENDIF
-      __value__(NXHAT) = (__value__(NRM(1)) * __value__(NSIZEI))
       OpenAD_lin_5 = __value__(NSIZEI)
       OpenAD_lin_6 = __value__(NRM(1))
-      __value__(NYHAT) = (__value__(NRM(2)) * __value__(NSIZEI))
+      __value__(NXHAT) = (__value__(NRM(1)) * __value__(NSIZEI))
       OpenAD_lin_7 = __value__(NSIZEI)
       OpenAD_lin_8 = __value__(NRM(2))
-      __value__(NZHAT) = (__value__(NRM(3)) * __value__(NSIZEI))
+      __value__(NYHAT) = (__value__(NRM(2)) * __value__(NSIZEI))
       OpenAD_lin_9 = __value__(NSIZEI)
       OpenAD_lin_10 = __value__(NRM(3))
+      __value__(NZHAT) = (__value__(NRM(3)) * __value__(NSIZEI))
       OpenAD_aux_2 = (__value__(PRIMR(2)) / __value__(PRIML(2)))
       OpenAD_aux_1 = (SIN(OpenAD_aux_2) + 1.0D00)
-      __value__(ROEL) = (1.0D00 / OpenAD_aux_1)
       OpenAD_lin_13 = (INT(1_w2f__i8) / __value__(PRIML(2)))
       OpenAD_lin_14 = (-(__value__(PRIMR(2)) /(__value__(PRIML(2)) *
      >  __value__(PRIML(2)))))
       OpenAD_lin_12 = COS(OpenAD_aux_2)
       OpenAD_lin_11 = (-(1.0D00 /(OpenAD_aux_1 * OpenAD_aux_1)))
+      __value__(ROEL) = (1.0D00 / OpenAD_aux_1)
       __value__(ROER) = (1.0D00 - __value__(ROEL))
       OpenAD_aux_3 = ((__value__(PRIML(3)) ** 2) +(__value__(PRIML(4))
      >  ** 2) +(__value__(PRIML(5)) ** 2))
-      __value__(THETAL) = (OpenAD_aux_3 * 5.0D-01)
       OpenAD_lin_15 = (2 *(__value__(PRIML(3)) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_16 = (2 *(__value__(PRIML(4)) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_17 = (2 *(__value__(PRIML(5)) **(2 - INT(1_w2f__i8))))
+      __value__(THETAL) = (OpenAD_aux_3 * 5.0D-01)
       OpenAD_aux_4 = ((__value__(PRIMR(3)) ** 2) +(__value__(PRIMR(4))
      >  ** 2) +(__value__(PRIMR(5)) ** 2))
-      __value__(THETAR) = (OpenAD_aux_4 * 5.0D-01)
       OpenAD_lin_18 = (2 *(__value__(PRIMR(3)) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_19 = (2 *(__value__(PRIMR(4)) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_20 = (2 *(__value__(PRIMR(5)) **(2 - INT(1_w2f__i8))))
+      __value__(THETAR) = (OpenAD_aux_4 * 5.0D-01)
       OpenAD_aux_6 = (__value__(GAMMA) * __value__(GM1INV))
       OpenAD_aux_5 = (__value__(PRIML(1)) * OpenAD_aux_6)
-      __value__(HL) = (__value__(THETAL) +(OpenAD_aux_5 / __value__(
-     > PRIML(2))))
       OpenAD_lin_23 = OpenAD_aux_6
       OpenAD_lin_25 = __value__(GM1INV)
       OpenAD_lin_26 = __value__(GAMMA)
@@ -604,10 +596,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_21 = (INT(1_w2f__i8) / __value__(PRIML(2)))
       OpenAD_lin_22 = (-(OpenAD_aux_5 /(__value__(PRIML(2)) * __value__
      > (PRIML(2)))))
+      __value__(HL) = (__value__(THETAL) +(OpenAD_aux_5 / __value__(
+     > PRIML(2))))
       OpenAD_aux_8 = (__value__(GAMMA) * __value__(GM1INV))
       OpenAD_aux_7 = (__value__(PRIMR(1)) * OpenAD_aux_8)
-      __value__(HR) = (__value__(THETAR) +(OpenAD_aux_7 / __value__(
-     > PRIMR(2))))
       OpenAD_lin_29 = OpenAD_aux_8
       OpenAD_lin_31 = __value__(GM1INV)
       OpenAD_lin_32 = __value__(GAMMA)
@@ -615,40 +607,42 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_27 = (INT(1_w2f__i8) / __value__(PRIMR(2)))
       OpenAD_lin_28 = (-(OpenAD_aux_7 /(__value__(PRIMR(2)) * __value__
      > (PRIMR(2)))))
-      __value__(UAVE) = (__value__(PRIML(3)) * __value__(ROEL) +
-     >  __value__(PRIMR(3)) * __value__(ROER))
+      __value__(HR) = (__value__(THETAR) +(OpenAD_aux_7 / __value__(
+     > PRIMR(2))))
       OpenAD_lin_33 = __value__(ROEL)
       OpenAD_lin_34 = __value__(PRIML(3))
       OpenAD_lin_35 = __value__(ROER)
       OpenAD_lin_36 = __value__(PRIMR(3))
-      __value__(VAVE) = (__value__(PRIML(4)) * __value__(ROEL) +
-     >  __value__(PRIMR(4)) * __value__(ROER))
+      __value__(UAVE) = (__value__(PRIML(3)) * __value__(ROEL) +
+     >  __value__(PRIMR(3)) * __value__(ROER))
       OpenAD_lin_37 = __value__(ROEL)
       OpenAD_lin_38 = __value__(PRIML(4))
       OpenAD_lin_39 = __value__(ROER)
       OpenAD_lin_40 = __value__(PRIMR(4))
-      __value__(WAVE) = (__value__(PRIML(5)) * __value__(ROEL) +
-     >  __value__(PRIMR(5)) * __value__(ROER))
+      __value__(VAVE) = (__value__(PRIML(4)) * __value__(ROEL) +
+     >  __value__(PRIMR(4)) * __value__(ROER))
       OpenAD_lin_41 = __value__(ROEL)
       OpenAD_lin_42 = __value__(PRIML(5))
       OpenAD_lin_43 = __value__(ROER)
       OpenAD_lin_44 = __value__(PRIMR(5))
-      __value__(HAVE) = (__value__(HL) * __value__(ROEL) + __value__(HR
-     > ) * __value__(ROER))
+      __value__(WAVE) = (__value__(PRIML(5)) * __value__(ROEL) +
+     >  __value__(PRIMR(5)) * __value__(ROER))
       OpenAD_lin_45 = __value__(ROEL)
       OpenAD_lin_46 = __value__(HL)
       OpenAD_lin_47 = __value__(ROER)
       OpenAD_lin_48 = __value__(HR)
+      __value__(HAVE) = (__value__(HL) * __value__(ROEL) + __value__(HR
+     > ) * __value__(ROER))
       OpenAD_aux_9 = ((__value__(UAVE) ** 2) +(__value__(VAVE) ** 2) +(
      > __value__(WAVE) ** 2))
-      __value__(THTAVE) = (OpenAD_aux_9 * 5.0D-01)
       OpenAD_lin_49 = (2 *(__value__(UAVE) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_50 = (2 *(__value__(VAVE) **(2 - INT(1_w2f__i8))))
       OpenAD_lin_51 = (2 *(__value__(WAVE) **(2 - INT(1_w2f__i8))))
+      __value__(THTAVE) = (OpenAD_aux_9 * 5.0D-01)
       OpenAD_aux_10 = (__value__(HAVE) - __value__(THTAVE))
-      __value__(CAVE) = (__value__(GM1) * OpenAD_aux_10)
       OpenAD_lin_52 = OpenAD_aux_10
       OpenAD_lin_53 = __value__(GM1)
+      __value__(CAVE) = (__value__(GM1) * OpenAD_aux_10)
       OpenAD_acc_3 = (OpenAD_lin_30 * OpenAD_lin_27)
       OpenAD_acc_4 = (OpenAD_lin_24 * OpenAD_lin_21)
       OpenAD_acc_5 = (5.0D-01 * INT((-1_w2f__i8)) * OpenAD_lin_53)
@@ -729,46 +723,45 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_7, __deriv__(HL), __deriv__(CAVE))
       CALL saxpy(OpenAD_acc_8, __deriv__(OpenAD_prp_0), __deriv__(CAVE)
      > )
-      OpenAD_dly_0 = SIN(__value__(CAVE))
       OpenAD_lin_54 = COS(__value__(CAVE))
-      __value__(CAVE) = OpenAD_dly_0
-      __value__(UHAT) = (__value__(NXHAT) * __value__(UAVE) + __value__
-     > (NYHAT) * __value__(VAVE) + __value__(NZHAT) * __value__(WAVE))
+      __value__(CAVE) = SIN(__value__(CAVE))
       OpenAD_lin_55 = __value__(UAVE)
       OpenAD_lin_56 = __value__(NXHAT)
       OpenAD_lin_57 = __value__(VAVE)
       OpenAD_lin_58 = __value__(NYHAT)
       OpenAD_lin_59 = __value__(WAVE)
       OpenAD_lin_60 = __value__(NZHAT)
-      __value__(UTILDE) = (__value__(NYHAT) * __value__(WAVE) -
-     >  __value__(NZHAT) * __value__(VAVE))
+      __value__(UHAT) = (__value__(NXHAT) * __value__(UAVE) + __value__
+     > (NYHAT) * __value__(VAVE) + __value__(NZHAT) * __value__(WAVE))
       OpenAD_lin_61 = __value__(WAVE)
       OpenAD_lin_62 = __value__(NYHAT)
       OpenAD_lin_63 = __value__(VAVE)
       OpenAD_lin_64 = __value__(NZHAT)
-      __value__(VTILDE) = (__value__(NZHAT) * __value__(UAVE) -
-     >  __value__(NXHAT) * __value__(WAVE))
+      __value__(UTILDE) = (__value__(NYHAT) * __value__(WAVE) -
+     >  __value__(NZHAT) * __value__(VAVE))
       OpenAD_lin_65 = __value__(UAVE)
       OpenAD_lin_66 = __value__(NZHAT)
       OpenAD_lin_67 = __value__(WAVE)
       OpenAD_lin_68 = __value__(NXHAT)
-      __value__(WTILDE) = (__value__(NXHAT) * __value__(VAVE) -
-     >  __value__(NYHAT) * __value__(UAVE))
+      __value__(VTILDE) = (__value__(NZHAT) * __value__(UAVE) -
+     >  __value__(NXHAT) * __value__(WAVE))
       OpenAD_lin_69 = __value__(VAVE)
       OpenAD_lin_70 = __value__(NXHAT)
       OpenAD_lin_71 = __value__(UAVE)
       OpenAD_lin_72 = __value__(NYHAT)
+      __value__(WTILDE) = (__value__(NXHAT) * __value__(VAVE) -
+     >  __value__(NYHAT) * __value__(UAVE))
       __value__(LAMCM) = (__value__(UHAT) - __value__(CAVE))
       __value__(LAMU) = __value__(UHAT)
       __value__(LAMCP) = (__value__(CAVE) + __value__(UHAT))
       OpenAD_aux_11 = (__value__(CAVE) + __value__(UHAT))
-      __value__(DELTA) = (__value__(NLEFIX) * OpenAD_aux_11)
       OpenAD_lin_73 = OpenAD_aux_11
       OpenAD_lin_74 = __value__(NLEFIX)
-      __value__(DELTA2) = (__value__(DELTA) ** 2)
+      __value__(DELTA) = (__value__(NLEFIX) * OpenAD_aux_11)
       OpenAD_lin_75 = (2 *(__value__(DELTA) **(2 - INT(1_w2f__i8))))
-      __value__(LAM2) = (__value__(LAMCM) ** 2)
+      __value__(DELTA2) = (__value__(DELTA) ** 2)
       OpenAD_lin_76 = (2 *(__value__(LAMCM) **(2 - INT(1_w2f__i8))))
+      __value__(LAM2) = (__value__(LAMCM) ** 2)
       OpenAD_acc_20 = (OpenAD_lin_73 * OpenAD_lin_75)
       OpenAD_acc_21 = (OpenAD_lin_74 * OpenAD_lin_75)
       OpenAD_acc_22 = (OpenAD_lin_63 * INT((-1_w2f__i8)))
@@ -814,10 +807,10 @@ C$OPENAD XXX Template ad_template.f
       ELSE
         OpenAD_aux_38 = (__value__(DELTA2) + __value__(LAM2))
         OpenAD_aux_37 = (OpenAD_aux_38 * 5.0D-01)
-        __value__(ALAMCM) = (OpenAD_aux_37 / __value__(DELTA2))
         OpenAD_lin_247 = (INT(1_w2f__i8) / __value__(DELTA2))
         OpenAD_lin_248 = (-(OpenAD_aux_37 /(__value__(DELTA2) *
      >  __value__(DELTA2))))
+        __value__(ALAMCM) = (OpenAD_aux_37 / __value__(DELTA2))
         OpenAD_acc_80 = (5.0D-01 * OpenAD_lin_247)
         CALL setderiv(__deriv__(OpenAD_prp_31), __deriv__(DELTA2))
         CALL inc_deriv(__deriv__(OpenAD_prp_31), __deriv__(LAM2))
@@ -825,8 +818,8 @@ C$OPENAD XXX Template ad_template.f
         CALL saxpy(OpenAD_acc_80, __deriv__(OpenAD_prp_31), __deriv__(
      > ALAMCM))
       ENDIF
-      __value__(LAM2) = (__value__(LAMCP) ** 2)
       OpenAD_lin_77 = (2 *(__value__(LAMCP) **(2 - INT(1_w2f__i8))))
+      __value__(LAM2) = (__value__(LAMCP) ** 2)
       CALL sax(OpenAD_lin_77, __deriv__(LAMCP), __deriv__(LAM2))
       IF(__value__(DELTA2) .LT. __value__(LAM2)) THEN
         __value__(ALAMCP) = __value__(LAMCP)
@@ -834,10 +827,10 @@ C$OPENAD XXX Template ad_template.f
       ELSE
         OpenAD_aux_36 = (__value__(DELTA2) + __value__(LAM2))
         OpenAD_aux_35 = (OpenAD_aux_36 * 5.0D-01)
-        __value__(ALAMCP) = (OpenAD_aux_35 / __value__(DELTA2))
         OpenAD_lin_245 = (INT(1_w2f__i8) / __value__(DELTA2))
         OpenAD_lin_246 = (-(OpenAD_aux_35 /(__value__(DELTA2) *
      >  __value__(DELTA2))))
+        __value__(ALAMCP) = (OpenAD_aux_35 / __value__(DELTA2))
         OpenAD_acc_79 = (5.0D-01 * OpenAD_lin_245)
         CALL setderiv(__deriv__(OpenAD_prp_30), __deriv__(DELTA2))
         CALL inc_deriv(__deriv__(OpenAD_prp_30), __deriv__(LAM2))
@@ -846,14 +839,14 @@ C$OPENAD XXX Template ad_template.f
      > ALAMCP))
       ENDIF
       OpenAD_aux_12 = (__value__(CAVE) + __value__(UHAT))
-      __value__(DELTA) = (__value__(LEFIX) * OpenAD_aux_12)
       OpenAD_lin_78 = OpenAD_aux_12
       OpenAD_lin_79 = __value__(LEFIX)
-      __value__(DELTA2) = (__value__(DELTA) * __value__(DELTA))
+      __value__(DELTA) = (__value__(LEFIX) * OpenAD_aux_12)
       OpenAD_lin_80 = __value__(DELTA)
       OpenAD_lin_81 = __value__(DELTA)
-      __value__(LAM2) = (__value__(LAMU) ** 2)
+      __value__(DELTA2) = (__value__(DELTA) * __value__(DELTA))
       OpenAD_lin_82 = (2 *(__value__(LAMU) **(2 - INT(1_w2f__i8))))
+      __value__(LAM2) = (__value__(LAMU) ** 2)
       OpenAD_acc_28 = (OpenAD_lin_80 + OpenAD_lin_81)
       OpenAD_acc_29 = (OpenAD_lin_78 * OpenAD_acc_28)
       OpenAD_acc_30 = (OpenAD_lin_79 * OpenAD_acc_28)
@@ -869,10 +862,10 @@ C$OPENAD XXX Template ad_template.f
       ELSE
         OpenAD_aux_34 = (__value__(DELTA2) + __value__(LAM2))
         OpenAD_aux_33 = (OpenAD_aux_34 * 5.0D-01)
-        __value__(ALAMU) = (OpenAD_aux_33 / __value__(DELTA2))
         OpenAD_lin_243 = (INT(1_w2f__i8) / __value__(DELTA2))
         OpenAD_lin_244 = (-(OpenAD_aux_33 /(__value__(DELTA2) *
      >  __value__(DELTA2))))
+        __value__(ALAMU) = (OpenAD_aux_33 / __value__(DELTA2))
         OpenAD_acc_78 = (5.0D-01 * OpenAD_lin_243)
         CALL setderiv(__deriv__(OpenAD_prp_29), __deriv__(DELTA2))
         CALL inc_deriv(__deriv__(OpenAD_prp_29), __deriv__(LAM2))
@@ -886,53 +879,52 @@ C$OPENAD XXX Template ad_template.f
       __value__(ALAMCP) = (OpenAD_aux_14 * 5.0D-01)
       OpenAD_aux_15 = (__value__(LAMU) - __value__(ALAMU))
       __value__(ALAMU) = (OpenAD_aux_15 * 5.0D-01)
-      __value__(EL) = (__value__(PRIML(1)) * __value__(GM1INV) +
-     >  __value__(PRIML(2)) * __value__(THETAL))
       OpenAD_lin_83 = __value__(GM1INV)
       OpenAD_lin_84 = __value__(PRIML(1))
       OpenAD_lin_85 = __value__(THETAL)
       OpenAD_lin_86 = __value__(PRIML(2))
-      __value__(RUL) = (__value__(PRIML(2)) * __value__(PRIML(3)))
+      __value__(EL) = (__value__(PRIML(1)) * __value__(GM1INV) +
+     >  __value__(PRIML(2)) * __value__(THETAL))
       OpenAD_lin_87 = __value__(PRIML(3))
       OpenAD_lin_88 = __value__(PRIML(2))
-      __value__(RVL) = (__value__(PRIML(2)) * __value__(PRIML(4)))
+      __value__(RUL) = (__value__(PRIML(2)) * __value__(PRIML(3)))
       OpenAD_lin_89 = __value__(PRIML(4))
       OpenAD_lin_90 = __value__(PRIML(2))
-      __value__(RWL) = (__value__(PRIML(2)) * __value__(PRIML(5)))
+      __value__(RVL) = (__value__(PRIML(2)) * __value__(PRIML(4)))
       OpenAD_lin_91 = __value__(PRIML(5))
       OpenAD_lin_92 = __value__(PRIML(2))
-      __value__(ER) = (__value__(PRIMR(1)) * __value__(GM1INV) +
-     >  __value__(PRIMR(2)) * __value__(THETAR))
+      __value__(RWL) = (__value__(PRIML(2)) * __value__(PRIML(5)))
       OpenAD_lin_93 = __value__(GM1INV)
       OpenAD_lin_94 = __value__(PRIMR(1))
       OpenAD_lin_95 = __value__(THETAR)
       OpenAD_lin_96 = __value__(PRIMR(2))
-      __value__(RUR) = (__value__(PRIMR(2)) * __value__(PRIMR(3)))
+      __value__(ER) = (__value__(PRIMR(1)) * __value__(GM1INV) +
+     >  __value__(PRIMR(2)) * __value__(THETAR))
       OpenAD_lin_97 = __value__(PRIMR(3))
       OpenAD_lin_98 = __value__(PRIMR(2))
-      __value__(RVR) = (__value__(PRIMR(2)) * __value__(PRIMR(4)))
+      __value__(RUR) = (__value__(PRIMR(2)) * __value__(PRIMR(3)))
       OpenAD_lin_99 = __value__(PRIMR(4))
       OpenAD_lin_100 = __value__(PRIMR(2))
-      __value__(RWR) = (__value__(PRIMR(2)) * __value__(PRIMR(5)))
+      __value__(RVR) = (__value__(PRIMR(2)) * __value__(PRIMR(4)))
       OpenAD_lin_101 = __value__(PRIMR(5))
       OpenAD_lin_102 = __value__(PRIMR(2))
+      __value__(RWR) = (__value__(PRIMR(2)) * __value__(PRIMR(5)))
       __value__(DE) = (__value__(ER) - __value__(EL))
       __value__(DR) = (__value__(PRIMR(2)) - __value__(PRIML(2)))
       __value__(DRU) = (__value__(RUR) - __value__(RUL))
       __value__(DRV) = (__value__(RVR) - __value__(RVL))
       __value__(DRW) = (__value__(RWR) - __value__(RWL))
-      __value__(UDDRU) = (__value__(DRU) * __value__(UAVE) + __value__(
-     > DRV) * __value__(VAVE) + __value__(DRW) * __value__(WAVE))
       OpenAD_lin_103 = __value__(UAVE)
       OpenAD_lin_104 = __value__(DRU)
       OpenAD_lin_105 = __value__(VAVE)
       OpenAD_lin_106 = __value__(DRV)
       OpenAD_lin_107 = __value__(WAVE)
       OpenAD_lin_108 = __value__(DRW)
+      __value__(UDDRU) = (__value__(DRU) * __value__(UAVE) + __value__(
+     > DRV) * __value__(VAVE) + __value__(DRW) * __value__(WAVE))
       OpenAD_aux_16 = (__value__(GM1) / __value__(CAVE))
       OpenAD_aux_17 = (__value__(DE) + __value__(DR) * __value__(THTAVE
      > ) - __value__(UDDRU))
-      __value__(OMEGA) = (OpenAD_aux_16 * OpenAD_aux_17)
       OpenAD_lin_111 = (INT(1_w2f__i8) / __value__(CAVE))
       OpenAD_lin_112 = (-(__value__(GM1) /(__value__(CAVE) * __value__(
      > CAVE))))
@@ -940,25 +932,23 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_113 = __value__(THTAVE)
       OpenAD_lin_114 = __value__(DR)
       OpenAD_lin_110 = OpenAD_aux_16
-      __value__(NDDRU) = (__value__(DRU) * __value__(NXHAT) + __value__
-     > (DRV) * __value__(NYHAT) + __value__(DRW) * __value__(NZHAT))
+      __value__(OMEGA) = (OpenAD_aux_16 * OpenAD_aux_17)
       OpenAD_lin_115 = __value__(NXHAT)
       OpenAD_lin_116 = __value__(DRU)
       OpenAD_lin_117 = __value__(NYHAT)
       OpenAD_lin_118 = __value__(DRV)
       OpenAD_lin_119 = __value__(NZHAT)
       OpenAD_lin_120 = __value__(DRW)
+      __value__(NDDRU) = (__value__(DRU) * __value__(NXHAT) + __value__
+     > (DRV) * __value__(NYHAT) + __value__(DRW) * __value__(NZHAT))
       OpenAD_aux_18 = (__value__(OMEGA) + __value__(DR) * __value__(
      > UHAT) - __value__(NDDRU))
-      __value__(ALP1) = (OpenAD_aux_18 * 5.0D-01)
       OpenAD_lin_121 = __value__(UHAT)
       OpenAD_lin_122 = __value__(DR)
+      __value__(ALP1) = (OpenAD_aux_18 * 5.0D-01)
       OpenAD_aux_19 = (__value__(CAVE) * __value__(NXHAT) - __value__(
      > UTILDE))
       OpenAD_aux_20 = (- __value__(NXHAT))
-      __value__(ALP2) = (__value__(DRW) * __value__(NYHAT) + __value__(
-     > DR) * OpenAD_aux_19 + __value__(OMEGA) * OpenAD_aux_20 -
-     >  __value__(DRV) * __value__(NZHAT))
       OpenAD_lin_123 = __value__(NYHAT)
       OpenAD_lin_124 = __value__(DRW)
       OpenAD_lin_125 = OpenAD_aux_19
@@ -969,12 +959,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_130 = __value__(OMEGA)
       OpenAD_lin_131 = __value__(NZHAT)
       OpenAD_lin_132 = __value__(DRV)
+      __value__(ALP2) = (__value__(DRW) * __value__(NYHAT) + __value__(
+     > DR) * OpenAD_aux_19 + __value__(OMEGA) * OpenAD_aux_20 -
+     >  __value__(DRV) * __value__(NZHAT))
       OpenAD_aux_21 = (__value__(CAVE) * __value__(NYHAT) - __value__(
      > VTILDE))
       OpenAD_aux_22 = (- __value__(NYHAT))
-      __value__(ALP3) = (__value__(DRU) * __value__(NZHAT) + __value__(
-     > DR) * OpenAD_aux_21 + __value__(OMEGA) * OpenAD_aux_22 -
-     >  __value__(DRW) * __value__(NXHAT))
       OpenAD_lin_133 = __value__(NZHAT)
       OpenAD_lin_134 = __value__(DRU)
       OpenAD_lin_135 = OpenAD_aux_21
@@ -985,12 +975,12 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_140 = __value__(OMEGA)
       OpenAD_lin_141 = __value__(NXHAT)
       OpenAD_lin_142 = __value__(DRW)
+      __value__(ALP3) = (__value__(DRU) * __value__(NZHAT) + __value__(
+     > DR) * OpenAD_aux_21 + __value__(OMEGA) * OpenAD_aux_22 -
+     >  __value__(DRW) * __value__(NXHAT))
       OpenAD_aux_23 = (__value__(CAVE) * __value__(NZHAT) - __value__(
      > WTILDE))
       OpenAD_aux_24 = (- __value__(NZHAT))
-      __value__(ALP4) = (__value__(DRV) * __value__(NXHAT) + __value__(
-     > DR) * OpenAD_aux_23 + __value__(OMEGA) * OpenAD_aux_24 -
-     >  __value__(DRU) * __value__(NYHAT))
       OpenAD_lin_143 = __value__(NXHAT)
       OpenAD_lin_144 = __value__(DRV)
       OpenAD_lin_145 = OpenAD_aux_23
@@ -1001,11 +991,14 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_150 = __value__(OMEGA)
       OpenAD_lin_151 = __value__(NYHAT)
       OpenAD_lin_152 = __value__(DRU)
+      __value__(ALP4) = (__value__(DRV) * __value__(NXHAT) + __value__(
+     > DR) * OpenAD_aux_23 + __value__(OMEGA) * OpenAD_aux_24 -
+     >  __value__(DRU) * __value__(NYHAT))
       OpenAD_aux_25 = (__value__(NDDRU) + __value__(OMEGA) - __value__(
      > DR) * __value__(UHAT))
-      __value__(ALP5) = (OpenAD_aux_25 * 5.0D-01)
       OpenAD_lin_153 = __value__(UHAT)
       OpenAD_lin_154 = __value__(DR)
+      __value__(ALP5) = (OpenAD_aux_25 * 5.0D-01)
       OpenAD_acc_31 = (OpenAD_lin_111 * OpenAD_lin_109)
       OpenAD_acc_32 = (OpenAD_lin_112 * OpenAD_lin_109)
       OpenAD_acc_33 = (OpenAD_lin_103 * INT((-1_w2f__i8)))
@@ -1149,31 +1142,23 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_45, __deriv__(NZHAT), __deriv__(ALP4))
       CALL saxpy(OpenAD_acc_46, __deriv__(DRU), __deriv__(ALP4))
       CALL saxpy(OpenAD_acc_47, __deriv__(NYHAT), __deriv__(ALP4))
-      OpenAD_dly_1 = (__value__(ALAMCM) * __value__(ALP1))
       OpenAD_lin_155 = __value__(ALP1)
       OpenAD_lin_156 = __value__(ALAMCM)
-      __value__(ALP1) = OpenAD_dly_1
-      OpenAD_dly_2 = (__value__(ALAMU) * __value__(ALP2))
+      __value__(ALP1) = (__value__(ALAMCM) * __value__(ALP1))
       OpenAD_lin_157 = __value__(ALP2)
       OpenAD_lin_158 = __value__(ALAMU)
-      __value__(ALP2) = OpenAD_dly_2
-      OpenAD_dly_3 = (__value__(ALAMU) * __value__(ALP3))
+      __value__(ALP2) = (__value__(ALAMU) * __value__(ALP2))
       OpenAD_lin_159 = __value__(ALP3)
       OpenAD_lin_160 = __value__(ALAMU)
-      __value__(ALP3) = OpenAD_dly_3
-      OpenAD_dly_4 = (__value__(ALAMU) * __value__(ALP4))
+      __value__(ALP3) = (__value__(ALAMU) * __value__(ALP3))
       OpenAD_lin_161 = __value__(ALP4)
       OpenAD_lin_162 = __value__(ALAMU)
-      __value__(ALP4) = OpenAD_dly_4
-      OpenAD_dly_5 = (__value__(ALAMCP) * __value__(ALP5))
+      __value__(ALP4) = (__value__(ALAMU) * __value__(ALP4))
       OpenAD_lin_163 = __value__(ALP5)
       OpenAD_lin_164 = __value__(ALAMCP)
-      __value__(ALP5) = OpenAD_dly_5
+      __value__(ALP5) = (__value__(ALAMCP) * __value__(ALP5))
       __value__(ALP15P) = (__value__(ALP1) + __value__(ALP5))
       __value__(ALP15M) = (__value__(ALP1) - __value__(ALP5))
-      __value__(MU) = ((__value__(ALP15P) / __value__(CAVE)) +
-     >  __value__(ALP2) * __value__(NXHAT) + __value__(ALP3) *
-     >  __value__(NYHAT) + __value__(ALP4) * __value__(NZHAT))
       OpenAD_lin_165 = (INT(1_w2f__i8) / __value__(CAVE))
       OpenAD_lin_166 = (-(__value__(ALP15P) /(__value__(CAVE) *
      >  __value__(CAVE))))
@@ -1183,11 +1168,10 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_170 = __value__(ALP3)
       OpenAD_lin_171 = __value__(NZHAT)
       OpenAD_lin_172 = __value__(ALP4)
+      __value__(MU) = ((__value__(ALP15P) / __value__(CAVE)) +
+     >  __value__(ALP2) * __value__(NXHAT) + __value__(ALP3) *
+     >  __value__(NYHAT) + __value__(ALP4) * __value__(NZHAT))
       OpenAD_aux_26 = (__value__(GM1INV) * __value__(CAVE))
-      __value__(DSS1) = (__value__(MU) * __value__(THTAVE) + __value__(
-     > ALP15P) * OpenAD_aux_26 - __value__(ALP15M) * __value__(UHAT) +
-     >  __value__(ALP2) * __value__(UTILDE) + __value__(ALP3) *
-     >  __value__(VTILDE) + __value__(ALP4) * __value__(WTILDE))
       OpenAD_lin_173 = __value__(THTAVE)
       OpenAD_lin_174 = __value__(MU)
       OpenAD_lin_175 = OpenAD_aux_26
@@ -1202,10 +1186,11 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_184 = __value__(ALP3)
       OpenAD_lin_185 = __value__(WTILDE)
       OpenAD_lin_186 = __value__(ALP4)
+      __value__(DSS1) = (__value__(MU) * __value__(THTAVE) + __value__(
+     > ALP15P) * OpenAD_aux_26 - __value__(ALP15M) * __value__(UHAT) +
+     >  __value__(ALP2) * __value__(UTILDE) + __value__(ALP3) *
+     >  __value__(VTILDE) + __value__(ALP4) * __value__(WTILDE))
       __value__(DSS2) = __value__(MU)
-      __value__(DSS3) = (__value__(ALP3) * __value__(NZHAT) + __value__
-     > (MU) * __value__(UAVE) - __value__(ALP15M) * __value__(NXHAT) -
-     >  __value__(ALP4) * __value__(NYHAT))
       OpenAD_lin_187 = __value__(NZHAT)
       OpenAD_lin_188 = __value__(ALP3)
       OpenAD_lin_189 = __value__(UAVE)
@@ -1214,9 +1199,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_192 = __value__(ALP15M)
       OpenAD_lin_193 = __value__(NYHAT)
       OpenAD_lin_194 = __value__(ALP4)
-      __value__(DSS4) = (__value__(ALP4) * __value__(NXHAT) + __value__
-     > (MU) * __value__(VAVE) - __value__(ALP15M) * __value__(NYHAT) -
-     >  __value__(ALP2) * __value__(NZHAT))
+      __value__(DSS3) = (__value__(ALP3) * __value__(NZHAT) + __value__
+     > (MU) * __value__(UAVE) - __value__(ALP15M) * __value__(NXHAT) -
+     >  __value__(ALP4) * __value__(NYHAT))
       OpenAD_lin_195 = __value__(NXHAT)
       OpenAD_lin_196 = __value__(ALP4)
       OpenAD_lin_197 = __value__(VAVE)
@@ -1225,9 +1210,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_200 = __value__(ALP15M)
       OpenAD_lin_201 = __value__(NZHAT)
       OpenAD_lin_202 = __value__(ALP2)
-      __value__(DSS5) = (__value__(ALP2) * __value__(NYHAT) + __value__
-     > (MU) * __value__(WAVE) - __value__(ALP15M) * __value__(NZHAT) -
-     >  __value__(ALP3) * __value__(NXHAT))
+      __value__(DSS4) = (__value__(ALP4) * __value__(NXHAT) + __value__
+     > (MU) * __value__(VAVE) - __value__(ALP15M) * __value__(NYHAT) -
+     >  __value__(ALP2) * __value__(NZHAT))
       OpenAD_lin_203 = __value__(NYHAT)
       OpenAD_lin_204 = __value__(ALP2)
       OpenAD_lin_205 = __value__(WAVE)
@@ -1236,23 +1221,26 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_208 = __value__(ALP15M)
       OpenAD_lin_209 = __value__(NXHAT)
       OpenAD_lin_210 = __value__(ALP3)
-      __value__(UHATL) = (__value__(PRIML(3)) * __value__(NXHAT) +
-     >  __value__(PRIML(4)) * __value__(NYHAT) + __value__(PRIML(5)) *
-     >  __value__(NZHAT))
+      __value__(DSS5) = (__value__(ALP2) * __value__(NYHAT) + __value__
+     > (MU) * __value__(WAVE) - __value__(ALP15M) * __value__(NZHAT) -
+     >  __value__(ALP3) * __value__(NXHAT))
       OpenAD_lin_211 = __value__(NXHAT)
       OpenAD_lin_212 = __value__(PRIML(3))
       OpenAD_lin_213 = __value__(NYHAT)
       OpenAD_lin_214 = __value__(PRIML(4))
       OpenAD_lin_215 = __value__(NZHAT)
       OpenAD_lin_216 = __value__(PRIML(5))
+      __value__(UHATL) = (__value__(PRIML(3)) * __value__(NXHAT) +
+     >  __value__(PRIML(4)) * __value__(NYHAT) + __value__(PRIML(5)) *
+     >  __value__(NZHAT))
       OpenAD_aux_28 = (__value__(PRIML(1)) + __value__(EL))
       OpenAD_aux_27 = (__value__(DSS1) + __value__(UHATL) *
      >  OpenAD_aux_28)
-      __value__(FLUX(1)) = (__value__(NSIZE) * OpenAD_aux_27)
       OpenAD_lin_217 = OpenAD_aux_27
       OpenAD_lin_219 = OpenAD_aux_28
       OpenAD_lin_220 = __value__(UHATL)
       OpenAD_lin_218 = __value__(NSIZE)
+      __value__(FLUX(1)) = (__value__(NSIZE) * OpenAD_aux_27)
       OpenAD_acc_50 = (OpenAD_lin_219 * OpenAD_lin_218)
       OpenAD_acc_51 = (OpenAD_lin_220 * OpenAD_lin_218)
       OpenAD_acc_52 = (OpenAD_lin_185 * OpenAD_lin_218)
@@ -1367,11 +1355,11 @@ C$OPENAD XXX Template ad_template.f
       CALL saxpy(OpenAD_acc_65, __deriv__(UHAT), __deriv__(FLUX(1)))
       OpenAD_aux_29 = (__value__(DSS2) + __value__(PRIML(2)) *
      >  __value__(UHATL))
-      __value__(FLUX(2)) = (__value__(NSIZE) * OpenAD_aux_29)
       OpenAD_lin_221 = OpenAD_aux_29
       OpenAD_lin_223 = __value__(UHATL)
       OpenAD_lin_224 = __value__(PRIML(2))
       OpenAD_lin_222 = __value__(NSIZE)
+      __value__(FLUX(2)) = (__value__(NSIZE) * OpenAD_aux_29)
       CALL setderiv(__deriv__(OpenAD_prp_25), __deriv__(DSS2))
       CALL saxpy(OpenAD_lin_223, __deriv__(PRIML(2)), __deriv__(
      > OpenAD_prp_25))
@@ -1382,13 +1370,13 @@ C$OPENAD XXX Template ad_template.f
      > FLUX(2)))
       OpenAD_aux_30 = (__value__(DSS3) + __value__(PRIML(1)) *
      >  __value__(NXHAT) + __value__(RUL) * __value__(UHATL))
-      __value__(FLUX(3)) = (__value__(NSIZE) * OpenAD_aux_30)
       OpenAD_lin_225 = OpenAD_aux_30
       OpenAD_lin_227 = __value__(NXHAT)
       OpenAD_lin_228 = __value__(PRIML(1))
       OpenAD_lin_229 = __value__(UHATL)
       OpenAD_lin_230 = __value__(RUL)
       OpenAD_lin_226 = __value__(NSIZE)
+      __value__(FLUX(3)) = (__value__(NSIZE) * OpenAD_aux_30)
       CALL setderiv(__deriv__(OpenAD_prp_26), __deriv__(DSS3))
       CALL saxpy(OpenAD_lin_227, __deriv__(PRIML(1)), __deriv__(
      > OpenAD_prp_26))
@@ -1403,13 +1391,13 @@ C$OPENAD XXX Template ad_template.f
      > FLUX(3)))
       OpenAD_aux_31 = (__value__(DSS4) + __value__(PRIML(1)) *
      >  __value__(NYHAT) + __value__(RVL) * __value__(UHATL))
-      __value__(FLUX(4)) = (__value__(NSIZE) * OpenAD_aux_31)
       OpenAD_lin_231 = OpenAD_aux_31
       OpenAD_lin_233 = __value__(NYHAT)
       OpenAD_lin_234 = __value__(PRIML(1))
       OpenAD_lin_235 = __value__(UHATL)
       OpenAD_lin_236 = __value__(RVL)
       OpenAD_lin_232 = __value__(NSIZE)
+      __value__(FLUX(4)) = (__value__(NSIZE) * OpenAD_aux_31)
       CALL setderiv(__deriv__(OpenAD_prp_27), __deriv__(DSS4))
       CALL saxpy(OpenAD_lin_233, __deriv__(PRIML(1)), __deriv__(
      > OpenAD_prp_27))
@@ -1424,13 +1412,13 @@ C$OPENAD XXX Template ad_template.f
      > FLUX(4)))
       OpenAD_aux_32 = (__value__(DSS5) + __value__(PRIML(1)) *
      >  __value__(NZHAT) + __value__(RWL) * __value__(UHATL))
-      __value__(FLUX(5)) = (__value__(NSIZE) * OpenAD_aux_32)
       OpenAD_lin_237 = OpenAD_aux_32
       OpenAD_lin_239 = __value__(NZHAT)
       OpenAD_lin_240 = __value__(PRIML(1))
       OpenAD_lin_241 = __value__(UHATL)
       OpenAD_lin_242 = __value__(RWL)
       OpenAD_lin_238 = __value__(NSIZE)
+      __value__(FLUX(5)) = (__value__(NSIZE) * OpenAD_aux_32)
       CALL setderiv(__deriv__(OpenAD_prp_28), __deriv__(DSS5))
       CALL saxpy(OpenAD_lin_239, __deriv__(PRIML(1)), __deriv__(
      > OpenAD_prp_28))

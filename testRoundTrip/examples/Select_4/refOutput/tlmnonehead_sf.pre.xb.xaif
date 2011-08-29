@@ -203,6 +203,16 @@
       </xaif:Branch>
       <xaif:BasicBlock vertex_id="10" annotation="" scope_id="4">
         <xaif:Marker statement_id="31" annotation="{WHIRL_Id#31}{StmtLabel#2}"/>
+        <xaif:Assignment statement_id="_elementary_partial_0">
+          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
+            </xaif:VariableReference>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
         <xaif:Assignment statement_id="32">
           <xaif:AssignmentLHS active="true" alias="5" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
@@ -233,16 +243,6 @@
             </xaif:VariableReference>
             <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
             <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-          </xaif:AssignmentRHS>
-        </xaif:Assignment>
-        <xaif:Assignment statement_id="_elementary_partial_0">
-          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-          </xaif:AssignmentLHS>
-          <xaif:AssignmentRHS>
-            <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
-            </xaif:VariableReference>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:DerivativePropagator>
@@ -283,6 +283,16 @@
       <xaif:Exit vertex_id="16" annotation=""/>
       <xaif:BasicBlock vertex_id="11" annotation="" scope_id="4">
         <xaif:Marker statement_id="47" annotation="{WHIRL_Id#47}{StmtLabel#3}"/>
+        <xaif:Assignment statement_id="_elementary_partial_1">
+          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
+            </xaif:VariableReference>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
         <xaif:Assignment statement_id="48">
           <xaif:AssignmentLHS active="true" alias="5" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
@@ -313,16 +323,6 @@
             </xaif:VariableReference>
             <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
             <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
-          </xaif:AssignmentRHS>
-        </xaif:Assignment>
-        <xaif:Assignment statement_id="_elementary_partial_1">
-          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
-          </xaif:AssignmentLHS>
-          <xaif:AssignmentRHS>
-            <xaif:VariableReference vertex_id="1" active="false" alias="2" du_ud="3" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="I_3" annotation="" scope_id="4"/>
-            </xaif:VariableReference>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
         <xaif:DerivativePropagator>

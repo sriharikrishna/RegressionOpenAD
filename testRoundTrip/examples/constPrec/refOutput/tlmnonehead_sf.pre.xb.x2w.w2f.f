@@ -49,8 +49,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (__value__(X(1)) * 1.74532925199432954744D-02)
-      __value__(Y(1)) = COS(OpenAD_aux_0)
       OpenAD_lin_0 = (- SIN(OpenAD_aux_0))
+      __value__(Y(1)) = COS(OpenAD_aux_0)
       OpenAD_acc_0 = (1.74532925199432954744D-02 * OpenAD_lin_0)
       CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE

@@ -27,17 +27,15 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
-      OpenAD_dly_0 = (P%v*AGLOBALACTIVE%v)
       OpenAD_lin_0 = AGLOBALACTIVE%v
       OpenAD_lin_1 = P%v
-      AGLOBALACTIVE%v = OpenAD_dly_0
+      AGLOBALACTIVE%v = (P%v*AGLOBALACTIVE%v)
       CALL setderiv(OpenAD_prp_0,AGLOBALACTIVE)
       CALL sax(OpenAD_lin_0,P,AGLOBALACTIVE)
       CALL saxpy(OpenAD_lin_1,OpenAD_prp_0,AGLOBALACTIVE)
@@ -81,7 +79,7 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL foo(OpenAD_tyc_0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(ANINACTIVE,OpenAD_tyc_0)
-      Y(1)%v = SIN(AGLOBALACTIVE%v)
       OpenAD_lin_2 = COS(AGLOBALACTIVE%v)
+      Y(1)%v = SIN(AGLOBALACTIVE%v)
       CALL sax(OpenAD_lin_2,AGLOBALACTIVE,Y(1))
       END SUBROUTINE

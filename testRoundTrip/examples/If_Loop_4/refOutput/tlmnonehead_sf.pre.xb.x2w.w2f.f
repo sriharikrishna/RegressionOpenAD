@@ -38,7 +38,6 @@ C
       REAL(w2f__8) PI
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_aux_0
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -59,21 +58,20 @@ C$OPENAD XXX Template ad_template.f
       DO I = 1, 9, 1
         IF(I .GT. 5) THEN
           OpenAD_aux_0 = SIN(__value__(X(I)))
-          __value__(Y(INT(I))) = (PI * OpenAD_aux_0)
           OpenAD_lin_1 = COS(__value__(X(I)))
           OpenAD_lin_0 = PI
+          __value__(Y(INT(I))) = (PI * OpenAD_aux_0)
           OpenAD_acc_0 = (OpenAD_lin_1 * OpenAD_lin_0)
           CALL sax(OpenAD_acc_0, __deriv__(X(I)), __deriv__(Y(I)))
         ELSE
-          __value__(Y(INT(I))) = (PI + COS(__value__(X(I))))
           OpenAD_lin_2 = (- SIN(__value__(X(I))))
+          __value__(Y(INT(I))) = (PI + COS(__value__(X(I))))
           CALL sax(OpenAD_lin_2, __deriv__(X(I)), __deriv__(Y(I)))
         ENDIF
       END DO
-      OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(9)))
       OpenAD_lin_3 = __value__(Y(9))
       OpenAD_lin_4 = __value__(Y(1))
-      __value__(Y(10)) = OpenAD_dly_0
+      __value__(Y(10)) = (__value__(Y(1)) * __value__(Y(9)))
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
       CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(9)))
       CALL sax(OpenAD_lin_3, __deriv__(OpenAD_prp_0), __deriv__(Y(10)))

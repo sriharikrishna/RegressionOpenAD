@@ -51,7 +51,6 @@ C
       REAL(w2f__8) OpenAD_acc_2(1 : 2)
       REAL(w2f__8) OpenAD_aux_0(1 : 2)
       REAL(w2f__8) OpenAD_aux_1(1 : 2)
-      REAL(w2f__8) OpenAD_dly_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_1(:)
       ALLOCATABLE OpenAD_lin_1
@@ -84,15 +83,15 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = SIZE(X)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_0)
+      OpenAD_aux_0 = COS(__value__(X))
+      OpenAD_lin_0 = OpenAD_aux_0
+      OpenAD_lin_2 = (- SIN(__value__(X)))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_1, __deriv__(Z(1 : INT(SIZE(
      > X)))))
-      OpenAD_aux_0 = COS(__value__(X))
+      OpenAD_lin_1 = __value__(Z(1 : INT(SIZE(X))))
       __value__(Y(1 : 2)) = (__value__(Z(1 : INT(SIZE(X)))) *
      >  OpenAD_aux_0)
-      OpenAD_lin_0 = OpenAD_aux_0
-      OpenAD_lin_2 = (- SIN(__value__(X)))
-      OpenAD_lin_1 = __value__(Z(1 : INT(SIZE(X))))
       OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_lin_0)
@@ -101,18 +100,17 @@ C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_1)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_acc_0)
+      OpenAD_aux_1 = (__value__(X(1 : 2)) * __value__(Z(1 : INT(SIZE(X)
+     > ))))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_5, __deriv__(Z(1 : INT(SIZE(
      > X)))))
-      OpenAD_aux_1 = (__value__(X(1 : 2)) * __value__(Z(1 : INT(SIZE(X)
-     > ))))
-      OpenAD_dly_0 = (OpenAD_aux_1 / __value__(Y(1 : 2)))
       OpenAD_lin_5 = __value__(Z(1 : INT(SIZE(X))))
       OpenAD_lin_6 = __value__(X(1 : 2))
       OpenAD_lin_3 = (INT(1_w2f__i8) / __value__(Y(1 : 2)))
       OpenAD_lin_4 = (-(OpenAD_aux_1 /(__value__(Y(1 : 2)) * __value__(
      > Y(1 : 2)))))
-      __value__(Y(1 : 2)) = OpenAD_dly_0
+      __value__(Y(1 : 2)) = (OpenAD_aux_1 / __value__(Y(1 : 2)))
       OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
       OpenAD_acc_2 = (OpenAD_lin_6 * OpenAD_lin_3)
 C     $OpenAD$ INLINE push_s1(subst)
@@ -188,15 +186,15 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_0 = SIZE(X)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_0)
+      OpenAD_aux_0 = COS(__value__(X))
+      OpenAD_lin_0 = OpenAD_aux_0
+      OpenAD_lin_2 = (- SIN(__value__(X)))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_1, __deriv__(Z(1 : INT(SIZE(
      > X)))))
-      OpenAD_aux_0 = COS(__value__(X))
+      OpenAD_lin_1 = __value__(Z(1 : INT(SIZE(X))))
       __value__(Y(1 : 2)) = (__value__(Z(1 : INT(SIZE(X)))) *
      >  OpenAD_aux_0)
-      OpenAD_lin_0 = OpenAD_aux_0
-      OpenAD_lin_2 = (- SIN(__value__(X)))
-      OpenAD_lin_1 = __value__(Z(1 : INT(SIZE(X))))
       OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_lin_0)
@@ -205,18 +203,17 @@ C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_1)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_acc_0)
+      OpenAD_aux_1 = (__value__(X(1 : 2)) * __value__(Z(1 : INT(SIZE(X)
+     > ))))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_5, __deriv__(Z(1 : INT(SIZE(
      > X)))))
-      OpenAD_aux_1 = (__value__(X(1 : 2)) * __value__(Z(1 : INT(SIZE(X)
-     > ))))
-      OpenAD_dly_0 = (OpenAD_aux_1 / __value__(Y(1 : 2)))
       OpenAD_lin_5 = __value__(Z(1 : INT(SIZE(X))))
       OpenAD_lin_6 = __value__(X(1 : 2))
       OpenAD_lin_3 = (INT(1_w2f__i8) / __value__(Y(1 : 2)))
       OpenAD_lin_4 = (-(OpenAD_aux_1 /(__value__(Y(1 : 2)) * __value__(
      > Y(1 : 2)))))
-      __value__(Y(1 : 2)) = OpenAD_dly_0
+      __value__(Y(1 : 2)) = (OpenAD_aux_1 / __value__(Y(1 : 2)))
       OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
       OpenAD_acc_2 = (OpenAD_lin_6 * OpenAD_lin_3)
 C     $OpenAD$ INLINE push_s1(subst)

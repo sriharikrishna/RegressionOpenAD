@@ -42,8 +42,6 @@ C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_aux_1
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -65,15 +63,13 @@ C$OPENAD XXX Simple loop
       DO K = 1, SP, 1
         IF(I .ne. K) THEN
           OpenAD_aux_0 = (__value__(A(I)) - __value__(A(K)))
-          OpenAD_dly_0 = (__value__(DENOM) * OpenAD_aux_0)
           OpenAD_lin_0 = OpenAD_aux_0
           OpenAD_lin_1 = __value__(DENOM)
-          __value__(DENOM) = OpenAD_dly_0
+          __value__(DENOM) = (__value__(DENOM) * OpenAD_aux_0)
           OpenAD_aux_1 = (X - __value__(A(K)))
-          OpenAD_dly_1 = (__value__(NUMER) * OpenAD_aux_1)
           OpenAD_lin_2 = OpenAD_aux_1
           OpenAD_lin_3 = __value__(NUMER)
-          __value__(NUMER) = OpenAD_dly_1
+          __value__(NUMER) = (__value__(NUMER) * OpenAD_aux_1)
           OpenAD_acc_0 = (INT((-1_w2f__i8)) * OpenAD_lin_3)
           CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(DENOM))
           CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(NUMER))
@@ -88,10 +84,10 @@ C$OPENAD XXX Simple loop
           CALL saxpy(OpenAD_acc_0, __deriv__(A(K)), __deriv__(NUMER))
         ENDIF
       END DO
-      __value__(LAG) = (__value__(NUMER) / __value__(DENOM))
       OpenAD_lin_4 = (INT(1_w2f__i8) / __value__(DENOM))
       OpenAD_lin_5 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
      > (DENOM))))
+      __value__(LAG) = (__value__(NUMER) / __value__(DENOM))
       CALL sax(OpenAD_lin_4, __deriv__(NUMER), __deriv__(LAG))
       CALL saxpy(OpenAD_lin_5, __deriv__(DENOM), __deriv__(LAG))
       END SUBROUTINE

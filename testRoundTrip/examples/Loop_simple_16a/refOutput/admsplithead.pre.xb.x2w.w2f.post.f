@@ -43,7 +43,6 @@ C
       INTEGER(w2f__i4) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
       REAL(w2f__8) OpenAD_Symbol_8
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
@@ -71,10 +70,9 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = L,U,S
         IF (I.LT.5) THEN
-          OpenAD_dly_0 = (X(I)%v*Y%v)
           OpenAD_lin_0 = Y%v
           OpenAD_lin_1 = X(I)%v
-          Y%v = OpenAD_dly_0
+          Y%v = (X(I)%v*Y%v)
           double_tape(double_tape_pointer) = OpenAD_lin_0
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_lin_1

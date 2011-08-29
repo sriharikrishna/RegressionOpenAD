@@ -37,7 +37,6 @@ C
       TYPE (OpenADTy_active) T(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_Symbol_0(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_Symbol_1(1 : 1, 1 : 2)
-      REAL(w2f__8) OpenAD_dly_0(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_lin_0(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_lin_1(1 : 1, 1 : 2)
       TYPE (OpenADTy_active) OpenAD_prp_0(1 : 1, 1 : 2)
@@ -60,11 +59,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       __value__(T(1, 1 : 2)) = __value__(X(1 : 2))
-      OpenAD_dly_0 = (__value__(T(1 : 1, 1 : 2)) * __value__(T(1 : 1, 1
-     >  : 2)))
       OpenAD_lin_0 = __value__(T(1 : 1, 1 : 2))
       OpenAD_lin_1 = __value__(T(1 : 1, 1 : 2))
-      __value__(T(1 : 1, 1 : 2)) = OpenAD_dly_0
+      __value__(T(1 : 1, 1 : 2)) = (__value__(T(1 : 1, 1 : 2)) *
+     >  __value__(T(1 : 1, 1 : 2)))
 C     $OpenAD$ INLINE push_s2(subst)
       CALL push_s2(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s2(subst)
@@ -118,11 +116,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       __value__(T(1, 1 : 2)) = __value__(X(1 : 2))
-      OpenAD_dly_0 = (__value__(T(1 : 1, 1 : 2)) * __value__(T(1 : 1, 1
-     >  : 2)))
       OpenAD_lin_0 = __value__(T(1 : 1, 1 : 2))
       OpenAD_lin_1 = __value__(T(1 : 1, 1 : 2))
-      __value__(T(1 : 1, 1 : 2)) = OpenAD_dly_0
+      __value__(T(1 : 1, 1 : 2)) = (__value__(T(1 : 1, 1 : 2)) *
+     >  __value__(T(1 : 1, 1 : 2)))
 C     $OpenAD$ INLINE push_s2(subst)
       CALL push_s2(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s2(subst)

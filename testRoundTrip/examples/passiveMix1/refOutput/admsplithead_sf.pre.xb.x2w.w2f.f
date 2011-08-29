@@ -42,7 +42,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       INTEGER(w2f__i4) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -73,10 +72,9 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(I)
       I = 2
-      OpenAD_dly_0 = (__value__(X(I)) * __value__(T))
       OpenAD_lin_0 = __value__(T)
       OpenAD_lin_1 = __value__(X(I))
-      __value__(T) = OpenAD_dly_0
+      __value__(T) = (__value__(X(I)) * __value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -84,12 +82,12 @@ C     $OpenAD$ INLINE push_s0(subst)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(I)
       I = 3
-      __value__(Y(1)) = SIN(__value__(T))
       OpenAD_lin_2 = COS(__value__(T))
+      __value__(Y(1)) = SIN(__value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
-      __value__(Y(2)) = COS(__value__(T))
       OpenAD_lin_3 = (- SIN(__value__(T)))
+      __value__(Y(2)) = COS(__value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ END REPLACEMENT
@@ -150,10 +148,9 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(I)
       I = 2
-      OpenAD_dly_0 = (__value__(X(I)) * __value__(T))
       OpenAD_lin_0 = __value__(T)
       OpenAD_lin_1 = __value__(X(I))
-      __value__(T) = OpenAD_dly_0
+      __value__(T) = (__value__(X(I)) * __value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -161,12 +158,12 @@ C     $OpenAD$ INLINE push_s0(subst)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(I)
       I = 3
-      __value__(Y(1)) = SIN(__value__(T))
       OpenAD_lin_2 = COS(__value__(T))
+      __value__(Y(1)) = SIN(__value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
-      __value__(Y(2)) = COS(__value__(T))
       OpenAD_lin_3 = (- SIN(__value__(T)))
+      __value__(Y(2)) = COS(__value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ END REPLACEMENT

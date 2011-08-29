@@ -79,10 +79,10 @@ C original function
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = (X%v*X%v)
-      Y%v = SIN(OpenAD_aux_0)
       OpenAD_lin_1 = X%v
       OpenAD_lin_2 = X%v
       OpenAD_lin_0 = COS(OpenAD_aux_0)
+      Y%v = SIN(OpenAD_aux_0)
       OpenAD_acc_0 = (OpenAD_lin_1*OpenAD_lin_0)
       OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
       double_tape(double_tape_pointer) = OpenAD_acc_0

@@ -126,7 +126,6 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_aux_4 = (X(12)%v+X(11)%v+X(9)%v+X(10)%v)
       OpenAD_aux_2 = (X(2)%v+X(1)%v*OpenAD_aux_4)
       OpenAD_aux_0 = (OpenAD_aux_1/OpenAD_aux_2)
-      Y(1)%v = (X(3)%v*OpenAD_aux_0)
       OpenAD_lin_0 = OpenAD_aux_0
       OpenAD_lin_4 = OpenAD_aux_3
       OpenAD_lin_5 = X(1)%v
@@ -137,6 +136,7 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_9 = X(1)%v
       OpenAD_lin_3 = (-(OpenAD_aux_1/(OpenAD_aux_2*OpenAD_aux_2)))
       OpenAD_lin_1 = X(3)%v
+      Y(1)%v = (X(3)%v*OpenAD_aux_0)
       OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
       OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
       OpenAD_acc_2 = (OpenAD_lin_8*OpenAD_acc_1)

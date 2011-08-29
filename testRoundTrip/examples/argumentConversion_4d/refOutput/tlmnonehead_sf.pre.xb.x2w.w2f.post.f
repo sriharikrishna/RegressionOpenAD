@@ -41,9 +41,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      Y%v = (X(2)%v*X(4)%v)
       OpenAD_lin_0 = X(4)%v
       OpenAD_lin_1 = X(2)%v
+      Y%v = (X(2)%v*X(4)%v)
       CALL sax(OpenAD_lin_0,X(2),Y)
       CALL saxpy(OpenAD_lin_1,X(4),Y)
       END SUBROUTINE

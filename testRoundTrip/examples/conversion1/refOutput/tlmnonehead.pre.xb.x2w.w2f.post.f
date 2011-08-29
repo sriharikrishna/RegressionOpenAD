@@ -27,7 +27,7 @@ C
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_0 = DBLE(X(1)%v)
       OpenAD_aux_1 = DBLE(2)
-      Y(1)%v = (OpenAD_aux_0*OpenAD_aux_1)
       OpenAD_lin_0 = OpenAD_aux_1
+      Y(1)%v = (OpenAD_aux_0*OpenAD_aux_1)
       CALL sax(OpenAD_lin_0,X(1),Y(1))
       END SUBROUTINE

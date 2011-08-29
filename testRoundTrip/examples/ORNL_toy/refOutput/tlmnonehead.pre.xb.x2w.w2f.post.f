@@ -73,8 +73,6 @@ C
       CALL sax(OpenAD_acc_0,U(2),V(1))
       CALL saxpy(OpenAD_acc_1,U(1),V(1))
       OpenAD_aux_1 = (U(1)%v*2.0D00)
-      V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
-     +)%v**3)+U(2)%v*OpenAD_aux_1)
       OpenAD_lin_3 = (3*(U(1)%v**(3-INT(1_w2f__i8))))
       OpenAD_lin_4 = COS(U(2)%v)
       OpenAD_lin_5 = (INT(1_w2f__i8)/U(1)%v)
@@ -83,6 +81,8 @@ C
       OpenAD_lin_8 = (3*(U(2)%v**(3-INT(1_w2f__i8))))
       OpenAD_lin_9 = OpenAD_aux_1
       OpenAD_lin_10 = U(2)%v
+      V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
+     +)%v**3)+U(2)%v*OpenAD_aux_1)
       OpenAD_acc_2 = (OpenAD_lin_7*INT((-1_w2f__i8)))
       OpenAD_acc_3 = (2.0D00*OpenAD_lin_10)
       CALL sax(OpenAD_lin_8,U(2),V(2))

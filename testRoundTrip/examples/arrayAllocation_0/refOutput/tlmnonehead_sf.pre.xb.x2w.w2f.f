@@ -51,26 +51,26 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(T(1 : INT(SIZE(X)))) = SIN(__value__(X))
       OpenAD_lin_0 = COS(__value__(X))
+      __value__(T(1 : INT(SIZE(X)))) = SIN(__value__(X))
       CALL sax(OpenAD_lin_0, __deriv__(X), __deriv__(T(1 : INT(SIZE(X))
      > )))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_1, __deriv__(T(1 : INT(SIZE(
      > X)))))
-      __value__(U(1 : INT(SIZE(Y)))) = (__value__(X(1 : 2)) * __value__
-     > (T(1 : INT(SIZE(X)))) + 5.0D00)
       OpenAD_lin_1 = __value__(T(1 : INT(SIZE(X))))
       OpenAD_lin_2 = __value__(X(1 : 2))
+      __value__(U(1 : INT(SIZE(Y)))) = (__value__(X(1 : 2)) * __value__
+     > (T(1 : INT(SIZE(X)))) + 5.0D00)
       CALL sax(OpenAD_lin_1, __deriv__(X(1 : 2)), __deriv__(U(1 : INT(
      > SIZE(Y)))))
       CALL saxpy(OpenAD_lin_2, __deriv__(T(1 : INT(SIZE(X)))),
      >  __deriv__(U(1 : INT(SIZE(Y)))))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_aux_0, __deriv__(U))
+      OpenAD_aux_0 = SQRT(__value__(U))
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_3, OpenAD_aux_0)
-      OpenAD_aux_0 = SQRT(__value__(U))
       OpenAD_lin_3 = (5.0D-01 / OpenAD_aux_0)
       __value__(Y(1 : 2)) = OpenAD_aux_0
       CALL sax(OpenAD_lin_3, __deriv__(U), __deriv__(Y(1 : 2)))

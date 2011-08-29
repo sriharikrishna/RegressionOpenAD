@@ -36,7 +36,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_3
       REAL(w2f__8) OpenAD_Symbol_4
       INTEGER(w2f__i4) OpenAD_Symbol_5
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -112,10 +111,9 @@ C$OPENAD XXX Template ad_template.f
       integer_tape(integer_tape_pointer) = I
       integer_tape_pointer = integer_tape_pointer+1
       I = 2
-      OpenAD_dly_0 = (X(I)%v*T%v)
       OpenAD_lin_0 = T%v
       OpenAD_lin_1 = X(I)%v
-      T%v = OpenAD_dly_0
+      T%v = (X(I)%v*T%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
@@ -123,12 +121,12 @@ C$OPENAD XXX Template ad_template.f
       integer_tape(integer_tape_pointer) = I
       integer_tape_pointer = integer_tape_pointer+1
       I = 3
-      Y(1)%v = SIN(T%v)
       OpenAD_lin_2 = COS(T%v)
+      Y(1)%v = SIN(T%v)
       double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
-      Y(2)%v = COS(T%v)
       OpenAD_lin_3 = (-SIN(T%v))
+      Y(2)%v = COS(T%v)
       double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
 

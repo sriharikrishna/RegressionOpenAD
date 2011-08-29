@@ -34,9 +34,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      AGLOBAL%v = (X(1)%v*X(2)%v)
       OpenAD_lin_0 = X(2)%v
       OpenAD_lin_1 = X(1)%v
+      AGLOBAL%v = (X(1)%v*X(2)%v)
       Y%v = AGLOBAL%v
       CALL sax(OpenAD_lin_0,X(1),AGLOBAL)
       CALL saxpy(OpenAD_lin_1,X(2),AGLOBAL)
@@ -93,7 +93,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      AP%v = (AGLOBAL%v**3)
       OpenAD_lin_2 = (3*(AGLOBAL%v**(3-INT(1_w2f__i8))))
+      AP%v = (AGLOBAL%v**3)
       CALL sax(OpenAD_lin_2,AGLOBAL,AP)
       END SUBROUTINE

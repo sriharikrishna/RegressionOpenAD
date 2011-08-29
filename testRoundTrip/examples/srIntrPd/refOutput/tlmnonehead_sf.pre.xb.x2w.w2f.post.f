@@ -113,7 +113,7 @@ C$OPENAD XXX Template ad_template.f
       P2 = (-3.0D+01)
       CALL OAD_S_MIN_D(X(1),X(2),OAD_CTMP0)
       CALL OAD_S_MAX_D(P1,P2,OAD_CTMP1)
-      Y(1)%v = (OAD_CTMP0%v*OAD_CTMP1)
       OpenAD_lin_0 = OAD_CTMP1
+      Y(1)%v = (OAD_CTMP0%v*OAD_CTMP1)
       CALL sax(OpenAD_lin_0,OAD_CTMP0,Y(1))
       END SUBROUTINE

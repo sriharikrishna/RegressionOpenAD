@@ -47,17 +47,15 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Statements ****
 C
-      OpenAD_dly_0 = (__value__(P) * __value__(Q))
       OpenAD_lin_0 = __value__(Q)
       OpenAD_lin_1 = __value__(P)
-      __value__(Q) = OpenAD_dly_0
+      __value__(Q) = (__value__(P) * __value__(Q))
       I = (I + 1)
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Q))
       CALL sax(OpenAD_lin_0, __deriv__(P), __deriv__(Q))
@@ -81,7 +79,6 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       TYPE (OpenADTy_active) V(1 : 2)
-      REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       TYPE (OpenADTy_active) OpenAD_prp_1
@@ -104,10 +101,9 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(__deriv__(V(2)))
       CALL foo(__deriv__(X(1)), __deriv__(Y(1)))
       CALL foo(__deriv__(X(I)), __deriv__(V(I)))
-      OpenAD_dly_1 = (__value__(Y(1)) * __value__(V(2)))
       OpenAD_lin_2 = __value__(V(2))
       OpenAD_lin_3 = __value__(Y(1))
-      __value__(Y(1)) = OpenAD_dly_1
+      __value__(Y(1)) = (__value__(Y(1)) * __value__(V(2)))
       CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
       CALL setderiv(__deriv__(OpenAD_prp_2), __deriv__(V(2)))
       CALL sax(OpenAD_lin_2, __deriv__(OpenAD_prp_1), __deriv__(Y(1)))

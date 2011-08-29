@@ -55,9 +55,9 @@ C original function
           if (our_rev_mode%tape) then
 C taping
       LOCALX(1)%v = (X(1)%v*2.0D00)
-      Y(1)%v = (LOCALX(1)%v*LOCALX(1)%v)
       OpenAD_lin_0 = LOCALX(1)%v
       OpenAD_lin_1 = LOCALX(1)%v
+      Y(1)%v = (LOCALX(1)%v*LOCALX(1)%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1

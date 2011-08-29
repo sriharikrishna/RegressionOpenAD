@@ -90,22 +90,22 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(X(1),X(2),Y(1))
       CALL foo(X(1),X(2),Y(1))
       OpenAD_aux_0 = (X(1)%v*X(2)%v)
-      Y(2)%v = SIN(OpenAD_aux_0)
       OpenAD_lin_1 = X(2)%v
       OpenAD_lin_2 = X(1)%v
       OpenAD_lin_0 = COS(OpenAD_aux_0)
+      Y(2)%v = SIN(OpenAD_aux_0)
       OpenAD_acc_0 = (OpenAD_lin_1*OpenAD_lin_0)
       OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
       double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-      Y(3)%v = SIN(X(3)%v)
       OpenAD_lin_3 = COS(X(3)%v)
+      Y(3)%v = SIN(X(3)%v)
       double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
-      Y(4)%v = COS(X(4)%v)
       OpenAD_lin_4 = (-SIN(X(4)%v))
+      Y(4)%v = COS(X(4)%v)
       double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
           end if
@@ -182,9 +182,9 @@ C$OPENAD XXX Template ad_template.f
 C taping
 C$OPENAD XXX Template ad_template.f
       CALL bar(B)
-      C%v = (B%v+A%v*A%v)
       OpenAD_lin_5 = A%v
       OpenAD_lin_6 = A%v
+      C%v = (B%v+A%v*A%v)
       double_tape(double_tape_pointer) = OpenAD_lin_5
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_6
@@ -235,7 +235,6 @@ C
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
       REAL(w2f__8) OpenAD_aux_1
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_7
       REAL(w2f__8) OpenAD_lin_8
       REAL(w2f__8) OpenAD_lin_9
@@ -258,11 +257,10 @@ C original function
 C taping
 C$OPENAD XXX Template ad_template.f
       OpenAD_aux_1 = (A%v*A%v)
-      OpenAD_dly_0 = COS(OpenAD_aux_1)
       OpenAD_lin_8 = A%v
       OpenAD_lin_9 = A%v
       OpenAD_lin_7 = (-SIN(OpenAD_aux_1))
-      A%v = OpenAD_dly_0
+      A%v = COS(OpenAD_aux_1)
       OpenAD_acc_2 = (OpenAD_lin_8*OpenAD_lin_7)
       OpenAD_acc_3 = (OpenAD_lin_9*OpenAD_lin_7)
       double_tape(double_tape_pointer) = OpenAD_acc_2

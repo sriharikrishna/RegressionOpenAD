@@ -42,7 +42,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(Y(1)) = (__value__(X(1)) ** 2)
       OpenAD_lin_0 = (2 *(__value__(X(1)) **(2 - INT(1_w2f__i8))))
+      __value__(Y(1)) = (__value__(X(1)) ** 2)
       CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE

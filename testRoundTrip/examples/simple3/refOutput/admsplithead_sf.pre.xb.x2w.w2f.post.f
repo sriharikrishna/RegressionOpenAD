@@ -90,7 +90,6 @@ C
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 C original function
@@ -101,20 +100,21 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-      V3%v = (X1%v*X2%v)
+C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = X2%v
       OpenAD_lin_1 = X1%v
-      V4%v = (X1%v*V3%v)
+      V3%v = (X1%v*X2%v)
       OpenAD_lin_2 = V3%v
       OpenAD_lin_3 = X1%v
+      V4%v = (X1%v*V3%v)
       OpenAD_aux_0 = (X2%v*V3%v)
-      Y1%v = (V4%v*OpenAD_aux_0)
       OpenAD_lin_4 = OpenAD_aux_0
       OpenAD_lin_6 = V3%v
       OpenAD_lin_7 = X2%v
       OpenAD_lin_5 = V4%v
-      Y2%v = SIN(V4%v)
+      Y1%v = (V4%v*OpenAD_aux_0)
       OpenAD_lin_8 = COS(V4%v)
+      Y2%v = SIN(V4%v)
       OpenAD_acc_0 = (OpenAD_lin_6*OpenAD_lin_5)
       OpenAD_acc_1 = (OpenAD_lin_7*OpenAD_lin_5+OpenAD_lin_3*OpenAD_lin_
      +4)

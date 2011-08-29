@@ -108,7 +108,6 @@ C external C function used in inlined code
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then
 C store arguments
@@ -142,20 +141,21 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-      T1%v = (X(1)%v/X(2)%v)
+C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = (INT(1_w2f__i8)/X(2)%v)
       OpenAD_lin_1 = (-(X(1)%v/(X(2)%v*X(2)%v)))
-      T2%v = COS(T1%v)
+      T1%v = (X(1)%v/X(2)%v)
       OpenAD_lin_2 = (-SIN(T1%v))
+      T2%v = COS(T1%v)
       OpenAD_aux_0 = EXP(T2%v)
       OpenAD_lin_3 = OpenAD_aux_0
       Y1%v = OpenAD_aux_0
       Y2%v = (T2%v*3.14000010490417480469D00)
-      Y3%v = SIN(T2%v)
       OpenAD_lin_4 = COS(T2%v)
-      Y4%v = (T1%v*T2%v)
+      Y3%v = SIN(T2%v)
       OpenAD_lin_5 = T2%v
       OpenAD_lin_6 = T1%v
+      Y4%v = (T1%v*T2%v)
       Y(1)%v = Y1%v
       OpenAD_acc_0 = (OpenAD_lin_5+OpenAD_lin_2*OpenAD_lin_6)
       OpenAD_acc_1 = (OpenAD_lin_2*3.14000010490417480469D00)

@@ -90,7 +90,6 @@ C external C function used in inlined code
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then
 C store arguments
@@ -117,8 +116,9 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-      T(1:INT(SIZE(X)))%v = SIN(X%v)
+C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = COS(X%v)
+      T(1:INT(SIZE(X)))%v = SIN(X%v)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
      +n_0)-1) = OpenAD_lin_0(:)
       double_tape_pointer = double_tape_pointer+size(OpenAD_lin_0)
@@ -127,9 +127,9 @@ C taping
       integer_tape_pointer = integer_tape_pointer+1
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_lin_1,T(1:INT(SIZE(X))))
-      U(1:INT(SIZE(Y)))%v = (X(1:2)%v*T(1:INT(SIZE(X)))%v+5.0D00)
       OpenAD_lin_1 = T(1:INT(SIZE(X)))%v
       OpenAD_lin_2 = X(1:2)%v
+      U(1:INT(SIZE(Y)))%v = (X(1:2)%v*T(1:INT(SIZE(X)))%v+5.0D00)
       OpenAD_Symbol_1 = SIZE(OpenAD_lin_1,1_w2f__i8)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
@@ -150,9 +150,9 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape_pointer = integer_tape_pointer+1
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_aux_0,U)
+      OpenAD_aux_0 = SQRT(U%v)
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_lin_3,OpenAD_aux_0)
-      OpenAD_aux_0 = SQRT(U%v)
       OpenAD_lin_3 = (5.0D-01/OpenAD_aux_0)
       Y(1:2)%v = OpenAD_aux_0
       OpenAD_Symbol_6 = SIZE(OpenAD_lin_3,1_w2f__i8)

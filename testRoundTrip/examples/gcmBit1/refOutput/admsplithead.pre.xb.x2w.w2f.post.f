@@ -296,15 +296,15 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_6 = 0_w2f__i8
         DO I = 1,2,1
           T%v = TFLD(I,J,K,BI,BJ)%v
-          T2%v = (T%v*T%v)
           OpenAD_lin_0 = T%v
           OpenAD_lin_1 = T%v
-          T3%v = (T%v*T2%v)
+          T2%v = (T%v*T%v)
           OpenAD_lin_2 = T2%v
           OpenAD_lin_3 = T%v
-          T4%v = (T%v*T3%v)
+          T3%v = (T%v*T2%v)
           OpenAD_lin_4 = T3%v
           OpenAD_lin_5 = T%v
+          T4%v = (T%v*T3%v)
           S%v = SFLD(I,J,K,BI,BJ)%v
           OpenAD_acc_0 = (OpenAD_lin_0+OpenAD_lin_1)
           OpenAD_acc_1 = (OpenAD_lin_2+OpenAD_acc_0*OpenAD_lin_3)
@@ -327,10 +327,10 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
           IF (S%v.GT.0.0D00) THEN
             OpenAD_aux_0 = SQRT(S%v)
-            S3O2%v = (S%v*OpenAD_aux_0)
             OpenAD_lin_6 = OpenAD_aux_0
             OpenAD_lin_8 = (5.0D-01/OpenAD_aux_0)
             OpenAD_lin_7 = S%v
+            S3O2%v = (S%v*OpenAD_aux_0)
             OpenAD_acc_3 = (OpenAD_lin_8*OpenAD_lin_7)
             double_tape(double_tape_pointer) = OpenAD_lin_6
             double_tape_pointer = double_tape_pointer+1
@@ -346,22 +346,21 @@ C$OPENAD XXX Template ad_template.f
             integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
             integer_tape_pointer = integer_tape_pointer+1
           ENDIF
-          P%v = (LOCPRES(I,J)%v*SITOBAR)
           OpenAD_lin_9 = SITOBAR
-          P2%v = (P%v*P%v)
+          P%v = (LOCPRES(I,J)%v*SITOBAR)
           OpenAD_lin_10 = P%v
           OpenAD_lin_11 = P%v
-          BMFRESH%v = (EOSJMDCKFW(1)+EOSJMDCKFW(2)*T%v+EOSJMDCKFW(3)*T2%
-     +v+EOSJMDCKFW(4)*T3%v+EOSJMDCKFW(5)*T4%v)
+          P2%v = (P%v*P%v)
           OpenAD_lin_12 = EOSJMDCKFW(2)
           OpenAD_lin_13 = EOSJMDCKFW(3)
           OpenAD_lin_14 = EOSJMDCKFW(4)
           OpenAD_lin_15 = EOSJMDCKFW(5)
+          BMFRESH%v = (EOSJMDCKFW(1)+EOSJMDCKFW(2)*T%v+EOSJMDCKFW(3)*T2%
+     +v+EOSJMDCKFW(4)*T3%v+EOSJMDCKFW(5)*T4%v)
           OpenAD_aux_1 = (EOSJMDCKSW(1)+EOSJMDCKSW(2)*T%v+EOSJMDCKSW(3)*
      +T2%v+EOSJMDCKSW(4)*T3%v)
           OpenAD_aux_2 = (EOSJMDCKSW(5)+EOSJMDCKSW(6)*T%v+EOSJMDCKSW(7)*
      +T2%v)
-          BMSALT%v = (S%v*OpenAD_aux_1+S3O2%v*OpenAD_aux_2)
           OpenAD_lin_16 = OpenAD_aux_1
           OpenAD_lin_18 = EOSJMDCKSW(2)
           OpenAD_lin_19 = EOSJMDCKSW(3)
@@ -371,6 +370,7 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_23 = EOSJMDCKSW(6)
           OpenAD_lin_24 = EOSJMDCKSW(7)
           OpenAD_lin_22 = S3O2%v
+          BMSALT%v = (S%v*OpenAD_aux_1+S3O2%v*OpenAD_aux_2)
           OpenAD_aux_3 = (EOSJMDCKP(1)+EOSJMDCKP(2)*T%v+EOSJMDCKP(3)*T2%
      +v+EOSJMDCKP(4)*T3%v)
           OpenAD_aux_4 = (P%v*S%v)
@@ -382,8 +382,6 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_aux_8 = (P2%v*S%v)
           OpenAD_aux_9 = (EOSJMDCKP(12)+EOSJMDCKP(13)*T%v+EOSJMDCKP(14)*
      +T2%v)
-          BMPRES%v = (P%v*OpenAD_aux_3+OpenAD_aux_4*OpenAD_aux_5+EOSJMDC
-     +KP(8)*OpenAD_aux_6+P2%v*OpenAD_aux_7+OpenAD_aux_8*OpenAD_aux_9)
           OpenAD_lin_25 = OpenAD_aux_3
           OpenAD_lin_27 = EOSJMDCKP(2)
           OpenAD_lin_28 = EOSJMDCKP(3)
@@ -408,6 +406,8 @@ C$OPENAD XXX Template ad_template.f
           OpenAD_lin_47 = EOSJMDCKP(13)
           OpenAD_lin_48 = EOSJMDCKP(14)
           OpenAD_lin_44 = OpenAD_aux_8
+          BMPRES%v = (P%v*OpenAD_aux_3+OpenAD_aux_4*OpenAD_aux_5+EOSJMDC
+     +KP(8)*OpenAD_aux_6+P2%v*OpenAD_aux_7+OpenAD_aux_8*OpenAD_aux_9)
           BULKMOD(INT(I),INT(J))%v = (BMPRES%v+BMFRESH%v+BMSALT%v)
           OpenAD_acc_4 = (OpenAD_lin_46*OpenAD_lin_43)
           OpenAD_acc_5 = (OpenAD_lin_33*OpenAD_lin_30)

@@ -303,15 +303,15 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_6 = 0_w2f__i8
         DO I = 1, 2, 1
           __value__(T) = __value__(TFLD(I, J, K, BI, BJ))
-          __value__(T2) = (__value__(T) * __value__(T))
           OpenAD_lin_0 = __value__(T)
           OpenAD_lin_1 = __value__(T)
-          __value__(T3) = (__value__(T) * __value__(T2))
+          __value__(T2) = (__value__(T) * __value__(T))
           OpenAD_lin_2 = __value__(T2)
           OpenAD_lin_3 = __value__(T)
-          __value__(T4) = (__value__(T) * __value__(T3))
+          __value__(T3) = (__value__(T) * __value__(T2))
           OpenAD_lin_4 = __value__(T3)
           OpenAD_lin_5 = __value__(T)
+          __value__(T4) = (__value__(T) * __value__(T3))
           __value__(S) = __value__(SFLD(I, J, K, BI, BJ))
           OpenAD_acc_0 = (OpenAD_lin_0 + OpenAD_lin_1)
           OpenAD_acc_1 = (OpenAD_lin_2 + OpenAD_acc_0 * OpenAD_lin_3)
@@ -334,10 +334,10 @@ C         $OpenAD$ INLINE push_i_s0(subst)
           CALL push_i_s0(BJ)
           IF(__value__(S) .GT. 0.0D00) THEN
             OpenAD_aux_0 = SQRT(__value__(S))
-            __value__(S3O2) = (__value__(S) * OpenAD_aux_0)
             OpenAD_lin_6 = OpenAD_aux_0
             OpenAD_lin_8 = (5.0D-01 / OpenAD_aux_0)
             OpenAD_lin_7 = __value__(S)
+            __value__(S3O2) = (__value__(S) * OpenAD_aux_0)
             OpenAD_acc_3 = (OpenAD_lin_8 * OpenAD_lin_7)
 C           $OpenAD$ INLINE push_s0(subst)
             CALL push_s0(OpenAD_lin_6)
@@ -353,25 +353,23 @@ C           $OpenAD$ INLINE push_i_s0(subst)
 C           $OpenAD$ INLINE push_i_s0(subst)
             CALL push_i_s0(OpenAD_Symbol_8)
           ENDIF
-          __value__(P) = (__value__(LOCPRES(I, J)) * SITOBAR)
           OpenAD_lin_9 = SITOBAR
-          __value__(P2) = (__value__(P) * __value__(P))
+          __value__(P) = (__value__(LOCPRES(I, J)) * SITOBAR)
           OpenAD_lin_10 = __value__(P)
           OpenAD_lin_11 = __value__(P)
-          __value__(BMFRESH) = (EOSJMDCKFW(1) + EOSJMDCKFW(2) *
-     >  __value__(T) + EOSJMDCKFW(3) * __value__(T2) + EOSJMDCKFW(4) *
-     >  __value__(T3) + EOSJMDCKFW(5) * __value__(T4))
+          __value__(P2) = (__value__(P) * __value__(P))
           OpenAD_lin_12 = EOSJMDCKFW(2)
           OpenAD_lin_13 = EOSJMDCKFW(3)
           OpenAD_lin_14 = EOSJMDCKFW(4)
           OpenAD_lin_15 = EOSJMDCKFW(5)
+          __value__(BMFRESH) = (EOSJMDCKFW(1) + EOSJMDCKFW(2) *
+     >  __value__(T) + EOSJMDCKFW(3) * __value__(T2) + EOSJMDCKFW(4) *
+     >  __value__(T3) + EOSJMDCKFW(5) * __value__(T4))
           OpenAD_aux_1 = (EOSJMDCKSW(1) + EOSJMDCKSW(2) * __value__(T)
      >  + EOSJMDCKSW(3) * __value__(T2) + EOSJMDCKSW(4) * __value__(T3)
      > )
           OpenAD_aux_2 = (EOSJMDCKSW(5) + EOSJMDCKSW(6) * __value__(T)
      >  + EOSJMDCKSW(7) * __value__(T2))
-          __value__(BMSALT) = (__value__(S) * OpenAD_aux_1 + __value__(
-     > S3O2) * OpenAD_aux_2)
           OpenAD_lin_16 = OpenAD_aux_1
           OpenAD_lin_18 = EOSJMDCKSW(2)
           OpenAD_lin_19 = EOSJMDCKSW(3)
@@ -381,6 +379,8 @@ C           $OpenAD$ INLINE push_i_s0(subst)
           OpenAD_lin_23 = EOSJMDCKSW(6)
           OpenAD_lin_24 = EOSJMDCKSW(7)
           OpenAD_lin_22 = __value__(S3O2)
+          __value__(BMSALT) = (__value__(S) * OpenAD_aux_1 + __value__(
+     > S3O2) * OpenAD_aux_2)
           OpenAD_aux_3 = (EOSJMDCKP(1) + EOSJMDCKP(2) * __value__(T) +
      >  EOSJMDCKP(3) * __value__(T2) + EOSJMDCKP(4) * __value__(T3))
           OpenAD_aux_4 = (__value__(P) * __value__(S))
@@ -392,9 +392,6 @@ C           $OpenAD$ INLINE push_i_s0(subst)
           OpenAD_aux_8 = (__value__(P2) * __value__(S))
           OpenAD_aux_9 = (EOSJMDCKP(12) + EOSJMDCKP(13) * __value__(T)
      >  + EOSJMDCKP(14) * __value__(T2))
-          __value__(BMPRES) = (__value__(P) * OpenAD_aux_3 +
-     >  OpenAD_aux_4 * OpenAD_aux_5 + EOSJMDCKP(8) * OpenAD_aux_6 +
-     >  __value__(P2) * OpenAD_aux_7 + OpenAD_aux_8 * OpenAD_aux_9)
           OpenAD_lin_25 = OpenAD_aux_3
           OpenAD_lin_27 = EOSJMDCKP(2)
           OpenAD_lin_28 = EOSJMDCKP(3)
@@ -419,6 +416,9 @@ C           $OpenAD$ INLINE push_i_s0(subst)
           OpenAD_lin_47 = EOSJMDCKP(13)
           OpenAD_lin_48 = EOSJMDCKP(14)
           OpenAD_lin_44 = OpenAD_aux_8
+          __value__(BMPRES) = (__value__(P) * OpenAD_aux_3 +
+     >  OpenAD_aux_4 * OpenAD_aux_5 + EOSJMDCKP(8) * OpenAD_aux_6 +
+     >  __value__(P2) * OpenAD_aux_7 + OpenAD_aux_8 * OpenAD_aux_9)
           __value__(BULKMOD(INT(I), INT(J))) = (__value__(BMPRES) +
      >  __value__(BMFRESH) + __value__(BMSALT))
           OpenAD_acc_4 = (OpenAD_lin_46 * OpenAD_lin_43)
@@ -782,15 +782,15 @@ C$OPENAD XXX Template ad_template.f
         OpenAD_Symbol_15 = 0_w2f__i8
         DO I = 1, 2, 1
           __value__(T) = __value__(TFLD(I, J, K, BI, BJ))
-          __value__(T2) = (__value__(T) * __value__(T))
           OpenAD_lin_0 = __value__(T)
           OpenAD_lin_1 = __value__(T)
-          __value__(T3) = (__value__(T) * __value__(T2))
+          __value__(T2) = (__value__(T) * __value__(T))
           OpenAD_lin_2 = __value__(T2)
           OpenAD_lin_3 = __value__(T)
-          __value__(T4) = (__value__(T) * __value__(T3))
+          __value__(T3) = (__value__(T) * __value__(T2))
           OpenAD_lin_4 = __value__(T3)
           OpenAD_lin_5 = __value__(T)
+          __value__(T4) = (__value__(T) * __value__(T3))
           __value__(S) = __value__(SFLD(I, J, K, BI, BJ))
           OpenAD_acc_0 = (OpenAD_lin_0 + OpenAD_lin_1)
           OpenAD_acc_1 = (OpenAD_lin_2 + OpenAD_acc_0 * OpenAD_lin_3)
@@ -813,10 +813,10 @@ C         $OpenAD$ INLINE push_i_s0(subst)
           CALL push_i_s0(BJ)
           IF(__value__(S) .GT. 0.0D00) THEN
             OpenAD_aux_0 = SQRT(__value__(S))
-            __value__(S3O2) = (__value__(S) * OpenAD_aux_0)
             OpenAD_lin_6 = OpenAD_aux_0
             OpenAD_lin_8 = (5.0D-01 / OpenAD_aux_0)
             OpenAD_lin_7 = __value__(S)
+            __value__(S3O2) = (__value__(S) * OpenAD_aux_0)
             OpenAD_acc_3 = (OpenAD_lin_8 * OpenAD_lin_7)
 C           $OpenAD$ INLINE push_s0(subst)
             CALL push_s0(OpenAD_lin_6)
@@ -832,25 +832,23 @@ C           $OpenAD$ INLINE push_i_s0(subst)
 C           $OpenAD$ INLINE push_i_s0(subst)
             CALL push_i_s0(OpenAD_Symbol_17)
           ENDIF
-          __value__(P) = (__value__(LOCPRES(I, J)) * SITOBAR)
           OpenAD_lin_9 = SITOBAR
-          __value__(P2) = (__value__(P) * __value__(P))
+          __value__(P) = (__value__(LOCPRES(I, J)) * SITOBAR)
           OpenAD_lin_10 = __value__(P)
           OpenAD_lin_11 = __value__(P)
-          __value__(BMFRESH) = (EOSJMDCKFW(1) + EOSJMDCKFW(2) *
-     >  __value__(T) + EOSJMDCKFW(3) * __value__(T2) + EOSJMDCKFW(4) *
-     >  __value__(T3) + EOSJMDCKFW(5) * __value__(T4))
+          __value__(P2) = (__value__(P) * __value__(P))
           OpenAD_lin_12 = EOSJMDCKFW(2)
           OpenAD_lin_13 = EOSJMDCKFW(3)
           OpenAD_lin_14 = EOSJMDCKFW(4)
           OpenAD_lin_15 = EOSJMDCKFW(5)
+          __value__(BMFRESH) = (EOSJMDCKFW(1) + EOSJMDCKFW(2) *
+     >  __value__(T) + EOSJMDCKFW(3) * __value__(T2) + EOSJMDCKFW(4) *
+     >  __value__(T3) + EOSJMDCKFW(5) * __value__(T4))
           OpenAD_aux_1 = (EOSJMDCKSW(1) + EOSJMDCKSW(2) * __value__(T)
      >  + EOSJMDCKSW(3) * __value__(T2) + EOSJMDCKSW(4) * __value__(T3)
      > )
           OpenAD_aux_2 = (EOSJMDCKSW(5) + EOSJMDCKSW(6) * __value__(T)
      >  + EOSJMDCKSW(7) * __value__(T2))
-          __value__(BMSALT) = (__value__(S) * OpenAD_aux_1 + __value__(
-     > S3O2) * OpenAD_aux_2)
           OpenAD_lin_16 = OpenAD_aux_1
           OpenAD_lin_18 = EOSJMDCKSW(2)
           OpenAD_lin_19 = EOSJMDCKSW(3)
@@ -860,6 +858,8 @@ C           $OpenAD$ INLINE push_i_s0(subst)
           OpenAD_lin_23 = EOSJMDCKSW(6)
           OpenAD_lin_24 = EOSJMDCKSW(7)
           OpenAD_lin_22 = __value__(S3O2)
+          __value__(BMSALT) = (__value__(S) * OpenAD_aux_1 + __value__(
+     > S3O2) * OpenAD_aux_2)
           OpenAD_aux_3 = (EOSJMDCKP(1) + EOSJMDCKP(2) * __value__(T) +
      >  EOSJMDCKP(3) * __value__(T2) + EOSJMDCKP(4) * __value__(T3))
           OpenAD_aux_4 = (__value__(P) * __value__(S))
@@ -871,9 +871,6 @@ C           $OpenAD$ INLINE push_i_s0(subst)
           OpenAD_aux_8 = (__value__(P2) * __value__(S))
           OpenAD_aux_9 = (EOSJMDCKP(12) + EOSJMDCKP(13) * __value__(T)
      >  + EOSJMDCKP(14) * __value__(T2))
-          __value__(BMPRES) = (__value__(P) * OpenAD_aux_3 +
-     >  OpenAD_aux_4 * OpenAD_aux_5 + EOSJMDCKP(8) * OpenAD_aux_6 +
-     >  __value__(P2) * OpenAD_aux_7 + OpenAD_aux_8 * OpenAD_aux_9)
           OpenAD_lin_25 = OpenAD_aux_3
           OpenAD_lin_27 = EOSJMDCKP(2)
           OpenAD_lin_28 = EOSJMDCKP(3)
@@ -898,6 +895,9 @@ C           $OpenAD$ INLINE push_i_s0(subst)
           OpenAD_lin_47 = EOSJMDCKP(13)
           OpenAD_lin_48 = EOSJMDCKP(14)
           OpenAD_lin_44 = OpenAD_aux_8
+          __value__(BMPRES) = (__value__(P) * OpenAD_aux_3 +
+     >  OpenAD_aux_4 * OpenAD_aux_5 + EOSJMDCKP(8) * OpenAD_aux_6 +
+     >  __value__(P2) * OpenAD_aux_7 + OpenAD_aux_8 * OpenAD_aux_9)
           __value__(BULKMOD(INT(I), INT(J))) = (__value__(BMPRES) +
      >  __value__(BMFRESH) + __value__(BMSALT))
           OpenAD_acc_4 = (OpenAD_lin_46 * OpenAD_lin_43)

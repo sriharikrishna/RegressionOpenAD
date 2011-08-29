@@ -70,9 +70,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      C%v = (B%v+A%v*A%v)
       OpenAD_lin_0 = A%v
       OpenAD_lin_1 = A%v
+      C%v = (B%v+A%v*A%v)
       CALL setderiv(C,B)
       CALL saxpy(OpenAD_lin_0,A,C)
       CALL saxpy(OpenAD_lin_1,A,C)

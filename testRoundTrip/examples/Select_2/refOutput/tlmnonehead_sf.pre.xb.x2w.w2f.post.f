@@ -60,13 +60,13 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(2.0D00,X(I),Y(I))
         GO TO 21
  19     CONTINUE
-        Y(INT(I))%v = SIN(X(I)%v)
         OpenAD_lin_0 = COS(X(I)%v)
+        Y(INT(I))%v = SIN(X(I)%v)
         CALL sax(OpenAD_lin_0,X(I),Y(I))
         GO TO 21
  23     CONTINUE
-        Y(INT(I))%v = COS(X(I)%v)
         OpenAD_lin_1 = (-SIN(X(I)%v))
+        Y(INT(I))%v = COS(X(I)%v)
         CALL sax(OpenAD_lin_1,X(I),Y(I))
         GO TO 21
  21     CONTINUE
