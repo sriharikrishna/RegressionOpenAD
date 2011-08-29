@@ -41,6 +41,7 @@ C
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
       REAL(w2f__8) OpenAD_acc_4
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -50,7 +51,6 @@ C
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
       REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -68,20 +68,20 @@ C$OPENAD XXX Template ad_template.f
       __value__(V4) = (__value__(X1) * __value__(V3))
       OpenAD_lin_2 = __value__(V3)
       OpenAD_lin_3 = __value__(X1)
-      OpenAD_lin_4 = (__value__(X2) * __value__(V3))
-      __value__(Y1) = (__value__(V4) * OpenAD_lin_4)
-      OpenAD_lin_5 = OpenAD_lin_4
-      OpenAD_lin_7 = __value__(V3)
-      OpenAD_lin_8 = __value__(X2)
-      OpenAD_lin_6 = __value__(V4)
+      OpenAD_aux_0 = (__value__(X2) * __value__(V3))
+      __value__(Y1) = (__value__(V4) * OpenAD_aux_0)
+      OpenAD_lin_4 = OpenAD_aux_0
+      OpenAD_lin_6 = __value__(V3)
+      OpenAD_lin_7 = __value__(X2)
+      OpenAD_lin_5 = __value__(V4)
       __value__(Y2) = SIN(__value__(V4))
-      OpenAD_lin_9 = COS(__value__(V4))
-      OpenAD_acc_0 = (OpenAD_lin_7 * OpenAD_lin_6)
-      OpenAD_acc_1 = (OpenAD_lin_8 * OpenAD_lin_6 + OpenAD_lin_3 *
-     >  OpenAD_lin_5)
-      OpenAD_acc_2 = (OpenAD_lin_3 * OpenAD_lin_9)
-      OpenAD_acc_3 = (OpenAD_lin_2 * OpenAD_lin_5)
-      OpenAD_acc_4 = (OpenAD_lin_2 * OpenAD_lin_9)
+      OpenAD_lin_8 = COS(__value__(V4))
+      OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_5)
+      OpenAD_acc_1 = (OpenAD_lin_7 * OpenAD_lin_5 + OpenAD_lin_3 *
+     >  OpenAD_lin_4)
+      OpenAD_acc_2 = (OpenAD_lin_3 * OpenAD_lin_8)
+      OpenAD_acc_3 = (OpenAD_lin_2 * OpenAD_lin_4)
+      OpenAD_acc_4 = (OpenAD_lin_2 * OpenAD_lin_8)
       CALL sax(OpenAD_lin_0, __deriv__(X1), __deriv__(V3))
       CALL saxpy(OpenAD_lin_1, __deriv__(X2), __deriv__(V3))
       CALL sax(OpenAD_acc_2, __deriv__(V3), __deriv__(Y2))

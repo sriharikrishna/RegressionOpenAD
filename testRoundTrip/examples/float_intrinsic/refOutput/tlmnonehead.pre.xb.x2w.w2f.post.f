@@ -13,8 +13,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
+      INTEGER(w2f__i4) OpenAD_aux_0
       INTEGER(w2f__i4) OpenAD_lin_0
-      INTEGER(w2f__i4) OpenAD_lin_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -24,8 +24,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_0 = FLOAT(6)
-      Y(1)%v = (OpenAD_lin_0*X(1)%v)
-      OpenAD_lin_1 = OpenAD_lin_0
-      CALL sax(OpenAD_lin_1,X(1),Y(1))
+      OpenAD_aux_0 = FLOAT(6)
+      Y(1)%v = (OpenAD_aux_0*X(1)%v)
+      OpenAD_lin_0 = OpenAD_aux_0
+      CALL sax(OpenAD_lin_0,X(1),Y(1))
       END SUBROUTINE

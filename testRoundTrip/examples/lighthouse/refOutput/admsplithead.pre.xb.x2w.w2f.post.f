@@ -42,11 +42,12 @@ C
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
+      REAL(w2f__8) OpenAD_aux_2
       REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
@@ -54,7 +55,6 @@ C
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
       REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
       type(active) :: OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
@@ -85,38 +85,38 @@ C taping
       GAMMA%v = X(2)%v
       OMEGA%v = X(3)%v
       T%v = X(4)%v
-      OpenAD_lin_0 = TAN(OMEGA%v*T%v)
-      OpenAD_lin_2 = T%v
-      OpenAD_lin_3 = OMEGA%v
-      OpenAD_lin_1 = (OpenAD_lin_0*OpenAD_lin_0+INT(1_w2f__i8))
-      V%v = OpenAD_lin_0
-      OpenAD_lin_4 = (NU%v*V%v)
-      OpenAD_lin_5 = (GAMMA%v-V%v)
-      Y(1)%v = (OpenAD_lin_4/OpenAD_lin_5)
-      OpenAD_lin_8 = V%v
-      OpenAD_lin_9 = NU%v
-      OpenAD_lin_6 = (INT(1_w2f__i8)/OpenAD_lin_5)
-      OpenAD_lin_7 = (-(OpenAD_lin_4/(OpenAD_lin_5*OpenAD_lin_5)))
-      OpenAD_acc_0 = (OpenAD_lin_9*OpenAD_lin_6+INT((-1_w2f__i8))*OpenAD
-     +_lin_7)
-      OpenAD_acc_1 = (OpenAD_lin_8*OpenAD_lin_6)
-      OpenAD_acc_2 = (OpenAD_lin_2*OpenAD_lin_1*OpenAD_acc_0)
-      OpenAD_acc_3 = (OpenAD_lin_3*OpenAD_lin_1*OpenAD_acc_0)
+      OpenAD_aux_0 = TAN(OMEGA%v*T%v)
+      OpenAD_lin_1 = T%v
+      OpenAD_lin_2 = OMEGA%v
+      OpenAD_lin_0 = (OpenAD_aux_0*OpenAD_aux_0+INT(1_w2f__i8))
+      V%v = OpenAD_aux_0
+      OpenAD_aux_1 = (NU%v*V%v)
+      OpenAD_aux_2 = (GAMMA%v-V%v)
+      Y(1)%v = (OpenAD_aux_1/OpenAD_aux_2)
+      OpenAD_lin_5 = V%v
+      OpenAD_lin_6 = NU%v
+      OpenAD_lin_3 = (INT(1_w2f__i8)/OpenAD_aux_2)
+      OpenAD_lin_4 = (-(OpenAD_aux_1/(OpenAD_aux_2*OpenAD_aux_2)))
+      OpenAD_acc_0 = (OpenAD_lin_6*OpenAD_lin_3+INT((-1_w2f__i8))*OpenAD
+     +_lin_4)
+      OpenAD_acc_1 = (OpenAD_lin_5*OpenAD_lin_3)
+      OpenAD_acc_2 = (OpenAD_lin_1*OpenAD_lin_0*OpenAD_acc_0)
+      OpenAD_acc_3 = (OpenAD_lin_2*OpenAD_lin_0*OpenAD_acc_0)
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_2
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_3
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_7
+      double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
       OpenAD_dly_0 = (Y(1)%v*GAMMA%v)
-      OpenAD_lin_10 = GAMMA%v
-      OpenAD_lin_11 = Y(1)%v
+      OpenAD_lin_7 = GAMMA%v
+      OpenAD_lin_8 = Y(1)%v
       Y(2)%v = OpenAD_dly_0
-      double_tape(double_tape_pointer) = OpenAD_lin_10
+      double_tape(double_tape_pointer) = OpenAD_lin_7
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_11
+      double_tape(double_tape_pointer) = OpenAD_lin_8
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then

@@ -36,8 +36,8 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0(1 : 2)
       REAL(w2f__8) OpenAD_acc_0(1 : 2)
+      REAL(w2f__8) OpenAD_aux_0(1 : 2)
       REAL(w2f__8) OpenAD_lin_0(1 : 2)
-      REAL(w2f__8) OpenAD_lin_1(1 : 2)
 C
 C     **** Top Level Pragmas ****
 C
@@ -52,10 +52,10 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_0 = EXP(__value__(X) * 5.0D-01)
-      OpenAD_lin_1 = OpenAD_lin_0
-      __value__(Y(1 : 2)) = OpenAD_lin_0
-      OpenAD_acc_0 = (5.0D-01 * OpenAD_lin_1)
+      OpenAD_aux_0 = EXP(__value__(X) * 5.0D-01)
+      OpenAD_lin_0 = OpenAD_aux_0
+      __value__(Y(1 : 2)) = OpenAD_aux_0
+      OpenAD_acc_0 = (5.0D-01 * OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_acc_0)
 C     $OpenAD$ END REPLACEMENT
@@ -81,10 +81,10 @@ C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_0 = EXP(__value__(X) * 5.0D-01)
-      OpenAD_lin_1 = OpenAD_lin_0
-      __value__(Y(1 : 2)) = OpenAD_lin_0
-      OpenAD_acc_0 = (5.0D-01 * OpenAD_lin_1)
+      OpenAD_aux_0 = EXP(__value__(X) * 5.0D-01)
+      OpenAD_lin_0 = OpenAD_aux_0
+      __value__(Y(1 : 2)) = OpenAD_aux_0
+      OpenAD_acc_0 = (5.0D-01 * OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_acc_0)
 C     $OpenAD$ END REPLACEMENT

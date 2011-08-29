@@ -69,34 +69,34 @@ C
         REAL(w2f__8) OpenAD_acc_0
         REAL(w2f__8) OpenAD_acc_1
         REAL(w2f__8) OpenAD_acc_2
+        REAL(w2f__8) OpenAD_aux_0
+        REAL(w2f__8) OpenAD_aux_1
+        REAL(w2f__8) OpenAD_aux_2
         REAL(w2f__8) OpenAD_dly_0
-        REAL(w2f__8) OpenAD_lin_10
         REAL(w2f__8) OpenAD_lin_2
         REAL(w2f__8) OpenAD_lin_3
         REAL(w2f__8) OpenAD_lin_4
         REAL(w2f__8) OpenAD_lin_5
         REAL(w2f__8) OpenAD_lin_6
         REAL(w2f__8) OpenAD_lin_7
-        REAL(w2f__8) OpenAD_lin_8
-        REAL(w2f__8) OpenAD_lin_9
         TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C       **** Statements ****
 C
-        OpenAD_lin_2 = COS(__value__(X(2)))
-        OpenAD_lin_7 = SIN(__value__(X(1)))
-        OpenAD_lin_3 = (__value__(Y(1)) * OpenAD_lin_7)
-        OpenAD_dly_0 = (OpenAD_lin_2 * OpenAD_lin_3)
-        OpenAD_lin_6 = (- SIN(__value__(X(2))))
-        OpenAD_lin_4 = OpenAD_lin_3
-        OpenAD_lin_8 = OpenAD_lin_7
-        OpenAD_lin_10 = COS(__value__(X(1)))
-        OpenAD_lin_9 = __value__(Y(1))
-        OpenAD_lin_5 = OpenAD_lin_2
+        OpenAD_aux_0 = COS(__value__(X(2)))
+        OpenAD_aux_2 = SIN(__value__(X(1)))
+        OpenAD_aux_1 = (__value__(Y(1)) * OpenAD_aux_2)
+        OpenAD_dly_0 = (OpenAD_aux_0 * OpenAD_aux_1)
+        OpenAD_lin_4 = (- SIN(__value__(X(2))))
+        OpenAD_lin_2 = OpenAD_aux_1
+        OpenAD_lin_5 = OpenAD_aux_2
+        OpenAD_lin_7 = COS(__value__(X(1)))
+        OpenAD_lin_6 = __value__(Y(1))
+        OpenAD_lin_3 = OpenAD_aux_0
         __value__(Y(1)) = OpenAD_dly_0
-        OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_4)
-        OpenAD_acc_1 = (OpenAD_lin_8 * OpenAD_lin_5)
-        OpenAD_acc_2 = (OpenAD_lin_10 * OpenAD_lin_9 * OpenAD_lin_5)
+        OpenAD_acc_0 = (OpenAD_lin_4 * OpenAD_lin_2)
+        OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
+        OpenAD_acc_2 = (OpenAD_lin_7 * OpenAD_lin_6 * OpenAD_lin_3)
         CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
         CALL sax(OpenAD_acc_0, __deriv__(X(2)), __deriv__(Y(1)))
         CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prp_0), __deriv__(Y(1

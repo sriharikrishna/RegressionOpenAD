@@ -62,6 +62,7 @@ C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -70,7 +71,6 @@ C
       REAL(w2f__8) OpenAD_lin_5
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
 C
 C     **** Top Level Pragmas ****
 C
@@ -100,30 +100,30 @@ C taping
       T1%v = (X1%v*X2%v)
       OpenAD_lin_0 = X2%v
       OpenAD_lin_1 = X1%v
-      OpenAD_lin_2 = SIN(T1%v)
-      T2%v = (X1%v*OpenAD_lin_2)
-      OpenAD_lin_3 = OpenAD_lin_2
-      OpenAD_lin_5 = COS(T1%v)
-      OpenAD_lin_4 = X1%v
+      OpenAD_aux_0 = SIN(T1%v)
+      T2%v = (X1%v*OpenAD_aux_0)
+      OpenAD_lin_2 = OpenAD_aux_0
+      OpenAD_lin_4 = COS(T1%v)
+      OpenAD_lin_3 = X1%v
       Y1%v = COS(T2%v)
-      OpenAD_lin_6 = (-SIN(T2%v))
+      OpenAD_lin_5 = (-SIN(T2%v))
       Y2%v = (X2%v*T2%v)
-      OpenAD_lin_7 = T2%v
-      OpenAD_lin_8 = X2%v
-      OpenAD_acc_0 = (OpenAD_lin_5*OpenAD_lin_4)
+      OpenAD_lin_6 = T2%v
+      OpenAD_lin_7 = X2%v
+      OpenAD_acc_0 = (OpenAD_lin_4*OpenAD_lin_3)
       OpenAD_acc_1 = (OpenAD_lin_0*OpenAD_acc_0)
       OpenAD_acc_2 = (OpenAD_lin_1*OpenAD_acc_0)
-      double_tape(double_tape_pointer) = OpenAD_lin_3
+      double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_2
       double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_lin_5
+      double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_6
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_7
-      double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_8
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then

@@ -32,8 +32,8 @@ C
 C
 C     **** Local Variables and Functions ****
 C
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -43,8 +43,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_0 = SQRT(__value__(X(1)))
-      OpenAD_lin_1 = (5.0D-01 / OpenAD_lin_0)
-      __value__(Y(1)) = OpenAD_lin_0
-      CALL sax(OpenAD_lin_1, __deriv__(X(1)), __deriv__(Y(1)))
+      OpenAD_aux_0 = SQRT(__value__(X(1)))
+      OpenAD_lin_0 = (5.0D-01 / OpenAD_aux_0)
+      __value__(Y(1)) = OpenAD_aux_0
+      CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE

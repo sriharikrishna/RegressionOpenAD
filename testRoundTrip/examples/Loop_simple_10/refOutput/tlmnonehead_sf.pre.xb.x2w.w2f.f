@@ -39,11 +39,11 @@ C
       INTEGER(w2f__i4) I
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_lin_0
-      INTEGER(w2f__i4) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
@@ -58,14 +58,14 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         IF(A(I, J) .ne. 0) THEN
-          OpenAD_lin_0 = (__value__(X(1)) * __value__(Y(1)))
-          OpenAD_dly_0 = (A(I, J) * OpenAD_lin_0)
-          OpenAD_lin_2 = __value__(Y(1))
-          OpenAD_lin_3 = __value__(X(1))
-          OpenAD_lin_1 = A(I, J)
+          OpenAD_aux_0 = (__value__(X(1)) * __value__(Y(1)))
+          OpenAD_dly_0 = (A(I, J) * OpenAD_aux_0)
+          OpenAD_lin_1 = __value__(Y(1))
+          OpenAD_lin_2 = __value__(X(1))
+          OpenAD_lin_0 = A(I, J)
           __value__(Y(1)) = OpenAD_dly_0
-          OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
-          OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
+          OpenAD_acc_0 = (OpenAD_lin_1 * OpenAD_lin_0)
+          OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_0)
           CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
           CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(1)))
           CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prp_0), __deriv__(Y

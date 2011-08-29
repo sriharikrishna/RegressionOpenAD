@@ -63,12 +63,12 @@ C
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
@@ -103,46 +103,46 @@ C original function
           if (our_rev_mode%tape) then
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_0 = (X(1)%v*X(2)%v)
-      T%v = (X(3)%v*OpenAD_lin_0)
-      OpenAD_lin_1 = OpenAD_lin_0
-      OpenAD_lin_3 = X(2)%v
-      OpenAD_lin_4 = X(1)%v
-      OpenAD_lin_2 = X(3)%v
+      OpenAD_aux_0 = (X(1)%v*X(2)%v)
+      T%v = (X(3)%v*OpenAD_aux_0)
+      OpenAD_lin_0 = OpenAD_aux_0
+      OpenAD_lin_2 = X(2)%v
+      OpenAD_lin_3 = X(1)%v
+      OpenAD_lin_1 = X(3)%v
       Y(1)%v = SIN(T%v)
-      OpenAD_lin_5 = COS(T%v)
-      OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_2)
-      OpenAD_acc_1 = (OpenAD_lin_4*OpenAD_lin_2)
-      double_tape(double_tape_pointer) = OpenAD_lin_1
+      OpenAD_lin_4 = COS(T%v)
+      OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
+      OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_5
+      double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_lin_6 = (X(4)%v*T%v)
-      OpenAD_dly_0 = (X(5)%v*OpenAD_lin_6)
-      OpenAD_lin_7 = OpenAD_lin_6
-      OpenAD_lin_9 = T%v
-      OpenAD_lin_10 = X(4)%v
-      OpenAD_lin_8 = X(5)%v
+      OpenAD_aux_1 = (X(4)%v*T%v)
+      OpenAD_dly_0 = (X(5)%v*OpenAD_aux_1)
+      OpenAD_lin_5 = OpenAD_aux_1
+      OpenAD_lin_7 = T%v
+      OpenAD_lin_8 = X(4)%v
+      OpenAD_lin_6 = X(5)%v
       T%v = OpenAD_dly_0
       Y(2)%v = SIN(T%v)
-      OpenAD_lin_11 = COS(T%v)
-      OpenAD_acc_2 = (OpenAD_lin_9*OpenAD_lin_8)
-      OpenAD_acc_3 = (OpenAD_lin_10*OpenAD_lin_8)
-      double_tape(double_tape_pointer) = OpenAD_lin_7
+      OpenAD_lin_9 = COS(T%v)
+      OpenAD_acc_2 = (OpenAD_lin_7*OpenAD_lin_6)
+      OpenAD_acc_3 = (OpenAD_lin_8*OpenAD_lin_6)
+      double_tape(double_tape_pointer) = OpenAD_lin_5
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_2
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_3
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_11
+      double_tape(double_tape_pointer) = OpenAD_lin_9
       double_tape_pointer = double_tape_pointer+1
       Y(3)%v = COS(T%v)
-      OpenAD_lin_12 = (-SIN(T%v))
-      double_tape(double_tape_pointer) = OpenAD_lin_12
+      OpenAD_lin_10 = (-SIN(T%v))
+      double_tape(double_tape_pointer) = OpenAD_lin_10
       double_tape_pointer = double_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then

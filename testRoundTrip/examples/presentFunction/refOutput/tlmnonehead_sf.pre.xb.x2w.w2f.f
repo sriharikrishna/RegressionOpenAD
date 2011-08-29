@@ -38,12 +38,12 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Statements ****
@@ -51,17 +51,17 @@ C
 C$OPENAD XXX Template ad_template.f
       IF(PRESENT(__value__(OPTARG))) THEN
         IF(__value__(OPTARG) .LE. 2.0D00) THEN
-          OpenAD_lin_0 = (__value__(OPTARG) * __value__(OUTARG))
-          OpenAD_dly_0 = (__value__(REQARG) * OpenAD_lin_0)
-          OpenAD_lin_1 = OpenAD_lin_0
-          OpenAD_lin_3 = __value__(OUTARG)
-          OpenAD_lin_4 = __value__(OPTARG)
-          OpenAD_lin_2 = __value__(REQARG)
+          OpenAD_aux_0 = (__value__(OPTARG) * __value__(OUTARG))
+          OpenAD_dly_0 = (__value__(REQARG) * OpenAD_aux_0)
+          OpenAD_lin_0 = OpenAD_aux_0
+          OpenAD_lin_2 = __value__(OUTARG)
+          OpenAD_lin_3 = __value__(OPTARG)
+          OpenAD_lin_1 = __value__(REQARG)
           __value__(OUTARG) = OpenAD_dly_0
-          OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_2)
-          OpenAD_acc_1 = (OpenAD_lin_4 * OpenAD_lin_2)
+          OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
+          OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
           CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(OUTARG))
-          CALL sax(OpenAD_lin_1, __deriv__(REQARG), __deriv__(OUTARG))
+          CALL sax(OpenAD_lin_0, __deriv__(REQARG), __deriv__(OUTARG))
           CALL saxpy(OpenAD_acc_0, __deriv__(OPTARG), __deriv__(OUTARG)
      > )
           CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prp_0), __deriv__(

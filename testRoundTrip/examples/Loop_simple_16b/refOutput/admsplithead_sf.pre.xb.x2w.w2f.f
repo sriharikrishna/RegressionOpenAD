@@ -58,6 +58,8 @@ C
       REAL(w2f__8) OpenAD_Symbol_8
       REAL(w2f__8) OpenAD_Symbol_9
       REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_dly_1
       REAL(w2f__8) OpenAD_lin_0
@@ -66,8 +68,6 @@ C
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
       TYPE (OpenADTy_active) OpenAD_prp_2
@@ -95,23 +95,23 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO K = 1, SP, 1
         IF(I .ne. K) THEN
-          OpenAD_lin_0 = (__value__(A(I)) - __value__(A(K)))
-          OpenAD_dly_0 = (__value__(DENOM) * OpenAD_lin_0)
-          OpenAD_lin_1 = OpenAD_lin_0
-          OpenAD_lin_2 = __value__(DENOM)
+          OpenAD_aux_0 = (__value__(A(I)) - __value__(A(K)))
+          OpenAD_dly_0 = (__value__(DENOM) * OpenAD_aux_0)
+          OpenAD_lin_0 = OpenAD_aux_0
+          OpenAD_lin_1 = __value__(DENOM)
           __value__(DENOM) = OpenAD_dly_0
-          OpenAD_lin_3 = (X - __value__(A(K)))
-          OpenAD_dly_1 = (__value__(NUMER) * OpenAD_lin_3)
-          OpenAD_lin_4 = OpenAD_lin_3
-          OpenAD_lin_5 = __value__(NUMER)
+          OpenAD_aux_1 = (X - __value__(A(K)))
+          OpenAD_dly_1 = (__value__(NUMER) * OpenAD_aux_1)
+          OpenAD_lin_2 = OpenAD_aux_1
+          OpenAD_lin_3 = __value__(NUMER)
           __value__(NUMER) = OpenAD_dly_1
-          OpenAD_acc_0 = (INT((-1_w2f__i8)) * OpenAD_lin_5)
+          OpenAD_acc_0 = (INT((-1_w2f__i8)) * OpenAD_lin_3)
+C         $OpenAD$ INLINE push_s0(subst)
+          CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_1)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_2)
-C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_4)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_0)
         ENDIF
@@ -121,13 +121,13 @@ C     $OpenAD$ INLINE push_i_s0(subst)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(I)
       __value__(LAG) = (__value__(NUMER) / __value__(DENOM))
-      OpenAD_lin_6 = (INT(1_w2f__i8) / __value__(DENOM))
-      OpenAD_lin_7 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
+      OpenAD_lin_4 = (INT(1_w2f__i8) / __value__(DENOM))
+      OpenAD_lin_5 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
      > (DENOM))))
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_6)
+      CALL push_s0(OpenAD_lin_4)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_7)
+      CALL push_s0(OpenAD_lin_5)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
 C     $OpenAD$ INLINE pop_s0(subst)
@@ -249,23 +249,23 @@ C$OPENAD XXX Simple loop
       OpenAD_Symbol_3 = 0_w2f__i8
       DO K = 1, SP, 1
         IF(I .ne. K) THEN
-          OpenAD_lin_0 = (__value__(A(I)) - __value__(A(K)))
-          OpenAD_dly_0 = (__value__(DENOM) * OpenAD_lin_0)
-          OpenAD_lin_1 = OpenAD_lin_0
-          OpenAD_lin_2 = __value__(DENOM)
+          OpenAD_aux_0 = (__value__(A(I)) - __value__(A(K)))
+          OpenAD_dly_0 = (__value__(DENOM) * OpenAD_aux_0)
+          OpenAD_lin_0 = OpenAD_aux_0
+          OpenAD_lin_1 = __value__(DENOM)
           __value__(DENOM) = OpenAD_dly_0
-          OpenAD_lin_3 = (X - __value__(A(K)))
-          OpenAD_dly_1 = (__value__(NUMER) * OpenAD_lin_3)
-          OpenAD_lin_4 = OpenAD_lin_3
-          OpenAD_lin_5 = __value__(NUMER)
+          OpenAD_aux_1 = (X - __value__(A(K)))
+          OpenAD_dly_1 = (__value__(NUMER) * OpenAD_aux_1)
+          OpenAD_lin_2 = OpenAD_aux_1
+          OpenAD_lin_3 = __value__(NUMER)
           __value__(NUMER) = OpenAD_dly_1
-          OpenAD_acc_0 = (INT((-1_w2f__i8)) * OpenAD_lin_5)
+          OpenAD_acc_0 = (INT((-1_w2f__i8)) * OpenAD_lin_3)
+C         $OpenAD$ INLINE push_s0(subst)
+          CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_1)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_2)
-C         $OpenAD$ INLINE push_s0(subst)
-          CALL push_s0(OpenAD_lin_4)
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_acc_0)
 C         $OpenAD$ INLINE push_i_s0(subst)
@@ -285,13 +285,13 @@ C         $OpenAD$ INLINE push_i_s0(subst)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_3)
       __value__(LAG) = (__value__(NUMER) / __value__(DENOM))
-      OpenAD_lin_6 = (INT(1_w2f__i8) / __value__(DENOM))
-      OpenAD_lin_7 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
+      OpenAD_lin_4 = (INT(1_w2f__i8) / __value__(DENOM))
+      OpenAD_lin_5 = (-(__value__(NUMER) /(__value__(DENOM) * __value__
      > (DENOM))))
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_6)
+      CALL push_s0(OpenAD_lin_4)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_7)
+      CALL push_s0(OpenAD_lin_5)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE pop_s0(subst)

@@ -172,16 +172,16 @@ C
         REAL(w2f__8) OpenAD_acc_0
         REAL(w2f__8) OpenAD_acc_1
         REAL(w2f__8) OpenAD_acc_2
+        REAL(w2f__8) OpenAD_aux_0
+        REAL(w2f__8) OpenAD_aux_1
+        REAL(w2f__8) OpenAD_aux_2
         REAL(w2f__8) OpenAD_dly_0
-        REAL(w2f__8) OpenAD_lin_10
         REAL(w2f__8) OpenAD_lin_2
         REAL(w2f__8) OpenAD_lin_3
         REAL(w2f__8) OpenAD_lin_4
         REAL(w2f__8) OpenAD_lin_5
         REAL(w2f__8) OpenAD_lin_6
         REAL(w2f__8) OpenAD_lin_7
-        REAL(w2f__8) OpenAD_lin_8
-        REAL(w2f__8) OpenAD_lin_9
         TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C       **** Statements ****
@@ -191,20 +191,20 @@ C       $OpenAD$ BEGIN REPLACEMENT 1
      > (__value__(X(1))))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 2
-        OpenAD_lin_2 = COS(__value__(X(2)))
-        OpenAD_lin_7 = SIN(__value__(X(1)))
-        OpenAD_lin_3 = (__value__(Y(1)) * OpenAD_lin_7)
-        OpenAD_dly_0 = (OpenAD_lin_2 * OpenAD_lin_3)
-        OpenAD_lin_6 = (- SIN(__value__(X(2))))
-        OpenAD_lin_4 = OpenAD_lin_3
-        OpenAD_lin_8 = OpenAD_lin_7
-        OpenAD_lin_10 = COS(__value__(X(1)))
-        OpenAD_lin_9 = __value__(Y(1))
-        OpenAD_lin_5 = OpenAD_lin_2
+        OpenAD_aux_0 = COS(__value__(X(2)))
+        OpenAD_aux_2 = SIN(__value__(X(1)))
+        OpenAD_aux_1 = (__value__(Y(1)) * OpenAD_aux_2)
+        OpenAD_dly_0 = (OpenAD_aux_0 * OpenAD_aux_1)
+        OpenAD_lin_4 = (- SIN(__value__(X(2))))
+        OpenAD_lin_2 = OpenAD_aux_1
+        OpenAD_lin_5 = OpenAD_aux_2
+        OpenAD_lin_7 = COS(__value__(X(1)))
+        OpenAD_lin_6 = __value__(Y(1))
+        OpenAD_lin_3 = OpenAD_aux_0
         __value__(Y(1)) = OpenAD_dly_0
-        OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_4)
-        OpenAD_acc_1 = (OpenAD_lin_8 * OpenAD_lin_5)
-        OpenAD_acc_2 = (OpenAD_lin_10 * OpenAD_lin_9 * OpenAD_lin_5)
+        OpenAD_acc_0 = (OpenAD_lin_4 * OpenAD_lin_2)
+        OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
+        OpenAD_acc_2 = (OpenAD_lin_7 * OpenAD_lin_6 * OpenAD_lin_3)
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_acc_0)
 C       $OpenAD$ INLINE push_s0(subst)
@@ -266,20 +266,20 @@ C       $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
         CALL cp_arg_restore_real_vector_a(__deriv__(Y))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 10
-        OpenAD_lin_2 = COS(__value__(X(2)))
-        OpenAD_lin_7 = SIN(__value__(X(1)))
-        OpenAD_lin_3 = (__value__(Y(1)) * OpenAD_lin_7)
-        OpenAD_dly_0 = (OpenAD_lin_2 * OpenAD_lin_3)
-        OpenAD_lin_6 = (- SIN(__value__(X(2))))
-        OpenAD_lin_4 = OpenAD_lin_3
-        OpenAD_lin_8 = OpenAD_lin_7
-        OpenAD_lin_10 = COS(__value__(X(1)))
-        OpenAD_lin_9 = __value__(Y(1))
-        OpenAD_lin_5 = OpenAD_lin_2
+        OpenAD_aux_0 = COS(__value__(X(2)))
+        OpenAD_aux_2 = SIN(__value__(X(1)))
+        OpenAD_aux_1 = (__value__(Y(1)) * OpenAD_aux_2)
+        OpenAD_dly_0 = (OpenAD_aux_0 * OpenAD_aux_1)
+        OpenAD_lin_4 = (- SIN(__value__(X(2))))
+        OpenAD_lin_2 = OpenAD_aux_1
+        OpenAD_lin_5 = OpenAD_aux_2
+        OpenAD_lin_7 = COS(__value__(X(1)))
+        OpenAD_lin_6 = __value__(Y(1))
+        OpenAD_lin_3 = OpenAD_aux_0
         __value__(Y(1)) = OpenAD_dly_0
-        OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_4)
-        OpenAD_acc_1 = (OpenAD_lin_8 * OpenAD_lin_5)
-        OpenAD_acc_2 = (OpenAD_lin_10 * OpenAD_lin_9 * OpenAD_lin_5)
+        OpenAD_acc_0 = (OpenAD_lin_4 * OpenAD_lin_2)
+        OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
+        OpenAD_acc_2 = (OpenAD_lin_7 * OpenAD_lin_6 * OpenAD_lin_3)
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_acc_0)
 C       $OpenAD$ INLINE push_s0(subst)

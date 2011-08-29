@@ -37,11 +37,11 @@ C
       INTEGER(w2f__i4) I
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_lin_0
-      INTEGER(w2f__i4) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
@@ -57,14 +57,14 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
 C$OPENAD XXX Simple loop
       DO I = 2, 6, 1
-        OpenAD_lin_0 = (__value__(X(1)) * __value__(Y(1)))
-        OpenAD_dly_0 = (I * OpenAD_lin_0)
-        OpenAD_lin_2 = __value__(Y(1))
-        OpenAD_lin_3 = __value__(X(1))
-        OpenAD_lin_1 = I
+        OpenAD_aux_0 = (__value__(X(1)) * __value__(Y(1)))
+        OpenAD_dly_0 = (I * OpenAD_aux_0)
+        OpenAD_lin_1 = __value__(Y(1))
+        OpenAD_lin_2 = __value__(X(1))
+        OpenAD_lin_0 = I
         __value__(Y(1)) = OpenAD_dly_0
-        OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
-        OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
+        OpenAD_acc_0 = (OpenAD_lin_1 * OpenAD_lin_0)
+        OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_0)
         CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
         CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(1)))
         CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prp_0), __deriv__(Y(1

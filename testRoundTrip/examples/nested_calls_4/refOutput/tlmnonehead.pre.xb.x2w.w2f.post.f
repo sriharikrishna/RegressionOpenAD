@@ -67,30 +67,30 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_2 = (A%v*B%v)
-      C%v = SIN(OpenAD_lin_2)
-      OpenAD_lin_4 = B%v
-      OpenAD_lin_5 = A%v
-      OpenAD_lin_3 = COS(OpenAD_lin_2)
-      OpenAD_lin_6 = (A%v+B%v)
-      D%v = COS(OpenAD_lin_6)
-      OpenAD_lin_7 = (-SIN(OpenAD_lin_6))
-      OpenAD_acc_0 = (OpenAD_lin_4*OpenAD_lin_3)
-      OpenAD_acc_1 = (OpenAD_lin_5*OpenAD_lin_3)
+      OpenAD_aux_0 = (A%v*B%v)
+      C%v = SIN(OpenAD_aux_0)
+      OpenAD_lin_3 = B%v
+      OpenAD_lin_4 = A%v
+      OpenAD_lin_2 = COS(OpenAD_aux_0)
+      OpenAD_aux_1 = (A%v+B%v)
+      D%v = COS(OpenAD_aux_1)
+      OpenAD_lin_5 = (-SIN(OpenAD_aux_1))
+      OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_2)
+      OpenAD_acc_1 = (OpenAD_lin_4*OpenAD_lin_2)
       CALL setderiv(OpenAD_prp_0,A)
       CALL inc_deriv(OpenAD_prp_0,B)
       CALL sax(OpenAD_acc_0,A,C)
       CALL saxpy(OpenAD_acc_1,B,C)
-      CALL sax(OpenAD_lin_7,OpenAD_prp_0,D)
+      CALL sax(OpenAD_lin_5,OpenAD_prp_0,D)
       END SUBROUTINE

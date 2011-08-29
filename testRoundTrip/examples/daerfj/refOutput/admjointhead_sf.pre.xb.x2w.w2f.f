@@ -56,15 +56,15 @@ C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
+      REAL(w2f__8) OpenAD_aux_2
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
 C
 C     **** Top Level Pragmas ****
 C
@@ -131,27 +131,27 @@ C$OPENAD XXX Template ad_template.f
       Y(11) = 2.46000000000000003386D-02
       OpenAD_Symbol_2 = 0_w2f__i8
       DO I = 1, 11, 1
-        OpenAD_lin_0 = (__value__(X(2)) + V(I))
-        __value__(TEMP1) = (V(I) * OpenAD_lin_0)
+        OpenAD_aux_0 = (__value__(X(2)) + V(I))
+        __value__(TEMP1) = (V(I) * OpenAD_aux_0)
+        OpenAD_lin_0 = V(I)
+        OpenAD_aux_1 = (__value__(X(3)) + V(I))
+        __value__(TEMP2) = (__value__(X(4)) + V(I) * OpenAD_aux_1)
         OpenAD_lin_1 = V(I)
-        OpenAD_lin_2 = (__value__(X(3)) + V(I))
-        __value__(TEMP2) = (__value__(X(4)) + V(I) * OpenAD_lin_2)
-        OpenAD_lin_3 = V(I)
-        OpenAD_lin_4 = (__value__(X(1)) * __value__(TEMP1))
-        __value__(FVEC(INT(I))) = (Y(I) -(OpenAD_lin_4 / __value__(
+        OpenAD_aux_2 = (__value__(X(1)) * __value__(TEMP1))
+        __value__(FVEC(INT(I))) = (Y(I) -(OpenAD_aux_2 / __value__(
      > TEMP2)))
-        OpenAD_lin_7 = __value__(TEMP1)
-        OpenAD_lin_8 = __value__(X(1))
-        OpenAD_lin_5 = (INT(1_w2f__i8) / __value__(TEMP2))
-        OpenAD_lin_6 = (-(OpenAD_lin_4 /(__value__(TEMP2) * __value__(
+        OpenAD_lin_4 = __value__(TEMP1)
+        OpenAD_lin_5 = __value__(X(1))
+        OpenAD_lin_2 = (INT(1_w2f__i8) / __value__(TEMP2))
+        OpenAD_lin_3 = (-(OpenAD_aux_2 /(__value__(TEMP2) * __value__(
      > TEMP2))))
-        OpenAD_acc_0 = (OpenAD_lin_6 * INT((-1_w2f__i8)))
-        OpenAD_acc_1 = (OpenAD_lin_7 * OpenAD_lin_5 * INT((-1_w2f__i8))
+        OpenAD_acc_0 = (OpenAD_lin_3 * INT((-1_w2f__i8)))
+        OpenAD_acc_1 = (OpenAD_lin_4 * OpenAD_lin_2 * INT((-1_w2f__i8))
      > )
-        OpenAD_acc_2 = (OpenAD_lin_1 * OpenAD_lin_8 * OpenAD_lin_5 *
+        OpenAD_acc_2 = (OpenAD_lin_0 * OpenAD_lin_5 * OpenAD_lin_2 *
      >  INT((-1_w2f__i8)))
 C       $OpenAD$ INLINE push_s0(subst)
-        CALL push_s0(OpenAD_lin_3)
+        CALL push_s0(OpenAD_lin_1)
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_acc_0)
 C       $OpenAD$ INLINE push_s0(subst)
@@ -238,27 +238,27 @@ C$OPENAD XXX Template ad_template.f
       Y(11) = 2.46000000000000003386D-02
       OpenAD_Symbol_5 = 0_w2f__i8
       DO I = 1, 11, 1
-        OpenAD_lin_0 = (__value__(X(2)) + V(I))
-        __value__(TEMP1) = (V(I) * OpenAD_lin_0)
+        OpenAD_aux_0 = (__value__(X(2)) + V(I))
+        __value__(TEMP1) = (V(I) * OpenAD_aux_0)
+        OpenAD_lin_0 = V(I)
+        OpenAD_aux_1 = (__value__(X(3)) + V(I))
+        __value__(TEMP2) = (__value__(X(4)) + V(I) * OpenAD_aux_1)
         OpenAD_lin_1 = V(I)
-        OpenAD_lin_2 = (__value__(X(3)) + V(I))
-        __value__(TEMP2) = (__value__(X(4)) + V(I) * OpenAD_lin_2)
-        OpenAD_lin_3 = V(I)
-        OpenAD_lin_4 = (__value__(X(1)) * __value__(TEMP1))
-        __value__(FVEC(INT(I))) = (Y(I) -(OpenAD_lin_4 / __value__(
+        OpenAD_aux_2 = (__value__(X(1)) * __value__(TEMP1))
+        __value__(FVEC(INT(I))) = (Y(I) -(OpenAD_aux_2 / __value__(
      > TEMP2)))
-        OpenAD_lin_7 = __value__(TEMP1)
-        OpenAD_lin_8 = __value__(X(1))
-        OpenAD_lin_5 = (INT(1_w2f__i8) / __value__(TEMP2))
-        OpenAD_lin_6 = (-(OpenAD_lin_4 /(__value__(TEMP2) * __value__(
+        OpenAD_lin_4 = __value__(TEMP1)
+        OpenAD_lin_5 = __value__(X(1))
+        OpenAD_lin_2 = (INT(1_w2f__i8) / __value__(TEMP2))
+        OpenAD_lin_3 = (-(OpenAD_aux_2 /(__value__(TEMP2) * __value__(
      > TEMP2))))
-        OpenAD_acc_0 = (OpenAD_lin_6 * INT((-1_w2f__i8)))
-        OpenAD_acc_1 = (OpenAD_lin_7 * OpenAD_lin_5 * INT((-1_w2f__i8))
+        OpenAD_acc_0 = (OpenAD_lin_3 * INT((-1_w2f__i8)))
+        OpenAD_acc_1 = (OpenAD_lin_4 * OpenAD_lin_2 * INT((-1_w2f__i8))
      > )
-        OpenAD_acc_2 = (OpenAD_lin_1 * OpenAD_lin_8 * OpenAD_lin_5 *
+        OpenAD_acc_2 = (OpenAD_lin_0 * OpenAD_lin_5 * OpenAD_lin_2 *
      >  INT((-1_w2f__i8)))
 C       $OpenAD$ INLINE push_s0(subst)
-        CALL push_s0(OpenAD_lin_3)
+        CALL push_s0(OpenAD_lin_1)
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_acc_0)
 C       $OpenAD$ INLINE push_s0(subst)

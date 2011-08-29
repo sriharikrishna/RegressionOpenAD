@@ -17,10 +17,10 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
 C
 C     **** Top Level Pragmas ****
 C
@@ -30,13 +30,13 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_0 = (X%v*X%v)
-      Y%v = SIN(OpenAD_lin_0)
+      OpenAD_aux_0 = (X%v*X%v)
+      Y%v = SIN(OpenAD_aux_0)
+      OpenAD_lin_1 = X%v
       OpenAD_lin_2 = X%v
-      OpenAD_lin_3 = X%v
-      OpenAD_lin_1 = COS(OpenAD_lin_0)
-      OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
-      OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
+      OpenAD_lin_0 = COS(OpenAD_aux_0)
+      OpenAD_acc_0 = (OpenAD_lin_1*OpenAD_lin_0)
+      OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
       CALL sax(OpenAD_acc_0,X,Y)
       CALL saxpy(OpenAD_acc_1,X,Y)
       END SUBROUTINE
