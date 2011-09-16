@@ -339,9 +339,9 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
-        RHOLOC(INT(L))%v = (SLOC(L)%v*BETA-TLOC(L)%v*ALPHA)
         OpenAD_lin_0 = BETA
         OpenAD_lin_1 = ALPHA
+        RHOLOC(INT(L))%v = (SLOC(L)%v*BETA-TLOC(L)%v*ALPHA)
         OpenAD_acc_0 = (OpenAD_lin_1*INT((-1_w2f__i8)))
         CALL sax(OpenAD_lin_0,SLOC(L),RHOLOC(L))
         CALL saxpy(OpenAD_acc_0,TLOC(L),RHOLOC(L))
@@ -369,27 +369,27 @@ C
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_5 = (1.0D00 - DELTA)
-      OpenAD_lin_2 = (RHOLOC(1)%v*DELTA+RHOLOC(3)%v*OpenAD_lin_5-RHOLOC(
+      OpenAD_aux_1 = (1.0D00 - DELTA)
+      OpenAD_aux_0 = (RHOLOC(1)%v*DELTA+RHOLOC(3)%v*OpenAD_aux_1-RHOLOC(
      +2)%v)
-      UVELLOC%v = (-(U0*OpenAD_lin_2))
-      OpenAD_lin_4 = DELTA
-      OpenAD_lin_6 = OpenAD_lin_5
-      OpenAD_lin_3 = U0
-      OpenAD_acc_1 = (OpenAD_lin_3*INT((-1_w2f__i8)))
+      OpenAD_lin_3 = DELTA
+      OpenAD_lin_4 = OpenAD_aux_1
+      OpenAD_lin_2 = U0
+      UVELLOC%v = (-(U0*OpenAD_aux_0))
+      OpenAD_acc_1 = (OpenAD_lin_2*INT((-1_w2f__i8)))
       CALL set_neg_deriv(OpenAD_prp_0,RHOLOC(2))
-      CALL saxpy(OpenAD_lin_4,RHOLOC(1),OpenAD_prp_0)
-      CALL saxpy(OpenAD_lin_6,RHOLOC(3),OpenAD_prp_0)
+      CALL saxpy(OpenAD_lin_3,RHOLOC(1),OpenAD_prp_0)
+      CALL saxpy(OpenAD_lin_4,RHOLOC(3),OpenAD_prp_0)
       CALL sax(OpenAD_acc_1,OpenAD_prp_0,UVELLOC)
       END SUBROUTINE
 
@@ -415,8 +415,8 @@ C
       PARAMETER ( NLEV1 = 73)
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
-      REAL(w2f__8) OpenAD_lin_53
-      REAL(w2f__8) OpenAD_lin_54
+      REAL(w2f__8) OpenAD_aux_22
+      REAL(w2f__8) OpenAD_lin_31
       type(active) :: OpenAD_prp_7
       type(active) :: OpenAD_prp_8
       type(active) :: OpenAD_prp_9
@@ -425,17 +425,17 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
-        OpenAD_lin_53 = (FLDOLD(L)%v+FLDNEW(L)%v-FLDNOW(L)%v*2.0D00)
-        FLDNOW(INT(L))%v = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*OpenAD_lin_5
-     +3)
-        OpenAD_lin_54 = ROBERT_FILTER_COEFF
+        OpenAD_aux_22 = (FLDOLD(L)%v+FLDNEW(L)%v-FLDNOW(L)%v*2.0D00)
+        OpenAD_lin_31 = ROBERT_FILTER_COEFF
+        FLDNOW(INT(L))%v = (FLDNOW(L)%v+ROBERT_FILTER_COEFF*OpenAD_aux_2
+     +2)
         CALL setderiv(OpenAD_prp_7,FLDNOW(L))
         CALL setderiv(OpenAD_prp_8,FLDNOW(L))
         CALL setderiv(OpenAD_prp_9,FLDOLD(L))
         CALL inc_deriv(OpenAD_prp_9,FLDNEW(L))
         CALL saxpy(-2.0D00,OpenAD_prp_8,OpenAD_prp_9)
         CALL setderiv(FLDNOW(L),OpenAD_prp_7)
-        CALL saxpy(OpenAD_lin_54,OpenAD_prp_9,FLDNOW(L))
+        CALL saxpy(OpenAD_lin_31,OpenAD_prp_9,FLDNOW(L))
       END DO
       END SUBROUTINE
 
@@ -497,18 +497,18 @@ C
       PARAMETER ( NLEV1 = 73)
       INTEGER(w2f__i4) NLEV2
       PARAMETER ( NLEV2 = 50)
-      REAL(w2f__8) OpenAD_lin_55
-      REAL(w2f__8) OpenAD_lin_56
+      REAL(w2f__8) OpenAD_aux_23
+      REAL(w2f__8) OpenAD_lin_32
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       DO L = 1, 3, 1
-        OpenAD_lin_55 = (DELTA_T * 2.0D00)
-        FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*OpenAD_lin_55)
-        OpenAD_lin_56 = OpenAD_lin_55
+        OpenAD_aux_23 = (DELTA_T * 2.0D00)
+        OpenAD_lin_32 = OpenAD_aux_23
+        FLDNEW(INT(L))%v = (FLDOLD(L)%v+DFLDDT(L)%v*OpenAD_aux_23)
         CALL setderiv(FLDNEW(L),FLDOLD(L))
-        CALL saxpy(OpenAD_lin_56,DFLDDT(L),FLDNEW(L))
+        CALL saxpy(OpenAD_lin_32,DFLDDT(L),FLDNEW(L))
       END DO
       END SUBROUTINE
 
@@ -558,6 +558,26 @@ C
       REAL(w2f__8) OpenAD_acc_7
       REAL(w2f__8) OpenAD_acc_8
       REAL(w2f__8) OpenAD_acc_9
+      REAL(w2f__8) OpenAD_aux_10
+      REAL(w2f__8) OpenAD_aux_11
+      REAL(w2f__8) OpenAD_aux_12
+      REAL(w2f__8) OpenAD_aux_13
+      REAL(w2f__8) OpenAD_aux_14
+      REAL(w2f__8) OpenAD_aux_15
+      REAL(w2f__8) OpenAD_aux_16
+      REAL(w2f__8) OpenAD_aux_17
+      REAL(w2f__8) OpenAD_aux_18
+      REAL(w2f__8) OpenAD_aux_19
+      REAL(w2f__8) OpenAD_aux_2
+      REAL(w2f__8) OpenAD_aux_20
+      REAL(w2f__8) OpenAD_aux_21
+      REAL(w2f__8) OpenAD_aux_3
+      REAL(w2f__8) OpenAD_aux_4
+      REAL(w2f__8) OpenAD_aux_5
+      REAL(w2f__8) OpenAD_aux_6
+      REAL(w2f__8) OpenAD_aux_7
+      REAL(w2f__8) OpenAD_aux_8
+      REAL(w2f__8) OpenAD_aux_9
       REAL(w2f__8) OpenAD_lin_10
       REAL(w2f__8) OpenAD_lin_11
       REAL(w2f__8) OpenAD_lin_12
@@ -579,28 +599,8 @@ C
       REAL(w2f__8) OpenAD_lin_28
       REAL(w2f__8) OpenAD_lin_29
       REAL(w2f__8) OpenAD_lin_30
-      REAL(w2f__8) OpenAD_lin_31
-      REAL(w2f__8) OpenAD_lin_32
-      REAL(w2f__8) OpenAD_lin_33
-      REAL(w2f__8) OpenAD_lin_34
-      REAL(w2f__8) OpenAD_lin_35
-      REAL(w2f__8) OpenAD_lin_36
-      REAL(w2f__8) OpenAD_lin_37
-      REAL(w2f__8) OpenAD_lin_38
-      REAL(w2f__8) OpenAD_lin_39
-      REAL(w2f__8) OpenAD_lin_40
-      REAL(w2f__8) OpenAD_lin_41
-      REAL(w2f__8) OpenAD_lin_42
-      REAL(w2f__8) OpenAD_lin_43
-      REAL(w2f__8) OpenAD_lin_44
-      REAL(w2f__8) OpenAD_lin_45
-      REAL(w2f__8) OpenAD_lin_46
-      REAL(w2f__8) OpenAD_lin_47
-      REAL(w2f__8) OpenAD_lin_48
-      REAL(w2f__8) OpenAD_lin_49
-      REAL(w2f__8) OpenAD_lin_50
-      REAL(w2f__8) OpenAD_lin_51
-      REAL(w2f__8) OpenAD_lin_52
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
       REAL(w2f__8) OpenAD_lin_8
       REAL(w2f__8) OpenAD_lin_9
@@ -615,109 +615,109 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF (UVELLOC%v.GE.0.0D00) THEN
-        OpenAD_lin_11 = (FLDSTAR(1)-FLDNOW(1)%v)
-        OpenAD_lin_9 = (GAMMALOC*OpenAD_lin_11)
-        OpenAD_lin_13 = (FLDNOW(3)%v-FLDNOW(1)%v)
-        OpenAD_lin_7 = (EXTFORLOC(1)+VOL(1)*OpenAD_lin_9+UVELLOC%v*OpenA
-     +D_lin_13)
-        DFLDDT(1)%v = (OpenAD_lin_7/VOL(1))
-        OpenAD_lin_12 = GAMMALOC
-        OpenAD_lin_10 = VOL(1)
-        OpenAD_lin_14 = OpenAD_lin_13
-        OpenAD_lin_15 = UVELLOC%v
-        OpenAD_lin_8 = (INT(1_w2f__i8)/VOL(1))
-        OpenAD_acc_2 = (OpenAD_lin_14*OpenAD_lin_8)
-        OpenAD_acc_3 = (OpenAD_lin_15*OpenAD_lin_8)
-        OpenAD_acc_4 = (INT((-1_w2f__i8))*OpenAD_lin_12*OpenAD_lin_10*Op
-     +enAD_lin_8)
+        OpenAD_aux_4 = (FLDSTAR(1)-FLDNOW(1)%v)
+        OpenAD_aux_3 = (GAMMALOC*OpenAD_aux_4)
+        OpenAD_aux_5 = (FLDNOW(3)%v-FLDNOW(1)%v)
+        OpenAD_aux_2 = (EXTFORLOC(1)+VOL(1)*OpenAD_aux_3+UVELLOC%v*OpenA
+     +D_aux_5)
+        OpenAD_lin_7 = GAMMALOC
+        OpenAD_lin_6 = VOL(1)
+        OpenAD_lin_8 = OpenAD_aux_5
+        OpenAD_lin_9 = UVELLOC%v
+        OpenAD_lin_5 = (INT(1_w2f__i8)/VOL(1))
+        DFLDDT(1)%v = (OpenAD_aux_2/VOL(1))
+        OpenAD_acc_2 = (OpenAD_lin_8*OpenAD_lin_5)
+        OpenAD_acc_3 = (OpenAD_lin_9*OpenAD_lin_5)
+        OpenAD_acc_4 = (INT((-1_w2f__i8))*OpenAD_lin_7*OpenAD_lin_6*Open
+     +AD_lin_5)
         CALL setderiv(OpenAD_prp_1,FLDNOW(3))
         CALL dec_deriv(OpenAD_prp_1,FLDNOW(1))
         CALL sax(OpenAD_acc_2,UVELLOC,DFLDDT(1))
         CALL saxpy(OpenAD_acc_3,OpenAD_prp_1,DFLDDT(1))
         CALL saxpy(OpenAD_acc_4,FLDNOW(1),DFLDDT(1))
-        OpenAD_lin_20 = (FLDSTAR(2)-FLDNOW(2)%v)
-        OpenAD_lin_18 = (GAMMALOC*OpenAD_lin_20)
-        OpenAD_lin_22 = (FLDNOW(1)%v-FLDNOW(2)%v)
-        OpenAD_lin_16 = (EXTFORLOC(2)+VOL(2)*OpenAD_lin_18+UVELLOC%v*Ope
-     +nAD_lin_22)
-        DFLDDT(2)%v = (OpenAD_lin_16/VOL(2))
-        OpenAD_lin_21 = GAMMALOC
-        OpenAD_lin_19 = VOL(2)
-        OpenAD_lin_23 = OpenAD_lin_22
-        OpenAD_lin_24 = UVELLOC%v
-        OpenAD_lin_17 = (INT(1_w2f__i8)/VOL(2))
-        OpenAD_acc_5 = (OpenAD_lin_23*OpenAD_lin_17)
-        OpenAD_acc_6 = (OpenAD_lin_24*OpenAD_lin_17)
-        OpenAD_acc_7 = (INT((-1_w2f__i8))*OpenAD_lin_21*OpenAD_lin_19*Op
-     +enAD_lin_17)
+        OpenAD_aux_8 = (FLDSTAR(2)-FLDNOW(2)%v)
+        OpenAD_aux_7 = (GAMMALOC*OpenAD_aux_8)
+        OpenAD_aux_9 = (FLDNOW(1)%v-FLDNOW(2)%v)
+        OpenAD_aux_6 = (EXTFORLOC(2)+VOL(2)*OpenAD_aux_7+UVELLOC%v*OpenA
+     +D_aux_9)
+        OpenAD_lin_12 = GAMMALOC
+        OpenAD_lin_11 = VOL(2)
+        OpenAD_lin_13 = OpenAD_aux_9
+        OpenAD_lin_14 = UVELLOC%v
+        OpenAD_lin_10 = (INT(1_w2f__i8)/VOL(2))
+        DFLDDT(2)%v = (OpenAD_aux_6/VOL(2))
+        OpenAD_acc_5 = (OpenAD_lin_13*OpenAD_lin_10)
+        OpenAD_acc_6 = (OpenAD_lin_14*OpenAD_lin_10)
+        OpenAD_acc_7 = (INT((-1_w2f__i8))*OpenAD_lin_12*OpenAD_lin_11*Op
+     +enAD_lin_10)
         CALL setderiv(OpenAD_prp_2,FLDNOW(1))
         CALL dec_deriv(OpenAD_prp_2,FLDNOW(2))
         CALL sax(OpenAD_acc_5,UVELLOC,DFLDDT(2))
         CALL saxpy(OpenAD_acc_6,OpenAD_prp_2,DFLDDT(2))
         CALL saxpy(OpenAD_acc_7,FLDNOW(2),DFLDDT(2))
-        OpenAD_lin_27 = (FLDNOW(2)%v-FLDNOW(3)%v)
-        OpenAD_lin_25 = (UVELLOC%v*OpenAD_lin_27)
-        DFLDDT(3)%v = (OpenAD_lin_25/VOL(3))
-        OpenAD_lin_28 = OpenAD_lin_27
-        OpenAD_lin_29 = UVELLOC%v
-        OpenAD_lin_26 = (INT(1_w2f__i8)/VOL(3))
-        OpenAD_acc_8 = (OpenAD_lin_28*OpenAD_lin_26)
-        OpenAD_acc_9 = (OpenAD_lin_29*OpenAD_lin_26)
+        OpenAD_aux_11 = (FLDNOW(2)%v-FLDNOW(3)%v)
+        OpenAD_aux_10 = (UVELLOC%v*OpenAD_aux_11)
+        OpenAD_lin_16 = OpenAD_aux_11
+        OpenAD_lin_17 = UVELLOC%v
+        OpenAD_lin_15 = (INT(1_w2f__i8)/VOL(3))
+        DFLDDT(3)%v = (OpenAD_aux_10/VOL(3))
+        OpenAD_acc_8 = (OpenAD_lin_16*OpenAD_lin_15)
+        OpenAD_acc_9 = (OpenAD_lin_17*OpenAD_lin_15)
         CALL setderiv(OpenAD_prp_3,FLDNOW(2))
         CALL dec_deriv(OpenAD_prp_3,FLDNOW(3))
         CALL sax(OpenAD_acc_8,UVELLOC,DFLDDT(3))
         CALL saxpy(OpenAD_acc_9,OpenAD_prp_3,DFLDDT(3))
       ELSE
-        OpenAD_lin_34 = (FLDSTAR(1)-FLDNOW(1)%v)
-        OpenAD_lin_32 = (GAMMALOC*OpenAD_lin_34)
-        OpenAD_lin_36 = (FLDNOW(2)%v-FLDNOW(1)%v)
-        OpenAD_lin_30 = (EXTFORLOC(1)+VOL(1)*OpenAD_lin_32-UVELLOC%v*Ope
-     +nAD_lin_36)
-        DFLDDT(1)%v = (OpenAD_lin_30/VOL(1))
-        OpenAD_lin_35 = GAMMALOC
-        OpenAD_lin_33 = VOL(1)
-        OpenAD_lin_37 = OpenAD_lin_36
-        OpenAD_lin_38 = UVELLOC%v
-        OpenAD_lin_31 = (INT(1_w2f__i8)/VOL(1))
-        OpenAD_acc_10 = (INT((-1_w2f__i8))*OpenAD_lin_31)
-        OpenAD_acc_11 = (OpenAD_lin_37*OpenAD_acc_10)
-        OpenAD_acc_12 = (OpenAD_lin_38*OpenAD_acc_10)
-        OpenAD_acc_13 = (INT((-1_w2f__i8))*OpenAD_lin_35*OpenAD_lin_33*O
-     +penAD_lin_31)
+        OpenAD_aux_14 = (FLDSTAR(1)-FLDNOW(1)%v)
+        OpenAD_aux_13 = (GAMMALOC*OpenAD_aux_14)
+        OpenAD_aux_15 = (FLDNOW(2)%v-FLDNOW(1)%v)
+        OpenAD_aux_12 = (EXTFORLOC(1)+VOL(1)*OpenAD_aux_13-UVELLOC%v*Ope
+     +nAD_aux_15)
+        OpenAD_lin_20 = GAMMALOC
+        OpenAD_lin_19 = VOL(1)
+        OpenAD_lin_21 = OpenAD_aux_15
+        OpenAD_lin_22 = UVELLOC%v
+        OpenAD_lin_18 = (INT(1_w2f__i8)/VOL(1))
+        DFLDDT(1)%v = (OpenAD_aux_12/VOL(1))
+        OpenAD_acc_10 = (INT((-1_w2f__i8))*OpenAD_lin_18)
+        OpenAD_acc_11 = (OpenAD_lin_21*OpenAD_acc_10)
+        OpenAD_acc_12 = (OpenAD_lin_22*OpenAD_acc_10)
+        OpenAD_acc_13 = (INT((-1_w2f__i8))*OpenAD_lin_20*OpenAD_lin_19*O
+     +penAD_lin_18)
         CALL setderiv(OpenAD_prp_4,FLDNOW(2))
         CALL dec_deriv(OpenAD_prp_4,FLDNOW(1))
         CALL sax(OpenAD_acc_11,UVELLOC,DFLDDT(1))
         CALL saxpy(OpenAD_acc_12,OpenAD_prp_4,DFLDDT(1))
         CALL saxpy(OpenAD_acc_13,FLDNOW(1),DFLDDT(1))
-        OpenAD_lin_43 = (FLDSTAR(2)-FLDNOW(2)%v)
-        OpenAD_lin_41 = (GAMMALOC*OpenAD_lin_43)
-        OpenAD_lin_45 = (FLDNOW(3)%v-FLDNOW(2)%v)
-        OpenAD_lin_39 = (EXTFORLOC(2)+VOL(2)*OpenAD_lin_41-UVELLOC%v*Ope
-     +nAD_lin_45)
-        DFLDDT(2)%v = (OpenAD_lin_39/VOL(2))
-        OpenAD_lin_44 = GAMMALOC
-        OpenAD_lin_42 = VOL(2)
-        OpenAD_lin_46 = OpenAD_lin_45
-        OpenAD_lin_47 = UVELLOC%v
-        OpenAD_lin_40 = (INT(1_w2f__i8)/VOL(2))
-        OpenAD_acc_14 = (INT((-1_w2f__i8))*OpenAD_lin_40)
-        OpenAD_acc_15 = (OpenAD_lin_46*OpenAD_acc_14)
-        OpenAD_acc_16 = (OpenAD_lin_47*OpenAD_acc_14)
-        OpenAD_acc_17 = (INT((-1_w2f__i8))*OpenAD_lin_44*OpenAD_lin_42*O
-     +penAD_lin_40)
+        OpenAD_aux_18 = (FLDSTAR(2)-FLDNOW(2)%v)
+        OpenAD_aux_17 = (GAMMALOC*OpenAD_aux_18)
+        OpenAD_aux_19 = (FLDNOW(3)%v-FLDNOW(2)%v)
+        OpenAD_aux_16 = (EXTFORLOC(2)+VOL(2)*OpenAD_aux_17-UVELLOC%v*Ope
+     +nAD_aux_19)
+        OpenAD_lin_25 = GAMMALOC
+        OpenAD_lin_24 = VOL(2)
+        OpenAD_lin_26 = OpenAD_aux_19
+        OpenAD_lin_27 = UVELLOC%v
+        OpenAD_lin_23 = (INT(1_w2f__i8)/VOL(2))
+        DFLDDT(2)%v = (OpenAD_aux_16/VOL(2))
+        OpenAD_acc_14 = (INT((-1_w2f__i8))*OpenAD_lin_23)
+        OpenAD_acc_15 = (OpenAD_lin_26*OpenAD_acc_14)
+        OpenAD_acc_16 = (OpenAD_lin_27*OpenAD_acc_14)
+        OpenAD_acc_17 = (INT((-1_w2f__i8))*OpenAD_lin_25*OpenAD_lin_24*O
+     +penAD_lin_23)
         CALL setderiv(OpenAD_prp_5,FLDNOW(3))
         CALL dec_deriv(OpenAD_prp_5,FLDNOW(2))
         CALL sax(OpenAD_acc_15,UVELLOC,DFLDDT(2))
         CALL saxpy(OpenAD_acc_16,OpenAD_prp_5,DFLDDT(2))
         CALL saxpy(OpenAD_acc_17,FLDNOW(2),DFLDDT(2))
-        OpenAD_lin_50 = (FLDNOW(1)%v-FLDNOW(3)%v)
-        OpenAD_lin_48 = (UVELLOC%v*OpenAD_lin_50)
-        DFLDDT(3)%v = (-(OpenAD_lin_48/VOL(3)))
-        OpenAD_lin_51 = OpenAD_lin_50
-        OpenAD_lin_52 = UVELLOC%v
-        OpenAD_lin_49 = (INT(1_w2f__i8)/VOL(3))
-        OpenAD_acc_18 = (OpenAD_lin_51*OpenAD_lin_49*INT((-1_w2f__i8)))
-        OpenAD_acc_19 = (OpenAD_lin_52*OpenAD_lin_49*INT((-1_w2f__i8)))
+        OpenAD_aux_21 = (FLDNOW(1)%v-FLDNOW(3)%v)
+        OpenAD_aux_20 = (UVELLOC%v*OpenAD_aux_21)
+        OpenAD_lin_29 = OpenAD_aux_21
+        OpenAD_lin_30 = UVELLOC%v
+        OpenAD_lin_28 = (INT(1_w2f__i8)/VOL(3))
+        DFLDDT(3)%v = (-(OpenAD_aux_20/VOL(3)))
+        OpenAD_acc_18 = (OpenAD_lin_29*OpenAD_lin_28*INT((-1_w2f__i8)))
+        OpenAD_acc_19 = (OpenAD_lin_30*OpenAD_lin_28*INT((-1_w2f__i8)))
         CALL setderiv(OpenAD_prp_6,FLDNOW(1))
         CALL dec_deriv(OpenAD_prp_6,FLDNOW(3))
         CALL sax(OpenAD_acc_18,UVELLOC,DFLDDT(3))

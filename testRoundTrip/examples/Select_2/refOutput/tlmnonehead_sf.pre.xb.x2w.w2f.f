@@ -57,13 +57,13 @@ C$OPENAD XXX Template ad_template.f
         CALL sax(2.0D00, __deriv__(X(I)), __deriv__(Y(I)))
         GO TO 21
 19      CONTINUE
-        __value__(Y(INT(I))) = SIN(__value__(X(I)))
         OpenAD_lin_0 = COS(__value__(X(I)))
+        __value__(Y(INT(I))) = SIN(__value__(X(I)))
         CALL sax(OpenAD_lin_0, __deriv__(X(I)), __deriv__(Y(I)))
         GO TO 21
 23      CONTINUE
-        __value__(Y(INT(I))) = COS(__value__(X(I)))
         OpenAD_lin_1 = (- SIN(__value__(X(I))))
+        __value__(Y(INT(I))) = COS(__value__(X(I)))
         CALL sax(OpenAD_lin_1, __deriv__(X(I)), __deriv__(Y(I)))
         GO TO 21
 21      CONTINUE

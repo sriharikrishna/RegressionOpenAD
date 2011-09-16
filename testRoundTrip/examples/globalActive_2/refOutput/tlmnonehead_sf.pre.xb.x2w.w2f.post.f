@@ -64,11 +64,11 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       APASSIVEGLOBAL = 2.0D00
-      AGLOBAL%v = (X(1)%v*X(2)%v)
       OpenAD_lin_0 = X(2)%v
       OpenAD_lin_1 = X(1)%v
-      Y(1)%v = (AGLOBAL%v*APASSIVEGLOBAL)
+      AGLOBAL%v = (X(1)%v*X(2)%v)
       OpenAD_lin_2 = APASSIVEGLOBAL
+      Y(1)%v = (AGLOBAL%v*APASSIVEGLOBAL)
       CALL sax(OpenAD_lin_0,X(1),AGLOBAL)
       CALL saxpy(OpenAD_lin_1,X(2),AGLOBAL)
       CALL sax(OpenAD_lin_2,AGLOBAL,Y(1))

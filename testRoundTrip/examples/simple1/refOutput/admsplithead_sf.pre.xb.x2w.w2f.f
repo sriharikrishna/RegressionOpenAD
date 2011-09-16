@@ -59,19 +59,19 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      __value__(T) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_0 = __value__(X(2))
       OpenAD_lin_1 = __value__(X(1))
-      __value__(Y(1)) = SIN(__value__(T))
+      __value__(T) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_2 = COS(__value__(T))
+      __value__(Y(1)) = SIN(__value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_1)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
-      __value__(Y(2)) = COS(__value__(T))
       OpenAD_lin_3 = (- SIN(__value__(T)))
+      __value__(Y(2)) = COS(__value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ END REPLACEMENT
@@ -113,19 +113,19 @@ C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      __value__(T) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_0 = __value__(X(2))
       OpenAD_lin_1 = __value__(X(1))
-      __value__(Y(1)) = SIN(__value__(T))
+      __value__(T) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_2 = COS(__value__(T))
+      __value__(Y(1)) = SIN(__value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_1)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
-      __value__(Y(2)) = COS(__value__(T))
       OpenAD_lin_3 = (- SIN(__value__(T)))
+      __value__(Y(2)) = COS(__value__(T))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ END REPLACEMENT

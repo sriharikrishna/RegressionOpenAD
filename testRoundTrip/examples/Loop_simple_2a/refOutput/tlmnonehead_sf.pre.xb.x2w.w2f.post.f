@@ -40,7 +40,6 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) J
       INTEGER(w2f__i4) K
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
@@ -61,10 +60,9 @@ C$OPENAD XXX Simple loop
       DO I = 1,3,1
         DO J = 1,3,1
           DO K = 1,3,1
-            OpenAD_dly_0 = (X(J)%v*Y(I)%v)
             OpenAD_lin_0 = Y(I)%v
             OpenAD_lin_1 = X(J)%v
-            Y(INT(I))%v = OpenAD_dly_0
+            Y(INT(I))%v = (X(J)%v*Y(I)%v)
             CALL setderiv(OpenAD_prp_0,Y(I))
             CALL sax(OpenAD_lin_0,X(J),Y(I))
             CALL saxpy(OpenAD_lin_1,OpenAD_prp_0,Y(I))

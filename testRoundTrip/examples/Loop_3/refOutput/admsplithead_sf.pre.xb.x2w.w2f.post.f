@@ -86,7 +86,6 @@ C
       INTEGER(w2f__i4) OpenAD_Symbol_28
       REAL(w2f__8) OpenAD_Symbol_29
       REAL(w2f__8) OpenAD_Symbol_30
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
@@ -143,10 +142,9 @@ C$OPENAD XXX Template ad_template.f
           integer_tape_pointer = integer_tape_pointer+1
           OpenAD_Symbol_11 = 0_w2f__i8
           DO K = 1,3,1
-            OpenAD_dly_0 = (X(J)%v*Y(I)%v)
             OpenAD_lin_0 = Y(I)%v
             OpenAD_lin_1 = X(J)%v
-            Y(INT(I))%v = OpenAD_dly_0
+            Y(INT(I))%v = (X(J)%v*Y(I)%v)
             double_tape(double_tape_pointer) = OpenAD_lin_0
             double_tape_pointer = double_tape_pointer+1
             double_tape(double_tape_pointer) = OpenAD_lin_1

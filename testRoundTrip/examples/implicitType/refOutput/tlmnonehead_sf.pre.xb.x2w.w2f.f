@@ -46,7 +46,7 @@ C
 C$OPENAD XXX Template ad_template.f
       __value__(S) = __value__(X(1))
       __value__(T) = __value__(S)
-      __value__(Y(1)) = SIN(__value__(T))
       OpenAD_lin_0 = COS(__value__(T))
+      __value__(Y(1)) = SIN(__value__(T))
       CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE

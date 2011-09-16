@@ -101,9 +101,9 @@ C original function
 C taping
       TYPED_X%FIELD1%v = X(1)%v
       TYPED_X%FIELD2%v = X(2)%v
-      Y(1)%v = (TYPED_X%FIELD1%v*TYPED_X%FIELD2%v)
       OpenAD_lin_0 = TYPED_X%FIELD2%v
       OpenAD_lin_1 = TYPED_X%FIELD1%v
+      Y(1)%v = (TYPED_X%FIELD1%v*TYPED_X%FIELD2%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1

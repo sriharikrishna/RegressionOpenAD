@@ -21,16 +21,14 @@ C
       INTEGER(w2f__i4) K
       type(active) :: NUMER
       REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_dly_0
-      REAL(w2f__8) OpenAD_dly_1
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
       REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
       type(active) :: OpenAD_prp_2
@@ -45,32 +43,30 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO K = 1,SP,1
         IF (I.ne.K) THEN
-          OpenAD_lin_0 = (A(I)%v-A(K)%v)
-          OpenAD_dly_0 = (DENOM%v*OpenAD_lin_0)
-          OpenAD_lin_1 = OpenAD_lin_0
-          OpenAD_lin_2 = DENOM%v
-          DENOM%v = OpenAD_dly_0
-          OpenAD_lin_3 = (X-A(K)%v)
-          OpenAD_dly_1 = (NUMER%v*OpenAD_lin_3)
-          OpenAD_lin_4 = OpenAD_lin_3
-          OpenAD_lin_5 = NUMER%v
-          NUMER%v = OpenAD_dly_1
-          OpenAD_acc_0 = (INT((-1_w2f__i8))*OpenAD_lin_5)
+          OpenAD_aux_0 = (A(I)%v-A(K)%v)
+          OpenAD_lin_0 = OpenAD_aux_0
+          OpenAD_lin_1 = DENOM%v
+          DENOM%v = (DENOM%v*OpenAD_aux_0)
+          OpenAD_aux_1 = (X-A(K)%v)
+          OpenAD_lin_2 = OpenAD_aux_1
+          OpenAD_lin_3 = NUMER%v
+          NUMER%v = (NUMER%v*OpenAD_aux_1)
+          OpenAD_acc_0 = (INT((-1_w2f__i8))*OpenAD_lin_3)
           CALL setderiv(OpenAD_prp_0,DENOM)
           CALL setderiv(OpenAD_prp_1,NUMER)
           CALL setderiv(OpenAD_prp_2,A(I))
           CALL dec_deriv(OpenAD_prp_2,A(K))
-          CALL sax(OpenAD_lin_1,OpenAD_prp_0,DENOM)
-          CALL saxpy(OpenAD_lin_2,OpenAD_prp_2,DENOM)
-          CALL sax(OpenAD_lin_4,OpenAD_prp_1,NUMER)
+          CALL sax(OpenAD_lin_0,OpenAD_prp_0,DENOM)
+          CALL saxpy(OpenAD_lin_1,OpenAD_prp_2,DENOM)
+          CALL sax(OpenAD_lin_2,OpenAD_prp_1,NUMER)
           CALL saxpy(OpenAD_acc_0,A(K),NUMER)
         ENDIF
       END DO
+      OpenAD_lin_4 = (INT(1_w2f__i8)/DENOM%v)
+      OpenAD_lin_5 = (-(NUMER%v/(DENOM%v*DENOM%v)))
       LAG%v = (NUMER%v/DENOM%v)
-      OpenAD_lin_6 = (INT(1_w2f__i8)/DENOM%v)
-      OpenAD_lin_7 = (-(NUMER%v/(DENOM%v*DENOM%v)))
-      CALL sax(OpenAD_lin_6,NUMER,LAG)
-      CALL saxpy(OpenAD_lin_7,DENOM,LAG)
+      CALL sax(OpenAD_lin_4,NUMER,LAG)
+      CALL saxpy(OpenAD_lin_5,DENOM,LAG)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

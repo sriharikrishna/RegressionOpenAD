@@ -71,9 +71,9 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(TYPED_X%FIELD1,X(1))
       TYPED_X%FIELD2%v = X(2)%v
       CALL setderiv(TYPED_X%FIELD2,X(2))
-      Y(1)%v = (TYPED_X%FIELD1%v*TYPED_X%FIELD2%v)
       OpenAD_lin_0 = TYPED_X%FIELD2%v
       OpenAD_lin_1 = TYPED_X%FIELD1%v
+      Y(1)%v = (TYPED_X%FIELD1%v*TYPED_X%FIELD2%v)
       CALL sax(OpenAD_lin_0,TYPED_X%FIELD1,Y(1))
       CALL saxpy(OpenAD_lin_1,TYPED_X%FIELD2,Y(1))
       END SUBROUTINE

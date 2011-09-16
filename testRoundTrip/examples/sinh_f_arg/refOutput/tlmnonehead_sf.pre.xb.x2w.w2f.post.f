@@ -45,7 +45,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      Y(1)%v = SINH(X(1)%v)
       OpenAD_lin_0 = COSH(X(1)%v)
+      Y(1)%v = SINH(X(1)%v)
       CALL sax(OpenAD_lin_0,X(1),Y(1))
       END SUBROUTINE

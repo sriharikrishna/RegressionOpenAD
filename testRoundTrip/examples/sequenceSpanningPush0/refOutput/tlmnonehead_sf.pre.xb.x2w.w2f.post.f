@@ -36,17 +36,15 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
 C
 C     **** Statements ****
 C
-      OpenAD_dly_0 = (X%v*T%v)
       OpenAD_lin_0 = T%v
       OpenAD_lin_1 = X%v
-      T%v = OpenAD_dly_0
+      T%v = (X%v*T%v)
       CALL setderiv(OpenAD_prp_0,T)
       CALL sax(OpenAD_lin_0,X,T)
       CALL saxpy(OpenAD_lin_1,OpenAD_prp_0,T)

@@ -29,9 +29,9 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL barext(OpenAD_tyc_0)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(T,OpenAD_tyc_0)
-      Y%v = (X(2)%v*T%v)
       OpenAD_lin_0 = T%v
       OpenAD_lin_1 = X(2)%v
+      Y%v = (X(2)%v*T%v)
       CALL sax(OpenAD_lin_0,X(2),Y)
       CALL saxpy(OpenAD_lin_1,T,Y)
       END SUBROUTINE

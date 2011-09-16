@@ -52,8 +52,8 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       __value__(X(1)) = (-1)
-      __value__(Y(1 : 2)) = ABS(__value__(X))
       OpenAD_lin_0 = SIGN(1.0D00, __value__(X))
+      __value__(Y(1 : 2)) = ABS(__value__(X))
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_lin_0)
 C     $OpenAD$ END REPLACEMENT
@@ -82,8 +82,8 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       __value__(X(1)) = (-1)
-      __value__(Y(1 : 2)) = ABS(__value__(X))
       OpenAD_lin_0 = SIGN(1.0D00, __value__(X))
+      __value__(Y(1 : 2)) = ABS(__value__(X))
 C     $OpenAD$ INLINE push_s1(subst)
       CALL push_s1(OpenAD_lin_0)
 C     $OpenAD$ END REPLACEMENT

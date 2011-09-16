@@ -62,9 +62,9 @@ C!! requested inline of 'oad_convert' has no defn
       CALL barext(OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(T,OpenAD_tyc_0)
-      Y%v = (X(2)%v*T%v)
       OpenAD_lin_0 = T%v
       OpenAD_lin_1 = X(2)%v
+      Y%v = (X(2)%v*T%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1

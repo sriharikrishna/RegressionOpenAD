@@ -55,10 +55,10 @@ C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         J = 1
         DO WHILE(J .LT. 3)
-          __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
-     >  __value__(X(J)))
           OpenAD_lin_0 = __value__(X(J))
           OpenAD_lin_1 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
+     >  __value__(X(J)))
           CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(I)))
           CALL setderiv(__deriv__(Y(I)), __deriv__(OpenAD_prp_0))
           CALL saxpy(OpenAD_lin_0, __deriv__(X(I)), __deriv__(Y(I)))

@@ -51,11 +51,11 @@ C
       CHARACTER(3) LOCALSTRING
       REAL(w2f__8) OpenAD_acc_0
       REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
       TYPE (OpenADTy_active) OpenAD_prp_0
       TYPE (OpenADTy_active) OpenAD_prp_1
 C
@@ -65,23 +65,23 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
         IF(GLOBALSTRING .EQ. 'yes') THEN
-          __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
-     >  __value__(X(I)))
           OpenAD_lin_0 = __value__(X(I))
           OpenAD_lin_1 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(Y(I)) + __value__(X(I)) *
+     >  __value__(X(I)))
           CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(I)))
           CALL setderiv(__deriv__(Y(I)), __deriv__(OpenAD_prp_0))
           CALL saxpy(OpenAD_lin_0, __deriv__(X(I)), __deriv__(Y(I)))
           CALL saxpy(OpenAD_lin_1, __deriv__(X(I)), __deriv__(Y(I)))
         ENDIF
         IF(GLOBALSTRING .EQ. 'no') THEN
-          OpenAD_lin_2 = (__value__(X(I)) * __value__(X(I)))
-          __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_lin_2 *
-     >  2.0D00)
+          OpenAD_aux_0 = (__value__(X(I)) * __value__(X(I)))
+          OpenAD_lin_2 = __value__(X(I))
           OpenAD_lin_3 = __value__(X(I))
-          OpenAD_lin_4 = __value__(X(I))
-          OpenAD_acc_0 = (OpenAD_lin_3 * 2.0D00)
-          OpenAD_acc_1 = (OpenAD_lin_4 * 2.0D00)
+          __value__(Y(INT(I))) = (__value__(Y(I)) + OpenAD_aux_0 *
+     >  2.0D00)
+          OpenAD_acc_0 = (OpenAD_lin_2 * 2.0D00)
+          OpenAD_acc_1 = (OpenAD_lin_3 * 2.0D00)
           CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(I)))
           CALL setderiv(__deriv__(Y(I)), __deriv__(OpenAD_prp_1))
           CALL saxpy(OpenAD_acc_0, __deriv__(X(I)), __deriv__(Y(I)))

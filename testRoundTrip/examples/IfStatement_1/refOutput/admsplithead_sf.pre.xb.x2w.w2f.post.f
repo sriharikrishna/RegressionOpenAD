@@ -60,7 +60,6 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_Symbol_6
       REAL(w2f__8) OpenAD_Symbol_7
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
@@ -101,10 +100,9 @@ C$OPENAD XXX Template ad_template.f
         integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
         integer_tape_pointer = integer_tape_pointer+1
       ENDIF
-      OpenAD_dly_0 = (Y(1)%v*Y(1)%v)
       OpenAD_lin_0 = Y(1)%v
       OpenAD_lin_1 = Y(1)%v
-      Y(1)%v = OpenAD_dly_0
+      Y(1)%v = (Y(1)%v*Y(1)%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1

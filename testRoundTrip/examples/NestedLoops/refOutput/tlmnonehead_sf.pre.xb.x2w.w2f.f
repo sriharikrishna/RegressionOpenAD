@@ -49,9 +49,9 @@ C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
         DO J = 1, 2, 1
-          __value__(Y(INT(I))) = (__value__(X(I)) * __value__(X(J)))
           OpenAD_lin_0 = __value__(X(J))
           OpenAD_lin_1 = __value__(X(I))
+          __value__(Y(INT(I))) = (__value__(X(I)) * __value__(X(J)))
           CALL sax(OpenAD_lin_0, __deriv__(X(I)), __deriv__(Y(I)))
           CALL saxpy(OpenAD_lin_1, __deriv__(X(J)), __deriv__(Y(I)))
         END DO

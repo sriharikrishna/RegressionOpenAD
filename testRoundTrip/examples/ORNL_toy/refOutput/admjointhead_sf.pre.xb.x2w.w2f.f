@@ -113,11 +113,11 @@ C
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
@@ -138,47 +138,47 @@ C     $OpenAD$ BEGIN REPLACEMENT 1
      >  2.0D00)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
-      OpenAD_lin_0 = SQRT((__value__(U(1)) ** 2) +(__value__(U(2)) ** 2
+      OpenAD_aux_0 = SQRT((__value__(U(1)) ** 2) +(__value__(U(2)) ** 2
      > ))
-      OpenAD_lin_2 = (2 *(__value__(U(1)) **(2 - INT(1_w2f__i8))))
-      OpenAD_lin_3 = (2 *(__value__(U(2)) **(2 - INT(1_w2f__i8))))
-      OpenAD_lin_1 = (5.0D-01 / OpenAD_lin_0)
-      __value__(V(1)) = OpenAD_lin_0
-      OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_1)
-      OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_1)
+      OpenAD_lin_1 = (2 *(__value__(U(1)) **(2 - INT(1_w2f__i8))))
+      OpenAD_lin_2 = (2 *(__value__(U(2)) **(2 - INT(1_w2f__i8))))
+      OpenAD_lin_0 = (5.0D-01 / OpenAD_aux_0)
+      __value__(V(1)) = OpenAD_aux_0
+      OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_0)
+      OpenAD_acc_1 = (OpenAD_lin_1 * OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_0)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_1)
-      OpenAD_lin_10 = (__value__(U(1)) * 2.0D00)
+      OpenAD_aux_1 = (__value__(U(1)) * 2.0D00)
+      OpenAD_lin_3 = (3 *(__value__(U(1)) **(3 - INT(1_w2f__i8))))
+      OpenAD_lin_4 = COS(__value__(U(2)))
+      OpenAD_lin_5 = (INT(1_w2f__i8) / __value__(U(1)))
+      OpenAD_lin_6 = (-(__value__(U(2)) /(__value__(U(1)) * __value__(U
+     > (1)))))
+      OpenAD_lin_7 = (- SIN(__value__(U(1))))
+      OpenAD_lin_8 = (3 *(__value__(U(2)) **(3 - INT(1_w2f__i8))))
+      OpenAD_lin_9 = OpenAD_aux_1
+      OpenAD_lin_10 = __value__(U(2))
       __value__(V(2)) = ((__value__(U(1)) ** 3) + SIN(__value__(U(2)))
      >  +(__value__(U(2)) / __value__(U(1))) - COS(__value__(U(1))) +(
-     > __value__(U(2)) ** 3) + __value__(U(2)) * OpenAD_lin_10)
-      OpenAD_lin_4 = (3 *(__value__(U(1)) **(3 - INT(1_w2f__i8))))
-      OpenAD_lin_5 = COS(__value__(U(2)))
-      OpenAD_lin_6 = (INT(1_w2f__i8) / __value__(U(1)))
-      OpenAD_lin_7 = (-(__value__(U(2)) /(__value__(U(1)) * __value__(U
-     > (1)))))
-      OpenAD_lin_8 = (- SIN(__value__(U(1))))
-      OpenAD_lin_9 = (3 *(__value__(U(2)) **(3 - INT(1_w2f__i8))))
-      OpenAD_lin_11 = OpenAD_lin_10
-      OpenAD_lin_12 = __value__(U(2))
-      OpenAD_acc_2 = (OpenAD_lin_8 * INT((-1_w2f__i8)))
-      OpenAD_acc_3 = (2.0D00 * OpenAD_lin_12)
+     > __value__(U(2)) ** 3) + __value__(U(2)) * OpenAD_aux_1)
+      OpenAD_acc_2 = (OpenAD_lin_7 * INT((-1_w2f__i8)))
+      OpenAD_acc_3 = (2.0D00 * OpenAD_lin_10)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_9)
+      CALL push_s0(OpenAD_lin_8)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_4)
+      CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_2)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_4)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_5)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_6)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_7)
-C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_11)
+      CALL push_s0(OpenAD_lin_9)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_3)
 C     $OpenAD$ END REPLACEMENT
@@ -253,47 +253,47 @@ C     $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
       CALL cp_arg_restore_real_vector_a(__deriv__(V))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
-      OpenAD_lin_0 = SQRT((__value__(U(1)) ** 2) +(__value__(U(2)) ** 2
+      OpenAD_aux_0 = SQRT((__value__(U(1)) ** 2) +(__value__(U(2)) ** 2
      > ))
-      OpenAD_lin_2 = (2 *(__value__(U(1)) **(2 - INT(1_w2f__i8))))
-      OpenAD_lin_3 = (2 *(__value__(U(2)) **(2 - INT(1_w2f__i8))))
-      OpenAD_lin_1 = (5.0D-01 / OpenAD_lin_0)
-      __value__(V(1)) = OpenAD_lin_0
-      OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_1)
-      OpenAD_acc_1 = (OpenAD_lin_2 * OpenAD_lin_1)
+      OpenAD_lin_1 = (2 *(__value__(U(1)) **(2 - INT(1_w2f__i8))))
+      OpenAD_lin_2 = (2 *(__value__(U(2)) **(2 - INT(1_w2f__i8))))
+      OpenAD_lin_0 = (5.0D-01 / OpenAD_aux_0)
+      __value__(V(1)) = OpenAD_aux_0
+      OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_0)
+      OpenAD_acc_1 = (OpenAD_lin_1 * OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_0)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_1)
-      OpenAD_lin_10 = (__value__(U(1)) * 2.0D00)
+      OpenAD_aux_1 = (__value__(U(1)) * 2.0D00)
+      OpenAD_lin_3 = (3 *(__value__(U(1)) **(3 - INT(1_w2f__i8))))
+      OpenAD_lin_4 = COS(__value__(U(2)))
+      OpenAD_lin_5 = (INT(1_w2f__i8) / __value__(U(1)))
+      OpenAD_lin_6 = (-(__value__(U(2)) /(__value__(U(1)) * __value__(U
+     > (1)))))
+      OpenAD_lin_7 = (- SIN(__value__(U(1))))
+      OpenAD_lin_8 = (3 *(__value__(U(2)) **(3 - INT(1_w2f__i8))))
+      OpenAD_lin_9 = OpenAD_aux_1
+      OpenAD_lin_10 = __value__(U(2))
       __value__(V(2)) = ((__value__(U(1)) ** 3) + SIN(__value__(U(2)))
      >  +(__value__(U(2)) / __value__(U(1))) - COS(__value__(U(1))) +(
-     > __value__(U(2)) ** 3) + __value__(U(2)) * OpenAD_lin_10)
-      OpenAD_lin_4 = (3 *(__value__(U(1)) **(3 - INT(1_w2f__i8))))
-      OpenAD_lin_5 = COS(__value__(U(2)))
-      OpenAD_lin_6 = (INT(1_w2f__i8) / __value__(U(1)))
-      OpenAD_lin_7 = (-(__value__(U(2)) /(__value__(U(1)) * __value__(U
-     > (1)))))
-      OpenAD_lin_8 = (- SIN(__value__(U(1))))
-      OpenAD_lin_9 = (3 *(__value__(U(2)) **(3 - INT(1_w2f__i8))))
-      OpenAD_lin_11 = OpenAD_lin_10
-      OpenAD_lin_12 = __value__(U(2))
-      OpenAD_acc_2 = (OpenAD_lin_8 * INT((-1_w2f__i8)))
-      OpenAD_acc_3 = (2.0D00 * OpenAD_lin_12)
+     > __value__(U(2)) ** 3) + __value__(U(2)) * OpenAD_aux_1)
+      OpenAD_acc_2 = (OpenAD_lin_7 * INT((-1_w2f__i8)))
+      OpenAD_acc_3 = (2.0D00 * OpenAD_lin_10)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_9)
+      CALL push_s0(OpenAD_lin_8)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_4)
+      CALL push_s0(OpenAD_lin_3)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_2)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_4)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_5)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_6)
 C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_7)
-C     $OpenAD$ INLINE push_s0(subst)
-      CALL push_s0(OpenAD_lin_11)
+      CALL push_s0(OpenAD_lin_9)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_3)
 C     $OpenAD$ END REPLACEMENT

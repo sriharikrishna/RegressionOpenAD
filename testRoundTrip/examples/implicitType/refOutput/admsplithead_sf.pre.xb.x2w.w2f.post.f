@@ -78,8 +78,8 @@ C original function
 C taping
       S%v = X(1)%v
       T%v = S%v
-      Y(1)%v = SIN(T%v)
       OpenAD_lin_0 = COS(T%v)
+      Y(1)%v = SIN(T%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
           end if

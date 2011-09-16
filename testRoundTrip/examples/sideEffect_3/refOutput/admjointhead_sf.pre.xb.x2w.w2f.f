@@ -47,9 +47,9 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      __value__(D) = (__value__(C) * __value__(C))
       OpenAD_lin_0 = __value__(C)
       OpenAD_lin_1 = __value__(C)
+      __value__(D) = (__value__(C) * __value__(C))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -93,9 +93,9 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      __value__(D) = (__value__(C) * __value__(C))
       OpenAD_lin_0 = __value__(C)
       OpenAD_lin_1 = __value__(C)
+      __value__(D) = (__value__(C) * __value__(C))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)

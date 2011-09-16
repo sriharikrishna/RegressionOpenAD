@@ -139,8 +139,8 @@ C$OPENAD XXX Template ad_template.f
       integer_tape_pointer = integer_tape_pointer+1
       GO TO 27
  23   CONTINUE
-      Y(1)%v = (I*X(1)%v)
       OpenAD_lin_0 = I
+      Y(1)%v = (I*X(1)%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       GO TO 24

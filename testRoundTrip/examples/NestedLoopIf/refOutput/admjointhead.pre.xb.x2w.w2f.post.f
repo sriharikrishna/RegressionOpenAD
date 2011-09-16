@@ -120,9 +120,9 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_3 = 0_w2f__i8
       DO I = 1,2,1
         IF (I.eq.1) THEN
-          Y(INT(I))%v = (X(I)%v*X(I)%v)
           OpenAD_lin_0 = X(I)%v
           OpenAD_lin_1 = X(I)%v
+          Y(INT(I))%v = (X(I)%v*X(I)%v)
           double_tape(double_tape_pointer) = OpenAD_lin_0
           double_tape_pointer = double_tape_pointer+1
           double_tape(double_tape_pointer) = OpenAD_lin_1

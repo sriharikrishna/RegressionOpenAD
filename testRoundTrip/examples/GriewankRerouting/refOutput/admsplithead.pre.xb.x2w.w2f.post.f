@@ -79,18 +79,18 @@ C original function
 C taping
       T1%v = X1%v
       T2%v = X2%v
-      T3%v = (T1%v/T2%v)
       OpenAD_lin_0 = (INT(1_w2f__i8)/T2%v)
       OpenAD_lin_1 = (-(T1%v/(T2%v*T2%v)))
-      T4%v = (T1%v*T2%v)
+      T3%v = (T1%v/T2%v)
       OpenAD_lin_2 = T2%v
       OpenAD_lin_3 = T1%v
-      Y1%v = (T3%v*T4%v)
+      T4%v = (T1%v*T2%v)
       OpenAD_lin_4 = T4%v
       OpenAD_lin_5 = T3%v
-      Y2%v = (T3%v/T4%v)
+      Y1%v = (T3%v*T4%v)
       OpenAD_lin_6 = (INT(1_w2f__i8)/T4%v)
       OpenAD_lin_7 = (-(T3%v/(T4%v*T4%v)))
+      Y2%v = (T3%v/T4%v)
       OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_5+OpenAD_lin_1*OpenAD_lin_
      +4)
       OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_7+OpenAD_lin_1*OpenAD_lin_

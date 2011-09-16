@@ -66,9 +66,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(C) = (__value__(B) + __value__(A) * __value__(A))
       OpenAD_lin_0 = __value__(A)
       OpenAD_lin_1 = __value__(A)
+      __value__(C) = (__value__(B) + __value__(A) * __value__(A))
       CALL setderiv(__deriv__(C), __deriv__(B))
       CALL saxpy(OpenAD_lin_0, __deriv__(A), __deriv__(C))
       CALL saxpy(OpenAD_lin_1, __deriv__(A), __deriv__(C))

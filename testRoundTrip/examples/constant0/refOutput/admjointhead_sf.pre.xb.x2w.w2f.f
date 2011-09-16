@@ -38,9 +38,9 @@ C
       PARAMETER ( PI = 3.141592653589793116D00)
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
 C
 C     **** Top Level Pragmas ****
 C
@@ -56,11 +56,11 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_2 = (__value__(X(1)) * 2.0D00)
-      OpenAD_lin_0 = (OpenAD_lin_2 * 3.141592653589793116D00)
-      __value__(Y(1)) = SIN(OpenAD_lin_0)
-      OpenAD_lin_1 = COS(OpenAD_lin_0)
-      OpenAD_acc_0 = (2.0D00 * 3.141592653589793116D00 * OpenAD_lin_1)
+      OpenAD_aux_1 = (__value__(X(1)) * 2.0D00)
+      OpenAD_aux_0 = (OpenAD_aux_1 * 3.141592653589793116D00)
+      OpenAD_lin_0 = COS(OpenAD_aux_0)
+      __value__(Y(1)) = SIN(OpenAD_aux_0)
+      OpenAD_acc_0 = (2.0D00 * 3.141592653589793116D00 * OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_0)
 C     $OpenAD$ END REPLACEMENT
@@ -86,11 +86,11 @@ C     $OpenAD$ BEGIN REPLACEMENT 9
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_2 = (__value__(X(1)) * 2.0D00)
-      OpenAD_lin_0 = (OpenAD_lin_2 * 3.141592653589793116D00)
-      __value__(Y(1)) = SIN(OpenAD_lin_0)
-      OpenAD_lin_1 = COS(OpenAD_lin_0)
-      OpenAD_acc_0 = (2.0D00 * 3.141592653589793116D00 * OpenAD_lin_1)
+      OpenAD_aux_1 = (__value__(X(1)) * 2.0D00)
+      OpenAD_aux_0 = (OpenAD_aux_1 * 3.141592653589793116D00)
+      OpenAD_lin_0 = COS(OpenAD_aux_0)
+      __value__(Y(1)) = SIN(OpenAD_aux_0)
+      OpenAD_acc_0 = (2.0D00 * 3.141592653589793116D00 * OpenAD_lin_0)
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_acc_0)
 C     $OpenAD$ END REPLACEMENT

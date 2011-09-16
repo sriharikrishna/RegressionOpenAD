@@ -70,11 +70,11 @@ C$OPENAD XXX Template ad_template.f
       I(2) = 0
       I(3) = (-1)
       MAXI = MAXVAL(I)
-      T%v = (X(MAXI)%v*X(2)%v)
       OpenAD_lin_0 = X(2)%v
       OpenAD_lin_1 = X(MAXI)%v
-      Y(INT(MAXI))%v = SIN(T%v)
+      T%v = (X(MAXI)%v*X(2)%v)
       OpenAD_lin_2 = COS(T%v)
+      Y(INT(MAXI))%v = SIN(T%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
@@ -83,8 +83,8 @@ C$OPENAD XXX Template ad_template.f
       double_tape_pointer = double_tape_pointer+1
       integer_tape(integer_tape_pointer) = MAXI
       integer_tape_pointer = integer_tape_pointer+1
-      Y(2)%v = COS(T%v)
       OpenAD_lin_3 = (-SIN(T%v))
+      Y(2)%v = COS(T%v)
       double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
           end if

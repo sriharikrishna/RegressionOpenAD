@@ -76,10 +76,10 @@ C     $OpenAD$ INLINE push_i_s0(subst)
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_0, __deriv__(Z(1 : INT(SIZE(
      > X)))))
-      __value__(Y(1 : 2)) = (__value__(X(1 : 2)) * __value__(Z(1 : INT(
-     > SIZE(X)))))
       OpenAD_lin_0 = __value__(Z(1 : INT(SIZE(X))))
       OpenAD_lin_1 = __value__(X(1 : 2))
+      __value__(Y(1 : 2)) = (__value__(X(1 : 2)) * __value__(Z(1 : INT(
+     > SIZE(X)))))
       OpenAD_Symbol_1 = SIZE(OpenAD_lin_0, 1_w2f__i8)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_1)
@@ -139,10 +139,10 @@ C     $OpenAD$ INLINE push_i_s0(subst)
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(OpenAD_lin_0, __deriv__(Z(1 : INT(SIZE(
      > X)))))
-      __value__(Y(1 : 2)) = (__value__(X(1 : 2)) * __value__(Z(1 : INT(
-     > SIZE(X)))))
       OpenAD_lin_0 = __value__(Z(1 : INT(SIZE(X))))
       OpenAD_lin_1 = __value__(X(1 : 2))
+      __value__(Y(1 : 2)) = (__value__(X(1 : 2)) * __value__(Z(1 : INT(
+     > SIZE(X)))))
       OpenAD_Symbol_1 = SIZE(OpenAD_lin_0, 1_w2f__i8)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_1)

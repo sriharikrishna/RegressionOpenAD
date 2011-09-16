@@ -113,9 +113,9 @@ C taping
       integer_tape_pointer = integer_tape_pointer+1
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_lin_0,Z(1:INT(SIZE(X))))
-      Y(1:2)%v = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
       OpenAD_lin_0 = Z(1:INT(SIZE(X)))%v
       OpenAD_lin_1 = X(1:2)%v
+      Y(1:2)%v = (X(1:2)%v*Z(1:INT(SIZE(X)))%v)
       OpenAD_Symbol_1 = SIZE(OpenAD_lin_0,1_w2f__i8)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1

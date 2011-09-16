@@ -46,10 +46,10 @@ C$OPENAD XXX Template ad_template.f
       J = K
 C$OPENAD XXX Simple loop
       DO I = 1, 2, 1
-        __value__(Y(INT(J))) = (__value__(Y(J)) + __value__(X(I)) *
-     >  __value__(X(I)))
         OpenAD_lin_0 = __value__(X(I))
         OpenAD_lin_1 = __value__(X(I))
+        __value__(Y(INT(J))) = (__value__(Y(J)) + __value__(X(I)) *
+     >  __value__(X(I)))
         CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(J)))
         CALL setderiv(__deriv__(Y(J)), __deriv__(OpenAD_prp_0))
         CALL saxpy(OpenAD_lin_0, __deriv__(X(I)), __deriv__(Y(J)))

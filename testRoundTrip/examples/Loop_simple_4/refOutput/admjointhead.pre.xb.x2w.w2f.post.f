@@ -126,9 +126,9 @@ C$OPENAD XXX Template ad_template.f
       J = K
 C$OPENAD XXX Simple loop
       DO I = 1,2,1
-        Y(INT(J))%v = (Y(J)%v+X(I)%v*X(I)%v)
         OpenAD_lin_0 = X(I)%v
         OpenAD_lin_1 = X(I)%v
+        Y(INT(J))%v = (Y(J)%v+X(I)%v*X(I)%v)
         double_tape(double_tape_pointer) = OpenAD_lin_0
         double_tape_pointer = double_tape_pointer+1
         double_tape(double_tape_pointer) = OpenAD_lin_1

@@ -43,6 +43,7 @@ C
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
       REAL(w2f__8) OpenAD_acc_4
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -52,7 +53,6 @@ C
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
       REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
 C
 C     **** Top Level Pragmas ****
 C
@@ -68,7 +68,6 @@ C
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 C original function
@@ -79,26 +78,27 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-      V3%v = (X1%v*X2%v)
+C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = X2%v
       OpenAD_lin_1 = X1%v
-      V4%v = (X1%v*V3%v)
+      V3%v = (X1%v*X2%v)
       OpenAD_lin_2 = V3%v
       OpenAD_lin_3 = X1%v
-      OpenAD_lin_4 = (X2%v*V3%v)
-      Y1%v = (V4%v*OpenAD_lin_4)
-      OpenAD_lin_5 = OpenAD_lin_4
-      OpenAD_lin_7 = V3%v
-      OpenAD_lin_8 = X2%v
-      OpenAD_lin_6 = V4%v
+      V4%v = (X1%v*V3%v)
+      OpenAD_aux_0 = (X2%v*V3%v)
+      OpenAD_lin_4 = OpenAD_aux_0
+      OpenAD_lin_6 = V3%v
+      OpenAD_lin_7 = X2%v
+      OpenAD_lin_5 = V4%v
+      Y1%v = (V4%v*OpenAD_aux_0)
+      OpenAD_lin_8 = COS(V4%v)
       Y2%v = SIN(V4%v)
-      OpenAD_lin_9 = COS(V4%v)
-      OpenAD_acc_0 = (OpenAD_lin_7*OpenAD_lin_6)
-      OpenAD_acc_1 = (OpenAD_lin_8*OpenAD_lin_6+OpenAD_lin_3*OpenAD_lin_
-     +5)
-      OpenAD_acc_2 = (OpenAD_lin_3*OpenAD_lin_9)
-      OpenAD_acc_3 = (OpenAD_lin_2*OpenAD_lin_5)
-      OpenAD_acc_4 = (OpenAD_lin_2*OpenAD_lin_9)
+      OpenAD_acc_0 = (OpenAD_lin_6*OpenAD_lin_5)
+      OpenAD_acc_1 = (OpenAD_lin_7*OpenAD_lin_5+OpenAD_lin_3*OpenAD_lin_
+     +4)
+      OpenAD_acc_2 = (OpenAD_lin_3*OpenAD_lin_8)
+      OpenAD_acc_3 = (OpenAD_lin_2*OpenAD_lin_4)
+      OpenAD_acc_4 = (OpenAD_lin_2*OpenAD_lin_8)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1

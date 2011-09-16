@@ -58,9 +58,9 @@ C$OPENAD XXX Simple loop
       DO I = 1,2,1
         J = 1
         do while (J.LT.3)
-          Y(INT(I))%v = (Y(I)%v+X(I)%v*X(J)%v)
           OpenAD_lin_0 = X(J)%v
           OpenAD_lin_1 = X(I)%v
+          Y(INT(I))%v = (Y(I)%v+X(I)%v*X(J)%v)
           CALL setderiv(OpenAD_prp_0,Y(I))
           CALL setderiv(Y(I),OpenAD_prp_0)
           CALL saxpy(OpenAD_lin_0,X(I),Y(I))

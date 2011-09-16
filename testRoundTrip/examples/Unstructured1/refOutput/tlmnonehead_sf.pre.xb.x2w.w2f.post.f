@@ -71,8 +71,8 @@ C$OPENAD XXX Template ad_template.f
       CALL sax(2.0D00,OpenAD_prp_1,Y(1))
       GO TO 10
  8    CONTINUE
-      Y(1)%v = (I*X(1)%v)
       OpenAD_lin_0 = I
+      Y(1)%v = (I*X(1)%v)
       CALL sax(OpenAD_lin_0,X(1),Y(1))
       GO TO 9
  9    CONTINUE

@@ -48,9 +48,9 @@ C
 C$OPENAD XXX Template ad_template.f
       IF(__value__(X(1)) .LE. __value__(X(2))) THEN
         IF(__value__(X(1)) .eq. __value__(X(2))) THEN
-          __value__(Y(1)) = (__value__(X(1)) * __value__(X(1)))
           OpenAD_lin_0 = __value__(X(1))
           OpenAD_lin_1 = __value__(X(1))
+          __value__(Y(1)) = (__value__(X(1)) * __value__(X(1)))
           CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
           CALL saxpy(OpenAD_lin_1, __deriv__(X(1)), __deriv__(Y(1)))
         ELSE

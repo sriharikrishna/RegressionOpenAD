@@ -128,11 +128,11 @@ C
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
@@ -157,43 +157,43 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-      OpenAD_lin_0 = SQRT((U(1)%v**2)+(U(2)%v**2))
-      OpenAD_lin_2 = (2*(U(1)%v**(2-INT(1_w2f__i8))))
-      OpenAD_lin_3 = (2*(U(2)%v**(2-INT(1_w2f__i8))))
-      OpenAD_lin_1 = (5.0D-01/OpenAD_lin_0)
-      V(1)%v = OpenAD_lin_0
-      OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_1)
-      OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_1)
+      OpenAD_aux_0 = SQRT((U(1)%v**2)+(U(2)%v**2))
+      OpenAD_lin_1 = (2*(U(1)%v**(2-INT(1_w2f__i8))))
+      OpenAD_lin_2 = (2*(U(2)%v**(2-INT(1_w2f__i8))))
+      OpenAD_lin_0 = (5.0D-01/OpenAD_aux_0)
+      V(1)%v = OpenAD_aux_0
+      OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_0)
+      OpenAD_acc_1 = (OpenAD_lin_1*OpenAD_lin_0)
       double_tape(double_tape_pointer) = OpenAD_acc_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_1
       double_tape_pointer = double_tape_pointer+1
-      OpenAD_lin_10 = (U(1)%v*2.0D00)
+      OpenAD_aux_1 = (U(1)%v*2.0D00)
+      OpenAD_lin_3 = (3*(U(1)%v**(3-INT(1_w2f__i8))))
+      OpenAD_lin_4 = COS(U(2)%v)
+      OpenAD_lin_5 = (INT(1_w2f__i8)/U(1)%v)
+      OpenAD_lin_6 = (-(U(2)%v/(U(1)%v*U(1)%v)))
+      OpenAD_lin_7 = (-SIN(U(1)%v))
+      OpenAD_lin_8 = (3*(U(2)%v**(3-INT(1_w2f__i8))))
+      OpenAD_lin_9 = OpenAD_aux_1
+      OpenAD_lin_10 = U(2)%v
       V(2)%v = ((U(1)%v**3)+SIN(U(2)%v)+(U(2)%v/U(1)%v)-COS(U(1)%v)+(U(2
-     +)%v**3)+U(2)%v*OpenAD_lin_10)
-      OpenAD_lin_4 = (3*(U(1)%v**(3-INT(1_w2f__i8))))
-      OpenAD_lin_5 = COS(U(2)%v)
-      OpenAD_lin_6 = (INT(1_w2f__i8)/U(1)%v)
-      OpenAD_lin_7 = (-(U(2)%v/(U(1)%v*U(1)%v)))
-      OpenAD_lin_8 = (-SIN(U(1)%v))
-      OpenAD_lin_9 = (3*(U(2)%v**(3-INT(1_w2f__i8))))
-      OpenAD_lin_11 = OpenAD_lin_10
-      OpenAD_lin_12 = U(2)%v
-      OpenAD_acc_2 = (OpenAD_lin_8*INT((-1_w2f__i8)))
-      OpenAD_acc_3 = (2.0D00*OpenAD_lin_12)
-      double_tape(double_tape_pointer) = OpenAD_lin_9
+     +)%v**3)+U(2)%v*OpenAD_aux_1)
+      OpenAD_acc_2 = (OpenAD_lin_7*INT((-1_w2f__i8)))
+      OpenAD_acc_3 = (2.0D00*OpenAD_lin_10)
+      double_tape(double_tape_pointer) = OpenAD_lin_8
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_4
+      double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_2
+      double_tape_pointer = double_tape_pointer+1
+      double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_5
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_6
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_7
-      double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_11
+      double_tape(double_tape_pointer) = OpenAD_lin_9
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_3
       double_tape_pointer = double_tape_pointer+1

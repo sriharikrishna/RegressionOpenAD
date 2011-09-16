@@ -33,17 +33,15 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Statements ****
 C
-      OpenAD_dly_0 = (__value__(X) * __value__(T))
       OpenAD_lin_0 = __value__(T)
       OpenAD_lin_1 = __value__(X)
-      __value__(T) = OpenAD_dly_0
+      __value__(T) = (__value__(X) * __value__(T))
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(T))
       CALL sax(OpenAD_lin_0, __deriv__(X), __deriv__(T))
       CALL saxpy(OpenAD_lin_1, __deriv__(OpenAD_prp_0), __deriv__(T))

@@ -74,13 +74,12 @@ C
       REAL(w2f__8) OpenAD_Symbol_16
       REAL(w2f__8) OpenAD_Symbol_17
       REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_dly_0
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
       type(active) :: OpenAD_prp_0
       type(active) :: OpenAD_prp_1
 
@@ -154,11 +153,11 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_3 = 0_w2f__i8
       DO I = 1,9,1
         IF (I.GT.5) THEN
-          OpenAD_lin_0 = SIN(X(I)%v)
-          Y(INT(I))%v = (PI*OpenAD_lin_0)
-          OpenAD_lin_2 = COS(X(I)%v)
-          OpenAD_lin_1 = PI
-          OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
+          OpenAD_aux_0 = SIN(X(I)%v)
+          OpenAD_lin_1 = COS(X(I)%v)
+          OpenAD_lin_0 = PI
+          Y(INT(I))%v = (PI*OpenAD_aux_0)
+          OpenAD_acc_0 = (OpenAD_lin_1*OpenAD_lin_0)
           double_tape(double_tape_pointer) = OpenAD_acc_0
           double_tape_pointer = double_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
@@ -167,9 +166,9 @@ C$OPENAD XXX Template ad_template.f
           integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
           integer_tape_pointer = integer_tape_pointer+1
         ELSE
+          OpenAD_lin_2 = (-SIN(X(I)%v))
           Y(INT(I))%v = (PI+COS(X(I)%v))
-          OpenAD_lin_3 = (-SIN(X(I)%v))
-          double_tape(double_tape_pointer) = OpenAD_lin_3
+          double_tape(double_tape_pointer) = OpenAD_lin_2
           double_tape_pointer = double_tape_pointer+1
           integer_tape(integer_tape_pointer) = I
           integer_tape_pointer = integer_tape_pointer+1
@@ -181,13 +180,12 @@ C$OPENAD XXX Template ad_template.f
       END DO
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
-      OpenAD_dly_0 = (Y(1)%v*Y(9)%v)
-      OpenAD_lin_4 = Y(9)%v
-      OpenAD_lin_5 = Y(1)%v
-      Y(10)%v = OpenAD_dly_0
-      double_tape(double_tape_pointer) = OpenAD_lin_4
+      OpenAD_lin_3 = Y(9)%v
+      OpenAD_lin_4 = Y(1)%v
+      Y(10)%v = (Y(1)%v*Y(9)%v)
+      double_tape(double_tape_pointer) = OpenAD_lin_3
       double_tape_pointer = double_tape_pointer+1
-      double_tape(double_tape_pointer) = OpenAD_lin_5
+      double_tape(double_tape_pointer) = OpenAD_lin_4
       double_tape_pointer = double_tape_pointer+1
 
 C taping end

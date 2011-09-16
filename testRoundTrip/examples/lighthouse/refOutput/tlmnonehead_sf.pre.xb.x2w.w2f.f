@@ -41,11 +41,11 @@ C
       REAL(w2f__8) OpenAD_acc_1
       REAL(w2f__8) OpenAD_acc_2
       REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_dly_0
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
+      REAL(w2f__8) OpenAD_aux_2
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
@@ -53,7 +53,6 @@ C
       REAL(w2f__8) OpenAD_lin_6
       REAL(w2f__8) OpenAD_lin_7
       REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
       TYPE (OpenADTy_active) OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
@@ -67,33 +66,32 @@ C
       __value__(GAMMA) = __value__(X(2))
       __value__(OMEGA) = __value__(X(3))
       __value__(T) = __value__(X(4))
-      OpenAD_lin_0 = TAN(__value__(OMEGA) * __value__(T))
-      OpenAD_lin_2 = __value__(T)
-      OpenAD_lin_3 = __value__(OMEGA)
-      OpenAD_lin_1 = (OpenAD_lin_0 * OpenAD_lin_0 + INT(1_w2f__i8))
-      __value__(V) = OpenAD_lin_0
-      OpenAD_lin_4 = (__value__(NU) * __value__(V))
-      OpenAD_lin_5 = (__value__(GAMMA) - __value__(V))
-      __value__(Y(1)) = (OpenAD_lin_4 / OpenAD_lin_5)
-      OpenAD_lin_8 = __value__(V)
-      OpenAD_lin_9 = __value__(NU)
-      OpenAD_lin_6 = (INT(1_w2f__i8) / OpenAD_lin_5)
-      OpenAD_lin_7 = (-(OpenAD_lin_4 /(OpenAD_lin_5 * OpenAD_lin_5)))
-      OpenAD_acc_0 = (OpenAD_lin_9 * OpenAD_lin_6 + INT((-1_w2f__i8)) *
-     >  OpenAD_lin_7)
-      OpenAD_acc_1 = (OpenAD_lin_8 * OpenAD_lin_6)
-      OpenAD_acc_2 = (OpenAD_lin_2 * OpenAD_lin_1 * OpenAD_acc_0)
-      OpenAD_acc_3 = (OpenAD_lin_3 * OpenAD_lin_1 * OpenAD_acc_0)
+      OpenAD_aux_0 = TAN(__value__(OMEGA) * __value__(T))
+      OpenAD_lin_1 = __value__(T)
+      OpenAD_lin_2 = __value__(OMEGA)
+      OpenAD_lin_0 = (OpenAD_aux_0 * OpenAD_aux_0 + INT(1_w2f__i8))
+      __value__(V) = OpenAD_aux_0
+      OpenAD_aux_1 = (__value__(NU) * __value__(V))
+      OpenAD_aux_2 = (__value__(GAMMA) - __value__(V))
+      OpenAD_lin_5 = __value__(V)
+      OpenAD_lin_6 = __value__(NU)
+      OpenAD_lin_3 = (INT(1_w2f__i8) / OpenAD_aux_2)
+      OpenAD_lin_4 = (-(OpenAD_aux_1 /(OpenAD_aux_2 * OpenAD_aux_2)))
+      __value__(Y(1)) = (OpenAD_aux_1 / OpenAD_aux_2)
+      OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_3 + INT((-1_w2f__i8)) *
+     >  OpenAD_lin_4)
+      OpenAD_acc_1 = (OpenAD_lin_5 * OpenAD_lin_3)
+      OpenAD_acc_2 = (OpenAD_lin_1 * OpenAD_lin_0 * OpenAD_acc_0)
+      OpenAD_acc_3 = (OpenAD_lin_2 * OpenAD_lin_0 * OpenAD_acc_0)
       CALL setderiv(__deriv__(GAMMA), __deriv__(X(2)))
       CALL sax(OpenAD_acc_1, __deriv__(X(1)), __deriv__(Y(1)))
       CALL saxpy(OpenAD_acc_2, __deriv__(X(3)), __deriv__(Y(1)))
       CALL saxpy(OpenAD_acc_3, __deriv__(X(4)), __deriv__(Y(1)))
-      CALL saxpy(OpenAD_lin_7, __deriv__(GAMMA), __deriv__(Y(1)))
-      OpenAD_dly_0 = (__value__(Y(1)) * __value__(GAMMA))
-      OpenAD_lin_10 = __value__(GAMMA)
-      OpenAD_lin_11 = __value__(Y(1))
-      __value__(Y(2)) = OpenAD_dly_0
+      CALL saxpy(OpenAD_lin_4, __deriv__(GAMMA), __deriv__(Y(1)))
+      OpenAD_lin_7 = __value__(GAMMA)
+      OpenAD_lin_8 = __value__(Y(1))
+      __value__(Y(2)) = (__value__(Y(1)) * __value__(GAMMA))
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
-      CALL sax(OpenAD_lin_10, __deriv__(OpenAD_prp_0), __deriv__(Y(2)))
-      CALL saxpy(OpenAD_lin_11, __deriv__(GAMMA), __deriv__(Y(2)))
+      CALL sax(OpenAD_lin_7, __deriv__(OpenAD_prp_0), __deriv__(Y(2)))
+      CALL saxpy(OpenAD_lin_8, __deriv__(GAMMA), __deriv__(Y(2)))
       END SUBROUTINE

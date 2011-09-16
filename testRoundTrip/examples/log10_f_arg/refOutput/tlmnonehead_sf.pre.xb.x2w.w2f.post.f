@@ -45,7 +45,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      Y(1)%v = LOG10(X(1)%v)
       OpenAD_lin_0 = (INT(1_w2f__i8)/(X(1)%v*LOG(1.0D+01)))
+      Y(1)%v = LOG10(X(1)%v)
       CALL sax(OpenAD_lin_0,X(1),Y(1))
       END SUBROUTINE

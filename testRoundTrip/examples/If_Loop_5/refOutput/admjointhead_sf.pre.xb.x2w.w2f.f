@@ -54,7 +54,6 @@ C
       REAL(w2f__8) OpenAD_Symbol_13
       REAL(w2f__8) OpenAD_Symbol_14
       REAL(w2f__8) OpenAD_Symbol_15
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       REAL(w2f__8) OpenAD_lin_2
@@ -88,16 +87,16 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_3 = 0_w2f__i8
       DO WHILE(I .LT. 3)
         IF(I .LT. 2) THEN
-          __value__(Y(2)) = SIN(__value__(X(1)))
           OpenAD_lin_0 = COS(__value__(X(1)))
+          __value__(Y(2)) = SIN(__value__(X(1)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
           OpenAD_Symbol_4 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i_s0(subst)
           CALL push_i_s0(OpenAD_Symbol_4)
         ELSE
-          __value__(Y(1)) = COS(__value__(X(2)))
           OpenAD_lin_1 = (- SIN(__value__(X(2))))
+          __value__(Y(1)) = COS(__value__(X(2)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_1)
           OpenAD_Symbol_5 = 0_w2f__i8
@@ -109,10 +108,9 @@ C         $OpenAD$ INLINE push_i_s0(subst)
       END DO
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_3)
-      OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(2)))
       OpenAD_lin_2 = __value__(Y(2))
       OpenAD_lin_3 = __value__(Y(1))
-      __value__(Y(2)) = OpenAD_dly_0
+      __value__(Y(2)) = (__value__(Y(1)) * __value__(Y(2)))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -183,16 +181,16 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_Symbol_9 = 0_w2f__i8
       DO WHILE(I .LT. 3)
         IF(I .LT. 2) THEN
-          __value__(Y(2)) = SIN(__value__(X(1)))
           OpenAD_lin_0 = COS(__value__(X(1)))
+          __value__(Y(2)) = SIN(__value__(X(1)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
           OpenAD_Symbol_10 = 1_w2f__i8
 C         $OpenAD$ INLINE push_i_s0(subst)
           CALL push_i_s0(OpenAD_Symbol_10)
         ELSE
-          __value__(Y(1)) = COS(__value__(X(2)))
           OpenAD_lin_1 = (- SIN(__value__(X(2))))
+          __value__(Y(1)) = COS(__value__(X(2)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_1)
           OpenAD_Symbol_11 = 0_w2f__i8
@@ -204,10 +202,9 @@ C         $OpenAD$ INLINE push_i_s0(subst)
       END DO
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(OpenAD_Symbol_9)
-      OpenAD_dly_0 = (__value__(Y(1)) * __value__(Y(2)))
       OpenAD_lin_2 = __value__(Y(2))
       OpenAD_lin_3 = __value__(Y(1))
-      __value__(Y(2)) = OpenAD_dly_0
+      __value__(Y(2)) = (__value__(Y(1)) * __value__(Y(2)))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_2)
 C     $OpenAD$ INLINE push_s0(subst)

@@ -42,8 +42,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      Y%v = (K*X%v)
       OpenAD_lin_0 = K
+      Y%v = (K*X%v)
       K = (K*2)
       CALL setderiv(OpenAD_prp_0,X)
       CALL sax(OpenAD_lin_0,OpenAD_prp_0,Y)

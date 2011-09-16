@@ -76,8 +76,8 @@ C$OPENAD XXX Template ad_template.f
         GO TO 8
       ENDIF
 8     CONTINUE
-      __value__(Y(1)) = (I * __value__(X(1)))
       OpenAD_lin_1 = I
+      __value__(Y(1)) = (I * __value__(X(1)))
       CALL sax(OpenAD_lin_1, __deriv__(X(1)), __deriv__(Y(1)))
       GO TO 9
 9     CONTINUE
@@ -99,8 +99,8 @@ C$OPENAD XXX Template ad_template.f
         GO TO 14
       ENDIF
 14    CONTINUE
-      __value__(Y(1)) = (I * __value__(Y(1)))
       OpenAD_lin_3 = I
+      __value__(Y(1)) = (I * __value__(Y(1)))
       CALL setderiv(__deriv__(OpenAD_prp_2), __deriv__(Y(1)))
       CALL sax(OpenAD_lin_3, __deriv__(OpenAD_prp_2), __deriv__(Y(1)))
       GO TO 15
@@ -109,15 +109,15 @@ C$OPENAD XXX Template ad_template.f
 16    CONTINUE
       GO TO 19
 17    CONTINUE
-      __value__(Y(1)) = (I * __value__(Y(1)))
       OpenAD_lin_2 = I
+      __value__(Y(1)) = (I * __value__(Y(1)))
       CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
       CALL sax(OpenAD_lin_2, __deriv__(OpenAD_prp_1), __deriv__(Y(1)))
       RETURN
       GO TO 19
 18    CONTINUE
-      __value__(Y(1)) = (I * __value__(X(1)))
       OpenAD_lin_0 = I
+      __value__(Y(1)) = (I * __value__(X(1)))
       CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(Y(1)))
       GO TO 1
       GO TO 19

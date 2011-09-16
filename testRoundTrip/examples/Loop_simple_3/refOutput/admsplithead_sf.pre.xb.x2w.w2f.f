@@ -50,7 +50,6 @@ C
       INTEGER(w2f__i4) I
       REAL(w2f__8) OpenAD_Symbol_10
       REAL(w2f__8) OpenAD_Symbol_9
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       TYPE (OpenADTy_active) OpenAD_prp_0
@@ -85,10 +84,9 @@ C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 1, 3, 1
         IF(ASTRING .EQ. 'blah') THEN
-          OpenAD_dly_0 = (__value__(X(1)) * __value__(Y(1)))
           OpenAD_lin_0 = __value__(Y(1))
           OpenAD_lin_1 = __value__(X(1))
-          __value__(Y(1)) = OpenAD_dly_0
+          __value__(Y(1)) = (__value__(X(1)) * __value__(Y(1)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)
@@ -171,10 +169,9 @@ C$OPENAD XXX Simple loop
       OpenAD_Symbol_4 = 0_w2f__i8
       DO I = 1, 3, 1
         IF(ASTRING .EQ. 'blah') THEN
-          OpenAD_dly_0 = (__value__(X(1)) * __value__(Y(1)))
           OpenAD_lin_0 = __value__(Y(1))
           OpenAD_lin_1 = __value__(X(1))
-          __value__(Y(1)) = OpenAD_dly_0
+          __value__(Y(1)) = (__value__(X(1)) * __value__(Y(1)))
 C         $OpenAD$ INLINE push_s0(subst)
           CALL push_s0(OpenAD_lin_0)
 C         $OpenAD$ INLINE push_s0(subst)

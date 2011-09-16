@@ -88,9 +88,9 @@ C       $OpenAD$ BEGIN REPLACEMENT 1
         __value__(Y(1)) = (__value__(X(1)) * __value__(X(2)))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 2
-        __value__(Y(1)) = (__value__(X(1)) * __value__(X(2)))
         OpenAD_lin_0 = __value__(X(2))
         OpenAD_lin_1 = __value__(X(1))
+        __value__(Y(1)) = (__value__(X(1)) * __value__(X(2)))
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_0)
 C       $OpenAD$ INLINE push_s0(subst)
@@ -133,9 +133,9 @@ C       $OpenAD$ INLINE cp_arg_restore_real_vector_a(subst)
         CALL cp_arg_restore_real_vector_a(__deriv__(Y))
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 10
-        __value__(Y(1)) = (__value__(X(1)) * __value__(X(2)))
         OpenAD_lin_0 = __value__(X(2))
         OpenAD_lin_1 = __value__(X(1))
+        __value__(Y(1)) = (__value__(X(1)) * __value__(X(2)))
 C       $OpenAD$ INLINE push_s0(subst)
         CALL push_s0(OpenAD_lin_0)
 C       $OpenAD$ INLINE push_s0(subst)

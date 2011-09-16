@@ -39,7 +39,6 @@ C
           integer iaddr
           external iaddr
 C$OPENAD XXX Template ad_template.f
-C$OPENAD XXX Template ad_template.f
 
          if (our_rev_mode%plain) then
 C original function
@@ -47,9 +46,10 @@ C original function
           end if
           if (our_rev_mode%tape) then
 C taping
-      B%v = (A%v*A%v)
+C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = A%v
       OpenAD_lin_1 = A%v
+      B%v = (A%v*A%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1

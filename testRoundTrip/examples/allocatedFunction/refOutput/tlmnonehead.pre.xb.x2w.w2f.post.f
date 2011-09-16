@@ -32,9 +32,9 @@ C$OPENAD XXX Template ad_template.f
       A(2)%v = (X(2)%v*2.0D00)
       CALL sax(2.0D00,X(2),A(2))
       IF (ALLOCATED(A)) THEN
-        Y(1)%v = (A(1)%v*A(2)%v)
         OpenAD_lin_0 = A(2)%v
         OpenAD_lin_1 = A(1)%v
+        Y(1)%v = (A(1)%v*A(2)%v)
         CALL sax(OpenAD_lin_0,A(1),Y(1))
         CALL saxpy(OpenAD_lin_1,A(2),Y(1))
       ELSE

@@ -46,8 +46,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       X(1)%v = (-1)
-      Y(1:2)%v = ABS(X%v)
       OpenAD_lin_0 = SIGN(1.0D00,X%v)
+      Y(1:2)%v = ABS(X%v)
       CALL zero_deriv(X(1))
       CALL sax(OpenAD_lin_0,X,Y(1:2))
       END SUBROUTINE

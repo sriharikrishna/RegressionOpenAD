@@ -62,8 +62,8 @@ C$OPENAD XXX Template ad_template.f
       P2 = (-3.0D+01)
       CALL OAD_S_MIN_D(X(1),X(2),OAD_CTMP0)
       CALL OAD_S_MAX_D(P1,P2,OAD_CTMP1)
-      Y(1)%v = (OAD_CTMP0%v*OAD_CTMP1)
       OpenAD_lin_0 = OAD_CTMP1
+      Y(1)%v = (OAD_CTMP0%v*OAD_CTMP1)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
           end if

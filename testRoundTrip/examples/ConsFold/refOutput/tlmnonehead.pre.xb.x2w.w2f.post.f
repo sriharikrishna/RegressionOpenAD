@@ -22,8 +22,8 @@ C
       type(active) :: T7
       type(active) :: Y1
       REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_aux_0
       REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -40,10 +40,10 @@ C$OPENAD XXX Template ad_template.f
       T5%v = (T4%v+4.0D00)
       T6%v = (T5%v+3.0D00)
       T7%v = (T6%v+(-9.0D00))
-      OpenAD_lin_0 = EXP(T7%v)
-      OpenAD_lin_1 = OpenAD_lin_0
-      Y1%v = OpenAD_lin_0
+      OpenAD_aux_0 = EXP(T7%v)
+      OpenAD_lin_0 = OpenAD_aux_0
+      Y1%v = OpenAD_aux_0
       Y(1)%v = Y1%v
-      OpenAD_acc_0 = (1.0D00*OpenAD_lin_1)
+      OpenAD_acc_0 = (1.0D00*OpenAD_lin_0)
       CALL sax(OpenAD_acc_0,X(1),Y(1))
       END SUBROUTINE

@@ -46,8 +46,8 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
-      __value__(A) = (K * __value__(A))
       OpenAD_lin_0 = K
+      __value__(A) = (K * __value__(A))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ END REPLACEMENT
@@ -98,8 +98,8 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
-      __value__(A) = (K * __value__(A))
       OpenAD_lin_0 = K
+      __value__(A) = (K * __value__(A))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_0)
 C     $OpenAD$ END REPLACEMENT
@@ -158,9 +158,9 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(__deriv__(X(K)), K)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(K)
-      __value__(Y) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_1 = __value__(X(2))
       OpenAD_lin_2 = __value__(X(1))
+      __value__(Y) = (__value__(X(1)) * __value__(X(2)))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_1)
 C     $OpenAD$ INLINE push_s0(subst)
@@ -199,9 +199,9 @@ C$OPENAD XXX Template ad_template.f
       CALL foo(__deriv__(X(K)), K)
 C     $OpenAD$ INLINE push_i_s0(subst)
       CALL push_i_s0(K)
-      __value__(Y) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_1 = __value__(X(2))
       OpenAD_lin_2 = __value__(X(1))
+      __value__(Y) = (__value__(X(1)) * __value__(X(2)))
 C     $OpenAD$ INLINE push_s0(subst)
       CALL push_s0(OpenAD_lin_1)
 C     $OpenAD$ INLINE push_s0(subst)

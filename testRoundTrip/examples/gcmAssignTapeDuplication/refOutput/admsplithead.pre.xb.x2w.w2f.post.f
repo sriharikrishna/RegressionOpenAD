@@ -43,13 +43,13 @@ C
       REAL(w2f__8) OpenAD_acc_5
       REAL(w2f__8) OpenAD_acc_6
       REAL(w2f__8) OpenAD_acc_7
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
+      REAL(w2f__8) OpenAD_aux_2
+      REAL(w2f__8) OpenAD_aux_3
+      REAL(w2f__8) OpenAD_aux_4
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_11
-      REAL(w2f__8) OpenAD_lin_12
-      REAL(w2f__8) OpenAD_lin_13
-      REAL(w2f__8) OpenAD_lin_14
       REAL(w2f__8) OpenAD_lin_2
       REAL(w2f__8) OpenAD_lin_3
       REAL(w2f__8) OpenAD_lin_4
@@ -82,31 +82,31 @@ C original function
           if (our_rev_mode%tape) then
 C taping
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_7 = (X(8)%v+X(7)%v+X(5)%v+X(6)%v)
-      OpenAD_lin_3 = (X(1)%v*OpenAD_lin_7+X(2)%v*X(4)%v)
-      OpenAD_lin_12 = (X(12)%v+X(11)%v+X(9)%v+X(10)%v)
-      OpenAD_lin_4 = (X(2)%v+X(1)%v*OpenAD_lin_12)
-      OpenAD_lin_0 = (OpenAD_lin_3/OpenAD_lin_4)
-      Y(1)%v = (X(3)%v*OpenAD_lin_0)
-      OpenAD_lin_1 = OpenAD_lin_0
-      OpenAD_lin_8 = OpenAD_lin_7
+      OpenAD_aux_3 = (X(8)%v+X(7)%v+X(5)%v+X(6)%v)
+      OpenAD_aux_1 = (X(1)%v*OpenAD_aux_3+X(2)%v*X(4)%v)
+      OpenAD_aux_4 = (X(12)%v+X(11)%v+X(9)%v+X(10)%v)
+      OpenAD_aux_2 = (X(2)%v+X(1)%v*OpenAD_aux_4)
+      OpenAD_aux_0 = (OpenAD_aux_1/OpenAD_aux_2)
+      OpenAD_lin_0 = OpenAD_aux_0
+      OpenAD_lin_4 = OpenAD_aux_3
+      OpenAD_lin_5 = X(1)%v
+      OpenAD_lin_6 = X(4)%v
+      OpenAD_lin_7 = X(2)%v
+      OpenAD_lin_2 = (INT(1_w2f__i8)/OpenAD_aux_2)
+      OpenAD_lin_8 = OpenAD_aux_4
       OpenAD_lin_9 = X(1)%v
-      OpenAD_lin_10 = X(4)%v
-      OpenAD_lin_11 = X(2)%v
-      OpenAD_lin_5 = (INT(1_w2f__i8)/OpenAD_lin_4)
-      OpenAD_lin_13 = OpenAD_lin_12
-      OpenAD_lin_14 = X(1)%v
-      OpenAD_lin_6 = (-(OpenAD_lin_3/(OpenAD_lin_4*OpenAD_lin_4)))
-      OpenAD_lin_2 = X(3)%v
-      OpenAD_acc_0 = (OpenAD_lin_5*OpenAD_lin_2)
-      OpenAD_acc_1 = (OpenAD_lin_6*OpenAD_lin_2)
-      OpenAD_acc_2 = (OpenAD_lin_13*OpenAD_acc_1)
-      OpenAD_acc_3 = (OpenAD_lin_14*OpenAD_acc_1)
-      OpenAD_acc_4 = (OpenAD_lin_8*OpenAD_acc_0)
-      OpenAD_acc_5 = (OpenAD_lin_9*OpenAD_acc_0)
-      OpenAD_acc_6 = (OpenAD_lin_10*OpenAD_acc_0)
-      OpenAD_acc_7 = (OpenAD_lin_11*OpenAD_acc_0)
-      double_tape(double_tape_pointer) = OpenAD_lin_1
+      OpenAD_lin_3 = (-(OpenAD_aux_1/(OpenAD_aux_2*OpenAD_aux_2)))
+      OpenAD_lin_1 = X(3)%v
+      Y(1)%v = (X(3)%v*OpenAD_aux_0)
+      OpenAD_acc_0 = (OpenAD_lin_2*OpenAD_lin_1)
+      OpenAD_acc_1 = (OpenAD_lin_3*OpenAD_lin_1)
+      OpenAD_acc_2 = (OpenAD_lin_8*OpenAD_acc_1)
+      OpenAD_acc_3 = (OpenAD_lin_9*OpenAD_acc_1)
+      OpenAD_acc_4 = (OpenAD_lin_4*OpenAD_acc_0)
+      OpenAD_acc_5 = (OpenAD_lin_5*OpenAD_acc_0)
+      OpenAD_acc_6 = (OpenAD_lin_6*OpenAD_acc_0)
+      OpenAD_acc_7 = (OpenAD_lin_7*OpenAD_acc_0)
+      double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_acc_2
       double_tape_pointer = double_tape_pointer+1

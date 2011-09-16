@@ -52,9 +52,9 @@ C
 C$OPENAD XXX Template ad_template.f
       DO I = 1, 2, 1
         DO J = 1, 2, 1
-          Y(INT(I))%v = (X(I)%v*X(J)%v)
           OpenAD_lin_0 = X(J)%v
           OpenAD_lin_1 = X(I)%v
+          Y(INT(I))%v = (X(I)%v*X(J)%v)
           CALL sax(OpenAD_lin_0,X(I),Y(I))
           CALL saxpy(OpenAD_lin_1,X(J),Y(I))
         END DO

@@ -188,8 +188,8 @@ C!! requested inline of 'oad_convert' has no defn
       CALL P1(OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(X,OpenAD_tyc_0)
-      X%v = (THEINT*X%v)
       OpenAD_lin_0 = THEINT
+      X%v = (THEINT*X%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
 C!! requested inline of 'oad_convert' has no defn

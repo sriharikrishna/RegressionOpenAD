@@ -46,7 +46,6 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_dly_0
       REAL(w2f__8) OpenAD_lin_0
       REAL(w2f__8) OpenAD_lin_1
       type(active) :: OpenAD_prp_0
@@ -112,10 +111,9 @@ C            print*, " tape       ", our_rev_mode
             our_rev_mode%tape=.FALSE.
             our_rev_mode%adjoint=.FALSE.
 C taping
-      OpenAD_dly_0 = (P%v*AGLOBALACTIVE%v)
       OpenAD_lin_0 = AGLOBALACTIVE%v
       OpenAD_lin_1 = P%v
-      AGLOBALACTIVE%v = OpenAD_dly_0
+      AGLOBALACTIVE%v = (P%v*AGLOBALACTIVE%v)
       double_tape(double_tape_pointer) = OpenAD_lin_0
       double_tape_pointer = double_tape_pointer+1
       double_tape(double_tape_pointer) = OpenAD_lin_1
@@ -272,8 +270,8 @@ C!! requested inline of 'oad_convert' has no defn
       CALL foo(OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(ANINACTIVE,OpenAD_tyc_0)
-      Y(1)%v = SIN(AGLOBALACTIVE%v)
       OpenAD_lin_2 = COS(AGLOBALACTIVE%v)
+      Y(1)%v = SIN(AGLOBALACTIVE%v)
       double_tape(double_tape_pointer) = OpenAD_lin_2
       double_tape_pointer = double_tape_pointer+1
 

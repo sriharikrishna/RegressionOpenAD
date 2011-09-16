@@ -13,9 +13,9 @@ C
 C
 C     **** Local Variables and Functions ****
 C
-      REAL(w2f__8) OpenAD_lin_0
-      INTEGER(w2f__i4) OpenAD_lin_1
-      INTEGER(w2f__i4) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_aux_0
+      INTEGER(w2f__i4) OpenAD_aux_1
+      INTEGER(w2f__i4) OpenAD_lin_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -25,9 +25,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_lin_0 = DBLE(X(1)%v)
-      OpenAD_lin_1 = DBLE(2)
-      Y(1)%v = (OpenAD_lin_0*OpenAD_lin_1)
-      OpenAD_lin_2 = OpenAD_lin_1
-      CALL sax(OpenAD_lin_2,X(1),Y(1))
+      OpenAD_aux_0 = DBLE(X(1)%v)
+      OpenAD_aux_1 = DBLE(2)
+      OpenAD_lin_0 = OpenAD_aux_1
+      Y(1)%v = (OpenAD_aux_0*OpenAD_aux_1)
+      CALL sax(OpenAD_lin_0,X(1),Y(1))
       END SUBROUTINE

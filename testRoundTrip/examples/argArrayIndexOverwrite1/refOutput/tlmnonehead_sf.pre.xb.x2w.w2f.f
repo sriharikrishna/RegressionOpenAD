@@ -39,8 +39,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(Y) = (K * __value__(X))
       OpenAD_lin_0 = K
+      __value__(Y) = (K * __value__(X))
       K = (K * 2)
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X))
       CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prp_0), __deriv__(Y))

@@ -45,7 +45,7 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      Y(1)%v = (X(1)%v**2)
       OpenAD_lin_0 = (2*(X(1)%v**(2-INT(1_w2f__i8))))
+      Y(1)%v = (X(1)%v**2)
       CALL sax(OpenAD_lin_0,X(1),Y(1))
       END SUBROUTINE

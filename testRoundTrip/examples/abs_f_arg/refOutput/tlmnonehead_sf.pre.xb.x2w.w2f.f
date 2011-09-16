@@ -43,8 +43,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       __value__(X(1)) = (-1)
-      __value__(Y(1 : 2)) = ABS(__value__(X))
       OpenAD_lin_0 = SIGN(1.0D00, __value__(X))
+      __value__(Y(1 : 2)) = ABS(__value__(X))
       CALL zero_deriv(__deriv__(X(1)))
       CALL sax(OpenAD_lin_0, __deriv__(X), __deriv__(Y(1 : 2)))
       END SUBROUTINE

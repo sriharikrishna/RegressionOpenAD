@@ -33,7 +33,6 @@ C
 C     **** Local Variables and Functions ****
 C
       TYPE (OpenADTy_active) T(1 : 1, 1 : 2)
-      REAL(w2f__8) OpenAD_dly_0(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_lin_0(1 : 1, 1 : 2)
       REAL(w2f__8) OpenAD_lin_1(1 : 1, 1 : 2)
       TYPE (OpenADTy_active) OpenAD_prp_0(1 : 1, 1 : 2)
@@ -49,11 +48,10 @@ C
 C$OPENAD XXX Template ad_template.f
       __value__(T(1, 1 : 2)) = __value__(X(1 : 2))
       CALL setderiv(__deriv__(T(1, 1 : 2)), __deriv__(X(1 : 2)))
-      OpenAD_dly_0 = (__value__(T(1 : 1, 1 : 2)) * __value__(T(1 : 1, 1
-     >  : 2)))
       OpenAD_lin_0 = __value__(T(1 : 1, 1 : 2))
       OpenAD_lin_1 = __value__(T(1 : 1, 1 : 2))
-      __value__(T(1 : 1, 1 : 2)) = OpenAD_dly_0
+      __value__(T(1 : 1, 1 : 2)) = (__value__(T(1 : 1, 1 : 2)) *
+     >  __value__(T(1 : 1, 1 : 2)))
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(T(1 : 1, 1 : 2))
      > )
       CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(T(1 : 1, 1 : 2))

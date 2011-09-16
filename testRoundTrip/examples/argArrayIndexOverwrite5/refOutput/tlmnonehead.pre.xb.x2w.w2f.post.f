@@ -19,8 +19,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      A%v = (K*A%v)
       OpenAD_lin_0 = K
+      A%v = (K*A%v)
       K = (K*2)
       CALL setderiv(OpenAD_prp_0,A)
       CALL sax(OpenAD_lin_0,OpenAD_prp_0,A)
@@ -57,9 +57,9 @@ C$OPENAD XXX Template ad_template.f
       J = 1
       CALL foo(X(I+J),I)
       CALL foo(X(I-J),I)
-      Y%v = (X(1)%v*X(2)%v)
       OpenAD_lin_1 = X(2)%v
       OpenAD_lin_2 = X(1)%v
+      Y%v = (X(1)%v*X(2)%v)
       CALL sax(OpenAD_lin_1,X(1),Y)
       CALL saxpy(OpenAD_lin_2,X(2),Y)
       END SUBROUTINE
