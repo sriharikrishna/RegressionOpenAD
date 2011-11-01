@@ -126,12 +126,12 @@ PREPROCESS_FLAGS=
 POSTPROCESS_FLAGS=
 ifeq ($(MAJOR_MODE),tlm)
 PREPROCESS_FLAGS=--mode=f
-POSTPROCESS_FLAGS=--mode=f
+POSTPROCESS_FLAGS=--mode=f --infoUnitFile w2f__types.f90
 endif
 
 ifeq ($(MAJOR_MODE),adm)
 PREPROCESS_FLAGS=--mode=r
-POSTPROCESS_FLAGS=--mode=r
+POSTPROCESS_FLAGS=--mode=r --infoUnitFile w2f__types.f90
 endif
 
 CP_FLAG=
@@ -214,7 +214,7 @@ head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 	./whirl2f -openad -openadType OpenADTy_active  $<
 
 # postprocess F'
-OAD_intrinsics.pre.xb.x2w.w2f.post.f90 :  head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
+OAD_intrinsics.pre.xb.x2w.w2f.post.f90 :  head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py w2f__types.f90
 	$(COMPLAIN)
 	./postProcess.py $(POSTPROCESS_FLAGS) --timing --abstractType OpenADTy_active $< --separateOutput --filenameSuffix=".pre.xb.x2w.w2f.post" --pathSuffix='./' $(postProcessVerbFlag) ${EXAMPLE_SPECIFIC_POSTPROCESS_OPTIONS}
 
