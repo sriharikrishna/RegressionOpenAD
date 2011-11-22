@@ -99,7 +99,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
-      SQRT3 = 5.77350258827209472656D-01
+      SQRT3 = 5.77350269189625842081D-01
       __value__(MATR(0)) = (__value__(X(2)) - __value__(X(1)))
       CALL setderiv(__deriv__(MATR(0)), __deriv__(X(2)))
       CALL dec_deriv(__deriv__(MATR(0)), __deriv__(X(1)))

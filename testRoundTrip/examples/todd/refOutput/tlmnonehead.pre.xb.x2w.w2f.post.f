@@ -80,7 +80,7 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
-      SQRT3 = 5.77350258827209472656D-01
+      SQRT3 = 5.77350269189625842081D-01
       MATR(0)%v = (X(2)%v-X(1)%v)
       CALL setderiv(MATR(0),X(2))
       CALL dec_deriv(MATR(0),X(1))
