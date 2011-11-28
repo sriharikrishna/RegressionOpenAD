@@ -116,7 +116,7 @@ C
 C     $OpenAD$ BEGIN REPLACEMENT 1
 C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
-      SQRT3 = 5.77350258827209472656D-01
+      SQRT3 = 5.77350269189625842081D-01
       __value__(MATR(0)) = (__value__(X(2)) - __value__(X(1)))
       __value__(MATR(1)) = (SQRT3 *(__value__(X(3)) * 2.0D00 -
      >  __value__(X(2)) - __value__(X(1))))
@@ -141,7 +141,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
-      SQRT3 = 5.77350258827209472656D-01
+      SQRT3 = 5.77350269189625842081D-01
       __value__(MATR(0)) = (__value__(X(2)) - __value__(X(1)))
       OpenAD_aux_0 = (__value__(X(3)) * 2.0D00 - __value__(X(2)) -
      >  __value__(X(1)))
@@ -351,7 +351,7 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
-      SQRT3 = 5.77350258827209472656D-01
+      SQRT3 = 5.77350269189625842081D-01
       __value__(MATR(0)) = (__value__(X(2)) - __value__(X(1)))
       OpenAD_aux_0 = (__value__(X(3)) * 2.0D00 - __value__(X(2)) -
      >  __value__(X(1)))

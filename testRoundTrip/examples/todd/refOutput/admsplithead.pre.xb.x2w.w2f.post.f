@@ -115,7 +115,7 @@ C
 C original function
 C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
-      SQRT3 = 5.77350258827209472656D-01
+      SQRT3 = 5.77350269189625842081D-01
       MATR(0)%v = (X(2)%v-X(1)%v)
       MATR(1)%v = (SQRT3*(X(3)%v*2.0D00-X(2)%v-X(1)%v))
       MATR(2)%v = (X(5)%v-X(4)%v)
@@ -139,7 +139,7 @@ C$OPENAD XXX Template ad_template.f
 C taping
 C$OPENAD XXX Template ad_template.f
       A = 5.0D-01
-      SQRT3 = 5.77350258827209472656D-01
+      SQRT3 = 5.77350269189625842081D-01
       MATR(0)%v = (X(2)%v-X(1)%v)
       OpenAD_aux_0 = (X(3)%v*2.0D00-X(2)%v-X(1)%v)
       OpenAD_lin_0 = SQRT3

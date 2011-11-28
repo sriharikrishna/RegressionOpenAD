@@ -1734,7 +1734,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="SQRT3_79" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="5.77350258827209472656e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="5.77350269189625842081e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="87">
@@ -1742,7 +1742,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TSQRT3_81" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470051765441894531e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470053837925168416e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="89">
@@ -1750,7 +1750,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TWOSQRT3_83" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470051765441894531e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470053837925168416e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="91">
@@ -1758,7 +1758,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="THIRD_80" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="3.33333343267440795898e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="3.33333333333333314830e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="93">
@@ -1766,7 +1766,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TWO3RD_82" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="6.66666686534881591797e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="6.66666666666666629659e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="95">
@@ -1774,7 +1774,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="FOUR3RD_49" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.33333337306976318359e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.33333333333333325932e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="97">
@@ -3464,7 +3464,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="SQRT3_79" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="5.77350258827209472656e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="5.77350269189625842081e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="87">
@@ -3472,7 +3472,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TSQRT3_81" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470051765441894531e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470053837925168416e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="89">
@@ -3480,7 +3480,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TWOSQRT3_83" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470051765441894531e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470053837925168416e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="91">
@@ -3488,7 +3488,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="THIRD_80" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="3.33333343267440795898e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="3.33333333333333314830e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="93">
@@ -3496,7 +3496,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TWO3RD_82" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="6.66666686534881591797e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="6.66666666666666629659e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="95">
@@ -3504,7 +3504,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="FOUR3RD_49" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.33333337306976318359e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.33333333333333325932e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="97">
@@ -11328,7 +11328,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="SQRT3_79" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="5.77350258827209472656e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="5.77350269189625842081e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="87">
@@ -11336,7 +11336,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TSQRT3_81" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470051765441894531e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470053837925168416e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="89">
@@ -11344,7 +11344,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TWOSQRT3_83" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470051765441894531e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.15470053837925168416e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="91">
@@ -11352,7 +11352,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="THIRD_80" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="3.33333343267440795898e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="3.33333333333333314830e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="93">
@@ -11360,7 +11360,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="TWO3RD_82" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="6.66666686534881591797e-01"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="6.66666666666666629659e-01"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="95">
@@ -11368,7 +11368,7 @@
               <xaif:SymbolReference vertex_id="1" symbol_id="FOUR3RD_49" annotation="" scope_id="4"/>
             </xaif:AssignmentLHS>
             <xaif:AssignmentRHS>
-              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.33333337306976318359e+00"/>
+              <xaif:Constant vertex_id="1" type="real" feType="F8" value="1.33333333333333325932e+00"/>
             </xaif:AssignmentRHS>
           </xaif:Assignment>
           <xaif:Assignment statement_id="97">
