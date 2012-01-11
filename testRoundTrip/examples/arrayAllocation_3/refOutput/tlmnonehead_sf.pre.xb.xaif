@@ -1141,36 +1141,6 @@
             <xaif:ExpressionEdge edge_id="5" source="3" target="1" position="2"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
-        <xaif:InlinableSubroutineCall subroutine_name="oad_AllocateMatching" statement_id="xaifBoosterBasicBlockPreaccumulation::Sequence::addAllocation">
-          <xaif:Argument position="1">
-            <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::Sequence::addAllocation" scope_id="4"/>
-            </xaif:VariableReference>
-          </xaif:Argument>
-          <xaif:Argument position="2">
-            <xaif:VariableReference vertex_id="1" active="true" alias="6" du_ud="4" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="B_6" annotation="" scope_id="4"/>
-              <xaif:ArrayElementReference vertex_id="2">
-                <xaif:IndexTriplet>
-                  <xaif:Index>
-                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                  </xaif:Index>
-                  <xaif:Bound>
-                    <xaif:Intrinsic vertex_id="1" annotation="" name="size"/>
-                    <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-                      <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-                    </xaif:VariableReference>
-                    <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
-                  </xaif:Bound>
-                  <xaif:Stride>
-                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                  </xaif:Stride>
-                </xaif:IndexTriplet>
-              </xaif:ArrayElementReference>
-              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-            </xaif:VariableReference>
-          </xaif:Argument>
-        </xaif:InlinableSubroutineCall>
         <xaif:Assignment statement_id="_jacobian_accumulation_3">
           <xaif:AssignmentLHS active="false" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_acc_3" annotation="xaifBoosterBasicBlockPreaccumulation::BasicBlockAlg::generateAccumulationExpressions::JAE_LHS" scope_id="4"/>
@@ -1209,6 +1179,36 @@
             <xaif:ExpressionEdge edge_id="4" source="5" target="1" position="2"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
+        <xaif:InlinableSubroutineCall subroutine_name="oad_AllocateMatching" statement_id="xaifBoosterBasicBlockPreaccumulation::Sequence::addAllocation">
+          <xaif:Argument position="1">
+            <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_prp_0" annotation="xaifBoosterBasicBlockPreaccumulation::Sequence::addAllocation" scope_id="4"/>
+            </xaif:VariableReference>
+          </xaif:Argument>
+          <xaif:Argument position="2">
+            <xaif:VariableReference vertex_id="1" active="true" alias="6" du_ud="4" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="B_6" annotation="" scope_id="4"/>
+              <xaif:ArrayElementReference vertex_id="2">
+                <xaif:IndexTriplet>
+                  <xaif:Index>
+                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                  </xaif:Index>
+                  <xaif:Bound>
+                    <xaif:Intrinsic vertex_id="1" annotation="" name="size"/>
+                    <xaif:VariableReference vertex_id="2" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+                      <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+                    </xaif:VariableReference>
+                    <xaif:ExpressionEdge edge_id="1" source="2" target="1" position="1"/>
+                  </xaif:Bound>
+                  <xaif:Stride>
+                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                  </xaif:Stride>
+                </xaif:IndexTriplet>
+              </xaif:ArrayElementReference>
+              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+            </xaif:VariableReference>
+          </xaif:Argument>
+        </xaif:InlinableSubroutineCall>
         <xaif:DerivativePropagator>
           <xaif:SetDeriv>
             <xaif:Tgt deriv="1">

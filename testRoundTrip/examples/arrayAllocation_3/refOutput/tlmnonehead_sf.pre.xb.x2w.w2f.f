@@ -147,11 +147,11 @@ C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       OpenAD_lin_8 = __value__(B(1 : INT(SIZE(X))))
       __value__(B(1 : INT(SIZE(X)))) = (__value__(B(1 : INT(SIZE(X))))
      >  * OpenAD_aux_3)
+      OpenAD_acc_3 = (OpenAD_lin_9 * OpenAD_lin_8)
+      OpenAD_acc_4 = (OpenAD_lin_11 * OpenAD_lin_10 * OpenAD_lin_8)
 C     $OpenAD$ INLINE oad_AllocateMatching(subst,subst)
       CALL oad_AllocateMatching(__deriv__(OpenAD_prp_0), __deriv__(B(1
      >  : INT(SIZE(X)))))
-      OpenAD_acc_3 = (OpenAD_lin_9 * OpenAD_lin_8)
-      OpenAD_acc_4 = (OpenAD_lin_11 * OpenAD_lin_10 * OpenAD_lin_8)
       CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(B(1 : INT(SIZE(X
      > )))))
       CALL sax(OpenAD_lin_7, __deriv__(OpenAD_prp_0), __deriv__(B(1 :
