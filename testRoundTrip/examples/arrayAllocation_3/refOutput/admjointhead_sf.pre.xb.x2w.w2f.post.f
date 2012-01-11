@@ -309,8 +309,6 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_lin_8,B(1:INT(SIZE(X))))
       OpenAD_lin_8 = B(1:INT(SIZE(X)))%v
       B(1:INT(SIZE(X)))%v = (B(1:INT(SIZE(X)))%v*OpenAD_aux_3)
-C!! requested inline of 'oad_AllocateMatching' has no defn
-      CALL oad_AllocateMatching(OpenAD_prp_0,B(1:INT(SIZE(X))))
       OpenAD_acc_3 = (OpenAD_lin_9*OpenAD_lin_8)
       OpenAD_acc_4 = (OpenAD_lin_11*OpenAD_lin_10*OpenAD_lin_8)
       OpenAD_Symbol_8 = SIZE(X)
@@ -526,6 +524,8 @@ C!! requested inline of 'oad_AllocateShape' has no defn
       double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_49)
       OpenAD_Symbol_49(:) = double_tape(double_tape_pointer:double_tape_
      +pointer+size(OpenAD_Symbol_49)-1)
+C!! requested inline of 'oad_AllocateMatching' has no defn
+      CALL oad_AllocateMatching(OpenAD_prp_0,B(1:INT(SIZE(X))))
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_50 = integer_tape(integer_tape_pointer)
       X%d = X%d+B(1:INT(OpenAD_Symbol_50))%d*(OpenAD_Symbol_47)
