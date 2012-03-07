@@ -8,7 +8,7 @@
 
 !$openad xxx file_start [head.f]
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(1), intent(inout) :: x
         double precision, dimension(1), intent(inout) :: y
         integer :: i,j,ii

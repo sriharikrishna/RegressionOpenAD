@@ -40,16 +40,6 @@
           </xaif:Symbol>
           <xaif:Symbol symbol_id=".preg_return_val_19" kind="variable" type="opaque" feType="" shape="scalar" annotation="{Sym_Id#19}" active="0" temp="0">
           </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_Symbol_0" kind="variable" type="real" feType="F8" shape="matrix" annotation="" active="1" temp="1">
-            <xaif:DimensionBounds lower="1" upper="3"/>
-            <xaif:DimensionBounds lower="1" upper="2"/>
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_Symbol_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_lin_0" kind="variable" type="real" feType="" shape="scalar" annotation="" active="0" temp="1">
-          </xaif:Symbol>
-          <xaif:Symbol symbol_id="OpenAD_lin_1" kind="variable" type="real" feType="" shape="scalar" annotation="" active="0" temp="1">
-          </xaif:Symbol>
           <xaif:Symbol symbol_id="all_globals_mod__22" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#22}" active="1" temp="0">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="foo__24" kind="subroutine" type="void" feType="" shape="scalar" annotation="{Sym_Id#24}" active="1" temp="0">
@@ -70,6 +60,10 @@
       </xaif:Scope>
       <xaif:Scope vertex_id="4" annotation="{SymTab_Id#4}">
         <xaif:SymbolTable>
+          <xaif:Symbol symbol_id="OpenAD_lin_0" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          </xaif:Symbol>
+          <xaif:Symbol symbol_id="OpenAD_lin_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="0" temp="1">
+          </xaif:Symbol>
           <xaif:Symbol symbol_id="X_1" kind="variable" type="real" feType="F8" shape="vector" annotation="{Sym_Id#1}" active="1" temp="0">
             <xaif:DimensionBounds lower="1" upper="2"/>
           </xaif:Symbol>
@@ -88,6 +82,12 @@
             <xaif:DimensionBounds lower="1" upper="2"/>
           </xaif:Symbol>
           <xaif:Symbol symbol_id="I_6" kind="variable" type="integer" feType="I4" shape="scalar" annotation="{Sym_Id#6}" active="0" temp="0">
+          </xaif:Symbol>
+          <xaif:Symbol symbol_id="OpenAD_tyc_0" kind="variable" type="real" feType="F8" shape="matrix" annotation="" active="1" temp="1">
+            <xaif:DimensionBounds lower="1" upper="3"/>
+            <xaif:DimensionBounds lower="1" upper="2"/>
+          </xaif:Symbol>
+          <xaif:Symbol symbol_id="OpenAD_tyc_1" kind="variable" type="real" feType="F8" shape="scalar" annotation="" active="1" temp="1">
           </xaif:Symbol>
           <xaif:Symbol symbol_id="PY_7" kind="variable" type="real" feType="F8" shape="scalar" annotation="{Sym_Id#7}" active="0" temp="0">
           </xaif:Symbol>
@@ -205,6 +205,42 @@
         <xaif:Marker statement_id="8" annotation="{WHIRL_Id#8} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="9" annotation="{WHIRL_Id#9} [passive: OPR_PRAGMA]"/>
         <xaif:Marker statement_id="10" annotation="{WHIRL_Id#10} [passive: OPR_USE]"/>
+        <xaif:Assignment statement_id="_elementary_partial_0">
+          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+              <xaif:ArrayElementReference vertex_id="2">
+                <xaif:IndexTriplet>
+                  <xaif:Index>
+                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="2"/>
+                  </xaif:Index>
+                </xaif:IndexTriplet>
+              </xaif:ArrayElementReference>
+              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+            </xaif:VariableReference>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
+        <xaif:Assignment statement_id="_elementary_partial_1">
+          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
+            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
+          </xaif:AssignmentLHS>
+          <xaif:AssignmentRHS>
+            <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
+              <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
+              <xaif:ArrayElementReference vertex_id="2">
+                <xaif:IndexTriplet>
+                  <xaif:Index>
+                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
+                  </xaif:Index>
+                </xaif:IndexTriplet>
+              </xaif:ArrayElementReference>
+              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
+            </xaif:VariableReference>
+          </xaif:AssignmentRHS>
+        </xaif:Assignment>
         <xaif:Assignment statement_id="11">
           <xaif:AssignmentLHS active="true" alias="2" du_ud="2" deriv="0" constant="0">
             <xaif:SymbolReference vertex_id="1" symbol_id="Y_2" annotation="" scope_id="4"/>
@@ -237,48 +273,12 @@
             <xaif:ExpressionEdge edge_id="2" source="3" target="1" position="2"/>
           </xaif:AssignmentRHS>
         </xaif:Assignment>
-        <xaif:Assignment statement_id="_elementary_partial_0">
-          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="1"/>
-          </xaif:AssignmentLHS>
-          <xaif:AssignmentRHS>
-            <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-              <xaif:ArrayElementReference vertex_id="2">
-                <xaif:IndexTriplet>
-                  <xaif:Index>
-                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="2"/>
-                  </xaif:Index>
-                </xaif:IndexTriplet>
-              </xaif:ArrayElementReference>
-              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-            </xaif:VariableReference>
-          </xaif:AssignmentRHS>
-        </xaif:Assignment>
-        <xaif:Assignment statement_id="_elementary_partial_1">
-          <xaif:AssignmentLHS active="false" deriv="0" constant="0">
-            <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="1"/>
-          </xaif:AssignmentLHS>
-          <xaif:AssignmentRHS>
-            <xaif:VariableReference vertex_id="1" active="true" alias="3" du_ud="2" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
-              <xaif:ArrayElementReference vertex_id="2">
-                <xaif:IndexTriplet>
-                  <xaif:Index>
-                    <xaif:Constant vertex_id="1" type="integer" feType="I4" value="1"/>
-                  </xaif:Index>
-                </xaif:IndexTriplet>
-              </xaif:ArrayElementReference>
-              <xaif:VariableReferenceEdge edge_id="1" source="1" target="2"/>
-            </xaif:VariableReference>
-          </xaif:AssignmentRHS>
-        </xaif:Assignment>
         <xaif:DerivativePropagator>
           <xaif:Sax>
             <xaif:AX>
               <xaif:A>
                 <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                  <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="1"/>
+                  <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_0" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
                 </xaif:VariableReference>
               </xaif:A>
               <xaif:X deriv="1">
@@ -301,7 +301,7 @@
             <xaif:AX>
               <xaif:A>
                 <xaif:VariableReference vertex_id="1" active="false" deriv="0" constant="0">
-                  <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="1"/>
+                  <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_lin_1" annotation="xaifBoosterLinearization::ExpressionAlg::createPartialExpressions" scope_id="4"/>
                 </xaif:VariableReference>
               </xaif:A>
               <xaif:X deriv="1">
@@ -323,8 +323,8 @@
         </xaif:DerivativePropagator>
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="9" annotation=""/>
-      <xaif:ControlFlowEdge edge_id="1" source="7" target="8" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="2" source="8" target="9" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="7" target="8" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="8" target="9" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
     <xaif:ControlFlowGraph vertex_id="20" symbol_id="head__27" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" active="1">
       <xaif:ArgumentList>
@@ -490,10 +490,10 @@
             </xaif:VariableReference>
           </xaif:Argument>
         </xaif:SubroutineCall>
-        <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_matrix" statement_id="SubroutineCallAlg::addConversion prior">
+        <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
           <xaif:Argument position="1">
             <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
             </xaif:VariableReference>
           </xaif:Argument>
           <xaif:Argument position="2" annotation="">
@@ -502,10 +502,10 @@
             </xaif:VariableReference>
           </xaif:Argument>
         </xaif:InlinableSubroutineCall>
-        <xaif:InlinableSubroutineCall subroutine_name="convert_p2a_scalar" statement_id="SubroutineCallAlg::addConversion prior">
+        <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion prior">
           <xaif:Argument position="1">
             <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
             </xaif:VariableReference>
           </xaif:Argument>
           <xaif:Argument position="2" annotation="">
@@ -517,7 +517,7 @@
         <xaif:SubroutineCall statement_id="46" symbol_id="foo__24" scope_id="1" active="undefined" formalArgCount="2">
           <xaif:Argument position="1" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
               <xaif:ArrayElementReference vertex_id="2">
                 <xaif:IndexTriplet>
                   <xaif:Index>
@@ -535,11 +535,11 @@
           </xaif:Argument>
           <xaif:Argument position="2" annotation="">
             <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
             </xaif:VariableReference>
           </xaif:Argument>
         </xaif:SubroutineCall>
-        <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_matrix" statement_id="SubroutineCallAlg::addConversion post">
+        <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion post">
           <xaif:Argument position="1">
             <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="APX_3" annotation="" scope_id="5"/>
@@ -547,11 +547,11 @@
           </xaif:Argument>
           <xaif:Argument position="2">
             <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_0" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
             </xaif:VariableReference>
           </xaif:Argument>
         </xaif:InlinableSubroutineCall>
-        <xaif:InlinableSubroutineCall subroutine_name="convert_a2p_scalar" statement_id="SubroutineCallAlg::addConversion post">
+        <xaif:InlinableSubroutineCall subroutine_name="oad_convert" statement_id="SubroutineCallAlg::addConversion post">
           <xaif:Argument position="1">
             <xaif:VariableReference vertex_id="1" active="false" alias="1" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="PY_7" annotation="" scope_id="5"/>
@@ -559,19 +559,19 @@
           </xaif:Argument>
           <xaif:Argument position="2">
             <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
-              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_Symbol_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="1"/>
+              <xaif:SymbolReference vertex_id="1" symbol_id="OpenAD_tyc_1" annotation="xaifBoosterTypeChange::SubroutineCallAlg::makeTempVariable" scope_id="5"/>
             </xaif:VariableReference>
           </xaif:Argument>
         </xaif:InlinableSubroutineCall>
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="16" annotation=""/>
-      <xaif:ControlFlowEdge edge_id="1" source="10" target="11" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="2" source="11" target="12" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="3" source="12" target="13" has_condition_value="1" condition_value="1"/>
-      <xaif:ControlFlowEdge edge_id="4" source="12" target="15" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="5" source="13" target="54" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="6" source="15" target="16" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="7" source="54" target="12" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="10" target="11" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="11" target="12" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_3" source="12" target="13" has_condition_value="1" condition_value="1"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_4" source="12" target="15" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_5" source="13" target="54" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_6" source="15" target="16" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_7" source="54" target="12" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
     <xaif:CallGraphEdge edge_id="1" source="20" target="19"/>
     <xaif:CallGraphEdge edge_id="2" source="20" target="19"/>

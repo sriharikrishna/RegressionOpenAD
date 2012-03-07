@@ -9,7 +9,7 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(5), intent(in) :: x
         double precision, dimension(3), intent(out) :: y
         double precision t
@@ -17,10 +17,10 @@ C$openad XXX Template ad_template.f
 C$openad INDEPENDENT(x)
 
           t = x(1)*x(2)*x(3)
-          y(1) = sin(t)
+          y(1)=sin(t)
           t = t*x(4)*x(5)
-          y(2) = sin(t)
-          y(3) = cos(t)
+          y(2)=sin(t)
+          y(3)=cos(t)
 
 C$openad DEPENDENT(y)
       end subroutine

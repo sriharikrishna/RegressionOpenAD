@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,16 +23,10 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -43,27 +37,30 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL barext
       type(active) :: T
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_tyc_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       T%v = X(1)%v
       CALL setderiv(T,X(1))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,T)
-      CALL barext(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(T,OpenAD_Symbol_0)
-      Y%v = (X(2)%v*T%v)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_0,T)
+      CALL barext(OpenAD_tyc_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(T,OpenAD_tyc_0)
       OpenAD_lin_0 = T%v
       OpenAD_lin_1 = X(2)%v
+      Y%v = (X(2)%v*T%v)
       CALL sax(OpenAD_lin_0,X(2),Y)
       CALL saxpy(OpenAD_lin_1,T,Y)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C

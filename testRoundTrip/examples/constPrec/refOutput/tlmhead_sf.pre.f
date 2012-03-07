@@ -9,7 +9,7 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(1) :: x
         double precision, dimension(1) :: y
            Real*8 PI
@@ -17,6 +17,6 @@ C$openad XXX Template ad_template.f
            Real*8 deg2rad
            PARAMETER ( deg2rad = 2.d0*PI/360.d0 )
 C$openad INDEPENDENT(x)
-          y(1) = cos(deg2rad*x(1))
+          y(1)=cos(deg2rad*x(1))
 C$openad DEPENDENT(y)
       end subroutine

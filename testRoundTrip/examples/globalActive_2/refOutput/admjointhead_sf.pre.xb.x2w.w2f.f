@@ -44,12 +44,6 @@ C
       use globals
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 2)
@@ -60,6 +54,9 @@ C
       REAL(w2f__8) OpenAD_Symbol_0
       REAL(w2f__8) OpenAD_Symbol_1
       REAL(w2f__8) OpenAD_Symbol_2
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
 C
 C     **** Top Level Pragmas ****
 C
@@ -77,25 +74,25 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
 C$OPENAD XXX Template ad_template.f
       APASSIVEGLOBAL = 2.0D00
-      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_0 = __value__(X(2))
       OpenAD_lin_1 = __value__(X(1))
-      __value__(Y(1)) = (__value__(AGLOBAL) * APASSIVEGLOBAL)
+      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_2 = APASSIVEGLOBAL
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_lin_0)
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_lin_1)
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_lin_2)
+      __value__(Y(1)) = (__value__(AGLOBAL) * APASSIVEGLOBAL)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_0)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_1)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_2)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_1)
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_2)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_0, __deriv__(Y(1)), __deriv__(AGLOBAL))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
@@ -146,25 +143,25 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
 C$OPENAD XXX Template ad_template.f
       APASSIVEGLOBAL = 2.0D00
-      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_0 = __value__(X(2))
       OpenAD_lin_1 = __value__(X(1))
-      __value__(Y(1)) = (__value__(AGLOBAL) * APASSIVEGLOBAL)
+      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_2 = APASSIVEGLOBAL
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_lin_0)
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_lin_1)
-C     $OpenAD$ INLINE push(subst)
-      CALL push(OpenAD_lin_2)
+      __value__(Y(1)) = (__value__(AGLOBAL) * APASSIVEGLOBAL)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_0)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_1)
+C     $OpenAD$ INLINE push_s0(subst)
+      CALL push_s0(OpenAD_lin_2)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_0)
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_1)
-C     $OpenAD$ INLINE Pop(subst)
-      CALL Pop(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_1)
+C     $OpenAD$ INLINE pop_s0(subst)
+      CALL pop_s0(OpenAD_Symbol_2)
 C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_0, __deriv__(Y(1)), __deriv__(AGLOBAL))
 C     $OpenAD$ INLINE ZeroDeriv(subst)

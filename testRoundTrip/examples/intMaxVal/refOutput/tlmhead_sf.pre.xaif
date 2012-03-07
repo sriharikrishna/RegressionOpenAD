@@ -187,7 +187,7 @@
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="MAXI_4"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
-          <xaif:Intrinsic vertex_id="1" name="maxval" type="***" rType="integer"/>
+          <xaif:Intrinsic vertex_id="1" name="nc_maxval" type="***" rType="integer"/>
           <xaif:VariableReference vertex_id="2" du_ud="3" alias="4">
             <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="I_3"/>
           </xaif:VariableReference>

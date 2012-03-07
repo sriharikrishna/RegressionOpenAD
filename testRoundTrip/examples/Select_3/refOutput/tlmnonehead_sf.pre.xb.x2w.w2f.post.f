@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,8 +23,8 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -50,7 +50,7 @@ C
 C$OPENAD XXX Template ad_template.f
       I = 1
       select_expr_temp_0 = I
-      IF (select_expr_temp_0.ne.0) THEN
+      IF(select_expr_temp_0 .ne. 0) THEN
         Y(1)%v = X(1)%v
         CALL setderiv(Y(1),X(1))
       ENDIF

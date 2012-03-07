@@ -13,7 +13,7 @@ C$openad XXX Template ad_template.f
       double precision x(1),y(1)
       integer i
 C$openad INDEPENDENT(x)
-      y(1) = x(1)
+      y(1)=x(1)
       i = 1+INT(x(1)-1)
 C$openad DEPENDENT(y)
       end subroutine head

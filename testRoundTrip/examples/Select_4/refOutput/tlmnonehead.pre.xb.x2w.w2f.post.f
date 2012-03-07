@@ -1,15 +1,10 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_3
 C
 C     **** Parameters and Result ****
 C
@@ -22,6 +17,8 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) select_expr_temp_0
+      INTEGER(w2f__i4) OpenAD_lin_0
+      INTEGER(w2f__i4) OpenAD_lin_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -60,15 +57,15 @@ C$OPENAD XXX Template ad_template.f
         GO TO 10
       ENDIF
  10   CONTINUE
+      OpenAD_lin_1 = I
       Y(1)%v = (I*X(1)%v)
-      OpenAD_lin_3 = I
-      CALL sax(OpenAD_lin_3,X(1),Y(1))
+      CALL sax(OpenAD_lin_1,X(1),Y(1))
       GO TO 1
       GO TO 12
  11   CONTINUE
+      OpenAD_lin_0 = I
       Y(1)%v = (I*X(1)%v)
-      OpenAD_lin_1 = I
-      CALL sax(OpenAD_lin_1,X(1),Y(1))
+      CALL sax(OpenAD_lin_0,X(1),Y(1))
       GO TO 1
       GO TO 12
  12   CONTINUE

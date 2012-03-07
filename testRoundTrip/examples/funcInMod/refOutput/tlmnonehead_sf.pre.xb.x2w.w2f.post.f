@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,8 +23,9 @@ C
 
 C$OPENAD XXX File_start [head.f]
       MODULE m
-      use w2f__types
       use OAD_active
+      use w2f__types
+      use oad_intrinsics
       IMPLICIT NONE
       SAVE
 C
@@ -53,8 +54,6 @@ C
 
         Function FOO_I(X)
         use w2f__types
-        use OAD_active
-        use oad_intrinsics
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
@@ -71,8 +70,6 @@ C
 
         Function FOO_II(X)
         use w2f__types
-        use OAD_active
-        use oad_intrinsics
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
@@ -82,20 +79,13 @@ C
 C
 C       **** Statements ****
 C
-        FOO_II = X+1
+        FOO_II = X + 1
         RETURN
         END FUNCTION
 
         SUBROUTINE OAD_S_FOO_I(X, FOO_I)
         use w2f__types
-        use OAD_active
-        use oad_intrinsics
         IMPLICIT NONE
-C
-C       **** Global Variables & Derived Type Definitions ****
-C
-        type(active) :: OpenAD_prop_0
-        type(active) :: OpenAD_prop_1
 C
 C       **** Parameters and Result ****
 C
@@ -103,21 +93,24 @@ C
         type(active) :: FOO_I
         INTENT(OUT) FOO_I
 C
+C       **** Local Variables and Functions ****
+C
+        type(active) :: OpenAD_prp_0
+        type(active) :: OpenAD_prp_1
+C
 C       **** Statements ****
 C
         MX%v = (X%v+MX%v)
         FOO_I%v = MX%v
-        CALL setderiv(OpenAD_prop_0,X)
-        CALL setderiv(OpenAD_prop_1,MX)
-        CALL setderiv(MX,OpenAD_prop_0)
-        CALL inc_deriv(MX,OpenAD_prop_1)
+        CALL setderiv(OpenAD_prp_0,X)
+        CALL setderiv(OpenAD_prp_1,MX)
+        CALL setderiv(MX,OpenAD_prp_0)
+        CALL inc_deriv(MX,OpenAD_prp_1)
         CALL setderiv(FOO_I,MX)
         END SUBROUTINE
 
         SUBROUTINE OAD_S_FOO_II(X, FOO_II)
         use w2f__types
-        use OAD_active
-        use oad_intrinsics
         IMPLICIT NONE
 C
 C       **** Parameters and Result ****
@@ -128,13 +121,13 @@ C
 C
 C       **** Statements ****
 C
-        FOO_II = (X+1)
+        FOO_II = (X + 1)
         END SUBROUTINE
       END
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use m
       IMPLICIT NONE

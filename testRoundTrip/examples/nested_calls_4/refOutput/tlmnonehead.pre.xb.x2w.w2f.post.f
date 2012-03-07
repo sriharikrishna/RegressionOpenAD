@@ -1,16 +1,10 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -23,6 +17,9 @@ C
       type(active) :: D
       EXTERNAL foo
       REAL(w2f__8) P
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      type(active) :: OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -34,14 +31,14 @@ C
 C$OPENAD XXX Template ad_template.f
       P = 2.0D00
       CALL foo(X(1),X(2),C,D)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,P)
-      CALL foo(X(1),OpenAD_Symbol_0,C,D)
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(P,OpenAD_Symbol_0)
-      Y(3)%v = (C%v*D%v)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_0,P)
+      CALL foo(X(1),OpenAD_tyc_0,C,D)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(P,OpenAD_tyc_0)
       OpenAD_lin_0 = D%v
       OpenAD_lin_1 = C%v
+      Y(3)%v = (C%v*D%v)
       CALL sax(OpenAD_lin_0,C,Y(3))
       CALL saxpy(OpenAD_lin_1,D,Y(3))
       Y(4)%v = (C%v+D%v)
@@ -54,22 +51,10 @@ C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
       END SUBROUTINE
 
       SUBROUTINE foo(A, B, C, D)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      type(active) :: OpenAD_prop_0
-      REAL(w2f__8) OpenAD_tmp_0
-      REAL(w2f__8) OpenAD_tmp_1
 C
 C     **** Parameters and Result ****
 C
@@ -78,22 +63,34 @@ C
       type(active) :: C
       type(active) :: D
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
+      type(active) :: OpenAD_prp_0
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_tmp_0 = (A%v*B%v)
-      C%v = SIN(OpenAD_tmp_0)
+      OpenAD_aux_0 = (A%v*B%v)
       OpenAD_lin_3 = B%v
       OpenAD_lin_4 = A%v
-      OpenAD_lin_2 = COS(OpenAD_tmp_0)
-      OpenAD_tmp_1 = (A%v+B%v)
-      D%v = COS(OpenAD_tmp_1)
-      OpenAD_lin_5 = (-SIN(OpenAD_tmp_1))
+      OpenAD_lin_2 = COS(OpenAD_aux_0)
+      C%v = SIN(OpenAD_aux_0)
+      OpenAD_aux_1 = (A%v+B%v)
+      OpenAD_lin_5 = (-SIN(OpenAD_aux_1))
+      D%v = COS(OpenAD_aux_1)
       OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_2)
       OpenAD_acc_1 = (OpenAD_lin_4*OpenAD_lin_2)
-      CALL setderiv(OpenAD_prop_0,A)
-      CALL inc_deriv(OpenAD_prop_0,B)
+      CALL setderiv(OpenAD_prp_0,A)
+      CALL inc_deriv(OpenAD_prp_0,B)
       CALL sax(OpenAD_acc_0,A,C)
       CALL saxpy(OpenAD_acc_1,B,C)
-      CALL sax(OpenAD_lin_5,OpenAD_prop_0,D)
+      CALL sax(OpenAD_lin_5,OpenAD_prp_0,D)
       END SUBROUTINE

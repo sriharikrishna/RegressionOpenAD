@@ -25,21 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X1
@@ -55,6 +40,18 @@ C
       TYPE (OpenADTy_active) T2
       TYPE (OpenADTy_active) T3
       TYPE (OpenADTy_active) T4
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_7
 C
 C     **** Top Level Pragmas ****
 C
@@ -68,20 +65,20 @@ C
 C$OPENAD XXX Template ad_template.f
       __value__(T1) = __value__(X1)
       __value__(T2) = __value__(X2)
-      __value__(T3) = (__value__(T1) / __value__(T2))
       OpenAD_lin_0 = (INT(1_w2f__i8) / __value__(T2))
       OpenAD_lin_1 = (-(__value__(T1) /(__value__(T2) * __value__(T2)))
      > )
-      __value__(T4) = (__value__(T1) * __value__(T2))
+      __value__(T3) = (__value__(T1) / __value__(T2))
       OpenAD_lin_2 = __value__(T2)
       OpenAD_lin_3 = __value__(T1)
-      __value__(Y1) = (__value__(T3) * __value__(T4))
+      __value__(T4) = (__value__(T1) * __value__(T2))
       OpenAD_lin_4 = __value__(T4)
       OpenAD_lin_5 = __value__(T3)
-      __value__(Y2) = (__value__(T3) / __value__(T4))
+      __value__(Y1) = (__value__(T3) * __value__(T4))
       OpenAD_lin_6 = (INT(1_w2f__i8) / __value__(T4))
       OpenAD_lin_7 = (-(__value__(T3) /(__value__(T4) * __value__(T4)))
      > )
+      __value__(Y2) = (__value__(T3) / __value__(T4))
       OpenAD_acc_0 = (OpenAD_lin_3 * OpenAD_lin_5 + OpenAD_lin_1 *
      >  OpenAD_lin_4)
       OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_7 + OpenAD_lin_1 *

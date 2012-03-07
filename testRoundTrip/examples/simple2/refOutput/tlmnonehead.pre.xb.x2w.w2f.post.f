@@ -1,25 +1,10 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X1, X2, Y1, Y2)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_tmp_0
 C
 C     **** Parameters and Result ****
 C
@@ -32,6 +17,18 @@ C     **** Local Variables and Functions ****
 C
       type(active) :: T1
       type(active) :: T2
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_7
 C
 C     **** Top Level Pragmas ****
 C
@@ -43,19 +40,19 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      T1%v = (X1%v*X2%v)
       OpenAD_lin_0 = X2%v
       OpenAD_lin_1 = X1%v
-      OpenAD_tmp_0 = SIN(T1%v)
-      T2%v = (X1%v*OpenAD_tmp_0)
-      OpenAD_lin_2 = OpenAD_tmp_0
+      T1%v = (X1%v*X2%v)
+      OpenAD_aux_0 = SIN(T1%v)
+      OpenAD_lin_2 = OpenAD_aux_0
       OpenAD_lin_4 = COS(T1%v)
       OpenAD_lin_3 = X1%v
-      Y1%v = COS(T2%v)
+      T2%v = (X1%v*OpenAD_aux_0)
       OpenAD_lin_5 = (-SIN(T2%v))
-      Y2%v = (X2%v*T2%v)
+      Y1%v = COS(T2%v)
       OpenAD_lin_6 = T2%v
       OpenAD_lin_7 = X2%v
+      Y2%v = (X2%v*T2%v)
       OpenAD_acc_0 = (OpenAD_lin_4*OpenAD_lin_3)
       OpenAD_acc_1 = (OpenAD_lin_0*OpenAD_acc_0)
       OpenAD_acc_2 = (OpenAD_lin_1*OpenAD_acc_0)

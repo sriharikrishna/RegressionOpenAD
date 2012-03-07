@@ -40,16 +40,16 @@ C
       use globals
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 2)
       TYPE (OpenADTy_active) Y(1 : 1)
+C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
 C
 C     **** Top Level Pragmas ****
 C
@@ -60,11 +60,11 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       APASSIVEGLOBAL = 2.0D00
-      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_0 = __value__(X(2))
       OpenAD_lin_1 = __value__(X(1))
-      __value__(Y(1)) = (__value__(AGLOBAL) * APASSIVEGLOBAL)
+      __value__(AGLOBAL) = (__value__(X(1)) * __value__(X(2)))
       OpenAD_lin_2 = APASSIVEGLOBAL
+      __value__(Y(1)) = (__value__(AGLOBAL) * APASSIVEGLOBAL)
       CALL sax(OpenAD_lin_0, __deriv__(X(1)), __deriv__(AGLOBAL))
       CALL saxpy(OpenAD_lin_1, __deriv__(X(2)), __deriv__(AGLOBAL))
       CALL sax(OpenAD_lin_2, __deriv__(AGLOBAL), __deriv__(Y(1)))

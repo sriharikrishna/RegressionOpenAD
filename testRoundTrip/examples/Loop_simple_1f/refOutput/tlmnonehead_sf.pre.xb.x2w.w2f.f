@@ -46,7 +46,7 @@ C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       DO I = 0, 3, 1
-        __value__(Y(INT(I + 1))) = __value__(X(I + 1))
+        __value__(Y(I + 1)) = __value__(X(I + 1))
         CALL setderiv(__deriv__(Y(I + 1)), __deriv__(X(I + 1)))
       END DO
       END SUBROUTINE

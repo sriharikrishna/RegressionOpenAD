@@ -81,9 +81,9 @@ C-- dependent and independent variables
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_forward ( ilev1 )
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -151,9 +151,9 @@ CADJ STORE tNow = comlev1, key = ikey, byte = isbyte
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_final_state
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -203,9 +203,9 @@ Cph      print *, 'ph-check uvel ', uvel
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_ini_fields
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -256,12 +256,12 @@ C-- forcing initial conditions
 C-- steady state initial conditions:
       ubar = 20.D0*Sv
 
-      T(1) = 20.D0
-      T(2) = 1.D0
-      T(3) = 1.D0
-      S(1) = 35.5D0
-      S(2) = 34.5D0
-      S(3) = 34.5D0
+      T(1)= 20.D0
+      T(2)= 1.D0
+      T(3)= 1.D0
+      S(1)= 35.5D0
+      S(2)= 34.5D0
+      S(3)= 34.5D0
 
 C-- initialise final state
       do l = 1, 2*ndim
@@ -290,9 +290,9 @@ C-- map onto model state
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_ini_params
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -317,21 +317,21 @@ C-- units are in CGS!
 C--
 C
 C-- set switches
-      verbmode = .false.
+      verbmode = .FALSE.
 
 C-- box geometry:
 C
 C-- north-south size:
-      blength(1) = 5000.0D5
-      blength(2) = 1000.0D5
-      blength(3) = blength(1)
+      blength(1)=5000.0D5
+      blength(2)=1000.0D5
+      blength(3)=blength(1)
 C-- depth:
-      bheight(1) = 1.0D5
-      bheight(3) = 4.0D5
+      bheight(1)=1.0D5
+      bheight(3)=4.0D5
       bheight(2) = bheight(1)+bheight(3)
       delta = bheight(1)/(bheight(1)+bheight(3))
 C-- bwidth:
-      bwidth = 4000.0D5
+      bwidth=4000.0D5
 C-- areas:
       area(1) = blength(1)*bwidth
       area(2) = blength(2)*bwidth
@@ -342,7 +342,7 @@ C-- volumes:
       vol(3) = area(3)*bheight(3)
 
 C-- Robert filter
-      robert_filter_coeff = 0.25D0
+      robert_filter_coeff=0.25D0
 
 C-- parameters for linearized model matrix:
 
@@ -406,7 +406,7 @@ C-- (the transport in the model, in Sv):
 C-- The thermohaline circulation due to the Salinity/ temperature
 C-- effects alone is given by R_S*P, R_T*P:
       do l = 1, 2*ndim
-         if ( l .LE. ndim ) then
+         if (l.LE.ndim) then
             proj_t(l) = 1.D0
             proj_s(l) = 0.D0
          else
@@ -438,7 +438,7 @@ C--            X1(i,j) = R(i)*R1(j)
       enddo
 
 C-- regularize the norm kernel using Petros' suggestion:
-      epsilon_regularize = 1.0D-8
+      epsilon_regularize=1.0D-8
 
       do j = 1, 2*ndim
          do i = 1, 2*ndim
@@ -457,9 +457,9 @@ C-- **************
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_model_body
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -498,12 +498,12 @@ CADJ INIT comlevfinal = COMMON, 1
       call box_ini_fields
 
       maxlev2 = n_max/nlev1+1
-      if ( nlev1*nlev2 .LT. n_max ) then
+      if (nlev1*nlev2.LT.n_max) then
          print *, 'NEED TO SET nlev1*nlev2 >= n_max '
       else
 
       do ilev2 = 1, nlev2
-       if ( ilev2 .LE. maxlev2 ) then
+       if (ilev2.LE.maxlev2) then
 
 CADJ STORE tnow = tapelev2, key = ilev2
 CADJ STORE told = tapelev2, key = ilev2
@@ -513,7 +513,7 @@ C
 CADJ INIT comlev1 = COMMON, nlev1
         do ilev1 = 1, nlev1
          iloop = (ilev2-1)*nlev1+ilev1
-         if ( iloop .LE. n_max ) then
+         if (iloop.LE.n_max) then
 
             call box_forward ( ilev1 )
 
@@ -555,9 +555,9 @@ C$openad DEPENDENT(snew)
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_density ( tLoc, sLoc, rhoLoc )
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -595,9 +595,9 @@ C-- linear equation of state
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_transport ( rhoLoc, uVelLoc )
+      use OAD_intrinsics
 C-----------------------------------------------------------------------
 
-      use OAD_intrinsics
       use all_globals_mod
 
       implicit none
@@ -630,8 +630,8 @@ C-- local variables:
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_robert_filter ( fldNow, fldOld, fldNew )
-C-----------------------------------------------------------------------
       use OAD_intrinsics
+C-----------------------------------------------------------------------
       use all_globals_mod
 
       implicit none
@@ -670,8 +670,8 @@ C-- routine body
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_cycle_fields
-C-----------------------------------------------------------------------
       use OAD_intrinsics
+C-----------------------------------------------------------------------
       use all_globals_mod
 
       implicit none
@@ -709,8 +709,8 @@ C-- routine body
 C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_update ( fldNew, fldOld, dFldDt )
-C-----------------------------------------------------------------------
       use OAD_intrinsics
+C-----------------------------------------------------------------------
       use all_globals_mod
 
 
@@ -751,8 +751,8 @@ C$openad XXX Template ad_template.f
 C-----------------------------------------------------------------------
       subroutine box_timestep ( gammaLoc, fldStar, extForLoc, uVelLoc, f
      +ldNow, fldOld, fldNew )
-C-----------------------------------------------------------------------
       use OAD_intrinsics
+C-----------------------------------------------------------------------
       use all_globals_mod
 
       implicit none
@@ -795,7 +795,7 @@ Cph      else
 Cph         velsign = -1.D0
 Cph      endif
 
-      if ( uVelLoc .GE. 0. ) then
+      if (uVelLoc.GE.0.) then
          dFldDt(1) = (extForLoc(1)+gammaLoc*(fldStar(1)-fldNow(1))*vol(1
      +)+uVelLoc*(fldNow(3)-fldNow(1)))/vol(1)
          dFldDt(2) = (extForLoc(2)+gammaLoc*(fldStar(2)-fldNow(2))*vol(2

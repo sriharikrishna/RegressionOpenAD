@@ -9,7 +9,7 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, intent(in) :: x
         double precision, dimension(5), intent(out) :: y
           integer i
@@ -19,8 +19,8 @@ C
 C         
 C$openad xxx simple loop
           do i=1,5
-            y(i) = x
-            y(6-i) = x
+            y(i)=x
+            y(6-i)=x
           end do
 
 C$openad DEPENDENT(y)

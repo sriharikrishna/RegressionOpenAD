@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -19,15 +19,10 @@ C$OPENAD XXX Template ad_template.f
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_Symbol_0
-      type(active) :: OpenAD_Symbol_1
 C
 C     **** Parameters and Result ****
 C
@@ -38,6 +33,8 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       REAL(w2f__8) PY
+      type(active) :: OpenAD_tyc_0
+      type(active) :: OpenAD_tyc_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -48,11 +45,11 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL foo(X,Y)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(OpenAD_Symbol_0,2.0)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(OpenAD_Symbol_1,PY)
-      CALL foo(OpenAD_Symbol_0,OpenAD_Symbol_1)
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(PY,OpenAD_Symbol_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_0,2.0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_1,PY)
+      CALL foo(OpenAD_tyc_0,OpenAD_tyc_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(PY,OpenAD_tyc_1)
       END SUBROUTINE

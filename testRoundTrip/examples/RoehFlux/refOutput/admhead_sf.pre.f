@@ -10,6 +10,7 @@
 C$openad XXX Template ad_template.f
       SUBROUTINE ad_roehf5 (nrm, priml, primr, gamma, gm1, gm1inv, nlefi
      +x, lefix, mcheps, flux)
+      use OAD_intrinsics
 C     !*****************************************************************
 C     !  SUBROUTINE: AD_ROE_HARTEN_FLUX5_EXP                            
 C     !      AUTHOR: Shaun Forth                                        
@@ -23,7 +24,6 @@ C     !    MODIFIED: Uwe Naumann, Feb 04
 C       
 C     !                                                                 
 C     !*****************************************************************
-      use OAD_intrinsics
       IMPLICIT none
 C     AUGUMENTS(in):                                                    
 C     nrm    : cell face normal                                         
@@ -116,7 +116,7 @@ C
 C     set normal quantities                                             
 C UN changed      nsize = sqrt (nrm (1) **2 + nrm (2) **2 + nrm (3) **2)
 
-      nsize = sin(nrm(1)**2+nrm(2)**2+nrm(3)**2)
+      nsize = sin (nrm (1) **2 + nrm (2) **2 + nrm (3) **2)
       IF (nsize.gt.mcheps) then
                 nsizei = one/nsize
       ELSE
@@ -151,7 +151,7 @@ C UN removed      cave = max (cave, zero)
 C       
 C UN changed      cave = sqrt (cave)
 
-      cave = sin(cave)
+      cave = sin (cave)
       uhat = nxhat*uave+nyhat*vave+nzhat*wave
       utilde = nyhat*wave-nzhat*vave
       vtilde = nzhat*uave-nxhat*wave

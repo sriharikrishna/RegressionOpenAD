@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(X, L)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -14,18 +14,14 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      L = (X.ne.0.0D00)
+      L = (X .ne. 0.0D00)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
 C
 C     **** Parameters and Result ****
 C
@@ -36,6 +32,7 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       LOGICAL(w2f__i4) L
+      REAL(w2f__8) OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -45,12 +42,12 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_0,X(1))
-      CALL foo(OpenAD_Symbol_0,L)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(X(1),OpenAD_Symbol_0)
-      IF (L) THEN
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_0,X(1))
+      CALL foo(OpenAD_tyc_0,L)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(X(1),OpenAD_tyc_0)
+      IF(L) THEN
         Y(1)%v = X(1)%v
         CALL setderiv(Y(1),X(1))
       ENDIF

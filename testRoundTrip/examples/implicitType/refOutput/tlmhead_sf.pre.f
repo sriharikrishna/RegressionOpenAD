@@ -14,8 +14,8 @@ C$openad XXX Template ad_template.f
         double precision, dimension(1), intent(inout) :: x
         double precision, dimension(1), intent(inout) :: y
 C$openad INDEPENDENT(x)
-          s = x(1)
-          t = s
-        y(1) = sin(t)
+          s=x(1)
+          t=s
+        y(1)=sin(t)
 C$openad DEPENDENT(y)
       end subroutine

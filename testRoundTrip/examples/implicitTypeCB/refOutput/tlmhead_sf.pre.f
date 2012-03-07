@@ -12,7 +12,7 @@ C$openad XXX Template ad_template.f
           use OAD_intrinsics
           implicit double precision (s,t)
           common /cb/ s,t
-          t = sin(s)
+          t=sin(s)
        end subroutine
 
 C$openad XXX Template ad_template.f
@@ -23,8 +23,8 @@ C$openad XXX Template ad_template.f
           double precision, dimension(1), intent(inout) :: x
           double precision, dimension(1), intent(inout) :: y
 C$openad INDEPENDENT(x)
-          s = x(1)
+          s=x(1)
           call foo()
-          y(1) = t
+          y(1)=t
 C$openad DEPENDENT(y)
        end subroutine

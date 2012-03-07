@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(J, X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -27,8 +27,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         Y(INT(J))%v = X(J)%v
         CALL setderiv(Y(J),X(J))
-      enddo
+      END DO
       END SUBROUTINE

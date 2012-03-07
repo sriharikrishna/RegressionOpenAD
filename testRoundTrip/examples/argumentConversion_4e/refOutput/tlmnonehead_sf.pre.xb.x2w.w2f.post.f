@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,14 +23,10 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0(1 : 2, 1 : 3)
 C
 C     **** Parameters and Result ****
 C
@@ -42,6 +38,7 @@ C
       EXTERNAL barext
       INTEGER(w2f__i4) I
       type(active) :: T(1:2,1:3)
+      REAL(w2f__8) OpenAD_tyc_0(1 : 2, 1 : 3)
 C
 C     **** Top Level Pragmas ****
 C
@@ -51,15 +48,15 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         T(INT(I),2)%v = X(I)%v
         CALL setderiv(T(I,2),X(I))
-      enddo
-C     $OpenAD$ INLINE convert_a2p_matrix(subst,subst)
-      CALL convert_a2p_matrix(OpenAD_Symbol_0,T)
-      CALL barext(OpenAD_Symbol_0(1,2))
-C     $OpenAD$ INLINE convert_p2a_matrix(subst,subst)
-      CALL convert_p2a_matrix(T,OpenAD_Symbol_0)
+      END DO
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_0,T)
+      CALL barext(OpenAD_tyc_0(1,2))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(T,OpenAD_tyc_0)
       Y(1)%v = T(1,2)%v
       CALL setderiv(Y(1),T(1,2))
       END SUBROUTINE

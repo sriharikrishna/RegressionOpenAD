@@ -1,24 +1,10 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
 C
 C     **** Parameters and Result ****
 C
@@ -33,6 +19,18 @@ C
       type(active) :: Y2
       type(active) :: Y3
       type(active) :: Y4
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
 C
 C     **** Top Level Pragmas ****
 C
@@ -42,23 +40,24 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      T1%v = (X(1)%v/X(2)%v)
       OpenAD_lin_0 = (INT(1_w2f__i8)/X(2)%v)
       OpenAD_lin_1 = (-(X(1)%v/(X(2)%v*X(2)%v)))
-      T2%v = COS(T1%v)
+      T1%v = (X(1)%v/X(2)%v)
       OpenAD_lin_2 = (-SIN(T1%v))
-      Y1%v = EXP(T2%v)
-      OpenAD_lin_3 = EXP(T2%v)
+      T2%v = COS(T1%v)
+      OpenAD_aux_0 = EXP(T2%v)
+      OpenAD_lin_3 = OpenAD_aux_0
+      Y1%v = OpenAD_aux_0
       Y2%v = (T2%v*3.14000010490417480469D00)
+      OpenAD_lin_4 = COS(T2%v)
       Y3%v = SIN(T2%v)
-      OpenAD_lin_5 = COS(T2%v)
+      OpenAD_lin_5 = T2%v
+      OpenAD_lin_6 = T1%v
       Y4%v = (T1%v*T2%v)
-      OpenAD_lin_6 = T2%v
-      OpenAD_lin_7 = T1%v
       Y(1)%v = Y1%v
-      OpenAD_acc_0 = (OpenAD_lin_6+OpenAD_lin_2*OpenAD_lin_7)
+      OpenAD_acc_0 = (OpenAD_lin_5+OpenAD_lin_2*OpenAD_lin_6)
       OpenAD_acc_1 = (OpenAD_lin_2*3.14000010490417480469D00)
-      OpenAD_acc_2 = (OpenAD_lin_2*OpenAD_lin_5)
+      OpenAD_acc_2 = (OpenAD_lin_2*OpenAD_lin_4)
       OpenAD_acc_3 = (OpenAD_lin_2*OpenAD_lin_3)
       CALL sax(OpenAD_lin_0,X(1),T1)
       CALL saxpy(OpenAD_lin_1,X(2),T1)

@@ -25,18 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      TYPE (OpenADTy_active) OpenAD_prop_0
-      REAL(w2f__8) OpenAD_tmp_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) REQARG
@@ -46,25 +34,35 @@ C
       INTENT(IN)  OPTARG
       TYPE (OpenADTy_active) OUTARG
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      TYPE (OpenADTy_active) OpenAD_prp_0
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       IF(PRESENT(__value__(OPTARG))) THEN
         IF(__value__(OPTARG) .LE. 2.0D00) THEN
-          OpenAD_tmp_0 = (__value__(OPTARG) * __value__(OUTARG))
-          OpenAD_Symbol_0 = (__value__(REQARG) * OpenAD_tmp_0)
-          OpenAD_lin_0 = OpenAD_tmp_0
+          OpenAD_aux_0 = (__value__(OPTARG) * __value__(OUTARG))
+          OpenAD_lin_0 = OpenAD_aux_0
           OpenAD_lin_2 = __value__(OUTARG)
           OpenAD_lin_3 = __value__(OPTARG)
           OpenAD_lin_1 = __value__(REQARG)
-          __value__(OUTARG) = OpenAD_Symbol_0
+          __value__(OUTARG) = (__value__(REQARG) * OpenAD_aux_0)
           OpenAD_acc_0 = (OpenAD_lin_2 * OpenAD_lin_1)
           OpenAD_acc_1 = (OpenAD_lin_3 * OpenAD_lin_1)
-          CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(OUTARG))
+          CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(OUTARG))
           CALL sax(OpenAD_lin_0, __deriv__(REQARG), __deriv__(OUTARG))
           CALL saxpy(OpenAD_acc_0, __deriv__(OPTARG), __deriv__(OUTARG)
      > )
-          CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prop_0), __deriv__(
+          CALL saxpy(OpenAD_acc_1, __deriv__(OpenAD_prp_0), __deriv__(
      > OUTARG))
         ENDIF
       ELSE

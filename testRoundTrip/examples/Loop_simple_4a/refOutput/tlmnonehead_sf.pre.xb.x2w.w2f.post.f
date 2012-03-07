@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,8 +23,8 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(J, X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -49,8 +49,8 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         Y(INT(J))%v = X(J)%v
         CALL setderiv(Y(J),X(J))
-      enddo
+      END DO
       END SUBROUTINE

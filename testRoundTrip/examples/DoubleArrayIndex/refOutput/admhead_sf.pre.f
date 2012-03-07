@@ -9,19 +9,19 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine foo(a)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision a
         a = a*2
       end subroutine
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(2) :: x
         double precision y
         integer i
 C$openad INDEPENDENT(x)
-        i = 1
+        i=1
         call foo(x(i))
         call foo(x(i))
         y = x(1)*x(2)

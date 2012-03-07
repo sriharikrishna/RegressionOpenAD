@@ -152,7 +152,7 @@
           <xaif:AssignmentRHS>
             <xaif:Intrinsic vertex_id="1" annotation="" name="mul_scal_scal"/>
             <xaif:Intrinsic vertex_id="2" annotation="{IntrinsicKey#1_INT}" name="int_scal"/>
-            <xaif:VariableReference vertex_id="3" active="true" alias="2" du_ud="2" deriv="0" constant="0">
+            <xaif:VariableReference vertex_id="3" active="true" alias="3" du_ud="2" deriv="0" constant="0">
               <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="" scope_id="4"/>
               <xaif:ArrayElementReference vertex_id="2">
                 <xaif:IndexTriplet>
@@ -184,7 +184,7 @@
         </xaif:DerivativePropagator>
       </xaif:BasicBlock>
       <xaif:Exit vertex_id="9" annotation=""/>
-      <xaif:ControlFlowEdge edge_id="1" source="7" target="8" has_condition_value="0"/>
-      <xaif:ControlFlowEdge edge_id="2" source="8" target="9" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_1" source="7" target="8" has_condition_value="0"/>
+      <xaif:ControlFlowEdge edge_id="_bbp_e_2" source="8" target="9" has_condition_value="0"/>
     </xaif:ControlFlowGraph>
   </xaif:CallGraph>

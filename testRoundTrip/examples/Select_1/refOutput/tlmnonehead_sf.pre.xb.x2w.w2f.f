@@ -25,14 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      TYPE (OpenADTy_active) OpenAD_prop_0
-      TYPE (OpenADTy_active) OpenAD_prop_1
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
@@ -44,6 +36,10 @@ C     **** Local Variables and Functions ****
 C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) select_expr_temp_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      TYPE (OpenADTy_active) OpenAD_prp_0
+      TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -73,13 +69,12 @@ C$OPENAD XXX Template ad_template.f
       CALL setderiv(__deriv__(Y(1)), __deriv__(X(1)))
       GO TO 6
 6     CONTINUE
-      OpenAD_Symbol_0 = (__value__(Y(1)) * __value__(Y(1)))
       OpenAD_lin_0 = __value__(Y(1))
       OpenAD_lin_1 = __value__(Y(1))
-      __value__(Y(1)) = OpenAD_Symbol_0
-      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(Y(1)))
-      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(Y(1)))
-      CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prop_0), __deriv__(Y(1)))
-      CALL saxpy(OpenAD_lin_1, __deriv__(OpenAD_prop_1), __deriv__(Y(1)
-     > ))
+      __value__(Y(1)) = (__value__(Y(1)) * __value__(Y(1)))
+      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(Y(1)))
+      CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(Y(1)))
+      CALL sax(OpenAD_lin_0, __deriv__(OpenAD_prp_0), __deriv__(Y(1)))
+      CALL saxpy(OpenAD_lin_1, __deriv__(OpenAD_prp_1), __deriv__(Y(1))
+     > )
       END SUBROUTINE

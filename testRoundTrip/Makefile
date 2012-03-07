@@ -7,7 +7,6 @@
 ######################################################
 # pick your compiler
 ######################################################
-F90C=gfortran
 ifndef F90C
 F90C=ifort
 endif
@@ -41,7 +40,7 @@ FREEFORMAT=-free
 ifdef OPTIMIZE
 F90FLAGS=-O3
 else
-F90FLAGS=-check all -g -O0 -traceback -fp-model strict 
+F90FLAGS=-check all -g -O0 -traceback -fpe0
 endif 
 CC=icc
 endif
@@ -92,7 +91,7 @@ endif
 MODULES=
 
 ifneq ($(MAJOR_MODE),dd)
-MODULES+= w2f__types.o OAD_active.o OAD_intrinsics.pre.xb.x2w.w2f.post.o
+MODULES+= w2f__types.o OAD_active.o 
 endif
 
 ifeq ($(MAJOR_MODE),adm)
@@ -100,11 +99,19 @@ MODULES+=		\
 OAD_cp.o		\
 OAD_rev.o		\
 OAD_tape.o		\
-iaddr.o                         
+iaddr.o
 endif
 
 ifeq ($(MAJOR_MODE),trace)
-MODULES+=OAD_rev.o OAD_trace.o                   
+MODULES+=OAD_rev.o OAD_trace.o
+endif
+
+ifeq ($(MAJOR_MODE),dd)
+MODULES+=
+else ifeq ($(MAJOR_MODE),mf)
+MODULES+=
+else
+MODULES+= OAD_intrinsics.pre.xb.x2w.w2f.post.o
 endif
 
 ifeq ($(MAJOR_MODE),dd)
@@ -119,12 +126,12 @@ PREPROCESS_FLAGS=
 POSTPROCESS_FLAGS=
 ifeq ($(MAJOR_MODE),tlm)
 PREPROCESS_FLAGS=--mode=f
-POSTPROCESS_FLAGS=--mode=f
+POSTPROCESS_FLAGS=--mode=f --infoUnitFile w2f__types.f90
 endif
 
 ifeq ($(MAJOR_MODE),adm)
 PREPROCESS_FLAGS=--mode=r
-POSTPROCESS_FLAGS=--mode=r
+POSTPROCESS_FLAGS=--mode=r --infoUnitFile w2f__types.f90
 endif
 
 CP_FLAG=
@@ -196,7 +203,7 @@ head_sf.pre.xaif : head_sf.pre.B whirl2xaif
 # XAIF -> XAIF'
 head_sf.pre.xb.xaif : head_sf.pre.xaif xaif.xsd xaif_base.xsd xaif_inlinable_intrinsics.xsd xaif_derivative_propagator.xsd xaif_output.xsd xaifBooster
 	$(COMPLAIN)
-	./xaifBooster -v -V -i $< -c ${XAIFSCHEMAROOT}/schema/examples/inlinable_intrinsics.xaif -o $@ $(CP_FLAG) $(xaifBoosterVerbFlag)
+	./xaifBooster -v -V -i $< -c ${XAIFSCHEMAROOT}/schema/examples/inlinable_intrinsics.xaif -o $@ $(CP_FLAG) $(xaifBoosterVerbFlag)  ${EXAMPLE_SPECIFIC_XAIFBOOSTER_OPTIONS}
 
 # XAIF' -> WHIRL'
 head_sf.pre.xb.x2w.B : head_sf.pre.xb.xaif xaif2whirl
@@ -207,9 +214,9 @@ head_sf.pre.xb.x2w.w2f.f: head_sf.pre.xb.x2w.B whirl2f whirl2f_be
 	./whirl2f -openad -openadType OpenADTy_active  $<
 
 # postprocess F'
-OAD_intrinsics.pre.xb.x2w.w2f.post.f90 :  head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py
+OAD_intrinsics.pre.xb.x2w.w2f.post.f90 :  head_sf.pre.xb.x2w.w2f.f ad_inline.f postProcess.py w2f__types.f90
 	$(COMPLAIN)
-	./postProcess.py $(POSTPROCESS_FLAGS) --timing --abstractType OpenADTy_active $< --separateOutput --filenameSuffix=".pre.xb.x2w.w2f.post" --pathSuffix='./' $(postProcessVerbFlag)
+	./postProcess.py $(POSTPROCESS_FLAGS) --timing --abstractType OpenADTy_active $< --separateOutput --filenameSuffix=".pre.xb.x2w.w2f.post" --pathSuffix='./' $(postProcessVerbFlag) ${EXAMPLE_SPECIFIC_POSTPROCESS_OPTIONS}
 
 all_globals_mod.pre.xb.x2w.w2f.post.f head.pre.xb.x2w.w2f.post.f : OAD_intrinsics.pre.xb.x2w.w2f.post.f90
 
@@ -260,6 +267,9 @@ w2f__types.f90 iaddr.c:
 ad_inline.f OAD_cp.f90 OAD_rev.f90 OAD_tape.f90 OAD_trace.f90:
 	@$(LN) ${OPENADROOT}/runTimeSupport/simple/$@ .
 
+# extra module dependency
+OAD_cp.o: OAD_cp.f90 OAD_active.o
+
 OAD_active.f90:
 	$(COMPLAIN)
 	@$(LN) ${OPENADROOT}/runTimeSupport/${SCALAR_OR_VECTOR}/$@ .
@@ -269,7 +279,7 @@ OAD_active.f90:
 ######################################################
 
 # make the driver
-driver: $(DRIVER_PRE_REQ) head_sf.pre.xb.x2w.w2f.post.f
+driver: $(DRIVER_PRE_REQ) 
 	$(COMPLAIN)
 	$(F90C) $(F90FLAGS) $(DRIVER_PRE_REQ) -o $@ 
 

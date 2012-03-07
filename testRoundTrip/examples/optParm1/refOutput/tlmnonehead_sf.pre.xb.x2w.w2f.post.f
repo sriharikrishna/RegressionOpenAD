@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,17 +23,10 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(A, B, C, D)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      type(active) :: OpenAD_prop_0
-      type(active) :: OpenAD_prop_1
 C
 C     **** Parameters and Result ****
 C
@@ -47,32 +40,32 @@ C
 C     **** Local Variables and Functions ****
 C
       LOGICAL(w2f__i4) t__1
+      type(active) :: OpenAD_prp_0
+      type(active) :: OpenAD_prp_1
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_0 = (A%v*2.0D00)
-      C%v = OpenAD_Symbol_0
-      CALL setderiv(OpenAD_prop_0,A)
-      CALL sax(2.0D00,OpenAD_prop_0,C)
-      t__1 = .true.
+      C%v = (A%v*2.0D00)
+      CALL setderiv(OpenAD_prp_0,A)
+      CALL sax(2.0D00,OpenAD_prp_0,C)
+      t__1 = .TRUE.
       IF (.not. PRESENT(B)) THEN
-        t__1 = .false.
+        t__1 = .FALSE.
       ELSE
         IF (.not. PRESENT(D)) THEN
-          t__1 = .false.
+          t__1 = .FALSE.
         ENDIF
       ENDIF
-      IF (t__1) THEN
-        OpenAD_Symbol_1 = (B%v*3.0D00)
-        D%v = OpenAD_Symbol_1
-        CALL setderiv(OpenAD_prop_1,B)
-        CALL sax(3.0D00,OpenAD_prop_1,D)
+      IF(t__1) THEN
+        D%v = (B%v*3.0D00)
+        CALL setderiv(OpenAD_prp_1,B)
+        CALL sax(3.0D00,OpenAD_prp_1,D)
       ENDIF
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -87,8 +80,8 @@ C$OPENAD INDEPENDENT(X)
 C$OPENAD DEPENDENT(Y)
       interface
         SUBROUTINE foo(A, B, C, D)
+        use OAD_active
         use w2f__types
-      use OAD_active
         type(active) :: A
         type(active) :: B
         OPTIONAL B

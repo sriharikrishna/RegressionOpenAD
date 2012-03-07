@@ -9,7 +9,7 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine foo(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(2) :: x
         double precision y
         y = x(1)*x(2)
@@ -17,12 +17,12 @@ C$openad XXX Template ad_template.f
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(2) :: x, px
         double precision y, py
 C$openad INDEPENDENT(x)
-        px(1) = 1.0
-        px(2) = 2.0
+        px(1)=1.0
+        px(2)=2.0
         call foo(x,y)
         call foo(px,py)
         call foo(px,py)

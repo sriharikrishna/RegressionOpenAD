@@ -9,13 +9,13 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(10), intent(in) :: x
         double precision, dimension(10), intent(out) :: y
         double precision pi
           integer i
 C$openad INDEPENDENT(x)
-          pi = 3.1415
+          pi=3.1415
           do i=1,9
             if (i>5) then
               y(i) = pi*sin(x(i))

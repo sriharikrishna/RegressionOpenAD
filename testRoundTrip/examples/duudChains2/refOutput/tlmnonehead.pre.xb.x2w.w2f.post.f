@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -23,8 +23,8 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      L = .true.
-      IF (L) THEN
+      L = .TRUE.
+      IF(L) THEN
         Y(1)%v = (X(1)%v*4.0D00)
         CALL sax(4.0D00,X(1),Y(1))
       ELSE

@@ -31,13 +31,16 @@ C
       COMMON /cb/ S, T
       TYPE (OpenADTy_active) S
       TYPE (OpenADTy_active) T
+C
+C     **** Local Variables and Functions ****
+C
       REAL(w2f__8) OpenAD_lin_0
 C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(T) = SIN(__value__(S))
       OpenAD_lin_0 = COS(__value__(S))
+      __value__(T) = SIN(__value__(S))
       CALL sax(OpenAD_lin_0, __deriv__(S), __deriv__(T))
       END SUBROUTINE
 

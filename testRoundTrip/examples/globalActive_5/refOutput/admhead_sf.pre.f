@@ -10,8 +10,8 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
        subroutine head()
-
          use OAD_intrinsics
+
          use all_globals_mod
 
 C$openad INDEPENDENT(x)

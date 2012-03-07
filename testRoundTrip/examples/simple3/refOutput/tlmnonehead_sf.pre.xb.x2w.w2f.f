@@ -25,24 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_acc_3
-      REAL(w2f__8) OpenAD_acc_4
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_5
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_tmp_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X1
@@ -54,6 +36,21 @@ C     **** Local Variables and Functions ****
 C
       TYPE (OpenADTy_active) V3
       TYPE (OpenADTy_active) V4
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_acc_3
+      REAL(w2f__8) OpenAD_acc_4
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
+      REAL(w2f__8) OpenAD_lin_6
+      REAL(w2f__8) OpenAD_lin_7
+      REAL(w2f__8) OpenAD_lin_8
 C
 C     **** Top Level Pragmas ****
 C
@@ -65,20 +62,20 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      __value__(V3) = (__value__(X1) * __value__(X2))
       OpenAD_lin_0 = __value__(X2)
       OpenAD_lin_1 = __value__(X1)
-      __value__(V4) = (__value__(X1) * __value__(V3))
+      __value__(V3) = (__value__(X1) * __value__(X2))
       OpenAD_lin_2 = __value__(V3)
       OpenAD_lin_3 = __value__(X1)
-      OpenAD_tmp_0 = (__value__(X2) * __value__(V3))
-      __value__(Y1) = (__value__(V4) * OpenAD_tmp_0)
-      OpenAD_lin_4 = OpenAD_tmp_0
+      __value__(V4) = (__value__(X1) * __value__(V3))
+      OpenAD_aux_0 = (__value__(X2) * __value__(V3))
+      OpenAD_lin_4 = OpenAD_aux_0
       OpenAD_lin_6 = __value__(V3)
       OpenAD_lin_7 = __value__(X2)
       OpenAD_lin_5 = __value__(V4)
-      __value__(Y2) = SIN(__value__(V4))
+      __value__(Y1) = (__value__(V4) * OpenAD_aux_0)
       OpenAD_lin_8 = COS(__value__(V4))
+      __value__(Y2) = SIN(__value__(V4))
       OpenAD_acc_0 = (OpenAD_lin_6 * OpenAD_lin_5)
       OpenAD_acc_1 = (OpenAD_lin_7 * OpenAD_lin_5 + OpenAD_lin_3 *
      >  OpenAD_lin_4)

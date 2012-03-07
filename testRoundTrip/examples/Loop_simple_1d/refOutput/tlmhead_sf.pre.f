@@ -10,12 +10,12 @@
       subroutine foo(x,y)
       use OAD_intrinsics
       double precision :: x,y
-        y = x
+        y=x
       end subroutine
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(2), intent(in) :: x
         double precision, dimension(2), intent(out) :: y
           integer i,j

@@ -7,24 +7,24 @@
           module procedure oad_s_min_d
         end interface
         contains
-          subroutine oad_s_max_d(a,b,r)
-            double precision,intent(in) :: a
-            double precision,intent(in) :: b
+          subroutine oad_s_max_d(a0,a1,r)
+            double precision,intent(in) :: a0
+            double precision,intent(in) :: a1
             double precision,intent(out) :: r
-            if (a>b) then
-              r = a
+            if (a0>a1) then
+              r = a0
             else
-              r = b
+              r = a1
             end if
           end subroutine
-          subroutine oad_s_min_d(a,b,r)
-            double precision,intent(in) :: a
-            double precision,intent(in) :: b
+          subroutine oad_s_min_d(a0,a1,r)
+            double precision,intent(in) :: a0
+            double precision,intent(in) :: a1
             double precision,intent(out) :: r
-            if (a<b) then
-              r = a
+            if (a0<a1) then
+              r = a0
             else
-              r = b
+              r = a1
             end if
           end subroutine
       end module
@@ -43,7 +43,7 @@ C$openad XXX Template ad_template.f
         double precision :: oad_ctmp0
         double precision :: oad_ctmp1
 C$openad INDEPENDENT(x)
-          p1 = 2.4D0
+          p1=2.4D0
           p2 = -30.0D0
           call oad_s_min(x(1),x(2),oad_ctmp0)
           call oad_s_max(p1,p2,oad_ctmp1)

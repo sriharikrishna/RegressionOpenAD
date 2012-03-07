@@ -119,43 +119,40 @@ C     $OpenAD$ END REPLACEMENT
       use globals
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_Symbol_3
-C
 C     **** Local Variables and Functions ****
 C
       EXTERNAL bar
+      REAL(w2f__8) OpenAD_tyc_0
+      REAL(w2f__8) OpenAD_tyc_1
+      REAL(w2f__8) OpenAD_tyc_2
+      REAL(w2f__8) OpenAD_tyc_3
 C
 C     **** Statements ****
 C
 C     $OpenAD$ BEGIN REPLACEMENT 1
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_0, __deriv__(GX))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_1, __deriv__(GY))
-      CALL bar(OpenAD_Symbol_0, OpenAD_Symbol_1)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(GX), OpenAD_Symbol_0)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(GY), OpenAD_Symbol_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_0, __deriv__(GX))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_1, __deriv__(GY))
+      CALL bar(OpenAD_tyc_0, OpenAD_tyc_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(GX), OpenAD_tyc_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(GY), OpenAD_tyc_1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 2
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_0, __deriv__(GX))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_1, __deriv__(GY))
-      CALL bar(OpenAD_Symbol_0, OpenAD_Symbol_1)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(GX), OpenAD_Symbol_0)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(GY), OpenAD_Symbol_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_0, __deriv__(GX))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_1, __deriv__(GY))
+      CALL bar(OpenAD_tyc_0, OpenAD_tyc_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(GX), OpenAD_tyc_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(GY), OpenAD_tyc_1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 3
-      CALL bar(OpenAD_Symbol_2, OpenAD_Symbol_3)
+      CALL bar(OpenAD_tyc_2, OpenAD_tyc_3)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
 C     $OpenAD$ INLINE cp_arg_store_real_scalar_a(subst)
@@ -186,18 +183,18 @@ C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a(subst)
       CALL cp_arg_restore_real_scalar_a(__deriv__(GX))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 10
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_0, __deriv__(GX))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(OpenAD_Symbol_1, __deriv__(GY))
-      CALL bar(OpenAD_Symbol_0, OpenAD_Symbol_1)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(GX), OpenAD_Symbol_0)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(GY), OpenAD_Symbol_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_0, __deriv__(GX))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(OpenAD_tyc_1, __deriv__(GY))
+      CALL bar(OpenAD_tyc_0, OpenAD_tyc_1)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(GX), OpenAD_tyc_0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(GY), OpenAD_tyc_1)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-      CALL bar(OpenAD_Symbol_2, OpenAD_Symbol_3)
+      CALL bar(OpenAD_tyc_2, OpenAD_tyc_3)
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 

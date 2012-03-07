@@ -9,13 +9,13 @@
 !$openad xxx file_start [head.f]
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(1), intent(in) :: x
         double precision, dimension(1), intent(out) :: y
           integer i,j,k
 C$openad INDEPENDENT(x)
           do i=1,1
-            y(1) = x(1)
+            y(1)=x(1)
             if (y(1)>0.) then
               do j=1,3
                 do k=1,3

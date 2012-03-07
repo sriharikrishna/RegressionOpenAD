@@ -15,7 +15,7 @@
 
 C$openad XXX Template ad_template.f
       subroutine foo(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
 
         double precision, dimension(2) :: x
         double precision y
@@ -24,21 +24,21 @@ C$openad XXX Template ad_template.f
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-
           use OAD_intrinsics
+
           use globals
 
         double precision, dimension(2) :: x
         double precision, dimension(1) :: y
 C$openad INDEPENDENT(x)
         call foo(x,aGlobal)
-          y(1) = aGlobal
+          y(1)=aGlobal
 C$openad DEPENDENT(y)
       end subroutine
 
 C$openad XXX Template ad_template.f
       subroutine bar(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
 
         double precision, dimension(2) :: x
         double precision y

@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -18,8 +18,8 @@ C
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -46,9 +46,9 @@ C
 C$OPENAD XXX Template ad_template.f
 C$OPENAD XXX Simple loop
       J = 1
-      DO I = 1,2,1
+      DO I = 1, 2, 1
         CALL foo(X(J),Y(J))
-      enddo
+      END DO
       J = 2
       CALL foo(X(J),Y(J))
       END SUBROUTINE

@@ -25,13 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      TYPE (OpenADTy_active) OpenAD_prop_0
-      TYPE (OpenADTy_active) OpenAD_prop_1
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) A
@@ -44,13 +37,14 @@ C
 C     **** Local Variables and Functions ****
 C
       LOGICAL(w2f__i4) t__1
+      TYPE (OpenADTy_active) OpenAD_prp_0
+      TYPE (OpenADTy_active) OpenAD_prp_1
 C
 C     **** Statements ****
 C
-      OpenAD_Symbol_0 = (__value__(A) * 2.0D00)
-      __value__(C) = OpenAD_Symbol_0
-      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(A))
-      CALL sax(2.0D00, __deriv__(OpenAD_prop_0), __deriv__(C))
+      __value__(C) = (__value__(A) * 2.0D00)
+      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(A))
+      CALL sax(2.0D00, __deriv__(OpenAD_prp_0), __deriv__(C))
       t__1 = .TRUE.
       IF(.NOT. PRESENT(__value__(B))) THEN
         t__1 = .FALSE.
@@ -60,10 +54,9 @@ C
         ENDIF
       ENDIF
       IF(t__1) THEN
-        OpenAD_Symbol_1 = (__value__(B) * 3.0D00)
-        __value__(D) = OpenAD_Symbol_1
-        CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(B))
-        CALL sax(3.0D00, __deriv__(OpenAD_prop_1), __deriv__(D))
+        __value__(D) = (__value__(B) * 3.0D00)
+        CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(B))
+        CALL sax(3.0D00, __deriv__(OpenAD_prp_1), __deriv__(D))
       ENDIF
       END SUBROUTINE
 

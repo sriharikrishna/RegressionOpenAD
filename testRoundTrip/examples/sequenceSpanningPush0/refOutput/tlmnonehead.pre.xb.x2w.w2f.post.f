@@ -1,17 +1,10 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE foo(X, T)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -19,20 +12,25 @@ C
       INTENT(IN) X
       type(active) :: T
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      type(active) :: OpenAD_prp_0
+C
 C     **** Statements ****
 C
-      OpenAD_Symbol_0 = (X%v*T%v)
       OpenAD_lin_0 = T%v
       OpenAD_lin_1 = X%v
-      T%v = OpenAD_Symbol_0
-      CALL setderiv(OpenAD_prop_0,T)
+      T%v = (X%v*T%v)
+      CALL setderiv(OpenAD_prp_0,T)
       CALL sax(OpenAD_lin_0,X,T)
-      CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,T)
+      CALL saxpy(OpenAD_lin_1,OpenAD_prp_0,T)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C

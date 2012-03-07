@@ -39,26 +39,25 @@ C
       use globals
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      TYPE (OpenADTy_active) OpenAD_prop_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) P
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      TYPE (OpenADTy_active) OpenAD_prp_0
+C
 C     **** Statements ****
 C
-      OpenAD_Symbol_1 = (__value__(P) * __value__(AGLOBALACTIVE))
       OpenAD_lin_0 = __value__(AGLOBALACTIVE)
       OpenAD_lin_1 = __value__(P)
-      __value__(AGLOBALACTIVE) = OpenAD_Symbol_1
-      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(AGLOBALACTIVE))
+      __value__(AGLOBALACTIVE) = (__value__(P) * __value__(
+     > AGLOBALACTIVE))
+      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(AGLOBALACTIVE))
       CALL sax(OpenAD_lin_0, __deriv__(P), __deriv__(AGLOBALACTIVE))
-      CALL saxpy(OpenAD_lin_1, __deriv__(OpenAD_prop_0), __deriv__(
+      CALL saxpy(OpenAD_lin_1, __deriv__(OpenAD_prp_0), __deriv__(
      > AGLOBALACTIVE))
       END SUBROUTINE
 
@@ -67,11 +66,6 @@ C
       use oad_intrinsics
       use globals
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_2
 C
 C     **** Parameters and Result ****
 C
@@ -84,6 +78,8 @@ C     **** Local Variables and Functions ****
 C
       REAL(w2f__8) ANINACTIVE
       EXTERNAL foo
+      REAL(w2f__8) OpenAD_lin_2
+      TYPE (OpenADTy_active) OpenAD_tyc_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -97,12 +93,12 @@ C$OPENAD XXX Template ad_template.f
       __value__(AGLOBALACTIVE) = 1.61803400516510009766D00
       CALL zero_deriv(__deriv__(AGLOBALACTIVE))
       CALL foo(__deriv__(X(1)))
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), ANINACTIVE)
-      CALL foo(__deriv__(OpenAD_Symbol_0))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(ANINACTIVE, __deriv__(OpenAD_Symbol_0))
-      __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), ANINACTIVE)
+      CALL foo(__deriv__(OpenAD_tyc_0))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(ANINACTIVE, __deriv__(OpenAD_tyc_0))
       OpenAD_lin_2 = COS(__value__(AGLOBALACTIVE))
+      __value__(Y(1)) = SIN(__value__(AGLOBALACTIVE))
       CALL sax(OpenAD_lin_2, __deriv__(AGLOBALACTIVE), __deriv__(Y(1)))
       END SUBROUTINE

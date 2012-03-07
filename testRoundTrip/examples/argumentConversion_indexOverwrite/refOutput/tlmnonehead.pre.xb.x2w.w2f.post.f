@@ -1,8 +1,8 @@
 
 C$OPENAD XXX File_start [head.f]
       MODULE globals
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -15,18 +15,11 @@ C
       END MODULE
 
       SUBROUTINE foo(P, Q)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use globals
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
-      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -34,32 +27,29 @@ C
       INTENT(IN) P
       type(active) :: Q
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      type(active) :: OpenAD_prp_0
+C
 C     **** Statements ****
 C
-      OpenAD_Symbol_0 = (P%v*Q%v)
       OpenAD_lin_0 = Q%v
       OpenAD_lin_1 = P%v
-      Q%v = OpenAD_Symbol_0
+      Q%v = (P%v*Q%v)
       I = (I+1)
-      CALL setderiv(OpenAD_prop_0,Q)
+      CALL setderiv(OpenAD_prp_0,Q)
       CALL sax(OpenAD_lin_0,P,Q)
-      CALL saxpy(OpenAD_lin_1,OpenAD_prop_0,Q)
+      CALL saxpy(OpenAD_lin_1,OpenAD_prp_0,Q)
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       use globals
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_lin_2
-      REAL(w2f__8) OpenAD_lin_3
-      type(active) :: OpenAD_prop_1
-      type(active) :: OpenAD_prop_2
 C
 C     **** Parameters and Result ****
 C
@@ -72,6 +62,10 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       type(active) :: V(1:2)
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      type(active) :: OpenAD_prp_1
+      type(active) :: OpenAD_prp_2
 C
 C     **** Top Level Pragmas ****
 C
@@ -90,12 +84,11 @@ C$OPENAD XXX Template ad_template.f
       CALL zero_deriv(V(2))
       CALL foo(X(1),Y(1))
       CALL foo(X(I),V(I))
-      OpenAD_Symbol_1 = (Y(1)%v*V(2)%v)
       OpenAD_lin_2 = V(2)%v
       OpenAD_lin_3 = Y(1)%v
-      Y(1)%v = OpenAD_Symbol_1
-      CALL setderiv(OpenAD_prop_1,Y(1))
-      CALL setderiv(OpenAD_prop_2,V(2))
-      CALL sax(OpenAD_lin_2,OpenAD_prop_1,Y(1))
-      CALL saxpy(OpenAD_lin_3,OpenAD_prop_2,Y(1))
+      Y(1)%v = (Y(1)%v*V(2)%v)
+      CALL setderiv(OpenAD_prp_1,Y(1))
+      CALL setderiv(OpenAD_prp_2,V(2))
+      CALL sax(OpenAD_lin_2,OpenAD_prp_1,Y(1))
+      CALL saxpy(OpenAD_lin_3,OpenAD_prp_2,Y(1))
       END SUBROUTINE

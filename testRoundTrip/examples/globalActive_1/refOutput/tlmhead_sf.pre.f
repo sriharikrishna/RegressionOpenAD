@@ -15,14 +15,14 @@
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-
           use OAD_intrinsics
+
           use globals
 
         double precision, dimension(2) :: x
         double precision, dimension(1) :: y
 C$openad INDEPENDENT(x)
         aGlobal = x(1)*x(2)
-          y(1) = aGlobal
+          y(1)=aGlobal
 C$openad DEPENDENT(y)
       end subroutine

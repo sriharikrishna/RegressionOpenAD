@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,14 +23,10 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      type(active) :: OpenAD_prop_0
 C
 C     **** Parameters and Result ****
 C
@@ -38,6 +34,10 @@ C
       INTENT(IN) X
       type(active) :: Y(1:2)
       INTENT(OUT) Y
+C
+C     **** Local Variables and Functions ****
+C
+      type(active) :: OpenAD_prp_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -61,7 +61,7 @@ C$OPENAD XXX Template ad_template.f
         CALL setderiv(Y(2),X(1))
       ELSE
         Y(2)%v = Y(1)%v
-        CALL setderiv(OpenAD_prop_0,Y(1))
-        CALL setderiv(Y(2),OpenAD_prop_0)
+        CALL setderiv(OpenAD_prp_0,Y(1))
+        CALL setderiv(Y(2),OpenAD_prp_0)
       ENDIF
       END SUBROUTINE

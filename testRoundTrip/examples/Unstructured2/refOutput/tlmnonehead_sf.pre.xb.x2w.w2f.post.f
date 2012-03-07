@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,8 +23,8 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -53,9 +53,9 @@ C
       J = 1
       GO TO 18
  5    CONTINUE
-      J = J+1
+      J = J + 1
  18   CONTINUE
-      IF (J.LE.5) THEN
+      IF(J .LE. 5) THEN
         GO TO 6
       ELSE
         GO TO 16
@@ -66,9 +66,9 @@ C
       II = 1
       GO TO 19
  8    CONTINUE
-      II = II+1
+      II = II + 1
  19   CONTINUE
-      IF (II.LE.5) THEN
+      IF(II .LE. 5) THEN
         GO TO 9
       ELSE
         GO TO 10
@@ -81,9 +81,9 @@ C
       II = 1
       GO TO 20
  12   CONTINUE
-      II = II+1
+      II = II + 1
  20   CONTINUE
-      IF (II.LE.5) THEN
+      IF(II .LE. 5) THEN
         GO TO 13
       ELSE
         GO TO 15

@@ -302,7 +302,7 @@
           <xaif:SymbolReference vertex_id="1" scope_id="4" symbol_id="SQRT3_18"/>
         </xaif:AssignmentLHS>
         <xaif:AssignmentRHS>
-          <xaif:Constant vertex_id="1" type="real" feType="F8" value="5.77350258827209472656e-01"/>
+          <xaif:Constant vertex_id="1" type="real" feType="F8" value="5.77350269189625842081e-01"/>
         </xaif:AssignmentRHS>
       </xaif:Assignment>
       <xaif:Assignment statement_id="17" lineNumber="26" do_chain="3">

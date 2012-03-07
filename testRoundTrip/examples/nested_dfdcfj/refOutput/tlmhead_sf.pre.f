@@ -100,30 +100,30 @@ C$openad XXX Template ad_template.f
       do 60 i = 1, ny
          do 50 j = 1, nx
             k = (i-1)*nx+j
-            if (i .eq. 1 .or. j .eq. 1) then
+            if (i.eq.1.or.j.eq.1) then
                pbl = zero
             else
                pbl = x(k-nx-1)
             endif
-            if (i .eq. 1) then
+            if (i.eq.1) then
                pb = zero
                pbb = x(k)
-            else if (i .eq. 2) then
+            elseif (i.eq.2) then
                pb = x(k-nx)
                pbb = zero
             else
                pb = x(k-nx)
                pbb = x(k-2*nx)
             endif
-            if (i .eq. 1 .or. j .eq. nx) then
+            if (i.eq.1.or.j.eq.nx) then
                pbr = zero
             else
                pbr = x(k-nx+1)
             endif
-            if (j .eq. 1) then
+            if (j.eq.1) then
                pl = zero
                pll = x(k)
-            else if (j .eq. 2) then
+            elseif (j.eq.2) then
                pl = x(k-1)
                pll = zero
             else
@@ -131,32 +131,32 @@ C$openad XXX Template ad_template.f
                pll = x(k-2)
             endif
             p = x(k)
-            if (j .eq. nx - 1) then
+            if (j.eq.nx-1) then
                pr = x(k+1)
                prr = zero
-            else if (j .eq. nx) then
+            elseif (j.eq.nx) then
                pr = zero
                prr = x(k)
             else
                pr = x(k+1)
                prr = x(k+2)
             endif
-            if (i .eq. ny .or. j .eq. 1) then
+            if (i.eq.ny.or.j.eq.1) then
                ptl = zero
             else
                ptl = x(k+nx-1)
             endif
-            if (i .eq. ny - 1) then
+            if (i.eq.ny-1) then
                pt = x(k+nx)
                ptt = zero
-            else if (i .eq. ny) then
+            elseif (i.eq.ny) then
                pt = zero
                ptt = x(k)+two*hy
             else
                pt = x(k+nx)
                ptt = x(k+2*nx)
             endif
-            if (i .eq. ny .or. j .eq. nx) then
+            if (i.eq.ny.or.j.eq.nx) then
                ptr = zero
             else
                ptr = x(k+nx+1)

@@ -1,25 +1,10 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, FVEC)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_acc_1
-      REAL(w2f__8) OpenAD_acc_2
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_10
-      REAL(w2f__8) OpenAD_lin_4
-      REAL(w2f__8) OpenAD_lin_7
-      REAL(w2f__8) OpenAD_lin_8
-      REAL(w2f__8) OpenAD_lin_9
-      REAL(w2f__8) OpenAD_tmp_0
-      REAL(w2f__8) OpenAD_tmp_1
-      REAL(w2f__8) OpenAD_tmp_2
 C
 C     **** Parameters and Result ****
 C
@@ -33,6 +18,18 @@ C
       type(active) :: TEMP2
       REAL(w2f__8) V(1 : 11)
       REAL(w2f__8) Y(1 : 11)
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_acc_1
+      REAL(w2f__8) OpenAD_acc_2
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_aux_1
+      REAL(w2f__8) OpenAD_aux_2
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+      REAL(w2f__8) OpenAD_lin_2
+      REAL(w2f__8) OpenAD_lin_3
+      REAL(w2f__8) OpenAD_lin_4
+      REAL(w2f__8) OpenAD_lin_5
 C
 C     **** Top Level Pragmas ****
 C
@@ -64,27 +61,27 @@ C$OPENAD XXX Template ad_template.f
       Y(9) = 3.23000000000000023204D-02
       Y(10) = 2.35000000000000000555D-02
       Y(11) = 2.46000000000000003386D-02
-      DO I = 1,11,1
-        OpenAD_tmp_0 = (X(2)%v+V(I))
-        TEMP1%v = (V(I)*OpenAD_tmp_0)
+      DO I = 1, 11, 1
+        OpenAD_aux_0 = (X(2)%v+V(I))
+        OpenAD_lin_0 = V(I)
+        TEMP1%v = (V(I)*OpenAD_aux_0)
+        OpenAD_aux_1 = (X(3)%v+V(I))
         OpenAD_lin_1 = V(I)
-        OpenAD_tmp_1 = (X(3)%v+V(I))
-        TEMP2%v = (X(4)%v+V(I)*OpenAD_tmp_1)
-        OpenAD_lin_4 = V(I)
-        OpenAD_tmp_2 = (X(1)%v*TEMP1%v)
-        FVEC(INT(I))%v = (Y(I)-(OpenAD_tmp_2/TEMP2%v))
-        OpenAD_lin_9 = TEMP1%v
-        OpenAD_lin_10 = X(1)%v
-        OpenAD_lin_7 = (INT(1_w2f__i8)/TEMP2%v)
-        OpenAD_lin_8 = (-(OpenAD_tmp_2/(TEMP2%v*TEMP2%v)))
-        OpenAD_acc_0 = (OpenAD_lin_8*INT((-1_w2f__i8)))
-        OpenAD_acc_1 = (OpenAD_lin_9*OpenAD_lin_7*INT((-1_w2f__i8)))
-        OpenAD_acc_2 = (OpenAD_lin_1*OpenAD_lin_10*OpenAD_lin_7*INT((-1_
-     +w2f__i8)))
+        TEMP2%v = (X(4)%v+V(I)*OpenAD_aux_1)
+        OpenAD_aux_2 = (X(1)%v*TEMP1%v)
+        OpenAD_lin_4 = TEMP1%v
+        OpenAD_lin_5 = X(1)%v
+        OpenAD_lin_2 = (INT(1_w2f__i8)/TEMP2%v)
+        OpenAD_lin_3 = (-(OpenAD_aux_2/(TEMP2%v*TEMP2%v)))
+        FVEC(INT(I))%v = (Y(I)-(OpenAD_aux_2/TEMP2%v))
+        OpenAD_acc_0 = (OpenAD_lin_3*INT((-1_w2f__i8)))
+        OpenAD_acc_1 = (OpenAD_lin_4*OpenAD_lin_2*INT((-1_w2f__i8)))
+        OpenAD_acc_2 = (OpenAD_lin_0*OpenAD_lin_5*OpenAD_lin_2*INT((-1_w
+     +2f__i8)))
         CALL setderiv(TEMP2,X(4))
-        CALL saxpy(OpenAD_lin_4,X(3),TEMP2)
+        CALL saxpy(OpenAD_lin_1,X(3),TEMP2)
         CALL sax(OpenAD_acc_0,TEMP2,FVEC(I))
         CALL saxpy(OpenAD_acc_1,X(1),FVEC(I))
         CALL saxpy(OpenAD_acc_2,X(2),FVEC(I))
-      enddo
+      END DO
       END SUBROUTINE

@@ -12,8 +12,8 @@ C$openad XXX Template ad_template.f
      +1,x2,x3,x4,x5,h_obj0,h_obj1,h_obj2,h_obj3,h_obj4,h_obj5,h_obj6,h_o
      +bj7,h_obj8,h_obj9,h_obj10,h_obj11,h_obj12,h_obj13,h_obj14,h_obj15,
      +h_obj16,h_obj17,h_obj18,h_obj19,h_obj20)
-
       use OAD_intrinsics
+
       implicit none
       double precision obj,g_obj0,g_obj1,g_obj2,g_obj3,g_obj4,g_obj5
       double precision x0,x1,x2,x3,x4,x5
@@ -37,16 +37,16 @@ C$openad INDEPENDENT(x3)
 C$openad INDEPENDENT(x4)
 C$openad INDEPENDENT(x5)
 
-      a = 5.00000000000000000000000000000e-01
-      b = -1.00000000000000000000000000000e-00
+      a=5.00000000000000000000000000000d-01
+      b = -1.00000000000000000000000000000d-00
       ab = a*b
-      sqrt3 = 5.77350269189625797959429519858e-01
-      tsqrt3 = 1.15470053837925159591885903972e+00
-      twosqrt3 = 1.15470053837925159591885903972e+00
-      third = .33333333333333333333333e+00
-      two3rd = .66666666666666666666666e+00
-      four3rd = 1.33333333333333333333333e+00
-      bm1 = -2.00000000000000000000000000000e-00
+      sqrt3=5.77350269189625797959429519858d-01
+      tsqrt3=1.15470053837925159591885903972d+00
+      twosqrt3=1.15470053837925159591885903972d+00
+      third=.33333333333333333333333d+00
+      two3rd=.66666666666666666666666d+00
+      four3rd=1.33333333333333333333333d+00
+      bm1 = -2.00000000000000000000000000000d-00
  
       matr0 = x1-x0
       matr1 = (2.0*x2-x1-x0)*sqrt3
@@ -68,7 +68,7 @@ C$openad INDEPENDENT(x5)
       d03 = m11*m22
 
       f = d12+d03
-      norm = f
+      norm=f
 
       loc1 = a*(1/g)
       obj = f*loc1

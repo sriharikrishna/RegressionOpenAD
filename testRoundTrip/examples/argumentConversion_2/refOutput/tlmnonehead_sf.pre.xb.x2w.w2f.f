@@ -42,11 +42,6 @@ C$OPENAD XXX Template ad_template.f
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_Symbol_0
-      TYPE (OpenADTy_active) OpenAD_Symbol_1
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X
@@ -56,6 +51,8 @@ C     **** Local Variables and Functions ****
 C
       EXTERNAL foo
       REAL(w2f__8) PY
+      TYPE (OpenADTy_active) OpenAD_tyc_0
+      TYPE (OpenADTy_active) OpenAD_tyc_1
 C
 C     **** Top Level Pragmas ****
 C
@@ -66,11 +63,11 @@ C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
       CALL foo(__deriv__(X), __deriv__(Y))
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_0), 2.0)
-C     $OpenAD$ INLINE convert_p2a_scalar(subst,subst)
-      CALL convert_p2a_scalar(__deriv__(OpenAD_Symbol_1), PY)
-      CALL foo(__deriv__(OpenAD_Symbol_0), __deriv__(OpenAD_Symbol_1))
-C     $OpenAD$ INLINE convert_a2p_scalar(subst,subst)
-      CALL convert_a2p_scalar(PY, __deriv__(OpenAD_Symbol_1))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_tyc_0), 2.0)
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(__deriv__(OpenAD_tyc_1), PY)
+      CALL foo(__deriv__(OpenAD_tyc_0), __deriv__(OpenAD_tyc_1))
+C     $OpenAD$ INLINE oad_convert(subst,subst)
+      CALL oad_convert(PY, __deriv__(OpenAD_tyc_1))
       END SUBROUTINE

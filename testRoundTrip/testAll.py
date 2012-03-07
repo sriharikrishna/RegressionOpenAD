@@ -104,6 +104,9 @@ class NumericalDiscrepancy(Exception):
 class NumericalError(Exception):
    '''Exception thrown when the numerical comparison process fails for some reason other than numerical discrepancy'''
 
+class ComparisonError(Exception):
+    """Exception thrown when the output comparison sees differences"""
+
 class MakeError(Exception):
     """Exception thrown when the a make command fails"""
 
@@ -180,6 +183,8 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
     if (hasDiff == 512):
 	raise RuntimeError, "command "+cmd+" not successful"
     elif (hasDiff != 0):
+        if (globalBatchMode and not globalAcceptAll):
+            raise ComparisonError("Batch mode assumes no difference or one has to accept all differences")		
 	if not (globalBatchMode):
             os.system(globalDiffCmd+" "+fcfileName+" "+referenceFile)
 	sys.stdout.write("Transformation -- diff "+fcfileName+" "+referenceFile+"\n")
@@ -454,33 +459,50 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
     exOpts={}
     if (os.path.exists(os.path.join(exDir,'options'))):
         exOptsFile=open(os.path.join(exDir,'options'))
-        for line in exOptsFile:
-            (key,opts)=line.split(':')
-            exOpts[key]=opts.strip()
+        try :
+            exOpts=eval(exOptsFile.read().strip())
+        except Exception, e :
+            raise ConfigError, "example options file does not specify a Python dictionary "+str(e)
         exOptsFile.close()
     if (majorMode == "adm"):
 	overridableLink(exDir + "/ad_template." + ctrMode + ".f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template." + ctrMode + ".f","ad_template.f")
     elif (majorMode == "trace"):
 	overridableLink(exDir + "/ad_template.trace.f",os.environ["OPENADROOT"] + "/runTimeSupport/simple/ad_template.trace.f","ad_template.f")
     # transform head_sf
-    if (scalarOrVector=="scalar" and majorMode=="tlm"):
-        if ('OAD_active.f90' in exOpts):
-            fPath=os.path.join(os.environ["OPENADROOT"],'runTimeSupport',exOpts['OAD_active.f90'],'OAD_active.f90')
-            if (not os.path.exists(fPath)) :
-                raise ConfigError, "example options file specifies to use "+fPath+" which does not exist"
-            os.environ["SCALAR_OR_VECTOR"] = exOpts['OAD_active.f90']
-        else: 
-            os.environ["SCALAR_OR_VECTOR"] = "scalar"
-    else : 
-       os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
+    os.environ["SCALAR_OR_VECTOR"] = scalarOrVector
+    if ('OAD_active.f90' in exOpts):
+        fPath=os.path.join(os.environ["OPENADROOT"],'runTimeSupport',exOpts['OAD_active.f90'],'OAD_active.f90')
+        if (not os.path.exists(fPath)) :
+            raise ConfigError, "example options file specifies to use "+fPath+" which does not exist"
+        os.environ["SCALAR_OR_VECTOR"] = exOpts['OAD_active.f90']
     os.environ["MAJOR_MODE"] = majorMode
     os.environ["MINOR_MODE"] = ctrMode
+    xaifBoosterSpecialOpts=''
+    if ('xaifBooster' in exOpts):
+        optsDict=exOpts['xaifBooster']
+        print str(optsDict)
+        try:
+            if ((not 'majorMode' in optsDict) or ('majorMode' in optsDict and optsDict['majorMode']==majorMode)
+                and
+                (not 'ctrMode' in optsDict) or ('ctrMode' in optsDict and optsDict['ctrMode']==ctrMode)):
+                if 'opts' in optsDict:
+                    xaifBoosterSpecialOpts+=optsDict['opts']
+        except Exception, e: 
+            raise ConfigError, "example options file does not specify a Python dictionary for xaifBooster options"+str(e)
+    os.environ['EXAMPLE_SPECIFIC_XAIFBOOSTER_OPTIONS']=xaifBoosterSpecialOpts
+    postProcessSpecialOpts=''
+    if ('postProcess.py' in exOpts):
+        optsDict=exOpts['postProcess.py']
+        print str(optsDict)
+        if 'opts' in optsDict:
+            postProcessSpecialOpts+=optsDict['opts']
+    os.environ['EXAMPLE_SPECIFIC_POSTPROCESS_OPTIONS']=postProcessSpecialOpts
     if globalVerbose:
         os.environ["VERBOSE"]='true'
         sys.stdout.write("environment settings:\n")
-        sys.stdout.write("  SCALAR_OR_VECTOR="+scalarOrVector+"\n")
-        sys.stdout.write("  MAJOR_MODE="+majorMode+"\n")
-        sys.stdout.write("  MINOR_MODE="+ctrMode+"\n")
+        for envVar in ['SCALAR_OR_VECTOR','MAJOR_MODE','MINOR_MODE','EXAMPLE_SPECIFIC_XAIFBOOSTER_OPTIONS'] : 
+            sys.stdout.write('  '+envVar+'='+os.environ[envVar]+'\n')
+    print "majorMode =",majorMode
     if (majorMode == 'mf'):
         if (os.system(makeCmd+" head.pre.w2f.f")):
             raise MakeError, makeCmd+" head.pre.w2f.f"
@@ -498,6 +520,9 @@ def runTest(scalarOrVector,majorMode,ctrMode,exName,exNum,totalNum):
         # compare all the transformation results
 	for tfile in ['head_sf.pre.f','head_sf.pre.xaif']:
             fileCompare(exDir,tfile,majorMode,"file translated from")
+        cmd=makeCmd + " head_sf.pre.xb.x2w.w2f.post.f"
+        if (os.system(cmd)):
+            raise MakeError, cmd
         for tfile in ["head_sf.pre.xb.x2w.w2f.f","head_sf.pre.xb.x2w.w2f.post.f","head.pre.xb.x2w.w2f.post.f","head_sf.pre.xb.xaif"]:
             fileCompare(exDir,tfile,majorMode + ctrMode,"file translated from")
     # execute the driver
@@ -621,6 +646,14 @@ def main():
                 globalNewFailCount+=1
                 if (globalBatchMode) or (raw_input("Do you want to continue? (y)/n: ") == "n"):
                     return -1
+	    except ComparisonError, errMsg:
+		print "ERROR in test %i of %i (%s): %s." % (j+1,len(examples),examples[j],errMsg)
+	        globalNewFailCount+=1
+		if not (globalBatchMode):
+		    if (raw_input("Do you want to continue? (y)/n: ") == "n"):
+			return -1
+                else: 
+	            return -1
 	    except RuntimeError, errtxt:
 		print "ERROR in test %i of %i (%s): %s." % (j+1,len(examples),examples[j],errtxt)
                 globalNewFailCount += 1

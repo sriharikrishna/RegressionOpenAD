@@ -25,19 +25,19 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_prop_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X
 C
+C     **** Local Variables and Functions ****
+C
+      TYPE (OpenADTy_active) OpenAD_prp_0
+C
 C     **** Statements ****
 C
       __value__(X) = (__value__(X) + 1.0D00)
-      CALL setderiv(__deriv__(OpenAD_prop_0), __deriv__(X))
-      CALL setderiv(__deriv__(X), __deriv__(OpenAD_prop_0))
+      CALL setderiv(__deriv__(OpenAD_prp_0), __deriv__(X))
+      CALL setderiv(__deriv__(X), __deriv__(OpenAD_prp_0))
       END SUBROUTINE
 
       SUBROUTINE bar(X)
@@ -45,19 +45,19 @@ C
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      TYPE (OpenADTy_active) OpenAD_prop_1
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
 C
+C     **** Local Variables and Functions ****
+C
+      TYPE (OpenADTy_active) OpenAD_prp_1
+C
 C     **** Statements ****
 C
       __value__(X(1)) = (__value__(X(1)) + 1.0D00)
-      CALL setderiv(__deriv__(OpenAD_prop_1), __deriv__(X(1)))
-      CALL setderiv(__deriv__(X(1)), __deriv__(OpenAD_prop_1))
+      CALL setderiv(__deriv__(OpenAD_prp_1), __deriv__(X(1)))
+      CALL setderiv(__deriv__(X(1)), __deriv__(OpenAD_prp_1))
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)

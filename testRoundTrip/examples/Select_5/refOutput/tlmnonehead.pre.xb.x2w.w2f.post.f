@@ -1,23 +1,10 @@
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_Symbol_0
-      REAL(w2f__8) OpenAD_Symbol_1
-      REAL(w2f__8) OpenAD_Symbol_2
-      REAL(w2f__8) OpenAD_lin_1
-      REAL(w2f__8) OpenAD_lin_3
-      REAL(w2f__8) OpenAD_lin_6
-      REAL(w2f__8) OpenAD_lin_8
-      type(active) :: OpenAD_prop_0
-      type(active) :: OpenAD_prop_1
-      type(active) :: OpenAD_prop_2
 C
 C     **** Parameters and Result ****
 C
@@ -31,6 +18,13 @@ C
       INTEGER(w2f__i4) I
       INTEGER(w2f__i4) select_expr_temp_0
       INTEGER(w2f__i4) select_expr_temp_1
+      INTEGER(w2f__i4) OpenAD_lin_0
+      INTEGER(w2f__i4) OpenAD_lin_1
+      INTEGER(w2f__i4) OpenAD_lin_2
+      INTEGER(w2f__i4) OpenAD_lin_3
+      type(active) :: OpenAD_prp_0
+      type(active) :: OpenAD_prp_1
+      type(active) :: OpenAD_prp_2
 C
 C     **** Top Level Pragmas ****
 C
@@ -63,9 +57,9 @@ C$OPENAD XXX Template ad_template.f
         GO TO 8
       ENDIF
  8    CONTINUE
+      OpenAD_lin_1 = I
       Y(1)%v = (I*X(1)%v)
-      OpenAD_lin_3 = I
-      CALL sax(OpenAD_lin_3,X(1),Y(1))
+      CALL sax(OpenAD_lin_1,X(1),Y(1))
       GO TO 9
  9    CONTINUE
       GO TO 10
@@ -74,10 +68,9 @@ C$OPENAD XXX Template ad_template.f
  11   CONTINUE
       GO TO 12
  12   CONTINUE
-      OpenAD_Symbol_0 = (Y(1)%v*4.0D00)
-      Y(1)%v = OpenAD_Symbol_0
-      CALL setderiv(OpenAD_prop_0,Y(1))
-      CALL sax(4.0D00,OpenAD_prop_0,Y(1))
+      Y(1)%v = (Y(1)%v*4.0D00)
+      CALL setderiv(OpenAD_prp_0,Y(1))
+      CALL sax(4.0D00,OpenAD_prp_0,Y(1))
       select_expr_temp_1 = I
       GO TO 13
  13   CONTINUE
@@ -87,28 +80,26 @@ C$OPENAD XXX Template ad_template.f
         GO TO 14
       ENDIF
  14   CONTINUE
-      OpenAD_Symbol_2 = (I*Y(1)%v)
-      OpenAD_lin_8 = I
-      Y(1)%v = OpenAD_Symbol_2
-      CALL setderiv(OpenAD_prop_2,Y(1))
-      CALL sax(OpenAD_lin_8,OpenAD_prop_2,Y(1))
+      OpenAD_lin_3 = I
+      Y(1)%v = (I*Y(1)%v)
+      CALL setderiv(OpenAD_prp_2,Y(1))
+      CALL sax(OpenAD_lin_3,OpenAD_prp_2,Y(1))
       GO TO 15
  15   CONTINUE
       GO TO 16
  16   CONTINUE
       GO TO 19
  17   CONTINUE
-      OpenAD_Symbol_1 = (I*Y(1)%v)
-      OpenAD_lin_6 = I
-      Y(1)%v = OpenAD_Symbol_1
-      CALL setderiv(OpenAD_prop_1,Y(1))
-      CALL sax(OpenAD_lin_6,OpenAD_prop_1,Y(1))
+      OpenAD_lin_2 = I
+      Y(1)%v = (I*Y(1)%v)
+      CALL setderiv(OpenAD_prp_1,Y(1))
+      CALL sax(OpenAD_lin_2,OpenAD_prp_1,Y(1))
       RETURN
       GO TO 19
  18   CONTINUE
+      OpenAD_lin_0 = I
       Y(1)%v = (I*X(1)%v)
-      OpenAD_lin_1 = I
-      CALL sax(OpenAD_lin_1,X(1),Y(1))
+      CALL sax(OpenAD_lin_0,X(1),Y(1))
       GO TO 1
       GO TO 19
  19   CONTINUE

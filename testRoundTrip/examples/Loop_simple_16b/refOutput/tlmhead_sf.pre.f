@@ -23,7 +23,7 @@ C$openad XXX Template ad_template.f
       DENOM = 1.0D00
 C$openad xxx simple loop
       DO K = 1, SP, 1
-        IF(I .ne. K) THEN
+        IF (I.ne.K) THEN
           DENOM = DENOM*(A(I)-A(K))
           NUMER = NUMER*(X-A(K))
         ENDIF
@@ -35,7 +35,7 @@ C$openad xxx simple loop
 
 C$openad XXX Template ad_template.f
       subroutine head(x,y)
-      use OAD_intrinsics
+        use OAD_intrinsics
         double precision, dimension(4), intent(in) :: x
         double precision, dimension(1), intent(out) :: y
 C$openad INDEPENDENT(x)

@@ -150,20 +150,20 @@ C$OPENAD XXX Simple loop
       OpenAD_Symbol_2 = 0_w2f__i8
       DO I = 1, 2, 1
         CALL foo(__deriv__(X(I)), __deriv__(Y(I)))
-C       $OpenAD$ INLINE push_i(subst)
-        CALL push_i(I)
+C       $OpenAD$ INLINE push_i_s0(subst)
+        CALL push_i_s0(I)
         OpenAD_Symbol_2 = (INT(OpenAD_Symbol_2) + INT(1_w2f__i8))
       END DO
-C     $OpenAD$ INLINE push_i(subst)
-      CALL push_i(OpenAD_Symbol_2)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(OpenAD_Symbol_2)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
-C     $OpenAD$ INLINE pop_i(subst)
-      CALL pop_i(OpenAD_Symbol_0)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(OpenAD_Symbol_0)
       OpenAD_Symbol_1 = 1
       DO WHILE(INT(OpenAD_Symbol_1) .LE. INT(OpenAD_Symbol_0))
-C       $OpenAD$ INLINE pop_i(subst)
-        CALL pop_i(I)
+C       $OpenAD$ INLINE pop_i_s0(subst)
+        CALL pop_i_s0(I)
         CALL foo(__deriv__(X(I)), __deriv__(Y(I)))
         OpenAD_Symbol_1 = INT(OpenAD_Symbol_1) + 1
       END DO

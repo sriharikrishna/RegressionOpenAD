@@ -1,8 +1,8 @@
 
 !$OPENAD XXX File_start [OAD_intrinsics.f90]
 MODULE oad_intrinsics
-use w2f__types
 use OAD_active
+use w2f__types
 IMPLICIT NONE
 SAVE
 !
@@ -12,8 +12,8 @@ END MODULE
 
 C$OPENAD XXX File_start [all_globals_mod.f]
       MODULE all_globals_mod
-      use w2f__types
       use OAD_active
+      use w2f__types
       IMPLICIT NONE
       SAVE
 C
@@ -23,8 +23,8 @@ C
 
 C$OPENAD XXX File_start [head.f]
       SUBROUTINE head(X, Y)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
 C
@@ -51,15 +51,10 @@ C$OPENAD XXX Template ad_template.f
       END SUBROUTINE
 
       SUBROUTINE foo(A, B, C)
-      use w2f__types
       use OAD_active
+      use w2f__types
       use oad_intrinsics
       IMPLICIT NONE
-C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_lin_1
 C
 C     **** Parameters and Result ****
 C
@@ -67,12 +62,17 @@ C
       type(active) :: B
       type(active) :: C
 C
+C     **** Local Variables and Functions ****
+C
+      REAL(w2f__8) OpenAD_lin_0
+      REAL(w2f__8) OpenAD_lin_1
+C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      C%v = (B%v+A%v*A%v)
       OpenAD_lin_0 = A%v
       OpenAD_lin_1 = A%v
+      C%v = (B%v+A%v*A%v)
       CALL setderiv(C,B)
       CALL saxpy(OpenAD_lin_0,A,C)
       CALL saxpy(OpenAD_lin_1,A,C)

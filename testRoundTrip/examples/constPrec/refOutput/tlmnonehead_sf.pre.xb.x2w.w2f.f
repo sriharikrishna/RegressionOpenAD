@@ -25,12 +25,6 @@ C$OPENAD XXX File_start [head.f]
       use oad_intrinsics
       IMPLICIT NONE
 C
-C     **** Global Variables & Derived Type Definitions ****
-C
-      REAL(w2f__8) OpenAD_acc_0
-      REAL(w2f__8) OpenAD_lin_0
-      REAL(w2f__8) OpenAD_tmp_0
-C
 C     **** Parameters and Result ****
 C
       TYPE (OpenADTy_active) X(1 : 1)
@@ -42,6 +36,9 @@ C
       PARAMETER ( DEG2RAD = 1.74532925199432954744D-02)
       REAL(w2f__8) PI
       PARAMETER ( PI = 3.141592653589793116D00)
+      REAL(w2f__8) OpenAD_acc_0
+      REAL(w2f__8) OpenAD_aux_0
+      REAL(w2f__8) OpenAD_lin_0
 C
 C     **** Top Level Pragmas ****
 C
@@ -51,9 +48,9 @@ C
 C     **** Statements ****
 C
 C$OPENAD XXX Template ad_template.f
-      OpenAD_tmp_0 = (__value__(X(1)) * 1.74532925199432954744D-02)
-      __value__(Y(1)) = COS(OpenAD_tmp_0)
-      OpenAD_lin_0 = (- SIN(OpenAD_tmp_0))
+      OpenAD_aux_0 = (__value__(X(1)) * 1.74532925199432954744D-02)
+      OpenAD_lin_0 = (- SIN(OpenAD_aux_0))
+      __value__(Y(1)) = COS(OpenAD_aux_0)
       OpenAD_acc_0 = (1.74532925199432954744D-02 * OpenAD_lin_0)
       CALL sax(OpenAD_acc_0, __deriv__(X(1)), __deriv__(Y(1)))
       END SUBROUTINE
