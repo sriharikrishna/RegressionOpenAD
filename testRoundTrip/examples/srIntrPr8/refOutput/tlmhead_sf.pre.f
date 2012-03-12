@@ -41,7 +41,7 @@ C$openad XXX Template ad_template.f
       double precision, dimension(1), intent(inout) :: y
       real(8) :: p1, p2
         double precision :: oad_ctmp0
-        real(8) :: oad_ctmp1
+        double precision :: oad_ctmp1
 C$openad INDEPENDENT(x)
           p1=2.4D0
           p2 = -30.0D0
