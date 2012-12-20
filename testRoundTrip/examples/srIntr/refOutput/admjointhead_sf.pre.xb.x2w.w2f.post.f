@@ -88,10 +88,8 @@ CONTAINS
     if (our_rev_mode%arg_restore) then
 ! restore arguments
   A1%v = theArgFStack(theArgFStackoffset)
-!        write(*,'(A,EN26.16E3)') "restore(s)  ", A1%v
   theArgFStackoffset = theArgFStackoffset-1
   A0%v = theArgFStack(theArgFStackoffset)
-!        write(*,'(A,EN26.16E3)') "restore(s)  ", A0%v
   theArgFStackoffset = theArgFStackoffset-1
     end if
     if (our_rev_mode%plain) then

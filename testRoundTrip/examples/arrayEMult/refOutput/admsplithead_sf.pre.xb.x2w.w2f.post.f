@@ -103,27 +103,27 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_0)-1) = OpenAD_lin_0(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_0)
+     +n_0,1)-1) = OpenAD_lin_0(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_0,1)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_1)-1) = OpenAD_lin_1(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_1)
+     +n_1,1)-1) = OpenAD_lin_1(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_1,1)
       OpenAD_Symbol_3 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_4)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_4,1)
       OpenAD_Symbol_4(:) = double_tape(double_tape_pointer:double_tape_p
-     +ointer+size(OpenAD_Symbol_4)-1)
+     +ointer+size(OpenAD_Symbol_4,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_6 = integer_tape(integer_tape_pointer)
 C!! requested inline of 'oad_AllocateShape' has no defn
       CALL oad_AllocateShape(OpenAD_Symbol_5,OpenAD_Symbol_6)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_5)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_5,1)
       OpenAD_Symbol_5(:) = double_tape(double_tape_pointer:double_tape_p
-     +ointer+size(OpenAD_Symbol_5)-1)
+     +ointer+size(OpenAD_Symbol_5,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_8 = integer_tape(integer_tape_pointer)
       Z(1:INT(OpenAD_Symbol_8))%d = Z(1:INT(OpenAD_Symbol_8))%d+Y(1:2)%d

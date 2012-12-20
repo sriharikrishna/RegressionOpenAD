@@ -70,10 +70,8 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       M2%v = theArgFStack(theArgFStackoffset)
-C        write(*,'(A,EN26.16E3)') "restore(s)  ", M2%v
       theArgFStackoffset = theArgFStackoffset-1
       M1 = theArgFStack(theArgFStackoffset)
-C        write(*,'(A,EN26.16E3)') "restore(s)  ", M1
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then

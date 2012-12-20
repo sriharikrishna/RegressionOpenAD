@@ -118,10 +118,8 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       APASSIVEGLOBAL = theArgFStack(theArgFStackoffset)
-C        write(*,'(A,EN26.16E3)') "restore(s)  ", APASSIVEGLOBAL
       theArgFStackoffset = theArgFStackoffset-1
       AGLOBAL%v = theArgFStack(theArgFStackoffset)
-C        write(*,'(A,EN26.16E3)') "restore(s)  ", AGLOBAL%v
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then

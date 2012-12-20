@@ -64,15 +64,15 @@ C$OPENAD XXX Template ad_template.f
 
           if (our_rev_mode%arg_store) then
 C store arguments
-      do cp_loop_variable_1 = lbound(X,1),ubound(X,1)
-      call cp_store_real_vector(X(cp_loop_variable_1,:),size(X(cp_loop_v
-     +ariable_1,:)),theArgFStack,theArgFStackoffset,theArgFStackSize)
+      do cp_loop_variable_2 = lbound(X,2),ubound(X,2)
+      call cp_store_real_vector(X(:,cp_loop_variable_2),size(X(:,cp_loop
+     +_variable_2)),theArgFStack,theArgFStackoffset,theArgFStackSize)
       end do
           end if
           if (our_rev_mode%arg_restore) then
 C restore arguments
-      do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       do cp_loop_variable_2 = ubound(X,2),lbound(X,2),-1
+      do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1,cp_loop_variable_2)%v = theArgFStack(theArgFS
      +tackoffset)
       theArgFStackoffset = theArgFStackoffset-1

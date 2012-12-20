@@ -106,10 +106,8 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       P%v = theArgFStack(theArgFStackoffset)
-C        write(*,'(A,EN26.16E3)') "restore(s)  ", P%v
       theArgFStackoffset = theArgFStackoffset-1
       I = theArgIStack(theArgIStackoffset)
-C        write(*,'(A,I5,I5)') "restore(s)  ", I, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
           end if
           if (our_rev_mode%plain) then
@@ -241,7 +239,6 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       I = theArgIStack(theArgIStackoffset)
-C        write(*,'(A,I5,I5)') "restore(s)  ", I, theArgIStackOffset
       theArgIStackoffset = theArgIStackoffset-1
           end if
           if (our_rev_mode%plain) then

@@ -79,14 +79,14 @@ C$OPENAD XXX Template ad_template.f
       Y(1:2)%v = OpenAD_aux_0
       OpenAD_acc_0 = (5.0D-01*OpenAD_lin_0)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_0)-1) = OpenAD_acc_0(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_0)
+     +c_0,1)-1) = OpenAD_acc_0(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_0,1)
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_0)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_0,1)
       OpenAD_Symbol_0(:) = double_tape(double_tape_pointer:double_tape_p
-     +ointer+size(OpenAD_Symbol_0)-1)
+     +ointer+size(OpenAD_Symbol_0,1)-1)
       X%d = X%d+Y(1:2)%d*(OpenAD_Symbol_0)
       Y(1:2)%d = 0.0d0
           end if

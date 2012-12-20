@@ -218,8 +218,6 @@ C restore arguments
       do cp_loop_variable_1 = ubound(U,1),lbound(U,1),-1
       U(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
-C        write(*,'(A,EN26.16E3)') "restore(v)  ", 
-C     +U(cp_loop_variable_1)%v
       end do
           end if
           if (our_rev_mode%plain) then

@@ -253,14 +253,14 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_acc_0 = (OpenAD_lin_3*OpenAD_lin_1)
       OpenAD_acc_1 = (OpenAD_lin_2*OpenAD_lin_0)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_0)-1) = OpenAD_acc_0(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_0)
+     +c_0,1)-1) = OpenAD_acc_0(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_0,1)
       OpenAD_Symbol_0 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_0
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_1)-1) = OpenAD_acc_1(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_1)
+     +c_1,1)-1) = OpenAD_acc_1(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_1,1)
       OpenAD_Symbol_1 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
@@ -274,8 +274,8 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
      +)%v)
       OpenAD_acc_2 = (8.0D00*OpenAD_lin_4)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_2)-1) = OpenAD_acc_2(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_2)
+     +c_2,1)-1) = OpenAD_acc_2(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_2,1)
       OpenAD_Symbol_2 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_2
       integer_tape_pointer = integer_tape_pointer+1
@@ -283,14 +283,14 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_5)-1) = OpenAD_lin_5(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_5)
+     +n_5,1)-1) = OpenAD_lin_5(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_5,1)
       OpenAD_Symbol_5 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_5
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_6)-1) = OpenAD_lin_6(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_6)
+     +n_6,1)-1) = OpenAD_lin_6(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_6,1)
       OpenAD_Symbol_6 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
       integer_tape_pointer = integer_tape_pointer+1
@@ -315,14 +315,14 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_8
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_7)-1) = OpenAD_lin_7(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_7)
+     +n_7,1)-1) = OpenAD_lin_7(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_7,1)
       OpenAD_Symbol_9 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_9
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_3)-1) = OpenAD_acc_3(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_3)
+     +c_3,1)-1) = OpenAD_acc_3(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_3,1)
       OpenAD_Symbol_10 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_10
       integer_tape_pointer = integer_tape_pointer+1
@@ -330,8 +330,8 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_11
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_4)-1) = OpenAD_acc_4(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_4)
+     +c_4,1)-1) = OpenAD_acc_4(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_4,1)
       OpenAD_Symbol_12 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_12
       integer_tape_pointer = integer_tape_pointer+1
@@ -385,26 +385,26 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       OpenAD_acc_9 = (OpenAD_lin_17*OpenAD_acc_5)
       OpenAD_acc_10 = (OpenAD_lin_14*OpenAD_lin_13)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_6)-1) = OpenAD_acc_6(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_6)
+     +c_6,1)-1) = OpenAD_acc_6(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_6,1)
       OpenAD_Symbol_13 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_13
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_7)-1) = OpenAD_acc_7(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_7)
+     +c_7,1)-1) = OpenAD_acc_7(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_7,1)
       OpenAD_Symbol_14 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_14
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_8)-1) = OpenAD_acc_8(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_8)
+     +c_8,1)-1) = OpenAD_acc_8(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_8,1)
       OpenAD_Symbol_15 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_15
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_9)-1) = OpenAD_acc_9(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_9)
+     +c_9,1)-1) = OpenAD_acc_9(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_9,1)
       OpenAD_Symbol_16 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_16
       integer_tape_pointer = integer_tape_pointer+1
@@ -412,8 +412,8 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_17
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_12)-1) = OpenAD_lin_12(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_12)
+     +n_12,1)-1) = OpenAD_lin_12(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_12,1)
       OpenAD_Symbol_19 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_19
       integer_tape_pointer = integer_tape_pointer+1
@@ -424,8 +424,8 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_21
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_ac
-     +c_10)-1) = OpenAD_acc_10(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_10)
+     +c_10,1)-1) = OpenAD_acc_10(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_acc_10,1)
       OpenAD_Symbol_23 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_23
       integer_tape_pointer = integer_tape_pointer+1
@@ -468,28 +468,28 @@ C adjoint
       OpenAD_Symbol_30 = integer_tape(integer_tape_pointer)
 C!! requested inline of 'oad_AllocateShape' has no defn
       CALL oad_AllocateShape(OpenAD_Symbol_29,OpenAD_Symbol_30)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_29)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_29,1)
       OpenAD_Symbol_29(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_29)-1)
+     +pointer+size(OpenAD_Symbol_29,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_33 = integer_tape(integer_tape_pointer)
 C!! requested inline of 'oad_AllocateShape' has no defn
       CALL oad_AllocateShape(OpenAD_Symbol_32,OpenAD_Symbol_33)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_32)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_32,1)
       OpenAD_Symbol_32(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_32)-1)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_35)
+     +pointer+size(OpenAD_Symbol_32,1)-1)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_35,1)
       OpenAD_Symbol_35(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_35)-1)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_36)
+     +pointer+size(OpenAD_Symbol_35,1)-1)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_36,1)
       OpenAD_Symbol_36(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_36)-1)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_37)
+     +pointer+size(OpenAD_Symbol_36,1)-1)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_37,1)
       OpenAD_Symbol_37(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_37)-1)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_38)
+     +pointer+size(OpenAD_Symbol_37,1)-1)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_38,1)
       OpenAD_Symbol_38(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_38)-1)
+     +pointer+size(OpenAD_Symbol_38,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_39 = integer_tape(integer_tape_pointer)
       integer_tape_pointer = integer_tape_pointer-1
@@ -515,15 +515,15 @@ C!! requested inline of 'oad_AllocateShape' has no defn
       OpenAD_Symbol_46 = integer_tape(integer_tape_pointer)
       B%d = B%d+C(1:INT(OpenAD_Symbol_46))%d*(OpenAD_Symbol_38)
       C(1:INT(OpenAD_Symbol_46))%d = 0.0d0
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_47)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_47,1)
       OpenAD_Symbol_47(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_47)-1)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_48)
+     +pointer+size(OpenAD_Symbol_47,1)-1)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_48,1)
       OpenAD_Symbol_48(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_48)-1)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_49)
+     +pointer+size(OpenAD_Symbol_48,1)-1)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_49,1)
       OpenAD_Symbol_49(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_49)-1)
+     +pointer+size(OpenAD_Symbol_49,1)-1)
 C!! requested inline of 'oad_AllocateMatching' has no defn
       CALL oad_AllocateMatching(OpenAD_prp_0,B(1:INT(SIZE(X))))
       integer_tape_pointer = integer_tape_pointer-1
@@ -545,19 +545,19 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       B(1:INT(OpenAD_Symbol_54))%d = B(1:INT(OpenAD_Symbol_54))%d+OpenAD
      +_prp_0%d
       OpenAD_prp_0%d = 0.0d0
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_55)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_55,1)
       OpenAD_Symbol_55(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_55)-1)
+     +pointer+size(OpenAD_Symbol_55,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_57 = integer_tape(integer_tape_pointer)
 C!! requested inline of 'oad_AllocateShape' has no defn
       CALL oad_AllocateShape(OpenAD_Symbol_56,OpenAD_Symbol_57)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_56)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_56,1)
       OpenAD_Symbol_56(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_56)-1)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_59)
+     +pointer+size(OpenAD_Symbol_56,1)-1)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_59,1)
       OpenAD_Symbol_59(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_59)-1)
+     +pointer+size(OpenAD_Symbol_59,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_60 = integer_tape(integer_tape_pointer)
       integer_tape_pointer = integer_tape_pointer-1
@@ -572,12 +572,12 @@ C!! requested inline of 'oad_AllocateShape' has no defn
       OpenAD_Symbol_63 = integer_tape(integer_tape_pointer)
       X%d = X%d+B(1:INT(OpenAD_Symbol_63))%d*(OpenAD_Symbol_59)
       B(1:INT(OpenAD_Symbol_63))%d = 0.0d0
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_64)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_64,1)
       OpenAD_Symbol_64(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_64)-1)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_65)
+     +pointer+size(OpenAD_Symbol_64,1)-1)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_65,1)
       OpenAD_Symbol_65(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_65)-1)
+     +pointer+size(OpenAD_Symbol_65,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_66 = integer_tape(integer_tape_pointer)
       X%d = X%d+A(1:INT(OpenAD_Symbol_66))%d*(OpenAD_Symbol_64)

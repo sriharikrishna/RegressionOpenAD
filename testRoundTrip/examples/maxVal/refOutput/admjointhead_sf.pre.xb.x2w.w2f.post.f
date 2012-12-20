@@ -82,8 +82,6 @@ CONTAINS
   do cp_loop_variable_1 = ubound(A,1),lbound(A,1),-1
   A(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
   theArgFStackoffset = theArgFStackoffset-1
-!        write(*,'(A,EN26.16E3)') "restore(v)  ", 
-!     +A(cp_loop_variable_1)%v
   end do
     end if
     if (our_rev_mode%plain) then

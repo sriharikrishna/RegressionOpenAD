@@ -81,8 +81,8 @@ C$OPENAD XXX Template ad_template.f
       OpenAD_lin_0 = COS(X%v)
       T(1:INT(SIZE(X)))%v = SIN(X%v)
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_0)-1) = OpenAD_lin_0(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_0)
+     +n_0,1)-1) = OpenAD_lin_0(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_0,1)
       OpenAD_Symbol_0 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_0
       integer_tape_pointer = integer_tape_pointer+1
@@ -95,14 +95,14 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_1
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_1)-1) = OpenAD_lin_1(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_1)
+     +n_1,1)-1) = OpenAD_lin_1(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_1,1)
       OpenAD_Symbol_3 = SIZE(Y)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_3
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_2)-1) = OpenAD_lin_2(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_2)
+     +n_2,1)-1) = OpenAD_lin_2(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_2,1)
       OpenAD_Symbol_4 = SIZE(X)
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_4
       integer_tape_pointer = integer_tape_pointer+1
@@ -120,8 +120,8 @@ C!! requested inline of 'oad_AllocateMatching' has no defn
       integer_tape(integer_tape_pointer) = OpenAD_Symbol_6
       integer_tape_pointer = integer_tape_pointer+1
       double_tape(double_tape_pointer:double_tape_pointer+size(OpenAD_li
-     +n_3)-1) = OpenAD_lin_3(:)
-      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_3)
+     +n_3,1)-1) = OpenAD_lin_3(:)
+      double_tape_pointer = double_tape_pointer+size(OpenAD_lin_3,1)
           end if
           if (our_rev_mode%adjoint) then
 C adjoint
@@ -129,21 +129,21 @@ C adjoint
       OpenAD_Symbol_9 = integer_tape(integer_tape_pointer)
 C!! requested inline of 'oad_AllocateShape' has no defn
       CALL oad_AllocateShape(OpenAD_Symbol_8,OpenAD_Symbol_9)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_8)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_8,1)
       OpenAD_Symbol_8(:) = double_tape(double_tape_pointer:double_tape_p
-     +ointer+size(OpenAD_Symbol_8)-1)
+     +ointer+size(OpenAD_Symbol_8,1)-1)
       U%d = U%d+Y(1:2)%d*(OpenAD_Symbol_8)
       Y(1:2)%d = 0.0d0
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_11)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_11,1)
       OpenAD_Symbol_11(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_11)-1)
+     +pointer+size(OpenAD_Symbol_11,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_13 = integer_tape(integer_tape_pointer)
 C!! requested inline of 'oad_AllocateShape' has no defn
       CALL oad_AllocateShape(OpenAD_Symbol_12,OpenAD_Symbol_13)
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_12)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_12,1)
       OpenAD_Symbol_12(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_12)-1)
+     +pointer+size(OpenAD_Symbol_12,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_15 = integer_tape(integer_tape_pointer)
       integer_tape_pointer = integer_tape_pointer-1
@@ -155,9 +155,9 @@ C!! requested inline of 'oad_AllocateShape' has no defn
       X(1:2)%d = X(1:2)%d+U(1:INT(OpenAD_Symbol_17))%d*(OpenAD_Symbol_12
      +)
       U(1:INT(OpenAD_Symbol_17))%d = 0.0d0
-      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_18)
+      double_tape_pointer = double_tape_pointer-size(OpenAD_Symbol_18,1)
       OpenAD_Symbol_18(:) = double_tape(double_tape_pointer:double_tape_
-     +pointer+size(OpenAD_Symbol_18)-1)
+     +pointer+size(OpenAD_Symbol_18,1)-1)
       integer_tape_pointer = integer_tape_pointer-1
       OpenAD_Symbol_19 = integer_tape(integer_tape_pointer)
       X%d = X%d+T(1:INT(OpenAD_Symbol_19))%d*(OpenAD_Symbol_18)

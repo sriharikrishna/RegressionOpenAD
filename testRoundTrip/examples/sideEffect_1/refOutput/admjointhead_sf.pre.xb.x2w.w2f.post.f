@@ -108,8 +108,6 @@ C restore arguments
       do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
       X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
       theArgFStackoffset = theArgFStackoffset-1
-C        write(*,'(A,EN26.16E3)') "restore(v)  ", 
-C     +X(cp_loop_variable_1)%v
       end do
           end if
           if (our_rev_mode%plain) then
@@ -245,10 +243,8 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       X%v = theArgFStack(theArgFStackoffset)
-C        write(*,'(A,EN26.16E3)') "restore(s)  ", X%v
       theArgFStackoffset = theArgFStackoffset-1
       AGLOBAL%v = theArgFStack(theArgFStackoffset)
-C        write(*,'(A,EN26.16E3)') "restore(s)  ", AGLOBAL%v
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then
@@ -387,7 +383,6 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
       AGLOBAL%v = theArgFStack(theArgFStackoffset)
-C        write(*,'(A,EN26.16E3)') "restore(s)  ", AGLOBAL%v
       theArgFStackoffset = theArgFStackoffset-1
           end if
           if (our_rev_mode%plain) then

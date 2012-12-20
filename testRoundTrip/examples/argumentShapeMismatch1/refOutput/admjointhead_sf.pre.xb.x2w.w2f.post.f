@@ -91,7 +91,6 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
         N = theArgIStack(theArgIStackoffset)
-C        write(*,'(A,I5,I5)') "restore(s)  ", N, theArgIStackOffset
         theArgIStackoffset = theArgIStackoffset-1
           end if
           if (our_rev_mode%plain) then
@@ -229,13 +228,10 @@ C store arguments
           if (our_rev_mode%arg_restore) then
 C restore arguments
         N = theArgIStack(theArgIStackoffset)
-C        write(*,'(A,I5,I5)') "restore(s)  ", N, theArgIStackOffset
         theArgIStackoffset = theArgIStackoffset-1
         do cp_loop_variable_1 = ubound(X,1),lbound(X,1),-1
         X(cp_loop_variable_1)%v = theArgFStack(theArgFStackoffset)
         theArgFStackoffset = theArgFStackoffset-1
-C        write(*,'(A,EN26.16E3)') "restore(v)  ", 
-C     +X(cp_loop_variable_1)%v
         end do
           end if
           if (our_rev_mode%plain) then
