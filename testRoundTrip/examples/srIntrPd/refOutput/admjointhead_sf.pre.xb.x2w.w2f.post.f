@@ -55,7 +55,8 @@ CONTAINS
 
 ! checkpointing stacks and offsets
     integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_variable_3,cp_loop_&
-     &variable_4,cp_loop_variable_5
+     &variable_4,cp_loop_variable_5,cp_loop_variable_6
+
 
 ! floats 'F'
     double precision, dimension(:), allocatable, save :: theArgFStack
@@ -188,7 +189,8 @@ CONTAINS
 
 ! checkpointing stacks and offsets
     integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_variable_3,cp_loop_&
-     &variable_4,cp_loop_variable_5
+     &variable_4,cp_loop_variable_5,cp_loop_variable_6
+
 
 ! floats 'F'
     double precision, dimension(:), allocatable, save :: theArgFStack
@@ -346,7 +348,8 @@ C
 
 C checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
-     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5,cp_loop_variable_6
+
 C floats 'F'
           double precision, dimension(:), allocatable, save :: theArgFSt
      +ack

@@ -71,7 +71,8 @@ C
 
 C checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
-     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5,cp_loop_variable_6
+
 C floats 'F'
           double precision, dimension(:), allocatable, save :: theArgFSt
      +ack
@@ -230,7 +231,8 @@ C
 
 C checkpointing stacks and offsets
           integer :: cp_loop_variable_1,cp_loop_variable_2,cp_loop_varia
-     +ble_3,cp_loop_variable_4,cp_loop_variable_5
+     +ble_3,cp_loop_variable_4,cp_loop_variable_5,cp_loop_variable_6
+
 C floats 'F'
           double precision, dimension(:), allocatable, save :: theArgFSt
      +ack
