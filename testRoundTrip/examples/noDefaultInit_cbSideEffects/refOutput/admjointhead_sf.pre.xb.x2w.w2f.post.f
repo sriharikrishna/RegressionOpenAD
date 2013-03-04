@@ -525,9 +525,9 @@ C adjoint end
         end subroutine head
       subroutine common_cb_init()
       	use OAD_active
-      	common/cb/ G
+      	COMMON /cb/ G
       	type(active) :: G
-      	G%d = 0
+      	g%d = 0
       end subroutine
       subroutine OAD_globalVar_init()
       	call common_cb_init()
