@@ -28,7 +28,7 @@ FREEFORMAT=-ffree-form
 ifdef OPTIMIZE
 F90FLAGS=-O3
 else
-F90FLAGS=-g -O0 -pedantic -std=f2003 -Wall -W -fbounds-check
+F90FLAGS=-g -O0 -pedantic -std=f2003 -Wall -W -fbounds-check -fimplicit-none -Wno-unused
 endif 
 CC=gcc
 endif
