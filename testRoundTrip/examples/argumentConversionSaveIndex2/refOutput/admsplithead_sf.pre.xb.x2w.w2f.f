@@ -181,6 +181,10 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(A(J + INT(OpenAD_Symbol_0)), __deriv__(
      > OpenAD_tyc_0))
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(J)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
       CALL foo(__deriv__(X(1)))
       __value__(Y(1)) = __value__(X(1))
 C     $OpenAD$ END REPLACEMENT
@@ -190,6 +194,10 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
       CALL foo(__deriv__(X(1)))
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(I)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(J)
       CALL foo(__deriv__(OpenAD_tyc_1))
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 4
@@ -228,6 +236,10 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
 C     $OpenAD$ INLINE oad_convert(subst,subst)
       CALL oad_convert(A(J + INT(OpenAD_Symbol_0)), __deriv__(
      > OpenAD_tyc_0))
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(J)
+C     $OpenAD$ INLINE push_i_s0(subst)
+      CALL push_i_s0(I)
       CALL foo(__deriv__(X(1)))
       __value__(Y(1)) = __value__(X(1))
 C     $OpenAD$ END REPLACEMENT
@@ -237,6 +249,10 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
       CALL foo(__deriv__(X(1)))
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(I)
+C     $OpenAD$ INLINE pop_i_s0(subst)
+      CALL pop_i_s0(J)
       CALL foo(__deriv__(OpenAD_tyc_1))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

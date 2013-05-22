@@ -256,6 +256,8 @@ C!! requested inline of 'oad_convert' has no defn
       CALL foo(OpenAD_tyc_0)
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(A(INT(OpenAD_Symbol_0)),OpenAD_tyc_0)
+      integer_tape(integer_tape_pointer) = I
+      integer_tape_pointer = integer_tape_pointer+1
       CALL foo(X(1))
       Y(1)%v = X(1)%v
 
@@ -277,6 +279,8 @@ C adjoint
       X(1)%d = X(1)%d+Y(1)%d
       Y(1)%d = 0.0d0
       CALL foo(X(1))
+      integer_tape_pointer = integer_tape_pointer-1
+      I = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_tyc_1)
 
 C adjoint end

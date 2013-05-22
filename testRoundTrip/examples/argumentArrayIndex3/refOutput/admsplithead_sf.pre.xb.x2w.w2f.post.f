@@ -151,6 +151,8 @@ C!! requested inline of 'oad_convert' has no defn
       CALL foo(OpenAD_tyc_0,Q(L))
 C!! requested inline of 'oad_convert' has no defn
       CALL oad_convert(P(K),OpenAD_tyc_0)
+      integer_tape(integer_tape_pointer) = K
+      integer_tape_pointer = integer_tape_pointer+1
       integer_tape(integer_tape_pointer) = L
       integer_tape_pointer = integer_tape_pointer+1
           end if
@@ -158,6 +160,8 @@ C!! requested inline of 'oad_convert' has no defn
 C adjoint
       integer_tape_pointer = integer_tape_pointer-1
       L = integer_tape(integer_tape_pointer)
+      integer_tape_pointer = integer_tape_pointer-1
+      K = integer_tape(integer_tape_pointer)
       CALL foo(OpenAD_tyc_1,Q(L))
       OpenAD_prp_1%d = OpenAD_prp_1%d+Y%d
       Y%d = 0.0d0
