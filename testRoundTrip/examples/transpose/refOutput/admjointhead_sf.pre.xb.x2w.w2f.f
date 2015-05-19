@@ -136,4 +136,8 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(A(1 : 2, 1 : 2)))
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

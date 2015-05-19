@@ -73,6 +73,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
       CALL foo(__deriv__(X), __deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE foo(FX, FY)
@@ -150,6 +154,18 @@ C$OPENAD XXX Template ad_template.f
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
       CALL BAR(__deriv__(FX), __deriv__(FY))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(FVAR))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(FY))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(FY))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(FVAR))
 C     $OpenAD$ END REPLACEMENT
       CONTAINS
 
@@ -231,6 +247,18 @@ C       $OpenAD$ INLINE IncDeriv(subst,subst)
         CALL IncDeriv(__deriv__(FVAR), __deriv__(BX(1)))
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(FVAR))
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 12
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+        CALL cp_arg_store_real_scalar_a_d(__deriv__(FVAR))
+C       $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+        CALL cp_arg_store_real_vector_a_d(__deriv__(BY))
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 13
+C       $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+        CALL cp_arg_restore_real_vector_a_d(__deriv__(BY))
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+        CALL cp_arg_restore_real_scalar_a_d(__deriv__(FVAR))
 C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
       END

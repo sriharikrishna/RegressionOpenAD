@@ -89,6 +89,14 @@ C       $OpenAD$ INLINE IncDeriv(subst,subst)
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(R))
 C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 12
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+        CALL cp_arg_store_real_scalar_a_d(__deriv__(R))
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 13
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+        CALL cp_arg_restore_real_scalar_a_d(__deriv__(R))
+C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
       END
 
@@ -166,5 +174,9 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
       CALL OAD_S_MAXVAL_D_1(__deriv__(X), __deriv__(OAD_CTMP0))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

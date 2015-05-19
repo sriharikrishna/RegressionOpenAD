@@ -154,4 +154,8 @@ C     $OpenAD$ INLINE pop_i_s0(subst)
         OpenAD_Symbol_4 = INT(OpenAD_Symbol_4) + 1
       END DO
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

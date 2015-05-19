@@ -119,6 +119,18 @@ C     $OpenAD$ BEGIN REPLACEMENT 11
       CALL foo1()
       CALL foo()
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(G))
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(G1))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(G1))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(G))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE foo()
@@ -181,6 +193,14 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(G1))
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(G1))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(G1))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE foo1()
@@ -242,6 +262,14 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(3.0D00, __deriv__(G), __deriv__(G1))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(G))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(G))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(G))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
@@ -348,6 +376,22 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(G))
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(G))
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(G1))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(Y))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(Y))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(G1))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(G))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE head()
@@ -427,5 +471,21 @@ C     $OpenAD$ BEGIN REPLACEMENT 10
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
       CALL baz()
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(G))
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(G1))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(Y))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(Y))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(G1))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(G))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

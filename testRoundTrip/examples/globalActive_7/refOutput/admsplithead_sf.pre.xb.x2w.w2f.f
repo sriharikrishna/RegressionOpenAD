@@ -126,6 +126,14 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(Y))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(Y))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -207,6 +215,14 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
       CALL foo(__deriv__(X), __deriv__(AGLOBAL))
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(AGLOBAL))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(AGLOBAL))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE bar(X, Y)
@@ -284,5 +300,9 @@ C     $OpenAD$ INLINE oad_convert(subst,subst)
 C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
       CALL foo(__deriv__(OpenAD_tyc_2), __deriv__(OpenAD_tyc_3))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

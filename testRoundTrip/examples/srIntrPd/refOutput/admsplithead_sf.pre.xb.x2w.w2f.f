@@ -123,6 +123,10 @@ C       $OpenAD$ INLINE pop_i_s0(subst)
         IF(OpenAD_Symbol_3 .ne. 0) THEN
         ENDIF
 C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 12
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 13
+C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
 
         SUBROUTINE OAD_S_MIN_D(A0, A1, R)
@@ -241,6 +245,14 @@ C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(R))
         ENDIF
 C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 12
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+        CALL cp_arg_store_real_scalar_a_d(__deriv__(R))
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 13
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+        CALL cp_arg_restore_real_scalar_a_d(__deriv__(R))
+C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
       END
 
@@ -351,5 +363,9 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL OAD_S_MAX_D(P1, P2, OAD_CTMP1)
       CALL OAD_S_MIN_D(__deriv__(X(1)), __deriv__(X(2)), __deriv__(
      > OAD_CTMP0))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

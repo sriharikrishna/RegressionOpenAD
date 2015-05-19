@@ -422,6 +422,42 @@ C         $OpenAD$ INLINE ZeroDeriv(subst)
       CALL box_density(__deriv__(TNOW), __deriv__(SNOW), __deriv__(RHO)
      > )
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(UVEL))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(RHO))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SNEW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SNOW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SOLD))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TNEW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TNOW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TOLD))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TOLD))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TNOW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TNEW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SOLD))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SNOW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SNEW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(RHO))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(UVEL))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE box_final_state()
@@ -566,6 +602,10 @@ C     $OpenAD$ INLINE pop_i_s0(subst)
       DO WHILE(INT(OpenAD_Symbol_45) .LE. INT(OpenAD_Symbol_44))
         OpenAD_Symbol_45 = INT(OpenAD_Symbol_45) + 1
       END DO
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
@@ -1170,6 +1210,46 @@ C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(T(2)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(T(1)))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(UVEL))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(S))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SNEW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SNOW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SOLD))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(T))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TNEW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TNOW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TOLD))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TOLD))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TNOW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TNEW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(T))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SOLD))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SNOW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SNEW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(S))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(UVEL))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
@@ -1966,6 +2046,10 @@ C     $OpenAD$ INLINE pop_i_s0(subst)
         OpenAD_Symbol_105 = INT(OpenAD_Symbol_105) + 1
       END DO
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE box_model_body()
@@ -2439,6 +2523,50 @@ C             $OpenAD$ INLINE pop_i_s0(subst)
       ENDIF
       CALL box_ini_fields()
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(UVEL))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(RHO))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(S))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SNEW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SNOW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SOLD))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(T))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TNEW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TNOW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TOLD))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TOLD))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TNOW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TNEW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(T))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SOLD))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SNOW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SNEW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(S))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(RHO))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(UVEL))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE box_density(TLOC, SLOC, RHOLOC)
@@ -2623,6 +2751,14 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
         OpenAD_Symbol_16 = INT(OpenAD_Symbol_16) + 1
       END DO
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(RHOLOC))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(RHOLOC))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE box_transport(RHOLOC, UVELLOC)
@@ -2786,6 +2922,14 @@ C     $OpenAD$ INLINE DecDeriv(subst,subst)
       CALL DecDeriv(__deriv__(OpenAD_prp_0), __deriv__(RHOLOC(2)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(UVELLOC))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(UVELLOC))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
@@ -3006,6 +3150,14 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(OpenAD_prp_7))
         OpenAD_Symbol_28 = INT(OpenAD_Symbol_28) + 1
       END DO
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(FLDNOW))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(FLDNOW))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
@@ -3231,6 +3383,26 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
         OpenAD_Symbol_34 = INT(OpenAD_Symbol_34) + 1
       END DO
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SNOW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(SOLD))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TNOW))
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(TOLD))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TOLD))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(TNOW))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SOLD))
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(SNOW))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE box_update(FLDNEW, FLDOLD, DFLDDT)
@@ -3394,6 +3566,14 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(FLDNEW(OpenAD_Symbol_184)))
         OpenAD_Symbol_149 = INT(OpenAD_Symbol_149) + 1
       END DO
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(FLDNEW))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(FLDNEW))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
@@ -4159,5 +4339,13 @@ C       $OpenAD$ INLINE IncDeriv(subst,subst)
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(OpenAD_prp_4))
       ENDIF
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(FLDNEW))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(FLDNEW))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

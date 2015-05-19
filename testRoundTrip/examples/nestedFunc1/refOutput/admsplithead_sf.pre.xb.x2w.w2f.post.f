@@ -83,6 +83,10 @@ C adjoint
       Y(1)%d = 0.0d0
           end if
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       CONTAINS
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #

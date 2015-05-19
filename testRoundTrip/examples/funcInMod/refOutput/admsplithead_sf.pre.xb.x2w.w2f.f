@@ -196,6 +196,22 @@ C       $OpenAD$ INLINE IncDeriv(subst,subst)
 C       $OpenAD$ INLINE ZeroDeriv(subst)
         CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
 C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 12
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+        CALL cp_arg_store_real_scalar_a_d(__deriv__(MX))
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+        CALL cp_arg_store_real_scalar_a_d(__deriv__(X))
+C       $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+        CALL cp_arg_store_real_scalar_a_d(__deriv__(FOO_I))
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 13
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+        CALL cp_arg_restore_real_scalar_a_d(__deriv__(FOO_I))
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+        CALL cp_arg_restore_real_scalar_a_d(__deriv__(X))
+C       $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+        CALL cp_arg_restore_real_scalar_a_d(__deriv__(MX))
+C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
 
         SUBROUTINE OAD_S_FOO_II(X, FOO_II)
@@ -246,6 +262,10 @@ C       $OpenAD$ BEGIN REPLACEMENT 10
         FOO_II = (X + 1)
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 11
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 12
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 13
 C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
       END
@@ -359,5 +379,17 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(MX), __deriv__(X(1)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(MX))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(MX))
+C     $OpenAD$ INLINE cp_arg_store_real_scalar_a_d(subst)
+      CALL cp_arg_store_real_scalar_a_d(__deriv__(MX))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(MX))
+C     $OpenAD$ INLINE cp_arg_restore_real_scalar_a_d(subst)
+      CALL cp_arg_restore_real_scalar_a_d(__deriv__(MX))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

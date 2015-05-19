@@ -166,6 +166,14 @@ C       $OpenAD$ INLINE ZeroDeriv(subst)
         OpenAD_Symbol_4 = INT(OpenAD_Symbol_4) + 1
       END DO
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(A))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(A))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -354,5 +362,9 @@ C     $OpenAD$ INLINE pop_i_s0(subst)
 C     $OpenAD$ INLINE pop_i_s0(subst)
       CALL pop_i_s0(G)
       CALL foo(__deriv__(X), OAD_CTMP0)
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

@@ -73,6 +73,10 @@ C$OPENAD XXX Template ad_template.f
 C       $OpenAD$ END REPLACEMENT
 C       $OpenAD$ BEGIN REPLACEMENT 11
 C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 12
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 13
+C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
       END
 
@@ -173,5 +177,9 @@ C     $OpenAD$ INLINE IncDeriv(subst,subst)
       CALL IncDeriv(__deriv__(Y(1 : )), __deriv__(X(1 : )))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1 : )))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

@@ -165,4 +165,8 @@ C     $OpenAD$ INLINE pop_i_s0(subst)
       IF(OpenAD_Symbol_5 .ne. 0) THEN
       ENDIF
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

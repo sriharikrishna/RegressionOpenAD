@@ -82,6 +82,10 @@ C     $OpenAD$ END REPLACEMENT
 C     $OpenAD$ BEGIN REPLACEMENT 11
       CALL sq(OAD_CTMP0, __deriv__(X), __deriv__(Y))
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE sq(N, U, V)
@@ -342,5 +346,13 @@ C     $OpenAD$ INLINE Saxpy(subst,subst,subst)
       CALL Saxpy(OpenAD_Symbol_9, __deriv__(V(1)), __deriv__(U(2)))
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(V(1)))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+      CALL cp_arg_store_real_vector_a_d(__deriv__(V))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+      CALL cp_arg_restore_real_vector_a_d(__deriv__(V))
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

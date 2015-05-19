@@ -1184,6 +1184,14 @@ C         $OpenAD$ INLINE ZeroDeriv(subst)
         OpenAD_Symbol_10 = INT(OpenAD_Symbol_10) + 1
       END DO
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ INLINE cp_arg_store_real_matrix_a_d(subst)
+      CALL cp_arg_store_real_matrix_a_d(__deriv__(BULKMOD))
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ INLINE cp_arg_restore_real_matrix_a_d(subst)
+      CALL cp_arg_restore_real_matrix_a_d(__deriv__(BULKMOD))
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE
 
       SUBROUTINE head(X, Y)
@@ -1678,5 +1686,9 @@ C         $OpenAD$ INLINE ZeroDeriv(subst)
         END DO
         OpenAD_Symbol_44 = INT(OpenAD_Symbol_44) + 1
       END DO
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
 C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

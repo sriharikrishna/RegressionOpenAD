@@ -345,4 +345,8 @@ C       $OpenAD$ INLINE pop_i_s0(subst)
         CALL pop_i_s0(OpenAD_Symbol_13)
       END DO
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       END SUBROUTINE

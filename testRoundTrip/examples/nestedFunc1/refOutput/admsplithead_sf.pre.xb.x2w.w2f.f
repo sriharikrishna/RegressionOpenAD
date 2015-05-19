@@ -90,6 +90,10 @@ C     $OpenAD$ BEGIN REPLACEMENT 11
 C     $OpenAD$ INLINE ZeroDeriv(subst)
       CALL ZeroDeriv(__deriv__(Y(1)))
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       CONTAINS
 
         SUBROUTINE FOO()
@@ -247,6 +251,14 @@ C         $OpenAD$ INLINE ZeroDeriv(subst)
           CALL ZeroDeriv(__deriv__(OpenAD_prp_0))
           OpenAD_Symbol_4 = INT(OpenAD_Symbol_4) + 1
         END DO
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 12
+C       $OpenAD$ INLINE cp_arg_store_real_vector_a_d(subst)
+        CALL cp_arg_store_real_vector_a_d(__deriv__(Y))
+C       $OpenAD$ END REPLACEMENT
+C       $OpenAD$ BEGIN REPLACEMENT 13
+C       $OpenAD$ INLINE cp_arg_restore_real_vector_a_d(subst)
+        CALL cp_arg_restore_real_vector_a_d(__deriv__(Y))
 C       $OpenAD$ END REPLACEMENT
         END SUBROUTINE
       END

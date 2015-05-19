@@ -143,6 +143,10 @@ C adjoint end
             our_rev_mode%adjoint=.FALSE.
           end if
 C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 12
+C     $OpenAD$ END REPLACEMENT
+C     $OpenAD$ BEGIN REPLACEMENT 13
+C     $OpenAD$ END REPLACEMENT
       CONTAINS
 C#########################################################
 C This file is part of OpenAD released under the LGPL.   #

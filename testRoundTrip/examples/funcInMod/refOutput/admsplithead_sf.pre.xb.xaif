@@ -339,6 +339,22 @@
       </xaif:Replacement>
       <xaif:Replacement placeholder="11">
       </xaif:Replacement>
+      <xaif:Replacement placeholder="12">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="2">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="13">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="2">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
     </xaif:ReplacementList>
     <xaif:ReplacementList vertex_id="26" symbol_id="all_globals_mod__22" scope_id="1" controlflowgraph_scope_id="3" annotation="{PU_Id#2}" template_name="reverse_subroutine_template">
       <xaif:Replacement placeholder="1">
@@ -398,6 +414,22 @@
       <xaif:Replacement placeholder="10">
       </xaif:Replacement>
       <xaif:Replacement placeholder="11">
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="12">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="3">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="13">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="3">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
       </xaif:Replacement>
     </xaif:ReplacementList>
     <xaif:ReplacementList vertex_id="27" symbol_id="m__26" scope_id="1" controlflowgraph_scope_id="4" annotation="{PU_Id#3}" template_name="reverse_subroutine_template">
@@ -459,6 +491,22 @@
       </xaif:Replacement>
       <xaif:Replacement placeholder="11">
       </xaif:Replacement>
+      <xaif:Replacement placeholder="12">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="4">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="13">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="4">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
     </xaif:ReplacementList>
     <xaif:ReplacementList vertex_id="28" symbol_id="FOO_I_24" scope_id="1" controlflowgraph_scope_id="5" annotation="{PU_Id#4}" template_name="reverse_subroutine_template">
       <xaif:Replacement placeholder="1">
@@ -519,6 +567,22 @@
       </xaif:Replacement>
       <xaif:Replacement placeholder="11">
       </xaif:Replacement>
+      <xaif:Replacement placeholder="12">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="5">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="13">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="5">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
     </xaif:ReplacementList>
     <xaif:ReplacementList vertex_id="29" symbol_id="FOO_II_27" scope_id="1" controlflowgraph_scope_id="6" annotation="{PU_Id#5}" template_name="reverse_subroutine_template">
       <xaif:Replacement placeholder="1">
@@ -578,6 +642,22 @@
       <xaif:Replacement placeholder="10">
       </xaif:Replacement>
       <xaif:Replacement placeholder="11">
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="12">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="6">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="13">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="6">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
       </xaif:Replacement>
     </xaif:ReplacementList>
     <xaif:ReplacementList vertex_id="30" symbol_id="OAD_S_FOO_I_28" scope_id="1" controlflowgraph_scope_id="7" annotation="{PU_Id#6}" template_name="reverse_subroutine_template">
@@ -1056,6 +1136,64 @@
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="_adj__cfr_v_1" target="17" has_condition_value="0"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_2" source="17" target="_adj__cfr_v_2" has_condition_value="0"/>
       </xaif:Replacement>
+      <xaif:Replacement placeholder="12">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="7">
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a_d" statement_id="cp_arg_store_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="MX_25" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a_d" statement_id="cp_arg_store_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="7"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a_d" statement_id="cp_arg_store_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="FOO_I_2" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="7"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="13">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="7">
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a_d" statement_id="cp_arg_restore_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="FOO_I_2" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="7"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a_d" statement_id="cp_arg_restore_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="X_1" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="7"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a_d" statement_id="cp_arg_restore_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="MX_25" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
     </xaif:ReplacementList>
     <xaif:ReplacementList vertex_id="31" symbol_id="OAD_S_FOO_II_29" scope_id="1" controlflowgraph_scope_id="8" annotation="{PU_Id#7}" template_name="reverse_subroutine_template">
       <xaif:ArgumentList>
@@ -1236,6 +1374,22 @@
         <xaif:Exit vertex_id="_adj__cfr_v_2" annotation="_cfr_"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="_adj__cfr_v_1" target="20" has_condition_value="0"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_2" source="20" target="_adj__cfr_v_2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="12">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="8">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="13">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="8">
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
       </xaif:Replacement>
     </xaif:ReplacementList>
     <xaif:ReplacementList vertex_id="32" symbol_id="head__31" scope_id="1" controlflowgraph_scope_id="9" annotation="{PU_Id#8}" template_name="reverse_subroutine_template">
@@ -1890,6 +2044,50 @@
         <xaif:Exit vertex_id="_adj__cfr_v_2" annotation="_cfr_"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_1" source="_adj__cfr_v_1" target="23" has_condition_value="0"/>
         <xaif:ControlFlowEdge edge_id="_cfr_e_2" source="23" target="_adj__cfr_v_2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="12">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="9">
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a_d" statement_id="cp_arg_store_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="MX_25" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_store_real_scalar_a_d" statement_id="cp_arg_store_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="MX_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
+      </xaif:Replacement>
+      <xaif:Replacement placeholder="13">
+        <xaif:Entry vertex_id="1" annotation="cp_entry"/>
+        <xaif:Exit vertex_id="2" annotation="cp_exit"/>
+        <xaif:BasicBlock vertex_id="3" annotation="cp_basicblock" scope_id="9">
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a_d" statement_id="cp_arg_restore_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="MX_32" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+          <xaif:InlinableSubroutineCall subroutine_name="cp_arg_restore_real_scalar_a_d" statement_id="cp_arg_restore_real_scalar_a_d">
+            <xaif:Argument position="1">
+              <xaif:VariableReference vertex_id="1" active="true" deriv="0" constant="0">
+                <xaif:SymbolReference vertex_id="1" symbol_id="MX_25" annotation="xaifBoosterBasicBlockPreaccumulationReverse::CallGraphVertexAlg::addCheckPointingInlinableSubroutineCall" scope_id="1"/>
+              </xaif:VariableReference>
+            </xaif:Argument>
+          </xaif:InlinableSubroutineCall>
+        </xaif:BasicBlock>
+        <xaif:ControlFlowEdge edge_id="1" source="1" target="3" has_condition_value="0"/>
+        <xaif:ControlFlowEdge edge_id="2" source="3" target="2" has_condition_value="0"/>
       </xaif:Replacement>
     </xaif:ReplacementList>
     <xaif:CallGraphEdge edge_id="1" source="32" target="30"/>

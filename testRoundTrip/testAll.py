@@ -188,7 +188,7 @@ def fileCompare(fcexampleDir,fcfileName,fcmode,ignoreString):
 	if not (globalBatchMode):
             os.system(globalDiffCmd+" "+fcfileName+" "+referenceFile)
 	sys.stdout.write("Transformation -- diff "+fcfileName+" "+referenceFile+"\n")
-	if not (globalBatchMode):
+	if (globalBatchMode):
             answer=""
             if globalAcceptAll:
                 answer="y"
